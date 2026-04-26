@@ -11,5 +11,5 @@ main.toc
 
 #Ignorar aux de la carp chapters
 
-cap1.aux
-cap2.aux
+chapters/cap1.aux
+chapters/cap2.aux
