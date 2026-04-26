@@ -39,10 +39,10 @@ pdflatex main.tex
 ## 📁 Estructura del proyecto
 
 ```
-├── main.tex          # Archivo principal del documento en LaTeX
-├── cem.png           # Logotipo del Centro de Estudiantes de Matemática
-├── Curso_de_Análisis_Real_I.pdf  # Documento compilado en PDF
-└── README.md         # Este archivo
+├── main.tex                       # Archivo principal del documento en LaTeX
+├── cem.png                        # Logotipo del Centro de Estudiantes de Matemática
+├── Curso_de_Análisis_Real_I.pdf   # Documento compilado en PDF
+└── README.md                      # Este archivo
 ```
 
 ## 📚 Referencias
