@@ -1505,4 +1505,120 @@ b) Para cada función \(f: \mathbb{N} \to \mathbb{N}\) sea \(A_f = \{ n \in \mat
 
 \newpage
 
+\chapter{Números Reales}
+
+Todo lo que se dirá en los capítulos siguientes se referirá a conjuntos de números reales: funciones definidas y que toman valores en esos conjuntos, límites, continuidad, derivadas e integrales de esas funciones. Por ello, vamos a establecer ahora los fundamentos de la teoría de los números reales.
+
+Nuestra actitud será la siguiente. Haremos una lista que contenga varios hechos elementales acerca de los números reales. Estos hechos serán admitidos como axiomas, es decir, no serán demostrados. A partir de ellos deduciremos ciertas consecuencias, que demostraremos como teoremas. Debemos aclarar que no solo lo que usaremos en este libro, sino todas las propiedades de los números reales se derivan lógicamente de los axiomas que enunciaremos en este capítulo. Estos axiomas presentan al conjunto \(\mathbb{R}\) de los números reales como un cuerpo ordenado completo.
+
+Como las nociones de cuerpo y de cuerpo ordenado poseen un interés algebraico propio, presentamos los axiomas de los números reales por etapas, dejando para el final la existencia del supremo, precisamente el axioma no algebraico, aquel que desempeñará el papel más importante en los capítulos siguientes.
+
+Un espíritu más crítico indagaría sobre la existencia de los números reales, es decir, si realmente se conoce algún ejemplo de cuerpo ordenado completo. En otras palabras: partiendo de los números naturales (digamos, presentados a través de los axiomas de Peano) ¿sería posible, mediante extensiones sucesivas del concepto de número, llegar a la construcción de los números reales? La respuesta es afirmativa. Esto puede hacerse de varias maneras. El paso crucial es de los racionales a los reales, el cual puede seguir el método de las cortaduras de Dedekind o de las sucesiones de Cauchy (debido a Cantor), por citar solo los dos más populares.
+
+“Es completamente irrelevante que un número real sea, por casualidad, una colección de números racionales; tal hecho nunca debería entrar en la demostración de cualquier teorema importante sobre números reales. Las demostraciones aceptables deberían usar solo el hecho de que los números reales forman un cuerpo ordenado completo...”
+
+Así, cualquier proceso de construcción de los números reales a partir de los racionales es importante solo porque prueba que los cuerpos ordenados completos existen. A partir de ahí, todo lo que interesa es que \(\mathbb{R}\) es un cuerpo ordenado completo.
+
+Una pregunta relevante es, sin embargo, la siguiente: al definir el conjunto \(\mathbb{R}\) de los números reales, ¿no estamos siendo ambiguos? En otras palabras, ¿acaso existen dos cuerpos ordenados completos con propiedades distintas? Esta es la cuestión de la unicidad de \(\mathbb{R}\).
+
+Evidentemente, en un sentido exageradamente estricto, no se puede decir que existe solo un cuerpo ordenado completo. Si construimos los números reales mediante cortaduras de Dedekind, obtenemos un cuerpo ordenado completo cuyos elementos son colecciones de números racionales. Si usamos el proceso de Cantor, el cuerpo ordenado completo que obtenemos está formado por clases de equivalencia de sucesiones de Cauchy. Son, por tanto, dos cuerpos ordenados completos diferentes el uno del otro. El punto fundamental que ellos difieren solo por la naturaleza de sus elementos, pero no por la manera en que esos elementos se comportan. Ahora bien, ya acordamos, desde el capítulo anterior, adoptar el método axiomático, según el cual la naturaleza intrínseca de los objetos matemáticos es una cuestión irrelevante, siendo importante las relaciones entre esos objetos. Así pues, la manera adecuada de formular la cuestión de la unicidad de los números reales es la siguiente: ¿existen dos cuerpos ordenados completos no isomorfos? La respuesta es negativa. Dados \(K, L\), cuerpos ordenados completos, existe una única biyección \(f: K \to L\) tal que \(f(x+y) = f(x)+f(y)\) y \(f(x\cdot y) = f(x)\cdot f(y)\). La función \(f\) se llama un isomorfismo entre \(K\) y \(L\). Ella cumple, ipso facto, la condición \(x < y \Leftrightarrow f(x) < f(y)\). Los cuerpos \(K\) y \(L\) son, pues, isomorfos, es decir, indistinguibles en lo que respecta a propiedades de cuerpos ordenados completos.
+
+\section{Cuerpos}
+
+Un cuerpo es un conjunto \(K\), provisto de dos operaciones, llamadas adición y multiplicación, que satisfacen ciertas condiciones, llamadas los axiomas de cuerpo, especificadas a continuación.
+
+La adición hace corresponder a cada par de elementos \(x, y \in K\) su suma \(x + y \in K\), mientras que la multiplicación asocia a esos elementos su producto \(x \cdot y \in K\). Los axiomas de cuerpo son los siguientes:
+
+A. Axiomas de la adición
+
+A1. Asociatividad\\
+Cualesquiera que sean \(x, y, z \in K\), se tiene \((x + y) + z = x + (y + z)\).
+
+A2. Conmutatividad\\
+cualesquiera que sean \(x, y \in K\), se tiene \(x + y = y + x\).
+
+A3. Elemento neutro\\
+Existe \(0 \in K\) tal que \(x + 0 = x\), sea cual sea \(x \in K\). El elemento \(0\) se llama cero.
+
+A4. Simétrico\\
+Todo elemento \(x \in K\) posee un simétrico \(-x \in K\) tal que \(x + (-x) = 0\).
+
+De la conmutatividad se sigue que \(0 + x = x\) y \(-x + x = 0\), sea cual sea \(x \in K\). La suma \(x + (-y)\) se indicará con la notación \(x - y\) y se llamará la diferencia entre \(x\) e \(y\). La operación \((x, y) \mapsto x - y\) se llama sustracción.
+
+Sumando \(y\) a ambos miembros de una igualdad del tipo \(x - y = z\) se obtiene \(x = y + z\). Análogamente, si \(x = y + z\) entonces, sumando \(-y\) a ambos miembros, se obtiene \(x - y = z\). Por lo tanto, \(x - y = z \Leftrightarrow x = y + z\). De ahí se deduce que el cero es único. Es decir, si \(x + \theta = x\) (para algún \(x \in K\) y algún \(\theta \in K\)) entonces \(\theta = x - x\), o sea \(\theta = 0\). Resulta también que todo \(x \in K\) tiene solamente un simétrico: si \(x + y = 0\), entonces \(y = 0 - x\), es decir \(y = -x\). También tenemos \(-(-x) = x\), ya que \((-x) + x = 0\). Finalmente, vale la ley de cancelación: \(x + z = y + z \Rightarrow x = y\) (basta sumar \(-z\) a ambos miembros de la primera igualdad). Concluimos así que las reglas usuales relativas a la adición y sustracción se deducen de los cuatro axiomas anteriores y son, por tanto, válidas en cualquier cuerpo. A propósito, un conjunto donde está definida solo una operación que satisface estos axiomas es lo que se llama un grupo abeliano.
+
+B. Axiomas de la multiplicación
+
+M1. Asociatividad\\
+Dados cualesquiera \(x, y, z\) en \(K\), se tiene \((x \cdot y) \cdot z = x \cdot (y \cdot z)\).
+
+M2. Conmutatividad\\
+sean cuales fueren \(x, y \in K\), vale \(x \cdot y = y \cdot x\).
+
+M3. Elemento neutro\\
+Existe \(1 \in K\) tal que \(1 \neq 0\) y \(x \cdot 1 = x\), cualquier que sea \(x \in K\). El elemento \(1\) se llama uno.
+
+M4. Inverso multiplicativo\\
+Todo \(x \neq 0\) en \(K\) posee un inverso \(x^{-1} \in K\) tal que \(x \cdot x^{-1} = 1\).
+
+Por conmutatividad, se sigue que \(x \cdot 1 = 1 \cdot x = x\) para todo \(x \in K\), y que \(x \cdot x^{-1} = x^{-1} \cdot x = 1\) para todo \(x \neq 0\) en \(K\).
+
+Los axiomas anteriores dicen, en particular, que los elementos diferentes de \(0\) en un cuerpo \(K\) forman un grupo abeliano respecto a la operación de multiplicación (el elemento neutro es \(1\) y, en lugar del simétrico \(-x\), tenemos el inverso \(x^{-1}\)). En consecuencia, valen propiedades análogas a las que fueron demostradas arriba para la adición, teniendo el cuidado de recordar que \(0\) no posee inverso multiplicativo.
+
+Dados \(x\) e \(y\) en \(K\), con \(y \neq 0\), se escribe también \(x/y\) en lugar de \(x \cdot y^{-1}\). La operación \((x,y) \mapsto x/y\), definida para \(x\) cualquiera e \(y \neq 0\) en \(K\), se llama división y el resultado \(x/y\) es el cociente de \(x\) por \(y\). No se divide por cero: \(x/0\) no tiene sentido.
+
+Si \(y \neq 0\), se tiene \(x/y = z \Leftrightarrow x = y \cdot z\). De ahí se deduce la utilísima ley de cancelación: si \(x \cdot z = y \cdot z\) y \(z \neq 0\), entonces \(x = y\) (es importante tener en mente que \(x \cdot z = y \cdot z\) solo implica \(x = y\) cuando se sabe a priori que \(z \neq 0\)). Si \(x \cdot y = x\) para todo \(x \in K\), entonces tomando \(x = 1\) obtenemos \(y = 1\). Esto prueba la unicidad del \(1\). Sabiendo solo que \(x \cdot y = x\) para un cierto \(x\), hay dos posibilidades: si \(x \neq 0\) entonces \(y = 1\), por la ley de cancelación. Si, en cambio, \(x = 0\) entonces \(y\) puede ser cualquiera pues, como veremos a continuación, \(0 \cdot y = 0\) para todo \(y \in K\). Finalmente, si \(x \cdot y = 1\) entonces, como veremos más abajo, \(x \neq 0\) e \(y \neq 0\) y (multiplicando por \(x^{-1}\)) concluimos \(y = x^{-1}\). Esto prueba la unicidad del elemento inverso.
+
+Por último, las operaciones de adición y multiplicación en un cuerpo \(K\) se hallan relacionadas por un axioma, con el cual queda completa la definición de cuerpo.
+
+D1. Axioma de la distributividad.\\
+Dados \(x, y, z\) cualesquiera en \(K\), se tiene \(x \cdot (y + z) = x \cdot y + x \cdot z\).
+
+Por conmutatividad, también se tiene \((x+y) \cdot z = x \cdot z + y \cdot z\).
+
+De este axioma resulta que \(x \cdot 0 = 0\) para todo \(x \in K\). En efecto, \(x \cdot 0 + x = x \cdot 0 + x \cdot 1 = x(0+1) = x \cdot 1 = x\), de donde \(x \cdot 0 = 0\). Por otro lado, dados \(x, y \in K\) con \(x \cdot y = 0\), se sigue que \(x = 0\) o \(y = 0\). En efecto, si \(x \cdot y = 0\) y \(x \neq 0\), entonces obtenemos \(x \cdot y = x \cdot 0\) y, por cancelación, \(y = 0\). Así, en un cuerpo \(K\), se tiene \(x \cdot y \neq 0\) siempre que los dos factores \(x\) e \(y\) sean ambos diferentes de cero.
+
+En el axioma de la distributividad está la explicación de las “reglas de los signos” del Álgebra Elemental: \((-x) \cdot y = x \cdot (-y) = -(x \cdot y)\) y \((-x) \cdot (-y) = x \cdot y\). En efecto, en primer lugar tenemos \((-x) \cdot y + x \cdot y = (-x + x) \cdot y = 0 \cdot y = 0\), de donde \((-x) \cdot y = -(x \cdot y)\). Análogamente, \(x \cdot (-y) = -(x \cdot y)\). Luego \((-x) \cdot (-y) = -[x \cdot (-y)] = -[-(x \cdot y)] = x \cdot y\). En particular, \((-1) \cdot (-1) = 1\).
+
+Ejemplos de cuerpos
+
+Ejemplo 1. El conjunto \(\mathbb{Q}\) de los números racionales, con las operaciones  
+\(\frac{p}{q} + \frac{p'}{q'} = \frac{pq' + p'q}{qq'}\) y \(\frac{p}{q} \cdot \frac{p'}{q'} = \frac{pp'}{qq'}\). (Recordemos la igualdad: \(\frac{p}{q} = \frac{p'}{q'} \Leftrightarrow pq' = p'q\).) El simétrico de \(\frac{p}{q}\) es \(-\frac{p}{q}\). El cero es \(\frac{0}{q}\), sea cual sea \(q \neq 0\). El inverso del número racional \(\frac{p}{q} \neq 0\) es \(\frac{q}{p}\).
+
+Ejemplo 2. El cuerpo \(\mathbb{Z}_2 = \{0, 1\}\), formado solo por dos elementos distintos \(0\) y \(1\), con las operaciones  
+\(0 + 1 = 1 + 0 = 1\), \(0 + 0 = 1 + 1 = 0\),  
+\(0 \cdot 0 = 0 \cdot 1 = 1 \cdot 0 = 0\) y \(1 \cdot 1 = 1\).  
+Aquí, el simétrico de cada elemento es él mismo (y el inverso también).
+
+Ejemplo 3. El cuerpo \(\mathbb{Q}(i)\), cuyos elementos son los pares ordenados \(z = (x, y)\) de números racionales (es decir, como conjunto, \(\mathbb{Q}(i) = \mathbb{Q} \times \mathbb{Q}\)). Las operaciones se definen así:  
+\((x, y) + (x', y') = (x + x', y + y')\) y  
+\((x, y) \cdot (x', y') = (xx' - yy', x'y + xy')\).  
+El cero es el elemento \((0, 0)\) y la unidad es el elemento \((1, 0)\). Escribiendo \(x\) para representar el par \((x, 0)\) y usando la notación \(i = (0, 1)\), observamos que cada elemento \(z = (x, y) = (x, 0) + (0, y)\) puede escribirse como \(z = x + iy\) y que las operaciones anteriores fueron definidas de modo que los “números complejos” de la forma \(z = x + iy\) se sumen y multipliquen de la manera usual, con el cuidado de notar que \(i^2 = -1\). \(\mathbb{Q}(i)\) se llama el cuerpo de los números complejos racionales. La verificación de los axiomas queda a cargo del lector. Por ejemplo, dado \(z = (x, y) \neq 0\),
+
+\[
+\text{se tiene } z^{-1} = \left( \frac{x}{x^2 + y^2}, \frac{-y}{x^2 + y^2} \right).
+\]
+
+Ejemplo 4. El conjunto \(\mathbb{Q}(t)\) de las funciones racionales
+
+\[
+r(t) = \frac{p(t)}{q(t)},
+\]
+
+donde \(p, q\) son polinomios con coeficientes racionales, siendo \(q\) no idénticamente nulo. Si \(u(t)\) es también no idénticamente nulo, se tiene \(\frac{p(t)}{q(t)} = \frac{p(t) \cdot u(t)}{q(t) \cdot u(t)}\). Las operaciones en \(\mathbb{Q}(t)\) se definen de la manera obvia.
+
+Para terminar estas consideraciones generales sobre cuerpos, observemos un hecho útil. En un cuerpo \(K\), \(x^2 = y^2 \Rightarrow x = \pm y\). En efecto, \(x^2 = y^2 \Rightarrow x^2 - y^2 = 0 \Rightarrow (x + y)(x - y) = 0 \Rightarrow x + y = 0\) o \(x - y = 0\). En el primer caso, \(x = -y\) y, en el segundo, \(x = y\).
+
+\section{Cuerpos ordenados}
+
+Un cuerpo ordenado es un cuerpo \(K\), en el cual se ha destacado un subconjunto \(P \subset K\), llamado el conjunto de los elementos positivos de \(K\), tal que las siguientes condiciones se satisfacen:
+
+P1. La suma y el producto de elementos positivos son positivos. Es decir, \(x, y \in P \Rightarrow x + y \in P\) y \(x \cdot y \in P\).
+
+P2. Dado \(x \in K\), exactamente una de las tres alternativas siguientes ocurre: o \(x = 0\), o \(x \in P\), o \(-x \in P\).
+
+Así, si indicamos con \(-P\) el conjunto de los elementos \(-x\), donde \(x \in P\), tenemos \(K = P \cup (-P) \cup \{0\}\), siendo los conjuntos \(P\), \(-P\) y \(\{0\}\) disjuntos dos a dos. Los elementos de \(-P\) se llaman negativos.
+
+En un cuerpo ordenado, si \(a \neq 0\) entonces \(a^2 \in P\). En efecto, siendo \(a \neq 0\), o \(a \in P\) o \(-a \in P\). En el primer caso, \(a^2 = a \cdot a \in P\). En el segundo caso, \(a^2 = (-a) \cdot (-a) \in P\). En particular, en un cuerpo ordenado \(1 = 1 \cdot 1\) es siempre positivo.
+
 \end{document}
