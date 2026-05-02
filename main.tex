@@ -1621,4 +1621,227 @@ Así, si indicamos con \(-P\) el conjunto de los elementos \(-x\), donde \(x \in
 
 En un cuerpo ordenado, si \(a \neq 0\) entonces \(a^2 \in P\). En efecto, siendo \(a \neq 0\), o \(a \in P\) o \(-a \in P\). En el primer caso, \(a^2 = a \cdot a \in P\). En el segundo caso, \(a^2 = (-a) \cdot (-a) \in P\). En particular, en un cuerpo ordenado \(1 = 1 \cdot 1\) es siempre positivo.
 
+Se sigue que \(-1 \in -P\). En particular, en un cuerpo ordenado, \(-1\) no es cuadrado de ningún elemento.
+
+Ejemplo 5. \(\mathbb{Q}\) es un cuerpo ordenado, en el cual el conjunto \(P\) está formado por los números racionales \(p/q\) tales que \(p \cdot q \in \mathbb{N}\). (Intuitivamente, esto significa que los enteros \(p\) y \(q\) tienen “el mismo signo”.)
+
+Ejemplo 6. El cuerpo \(\mathbb{Q}(t)\) puede ser ordenado llamando positiva a una fracción \(r(t) = \frac{p(t)}{q(t)}\) cuando, en el polinomio \(pq\), el coeficiente del término de mayor grado es positivo. El conjunto \(P\) de las fracciones positivas según esta definición cumple las condiciones P1 y P2. En efecto, dadas las fracciones positivas \(r = \frac{p}{q}\) y \(r' = \frac{p'}{q'}\), los coeficientes de los términos de mayor grado en \(pq\) y en \(p'q'\) son \(> 0\). En \(r + r'\), el producto del numerador por el denominador es el polinomio \(pq(q')^2 + p'q' \cdot q^2\), cuyo término de mayor grado debe tener coeficiente positivo. Luego, la suma de dos fracciones “positivas” es positiva. Las demás afirmaciones se verifican sin dificultad.
+
+Ejemplo 7. El cuerpo \(\mathbb{Z}_2\) no puede ser ordenado pues \(1 + 1 = 0\) mientras que en un cuerpo ordenado \(1\) debe ser positivo y la suma \(1 + 1\) de dos elementos positivos debería ser aún positiva. También el cuerpo \(\mathbb{Q}(i)\), de los números complejos racionales, no admite una ordenación compatible con sus operaciones pues el cuadrado del elemento \(i = (0,1)\) es igual a \(-1\). En un cuerpo ordenado, ningún cuadrado puede ser negativo y \(-1\) siempre es negativo.
+
+En un cuerpo ordenado \(K\), escribiremos \(x < y\), y diremos que \(x\) es menor que \(y\), para significar que \(y - x \in P\), es decir, que \(y = x + z\), donde \(z \in P\). En las mismas circunstancias, también se escribe \(y > x\) y se dice que \(y\) es mayor que \(x\).
+
+En particular \(x > 0\) significa que \(x \in P\), esto es, que \(x\) es positivo, mientras que \(x < 0\) quiere decir que \(x\) es negativo, es decir, que \(-x \in P\). Si \(x \in P\) e \(y \in -P\) se tiene siempre \(x > y\).
+
+La relación de orden \(x < y\) en un cuerpo ordenado \(K\) goza de las siguientes propiedades:
+
+O1. Transitividad – si \(x < y\) e \(y < z\) entonces \(x < z\).\\
+O2. Tricotomía – dados \(x, y \in K\), ocurre exactamente una de las siguientes alternativas: o \(x = y\), o \(x < y\), o \(x > y\).\\
+O3. Monotonicidad de la adición – si \(x < y\) entonces, para todo \(z \in K\), se tiene \(x + z < y + z\).\\
+O4. Monotonicidad de la multiplicación – si \(x < y\) entonces, para todo \(z > 0\), se tiene \(xz < yz\). Si, en cambio, \(z < 0\), entonces \(x < y\) implica \(xz > yz\).
+
+Demostremos estas propiedades:
+
+O1. Decir \(x < y\) e \(y < z\) significa afirmar que \(y - x \in P\) y \(z - y \in P\). Por P1 concluimos que \((z - y) + (y - x) \in P\), es decir, \(z - x \in P\), lo que significa \(x < z\).
+
+O2. Dados \(x, y \in K\), o bien \(y - x \in P\), o bien \(y - x = 0\), o bien \(y - x \in -P\) (esto es, \(x - y \in P\)). En el primer caso se tiene \(x < y\), en el segundo \(x = y\) y en el tercero \(x > y\). Estas posibilidades se excluyen mutuamente, por P2.
+
+O3. Si \(x < y\) entonces \(y - x \in P\), de donde \((y + z) - (x + z) = y - x \in P\). Esto significa que \(x + z < y + z\).
+
+O4. Si \(x < y\) y \(z > 0\) entonces \(y - x \in P\) y \(z \in P\). Luego \((y - x) \cdot z \in P\), es decir, \(y \cdot z - x \cdot z \in P\), lo que significa \(x \cdot z < y \cdot z\). Si, en cambio, \(x < y\) y \(z < 0\), entonces \(y - x \in P\) y \(-z \in P\), de donde \((y - x) \cdot (-z) \in P\), es decir, \(x \cdot z - y \cdot z \in P\), lo que significa \(y \cdot z < x \cdot z\).
+
+En particular, en un cuerpo ordenado \(K\), \(x < y\) es equivalente a \(-y < -x\). Basta multiplicar ambos miembros de cualquiera de estas desigualdades por \(-1\).
+
+Se sigue de O1 y O3 que \(x < y\) y \(x' < y'\) implica \(x + x' < y + y'\), es decir, se pueden sumar dos desigualdades miembro a miembro. En efecto, por O3, \(x < y \Rightarrow x + x' < y + x'\) y \(x' < y' \Rightarrow y + x' < y + y'\). Por O1, concluimos \(x + x' < y + y'\).
+
+Análogamente, de O1 y O4 se sigue que \(0 < x < y\) y \(0 < x' < y'\) implican \(xx' < yy'\), es decir, se pueden multiplicar miembro a miembro dos desigualdades formadas por elementos positivos.
+
+En un cuerpo ordenado \(K\), el producto de un elemento \(x > 0\) por un elemento \(y < 0\) da un elemento \(xy < 0\). (Basta observar que \(x(-y) = -(x \cdot y)\) o bien multiplicar ambos miembros de \(y < 0\) por \(x\)). Como \(1 > 0\), concluimos de \(x \cdot x^{-1} = 1\) que si \(x > 0\) debe ser \(x^{-1} > 0\) también. Así, el inverso de un elemento positivo es positivo. Se sigue que \(x > 0\) e \(y > 0\) implica \(x/y > 0\).
+
+Si \(x < y\) y ambos son positivos, entonces \(y^{-1} < x^{-1}\). Basta observar que \(\frac{1}{y} - \frac{1}{x} = \frac{x-y}{xy}\).
+
+En un cuerpo ordenado \(K\), se escribe \(x \leq y\) para significar que \(x < y\) o \(x = y\). Se lee: "\(x\) es menor o igual que \(y\)". En las mismas circunstancias, se escribe \(y \geq x\). Esto quiere decir, evidentemente, que \(y - x \in P \cup \{0\}\). Los elementos del conjunto \(P \cup \{0\}\) se llaman no negativos y se caracterizan por la relación \(x \geq 0\).
+
+Se tiene, evidentemente, \(x \leq x\) para todo \(x \in K\).
+
+Dados \(x, y \in K\), se tiene \(x = y\) si, y solamente si, \(x \leq y\) e \(y \leq x\). Es muy frecuente, en Análisis, probar que dos números \(x\) e \(y\) son iguales mostrando primero que \(x \leq y\) y, después, que \(y \leq x\).
+
+Con la excepción de O2 (tricotomía), que es sustituida por las propiedades \(x \leq x\) (reflexividad) y \(x \leq y\), \(y \leq x \Rightarrow x = y\) (antisimetría), todas las propiedades demostradas arriba para la relación \(x < y\) se trasladan a \(x \leq y\).
+
+En un cuerpo ordenado \(K\), como \(1 > 0\), tenemos \(1 < 1+1 < 1+1+1 < \ldots\) y el subconjunto de \(K\) formado por estos elementos es, por tanto, infinito. Más precisamente, vamos a mostrar cómo se puede considerar el conjunto \(\mathbb{N}\) de los números naturales inmerso de manera natural en \(K\).
+
+Temporalmente, indiquemos con el símbolo \(1'\) el elemento unidad del cuerpo ordenado \(K\). Definamos una función \(f: \mathbb{N} \to K\) poniendo \(f(1) = 1'\), \(f(2) = 1' + 1'\), etc. La manera correcta de definir \(f\) es por inducción: \(f(1) = 1'\) y \(f(m+1) = f(m) + 1'\). Por inducción, se verifica que \(f(m+n) = f(m) + f(n)\) y que (como todos los valores \(f(n)\) son positivos) \(m < p \Rightarrow f(m) < f(p)\). Así, la función \(f: \mathbb{N} \to K\) define una biyección del conjunto \(\mathbb{N}\) de los números naturales sobre un subconjunto \(\mathbb{N}' = f(\mathbb{N})\), formado por los elementos \(1', 1'+1', 1'+1'+1', \ldots\). Se acostumbra identificar \(\mathbb{N}'\) con \(\mathbb{N}\) y considerar los números naturales contenidos en \(K\). Esto es lo que haremos. Tenemos \(\mathbb{N} \subset K\) y volvemos a escribir \(1\), en lugar de \(1'\).
+
+En particular, todo cuerpo ordenado es infinito y tiene "característica cero", es decir, \(1+1+\cdots+1 \neq 0\) siempre.
+
+Dado el cuerpo ordenado \(K\) y considerando \(\mathbb{N} \subset K\), como estamos haciendo, los simétricos \(-n\) de los elementos \(n \in \mathbb{N}\) y además el cero (\(0 \in K\)) constituyen un grupo abeliano, que se identifica con el grupo \(\mathbb{Z}\) de los enteros. Así, tenemos \(\mathbb{N} \subset \mathbb{Z} \subset K\).
+
+Aún más, dados \(m, n \in \mathbb{Z}\), con \(n \neq 0\), existe el inverso \(n^{-1} \in K\). Podemos, por tanto, referirnos al conjunto formado por todos los elementos \(m \cdot n^{-1} = m/n \in K\), donde \(m, n \in \mathbb{Z}\) y \(n \neq 0\). Este conjunto es un subcuerpo de \(K\) (es decir, las operaciones de \(K\), cuando se aplican a elementos de este conjunto, dan resultados aún dentro del conjunto). Se trata del menor subcuerpo de \(K\). En efecto, todo subcuerpo debe contener al menos \(0\) y \(1\); por adiciones sucesivas de \(1\), todo subcuerpo de \(K\) debe contener a \(\mathbb{N}\); por toma de simétricos, debe contener a \(\mathbb{Z}\) y, por divisiones en \(\mathbb{Z}\), debe contener al conjunto de las fracciones \(m/n\), \(m, n \in \mathbb{Z}\), \(n \neq 0\). Evidentemente, este menor subcuerpo de \(K\) se identifica con el cuerpo \(\mathbb{Q}\) de los números racionales.
+
+Concluimos así que, dado un cuerpo ordenado \(K\), podemos considerar, de modo natural, las inclusiones \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset K\). Por ejemplo, el cuerpo \(\mathbb{Q}(t)\) contiene las fracciones del tipo \(p/q\), donde \(p\) y \(q\) son polinomios constantes, enteros, con \(q \neq 0\). Estas fracciones forman el cuerpo \(\mathbb{Q}\) y se tiene \(\mathbb{Q} \subset \mathbb{Q}(t)\).
+
+Ejemplo 8. Desigualdad de Bernoulli. En todo cuerpo ordenado \(K\), si \(n \in \mathbb{N}\) y \(x \geq -1\), vale \((1+x)^n \geq 1 + nx\). Esto se demuestra por inducción en \(n\). Para \(n = 1\) es obvio. De \((1+x)^n \geq 1 + n \cdot x\) se deduce \((1+x)^{n+1} = (1+x)^n \cdot (1+x) \geq (1 + nx)(1+x) = 1 + nx + x + nx^2 = 1 + (n+1)x + n \cdot x^2 \geq 1 + (n+1)x\). (Se multiplicaron ambos miembros de la desigualdad \((1+x)^n \ge 1+n \cdot x\) por \(1+x\). Por eso fue necesario suponer \(x \ge -1\)). Cuando \(n > 1\) (\(n \in \mathbb{N}\)) y \(x > -1\), se tiene, por el mismo argumento, la desigualdad estricta \((1+x)^n > 1+n \cdot x\), siempre que \(x \neq 0\).
+
+\textbf{Observación sobre la buena ordenación}
+
+El Principio de la Buena Ordenación no se aplica inmediatamente al conjunto \(\mathbb{Z}\) de los enteros. Existen conjuntos no vacíos de números enteros que no poseen un menor elemento. El propio \(\mathbb{Z}\) es uno de ellos: cualquiera que sea \(n \in \mathbb{Z}\), el entero \(n-1\) es menor que \(n\), luego no existe un entero \(n_0\) menor que todos los demás. También el conjunto \(A = \{ \ldots, -4, -2, 0, 2, \ldots \}\) de los enteros pares, es decir \(A = \{2n; n \in \mathbb{Z}\}\), no posee un menor elemento. En general, si \(X \subset \mathbb{N}\) es un conjunto infinito de números naturales, entonces el conjunto \(-X = \{-n; n \in X\}\) es un conjunto no vacío de números enteros que no posee elemento mínimo.
+
+Sin embargo, podemos constatar lo siguiente: si un conjunto no vacío \(X \subset \mathbb{Z}\) está acotado inferiormente, es decir, si existe algún \(a \in \mathbb{Z}\) tal que \(a < x\) para todo \(x \in X\), entonces \(X\) posee un elemento mínimo.
+
+Este hecho se reduce al Principio de la Buena Ordenación del siguiente modo. Siendo \(a < x\) para todo \(x \in X\), concluimos que los elementos del conjunto no vacío \(A = \{x - a; x \in X\}\) son todos números enteros positivos, es decir, \(A \subset \mathbb{N}\). Luego existe \(n_0 \in A\), \(n_0 =\) menor elemento de \(A\). Tenemos \(n_0 = x_0 - a\), con \(x_0 \in X\) y, como se verifica fácilmente, \(x_0\) es el menor elemento del conjunto \(X\).
+
+\textbf{Intervalos}
+
+En un cuerpo ordenado \(K\), existe la importante noción de intervalo. Dados \(a, b \in K\), con \(a < b\), usaremos las notaciones siguientes:
+
+\[
+\begin{array}{l@{\quad}l}
+[a, b] = \{x \in K; a \le x \le b\} & (-\infty, b] = \{x \in K; x \le b\} \\
+
+[a, b) = \{x \in K; a \le x < b\} & (-\infty, b) = \{x \in K; x < b\} \\
+
+(a, b] = \{x \in K; a < x \le b\} & [a, +\infty) = \{x \in K; a \le x\} \\
+
+(a, b) = \{x \in K; a < x < b\} & (a, +\infty) = \{x \in K; a < x\} \\ (-\infty, +\infty) & = K
+\end{array}
+\]
+
+Los cuatro intervalos de la izquierda tienen extremos \(a\) y \(b\). \([a, b]\) es un intervalo cerrado, \([a, b)\) es cerrado a la izquierda, \((a, b]\) es cerrado a la derecha y \((a, b)\) es un intervalo abierto. Estos son intervalos acotados. Los cinco intervalos de la derecha son no acotados: \((-\infty, b]\) es la semirrecta izquierda cerrada, de origen \(b\); \((-\infty, b)\) es la semirrecta izquierda abierta, de origen \(b\); \([a, +\infty)\) es la semirrecta derecha cerrada, de origen \(a\) y \((a, +\infty)\) es la semirrecta derecha abierta, de origen \(a\). Finalmente, el intervalo total \((-\infty, +\infty) = K\) puede ser considerado abierto o cerrado.
+
+Cuando consideremos un intervalo de extremos \(a\) y \(b\), suponemos siempre \(a < b\), con una excepción que destacaremos ahora. Al tomar el intervalo cerrado \([a, b]\), es conveniente admitir el caso en que \(a = b\). El intervalo \([a, a]\) consiste en un único punto \(a\) y se llama intervalo degenerado. Todo intervalo no degenerado es un conjunto infinito. Basta observar lo siguiente: en un cuerpo ordenado \(K\), si \(x < y\), entonces \(x < \frac{x+y}{2} < y\). Así, si \(I\) es un intervalo que contiene los elementos \(a, b\), con \(a < b\), podemos obtener una infinidad de elementos \(x_1, x_2, \dots, x_n, \dots\) en \(I\), tomando \(x_1 = \frac{a+b}{2}\), \(x_2 = \frac{a+x_1}{2}\), \dots, \(x_{n+1} = \frac{a+x_n}{2}\), \dots Tendremos \(a < \cdots < x_3 < x_2 < x_1 < b\).
+
+En un cuerpo ordenado \(K\), definiremos el valor absoluto de un elemento \(x\), como \(x\) si \(x \ge 0\) y \(-x\) si \(x < 0\). Usaremos el símbolo \(|x|\) para indicar el valor absoluto. Así,
+
+dado \(x \in K\), se tiene
+\[
+|x| = 
+\begin{cases}
+x & \text{si } x > 0 \\
+0 & \text{si } x = 0 \\
+-x & \text{si } x < 0
+\end{cases}
+\]
+
+La noción de valor absoluto es de la mayor importancia en Análisis. Estudiaremos ahora sus propiedades.
+
+Dado \(x\) en un cuerpo ordenado \(K\), o bien \(x\) y \(-x\) son ambos cero, o bien uno es positivo y el otro es negativo. Aquel entre \(x\) y \(-x\) que no sea negativo será llamado \(|x|\). Por tanto, \(|x|\) es el mayor de los dos números \(x\) y \(-x\). Este hecho podría haberse usado como definición:
+
+\[|x| = \max\{x, -x\}.\]
+
+Tenemos, por tanto, \(|x| \geq x\) y \(|x| \geq -x\). Esta última desigualdad puede escribirse como \(-|x| \leq x\). Así, tenemos
+
+\[-|x| \leq x \leq |x|, \text{ para todo } x \in K.\]
+
+Más generalmente, vale el
+
+\textbf{Teorema 1.} Sean \(x, a\) elementos de un cuerpo ordenado \(K\). Las siguientes afirmaciones son equivalentes:
+
+(i) \(-a \leq x \leq a\);
+
+(ii) \(x \leq a\) y \(-x \leq a\);
+
+(iii) \(|x| \leq a\).
+
+\textbf{Demostración.} \(-a \leq x \leq a \Leftrightarrow [-a \leq x \text{ y } x \leq a] \Leftrightarrow [a \geq x \text{ y } a \geq -x] \Leftrightarrow a \geq |x|\). La última equivalencia se debe al hecho de que \(|x|\) es el mayor de los dos elementos \(x\) y \(-x\).
+
+\textbf{Corolario.} Dados \(a, x, b \in K\), se tiene \(|x-a| \leq b\) si, y solamente si, \(a-b \leq x \leq a+b\).
+
+En efecto, por el teorema, \(|x-a| \leq b\) es equivalente a \(-b \leq x-a \leq b\), es decir, \(a-b \leq x \leq a+b\) (sumando \(a\)).
+
+\textbf{Observación:} Todas las afirmaciones del teorema y de su corolario son aún verdaderas con \(<\) en lugar de \(\leq\), como se verifica fácilmente.
+
+En particular, tenemos las siguientes equivalencias, que serán ampliamente utilizadas en el estudio de los límites y de las funciones continuas:
+\[\boxed{x \in (a-\varepsilon, a+\varepsilon) \Leftrightarrow a-\varepsilon < x < a+\varepsilon \Leftrightarrow |x-a| < \varepsilon}\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Si representamos geométricamente los elementos de un cuerpo ordenado como puntos de una recta, el valor absoluto \(|x-a|\) significa la distancia del punto \(x\) al punto \(a\). La relación \(x < y\) significa que \(x\) está a la izquierda de \(y\). Las equivalencias anteriores expresan el hecho de que el intervalo abierto \((a - \varepsilon, a + \varepsilon)\), de centro \(a\) y radio \(\varepsilon\), está formado por los puntos \(x\) cuya distancia a \(a\) es menor que \(\varepsilon\).
+
+\begin{center}
+\begin{tikzpicture}
+    
+    \draw[thick] (-5.5,0) -- (5.5,0);
+    
+    \node[above] at (5, 0.1) {\Large $\mathbf{K}$};
+
+    \draw[line width=2.5pt] (-2,0) -- (2,0);
+
+    \node at (-2,0) {\Large $\mathbf{(}$};
+    \node[below] at (-2,-0.2) {\large $\mathbf{a - \varepsilon}$};
+
+    \node at (2,0) {\Large $\mathbf{)}$};
+    \node[below] at (2,-0.2) {\large $\mathbf{a + \varepsilon}$};
+
+    \draw[thick] (0,-0.4) -- (0,0.4);
+    \node[below] at (0,-0.3) {\large $\mathbf{a}$};
+
+    \draw[thick] (-1,-0.4) -- (-1,0.4);
+    \node[above] at (-1,0.4) {\large $\mathbf{x}$};
+
+\end{tikzpicture}
+\end{center}
+
+Tales interpretaciones geométricas no deben intervenir en las demostraciones, pero constituyen una ayuda valiosísima para la comprensión de los conceptos y teoremas de Análisis.
+
+\textbf{Teorema 2.} Para elementos arbitrarios de un cuerpo ordenado \(K\), valen las relaciones:
+
+(i) \(|x + y| \leq |x| + |y|\);
+
+(ii) \(|x \cdot y| = |x| \cdot |y|\);
+
+(iii) \(||x| - |y|| \leq |x - y|\);
+
+(iv) \(|x - z| \leq |x - y| + |y - z|\).
+
+\textbf{Demostración.} (i) se demuestra observando que \(-|x| \leq x \leq |x|\) y \(-|y| \leq y \leq |y|\), de donde, por adición, \(-(|x| + |y|) \leq x + y \leq |x| + |y|\). Por el Teorema 1 esto significa que \(|x + y| \leq |x| + |y|\).
+
+Para probar (ii), comenzamos notando que, sea cual sea \(x \in K\), tenemos \(x^2 = |x|^2\), pues \(|x|\) es uno de los elementos \(x\) o \(-x\) y vale \(x^2 = (-x)^2\). Luego \(|x \cdot y|^2 = (x \cdot y)^2 = x^2 \cdot y^2 = |x|^2 \cdot |y|^2 = (|x| \cdot |y|)^2\). Se sigue de ahí que \(|x \cdot y| = \pm |x| \cdot |y|\). Como \(|x \cdot y|\) y \(|x| \cdot |y|\) son ambos no negativos, concluimos que \(|x \cdot y| = |x| \cdot |y|\).
+
+Ahora probemos (iii). En virtud de (i), tenemos \(|x| = |(x - y) + y| \leq |x - y| + |y|\), lo que da \(|x| - |y| \leq |x - y|\). Por el mismo motivo, tenemos \(|y| - |x| \leq |y - x|\). Ahora, es evidente que \(|y - x| = |x - y|\). Concluimos que \(|y - x| \leq |x - y|\). Así, valen simultáneamente \(|x - y| \geq |x| - |y|\) y \(|x - y| \geq -(|x| - |y|)\). Por el Teorema 1, resulta que \(||x| - |y|| \leq |x - y|\). La otra desigualdad en (iii) es obvia.
+
+La última afirmación del teorema, la desigualdad (iv), resulta de (i) aplicada a la suma \(x - z = (x - y) + (y - z)\).
+
+Un subconjunto \(X\) de un cuerpo ordenado \(K\) se llama acotado superiormente cuando existe \(b \in K\) tal que \(b \ge x\) para todo \(x \in X\). En otras palabras, se tiene \(X \subset (-\infty, b]\). Cada \(b \in K\) con esta propiedad se llama una cota superior de \(X\).
+
+Análogamente, \(X \subset K\) se dice acotado inferiormente cuando existe \(a \in K\) tal que \(x \in X \Rightarrow a \le x\). Un elemento \(a \in K\) con esta propiedad se llama una cota inferior de \(X\). Entonces se tiene \(X \subset [a, +\infty)\).
+
+Un subconjunto \(X\) de un cuerpo ordenado \(K\) se llama acotado cuando es acotado superior e inferiormente, es decir, cuando existen \(a, b \in K\) tales que \(X \subset [a, b]\).
+
+Ejemplo 9. En el cuerpo \(\mathbb{Q}\) de los números racionales, el conjunto \(\mathbb{N}\) de los números naturales es acotado inferiormente, pues \(\mathbb{N} \subset [0, \infty)\), pero no es acotado superiormente. En efecto, dado cualquier \(p/q \in \mathbb{Q}\), se tiene \(|p| + 1 \in \mathbb{N}\) y \(|p| + 1 > p/q\). El conjunto \(\mathbb{Z} \subset \mathbb{Q}\) no es acotado superiormente ni inferiormente. Constituye quizá una sorpresa el hecho de que existen cuerpos ordenados en los cuales el conjunto \(\mathbb{N}\) es acotado superiormente. Uno de ellos es el cuerpo \(\mathbb{Q}(t)\) de las funciones racionales, con el orden introducido en el Ejemplo 6. El polinomio \(p(t) = t\) es una fracción con denominador 1, y por tanto pertenece a \(\mathbb{Q}(t)\). Para todo \(n \in \mathbb{N}\) el coeficiente del término de más alto grado de \(t - n\) es positivo (\(= 1\)), luego \(t - n \in \mathbb{P}\). Luego, tenemos \(n < t\) cualquiera que sea \(n \in \mathbb{N}\), es decir, \(p(t) = t\) es una cota superior para \(\mathbb{N}\) en \(\mathbb{Q}(t)\). En este cuerpo, por tanto, el conjunto \(\mathbb{N}\) es acotado.
+
+A propósito de esta situación, tenemos la proposición siguiente.
+
+\textbf{Teorema 3.} En un cuerpo ordenado \(K\), las siguientes afirmaciones son equivalentes:
+
+(i) \(\mathbb{N} \subset K\) es no acotado superiormente;
+
+(ii) dados \(a, b \in K\), con \(a > 0\), existe \(n \in \mathbb{N}\) tal que \(n \cdot a > b\);
+
+(iii) dado cualquier \(a > 0\) en \(K\), existe \(n \in \mathbb{N}\) tal que \(0 < \frac{1}{n} < a\).
+
+\textbf{Demostración.} (i) \(\Rightarrow\) (ii). Como \(\mathbb{N}\) es no acotado, dados \(a > 0\) y \(b\) en \(K\), existe \(n \in \mathbb{N}\) tal que \(\frac{b}{a} < n\) y, por tanto, \(b < a \cdot n\). Para probar que (ii) \(\Rightarrow\) (iii), dado \(a > 0\), existe, en virtud de (ii), un \(n \in \mathbb{N}\) tal que \(n \cdot a > 1\). Entonces \(0 < \frac{1}{n} < a\). Finalmente, mostremos que (iii) \(\Rightarrow\) (i). Dado cualquier \(b > 0\) existe, por (iii), un \(n \in \mathbb{N}\) tal que \(\frac{1}{n} < \frac{1}{b}\), es decir \(n > b\). Así, ningún elemento \(> 0\) en \(K\) puede ser cota superior de \(\mathbb{N}\). Evidentemente, un elemento \(\leq 0\) tampoco puede. Luego \(\mathbb{N}\) es no acotado superiormente.
+
+Un cuerpo ordenado \(K\) se llama arquimediano cuando en él es válida cualquiera de las tres condiciones equivalentes citadas en el Teorema 3.
+
+Así, el cuerpo \(\mathbb{Q}\) de los números racionales es arquimediano, mientras que el cuerpo \(\mathbb{Q}(t)\) de las funciones racionales, con el orden introducido en el Ejemplo 6, es no arquimediano.
+
+\section{Números reales}
+
+Sean \(K\) un cuerpo ordenado y \(X \subset K\) un subconjunto acotado superiormente. Un elemento \(b \in K\) se llama supremo del subconjunto \(X\) cuando \(b\) es la menor de las cotas superiores de \(X\) en \(K\). (A veces se dice "extremo superior" en lugar de "supremo".)
+
 \end{document}
