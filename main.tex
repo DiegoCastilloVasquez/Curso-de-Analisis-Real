@@ -77,7 +77,6 @@ El conjunto de los números enteros (positivos, negativos y cero) será indicado
 \[ \mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}. \]
 
 El conjunto \( \mathbb{Q} \), de los números racionales, está formado por las fracciones \( p/q \), donde \( p \) y \( q \) pertenecen a \( \mathbb{Z} \), siendo \( q \neq 0 \). En símbolos,
-
 \[
 \mathbb{Q} = \{p/q \; ; \quad p \in \mathbb{Z}, \quad q \in \mathbb{Z}, \quad q \neq 0\}.
 \]
@@ -85,13 +84,11 @@ El conjunto \( \mathbb{Q} \), de los números racionales, está formado por las 
 Se lee: "\( \mathbb{Q} \) es el conjunto de las fracciones \( p/q \) tales que \( p \) pertenece a \( \mathbb{Z} \), \( q \) pertenece a \( \mathbb{Z} \) y \( q \) es diferente de cero".
 
 La mayoría de los conjuntos encontrados en Matemática no se definen especificando, uno a uno, sus elementos. El método más frecuente para definir un conjunto es mediante una propiedad común y exclusiva de sus elementos. Más precisamente, se parte de una propiedad \( P \). Ella define un conjunto \( X \) así: si un objeto \( x \) goza de la propiedad \( P \), entonces \( x \in X \); si \( x \) no goza de \( P \), entonces \( x \notin X \). Se escribe
-
 \[X = \{x \; ; \quad x \text{ goza de la propiedad } P\}.\]
 
 Se lee: "\( X \) es el conjunto de los elementos \( x \) tales que \( x \) goza de la propiedad \( P \)".
 
 Muchas veces la propiedad \( P \) se refiere a elementos de un conjunto fundamental \( E \). En este caso, se escribe
-
 \[X = \{x \in E \; ; \quad x \text{ goza de la propiedad } P\}.\]
 
 Por ejemplo, sea \( \mathbb{N} \) el conjunto de los números naturales y consideremos la siguiente propiedad, que se refiere a un elemento genérico \( x \in \mathbb{N} \):
@@ -99,7 +96,6 @@ Por ejemplo, sea \( \mathbb{N} \) el conjunto de los números naturales y consid
 "\( x \) es mayor que 5".
 
 La propiedad \( P \), de que un número natural sea mayor que 5, define el conjunto \( X = \{6, 7, 8, 9, \dots\} \), es decir,
-
 \[X = \{x \in \mathbb{N} \; ; \quad x > 5\}.\]
 
 Se lee: "\( X \) es el conjunto de los \( x \) pertenecientes a \( \mathbb{N} \) tales que \( x \) es mayor que 5".
@@ -113,7 +109,6 @@ Cualquiera que sea \(x\), se tiene \(x \notin \emptyset\).
 Por ejemplo, tenemos \(\{x \in \mathbb{N}; 1 < x < 2\} = \emptyset\). Y también, \(\{x; x \neq x\} = \emptyset\).
 
 Dados los conjuntos \(A\) y \(B\), decimos que \(A\) es subconjunto de \(B\) cuando todo elemento de \(A\) es también elemento de \(B\). Para indicar este hecho, se usa la notación
-
 \[A \subset B.\]
 
 Cuando \(A \subset B\), se dice también que \(A\) es parte de \(B\), que \(A\) está incluido en \(B\), o contenido en \(B\). La relación \(A \subset B\) se llama relación de inclusión.
@@ -129,7 +124,6 @@ Afirmar \(x \in X\) equivale a afirmar \(\{x\} \subset X\).
 Para mostrar que un conjunto \(X\) no es subconjunto de un conjunto \(Y\), se debe obtener un elemento de \(X\) que no pertenezca a \(Y\). Así, por ejemplo, no se tiene \(\mathbb{Q} \subset \mathbb{Z}\), pues \(1/2 \in \mathbb{Q}\) y \(1/2\) no es entero.
 
 De ello se sigue que el conjunto vacío \(\emptyset\) es subconjunto de cualquier conjunto \(X\). En efecto, si no fuera \(\emptyset \subset X\), existiría algún \(x \in \emptyset\) tal que \(x \notin X\). Como no existe \(x \in \emptyset\), estamos obligados a admitir que
-
 \[\emptyset \subset X,\]
 
 sea cual sea el conjunto \(X\).
@@ -151,25 +145,21 @@ En el caso de conjuntos, escribir \(A = B\) significa que \(A\) y \(B\) son el m
 Dado un conjunto \(X\), se indica con \(\mathcal{P}(X)\) el conjunto cuyos elementos son las partes de \(X\). En otras palabras, afirmar que \(A \in \mathcal{P}(X)\) es lo mismo que decir \(A \subset X\). \(\mathcal{P}(X)\) se llama el conjunto de las partes de \(X\). Nunca es vacío: se tiene al menos \(\emptyset \in \mathcal{P}(X)\) y \(X \in \mathcal{P}(X)\).
 
 Ejemplo 4. Sea \(X = \{1, 2, 3\}\). Entonces
-
 \[
 \mathcal{P}(X) = \{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, X\}.
 \]
 
 Sean \(P\) y \(Q\) propiedades que se refieren a elementos de un cierto conjunto \(E\). Las propiedades \(P\) y \(Q\) definen subconjuntos \(X\) e \(Y\) de \(E\), a saber:
-
 \[
 X = \{x \in E \; ; \quad x \text{ goza de } P\} \quad \text{y} \quad Y = \{y \in E \; ; \quad y \text{ goza de } Q\}.
 \]
 
 Las afirmaciones "P implica Q", "si P, entonces Q", "P acarrea Q", "P es condición suficiente para Q", "Q es condición necesaria para P" tienen todas el mismo significado. Quieren decir que \(X \subset Y\), es decir, que todo objeto que goza de P también goza de Q. Para expresar este hecho, se usa la notación
-
 \[
 P \Rightarrow Q.
 \]
 
 También las afirmaciones "P si, y solo si, Q", "P es condición necesaria y suficiente para Q" tienen todas el mismo significado. Quieren decir que \(P \Rightarrow Q\) y \(Q \Rightarrow P\), o sea, que el conjunto \(X\) de los elementos que gozan de la propiedad \(P\) coincide con el conjunto \(Y\) de los elementos que gozan de \(Q\). La notación que expresa este hecho es
-
 \[
 P \Leftrightarrow Q.
 \]
@@ -177,7 +167,6 @@ P \Leftrightarrow Q.
 \section{Operaciones entre conjuntos}
 
 La unión de los conjuntos \(A\) y \(B\) es el conjunto \(A \cup B\), formado por los elementos de \(A\) más los elementos de \(B\). Así, afirmar que \(x \in A \cup B\) significa decir que al menos una de las siguientes afirmaciones es verdadera: \(x \in A\) o \(x \in B\). Podemos entonces escribir:
-
 \[
 A \cup B = \{x \; ; \quad x \in A \text{ o } x \in B\}.
 \]
@@ -214,7 +203,6 @@ En la figura anterior, donde \(A\) y \(B\) son discos, la unión \(A \cup B\) es
 Sean cuales fueren los conjuntos \(A\) y \(B\), se tiene \(A \subset A \cup B\) y \(B \subset A \cup B\).
 
 La intersección de los conjuntos \(A\) y \(B\) es el conjunto \(A \cap B\), formado por los elementos comunes a \(A\) y \(B\). Así, afirmar que \(x \in A \cap B\) significa decir que se tiene, al mismo tiempo, \(x \in A\) y \(x \in B\). Escribimos entonces
-
 \[
 A \cap B = \{x \; ; \quad x \in A \text{ y } x \in B\}.
 \]
@@ -280,7 +268,6 @@ La demostración de cualquiera de estas propiedades se reduce al manejo adecuado
 Vamos a demostrar ahora U7. Primeramente probaremos que \(A \cup (B \cap C) \subset (A \cup B) \cap (A \cup C)\). Dado \(x \in A \cup (B \cap C)\), se tiene \(x \in A\) o, entonces, \(x \in B \cap C\). En el primer caso, viene \(x \in A \cup B\) y \(x \in A \cup C\), de donde \(x \in (A \cup B) \cap (A \cup C)\). En el segundo caso tenemos \(x \in B\) y \(x \in C\). De \(x \in B\) se sigue \(x \in A \cup B\) y de \(x \in C\) se concluye \(x \in A \cup C\). Luego, \(x \in A \cup B\) y \(x \in A \cup C\), es decir, \(x \in (A \cup B) \cap (A \cup C)\). En cualquier hipótesis, \(x \in A \cup (B \cap C)\) implica \(x \in (A \cup B) \cap (A \cup C)\). Esto quiere decir: \(A \cup (B \cap C) \subset (A \cup B) \cap (A \cup C)\). Ahora mostraremos que \((A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)\). Para esto, sea \(x \in (A \cup B) \cap (A \cup C)\). Entonces \(x \in A \cup B\) y \(x \in A \cup C\). Dentro de esta situación, hay dos posibilidades: o \(x \in A\) o \(x \notin A\). Si \(x \notin A\), entonces (como \(x \in A \cup B\) y \(x \in A \cup C\)) debe ser \(x \in B\) y \(x \in C\), esto es, \(x \in B \cap C\) y, por tanto, \(x \in A \cup (B \cap C)\). Si \(x \in A\) entonces evidentemente \(x \in A \cup (B \cap C)\). En cualquier hipótesis, \(x \in (A \cup B) \cap (A \cup C)\) implica \(x \in A \cup (B \cap C)\), o sea, \((A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)\), como queríamos probar.
 
 La diferencia entre los conjuntos \(A\) y \(B\) es el conjunto \(A - B\), formado por los elementos de \(A\) que no pertenecen a \(B\). En símbolos:
-
 \[
 A - B = \{x \; ; \quad x \in A \text{ y } x \notin B\}.
 \]
@@ -315,7 +302,6 @@ En la figura anterior, donde los conjuntos \(A\) y \(B\) están representados po
 No se exige que \(B\) esté contenido en \(A\) para formar la diferencia \(A - B\). Cuando \(A\) y \(B\) son disjuntos, ningún elemento de \(A\) pertenece a \(B\); por tanto, \(A - B = A\). En cualquier caso, se tiene \(A - B = A - (A \cap B)\).
 
 Cuando se tiene \(B \subset A\), la diferencia \(A - B\) se llama el complementario de \(B\) en relación con \(A\) y se escribe
-
 \[
 A - B = \mathcal{C}_A B.
 \]
@@ -325,7 +311,6 @@ Frecuentemente, se tiene un conjunto \(E\) que contiene todos los conjuntos que 
 Por ejemplo, en los capítulos siguientes estaremos estudiando subconjuntos del conjunto \(\mathbb{R}\), de los números reales. Dado \(X \subset \mathbb{R}\), la diferencia \(\mathbb{R} - X\) será llamada el complementario de \(X\) e indicada por el símbolo \(\mathcal{C}X\), sin necesidad de mencionar explícitamente que se trata del complementario en relación con \(\mathbb{R}\).
 
 Confirmando: si nos restringimos a considerar elementos pertenecientes a un conjunto básico \(E\), entonces
-
 \[
 x \in \mathcal{C}X \iff x \notin X.
 \]
@@ -333,7 +318,6 @@ x \in \mathcal{C}X \iff x \notin X.
 Ejemplo 7. Sean \( A = \{x \in \mathbb{Z}; x \geq -3\} \) y \( B = \{x \in \mathbb{Z}; x \leq 2\} \). Entonces \( A - B = \{x \in \mathbb{Z}; x \geq 3\} \) y \( B - A = \{x \in \mathbb{Z}; x \leq -4\} \). Tomando \(\mathbb{Z}\) como conjunto básico, entonces \( \mathcal{C}A = \{\text{enteros menores que } -3\} \) y \( \mathcal{C}B = \{\text{enteros mayores que } 2\} \).
 
 La noción de diferencia se reduce a la de complementario del siguiente modo: dados \( A \) y \( B \), contenidos en un conjunto fundamental \( E \), respecto del cual tomamos complementarios, tenemos:
-
 \[
 A - B = A \cap \mathcal{C}B.
 \]
@@ -416,7 +400,6 @@ En la figura de la izquierda, \( A \) es un disco, contenido en el rectángulo, 
 Otra operación útil entre conjuntos es el producto cartesiano. Se basa en el concepto de par ordenado, que discutiremos ahora.
 
 Dados los objetos \( a, b \), el par ordenado \( (a, b) \) queda formado cuando se elige uno de esos objetos (a saber: \( a \)) para ser la primera coordenada del par y (consecuentemente) el objeto \( b \) para ser la segunda coordenada del par. Dos pares ordenados \( (a, b) \) y \( (a', b') \) serán llamados iguales cuando sus primeras coordenadas, \(a\) y \(a'\), sean iguales y sus segundas coordenadas, \(b\) y \(b'\), también. Así
-
 \[
 (a, b) = (a', b') \iff a = a' \text{ y } b = b'.
 \]
@@ -424,7 +407,6 @@ Dados los objetos \( a, b \), el par ordenado \( (a, b) \) queda formado cuando 
 No se debe confundir el par ordenado \((a, b)\) con el conjunto \(\{a, b\}\). En efecto, como dos conjuntos que poseen los mismos elementos son iguales, tenemos \(\{a, b\} = \{b, a\}\), sean cuales fueren \(a\) y \(b\). Por otro lado, por la definición de igualdad entre pares ordenados solo tenemos \((a, b) = (b, a)\) cuando \(a = b\). Notemos además que \(\{a, a\} = \{a\}\), mientras que \((a, a)\) es un par ordenado legítimo.
 
 El producto cartesiano de los conjuntos \(A\) y \(B\) es el conjunto \(A \times B\) cuyos elementos son todos los pares ordenados \((a, b)\) cuya primera coordenada pertenece a \(A\) y la segunda a \(B\). Por tanto:
-
 \[
 A \times B = \{(a, b) \; ; \quad a \in A \text{ y } b \in B\}.
 \]
@@ -523,7 +505,6 @@ Ejemplo 11. Sean \(A = B = \mathbb{Q}\). Intentemos definir una función \(f: \m
 Ejemplo 12. Sea \(T\) el conjunto de los triángulos del plano y \(\mathbb{R}^+\) el conjunto de los números reales positivos. Consideremos el intento de definir una función \(f: \mathbb{R}^+ \to T\) mediante la siguiente regla: a cada número real \(x > 0\) hagamos corresponder el triángulo \(f(x)\) cuya área es \(x\). Evidentemente, hay ambigüedades: dado un número real \(x > 0\), existe una infinidad de triángulos cuyo área es \(x\). La regla no define una función.
 
 El gráfico de una función \(f: A \to B\) es el subconjunto \(G(f)\) del producto cartesiano \(A \times B\) formado por los pares ordenados \((x, f(x))\), donde \(x \in A\) es arbitrario. Es decir,
-
 \[
 G(f) = \{(x, y) \in A \times B \; ; \quad y = f(x)\}.
 \]
@@ -599,7 +580,6 @@ La más simple de las biyecciones es la función identidad \(\text{id}_A: A \to 
 Por ejemplo, dados arbitrariamente \(a, b\) en \(\mathbb{Q}\), con \(a \neq 0\), la función \(f: \mathbb{Q} \to \mathbb{Q}\), definida por \(f(x) = ax + b\), es una biyección. En efecto, si \(f(x) = f(y)\), es decir, \(ax + b = ay + b\) entonces, sumando \(-b\) a ambos miembros, viene \(ax = ay\). Multiplicando ambos miembros por \(1/a\), obtenemos \(x = y\). Así, \(f\) es inyectiva. Además, dado \(y \in \mathbb{Q}\) cualquiera, el número racional \(x = (y - b)/a\) es tal que \(ax + b = y\), esto es, \(f(x) = y\), de donde \(f\) es sobreyectiva.
 
 Dadas una función \(f: A \to B\) y una parte \(X \subset A\), se llama imagen de \(X\) por la función \(f\) al conjunto \(f(X)\) formado por los valores \(f(x)\) que \(f\) asume en los puntos \(x \in X\). Así
-
 \[
 f(X) = \{f(x) \; ; \quad x \in X\} = \{y \in B \; ; \quad y = f(x), \; x \in X\}.
 \]
@@ -630,7 +610,6 @@ En efecto, dado \(y \in f(X) \cap f(Y)\), tenemos \(y \in f(X)\) e \(y \in f(Y)\
 En resumen, para que se tenga \(f(X \cap Y) = f(X) \cap f(Y)\) para cualesquiera \(X, Y\) contenidos en \(A\), es necesario y suficiente que la función \(f: A \to B\) sea inyectiva.
 
 Dada una función \(f: A \to B\), consideremos un conjunto \(Y \subset B\). La imagen inversa de \(Y\) por la función \(f\) es el conjunto \(f^{-1}(Y)\), formado por todos los \(x \in A\) tales que \(f(x) \in Y\). Así:
-
 \[
 f^{-1}(Y) = \{x \in A \; ; \quad f(x) \in Y\}.
 \]
@@ -661,7 +640,6 @@ Inv3) \(x \in f^{-1}(\mathcal{C}Y) \iff f(x) \in \mathcal{C}Y \iff f(x) \notin Y
 \section{Composición de funciones}
 
 Sean \(f: A \to B\) y \(g: B \to C\) funciones tales que el dominio de \(g\) es igual al codominio de \(f\). En este caso, podemos definir la función compuesta \(g \circ f: A \to C\), que consiste en aplicar primero \(f\) y después \(g\). Más precisamente,
-
 \[
 (g \circ f)(x) = g(f(x)) \quad \text{para todo } x \in A.
 \]
@@ -748,7 +726,6 @@ Tomemos, por ejemplo, \(L = \{1, 2\}\) como conjunto de índices. Dado un conjun
 Cuando \(L = \{1, 2, \dots, n\}\) es el conjunto de los números naturales desde 1 hasta \(n\), una familia \(x: L \to X\) se llama una \(n\)-upla de elementos de \(X\). Una \(n\)-upla \(x = (x_i)_{i \in L}\) se representa comúnmente por la notación \(x = (x_1, \dots, x_n)\). El elemento \(x_i\) se llama la \(i\)-ésima coordenada de la \(n\)-upla \(x = (x_1, \dots, x_n)\).
 
 Sea \((A_\lambda)_{\lambda \in L}\) una familia de conjuntos con índices en \(L\). (Esto quiere decir: a cada \(\lambda \in L\) hacemos corresponder un conjunto \(A_\lambda\).) La unión de esa familia es el conjunto de los elementos que pertenecen al menos a uno de los conjuntos \(A_\lambda\). Se representa por la notación \(\bigcup_{\lambda \in L} A_\lambda\) o, simplemente, \(\bigcup A_\lambda\). Así
-
 \[
 \bigcup_{\lambda \in L} A_\lambda = \{x \; ; \quad \text{existe } \lambda \in L \text{ con } x \in A_\lambda\}.
 \]
@@ -758,13 +735,11 @@ En otras palabras, \(\bigcup A_\lambda\) es el conjunto de los elementos que per
 Análogamente, la intersección de la familia \((A_\lambda)_{\lambda \in L}\) es el conjunto de los elementos que pertenecen simultáneamente a todos los \(A_\lambda\).
 
 Notación: \(\bigcap_{\lambda \in L} A_\lambda\) o simplemente \(\bigcap A_\lambda\). Por tanto,
-
 \[
 \bigcap_{\lambda \in L} A_\lambda = \{x \; ; \quad x \in A_\lambda \text{ para todo } \lambda \in L\}.
 \]
 
 Cuando \(L = \{1, 2, \dots, n\}\), se escribe
-
 \[
 \bigcup_{i \in L} A_i = \bigcup_{i=1}^n A_i = A_1 \cup \cdots \cup A_n,
 \]
@@ -775,7 +750,6 @@ Cuando \(L = \{1, 2, \dots, n\}\), se escribe
 Una familia con índices en el conjunto \(\mathbb{N} = \{1, 2, \dots\}\) de los números naturales se llama una sucesión. Así, una sucesión \(x = (x_n)_{n \in \mathbb{N}} = (x_1, x_2, \dots, x_n, \dots)\) de elementos de un conjunto \(X\) es una función \(x: \mathbb{N} \to X\), donde el valor \(x(n)\) se indica con el símbolo \(x_n\) y se llama el n-ésimo término de la sucesión.
 
 Dada una sucesión de conjuntos \((A_n)_{n \in \mathbb{N}}\), su unión y su intersección se representan por
-
 \[
 \bigcup_{n \in \mathbb{N}} A_n = \bigcup_{n=1}^\infty A_n = A_1 \cup A_2 \cup \cdots \cup A_n \cup \cdots,
 \]
@@ -784,13 +758,11 @@ Dada una sucesión de conjuntos \((A_n)_{n \in \mathbb{N}}\), su unión y su int
 \]
 
 Ejemplo 18. Para cada \(n \in \mathbb{N}\), consideremos el conjunto
-
 \[
 A_n = \{-n, -n+1, \dots, -1, 0, 1, \dots, n-1, n\}.
 \]
 
 Entonces
-
 \[
 \bigcup_{n=1}^\infty A_n = \mathbb{Z} \quad \text{y} \quad \bigcap_{n=1}^\infty A_n = \{-1, 0, 1\},
 \]
@@ -798,13 +770,10 @@ Entonces
 como se ve fácilmente.
 
 Dada una familia \((A_\lambda)_{\lambda \in L}\) de subconjuntos de un conjunto fundamental \(E\), se tiene
-
 \[
 \mathcal{C}\left(\bigcup A_\lambda\right) = \bigcap \mathcal{C} A_\lambda
 \]
-
 y
-
 \[
 \mathcal{C}\left(\bigcap A_\lambda\right) = \bigcup \mathcal{C} A_\lambda.
 \]
@@ -812,7 +781,6 @@ y
 En efecto, dado \(x \in E\), tenemos sucesivamente \(x \in \mathcal{C}(\bigcup A_\lambda) \iff x \notin \bigcup A_\lambda \iff\) no existe \(\lambda \in L\) tal que \(x \in A_\lambda \iff x \notin A_\lambda\) para todo \(\lambda \in L \iff x \in \mathcal{C} A_\lambda\) para todo \(\lambda \in L \iff x \in \bigcap \mathcal{C} A_\lambda\).
 
 Esto prueba la primera igualdad. La segunda es consecuencia, teniendo en cuenta que \(\mathcal{C}(\mathcal{C}X) = X\). En efecto, si escribimos \(\mathcal{C} A_\lambda = B_\lambda\), tenemos \(\mathcal{C} B_\lambda = A_\lambda\). Luego
-
 \[
 \mathcal{C}\left(\bigcap A_\lambda\right) = \mathcal{C}\left(\bigcap \mathcal{C} B_\lambda\right) = \mathcal{C}\left(\mathcal{C}\left(\bigcup B_\lambda\right)\right) = \bigcup B_\lambda = \bigcup \mathcal{C} A_\lambda.
 \]
@@ -820,7 +788,6 @@ Esto prueba la primera igualdad. La segunda es consecuencia, teniendo en cuenta 
 Ejemplo 19. Sea \((A_\lambda)_{\lambda \in L}\) una familia de subconjuntos de un conjunto \(E\). Afirmar que \(\bigcup A_\lambda = E\) equivale a decir que, para todo elemento \(x \in E\) existe al menos un \(\lambda \in L\) tal que \(x \in A_\lambda\). Sea \(B_\lambda = \mathcal{C} A_\lambda\). Se tiene \(\bigcup A_\lambda = E\) si, y solo si, la intersección de los \(B_\lambda\) es vacía, esto es, \(\bigcap B_\lambda = \emptyset\). En efecto, por lo que vimos \(\bigcap B_\lambda = \mathcal{C}(\bigcup A_\lambda)\).
 
 Dada una función \(f: A \to B\), consideremos una familia \((A_\lambda)_{\lambda \in L}\) de subconjuntos de \(A\), y una familia \((B_\mu)_{\mu \in M}\) de subconjuntos de \(B\). Se tiene
-
 \[
 f\left(\bigcup A_\lambda\right) = \bigcup f(A_\lambda),
 \]
@@ -850,7 +817,6 @@ y \in f\left(\bigcup A_\lambda\right) \iff \text{existe } x \in \bigcup A_\lambd
 \]
 
 Dado \( x \in A \), tenemos
-
 \[
 x \in f^{-1}(\cap B_\mu) \iff f(x) \in \cap B_\mu \iff f(x) \in B_\mu \text{ para todo } \mu \in M
 \]
@@ -861,7 +827,6 @@ x \in f^{-1}(\cap B_\mu) \iff f(x) \in \cap B_\mu \iff f(x) \in B_\mu \text{ par
 La noción de familia permite considerar productos cartesianos de una cantidad arbitraria de conjuntos.
 
 Dados los conjuntos \( A_1, \ldots, A_n \), su producto cartesiano
-
 \[
 A = A_1 \times \cdots \times A_n = \prod_{i=1}^n A_i
 \]
@@ -879,7 +844,6 @@ En el producto cartesiano \( A = A_1 \times \cdots \times A_n \), destacan las p
 Sea \( X \subset A_1 \times \cdots \times A_n \). Los elementos \( x = (x_1, \ldots, x_n) \) de \( X \) poseen \( n \) coordenadas. Las funciones \( f : X \to B \), definidas en \( X \), pueden ser pensadas como funciones de \( n \) variables (la primera variable estando en \( A_1 \), la segunda en \( A_2 \), etc.) En particular, introduciendo coordenadas cartesianas en el plano, este se identifica con el producto cartesiano \( \mathbb{R}^2 = \mathbb{R} \times \mathbb{R} \). Las funciones \( f : X \to \mathbb{R} \), definidas en subconjuntos \( X \subset \mathbb{R}^2 \), son las funciones reales de dos variables reales.
 
 Dada una familia de conjuntos \( (A_\lambda)_{\lambda \in L} \), su producto cartesiano
-
 \[
 A = \prod_{\lambda \in L} A_\lambda
 \]
@@ -893,7 +857,6 @@ Las proyecciones \(\pi_\lambda: A \to A_\lambda\) se definen por \(\pi_\lambda(a
 En el caso particular en que todos los conjuntos \(A_\lambda\) son iguales al mismo conjunto \(A\), se escribe \(A^L\) en lugar de \(\prod_{\lambda \in L} A_\lambda\). \(A^L\) es, por tanto, el conjunto de todas las funciones de \(L\) en \(A\).
 
 Se destaca, en especial, el producto cartesiano de una sucesión de conjuntos \(A_1, A_2, \dots, A_n, \dots\), el cual se representa con las notaciones
-
 \[
 \prod_{n \in \mathbb{N}} A_n = \prod_{n=1}^{\infty} A_n = A_1 \times A_2 \times \cdots \times A_n \times \dots
 \]
@@ -972,7 +935,6 @@ Pruebe que, en estas condiciones, se tiene \(X = \bigcup_{\lambda \in L} A_\lamb
 (A_\lambda \cup B_\mu)_{(\lambda, \mu) \in L \times M} \quad \text{y} \quad (A_\lambda \cap B_\mu)_{(\lambda, \mu) \in L \times M}.
 \]
 Pruebe que se tiene
-
 \[
 \left( \bigcup_{\lambda \in L} A_\lambda \right) \cap \left( \bigcup_{\mu \in M} B_\mu \right) = \bigcup_{(\lambda,\mu) \in L \times M} (A_\lambda \cap B_\mu),
 \]
@@ -981,7 +943,6 @@ Pruebe que se tiene
 \]
 
 20. Sea \((A_{ij})_{(i,j) \in \mathbb{N} \times \mathbb{N}}\) una familia de conjuntos con índices en \(\mathbb{N} \times \mathbb{N}\). Pruebe, o refute mediante un contraejemplo, la igualdad
-
 \[
 \bigcup_{j=1}^{\infty} \left( \bigcap_{i=1}^{\infty} A_{ij} \right) = \bigcap_{i=1}^{\infty} \left( \bigcup_{j=1}^{\infty} A_{ij} \right).
 \]
@@ -1039,21 +1000,16 @@ En una exposición sistemática de la teoría de los números naturales, la exis
 Admitamos, por tanto, que, dada una función \(f: X \to X\), sabemos asociar, de modo único, a cada número natural \(n \in \mathbb{N}\), una función \(f^n: X \to X\), llamada la \(n\)-ésima iterada de \(f\), de tal modo que \(f^1 = f\) y \(f^{s(n)} = f \circ f^n\).
 
 Veamos un ejemplo de definición por inducción. Usando las iteradas de la función \(s: \mathbb{N} \to \mathbb{N}\), definiremos la suma de números naturales. Dados \(m, n \in \mathbb{N}\), su suma \(m + n \in \mathbb{N}\) se define por:
-
 \[m + n = s^n(m).\]
 
 Así, sumar \(m\) con 1 es tomar el sucesor de \(m\) mientras que, en general, sumar \(m\) con \(n\) es partir de \(m\) e iterar \(n\) veces la operación de tomar el sucesor. En otras palabras, tenemos, por definición:
-
 \[m + 1 = s(m),\]
-
 \[m + s(n) = s(m + n).\]
 
 Así, si queremos, podremos prescindir de la notación \(s(n)\) para indicar el sucesor de \(n\) y usar la notación definitiva \(n + 1\) para representar dicho sucesor. Esto se hará gradualmente. Con la notación definitiva, la última de las igualdades anteriores se lee:
-
 \[m + (n + 1) = (m + n) + 1.\]
 
 Vemos que la propia definición de la suma \(m + n\) ya contiene una indicación de que goza de la propiedad asociativa. Probaremos ahora, en general, que se tiene:
-
 \[m + (n + p) = (m + n) + p,\]
 
 cualesquiera que sean \(m\), \(n\), \(p \in \mathbb{N}\).
@@ -1111,7 +1067,6 @@ m \cdot (n + p) = m \cdot n + m \cdot p.
 \]
 
 Demostremos este hecho. Sea \(X\) el conjunto de los números \(p \in \mathbb{N}\) tales que \((m + n) \cdot p = m \cdot p + n \cdot p\) cualesquiera que sean \(m, n \in \mathbb{N}\). Acabamos de observar que \(1 \in X\). Además, si \(p \in X\), concluiremos que
-
 \[
 (m + n) \cdot (p + 1) = (m + n) \cdot p + m + n
 \]
@@ -1181,7 +1136,6 @@ Ejemplo 6. También el producto \(a_1 \cdot a_2 \cdot \cdots \cdot a_n\) de una 
 \section{Conjuntos finitos e infinitos}
 
 En este parágrafo, indicaremos con el símbolo \(I_n\) el conjunto \(\{1, \ldots, n\}\) de los números naturales desde 1 hasta \(n\). Más precisamente, dado \(n \in \mathbb{N}\), tenemos
-
 \[
 I_n = \{p \in \mathbb{N} \; ; \; 1 \leq p \leq n\}.
 \]
@@ -1341,7 +1295,6 @@ Aplicaciones repetidas del Teorema 10 muestran que, si \( X_1, \dots, X_k \) son
 El principal ejemplo de conjunto no enumerable que encontraremos en este libro será el conjunto \( \mathbb{R} \) de los números reales. Esto se probará en el capítulo siguiente. Aquí veremos, mediante un argumento simple debido a Cantor, que existen conjuntos no enumerables. Más generalmente, mostraremos que, dado cualquier conjunto \( X \), existe siempre un conjunto cuyo número cardinal es mayor que el de \( X \).
 
 No definiremos qué es el número cardinal de un conjunto pero diremos que dos conjuntos \( X \) e \( Y \) tienen el mismo número cardinal, y escribiremos
-
 \[ \text{card}(X) = \text{card}(Y), \]
 
 para significar que existe una biyección \( f: X \to Y \).
@@ -1363,7 +1316,6 @@ Recordamos que, dados dos conjuntos \( X, Y \), el símbolo \( \mathcal{F}(X; Y)
 Basta considerar el caso en que todos los \( X_n \) son iguales a \( \mathbb{N} \). En este caso, \( \prod X_n = \mathcal{F}(\mathbb{N}; \mathbb{N}) \), que no es enumerable, por el Teorema 11.
 
 El argumento usado en la demostración del Teorema 11 se llama "método de la diagonal, de Cantor". Este nombre se debe al caso particular en que \( X = \mathbb{N} \). Los elementos de \( \mathcal{F}(\mathbb{N}; Y) \) son sucesiones de elementos de \( Y \). Para probar que ninguna función \( \varphi : \mathbb{N} \to \mathcal{F}(\mathbb{N}; Y) \) es sobreyectiva, escribimos \( \varphi(1) = s_1 \), \( \varphi(2) = s_2 \), ... etc., donde \( s_1, s_2, \ldots \) son sucesiones de elementos de \( Y \). Luego
-
 \[
 s_1 = (y_{11}, y_{12}, y_{13}, \ldots)
 \]
@@ -1380,7 +1332,6 @@ s_3 = (y_{31}, y_{32}, y_{33}, \ldots)
 A continuación, formamos una nueva sucesión \( s = (y_1, y_2, y_3, \ldots) \) de elementos de \( Y \) simplemente eligiendo, para cada \( n \in \mathbb{N} \), un elemento \( y_n \in Y \) diferente del \( n \)-ésimo término de la diagonal: \( y_n \neq y_{nn} \). La sucesión \( s \) no pertenece a la lista de las sucesiones \( s_n \) (pues el \( n \)-ésimo término de \( s \) es diferente del \( n \)-ésimo término de \( s_n \)). Así, ninguna lista enumerable puede agotar todas las funciones en \( \mathcal{F}(\mathbb{N}; Y) \).
 
 Como en el caso particular de este teorema, consideremos el conjunto de todas las listas infinitas (enumerables) que se pueden formar utilizando solo los dígitos 0 y 1, como por ejemplo,
-
 \[
 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad 0 \quad \cdots
 \]
@@ -1392,7 +1343,6 @@ Como en el caso particular de este teorema, consideremos el conjunto de todas la
 \]
 
 El conjunto de todas estas listas de ceros y unos no es enumerable. Sea \( \mathcal{P}(A) \) el conjunto de las partes de un conjunto dado \( A \). Considerando el conjunto de dos elementos \( \{0, 1\} \), veremos ahora que existe una biyección:
-
 \[
 \xi : \mathcal{P}(A) \to \mathcal{F}(A; \{0, 1\}).
 \]
@@ -1594,13 +1544,11 @@ Ejemplo 3. El cuerpo \(\mathbb{Q}(i)\), cuyos elementos son los pares ordenados 
 \((x, y) + (x', y') = (x + x', y + y')\) y  
 \((x, y) \cdot (x', y') = (xx' - yy', x'y + xy')\).  
 El cero es el elemento \((0, 0)\) y la unidad es el elemento \((1, 0)\). Escribiendo \(x\) para representar el par \((x, 0)\) y usando la notación \(i = (0, 1)\), observamos que cada elemento \(z = (x, y) = (x, 0) + (0, y)\) puede escribirse como \(z = x + iy\) y que las operaciones anteriores fueron definidas de modo que los “números complejos” de la forma \(z = x + iy\) se sumen y multipliquen de la manera usual, con el cuidado de notar que \(i^2 = -1\). \(\mathbb{Q}(i)\) se llama el cuerpo de los números complejos racionales. La verificación de los axiomas queda a cargo del lector. Por ejemplo, dado \(z = (x, y) \neq 0\),
-
 \[
 \text{se tiene } z^{-1} = \left( \frac{x}{x^2 + y^2}, \frac{-y}{x^2 + y^2} \right).
 \]
 
 Ejemplo 4. El conjunto \(\mathbb{Q}(t)\) de las funciones racionales
-
 \[
 r(t) = \frac{p(t)}{q(t)},
 \]
@@ -1753,23 +1701,6 @@ En efecto, por el teorema, \(|x-a| \leq b\) es equivalente a \(-b \leq x-a \leq 
 En particular, tenemos las siguientes equivalencias, que serán ampliamente utilizadas en el estudio de los límites y de las funciones continuas:
 \[\boxed{x \in (a-\varepsilon, a+\varepsilon) \Leftrightarrow a-\varepsilon < x < a+\varepsilon \Leftrightarrow |x-a| < \varepsilon}\]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Si representamos geométricamente los elementos de un cuerpo ordenado como puntos de una recta, el valor absoluto \(|x-a|\) significa la distancia del punto \(x\) al punto \(a\). La relación \(x < y\) significa que \(x\) está a la izquierda de \(y\). Las equivalencias anteriores expresan el hecho de que el intervalo abierto \((a - \varepsilon, a + \varepsilon)\), de centro \(a\) y radio \(\varepsilon\), está formado por los puntos \(x\) cuya distancia a \(a\) es menor que \(\varepsilon\).
 
 \begin{center}
@@ -1843,5 +1774,437 @@ Así, el cuerpo \(\mathbb{Q}\) de los números racionales es arquimediano, mient
 \section{Números reales}
 
 Sean \(K\) un cuerpo ordenado y \(X \subset K\) un subconjunto acotado superiormente. Un elemento \(b \in K\) se llama supremo del subconjunto \(X\) cuando \(b\) es la menor de las cotas superiores de \(X\) en \(K\). (A veces se dice "extremo superior" en lugar de "supremo".)
+
+Así, para que \( b \in K \) sea el supremo de un conjunto \( X \subset K \), es necesario y suficiente que se satisfagan las dos condiciones siguientes:
+
+S1. Para todo \( x \in X \), se tiene \( x \leq b \);\\
+S2. Si \( c \in K \) es tal que \( x \leq c \) para todo \( x \in X \), entonces \( b \leq c \).
+
+La condición S1 dice que \( b \) es cota superior de \( X \), mientras que S2 afirma que cualquier otra cota superior de \( X \) debe ser mayor o igual que \( b \).
+
+La condición S2 puede reformularse así:
+
+S2'. Dado \( c < b \) en \( K \), existe \( x \in X \) tal que \( c < x \).
+
+En efecto, la condición S2' dice que ningún elemento de \( K \) que sea inferior a \( b \) puede ser cota superior de \( X \).
+
+Es inmediato que si dos elementos \( b \) y \( b' \) en \( K \) cumplen las condiciones S1 y S2 anteriores, se debe tener \( b \leq b' \) y \( b' \leq b \), es decir, \( b = b' \). Por lo tanto, el supremo de un conjunto, cuando existe, es único. Escribiremos sup \( X \) para indicarlo.
+
+Las condiciones que caracterizan al supremo pueden, por tanto, escribirse así:
+
+S1. \( x \in X \Rightarrow x \leq \sup X \);\\
+S2. \( c \geq x \) para todo \( x \in X \Rightarrow c \geq \sup X \);\\
+S2'. Si \( c < \sup X \) entonces existe \( x \in X \) tal que \( c < x \).
+
+Observación: Si \( X = \emptyset \) entonces todo \( b \in K \) es cota superior de \( X \). Como no existe el menor elemento en un cuerpo ordenado \( K \), se sigue que el conjunto vacío \( \emptyset \) no posee supremo en \( K \). Lo mismo se aplica para el ínfimo, que estudiaremos ahora.
+
+Análogamente, un elemento \( a \in K \) se llama ínfimo de un conjunto \( Y \subset K \), acotado inferiormente, cuando \( a \) es la mayor de las cotas inferiores de \( K \).
+
+Para que \( a \in K \) sea el ínfimo de \( Y \subset K \) es necesario y suficiente que se satisfagan las condiciones siguientes:
+
+I1. Para todo \( y \in Y \) se tiene \( a \leq y \);\\
+I2. Si \( c \in K \) es tal que \( c \leq y \) para todo \( y \in Y \), entonces \( c \leq a \).
+
+El ínfimo de \( Y \), cuando existe, es único y se escribe \( a = \inf Y \).  
+La condición I2 anterior puede reformularse en los siguientes términos:
+
+I2’. Dado \( c \in K \) con \( a < c \), existe \( y \in Y \) tal que \( y < c \).
+
+Esto significa que un elemento \( c \) de \( K \) que sea mayor que \( a \) no puede ser cota inferior de \( Y \).
+
+Ejemplo 10. Si \( X \subset K \) posee un elemento máximo, este será su supremo; si \( X \) posee un elemento mínimo, este será su ínfimo. Recíprocamente, si \( \sup X \) pertenece a \( X \), entonces es el mayor elemento de \( X \); si \( \inf X \) pertenece a \( X \), será su menor elemento. En particular, todo subconjunto finito \( X \subset K \) posee ínfimo y supremo. Otro ejemplo: si \( X = (-\infty, b] \) e \( Y = [a, +\infty) \), tenemos \( \inf Y = a \) y \( \sup X = b \).
+
+Ejemplo 11. Dados \( a < b \) en \( K \), sea \( X = (a, b) \) el intervalo abierto con esos extremos. Se tiene \( \inf X = a \) y \( \sup X = b \). En efecto, \( a \) es evidentemente una cota inferior de \( X \). Probemos ahora que ningún \( c \in K \) con \( a < c \) es cota inferior de \( X \). Esto es claro si \( c \geq b \). Por otro lado, si \( a < c < b \), entonces \( x = \frac{a + c}{2} \) es un elemento de \( X \), con \( a < x < c \), lo que prueba que \( c \) no es cota inferior de \( X \). Así \( a = \inf X \). De manera análoga se muestra que \( b = \sup X \). En este caso, se tiene \( \sup X \notin X \) e \( \inf X \notin X \).
+
+Ejemplo 12. Sea \( Y \subset \mathbb{Q} \) el conjunto de las fracciones del tipo \( \frac{1}{2^n} \), con \( n \in \mathbb{N} \).
+
+Afirmamos que \( \inf Y = 0 \) y \( \sup Y = \frac{1}{2} \). En efecto, en primer lugar, tenemos \( \frac{1}{2} \in Y \) y \( \frac{1}{2^n} < \frac{1}{2} \) para todo \( n > 1 \). Luego \( \frac{1}{2} \) es el mayor elemento de \( Y \) y, por consiguiente, \( \frac{1}{2} = \sup Y \). Por otro lado, como \( 0 < \frac{1}{2^n} \) para todo \( n \in \mathbb{N} \), vemos que \( 0 \) es cota inferior de \( Y \). Solo resta probar que ningún número racional \( c > 0 \) es cota inferior de \( Y \). En efecto, siendo \( \mathbb{Q} \) arquimediano, dado \( c > 0 \), podemos obtener \( n \in \mathbb{N} \) tal que \( n > \frac{1}{c} - 1 \). Esto significa \( 1 + n > \frac{1}{c} \). [Ahora, por la desigualdad de Bernoulli (Ejemplo 8),] tenemos \( 2^n = (1+1)^n \geq 1 + n > \frac{1}{c} \), es decir, \( \frac{1}{2^n} < c \). Luego
+ningún \( c > 0 \) es cota inferior de \( Y \) y, por tanto, \( \inf Y = 0 \).
+
+La insuficiencia más grave de los números racionales, para efectos del Análisis Matemático, es el hecho de que algunos conjuntos acotados de números racionales no poseen supremo (o ínfimo). Este hecho está ligado a la inexistencia de raíces cuadradas racionales de ciertos números enteros, pero es una dificultad que va mucho más allá de esa falta.
+
+Pitágoras y sus discípulos descubrieron el siguiente
+
+\textbf{Lema.} No existe un número racional cuyo cuadrado sea igual a 2.
+
+\textbf{Demostración.} Supongamos, por absurdo, que se tenga \( {\left(\frac{p}{q}\right)}^2 = 2 \), es decir \( p^2 = 2q^2 \), con \( p \) y \( q \) enteros. El factor 2 aparece un número par de veces en la descomposición de \( p^2 \) y de \( q^2 \) en factores primos. Luego \( p^2 \) contiene un número par de factores iguales a 2 mientras que \( 2q^2 \) contiene un número impar de esos factores. Siendo así, no puede tenerse \( p^2 = 2q^2 \).
+
+Ejemplo 13. Sean \( X = \{ x \in \mathbb{Q}; x \geq 0 \text{ y } x^2 < 2 \} \) e \( Y = \{ y \in \mathbb{Q}; y > 0 \text{ y } y^2 > 2 \} \). Como \( x > 2 \Rightarrow x^2 > 4 \Rightarrow x \notin X \), concluimos que \( X \subset [0, 2] \), luego \( X \) es un conjunto acotado de números racionales. Por otro lado, \( Y \subset (0, +\infty) \), de modo que \( Y \) es acotado inferiormente. Mostraremos ahora que no existen \( \sup X \) ni \( \inf Y \) en \( \mathbb{Q} \). (Es claro que existe \( \inf X = 0 \), pues 0 es el menor elemento de \( X \).) Para esto, estableceremos los siguientes hechos:
+
+A) El conjunto \( X \) no posee elemento máximo. En efecto, dado \( x \in X \) (esto es, dado un número racional no negativo cuyo cuadrado es inferior a 2), tomamos un número racional \( r < 1 \) tal que \( 0 < r < \frac{2 - x^2}{2x + 1} \). Afirmamos que \( x + r \) todavía pertenece a \( X \). En efecto, de \( r < 1 \) se sigue \( r^2 < r \). De la otra desigualdad que \( r \) satisface se sigue \( r(2x + 1) < 2 - x^2 \). Por consiguiente,  
+\( (x + r)^2 = x^2 + 2rx + r^2 < x^2 + 2rx + r = x^2 + r(2x + 1) < x^2 + 2 - x^2 = 2 \).  
+Así, dado cualquier \( x \in X \), existe un número mayor, \( x + r \in X \).
+
+B) El conjunto \( Y \) no posee elemento mínimo. En efecto, dado cualquier \( y \in Y \), tenemos \( y > 0 \) y \( y^2 > 2 \). Luego podemos obtener un número racional \( r \) tal que \( 0 < r < \frac{y^2 - 2}{2y} \). Entonces \( 2ry < y^2 - 2 \) y de ahí  
+\( (y - r)^2 = y^2 - 2ry + r^2 > y^2 - 2ry > 2 \). Obsérvese también que \( r < \frac{y}{2} - \frac{1}{y} \), de donde \( r < y \), es decir, \( y - r \) es positivo. Así, dado \( y \in Y \) arbitrario, podemos obtener \( y - r \in Y \), \( y - r < y \).
+
+C) Si \( x \in X \) e \( y \in Y \), entonces \( x < y \). En efecto, se tiene \( x^2 < 2 < y^2 \) y, por tanto, \( x^2 < y^2 \). Como \( x \) e \( y \) son ambos positivos, se concluye que \( x < y \). (Estrictamente, podría ser \( x = 0 \), pero, en este caso, la conclusión \( x < y \) es obvia.)
+
+Usando los hechos A, B y C, mostremos que, entre los números racionales, no existen \( \sup X \) ni \( \inf Y \).
+
+Supongamos, primero, que existiera \( \alpha = \sup X \). Sería forzosamente \( \alpha > 0 \). No podría ser \( \alpha^2 < 2 \) porque eso obligaría \( \alpha \in X \) y, entonces, \( \alpha \) sería el elemento máximo de \( X \), que no existe, por A. Tampoco podría ser \( \alpha^2 > 2 \), porque eso haría \( \alpha \in Y \). Como, en virtud de B, \( Y \) no posee elemento mínimo, existiría \( b \in Y \), con \( b < \alpha \). Usando C, concluiríamos que \( x < b < \alpha \) para todo \( x \in X \), lo que contradice que \( \alpha = \sup X \).
+
+Así, si existiera \( \alpha = \sup X \), debería ser \( \alpha^2 = 2 \). Pero, por el Lema de Pitágoras, ningún número racional existe con esta propiedad. Concluimos que en \( \mathbb{Q} \) el conjunto \( X \) no posee supremo.
+
+Un razonamiento enteramente análogo, basado en los hechos A, B y C, mostraría que el número \( b = \inf Y \), si existiera, debe satisfacer \( b^2 = 2 \), y, por tanto, \( Y \) no posee ínfimo en \( \mathbb{Q} \).
+
+Al mismo tiempo, estos argumentos muestran que, si existiera un cuerpo ordenado en el que todo conjunto no vacío, acotado superiormente, posea supremo, existirá, en dicho cuerpo, un elemento \( a > 0 \) cuyo cuadrado es 2. En efecto, tal cuerpo, siendo ordenado, contiene a \( \mathbb{Q} \), luego contiene al conjunto \( X \) y en él existirá \( a = \sup X \), cuyo cuadrado, no pudiendo ser menor ni mayor que 2, deberá ser igual a 2. Se escribe \( a = \sqrt{2} \).
+
+Ejemplo 14. Veamos ahora otro ejemplo de un conjunto acotado superiormente en un cuerpo ordenado \( K \), el cual no posee supremo en \( K \). Para ello, tomemos un cuerpo no arquimediano \( K \). El conjunto \( \mathbb{N} \subset K \) es acotado superiormente. Si \( b \in K \) es una cota superior de \( \mathbb{N} \), entonces \( n + 1 \leq b \) para todo \( n \in \mathbb{N} \). Se sigue que \( n \leq b - 1 \) cualquiera que sea \( n \in \mathbb{N} \). En otras palabras, si \( b \in K \) es una cota superior de \( \mathbb{N} \), \( b - 1 \) también lo será. Como \( b - 1 < b \), se sigue que, en un cuerpo no arquimediano \( K \), el conjunto \( \mathbb{N} \) de los números naturales es acotado superiormente pero no existe \( \sup \mathbb{N} \) en \( K \).
+
+Un cuerpo ordenado \( K \) se llama completo cuando todo subconjunto no vacío, acotado superiormente, \( X \subset K \), posee supremo en \( K \).
+
+Resulta de la definición que, en un cuerpo ordenado completo, todo conjunto no vacío, acotado inferiormente, \( Y \subset K \), posee un ínfimo. En efecto, dado \( Y \), sea \( X = -Y \), esto es, \( X = \{-y ; y \in Y\} \). Entonces \( X \) es no vacío y acotado superiormente; luego existe \( a = \sup X \). Como se ve fácilmente, se tiene \( -a = \inf Y \).
+
+Se sigue del Ejemplo 14 anterior que todo cuerpo ordenado completo es arquimediano.
+
+Adoptaremos, a partir de ahora, el axioma fundamental del Análisis Matemático.
+
+\textbf{Axioma.} Existe un cuerpo ordenado completo, \( \mathbb{R} \), llamado el cuerpo de los números reales.
+
+Pasaremos a examinar ahora algunas propiedades de los números reales que resultan inmediatamente de la definición de \( \mathbb{R} \) como un cuerpo ordenado completo.
+
+Como se observó al final del Ejemplo 13, existe en \(\mathbb{R}\) un número positivo \(a\) tal que \(a^2 = 2\). Este número se representa con el símbolo \(\sqrt{2}\). Es claro que solo existe un número positivo cuyo cuadrado es 2, pues \(a^2 = b^2 = 2 \Rightarrow 0 = a^2 - b^2 = (a-b)(a+b) \Rightarrow a + b = 0\) o \(a - b = 0\). En el primer caso, \(a = -b\) (luego no pueden ser \(a\) y \(b\) ambos positivos) y en el segundo \(a = b\). Por el Lema de Pitágoras, \(\sqrt{2}\) no es un número racional.
+
+A los elementos del conjunto \(\mathbb{R} - \mathbb{Q}\), es decir, a los números reales que no son racionales, los llamaremos números irracionales. Así, \(\sqrt{2}\) es un número irracional. Veremos otros más adelante.
+
+Probaremos ahora que, dados \(a > 0\) en \(\mathbb{R}\) y \(n \in \mathbb{N}\) cualesquiera, existe un único número real \(b > 0\) tal que \(b^n = a\). El número \(b\) se llama la raíz n-ésima de \(a\) y se representa por el símbolo \(b = \sqrt[n]{a}\). La demostración imita el argumento usado en el Ejemplo 13. Veámosla.
+
+Consideramos el conjunto \(X = \{x \in \mathbb{R}; x \geq 0, x^n < a\}\). El conjunto \(X\) es no vacío (pues \(0 \in X\)) y es acotado superiormente. (Si \(a < 1\), entonces \(1\) es una cota superior de \(X\). Si \(a > 1\), entonces \(a^n > a\) y de ahí \(a\) es una cota superior de \(X\).)
+
+Sea \(b = \sup X\). Afirmamos que \(b^n = a\). Esto se basa en los siguientes hechos:
+
+A) El conjunto \(X\) no posee elemento máximo. Dado \(x \in X\) cualquiera, probaremos que es posible tomar \(d > 0\) tan pequeño que aún se tenga \((x+d)^n < a\), es decir \(x + d \in X\). Para ello, usaremos un hecho auxiliar, que demostraremos por inducción. Se trata del siguiente: dado \(x > 0\) existe, para cada \(n\), un número real positivo \(A_n\) (dependiendo de \(x\)) tal que \((x+d)^n \leq x^n + A_n \cdot d\), sea cual sea \(d\) con \(0 < d < 1\). Esto es claro para \(n = 1\). Suponiéndolo verdadero para \(n\), tenemos \((x+d)^{n+1} = (x+d)^n (x+d) \leq (x^n + A_n \cdot d)(x+d) = x^{n+1} + A_n \cdot d \cdot x + d \cdot x^n + A_n \cdot d^2 = x^{n+1} + (A_n \cdot x + x^n + A_n \cdot d) \cdot d < x^{n+1} + (A_n \cdot x + x^n + A_n) \cdot d\) (ya que \(0 < d < 1\)). Tomando \(A_{n+1} = A_n \cdot x + x^n + A_n\), obtenemos \((x + d)^{n+1} < x^{n+1} + A_{n+1} \cdot d\).
+
+Ahora, si \(x \in X\), es decir, \(x \geq 0\) y \(x^n < a\), tomamos \(d\) tal que \(d < 1\) y \(0 < d < \frac{a - x^n}{A_n}\). Tendremos \(x^n + A_n \cdot d < a\) y, por consiguiente, \((x + d)^n < a\), lo que prueba que \(X\) no posee elemento máximo.
+
+B) El conjunto \(Y = \{y \in \mathbb{R}; y > 0, y^n > a\}\) no posee elemento mínimo. Sea \(y \in Y\). Escogeremos \(d\), con \(0 < d < y\), tal que \((y - d)^n > a\), es decir, \(y - d \in Y\). Para ello observamos que, siendo \(0 < d < y\), tenemos \((y - d)^n = y^n\left(1 - \frac{d}{y}\right)^n > y^n\left(1 - n \cdot \frac{d}{y}\right) = y^n - n y^{n-1} \cdot d\), como resulta de la desigualdad de Bernoulli (Ejemplo 8), con \(x = -\frac{d}{y}\). Si tomamos \(0 < d < \frac{y^n - a}{n \cdot y^{n-1}}\) obtenemos entonces \(y^n - n y^{n-1} d > a\) y, por tanto, \((y - d)^n > a\). Esto muestra que \(Y\) no posee elemento mínimo.
+
+C) Si \(x \in X\) e \(y \in Y\) entonces \(x < y\). En efecto, en estas condiciones \(x^n < a < y^n\) y, como \(x\) e \(y\) son positivos, se sigue \(x < y\). (El caso \(x = 0\) da \(x < y\) obviamente.)
+
+Se deduce de A, B y C que el número \(b = \sup X\) satisface la condición \(b^n = a\). En efecto, si fuera \(b^n < a\) entonces \(b\) pertenecería al conjunto \(X\) del cual es supremo, luego \(b\) sería el elemento máximo de \(X\), lo que contradice A. Tampoco puede ser \(b^n > a\) porque entonces \(b \in Y\) y como, por B, \(Y\) no posee elemento mínimo, habría un \(c \in Y\) con \(c < b\). Por C, vendría \(x < c < b\) para todo \(x \in X\): \(c\) sería una cota superior de \(X\) menor que \(b = \sup X\), otra contradicción. Luego, debe ser \(b^n = a\).
+
+De ahora en adelante, todos los intervalos que consideremos se referirán al conjunto \(\mathbb{R}\) de los números reales.
+
+Por lo que acabamos de ver, dado \(n \in \mathbb{N}\), la función \(f: [0, +\infty) \to [0, +\infty)\), definida por \(f(x) = x^n\), es sobreyectiva. Es claro que \(0 < x < y\) implica \(0 < x^n < y^n\) (por la monotonía de la multiplicación). Luego \(f\) es inyectiva y por tanto es una biyección de \([0, +\infty)\) sobre sí mismo. Su función inversa está dada por \( y \mapsto \sqrt{y} \), la raíz n-ésima (positiva única) de \( y > 0 \).
+
+El Lema de Pitágoras muestra que el número real \( \sqrt{2} \) no es racional. Generalizando este hecho, probaremos ahora que, dado un \( n \in \mathbb{N} \), si un número natural \( m \) no posee una raíz n-ésima natural, tampoco poseerá una raíz n-ésima racional. En efecto, sea \( \left( \frac{p}{q} \right) = m \). Podemos suponer \( p \) y \( q \) primos entre sí. Entonces \( p^n \) y \( q^n \) también serán primos entre sí. Pero tenemos \( p^n = q^n \cdot m \), lo que implica que \( q^n \) es un divisor de \( p^n \). Absurdo, a menos que fuera \( q = 1 \). En resumen, dados \( m, n \in \mathbb{N} \), si \( \sqrt{m} \notin \mathbb{N} \) entonces \( \sqrt{m} \in \mathbb{R} - \mathbb{Q} \).
+
+Los números reales que no son racionales, es decir, los elementos del conjunto \( \mathbb{R} - \mathbb{Q} \), se llaman números irracionales. Acabamos de ver que existen: \( \sqrt{2}, \sqrt{5}, \sqrt{6} \), etc. son números irracionales. Pero hay muchos otros, obtenidos de modos mucho más complicados que simplemente extraer raíces no enteras de números enteros o incluso resolver ecuaciones algebraicas con coeficientes enteros.
+
+Mostraremos ahora que los números irracionales se hallan esparcidos por todas partes entre los números reales. A continuación, probaremos que hay más números irracionales que racionales. Para explicar precisamente lo que significa "esparcidos por todas partes", comenzaremos con una definición.
+
+Un conjunto \( X \subset \mathbb{R} \) se llama denso en \( \mathbb{R} \) cuando todo intervalo abierto \( (a, b) \) contiene algún punto de \( X \).
+
+En otras palabras, diremos que el conjunto \( X \) de números reales es denso en \( \mathbb{R} \) cuando, dados arbitrariamente \( a < b \) en \( \mathbb{R} \), sea posible encontrar \( x \in X \) tal que \( a < x < b \).
+
+Por ejemplo, sea \( X = \complement \mathbb{Z} \) [esto es, el complemento de los enteros] el conjunto de los números reales que no son enteros. \( X \) es denso en \( \mathbb{R} \). En efecto, todo intervalo \( (a, b) \) es un conjunto infinito, mientras que existe a lo sumo un número finito de enteros \( n \) tales que \( a < n < b \). Luego cualquier intervalo \( (a, b) \) contiene elementos de \( X \) (es decir, números reales no enteros).
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+    \draw[thick] (-5.5, 0) -- (4, 0);
+
+    \node at (-5.3, -0.4) {\Large $\mathbb{R}$};
+
+    \foreach \x in {-2, -1, 0, 1, 2, 3} {
+        \draw[thick] (\x, 0.25) -- (\x, -0.25);
+        \node at (\x, -0.5) {\Large \x};
+    }
+
+    \node at (3.5, -0.5) {\Large \dots};
+
+\end{tikzpicture}
+\end{center}
+
+Es recomendable pensar en los números reales como puntos de una recta, siendo la distancia de \(x\) a \(y\) dada por \(|x-y|\) y significando la relación \(x < y\) que \(x\) está a la izquierda de \(y\). En este caso, los números enteros se hallan a una distancia entera \(\geq 1\) unos de otros. La imagen geométrica deja evidente que \(\complement\mathbb{Z}\) [complemento de los enteros] es denso en \(\mathbb{R}\), aunque ello no deba intervenir en la demostración de este hecho.
+
+\textbf{Teorema 4.} El conjunto \(\mathbb{Q}\) de los números racionales y el conjunto \(\mathbb{R} - \mathbb{Q}\) de los números irracionales son ambos densos en \(\mathbb{R}\).
+
+\textbf{Demostración.} Sea \((a, b)\) un intervalo abierto cualquiera en \(\mathbb{R}\). Debemos mostrar que existen un número racional y un número irracional en \((a, b)\). Como \(b - a > 0\), existe un número natural \(p\) tal que \(0 < \frac{1}{p} < b - a\). Los números de la forma \(\frac{m}{p}\), \(m \in \mathbb{Z}\), descomponen la recta \(\mathbb{R}\) en intervalos de longitud \(\frac{1}{p}\). Como \(\frac{1}{p}\) es menor que la longitud \(b - a\) del intervalo \((a, b)\), alguno de los números \(\frac{m}{p}\) debe caer dentro de \((a, b)\). Esta es la idea intuitiva de la demostración. Razonemos ahora lógicamente. Sea
+
+\(A = \{m \in \mathbb{Z}; \frac{m}{p} \geq b\}\). Como \(\mathbb{R}\) es arquimediano, \(A\) es un conjunto no vacío de números enteros, acotado inferiormente por \(b \cdot p\). Sea \(m_0 \in A\) el menor elemento de \(A\). Entonces \(b \leq \frac{m_0}{p}\), pero, como \(m_0 - 1 < m_0\), se tiene \(\frac{m_0 - 1}{p} < b\). Afirmamos que \(a < \frac{m_0 - 1}{p} < b\). En efecto, si no fuera así, tendríamos \(\frac{m_0 - 1}{p} \leq a < b \leq \frac{m_0}{p}\). Esto acarrearía \(b - a \leq \frac{m_0}{p} - \frac{m_0 - 1}{p} = \frac{1}{p}\), una contradicción. Luego, el número racional \(\frac{m_0 - 1}{p}\) pertenece al intervalo \((a, b)\). Para obtener un número irracional en el intervalo \((a, b)\), tomamos \(p \in \mathbb{N}\) tal que \(1 < \frac{b - a}{\sqrt{2}} < b - a\). Los números de la forma \(\frac{m\sqrt{2}}{p}\), donde \(m \in \mathbb{Z}\), son (salvo \(m = 0\)) irracionales y dividen la recta \(\mathbb{R}\) en intervalos de longitud \(\frac{\sqrt{2}}{p}\). Como \(\frac{\sqrt{2}}{p}\) es menor que la longitud \(b - a\) del intervalo \((a, b)\), se concluye que algún \(\frac{m\sqrt{2}}{p}\) debe pertenecer a \((a, b)\). La demostración formal se hace como en el caso anterior: si \(m_0\) es el menor entero tal que \(b \leq \frac{m_0\sqrt{2}}{p}\) entonces el número irracional \(\frac{(m_0 - 1)\sqrt{2}}{p}\) pertenece al intervalo \((a, b)\).
+
+El teorema siguiente, a veces llamado “Principio de los Intervalos Encajados”, es usado por algunos autores en la definición de los números reales.
+
+\textbf{Teorema 5.} Sea \(I_1 \supset I_2 \supset \cdots \supset I_n \supset \cdots\) una sucesión decreciente de intervalos limitados y cerrados \(I_n = [a_n, b_n]\). La intersección \(\bigcap_{n=1}^{\infty} I_n\) no es vacía. Es decir, existe al menos un número real \(x\) tal que \(x \in I_n\) para todo \(n \in \mathbb{N}\). Más precisamente, tenemos \(\cap I_n = [a, b]\), donde \(a = \sup a_n\) y \(b = \inf b_n\).
+
+\textbf{Demostración.} Para \(n \in \mathbb{N}\), tenemos \(I_{n+1} \subset I_n\), lo que significa \(a_n \leq a_{n+1} \leq b_{n+1} \leq b_n\). Podemos entonces escribir:
+\[a_1 \leq a_2 \leq \cdots \leq a_n \leq \cdots \leq b_n \leq \cdots \leq b_2 \leq b_1\].
+
+Llamemos \(A\) al conjunto de los \(a_n\) y \(B\) al conjunto de los \(b_n\). \(A\) es acotado: \(a_1\) es una cota inferior y cada \(b_n\) es una cota superior de \(A\). Por motivo semejante, \(B\) es también acotado. Sean \(a = \sup A\) y \(b = \inf B\). Como cada \(b_n\) es cota superior de \(A\), tenemos \(a \leq b_n\) para cada \(n\). Así, \(a\) es cota inferior de \(B\) y, por tanto, \(a \leq b\). Podemos entonces escribir:
+\[a_1 \leq a_2 \leq \cdots \leq a_n \leq \cdots \leq a \leq b \leq \cdots \leq b_n \leq \cdots \leq b_2 \leq b_1.\]
+
+Concluimos que \(a\) y \(b\) (pudiendo ser \(a = b\)) pertenecen a todos los \(I_n\), de donde \([a, b] \subset I_n\) para cada \(n\). Luego \([a, b] \subset \bigcap_{n=1}^\infty I_n\). Es más, ningún \(x < a\) puede pertenecer a todos los intervalos \(I_n\). En efecto, siendo \(x < a = \sup A\), existe algún \(a_n \in A\) tal que \(x < a_n\), es decir, \(x \notin I_n\). Del mismo modo, \(y > b \Rightarrow y > b_m\) para algún \(m\), de donde \(y \notin I_m\). Concluimos entonces que \(\cap I_n = [a, b]\).
+
+Usaremos el Teorema 5 para probar que el conjunto de los números reales no es enumerable.
+
+\textbf{Teorema 6.} El conjunto \(\mathbb{R}\) de los números reales no es enumerable.
+
+\textbf{Demostración.} Dados un intervalo limitado, cerrado \(I = [a, b]\), con \(a < b\), y un número real \(x_0\), existe un intervalo cerrado, limitado, \(J = [c, d]\), con \(c < d\), tal que \(x_0 \notin J\) y \(J \subset I\). Esto puede verificarse fácilmente. Usaremos este hecho repetidamente para mostrar que, dado cualquier subconjunto enumerable \(X = \{x_1, x_2, \ldots, x_n, \ldots\} \subset \mathbb{R}\), podemos encontrar un número real \(x \notin X\). En efecto, sean \(I_1\) un intervalo cerrado limitado no degenerado tal que \(x_1 \notin I_1\); \(I_2\) un intervalo del mismo tipo con \(x_2 \notin I_2\) e \(I_2 \subset I_1\); y así inductivamente: suponiendo obtenidos \(I_1 \supset I_2 \supset \cdots \supset I_n\) cerrados limitados no degenerados, con \(x_i \notin I_i\) (\(1 \leq i \leq n\)), podemos obtener \(I_{n+1} \subset I_n\) con \(x_{n+1} \notin I_{n+1}\). Esto nos proporciona una sucesión decreciente \(I_1 \supset \cdots \supset I_n \supset \cdots\) de intervalos limitados y cerrados. Por el Teorema 5, existe un número real \(x\) que pertenece a todos los \(I_n\). Como \(x_n \notin I_n\), se sigue que \(x\) no es ninguno de los \(x_n\), y por tanto ningún conjunto enumerable \(X\) puede contener todos los números reales.
+
+\textbf{Corolario 1.} Todo intervalo no degenerado de números reales es no enumerable.
+
+En efecto, como \( f: (0,1) \to (a,b) \), definida por \( f(x) = (b - a)x + a \), es una biyección del intervalo abierto \( (0,1) \) en el intervalo abierto arbitrario \( (a,b) \), si probamos que \( (0,1) \) no es enumerable, resultará que ningún intervalo no degenerado puede ser enumerable. Ahora bien, si \( (0,1) \) fuera enumerable, \( (0,1] \) también lo sería y, consecuentemente, para cada \( n \in \mathbb{Z} \), el intervalo \( (n, n+1] \) sería enumerable (pues \( x \mapsto x+n \) es una biyección de \( (0,1] \) sobre \( (n, n+1] \)). Pero \( \mathbb{R} = \bigcup_{n \in \mathbb{Z}} (n, n+1] \) sería enumerable, por ser una unión enumerable de conjuntos enumerables.
+
+\textbf{Corolario 2.} El conjunto de los números irracionales no es enumerable.
+
+En efecto, tenemos \( \mathbb{R} = \mathbb{Q} \cup (\mathbb{R} - \mathbb{Q}) \). Sabemos que \( \mathbb{Q} \) es enumerable. Si \( \mathbb{R} - \mathbb{Q} \) también lo fuera, \( \mathbb{R} \) sería enumerable, como unión de dos conjuntos enumerables.
+
+\textbf{Ejercicios}
+
+1. Dados \( a, b, c, d \) en un cuerpo \( K \), siendo \( b \) y \( d \) diferentes de cero, pruebe:
+
+\begin{itemize}
+    \item[$1^{\text{a}}$)] \( \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \)
+    \item[$2^\text{a}$)] \( \frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d} \)
+\end{itemize}
+
+2. Dado \( a \neq 0 \) en un cuerpo \( K \), se define, por definición, \( a^0 = 1 \) y, si \( n \in \mathbb{N} \), \( a^{-n} = \frac{1}{a^n} \) es decir, \( a^{-n} = (a^n)^{-1} \). Pruebe:
+
+\begin{itemize}
+    \item[$1^{\text{a}}$)] \( a^m \cdot a^n = a^{m+n} \)
+    \item[$2^\text{a}$)] \( (a^m)^n = a^{mn} \) sean cuales fueren \( m, n \in \mathbb{Z} \).
+\end{itemize}
+
+3. Si \( \frac{x_1}{y_1} = \frac{x_2}{y_2} = \cdots = \frac{x_n}{y_n} \) en un cuerpo \( K \), pruebe que, dados \( a_1, \ldots, a_n \in K \) tales que \( a_1y_1 + \cdots + a_ny_n \neq 0 \), se tiene \[ \frac{a_1x_1 + \cdots + a_nx_n}{a_1y_1 + \cdots + a_ny_n} = \frac{x_1}{y_1} \]
+
+4. Sean \( K, L \) cuerpos. Una función \( f: K \to L \) se llama un homomorfismo cuando se tiene \( f(x + y) = f(x) + f(y) \) y \( f(x \cdot y) = f(x) \cdot f(y) \), cualesquiera que sean \( x, y \in K \).
+
+\begin{itemize}
+    \item [i)] Dado un homomorfismo \( f: K \to L \), pruebe que \( f(0) = 0 \).
+    \item  [ii)] Pruebe también que, o bien \( f(x) = 0 \) para todo \( x \in K \), o bien \( f(1) = 1 \) y \( f \) es inyectivo.
+\end{itemize}
+
+5. Sea \( f: \mathbb{Q} \to \mathbb{Q} \) un homomorfismo. Pruebe que, o bien \( f(x) = 0 \) para todo \( x \in \mathbb{Q} \), o bien \( f(x) = x \) para todo \( x \in \mathbb{Q} \).
+
+6. Verifique las asociatividades de la adición y de la multiplicación en \( \mathbb{Z}_2 \). (Nota. Hay dos modos de proceder. Uno requiere la verificación de 16 igualdades. Otro consiste en observar que, definiendo \( f: \mathbb{Z} \to \mathbb{Z}_2 \) por \( f(n) = 0 \) si \( n \) es par, y \( f(n) = 1 \) si \( n \) es impar, \( f \) es sobreyectiva y, para \( m, n \in \mathbb{Z} \) cualesquiera, valen \( f(m + n) = f(m) + f(n) \), \( f(m \cdot n) = f(m) \cdot f(n) \). Las asociatividades en \( \mathbb{Z} \) implican las de \( \mathbb{Z}_2 \).)
+
+7. Sea \( p \) un número natural primo. Para cada entero \( m \), indiquemos con \( \bar{m} \) el resto de la división de \( m \) por \( p \). En el conjunto \( \mathbb{Z}_p = \{0, 1, \dots, p-1\} \) definamos dos operaciones: una adición \( \oplus \) y una multiplicación \( \odot \), poniendo \( m \oplus n = \overline{m + n} \) y \( m \odot n = \overline{m \cdot n} \). Pruebe que la función \( f: \mathbb{Z} \to \mathbb{Z}_p \), definida por \( f(n) = \bar{n} \), cumple \( f(m + n) = f(m) \oplus f(n) \) y \( f(m \cdot n) = f(m) \odot f(n) \). Concluya que \( \oplus \) y \( \odot \) son conmutativas, asociativas, vale la distributividad, existen \( 0 \) y \( 1 \). Observe que dados \( m, n \in \mathbb{Z}_p \), \( m \odot n = 0 \Rightarrow m = 0 \) o \( n = 0 \). Concluya que \( \mathbb{Z}_p \) es un cuerpo.
+
+8. Sea \( K \) un conjunto donde son válidos todos los axiomas de cuerpo, salvo la existencia de inverso multiplicativo.
+
+\begin{itemize}
+    \item [i)] Dado \( a \neq 0 \) en \( K \), pruebe que la función \( f: K \to K \), definida por \( f(x) = ax \), es una biyección si, y solo si, \( a \) posee inverso.
+    \item [ii)] Muestre que \( f \) es inyectiva si, y solo si, vale la ley de cancelación para \( a \).
+    \item [iii)] Concluya que, si \( K \) es finito, la ley de cancelación es equivalente a la existencia de inverso para cada elemento no nulo de \( K \).
+\end{itemize}
+
+9. Explique por qué las operaciones usuales no hacen cuerpos al conjunto \( \mathbb{Z} \) de los enteros ni al conjunto \( \mathbb{Q}[t] \) de los polinomios de coeficientes racionales.
+
+10. En un cuerpo ordenado \( K \), pruebe que \( a^2 + b^2 = 0 \Leftrightarrow a = b = 0 \).
+
+11. Sea \( P \) el conjunto de los elementos positivos de un cuerpo ordenado \( K \).
+\begin{itemize}
+    \item [i)] Dado un número natural \( n \), pruebe que la función \( f: P \to P \), definida por \( f(x) = x^n \), es monótona creciente (es decir, \( x < y \Rightarrow f(x) < f(y) \)).
+    \item [ii)] Dé un ejemplo en que \( f \) no sea sobreyectiva.
+    \item [iii)] Pruebe que \( f(P) \) no es un subconjunto acotado superiormente de \( K \).
+\end{itemize}
+
+12. Sean \( X \) un conjunto cualquiera y \( K \) un cuerpo. Indiquemos con \( \mathcal{F}(X; K) \) el conjunto de todas las funciones \( f: X \to K \). Definamos en \( \mathcal{F}(X; K) \) las operaciones de adición y de multiplicación de modo natural: dadas \( f, g: X \to K \), las funciones \( f + g: X \to K \) y \( f \cdot g: X \to K \) están dadas por \( (f + g)(x) = f(x) + g(x) \) y \( (f \cdot g)(x) = f(x) \cdot g(x) \). Verifique cuáles de los axiomas de cuerpo son válidos y cuáles no son válidos en el conjunto \( \mathcal{F}(X; K) \), respecto a estas operaciones.
+
+13. Sean \( x, y \) elementos positivos de un cuerpo ordenado \( K \). Se tiene \( x < y \Leftrightarrow x^{-1} > y^{-1} \). Pruebe también que \( x > 0 \Leftrightarrow x^{-1} > 0 \).
+
+14. Sea \(a\) un elemento positivo de un cuerpo ordenado \(K\). Definamos \(f: \mathbb{Z} \to K\) poniendo \(f(n) = a^n\). (Véase el Ejercicio 2.) Pruebe que \(f\) es creciente si \(a > 1\), decreciente si \(a < 1\) y constante si \(a = 1\).
+
+15. Dados \(x \neq 0\) en un cuerpo ordenado \(K\) y \(n \in \mathbb{N}\) cualquiera, pruebe que \((1+x)^{2n} > 1 + 2n \cdot x\).
+
+16. Si \(n \in \mathbb{N}\) y \(x < 1\) en un cuerpo ordenado \(K\), pruebe que \((1-x)^n \geq 1 - nx\).
+
+17. En un cuerpo ordenado, si \(a\) y \(a + x\) son positivos, pruebe que \((a+x)^n \geq a^n + n \cdot a^{n-1} \cdot x\). Enuncie y demuestre desigualdades análogas a las de los Ejercicios 15 y 16, con \(a\) en lugar de \(1\).
+
+18. Sean \(a\), \(b\), \(c\), \(d\) elementos de un cuerpo ordenado \(K\), donde \(b\) y \(d\) son positivos. Pruebe que \(\frac{a+c}{b+d}\) está comprendido entre el menor y el mayor de los elementos \(\frac{a}{b}\) y \(\frac{c}{d}\). Generalice: muestre que \(\frac{a_1 + \cdots + a_n}{b_1 + \cdots + b_n}\) está comprendido entre el menor y el mayor de los elementos \(\frac{a_1}{b_1}, \dots, \frac{a_n}{b_n}\), siempre que \(b_1, \ldots, b_n\) sean todos positivos.
+
+19. Dados \(x\), \(y\) en un cuerpo ordenado \(K\), con \(y \neq 0\), pruebe que \(|x \cdot y^{-1}| = |x| \cdot |y|^{-1}\), es decir \(\left|\frac{x}{y}\right| = \frac{|x|}{|y|}\).
+
+20. Pruebe por inducción que, dados \(x_1, \ldots, x_n\) en un cuerpo ordenado \(K\), se tiene \(|x_1 + \cdots + x_n| \leq |x_1| + \cdots + |x_n|\) y \(|x_1 \cdot x_2 \cdots x_n| = |x_1| \cdot |x_2| \cdots |x_n|\).
+
+21. Sea \(K\) un cuerpo ordenado. Exprese cada uno de los conjuntos siguientes como unión de intervalos:
+
+\begin{itemize}
+    \item [a)] el conjunto de los \(x \in K\) tales que \(|x - 3| + |x + 3| < 8\);
+    \item [b)] ídem \(|x^2 - 2| \leq 1\);
+    \item [c)] \( |2x + 1| \leq 1 \);
+    \item [d)] \( |x - 5| < |x + 1| \);
+    \item [e)] \( (2x + 3)(x - 2) \geq 0 \).
+\end{itemize}
+
+22. Pruebe que, para todo \( x \) en un cuerpo ordenado \( K \), se tiene
+\[ |x - 1| + |x - 2| \geq 1 \].
+\[ |x - 1| + |x - 2| + |x - 3| \geq 2 \].
+
+23. Dados \( a, b, \varepsilon \) en un cuerpo ordenado \( K \), pruebe que
+\[ |a - b| < \varepsilon \Rightarrow |b| - \varepsilon < |a| < |b| + \varepsilon \].
+Concluya que \( |a - b| < \varepsilon \Rightarrow a < |b| + \varepsilon \).
+
+24. Pruebe que, en un cuerpo ordenado \( K \), las siguientes afirmaciones son equivalentes:
+
+\begin{itemize}
+    \item [(i)] \( K \) es arquimediano;
+    \item [(ii)] \( \mathbb{Z} \) es ilimitado superior e inferiormente;
+    \item [(iii)] \( \mathbb{Q} \) es ilimitado superior e inferiormente.
+\end{itemize}
+
+25. Pruebe que un cuerpo ordenado \( K \) es arquimediano si, y solo si, para todo \( \varepsilon > 0 \) en \( K \), existe \( n \in \mathbb{N} \) tal que \( \frac{1}{2^n} < \varepsilon \).
+
+26. Sea \( a > 1 \) en un cuerpo arquimediano \( K \). Considere la función \( f: \mathbb{Z} \to K \), definida por \( f(n) = a^n \). Pruebe las siguientes afirmaciones:
+
+\begin{itemize}
+    \item [(i)] \( f(\mathbb{Z}) \) no es acotado superiormente;
+    \item [(ii)] \( \inf f(\mathbb{Z}) = 0 \).
+\end{itemize}
+
+27. Sean \( a \) racional diferente de cero, y \( x \) irracional. Pruebe que \( ax \) y \( a + x \) son irracionales. Dé ejemplo de dos números irracionales \( x, y \) tales que \( x + y \) y \( x \cdot y \) sean racionales.
+
+28. Sean \(a, b, c \in \mathbb{R}\) números racionales. Pruebe que
+\[ a + b\sqrt{2} = c + d\sqrt{2} \Leftrightarrow a = c \text{ y } b = d. \]
+
+29. Pruebe que el conjunto \(\mathbb{K}\) de los números reales de la forma
+\[ a + b\sqrt{2}, \]
+con \(a, b \in \mathbb{Q}\) racionales, es un cuerpo respecto a las operaciones de adición y multiplicación de números reales. Examine si lo mismo ocurre con los números de la forma \(a + b\sqrt[3]{2}\), con \(a, b \in \mathbb{Q}\).
+
+30. Sean \(a, b\) números racionales positivos. Pruebe que
+\[ \sqrt{a} + \sqrt{b} \]
+es racional si, y solo si,
+\[ \sqrt{a} \text{ y } \sqrt{b} \]
+son ambos racionales. (Sugerencia: multiplique por \(\sqrt{a} - \sqrt{b}\).)
+
+31. Sea \(\mathbb{X} \subset \mathbb{R}\) no vacío, acotado superiormente, y \(c\) un número real. Se tiene \(c \leq \sup \mathbb{X}\) si, y solo si, para cada \(\varepsilon > 0\) real dado se puede hallar \(x \in \mathbb{X}\) tal que \(c - \varepsilon < x\). Enuncie y demuestre un resultado análogo con ínfimo en lugar de supremo.
+
+32. Sea \(\mathbb{X} = \left\{ \frac{1}{n} : n \in \mathbb{N} \right\}\). Pruebe que \(\inf \mathbb{X} = 0\).
+
+33. Sean \(A \subset B\) conjuntos no vacíos acotados de números reales. Pruebe que \(\inf B \leq \inf A \leq \sup A \leq \sup B\).
+
+34. Sean \(A, B\) conjuntos no vacíos de números reales, tales que \(x \in A\), \(y \in B \Rightarrow x \leq y\). Pruebe que \(\sup A \leq \inf B\). Pruebe que \(\sup A = \inf B\) si, y solo si, para todo \(\varepsilon > 0\) dado, se pueden obtener \(x \in A\) e \(y \in B\) tales que \(y - x < \varepsilon\).
+
+35. Dado \(A \subset \mathbb{R}\) no vacío, acotado inferiormente, sea \(-A = \{-x; x \in A\}\). Pruebe que \(-A\) es acotado superiormente y que \(\sup(-A) = -\inf A\).
+
+36. Sea \(A \subset \mathbb{R}\) no vacío, acotado. Dado \(c > 0\), sea \(c \cdot A = \{c \cdot x; x \in A\}\). Pruebe que \(c \cdot A\) es acotado y que \(\sup(c \cdot A) = c \cdot \sup A\), \(\inf(c \cdot A) = c \cdot \inf A\). Enuncie y demuestre lo que ocurre cuando \(c < 0\).
+
+37. Dados \(A, B \subset \mathbb{R}\) no vacíos y acotados, sea \(A + B = \{x + y; x \in A, y \in B\}\). Pruebe:
+
+\begin{itemize}
+    \item [i)] \(A + B\) es acotado;
+    \item [ii)] \(\sup(A + B) = \sup A + \sup B\);
+    \item [iii)] \(\inf(A + B) = \inf A + \inf B\);
+    \item [iv)] Enuncie y demuestre resultados análogos suponiendo solo \(A\) y \(B\) acotados superiormente (o \(A\) y \(B\) acotados inferiormente).
+\end{itemize}
+
+38. Sea \(X \subset \mathbb{R}\). Una función \(f: X \to \mathbb{R}\) se llama acotada cuando su imagen \(f(X) \subset \mathbb{R}\) es un conjunto acotado. En este caso se define el \(\sup f\) como el supremo del conjunto \(f(X)\). (A veces se escribe \(\sup_{x\in X} f(x)\) o \(\sup f\).)
+
+\begin{itemize}
+    \item [i)] Pruebe que la suma de dos funciones acotadas \(f, g: X \to \mathbb{R}\) es una función acotada \(f + g: X \to \mathbb{R}\).
+    \item [ii)] Muestre que \((f + g)(X) \subset f(X) + g(X)\), en la notación del Ejercicio 37.
+    \item [iii)] Concluya que \(\sup(f + g) \leq \sup f + \sup g\) y que \(\inf(f + g) \geq \inf f + \inf g\).
+    \item [iv)] Considerando las funciones \(f, g: [-1, +1] \to \mathbb{R}\), definidas por \(f(x) = x\) y \(g(x) = -x\), muestre que se puede tener \(\sup(f + g) < \sup f + \sup g\) y \(\inf(f + g) > \inf f + \inf g\).
+\end{itemize}
+
+39. Sean \(A, B\) conjuntos de números reales positivos. Definamos \(A \cdot B = \{x \cdot y; x \in A \text{ y } y \in B\}\). Pruebe que si \(A\) y \(B\) son acotados entonces \(A \cdot B\) es acotado, siendo \(\sup(A \cdot B) = \sup A \cdot \sup B\) y \(\inf(A \cdot B) = \inf A \cdot \inf B\).
+
+40. \begin{itemize}
+    \item [i)] Pruebe que el producto de dos funciones acotadas \(f, g: X \to \mathbb{R}\) es una función acotada \(f \cdot g: X \to \mathbb{R}\).
+    \item [ii)] Muestre que \((f \cdot g)(X) \subset f(X) \cdot g(X)\).
+    \item [iii)] Concluya que, si \(f\) y \(g\) son ambas positivas, se tiene \(\sup(f \cdot g) \leq \sup f \cdot \sup g\) y \(\inf(f \cdot g) \geq \inf f \cdot \inf g\).
+    \item [iv)] Dé un ejemplo en que valgan las desigualdades estrictas.
+    \item [v)] Muestre, sin embargo, que para toda \(f\) positiva se tiene \(\sup(f^2) = [\sup f]^2\).
+\end{itemize}
+
+41. Analice los Ejercicios 39 y 40 sin las hipótesis de positividad en ellos hechas.
+
+42. Sea \(f(x) = a_0 + a_1x + \dots + a_nx^n\) un polinomio con coeficientes enteros.
+
+\begin{itemize}
+    \item [i)] Si un número racional \(p/q\) (con \(p\) y \(q\) primos entre sí) es tal que \(f(p/q) = 0\), pruebe que \(p\) divide a \(a_0\) y \(q\) divide a \(a_n\).
+    \item [ii)] Concluya que, cuando \(a_n = 1\), las raíces reales de \(f\) son enteras o irracionales. En particular, examinando \(x^n - a = 0\), concluya que, si un número entero \(a > 0\) no posee raíz n-ésima entera, entonces \(\sqrt[n]{a}\) es irracional.
+    \item [iii)] Use el resultado general para probar que \(\sqrt{2} + \sqrt[3]{2}\) es irracional.
+\end{itemize}
+
+43. Dado un número natural \(p > 1\), pruebe que los números racionales de la forma \(m/p^n\), donde \(m \in \mathbb{Z}\) y \(n \in \mathbb{N}\), constituyen un subconjunto denso en \(\mathbb{R}\).
+
+44. Un número real \(r\) se llama algebraico cuando existe un polinomio \(f(x) = a_0 + a_1x + \dots + a_nx^n\), no idénticamente nulo, con coeficientes enteros, tal que \(f(r) = 0\).
+
+\begin{itemize}
+    \item [i)] Pruebe que el conjunto de los polinomios de coeficientes enteros es enumerable.
+    \item [ii)] Dada una enumeración \(\{f_1, f_2, \dots, f_n, \dots\}\) de esos polinomios no idénticamente nulos, sea, para cada \(n \in \mathbb{N}\), \(A_n\) el conjunto de las raíces reales de \(f_n\). Cada \(A_n\) es un conjunto finito (pudiendo ser vacío). El conjunto \(A\) de los números algebraicos reales se escribe \(A = \bigcup_{n\in\mathbb{N}} A_n\). Concluya que \(A\) es enumerable. Muestre que \(A\) es denso en \(\mathbb{R}\).
+\end{itemize}
+
+45. Sea \(X\) el complemento de un conjunto enumerable de números reales. Muestre que, para cada intervalo abierto \((a, b)\), la intersección \((a, b) \cap X\) es no enumerable. En particular, \(X\) es denso.
+
+46. Un número real se llama trascendente cuando no es algebraico. Pruebe que el conjunto de los números trascendentes es no enumerable y denso en \(\mathbb{R}\).
+
+47. Pruebe que el conjunto de los números algebraicos es un cuerpo. (Este ejercicio requiere conocimientos de Álgebra muy por encima de lo que estamos admitiendo hasta aquí.)
+
+48. Dé ejemplo de una sucesión decreciente de intervalos cerrados (no acotados) cuya intersección sea vacía y de una sucesión decreciente de intervalos (abiertos) acotados cuya intersección sea vacía.
+
+49. Sean \(B \subset A\) conjuntos no vacíos de números reales. Suponga que \(A\) es acotado superiormente y que, para cada \(x \in A\), existe un \(y \in B\) tal que \(x \leq y\). Pruebe que, en estas condiciones, se tiene \(\sup B = \sup A\). Enuncie y demuestre un resultado análogo para ínfimo.
+
+50. Una corte de Dedekind es un par ordenado \((A, B)\) donde \(A\) y \(B\) son subconjuntos no vacíos de números racionales, tales que \(A\) no posee elemento máximo, \(A \cup B = \mathbb{Q}\) y, dados \(x \in A\) e \(y \in B\) cualesquiera, se tiene \(x < y\).
+
+\begin{itemize}
+    \item [a)] Pruebe que, en una corte de Dedekind \((A, B)\), vale \(\sup A = \inf B\).
+    \item [b)] Sea \(D\) el conjunto de las cortes de Dedekind. Pruebe que existe una biyección \(f: D \to \mathbb{R}\).
+\end{itemize}
+
+51. Sean \(X, Y\) conjuntos no vacíos y \(f: X \times Y \to \mathbb{R}\) una función acotada. Para cada \(x_0 \in X\) y cada \(y_0 \in Y\), pongamos \(s_1(x_0) = \sup\{f(x_0, y); y \in Y\}\) y \(s_2(y_0) = \sup\{f(x, y_0)\}\); \(x \in X\}\). Esto define funciones \(s_1: X \to \mathbb{R}\) y \(s_2: Y \to \mathbb{R}\). Pruebe que se tiene \(\sup_{x\in X} s_1(x) = \sup_{y\in Y} s_2(y)\). En otras palabras
+\[
+\sup_{x \in X} \sup_{y \in Y} f(x, y) = \sup_{y \in Y} \sup_{x \in X} f(x, y).
+\]
+
+52. Enuncie y demuestre un resultado análogo al anterior con ínfimo en lugar de supremo. Considere, a continuación, el caso “mixto” y pruebe que
+\[
+\sup_{x \in X} \inf_{y \in Y} f(x, y) \leq \inf_{y \in Y} \sup_{x \in X} f(x, y).
+\]
+
+Dé un ejemplo donde se tenga \(<\) en la desigualdad anterior.
+
+53. Sean \(x, y\) números reales positivos. Pruebe que se tiene
+\[
+\sqrt{xy} \leq \frac{x + y}{2}.
+\]
+
+54. La desigualdad entre la media aritmética y la media geométrica, vista en el ejercicio anterior, vale para \(n\) números reales positivos \(x_1, \dots, x_n\). Sean \(G = \sqrt[n]{x_1 x_2 \dots x_n}\) y
+\(A = \frac{x_1 + \cdots + x_n}{n}\). Se tiene \(G \leq A\). Esto es evidente cuando \(x_1 = \cdots = x_n\). Para probar la desigualdad en el caso general, considere la operación que consiste en sustituir el menor de los números dados, digamos \(x_i\), y el mayor de ellos, digamos \(x_j\), respectivamente por \(x_i' = \frac{x_i \cdot x_j}{G}\) y \(x_j' = G\). Esto no altera la media geométrica y, en cuanto a la aritmética, ella no aumenta, pues, como es fácil de ver, \(x_i' + x_j' \leq x_i + x_j\). Pruebe que, repetida esta operación como máximo \(n\) veces, obtenemos \(n\) números todos iguales a \(G\) y, por tanto, su media aritmética es \(G\). Como en cada operación la media aritmética no aumentó, concluya que \(G \leq A\), es decir,
+\[
+\sqrt[n]{x_1 x_2 \dots x_n} \leq \frac{x_1 + \cdots + x_n}{n}.
+\]
+
+55. Sea \(K\) un cuerpo ordenado completo. Indiquemos con \(0'\) y \(1'\) el cero y la unidad de \(K\). Para cada \(n \in \mathbb{N}\), sean \(n' = n \cdot 1' = 1' + \dots + 1'\) (\(n\) veces) y \((-n)' = -n'\). Definamos una función \(f: \mathbb{R} \to K\) poniendo \(f(p/q) = p'/q'\) para todo \(p/q \in \mathbb{Q}\) y, para \(x\) irracional, sea \(f(x) = \sup\{p'/q' \mid p/q < x\}\). Pruebe que \(f\) es un homomorfismo sobreyectivo y concluya que \(f\) es una biyección, es decir, un isomorfismo de \(\mathbb{R}\) sobre \(K\).
+
+56. Sea \(f: \mathbb{R} \to \mathbb{R}\) un isomorfismo de \(\mathbb{R}\) en sí mismo. Pruebe que \(f\) es la identidad. Concluya que si \(K\) y \(L\) son cuerpos ordenados completos, existe un único isomorfismo de \(K\) sobre \(L\).
+
+57. Verifique que \(f: \mathbb{R} \to (-1, 1)\), definida por \(f(x) = \frac{x}{\sqrt{1 + x^2}}\), es una biyección de \(\mathbb{R}\) sobre el intervalo \((-1, 1)\).
+
+58. Un conjunto \(G\) de números reales se llama un grupo aditivo cuando \(0 \in G\) y \(x, y \in G \Rightarrow x - y \in G\). Entonces, \(x \in G \Rightarrow -x \in G\) y \(x, y \in G \Rightarrow x + y \in G\). Sea entonces \(G \subset \mathbb{R}\) un grupo aditivo de números reales. Indiquemos con \(G^+\) el conjunto de los números reales positivos pertenecientes a \(G\). Exceptuando el caso trivial \(G = \{0\}\), \(G^+\) es no vacío. Supongamos pues \(G \neq \{0\}\). Pruebe que:
+
+\begin{itemize}
+    \item [i)] Si \(\inf G^+ = 0\), entonces \(G\) es denso en \(\mathbb{R}\);
+    \item [ii)] Si \(\inf G^+ = a > 0\), entonces \(a \in G^+\) y \(G = \{0, \pm a, \pm 2a, \dots\}\). [Sugerencia: para probar (ii) note primero que si fuera \(a \notin G^+\) existirían \(g, h \in G^+\) con \(a < h < g < a + 2\), de donde \(a/2 > g - h \in G^+\), una contradicción. A continuación, observe que todo \(g \in G\) se escribe de la forma \(g = a \cdot q + r\), con \(q \in \mathbb{Z}\), siendo \(0 \leq r < a\). Vea que \(r = g - a \cdot q \in G\), pues \(q\) es entero.]
+    \item [iii)] Concluya que, si \(\alpha \in \mathbb{R}\) es irracional, los números reales de la forma \(m + n\alpha\), con \(m, n \in \mathbb{Z}\), constituyen un subconjunto denso en \(\mathbb{R}\).
+\end{itemize}
+
+59. Sean \(f, g: \mathbb{R} \times \mathbb{R} \to \mathbb{R}\) y \(\varphi, \psi: \mathbb{R} \times \mathbb{R} \times \mathbb{R} \to \mathbb{R}\) las funciones definidas por \(f(x, y) = 3x - y\), \(g(x, y) = (x - 1)^2 + (y + 1)^2 - 9\), \(\varphi(x, y, z) = 3z\), \(\psi(x, y, z) = x^2 + y^2 - z\). Interpretando \((x, y)\) como las coordenadas cartesianas de un punto del plano \(\mathbb{R}^2\) y \((x, y, z)\) como coordenadas de un punto del espacio \(\mathbb{R}^3\), describa geométricamente los conjuntos \(f^{-1}(0)\), \(g^{-1}(0)\), \(\varphi^{-1}(0)\) y \(\psi^{-1}(0)\).
+
+60. Sea \(\alpha\) un número real positivo. Dado un número racional \(p/q\) (donde \(p \in \mathbb{Z}\) y \(q \in \mathbb{N}\)), defina la potencia de base \(\alpha\) y exponente racional \(p/q\) como \(\alpha^{p/q} = \sqrt[q]{a^p}\). Pruebe:
+
+\begin{itemize}
+    \item [1°)] Para cualesquiera \(r, s \in \mathbb{Q}\) se tiene \(\alpha^r \cdot \alpha^s = \alpha^{r+s}\) y \((\alpha^r)^s = \alpha^{r \cdot s}\);
+    \item [2°)] Para todo \(r \in \mathbb{Q}^+\), la función \(f: (0, +\infty) \to (0, +\infty)\), dada por \(f(x) = x^r\), es una biyección creciente;
+    \item [3°)] La función \(g: \mathbb{Q} \to \mathbb{R}\) definida por \(g(r) = \alpha^r\), (donde \(\alpha\) es un número real positivo fijado) es creciente si \(\alpha > 1\), y decreciente si \(0 < \alpha < 1\).
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
