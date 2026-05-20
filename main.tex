@@ -50,6 +50,8 @@ Ante la necesidad concreta del actual período lectivo 2026, surgida directament
 
 \tableofcontents
 
+\newpage
+
 \chapter{Conjuntos y Funciones}
 
 Introduciremos en este capítulo el lenguaje de Conjuntos y Funciones, que será utilizado sistemáticamente en los capítulos siguientes. Toda la Matemática se presenta hoy en día en ese lenguaje; así, imaginamos que la mayoría de los lectores ya tenga cierta familiaridad con el tema. Sin embargo, no se exigirá conocimiento previo alguno de la materia.
@@ -1630,7 +1632,7 @@ Concluimos así que, dado un cuerpo ordenado \(K\), podemos considerar, de modo 
 
 Ejemplo 8. Desigualdad de Bernoulli. En todo cuerpo ordenado \(K\), si \(n \in \mathbb{N}\) y \(x \geq -1\), vale \((1+x)^n \geq 1 + nx\). Esto se demuestra por inducción en \(n\). Para \(n = 1\) es obvio. De \((1+x)^n \geq 1 + n \cdot x\) se deduce \((1+x)^{n+1} = (1+x)^n \cdot (1+x) \geq (1 + nx)(1+x) = 1 + nx + x + nx^2 = 1 + (n+1)x + n \cdot x^2 \geq 1 + (n+1)x\). (Se multiplicaron ambos miembros de la desigualdad \((1+x)^n \ge 1+n \cdot x\) por \(1+x\). Por eso fue necesario suponer \(x \ge -1\)). Cuando \(n > 1\) (\(n \in \mathbb{N}\)) y \(x > -1\), se tiene, por el mismo argumento, la desigualdad estricta \((1+x)^n > 1+n \cdot x\), siempre que \(x \neq 0\).
 
-\textbf{Observación sobre la buena ordenación}
+\textbf{ sobre la buena ordenación}
 
 El Principio de la Buena Ordenación no se aplica inmediatamente al conjunto \(\mathbb{Z}\) de los enteros. Existen conjuntos no vacíos de números enteros que no poseen un menor elemento. El propio \(\mathbb{Z}\) es uno de ellos: cualquiera que sea \(n \in \mathbb{Z}\), el entero \(n-1\) es menor que \(n\), luego no existe un entero \(n_0\) menor que todos los demás. También el conjunto \(A = \{ \ldots, -4, -2, 0, 2, \ldots \}\) de los enteros pares, es decir \(A = \{2n; n \in \mathbb{Z}\}\), no posee un menor elemento. En general, si \(X \subset \mathbb{N}\) es un conjunto infinito de números naturales, entonces el conjunto \(-X = \{-n; n \in X\}\) es un conjunto no vacío de números enteros que no posee elemento mínimo.
 
@@ -1696,7 +1698,7 @@ Más generalmente, vale el
 
 En efecto, por el teorema, \(|x-a| \leq b\) es equivalente a \(-b \leq x-a \leq b\), es decir, \(a-b \leq x \leq a+b\) (sumando \(a\)).
 
-\textbf{Observación:} Todas las afirmaciones del teorema y de su corolario son aún verdaderas con \(<\) en lugar de \(\leq\), como se verifica fácilmente.
+ Todas las afirmaciones del teorema y de su corolario son aún verdaderas con \(<\) en lugar de \(\leq\), como se verifica fácilmente.
 
 En particular, tenemos las siguientes equivalencias, que serán ampliamente utilizadas en el estudio de los límites y de las funciones continuas:
 \[\boxed{x \in (a-\varepsilon, a+\varepsilon) \Leftrightarrow a-\varepsilon < x < a+\varepsilon \Leftrightarrow |x-a| < \varepsilon}\]
@@ -1796,7 +1798,7 @@ S1. \( x \in X \Rightarrow x \leq \sup X \);\\
 S2. \( c \geq x \) para todo \( x \in X \Rightarrow c \geq \sup X \);\\
 S2'. Si \( c < \sup X \) entonces existe \( x \in X \) tal que \( c < x \).
 
-Observación: Si \( X = \emptyset \) entonces todo \( b \in K \) es cota superior de \( X \). Como no existe el menor elemento en un cuerpo ordenado \( K \), se sigue que el conjunto vacío \( \emptyset \) no posee supremo en \( K \). Lo mismo se aplica para el ínfimo, que estudiaremos ahora.
+: Si \( X = \emptyset \) entonces todo \( b \in K \) es cota superior de \( X \). Como no existe el menor elemento en un cuerpo ordenado \( K \), se sigue que el conjunto vacío \( \emptyset \) no posee supremo en \( K \). Lo mismo se aplica para el ínfimo, que estudiaremos ahora.
 
 Análogamente, un elemento \( a \in K \) se llama ínfimo de un conjunto \( Y \subset K \), acotado inferiormente, cuando \( a \) es la mayor de las cotas inferiores de \( K \).
 
@@ -2191,20 +2193,1072 @@ Dé un ejemplo donde se tenga \(<\) en la desigualdad anterior.
     \item [3°)] La función \(g: \mathbb{Q} \to \mathbb{R}\) definida por \(g(r) = \alpha^r\), (donde \(\alpha\) es un número real positivo fijado) es creciente si \(\alpha > 1\), y decreciente si \(0 < \alpha < 1\).
 \end{itemize}
 
+\newpage
 
+\chapter{Secuencias y Series de Números Reales}
 
+Estudiaremos, en este capítulo, los límites de secuencias de números reales y, en particular, trataremos las series (o "sumas infinitas").
 
+Todos los conceptos y resultados importantes del Análisis Matemático se refieren, ya sea explícita o indirectamente, a límites. De ahí el papel central que desempeña esta noción.
 
+Los límites de secuencias de números reales son los más simples; por eso comenzaremos con ellos. Otros tipos más sofisticados de límites, como derivadas, integrales, secuencias de funciones, etc., serán estudiados en capítulos posteriores.
 
+Desde el punto de vista intuitivo, sugerimos al lector pensar en una secuencia \((x_1, x_2, \dots, x_n, \dots)\) de números reales como una sucesión de puntos en la recta y en su límite, que definiremos a continuación, como un punto al cual los puntos \(x_n\) se acercan y permanecen arbitrariamente próximos, siempre que se tome el índice \(n\) suficientemente grande. Un resultado crucial para justificar esta imagen geométrica es proporcionado por el Teorema 1 del Capítulo III, que recordamos ahora.
 
+Dados los números reales \(a\), \(x\), \(\varepsilon\), con \(\varepsilon > 0\), las tres afirmaciones siguientes son equivalentes:
 
+\[|x - a| < \varepsilon,\]
+\[a - \varepsilon < x < a + \varepsilon,\]
+\(x\) pertenece al intervalo \((a - \varepsilon, a + \varepsilon)\).
 
+Así, el intervalo abierto \((a - \varepsilon, a + \varepsilon)\), al que llamaremos intervalo abierto de centro \(a\) y radio \(\varepsilon\), está formado por los puntos cuya distancia al punto \(a\) (centro del intervalo) es menor que \(\varepsilon\).
 
+Análogamente, los puntos \(x\) del intervalo cerrado \([a - \varepsilon, a + \varepsilon]\) se caracterizan por la propiedad de estar situados a una distancia menor o igual a \(\varepsilon\) del centro \(a\) (es decir, \(|x - a| \leq \varepsilon\)).
 
+Otro resultado simple, pero indispensable para el estudio de los límites de sucesiones, es el Teorema 3 del Capítulo II, según el cual un subconjunto \(X \subset \mathbb{N}\) es infinito si, y solo si, es ilimitado.
 
+Cuando \(X \subset \mathbb{N}\) es un conjunto infinito, suele decirse que \(X\) contiene números naturales “arbitrariamente grandes”. Esto quiere decir que, dado cualquier \(n_1 \in \mathbb{N}\), existe \(n \in X\) tal que \(n > n_1\). En particular, si existe un número \(n_0 \in \mathbb{N}\) tal que \(X\) contiene todos los números naturales \(n > n_0\), entonces \(X\) es infinito (aunque no todos los subconjuntos infinitos \(X \subset \mathbb{N}\) gozan de esta propiedad). En este caso, suele decirse que “\(X\) contiene todos los números naturales suficientemente grandes”. Una afirmación equivalente: \(\mathbb{N} - X\) es finito.
 
+\section{Secuencias}
 
+De acuerdo con la definición general (Capítulo I, §5), una secuencia de números reales es una función \(x: \mathbb{N} \to \mathbb{R}\), definida en el conjunto \(\mathbb{N} = \{1, 2, 3, \dots\}\) de los números naturales y tomando valores en el conjunto \(\mathbb{R}\) de los números reales. El valor \(x(n)\), para todo \(n \in \mathbb{N}\), será representado por \(x_n\) y llamado el término de orden \(n\), o \(n\)-ésimo término de la secuencia.
 
+Escribiremos \((x_1, x_2, \dots, x_n, \dots)\), o \((x_n)_{n \in \mathbb{N}}\), o simplemente \((x_n)\), para indicar la sucesión \(x\).
 
+No se debe confundir la sucesión \(x\) con el conjunto \(\mathcal{X}(\mathbb{N})\) de sus términos. Para este conjunto, usaremos la notación \(\mathcal{X}(\mathbb{N}) = \{x_1, x_2, \dots, x_n, \dots\}\). La función \(x: \mathbb{N} \to \mathbb{R}\) no es necesariamente inyectiva: puede tenerse \(x_m = x_n\) con \(m \neq n\). En particular (a pesar de la notación) el conjunto \(\{x_1, x_2, \dots, x_n, \dots\}\) puede ser finito, o incluso reducirse a un único elemento, como es el caso de una sucesión constante, en la que \(x_n = a \in \mathbb{R}\) para todo \(n \in \mathbb{N}\).
+
+Cuando la sucesión \((x_n)\) sea inyectiva, es decir, cuando \(m \neq n\) implique \(x_m \neq x_n\), diremos que es una sucesión de términos dos a dos distintos.
+
+Se dice que la sucesión \((x_n)\) es acotada cuando el conjunto de sus términos es acotado, esto es, cuando existen números reales \(a, b\) tales que \(a \leq x_n \leq b\) para todo \(n \in \mathbb{N}\). Esto quiere decir que todos los términos de la sucesión pertenecen al intervalo \([a, b]\).
+
+Todo intervalo \([a, b]\) está contenido en un intervalo de la forma \([-c, c]\), con \(c > 0\) (intervalo simétrico). Para verlo, basta tomar \(c = \max(|a|, |b|)\). Como la condición \(x_n \in [-c, c]\) es equivalente a \(|x_n| \leq c\), vemos que una sucesión \((x_n)\) es acotada si, y solo si, existe un número real \(c > 0\) tal que \(|x_n| \leq c\) para todo \(n \in \mathbb{N}\). De ello resulta que \((x_n)\) es acotada si, y solo si, \((|x_n|)\) es acotada.
+
+Cuando una sucesión \((x_n)\) no es acotada, se dice que es no acotada (o ilimitada).
+
+Una sucesión \((x_n)\) se dice acotada superiormente cuando existe un número real \(b\) tal que \(x_n \leq b\) para todo \(n \in \mathbb{N}\). Esto significa que todos los términos \(x_n\) pertenecen a la semirrecta \((-\infty, b]\). Análogamente, se dice que \((x_n)\) es acotada inferiormente cuando existe \(a \in \mathbb{R}\) tal que \(a \leq x_n\) (es decir, \(x_n \in [a, +\infty)\)) para todo \(n \in \mathbb{N}\).
+
+Evidentemente, una sucesión es acotada si, y solo si, es acotada superior e inferiormente.
+
+Dada una sucesión \(x = (x_n)_{n \in \mathbb{N}}\) de números reales, una subsucesión de \(x\) es la restricción de la función \(x\) a un subconjunto infinito \(\mathbb{N}' = \{n_1 < n_2 < \cdots < n_i < \cdots\}\) de \(\mathbb{N}\). Se escribe \(x' = (x_{n_i})_{n \in \mathbb{N}'}\), o \((x_{n_1}, x_{n_2}, \ldots, x_{n_i}, \ldots)\) o \((x_{n_i})_{i \in \mathbb{N}}\) para indicar la subsucesión \(x' = x|\mathbb{N}'\).
+
+: Estrictamente hablando, una subsucesión \(x'\) no es una sucesión pues su dominio \(\mathbb{N}'\) no es necesariamente igual a \(\mathbb{N}\). Pero es trivial considerar \(x'\) como función definida en \(\mathbb{N}\), a saber, la función \(1 \mapsto x_{n_1}, 2 \mapsto x_{n_2}, \ldots, i \mapsto x_{n_i}, \ldots\). Esto es lo que se hace al usar la notación \(x' = (x_{n_i})_{i \in \mathbb{N}}\).
+
+Recordemos que un subconjunto \(\mathbb{N}' \subset \mathbb{N}\) es infinito si, y solo si, es ilimitado, es decir, para todo \(n_0 \in \mathbb{N}\) existe \(n_i \in \mathbb{N}'\) con \(n_i > n_0\).
+
+Toda subsucesión de una sucesión acotada es acotada (respectivamente acotada superiormente o inferiormente).
+
+Una sucesión \((x_n)\) se llama creciente cuando \(x_1 < x_2 < x_3 < \ldots\), esto es, cuando \(x_n < x_{n+1}\) para todo \(n \in \mathbb{N}\). Si se cumple \(x_n \leq x_{n+1}\) para todo \(n\), la sucesión se dice no decreciente.
+
+Análogamente, cuando \(x_1 > x_2 > x_3 > \ldots\), o sea, cuando \(x_n > x_{n+1}\) para todo \(n \in \mathbb{N}\), la sucesión \((x_n)\) se dice decreciente. Se llama no creciente cuando \(x_n \geq x_{n+1}\) para todo \(n \in \mathbb{N}\).
+
+Las sucesiones crecientes, no decrecientes, decrecientes y no crecientes se llaman sucesiones monótonas.
+
+Una sucesión no decreciente es siempre acotada inferiormente por su primer término, por ejemplo. Del mismo modo, una sucesión no creciente es siempre acotada superiormente.
+
+Para que una sucesión monótona sea acotada es (necesario y) suficiente que posea una subsucesión acotada. En efecto, sea, por ejemplo, \(x_{n_1} \leq x_{n_2} \leq \cdots \leq x_{n_k} \leq \cdots \leq b\) una subsucesión acotada de la sucesión no decreciente \((x_n)\). Entonces, para cualquier \(n \in \mathbb{N}\), existe un \(n_k > n\) y, por tanto, \(x_n \leq x_{n_k} \leq b\). Luego \(x_n \leq b\) para todo \(n\). La sucesión \((x_n)\) es, consecuentemente, acotada.
+
+Ejemplo 1. \(x_n = 1\) para todo \(n \in \mathbb{N}\); esto define la sucesión constante \((1, 1, \dots, 1, \dots)\); es evidentemente acotada, pues \(x(\mathbb{N}) = \{1\}\), no decreciente y también no creciente.
+
+Ejemplo 2. \(x_n = n\) para todo \(n \in \mathbb{N}\). En este caso, \(x: \mathbb{N} \to \mathbb{R}\) es la aplicación inclusión. Se obtiene la sucesión \((1, 2, 3, \dots, n, \dots)\) que es acotada inferiormente, no acotada superiormente, monótona creciente.
+
+Ejemplo 3. \(x_n = 0\) para \(n\) par y \(x_n = 1\) para \(n\) impar. La sucesión así definida es \((1, 0, 1, 0, \dots)\). Su conjunto de valores es \(x(\mathbb{N}) = \{0, 1\}\). Es acotada y no es monótona. La misma sucesión podría también definirse mediante la fórmula
+\[x_n = \frac{1}{2}[1 + (-1)^{n+1}]\] o bien por \(x_n = \text{sen}^2\left(\frac{n\pi}{2}\right)\).
+
+Ejemplo 4. \(x_n = 1/n\) para todo \(n \in \mathbb{N}\). Tenemos la sucesión \((1, 1/2, 1/3, \dots, 1/n, \dots)\), monótona decreciente, acotada.
+
+Ejemplo 5. Sea \(x_n = [1 + (-1)^{n+1}]n/2\). Entonces \(x_n = n\) para \(n\) impar y \(x_n = 0\) para \(n\) par. La sucesión \((x_n)\) tiene la forma \((1, 0, 3, 0, 5, 0, \dots)\). Es acotada inferiormente, no acotada superiormente, no monótona. Sus términos de orden impar constituyen una subsucesión monótona creciente no acotada, \(x_{2n-1} = 2n - 1\), mientras que los términos de orden par constituyen una subsucesión constante, \(x_{2n} = 0\).
+
+Ejemplo 6. Sea \(\alpha \in \mathbb{R}\). Consideremos la sucesión \((\alpha, \alpha^2, \alpha^3, \dots, \alpha^n, \dots)\) de las potencias de \(\alpha\), con exponente \(n\) entero positivo. Si \(\alpha = 0\) o \(\alpha = 1\), se tiene evidentemente una sucesión constante. Si \(0 < \alpha < 1\), la sucesión es decreciente, acotada. En efecto, multiplicando ambos miembros de la desigualdad \(\alpha < 1\) por el número positivo \(\alpha^n\) obtenemos \(\alpha^{n+1} < \alpha^n\), luego la sucesión es decreciente. Como todos sus términos son positivos, tenemos \(0 < \alpha^n < 1\) para todo \(n\). Consideremos ahora el caso \(-1 < \alpha < 0\). Entonces la sucesión \((\alpha^n)\) ya no es monótona (sus términos son alternadamente positivos y negativos) pero sigue siendo acotada pues \(|\alpha^n| = |\alpha|^n\), con \(0 < |\alpha| < 1\). El caso \(\alpha = -1\) es trivial: la sucesión \((\alpha^n)\) es \((-1, +1, -1, +1, \dots)\). Cuando \(\alpha > 1\) se obtiene una sucesión creciente: basta multiplicar ambos miembros de esta desigualdad por el número positivo \(a^n\) para obtener \(a^{n+1} > a^n\). Pero ahora tenemos \(a = 1 + h\) con \(h > 0\). Luego, por la desigualdad de Bernoulli, \(a^n > 1 + nh\). Así, dado cualquier número real \(b\), podemos hallar \(n\) tal que \(a^n > b\): basta tomar \(n > \frac{b-1}{h}\), pues esto proporcionará sucesivamente \(nh > b - 1\), \(1 + nh > b\), \(a^n > b\). Así, cuando \(a > 1\), \((a_n)\) es una sucesión creciente no acotada. Finalmente, cuando \(a < -1\), la sucesión \((a^n)\) no es monótona (pues sus términos son alternadamente positivos y negativos) y es no acotada superior e inferiormente. En efecto, sus términos de orden par, \(a^{2n} = (a^2)^n\), constituyen una subsucesión creciente, no acotada superiormente, de números positivos, a saber, la sucesión de las potencias del número \(a^2 > 1\). Mientras tanto, sus términos de orden impar constituyen una subsucesión decreciente, no acotada inferiormente, a saber, la sucesión \(a^{2n+1} = a(a^{2n})\).
+
+Ejemplo 7. Dado \(a \in \mathbb{R}\), con \(0 < a < 1\), sea \(x_n = 1 + a + \cdots + a^n = \frac{1 - a^{n+1}}{1 - a}\), para todo \(n \in \mathbb{N}\). La sucesión \((x_1, x_2, \ldots, x_n, \ldots)\) es creciente, pues \(x_{n+1} = x_n + a^{n+1}\). Además, es acotada pues \(0 < x_n < \frac{1}{1 - a}\) para todo \(n\). En particular, tomando \(a = 1/2\), obtenemos \(1 + 1/2 + \cdots + 1/2^n = 2 - \frac{1}{2^n} < 2\) para todo \(n \in \mathbb{N}\).
+
+Ejemplo 8. Una sucesión importante en Análisis es la que tiene como \(n\)-ésimo término \(a_n = 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}\). Es evidentemente creciente. Además, es acotada, pues
+\[a_n < 1 + 1 + \frac{1}{2} + \frac{1}{2 \cdot 2} + \cdots + \frac{1}{2^{n-1}} < 3,\]
+
+para todo \(n \in \mathbb{N}\).
+
+Ejemplo 9. Estrechamente relacionada con el ejemplo anterior es la sucesión cuyo \(n\)-ésimo término es \(b_n = (1 + 1/n)^n\). La fórmula del binomio de Newton nos da
+\[
+b_n = \left(1 + \frac{1}{n}\right)^n \\
+= 1 + n \cdot \frac{1}{n} + \frac{n(n-1)}{2!} \frac{1}{n^2} + \cdots + \frac{n(n-1)\ldots 2\cdot 1}{n!} \frac{1}{n^n},
+\]
+
+es decir
+\[
+b_n = 1 + 1 + \frac{1}{2!} \left(1 - \frac{1}{n}\right) + \frac{1}{3!} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) + \cdots
++ \frac{1}{n!} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{n-1}{n}\right).
+\]
+
+Vemos además que cada \( b_n \) es una suma de términos positivos. Cada uno de esos términos crece con \( n \). Además, el número de términos también crece con \( n \). Luego la sucesión (\( b_n \)) es creciente. Observamos también, por la última igualdad, que \( b_n < a_n \) para todo \( n \). Luego (\( b_n \)) es una sucesión acotada, con \( b_n < 3 \) para \( n \in \mathbb{N} \) arbitrario.
+
+Ejemplo 10. Tomemos \( x_1 = 0 \), \( x_2 = 1 \) y, para cada \( n = 1, 2, 3, \dots \), pongamos \( x_{n+2} = \frac{1}{2}(x_n + x_{n+1}) \). La sucesión que se obtiene es \( (0, 1, 1/2, 3/4, 5/8, 11/16, 21/32, \dots ) \). Sus términos se definen por inducción: cada uno de ellos, a partir del tercero, es la media aritmética de los dos términos anteriores. Ahora bien, dados los números \( a \), \( b \), digamos con \( a < b \), su media aritmética \( \frac{a+b}{2} \) es el punto medio del segmento de recta \([a, b]\). Luego se obtiene \( \frac{a+b}{2} \) sumando al número \( a \) la mitad de la distancia de \( a \) a \( b \), es decir \( \frac{1}{2}(b-a) \), o bien restando de \( b \) la misma cantidad. Se sigue que los términos de esta sucesión son \( x_1 = 0 \), \( x_2 = 1 \), \( x_3 = 1 - \frac{1}{2} \), \( x_4 = 1 - \frac{1}{2} + \frac{1}{4} \), \( x_5 = 1 - \frac{1}{2} + \frac{1}{4} - \frac{1}{8} \), \( x_6 = 1 - \frac{1}{2} + \frac{1}{4} - \frac{1}{8} + \frac{1}{16} \), etc. Separando los términos de orden par de los de orden impar, obtenemos
+\[x_1 = 0,\]
+\[x_3 = 1 - \frac{1}{2} = \frac{1}{2},\]
+\[x_5 = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{4} - \frac{1}{8}\right) = \frac{1}{2} + \frac{1}{8},\]
+\[x_7 = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{4} - \frac{1}{8}\right) + \left(\frac{1}{16} - \frac{1}{32}\right) = \frac{1}{2} + \frac{1}{8} + \frac{1}{32},\]
+\[\cdots\]
+\[x_{2n+1} = \frac{1}{2} + \frac{1}{2 \cdot 4} + \frac{1}{2 \cdot 4^2} + \cdots + \frac{1}{2 \cdot 4^{n-1}}\]
+\[= \frac{1}{2} \left(1 + \frac{1}{4} + \frac{1}{4^2} + \cdots + \frac{1}{4^{n-1}}\right),\]
+
+mientras que un cálculo análogo nos dará
+\[x_{2n} = 1 - \left(\frac{1}{4} + \frac{1}{4^2} + \cdots + \frac{1}{4^{n-1}}\right).\]
+
+Así, vemos que la sucesión \((x_n)\) es acotada, con \(0 \le x_n \le 1\). Sus términos de orden par constituyen una subsucesión decreciente y los de orden impar una subsucesión creciente.
+
+Ejemplo 11. Sea \(x_n = \sqrt[n]{n}\). Se trata de una sucesión de números positivos, por tanto acotada inferiormente. Veamos si es monótona: para que sea \(\sqrt[n]{n} > \sqrt[n+1]{n+1}\) es necesario y suficiente que \(n^{n+1} > (n+1)^n\), es decir, que \(n > \left(1 + \frac{1}{n}\right)^n\). Esto ocurre de hecho para todo \(n \ge 3\), pues sabemos que \(\left(1 + \frac{1}{n}\right)^n < 3\), sea cual sea \(n\). Así concluimos que la sucesión dada por \(\sqrt[n]{n}\) es decreciente a partir de su tercer término. Nótese que \(1 < \sqrt{2} < \sqrt[3]{3}\), luego crece en sus tres primeros pasos, solo entonces comenzando a decrecer. Así \((\sqrt[n]{n})\) es acotada.
+
+\section{Límite de una sucesión}
+
+Intuitivamente, decir que el número real \(a\) es límite de la sucesión \((x_n)\) significa afirmar que, para valores muy grandes de \(n\), los términos \(x_n\) se vuelven y se mantienen tan próximos a \(a\) como se desee. Con un poco más de precisión: estipulando un "error" mediante un número real \(\varepsilon > 0\), existe un índice \(n_0\) tal que todos los términos \(x_n\) de la sucesión cuyo índice \(n\) es mayor que \(n_0\) son valores aproximados de \(a\) con error inferior a \(\varepsilon\). El índice \(n_0\), evidentemente, debe depender de \(\varepsilon\), siendo de esperar que, para valores cada vez menores de \(\varepsilon\), sea necesario tomar \(n_0\) cada vez mayor.
+
+Esto nos lleva a la siguiente definición.
+
+Se dice que el número real \(a\) es límite de la sucesión \((x_n)\) de números reales, y se escribe \(a = \lim x_n\), o \(a = \lim_{n} x_n\), o \(a = \lim_{n \to \infty} x_n\), cuando para cada número real \(\varepsilon > 0\), dado arbitrariamente, sea posible obtener un entero \(n_0 \in \mathbb{N}\) tal que \(|x_n - a| < \varepsilon\), siempre que \(n > n_0\).
+
+En lenguaje simbólico:
+\[
+\boxed{\lim x_n = a \quad \equiv \quad \forall \varepsilon > 0 \; \exists n_0 \in \mathbb{N} \; ; \; n > n_0 \Rightarrow |x_n - a| < \varepsilon}
+\]
+
+El símbolo \(\equiv\) significa que lo que viene después es definición de lo que viene antes:
+
+\(\forall\) significa "para todo", o "cualquiera que sea";\\
+\(\exists\) significa "existe";\\
+\(;\) significa "tal que";\\
+\(\Rightarrow\) significa "implica".
+
+Así, el mensaje arriba estenografiado tiene la siguiente traducción:
+
+"\(\lim x_n = a\) quiere decir (por definición) que, para todo número real \(\varepsilon > 0\), existe un número natural \(n_0\) tal que \(n > n_0\) implica \(|x_n - a| < \varepsilon\)".
+
+El matemático inglés G. H. Hardy, un aficionado a las competiciones deportivas, solía decir que, para entender bien la idea de límite, hay que pensar en dos competidores. Uno de ellos, digamos, el bueno, quiere probar que \(\lim x_n = a\), mientras que el otro, digamos, el malo, intenta impedírselo. El malo proporciona los épsilons (\(\varepsilon\)) mientras que el bueno se ocupa de conseguir, para cada \(\varepsilon > 0\) propuesto como desafío, el \(n_0\) correspondiente (esto es, \(n_0\) tal que \(n > n_0\) implique \(|x_n - a| < \varepsilon\)).
+
+El bueno ganará el juego (y quedará por tanto establecido que \(\lim x_n = a\)) si, para cualquier \(\varepsilon > 0\) exhibido por su adversario, él es capaz de obtener un \(n_0\) conveniente (es decir, tal que \(n > n_0 \Rightarrow |x_n - a| < \varepsilon\)). Por otro lado, para que el malo gane la partida, basta con que consiga hallar un número real \(\varepsilon > 0\) para el cual ningún \(n_0\) que el bueno pueda intentar sirva. (O sea, ese \(\varepsilon\) debe ser tal que para todo \(n_0\) exista \(n > n_0\) con \(|x_n - a| \geq \varepsilon\).)
+
+Volviendo a hablar en serio, observamos que si \(\lim x_n = a\) entonces cualquier intervalo \((a - \varepsilon, a + \varepsilon)\), de centro \(a\) y radio \(\varepsilon > 0\), contiene todos los términos \(x_n\) de la sucesión, con excepción de a lo sumo un número finito de índices \(n\). En efecto, dado el intervalo \((a - \varepsilon, a + \varepsilon)\), como \(\lim x_n = a\), obtenemos \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow |x_n - a| < \varepsilon\). O sea, \(n > n_0 \Rightarrow x_n \in (a - \varepsilon, a + \varepsilon)\). Así, fuera del intervalo \((a - \varepsilon, a + \varepsilon)\) solo podrán estar, a lo sumo, los términos \(x_1, x_2, \ldots, x_{n_0}\).
+
+Recíprocamente: si cualquier intervalo de centro \(a\) contiene todos los \(x_n\), salvo tal vez para un número finito de índices \(n\), entonces \(\lim x_n = a\). En efecto, dado cualquier \(\varepsilon > 0\), el intervalo \((a - \varepsilon, a + \varepsilon)\) contendrá todos los \(x_n\) excepto para un número finito de índices \(n\). Sea \(n_0\) el mayor índice \(n\) tal que \(x_n \notin (a - \varepsilon, a + \varepsilon)\). Entonces \(n > n_0 \Rightarrow x_n \in (a - \varepsilon, a + \varepsilon)\), es decir \(|x_n - a| < \varepsilon\). Esto prueba que \(\lim x_n = a\).
+
+Cuando \(\lim x_n = a\), se dice que la sucesión \((x_n)\) converge hacia \(a\), o tiende hacia \(a\) y se escribe \(x_n \to a\). Una sucesión que posee límite se llama convergente. En caso contrario, se llama divergente. Explícitamente, una sucesión \((x_n)\) se dice divergente cuando, para ningún número real \(a\), es verdad que se tenga \(\lim x_n = a\).
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[thick] (-6.5, 0) -- (6, 0);
+    \draw[line width=2pt] (-2.5, 0) -- (2.5, 0);
+    \node at (-2.5, 0) {\Large $($};
+    \node at (2.5, 0) {\Large $)$};
+    \node[below=0.25cm] at (-2.5, 0) {$a - \varepsilon$};
+    \node[below=0.25cm] at (2.5, 0) {$a + \varepsilon$};
+    \draw[thick] (-5, -0.2) -- (-5, 0.2) node[below=0.4cm] {$x_1$};
+    \draw[thick] (-3.8, -0.2) -- (-3.8, 0.2) node[below=0.4cm] {$x_2$};
+    \draw[thick] (0, -0.2) -- (0, 0.2) node[below=0.4cm] {$a$};
+    \draw[thick] (-1.2, -0.2) -- (-1.2, 0.2);
+    \node[above=0.2cm] at (-0.3, 0) {$x_n(n > n_0)$};
+    \draw[thick] (4.2, -0.2) -- (4.2, 0.2) node[below=0.4cm] {$x_{n_0}$};
+\end{tikzpicture}
+\end{center}
+
+Cuando \(\lim x_n = a\), fuera de un intervalo \((a - \varepsilon, a + \varepsilon)\) están a lo sumo los términos \(x_1, x_2, \dots, x_{n_0}\)
+
+Demostraremos ahora algunos resultados simples sobre límites, a fin de poder analizar inteligentemente los ejemplos que vendrán a continuación.
+
+En primer lugar, mostraremos que una sucesión no puede poseer dos límites distintos.
+
+\textbf{Teorema 1.} (Unicidad del límite). Si \(\lim x_n = a\) y \(\lim x_n = b\) entonces \(a = b\).
+
+\textbf{Demostración.} Sea \(\lim x_n = a\). Dado cualquier número real \(b \neq a\), mostraremos que no se cumple \(\lim x_n = b\). Para ello, tomemos \(\varepsilon = \frac{|b - a|}{2}\). Vemos que \(\varepsilon > 0\) y notamos además que los intervalos \((a - \varepsilon, a + \varepsilon)\) y \((b - \varepsilon, b + \varepsilon)\) son disjuntos. (Si existiera \(x \in (a - \varepsilon, a + \varepsilon) \cap (b - \varepsilon, b + \varepsilon)\) tendríamos \(|a - x| < \varepsilon\) y \(|x - b| < \varepsilon\), de donde \(|a - b| \leq |a - x| + |x - b| < 2\varepsilon = |a - b|\), un absurdo.) Ahora bien, como \(\lim x_n = a\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n \in (a - \varepsilon, a + \varepsilon)\), por tanto, \(x_n \notin (b - \varepsilon, b + \varepsilon)\) para todo \(n > n_0\). Luego no es \(\lim x_n = b\).
+
+\textbf{Teorema 2.} Si \(\lim x_n = a\) entonces toda subsucesión de \((x_n)\) converge al límite \(a\).
+
+\textbf{Demostración.} Sea \((x_{n_1}, x_{n_2}, \dots, x_{n_i}, \dots)\) una subsucesión de \((x_n)\). Dado \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow |x_n - a| < \varepsilon\). Como los índices de la subsucesión forman un subconjunto infinito, existe entre ellos un \(n_{i_0} > n_0\). Entonces \(n_{i} > n_{i_0} \Rightarrow n_i > n_0 \Rightarrow |x_{n_i} - a| < \varepsilon\). Luego \(\lim x_{n_i} = a\).
+
+\textbf{Corolario.} Si \(\lim x_n = a\) entonces, para todo \(k \in \mathbb{N}\), \(\lim x_{n+k} = a\). En efecto, \((x_{1+k}, x_{2+k}, \dots, x_{n+k}, \dots)\) es una subsucesión de \((x_n)\).
+
+Se expresa el corolario anterior diciendo que el límite de una sucesión no se altera cuando de ella se omite un número finito de términos. En realidad, el Teorema 2 dice que el límite se mantiene, incluso si se desprecian términos en número infinito (siempre que se conserve una infinidad de índices, de modo que quede aún una subsucesión). Es útil (y obvio) el hecho de que si \((x_{n+k})_{n \in \mathbb{N}}\) converge, entonces \((x_n)_{n \in \mathbb{N}}\) también converge.
+
+: Hay dos aplicaciones especialmente útiles de los Teoremas 1 y 2 (conjuntamente). Una de ellas es para mostrar que una cierta sucesión \((x_n)\) no converge: basta obtener dos subsucesiones de \((x_n)\) con límites distintos. La otra es para determinar el límite de una sucesión \((x_n)\) que, a priori, se sabe que converge: basta determinar el límite de alguna subsucesión. Ese será el límite buscado. Veremos situaciones como estas en los Ejemplos 13 y 14.
+
+\textbf{Teorema 3.} Toda sucesión convergente es acotada.
+
+\textbf{Demostración.} Sea \(a = \lim x_n\). Entonces, tomando \(\varepsilon = 1\), vemos que existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n \in (a - 1, a + 1)\). Consideremos el conjunto finito \(F = \{x_1, x_2, \dots, x_{n_0}, a - 1, a + 1\}\). Sean \(c\) el menor y \(d\) el mayor elemento de \(F\). Entonces todos los términos \(x_n\) de la sucesión están contenidos en el intervalo \([c, d]\); luego la sucesión es acotada.
+
+Observaciones: 1. El recíproco es falso: la sucesión \((0, 1, 0, 1, \dots)\) es acotada pero no es convergente porque posee dos subsucesiones que convergen a límites diferentes, a saber, \((0, 0, 0, \dots)\) y \((1, 1, 1, \dots)\).
+
+2. Basta entonces verificar que una sucesión no es acotada para concluir que no converge.
+
+La proposición siguiente nos proporciona un "criterio de convergencia", es decir, nos permite concluir que una sucesión \((x_n)\) converge, incluso sin conocer, a priori, su límite.
+
+Además de su importancia, tanto teórica como práctica, el teorema abajo tuvo un papel histórico relevante. Fue intentando probarlo "de manera puramente aritmética" que Dedekind (1858) verificó la imposibilidad de hacerlo sin poseer antes una teoría matemática satisfactoria de los números reales. Esto lo motivó a construir los números reales mediante los "cortes" que hoy llevan su nombre.
+
+\textbf{Teorema 4.} Toda sucesión monótona acotada es convergente.
+
+\textbf{Demostración.} Para fijar las ideas, sea \((x_1 \le x_2 \le \dots \le x_n \le \dots)\) una sucesión no decreciente acotada. Tomemos \(a = \sup \{x_n; n = 1, 2, \dots\}\). Afirmamos que \(a = \lim x_n\). En efecto, dado cualquier \(\varepsilon > 0\), como \(a - \varepsilon < a\), el número \(a - \varepsilon\) no es cota superior del conjunto de los \(x_n\). Luego existe algún \(n_0 \in \mathbb{N}\) tal que \(a - \varepsilon < x_{n_0}\). Como la sucesión es monótona, \(n > n_0 \Rightarrow x_{n_0} \leq x_n\), por tanto, \(a - \varepsilon < x_n\). Como \(x_n \leq a\) para todo \(n\), vemos que \(n > n_0 \Rightarrow a - \varepsilon < x_n < a + \varepsilon\). Así, tenemos de hecho \(\lim x_n = a\), como queríamos demostrar.
+
+: Si \((x_n)\) fuera no creciente, tendríamos \(\lim x_n = \inf \{x_n; n = 1, 2, \dots\}\).
+
+\textbf{Corolario.} Si una sucesión monótona \((x_n)\) posee una subsucesión convergente, entonces \((x_n)\) es convergente.
+
+En efecto, en este caso la sucesión monótona \((x_n)\) es acotada porque posee una subsucesión acotada.
+
+Ejemplos. Antes de presentar ejemplos nuevos, reexaminaremos los diez anteriores, desde el punto de vista de convergencia.
+
+1. Toda sucesión constante \((a, a, \dots, a, \dots)\) es evidentemente convergente y tiene límite \(a\). En particular, \(\lim 1 = 1\).
+
+2. La sucesión (1, 2, 3, ..., n, ...) no converge porque no es acotada.
+
+3. La sucesión (1, 0, 1, 0, ...) es divergente, pues admite dos subsucesiones (constantes) que convergen a límites diferentes.
+
+4. Tenemos \(\lim_{n \to \infty} \frac{1}{n} = 0\). En efecto, dado \(\varepsilon > 0\) arbitrario, podemos obtener \(n_0 \in \mathbb{N}\) tal que \(n_0 > \frac{1}{\varepsilon}\). Entonces \(n > n_0 \Rightarrow \frac{1}{n} < \frac{1}{n_0} < \varepsilon\), o sea, \(n > n_0 \Rightarrow \left|\frac{1}{n} - 0\right| < \varepsilon\).
+
+5. La sucesión \((1, 0, 2, 0, 3, 0, \dots)\) no es convergente porque es no acotada. Nótese que posee una subsucesión convergente.
+
+6. Cuando \(a = 0\) o \(a = 1\), la sucesión \((a^n)\) es constante, luego converge trivialmente. Cuando \(a = -1\), la sucesión \((a^n)\) diverge pues es igual a \((-1, +1, -1, +1, \dots)\). Cuando \(a > 1\), la misma sucesión es monótona creciente y no acotada, luego es divergente. Cuando \(a < -1\), la sucesión es divergente por ser no acotada. Sea ahora \(0 < a < 1\). Entonces la sucesión \((a, a^2, a^3, \dots)\) es monótona (decreciente) acotada; luego converge. Afirmamos que \(\lim_{n \to \infty} a^n = 0\) (cuando \(0 < a < 1\)). En efecto, dado \(\varepsilon > 0\), como \(\frac{1}{a} > 1\), las potencias de \(\frac{1}{a}\) forman una sucesión creciente no acotada. Luego existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow \left(\frac{1}{a}\right)^n > \frac{1}{\varepsilon}\), o sea, \(\frac{1}{a^n} > \frac{1}{\varepsilon}\), esto es, \(a^n < \varepsilon\). Así, \(n > n_0 \Rightarrow |a^n - 0| < \varepsilon\), lo que muestra que \(\lim_{n \to \infty} a^n = 0\). Finalmente, si \(-1 < a < 0\), afirmamos que aún se tiene \(\lim_{n \to \infty} a^n = 0\). En efecto, tenemos \(0 < |a| < 1\). Luego \(0 = \lim_{n \to \infty} |a|^n = \lim_{n \to \infty} |a^n|\). Se sigue que \(\lim_{n \to \infty} a^n = 0\), en virtud de la siguiente :
+\[
+\lim x_n = 0 \;\Leftrightarrow\; \lim |x_n| = 0.
+\]
+(La veracidad de la  es trivial. Basta usar la definición de límite.)
+
+7. Si \(0 < a < 1\), la sucesión cuyo n-ésimo término es \(x_n = 1 + a + a^2 + \dots + a^n\) es creciente y acotada, luego converge. Afirmamos que \(\lim_{n\to\infty} x_n = \frac{1}{1-a}\). En efecto, tenemos \(x_n = \frac{1 - a^{n+1}}{1 - a}\), luego \(\left|x_n - \frac{1}{1 - a}\right| = \frac{a^{n+1}}{1 - a}\). Dado \(\varepsilon > 0\) podemos, en virtud del ejemplo anterior, obtener \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow a^{n+1} < \varepsilon(1 - a)\). Se sigue que \(n > n_0 \Rightarrow \frac{a^{n+1}}{1 - a} < \varepsilon\), es decir \(\left|x_n - \frac{1}{1 - a}\right| < \varepsilon\). Luego \(\lim x_n = \frac{1}{1 - a}\), como queríamos demostrar. Si solo se cumple \(0 < |a| < 1\), la sucesión \(\{x_n\}\) puede no ser monótona pero aún se tiene \(\lim x_n = \frac{1}{1 - a}\) por el argumento anterior.
+
+8. y 9. Las sucesiones \(\{a_n\}\) y \(\{b_n\}\), siendo monótonas acotadas, son convergentes. Sea \(e = \lim a_n\). Mostraremos más adelante (Ejemplo 16) que también se tiene \(e = \lim b_n\). (El número \(e\), base de los logaritmos naturales, es una de las constantes más ubicuas en el Análisis Matemático.)
+
+10. En este ejemplo, los términos de orden impar constituyen una sucesión creciente acotada.
+\begin{align*}
+x_{2n-1} &= \frac{1}{2} \left( 1 + \frac{1}{4} + \frac{1}{4^2} + \cdots + \frac{1}{4^{n-1}} \right) \\
+&= \frac{1}{2} \left[ \frac{1 - \left(\frac{1}{4}\right)^n}{1 - \frac{1}{4}} \right] = \frac{2}{3} \left[ 1 - \left(\frac{1}{4}\right)^{n} \right].
+\end{align*}
+
+Vemos que \(\left|x_{2n+1} - \frac{2}{3}\right| = \frac{2}{3} \left( \frac{1}{4} \right)^n\). Como \(0 < \frac{1}{4} < 1\), se sigue del Ejemplo 6 que, dado \(\varepsilon > 0\) arbitrariamente, podemos obtener \(n_0\) tal que \(n > n_0 \Rightarrow \left( \frac{1}{4} \right)^n < \varepsilon\). Con mayor razón, \(n > n_0 \Rightarrow \frac{2}{3} \left( \frac{1}{4} \right)^n < \varepsilon\), o sea, \(n > n_0 \Rightarrow \left|x_{2n-1} - \frac{2}{3}\right| < \varepsilon\). Así \(\lim_{n \to \infty} x_{2n-1} = \frac{2}{3}\).
+
+Análogamente, los términos de índice par forman una subsucesión decreciente acotada.
+\begin{align*}
+x_{2n} &= 1 - \left[ \frac{1}{4} + \left( \frac{1}{4} \right)^2 + \cdots + \left( \frac{1}{4} \right)^{n-1} \right] = \\
+&= 2 - \left[ 1 + \frac{1}{4} + \cdots + \left( \frac{1}{4} \right)^{n-1} \right] = 2 - \frac{4}{3} \left[ 1 - \left( \frac{1}{4} \right)^n \right].
+\end{align*}
+
+Como \(2 - \frac{4}{3} = \frac{2}{3}\), vemos que \(\left|x_{2n} - \frac{2}{3}\right| = \frac{4}{3} \left( \frac{1}{4} \right)^n\). Se sigue de ahí que \(\lim x_{2n} = \frac{2}{3}\). Verificamos así que los términos de orden par y los términos de orden impar de la sucesión \((x_n)\) forman dos subsucesiones que tienen el mismo límite \(\frac{2}{3}\). Debe resultar de esto que \(\lim x_n = \frac{2}{3}\). En efecto, dado \(\varepsilon > 0\), existen \(n_1, n_2 \in \mathbb{N}\) tales que \(n > n_1\), \(n\) par \(\Rightarrow \left|x_n - \frac{2}{3}\right| < \varepsilon\) y \(n > n_2\), \(n\) impar \(\Rightarrow \left|x_n - \frac{2}{3}\right| < \varepsilon\). Sea \(n_0\) el mayor de los dos números \(n_1, n_2\), es decir, \(n_0 = \max\{n_1, n_2\}\). Entonces \(n > n_0 \Rightarrow n > n_1\) y \(n > n_2\). Luego, ya sea \(n\) par o impar, se tiene \(\left|x_n - \frac{2}{3}\right| < \varepsilon\) para todo \(n > n_0\).
+
+11. Como, a partir de su tercer término, la sucesión \((\sqrt[n]{n})\) es decreciente, se sigue que existe \(a = \lim \sqrt[n]{n}\). Mostraremos más adelante (Ejemplo 14) que \(a = 1\).
+
+\section{Propiedades aritméticas de los límites}
+
+Veremos ahora cómo se comportan los límites de sucesiones respecto a las operaciones y a las desigualdades.
+
+\textbf{Teorema 5.} Si \(\lim x_n = 0\) e \((y_n)\) es una sucesión acotada, entonces \(\lim x_n \cdot y_n = 0\) (incluso si no existe \(\lim y_n\)).
+
+\textbf{Demostración.} Existe \(c > 0\) tal que \(|y_n| < c\) para todo \(n \in \mathbb{N}\). Dado \(\varepsilon > 0\), como \(\lim x_n = 0\), podemos encontrar \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow |x_n| < \frac{\varepsilon}{c}\). Luego, \(n > n_0 \Rightarrow |x_n \cdot y_n| = |x_n| \cdot |y_n| < \frac{\varepsilon}{c} \cdot c = \varepsilon\). Esto muestra que \(x_n \cdot y_n \to 0\).
+
+Ejemplo 12. Cualquiera que sea \(x \in \mathbb{R}\), tenemos \(\lim_{n \to \infty} \frac{\sen(nx)}{n} = 0\). En efecto, \(\frac{\sen(nx)}{n} = \sen(nx) \cdot \frac{1}{n}\), con \(|\sen(nx)| \leq 1\) y \(\frac{1}{n} \to 0\).
+
+Antes de demostrar el teorema siguiente, observemos lo siguiente: cuando \(\lim y_n = b\), con \(b \neq 0\), entonces, salvo un número finito de índices \(n\), se tiene \(y_n \neq 0\). En efecto, siendo \(b \neq 0\), podemos tomar un intervalo \((b - \varepsilon, b + \varepsilon)\) de centro \(b\) tal que \(0 \notin (b - \varepsilon, b + \varepsilon)\). (Basta tomar \(\varepsilon = |b|\).) Entonces existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow y_n \in (b - \varepsilon, b + \varepsilon)\), es decir, \(n > n_0 \Rightarrow y_n \neq 0\).
+
+En el ítem 3 del teorema siguiente, para formar la sucesión \(\frac{x_n}{y_n}\), nos limitamos a los índices \(n\) suficientemente grandes de modo que \(y_n \neq 0\).
+
+\textbf{Teorema 6.} Si \(\lim x_n = a\) y \(\lim y_n = b\), entonces
+
+1. \(\lim(x_n + y_n) = a + b\); \(\lim(x_n - y_n) = a - b\);
+
+2. \(\lim(x_n \cdot y_n) = a \cdot b\);
+
+3. \(\lim\left(\frac{x_n}{y_n}\right) = \frac{a}{b}\) si \(b \neq 0\).
+
+ \textbf{Demostración.} 1. Dado \(\varepsilon > 0\) existen \(n_1\) y \(n_2\) en \(\mathbb{N}\) tales que \(n > n_1 \Rightarrow |x_n - a| < \varepsilon/2\) y \(n > n_2 \Rightarrow |y_n - b| < \varepsilon/2\). Sea \(n_0 = \max\{n_1, n_2\}\). Entonces \(n > n_0 \Rightarrow n > n_1\) y \(n > n_2\). Luego \(n > n_0\) implica:
+\[
+|(x_n + y_n) - (a + b)| = |(x_n - a) + (y_n - b)| \leq |x_n - a| + |y_n - b| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+\]
+
+Esto prueba que \(\lim(x_n + y_n) = a + b\). El caso de la diferencia \(x_n - y_n\) se trata del mismo modo.
+
+2. Tenemos \(x_n y_n - ab = x_n y_n - x_n b + x_n b - ab = x_n (y_n - b) + (x_n - a) b\). Ahora, \((x_n)\) es una sucesión acotada (Teorema 3) y \(\lim(y_n - b) = 0\). Luego, por el Teorema 5, \(\lim[x_n(y_n - b)] = 0\). Por motivo semejante, \(\lim[(x_n - a)b] = 0\). Así, por la parte 1, ya demostrada, tenemos \(\lim(x_n y_n - ab) = \lim[x_n(y_n - b)] + \lim[(x_n - a)b] = 0\), de donde \(\lim x_n y_n = ab\).
+
+3. En primer lugar, notemos que, como \(y_n b \to b^2\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow y_n b > b^2/2\). (Basta tomar \(\varepsilon = b^2/2\) y hallar el \(n_0\) correspondiente.) Se sigue que, para todo \(n > n_0\), \(y_n b\) es un número (positivo) mayor que \(b^2/2\). Luego, la sucesión \(\left(\frac{1}{y_n b}\right)\) es acotada. Ahora tenemos
+\[
+\frac{x_n}{y_n} - \frac{a}{b} = \frac{b x_n - a y_n}{y_n b} = (b x_n - a y_n) \frac{1}{y_n b}.
+\]
+
+Como \(\lim_{n \to \infty} (b x_n - a y_n) = ab - ab = 0\), se sigue del Teorema 5 que
+\[
+\lim\left(\frac{x_n}{y_n} - \frac{a}{b}\right) = 0, \text{ y por tanto } \lim\frac{x_n}{y_n} = \frac{a}{b}.
+\]
+
+: Es claro que resultados análogos a los ítems 1 y 2 del Teorema 6 valen aún para tres, cuatro o un número finito cualquiera de sucesiones. Por ejemplo, si \(\lim x_n = a\), \(\lim y_n = b\) y \(\lim z_n = c\) entonces \(\lim(x_n + y_n + z_n) = a + b + c\) y \(\lim(x_n \cdot y_n \cdot z_n) = abc\). Pero debe tenerse cuidado de no intentar aplicar el teorema para ciertas sumas (o productos) en que el número de sumandos (o factores) es variable y crece por encima de cualquier límite. Por ejemplo, sea \(s_n = \frac{1}{n} + \frac{1}{n} + \cdots + \frac{1}{n}\) (\(n\) sumandos). Entonces \(s_n = 1\) de donde \(\lim s_n = 1\). Por otro lado, cada sumando \(\frac{1}{n}\) tiene límite cero. Una aplicación descuidada del Teorema 6 llevaría al absurdo de concluir que
+\[\lim s_n = \lim \frac{1}{n} + \lim \frac{1}{n} + \cdots + \lim \frac{1}{n} = 0 + 0 + \cdots + 0 = 0.\]
+
+Ejemplo 13. Examinemos la sucesión de números reales positivos \(x_n = \sqrt[n]{a} = a^{1/n}\), donde \(a > 0\). Es decreciente si \(a > 1\) y creciente si \(0 < a < 1\), siendo acotada en cualquier hipótesis. Existe por tanto \(l = \lim_{n \to \infty} a^{1/n}\). Podemos garantizar que \(l > 0\).
+
+(En efecto, si \(0 < a < 1\), entonces \(l = \sup\{a^{1/n}; n \in \mathbb{N}\} \geq a\). Si \(a > 1\) entonces \(a^{1/n} > 1\), para todo \(n\), luego \(l = \inf a^{1/n} \geq 1\).) Afirmamos que se tiene \(\lim a^{1/n} = 1\). Para probar esto, consideramos la subsucesión \((a^{1/n(n+1)}) = (a^{1/2}, a^{1/6}, a^{1/12}, \ldots)\). El Teorema 2 y el ítem 2 del Teorema 6 nos dan
+\[l = \lim a^{1/n(n+1)} = \lim a^{1/n - 1/(n+1)} = \lim \frac{a^{1/n}}{a^{1/(n+1)}} = \frac{l}{l} = 1.\]
+
+Ejemplo 14. Mostremos ahora que \(\lim \sqrt[n]{n} = \lim n^{1/n} = 1\). Sabemos que este límite existe porque la sucesión es monótona decreciente a partir de su tercer término. Escribiendo \(l = \lim n^{1/n}\), vemos que \(l = \inf\{n^{1/n}; n \in \mathbb{N}\}\). Como \(n^{1/n} > 1\) para todo \(n \in \mathbb{N}\), tenemos \(l \geq 1\). En particular, \(l > 0\). Considerando la subsucesión \((2n)^{1/2n}\), tenemos
+\[l^2 = \lim[(2n)^{1/2n}]^2 = \lim[(2n)^{1/n}] = \lim[2^{1/n} \cdot n^{1/n}] = \lim 2^{1/n} \cdot \lim n^{1/n} = 1 \cdot l = l.\]
+
+Como \( l \neq 0 \), de \( l^2 = l \) concluimos \( l = 1 \).
+
+Ejemplo 15. En relación al límite de \( \frac{x_n}{y_n} \), veamos qué puede ocurrir cuando \( \lim y_n = 0 \). Hagamos, entonces, esta hipótesis. Si, aún así, existe \( \lim \frac{x_n}{y_n} \), (o al menos la sucesión \( \left( \frac{x_n}{y_n} \right) \) es acotada) debe tenerse necesariamente \( \lim x_n = 0 \), pues
+\[x_n = \left( \frac{x_n}{y_n} \right) y_n.\]
+
+En otras palabras, cuando \( \lim y_n = 0 \) y la sucesión \( (x_n) \) diverge o tiene límite \( \neq 0 \), el cociente \( \frac{x_n}{y_n} \) no converge (ni siquiera se mantiene acotado). Supongamos ahora que \( \lim x_n = \lim y_n = 0 \). En este caso, el cociente \( \frac{x_n}{y_n} \) puede tener límite o no. Por ejemplo, si \( x_n = \frac{1}{n} \) e \( y_n = \frac{1}{an} \) entonces
+\[\lim \frac{x_n}{y_n} = a.\]
+
+Pero si \( x_n = \frac{(-1)^n}{n} \) e \( y_n = \frac{1}{n} \), entonces \( \frac{x_n}{y_n} = (-1)^n \), luego no existe \( \lim \frac{x_n}{y_n} \).
+
+\textbf{Teorema 7.} (Permanencia del signo). Si \( \lim x_n = a > 0 \), existe \( n_0 \in \mathbb{N} \) tal que \( n > n_0 \Rightarrow x_n > 0 \). (Si una sucesión tiene límite positivo, a partir de un cierto orden todos sus términos son positivos.)
+
+\textbf{Demostración.} Sea \( \varepsilon = a/2 > 0 \). Entonces \( (a - \varepsilon, a + \varepsilon) = (a/2, 3a/2) \). Existe \( n_0 \in \mathbb{N} \) tal que \( n > n_0 \Rightarrow x_n \in (a/2, 3a/2) \), o sea \( x_n > a/2 \). Así \( n > n_0 \Rightarrow x_n > 0 \).
+
+: De la misma manera se prueba que si \( \lim x_n = b < 0 \) entonces, a partir de un cierto orden, todos los términos \( x_n \) son negativos.
+
+\textbf{Corolario 1.} Sean \( (x_n) \) y \( (y_n) \) sucesiones convergentes. Si \( x_n \leq y_n \) para todo \( n \in \mathbb{N} \) entonces \( \lim x_n \leq \lim y_n \).
+
+En efecto, si fuera \(\lim x_n > \lim y_n\), entonces tendríamos \(0 < \lim x_n - \lim y_n = \lim (x_n - y_n)\) y, de ahí, tendríamos \(x_n - y_n > 0\) para todo \(n\) suficientemente grande.
+
+: Incluso suponiendo \(x_n < y_n\), para todo \(n\), no se puede garantizar que \(\lim x_n < \lim y_n\). Por ejemplo, \(0 < 1/n\), pero \(\lim 1/n = 0\).
+
+\textbf{Corolario 2.} Sea \((x_n)\) convergente. Si \(x_n \ge a\) para todo \(n\), entonces \(\lim x_n \ge a\).
+
+\textbf{Teorema 8.} Sean \(x_n \le z_n \le y_n\) para todo \(n \in \mathbb{N}\). Si \(\lim x_n = \lim y_n = a\) entonces \(\lim z_n = a\).
+
+\textbf{Demostración.} Dado \(\varepsilon > 0\) arbitrariamente, existen \(n_1 \in \mathbb{N}\) y \(n_2 \in \mathbb{N}\) tales que \(n > n_1 \Rightarrow x_n \in (a - \varepsilon, a + \varepsilon)\) y \(n > n_2 \Rightarrow y_n \in (a - \varepsilon, a + \varepsilon)\). Poniendo \(n_0 = \max\{n_1, n_2\}\), vemos que \(n > n_0\) implica \(a - \varepsilon < x_n \le z_n \le y_n < a + \varepsilon\), de donde \(\lim z_n = a\).
+
+Ejemplo 16. Volviendo a los Ejemplos 8 y 9, mostraremos ahora que se tiene \(\lim a_n = \lim b_n = e\). En primer lugar, como \(b_n < a_n\) para todo \(n\), obtenemos luego \(\lim b_n \le \lim a_n\). Por otro lado, fijando arbitrariamente \(p \in \mathbb{N}\), tenemos, para todo \(n > p\),
+\[b_n \ge 1 + 1 + \frac{1}{2!} \left(1 - \frac{1}{n}\right) + \frac{1}{3!} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) + \cdots + \frac{1}{p!} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{p-1}{n}\right).\]
+
+Haciendo \(n \to \infty\) (y manteniendo \(p\) fijo) en la desigualdad anterior, el segundo miembro tiende al límite \(a_p\). El Corolario 1 del Teorema 7, entonces, nos da \(\lim_{n \to \infty} b_n \ge a_p\) para todo \(p\). Nuevamente la misma proposición nos permite concluir que \(\lim_{n \to \infty} b_n \ge \lim_{p \to \infty} a_p\).
+
+Finalmente, obtenemos
+\[e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = \lim_{n \to \infty} \left(1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}\right).\]
+
+\section{Subsucesiones}
+
+La definición de límite se puede reformular así: el número real \(a\) es el límite de la sucesión \(x = (x_n)\) si, y solo si, para todo \(\varepsilon > 0\), el conjunto
+\[
+x^{-1}(a - \varepsilon, a + \varepsilon) = \{n \in \mathbb{N}; x_n \in (a - \varepsilon, a + \varepsilon)\}
+\]
+
+tiene complemento finito en \(\mathbb{N}\). Sabemos que esto equivale a decir que existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n \in (a - \varepsilon, a + \varepsilon)\).
+
+Mostraremos ahora que \(a \in \mathbb{R}\) es límite de una subsucesión de \((x_n)\) si y solo si, para todo \(\varepsilon > 0\), el conjunto
+\[
+x^{-1}(a - \varepsilon, a + \varepsilon) = \{n \in \mathbb{N}; x_n \in (a - \varepsilon, a + \varepsilon)\}
+\]
+
+es un subconjunto infinito de \(\mathbb{N}\). Es claro que si un subconjunto de \(\mathbb{N}\) tiene complemento finito entonces es un subconjunto infinito, pero el recíproco es falso.
+
+\textbf{Teorema 9.} Para que \(a \in \mathbb{R}\) sea límite de una subsucesión de \((x_n)\) es necesario y suficiente que, para todo \(\varepsilon > 0\), exista una infinidad de índices \(n\) tales que \(x_n \in (a - \varepsilon, a + \varepsilon)\).
+
+\textbf{Demostración.} En primer lugar, la condición es necesaria. En efecto, sea \(\mathbb{N}' = \{n_1 < n_2 < \cdots < n_i < \cdots\} \subset \mathbb{N}\) tal que \(a = \lim_{n \in \mathbb{N}'} x_n\). Entonces, para cada \(\varepsilon > 0\) existe \(i_0 \in \mathbb{N}\) tal que \(i > i_0 \Rightarrow x_{n_i} \in (a - \varepsilon, a + \varepsilon)\). Como existe una infinidad de índices \(i > i_0\), se sigue que existen infinitos \(n_i \in \mathbb{N}\) tales que \(x_{n_i} \in (a - \varepsilon, a + \varepsilon)\). Recíprocamente, supongamos que, para cada \(\varepsilon > 0\), el conjunto \(\{n \in \mathbb{N}; x_n \in (a - \varepsilon, a + \varepsilon)\}\) sea infinito. Tomando sucesivamente \(\varepsilon = 1, 1/2, 1/3, \ldots\) obtendremos un conjunto \(\mathbb{N}' = \{n_1 < n_2 < \cdots < n_i < \cdots\}\) tal que \(a = \lim_{n \in \mathbb{N}'} x_n\). En efecto, sea \(n_1 \in \mathbb{N}\) tal que \(x_{n_1} \in (a - 1, a + 1)\). Suponiendo, por inducción, que \(n_1 < n_2 < \cdots < n_i\) han sido definidos de modo que \(x_{n_2} \in (a - 1/2, a + 1/2)\), \(x_{n_3} \in (a - 1/3, a + 1/3)\), ..., \(x_{n_i} \in (a - 1/i, a + 1/i)\), observamos que el conjunto \(\{n \in \mathbb{N}; x_n \in (a - \frac{1}{i+1}, a + \frac{1}{i+1})\}\) es infinito, luego contiene algún entero \(n_{i+1}\) mayor que \(n_1, n_2, \ldots, n_i\). Esto completa la definición inductiva de \(\mathbb{N}' = \{n_1 < n_2 < \cdots < n_i < \ldots\}\). Como
+\[
+\left| x_n - a \right| < \frac{1}{i}
+\]
+
+para todo \(i \in \mathbb{N}\), tenemos \(\lim_{i \to \infty} x_n = a\), es decir,
+\[
+\lim_{n \in \mathbb{N}'} x_n = a.
+\]
+
+Vemos que \(a\) es límite de una subsucesión de \((x_n)\). La condición es, pues, suficiente.
+
+Un número real \(a\) se llama valor de adherencia de una sucesión \((x_n)\) cuando \(a\) es límite de alguna subsucesión de \((x_n)\).
+
+Recordando que un subconjunto de \(\mathbb{N}\) es infinito si, y solo si, es no acotado, el Teorema 9 nos dice que \(a \in \mathbb{R}\) es valor de adherencia de \((x_n)\) si, y solo si, para todo \(\varepsilon > 0\) y todo \(n_0 \in \mathbb{N}\) existe \(n \in \mathbb{N}\) tal que \(n > n_0\) y \(x_n \in (a-\varepsilon, a+\varepsilon)\). Esto se expresa en lenguaje común diciendo que \(a\) es valor de adherencia de \((x_n)\) si, y solo si, todo intervalo abierto de centro \(a\) contiene términos \(x_n\) con índices arbitrariamente grandes. Por otro lado, \(a = \lim x_n\) significa que cualquier intervalo abierto de centro \(a\) contiene todos los términos \(x_n\) con índices suficientemente grandes.
+
+Ejemplo 17. Si \(\lim x_n = a\) entonces \(a\) es valor de adherencia de \((x_n)\) y, por el Teorema 2, \(a\) es el único valor de adherencia de \((x_n)\). La sucesión \((0, 1, 0, 2, 0, 3, \ldots)\) tiene 0 como su único valor de adherencia, aunque no sea convergente. La sucesión \((0, 1, 0, 1, 0, \ldots)\) tiene como valores de adherencia 0 y 1. Cualquiera que sea el número real \(a\), existen infinitos números racionales en el intervalo \((a-\varepsilon, a+\varepsilon)\). Se sigue entonces del Teorema 9 que, dada una enumeración arbitraria \((r_1, r_2, \ldots, r_n, \ldots)\) de los números racionales, todo número real es valor de adherencia de la sucesión \((r_n)\). Sea \(x_n = n\). La sucesión \((x_n)\) no posee valores de adherencia.
+
+Sea ahora \((x_n)\) una sucesión acotada de números reales. Mostraremos que el conjunto de los valores de adherencia de \((x_n)\) no es vacío, que entre ellos existe uno que es el menor de todos y otro que es el mayor, y que la sucesión converge si, y solo si, posee apenas un valor de adherencia. En un sentido natural, el mayor y el menor valor de adherencia son generalizaciones del límite para el caso de sucesiones acotadas que pueden no ser convergentes. Pasemos a la discusión formal.
+
+Sea \(x_n\) una sucesión acotada; digamos, con \(\alpha \leq x_n \leq \beta\) para todo \(n \in \mathbb{N}\). Escribamos \(X_n = \{x_n, x_{n+1}, \dots\}\). Tenemos \([\alpha, \beta] \supset X_1 \supset X_2 \supset \cdots \supset X_n \supset \cdots\). Luego, poniendo \(a_n = \inf X_n\) y \(b_n = \sup X_n\), resulta
+\[
+\alpha \leq a_1 \leq a_2 \leq \cdots \leq a_n \leq \cdots \leq b_n \leq \cdots \leq b_2 \leq b_1 \leq \beta.
+\]
+
+Existen, por tanto, los límites
+\[
+a = \lim a_n = \sup a_n = \sup \inf X_n,
+\]
+\[
+b = \lim b_n = \inf b_n = \inf \sup X_n.
+\]
+
+Escribiremos \(a = \lim \inf x_n\), \(b = \lim \sup x_n\), diremos que \(a\) es el límite inferior y que \(b\) es el límite superior de la sucesión \((x_n)\). Se tiene evidentemente
+\[
+\lim \inf x_n \leq \lim \sup x_n.
+\]
+
+Ejemplo 18. Sean \(x_{2n-1} = -\frac{1}{n}\) y \(x_{2n} = 1 + \frac{1}{n}\).
+
+Se verifica sin dificultad que \(\inf X_{2n-2} = \inf X_{2n-1} = -\frac{1}{n}\) y \(\sup X_{2n-1} = \sup X_{2n} = 1 + \frac{1}{n}\). Luego \(\lim \inf x_n = 0\) y \(\lim \sup x_n = 1\).
+
+Estos son, por lo demás, los dos únicos valores de adherencia de la sucesión \((x_n)\).
+
+\textbf{Teorema 10.} Sea \((x_n)\) una sucesión acotada. Entonces \(\lim \inf x_n\) es el menor valor de adherencia y \(\lim \sup x_n\) es el mayor valor de adherencia de \((x_n)\).
+
+\textbf{Demostración.} Probemos inicialmente que \(a = \lim \inf x_n\) es valor de adherencia de \((x_n)\). Para ello, usaremos el Teorema 9. Dados arbitrariamente \(\varepsilon > 0\) y \(n_0 \in \mathbb{N}\), mostraremos que existe \(n \in \mathbb{N}\) tal que \(n > n_0\) y \(x_n \in (a - \varepsilon, a + \varepsilon)\). Como \(a = \lim a_n\), existe \(n_1 > n_0\) tal que \(a - \varepsilon < a_{n_1} < a + \varepsilon\). Como \(a_{n_1} = \inf X_{n_1}\), se sigue de la última desigualdad que \(a + \varepsilon\) (siendo mayor que \(a_{n_1}\)) no es cota inferior de \(X_{n_1}\). Luego existe \(n \geq n_1\) tal que \( a_{n_1} \leq x_n < a + \varepsilon\). Esto nos da \( n > n_0 \) con \( a - \varepsilon < x_n < a + \varepsilon \), como queríamos. Mostremos ahora que ningún número \( c < a \) puede ser valor de adherencia de \( (x_n) \). Puesto que \( a = \lim a_n \), de \( c < a \) se sigue que existe \( n_0 \in \mathbb{N} \) tal que \( c < a_{n_0} \leq a \). Como \( a_{n_0} = \inf X_{n_0} \), concluimos que \( n \geq n_0 \Rightarrow c < a_{n_0} \leq x_n \). Poniendo \( \varepsilon = a_{n_0} - c \), vemos que \( c + \varepsilon = a_{n_0} \), luego el intervalo \( (c - \varepsilon, c + \varepsilon) \) no contiene ningún término \( x_n \) con \( n \geq n_0 \). Esto excluye la posibilidad de que \( c \) sea valor de adherencia de \( (x_n) \). La demostración para \(\lim \sup\) se hace de modo semejante.
+
+\textbf{Corolario 1.} Toda sucesión acotada de números reales posee una subsucesión convergente.
+
+En efecto, siendo \( a = \lim \sup x_n \) un valor de adherencia, alguna subsucesión de \( (x_n) \) converge a \( a \).
+
+\textbf{Corolario 2.} Una sucesión acotada de números reales \( (x_n) \) es convergente si, y solo si, \( \lim \inf x_n = \lim \sup x_n \), es decir, si, y solo si, posee un único valor de adherencia.
+
+En efecto, si la sucesión \( (x_n) \) es convergente entonces \( \lim \inf x_n = \lim \sup x_n = \lim x_n \). Recíprocamente, supongamos \( \lim \inf x_n = \lim \sup x_n = a \). En la notación anterior, tenemos \( a = \lim a_n = \lim b_n \). Dado entonces \( \varepsilon > 0 \), existe \( n_0 \in \mathbb{N} \) tal que \( a - \varepsilon < a_{n_0} \leq a < b_{n_0} < a + \varepsilon \). Ahora bien, \( n > n_0 \) implica \( a_{n_0} \leq x_n \leq b_{n_0} \). Luego, \( n > n_0 \Rightarrow a - \varepsilon < x_n < a + \varepsilon \), por tanto \( \lim x_n = a \).
+
+Dada una sucesión acotada \( (x_n) \), sean \( a = \lim \inf x_n \) y \( b = \lim \sup x_n \). Existen subsucesiones de \( (x_n) \) que convergen a \( a \) y a \( b \), pero no a un valor menor que \( a \) ni mayor que \( b \). Si \( a = \lim_{n \in \mathbb{N}'} x_n \), la subsucesión \( (x_n)_{n \in \mathbb{N}'} \) puede poseer una infinidad de términos menores que \( a \). Pero, dado un número cualquiera menor que \( a \), digamos \( a - \varepsilon \) (con \( \varepsilon > 0 \)), no puede existir una infinidad de índices \( n \) tales que \( x_n < a - \varepsilon \), pues, en ese caso, esos índices originarían una subsucesión de \( (x_n) \) la cual poseería un valor de adherencia \( c \leq a - \varepsilon \), lo que sería absurdo. Luego, para todo \( \varepsilon > 0 \) existe \( n_1 \in \mathbb{N} \) tal que \( n > n_1 \Rightarrow a - \varepsilon < x_n \). Análogamente, para todo \( \varepsilon > 0 \) existe \(n_2 \in \mathbb{N} \text{ tal que } n > n_2 \Rightarrow x_n < b + \varepsilon\). En otras palabras, dado cualquier intervalo abierto \((a - \varepsilon, b + \varepsilon)\) que contenga al intervalo \([a, b]\), existe \(n_0 \in \mathbb{N}\) (tómese \(n_0 = \max\{n_1, n_2\}\)) tal que \(n > n_0 \Rightarrow a - \varepsilon < x_n < b + \varepsilon\). Evidentemente, esta propiedad por sí sola no basta para caracterizar los números \(a = \liminf x_n\) y \(b = \limsup x_n\): si todos los términos \(x_n\) de la sucesión están contenidos en un intervalo \([\alpha, \beta]\) entonces \(\alpha - \varepsilon < x_n < \beta + \varepsilon\) para cualesquiera \(n \in \mathbb{N}\) y \(\varepsilon > 0\). Pero \([a, b]\) es el menor intervalo que cumple la condición anterior, según nos enseña el
+
+\textbf{Teorema 11.} Sean \(a = \liminf x_n\) y \(b = \limsup x_n\), donde \((x_n)\) es una sucesión acotada. Dado cualquier \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow a - \varepsilon < x_n < b + \varepsilon\). Además, \(a\) es el mayor y \(b\) es el menor número con esta propiedad.
+
+\textbf{Demostración.} La primera afirmación ya fue probada arriba. Supongamos ahora que \(a'\) sea un número mayor que \(a\). Tomando \(\varepsilon = (a' - a)/2\) tenemos \(a + \varepsilon = a' - \varepsilon\). Como \(a\) es valor de adherencia de \((x_n)\), existe una infinidad de índices \(n\) tales que \(a - \varepsilon < x_n < a + \varepsilon\), y por tanto \(x_n < a' - \varepsilon\). Luego ningún número \(a' > a\) goza de la propiedad estipulada anteriormente. Del mismo modo se muestra que si \(b' < b\) entonces existe \(\varepsilon > 0\) tal que infinitos valores de \(n\) cumplen la condición \(b' + \varepsilon < x_n\). Esto concluye la demostración.
+
+\textbf{Corolario 1.} Si \(c < \liminf x_n\) entonces existe \(n_1 \in \mathbb{N}\) tal que \(n > n_1 \Rightarrow c < x_n\). Análogamente, si \(\limsup x_n < d\) entonces existe \(n_2 \in \mathbb{N}\) tal que \(x_n < d\) para todo \(n > n_2\).
+
+En efecto, siendo \(a = \liminf x_n\), \(c < a\) significa \(c = a - \varepsilon\), con \(\varepsilon > 0\). Del mismo modo se argumenta con \(\limsup\).
+
+\textbf{Corolario 2.} Dada una sucesión acotada \((x_n)\), sean \(a\) y \(b\) números reales con las siguientes propiedades: si \(c < a\) entonces existe \(n_1 \in \mathbb{N}\) tal que \(n > n_1 \Rightarrow c < x_n\); si \(b < d\) entonces existe \(n_2 \in \mathbb{N}\) tal que \(n > n_2 \Rightarrow x_n < d\). En estas condiciones, \(a \leq \liminf x_n\) y \(\limsup x_n \leq b\).
+
+Los Corolarios 1 y 2 solo repiten, con otras palabras, las afirmaciones contenidas en el Teorema 11.
+
+Apéndice al §4
+
+El Corolario 1 del Teorema 10, por su importancia, merece una demostración directa. Una alternativa razonable es probar que toda sucesión posee una subsucesión monótona y luego usar el Teorema 4. Otra posibilidad es la que presentamos ahora.
+
+Toda sucesión acotada de números reales posee una subsucesión convergente.
+
+\textbf{Demostración.} Sea \((x_n)\) una sucesión, digamos con \(x_n \in [a, b]\) para todo \(n\). Consideremos el conjunto \(A = \{t \in \mathbb{R}; t \leq x_n \text{ para una infinidad de índices } n\}\). Como \(a \leq x_n \leq b\) para todo \(n \in \mathbb{N}\), se sigue que \(a \in A\) y que ningún elemento de \(A\) puede ser mayor que \(b\). Así, \(A\) es no vacío y acotado superiormente. Existe, por tanto, \(c = \sup A\). Para todo \(\varepsilon > 0\), existe \(t \in A\) con \(c - \varepsilon < t\), luego hay una infinidad de índices \(n\) tales que \(c - \varepsilon < x_n\). Por otro lado, como \(c + \varepsilon \notin A\), existe solo un número finito de índices \(n\) con \(c + \varepsilon \leq x_n\). Concluimos entonces que, para una infinidad de valores de \(n\), tenemos \(c - \varepsilon < x_n < c + \varepsilon\). Se sigue del Teorema 9 que \(c\) es límite de una subsucesión de \((x_n)\).
+
+El lector notará que, en la demostración anterior, se tiene \(c = \limsup x_n\).
+
+\section{Sucesiones de Cauchy}
+
+Ya hemos señalado la importancia del Teorema 4 (“toda sucesión monótona acotada es convergente”), que nos permite saber, en ciertos casos, que una sucesión posee límite, incluso sin conocer el valor de ese límite. Pero es claro que muchas sucesiones convergentes no son monótonas, de modo que aquel criterio de convergencia no es el más general posible. Veremos ahora el criterio de Cauchy, que nos dará una condición, no solo suficiente sino también necesaria, para la convergencia de una sucesión de números reales.
+
+Sea \((x_n)\) una sucesión de números reales. Se llama una sucesión de Cauchy cuando cumple la siguiente condición:
+— dado arbitrariamente un número real \(\varepsilon > 0\), se puede obtener \(n_0 \in \mathbb{N}\) tal que \(m > n_0\) y \(n > n_0\) implica \(|x_m - x_n| < \varepsilon\).
+
+Para que \((x_n)\) sea una sucesión de Cauchy, se exige que sus términos \(x_m\), \(x_n\), para valores suficientemente grandes de los índices \(m\), \(n\), se aproximen arbitrariamente unos de otros. Compárese con la definición de límite, donde se exige que los términos \(x_n\) se aproximen arbitrariamente a un número real \(\alpha\) dado a priori. Aquí se impone una condición solo sobre los términos de la propia sucesión.
+
+\textbf{Teorema 12.} Toda sucesión convergente es de Cauchy.
+
+\textbf{Demostración.} Sea \(\lim x_n = \alpha\). Dado arbitrariamente \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(m > m_0 \Rightarrow |x_m - \alpha| < \frac{\varepsilon}{2}\) y \(n > n_0 \Rightarrow |x_n - \alpha| < \frac{\varepsilon}{2}\). Luego \(m, n > n_0 \Rightarrow |x_m - x_n| \leq |x_m - \alpha| + |x_n - \alpha| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\), lo que muestra que \((x_n)\) es una sucesión de Cauchy.
+
+Intuitivamente: si \(\lim x_n = \alpha\) entonces, para valores grandes de \(n\), los términos \(x_n\) se aproximan a \(\alpha\). En ese caso, deben necesariamente aproximarse unos a otros.
+
+Pasaremos ahora a la demostración del recíproco del Teorema 12, que es el resultado principal de esta sección. Las dos proposiciones siguientes se enuncian como lemas porque están contenidas en el Teorema 13.
+
+\textbf{Lema 1.} Toda sucesión de Cauchy es acotada.
+
+\textbf{Demostración.} Sea \((x_n)\) una sucesión de Cauchy. Tomando \(\varepsilon = 1\), obtenemos \(n_0 \in \mathbb{N}\) tal que \(m, n \geq n_0 \Rightarrow |x_m - x_n| < 1\). En particular, \(n \geq n_0 \Rightarrow |x_{n_0} - x_n| < 1\), es decir, \(n \geq n_0 \Rightarrow x_n \in (x_{n_0} - 1, x_{n_0} + 1)\).
+
+Sean \(\alpha\) el menor y \(\beta\) el mayor elemento del conjunto \(X = \{x_1, x_2, \dots, x_{n_0-1}, x_{n_0+1}\}\). Entonces \(x_n \in [\alpha, \beta]\) para cada \(n \in \mathbb{N}\), luego \((x_n)\) es acotada.
+
+\textbf{Lema 2.} Si una sucesión de Cauchy \((x_n)\) posee una subsucesión que converge a \(\alpha \in \mathbb{R}\), entonces \(\lim x_n = \alpha\).
+
+\textbf{Demostración.} Dado \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(m, n > n_0 \Rightarrow |x_m - x_n| < \frac{\varepsilon}{2}\). Existe también (véase el Teorema 9) \(n_1 > n_0\) tal que \(|x_{n_1} - a| < \varepsilon/2\). Por tanto, \(n > n_0 \Rightarrow |x_n - a| \leq |x_n - x_{n_1}| + |x_{n_1} - a| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\). Esto muestra que \(\lim x_n = \alpha\).
+
+\textbf{Teorema 13.} Toda sucesión de Cauchy de números reales es convergente.
+
+\textbf{Demostración.} Sea \((x_n)\) una sucesión de Cauchy. Por el Lema 1, es acotada. Luego (Corolario 1 del Teorema 10) posee una subsucesión convergente. Se sigue del Lema 2 que \((x_n)\) converge.
+
+Ejemplo 19. (Método de las aproximaciones sucesivas). Sea \(0 \leq \lambda < 1\). Supongamos que la sucesión \((x_n)\) es tal que \(|x_{n+2} - x_{n+1}| \leq \lambda|x_{n+1} - x_n|\) para todo \(n \in \mathbb{N}\). Afirmamos que \((x_n)\) es una sucesión de Cauchy, y por tanto converge. En efecto, tenemos \(|x_3 - x_2| \leq \lambda|x_2 - x_1|\), \(|x_4 - x_3| \leq \lambda^2|x_2 - x_1|\), y, en general, \(|x_{n+1} - x_n| \leq \lambda^{n-1}|x_2 - x_1|\) para todo \(n \in \mathbb{N}\). Se sigue que, para \(n, p \in \mathbb{N}\) arbitrarios, vale
+\[
+|x_{n+p} - x_n| \leq |x_{n+p} - x_{n+p-1}| + \cdots + |x_{n+1} - x_n|
+\]
+\[
+\leq (\lambda^{n+p-2} + \lambda^{n+p-3} + \cdots + \lambda^{n-1})|x_2 - x_1|
+\]
+\[
+= \lambda^{n-1}(\lambda^{p-1} + \lambda^{p-2} + \cdots + \lambda + 1)|x_2 - x_1|
+\]
+\[
+= \lambda^{n-1} \cdot \frac{1 - \lambda^p}{1 - \lambda} \cdot |x_2 - x_1| \leq \frac{\lambda^{n-1}}{1 - \lambda} \cdot |x_2 - x_1|.
+\]
+
+Como \(\lim_{n \to \infty} \frac{\lambda^{n-1}}{1-\lambda} \cdot |x_2 - x_1| = 0\), se sigue que, para cualquier \(\varepsilon > 0\) dado, existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow 0 < \frac{\lambda^{n-1}}{1-\lambda} \cdot |x_2 - x_1| < \varepsilon\). De ahí resulta que \(m, n > n_0 \Rightarrow |x_m - x_n| < \varepsilon\). (Pues podemos suponer siempre \(m \ge n\) y escribir \(m = n + p\).)
+
+Aplicación. (Aproximaciones sucesivas de la raíz cuadrada). Sea \(a > 0\). Definiremos una sucesión \((x_n)\) tomando \(x_1 = c > 0\) arbitrariamente y poniendo \(x_{n+1} = \frac{1}{2} \left( x_n + \frac{a}{x_n} \right)\). Si logramos probar que existe \(b = \lim x_n\) y \(b \neq 0\), debe ser necesariamente \(b = \sqrt{a}\). En efecto, haciendo \(n \to \infty\) en la igualdad que define \(x_{n+1}\) en función de \(x_n\), obtenemos \(b = \frac{1}{2} \left( b + \frac{a}{b} \right)\), es decir \(b = \frac{a}{b}\) y por tanto \(b^2 = a\). Antes veamos un resultado que nos será útil.
+
+\textbf{Lema.} Para todo \(x > 0\), se tiene \(\frac{1}{2} \left( x + \frac{a}{x} \right) > \sqrt{\frac{a}{2}}\).
+
+\textbf{Demostración.} Multiplicando ambos miembros de esta desigualdad por 2 y elevándola al cuadrado, vemos que es equivalente a \(x^2 + 2a + \frac{a^2}{x^2} > 2a\), lo cual es obvio.
+
+Se sigue del lema que, para todo \(n > 1\), tenemos \(x_n > \sqrt{\frac{a}{2}}\). Por tanto, \(x_n \cdot x_{n+1} > \frac{a}{2}\), es decir, \(\frac{a}{2 \cdot x_n \cdot x_{n+1}} < 1\) para todo \(n > 1\). Usaremos este hecho para mostrar que la sucesión \((x_n)\) cumple la condición \(|x_{n+2} - x_{n+1}| \le \frac{1}{2} |x_{n+1} - x_n|\) para todo \(n > 1\). Se deducirá entonces, del Ejemplo 19, que existe \(b = \lim x_n\) y, como \(x_n \ge \sqrt{\frac{a}{2}}\) para todo \(n > 1\), tendremos \(b \neq 0\). Ahora bien, es claro que
+\[
+x_{n+2} - x_{n+1} = \frac{1}{2} (x_{n+1} - x_n) + \frac{a}{2} \left( \frac{1}{x_{n+1}} - \frac{1}{x_n} \right) = \frac{1}{2} (x_{n+1} - x_n) + \frac{a}{2} \cdot \frac{x_n - x_{n+1}}{x_n \cdot x_{n+1}}.
+\]
+
+Luego
+\[
+\left| \frac{x_{n+2} - x_{n+1}}{x_{n+1} - x_n} \right| = \left| \frac{1}{2} - \frac{a}{2x_n \cdot x_{n+1}} \right| \leq \frac{1}{2},
+\]
+
+pues \(0 < \frac{a}{2x_n \cdot x_{n+1}} < 1\). La fórmula de recurrencia
+\[
+x_{n+1} = \frac{1}{2} \left( x_n + \frac{a}{x_n} \right)
+\]
+
+proporciona, por tanto, aproximaciones sucesivas para \(\sqrt{a}\).
+
+\section{Límites infinitos}
+
+Entre las sucesiones divergentes, destacaremos un tipo que se comporta con cierta regularidad, a saber, aquellas cuyos valores se vuelven y se mantienen arbitrariamente grandes positivamente o arbitrariamente grandes negativamente.
+
+Sea \((x_n)\) una sucesión de números reales. Diremos que "\(x_n\) tiende a más infinito", y escribiremos \(\lim x_n = +\infty\) cuando, para todo número real \(A > 0\) dado arbitrariamente, podamos encontrar \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n > A\). (Es decir, para cualquier \(A > 0\) dado, existe solo un número finito de índices \(n\) tales que \(x_n \leq A\).)
+
+Ejemplo 20. Si \(x_n = n\) entonces obviamente \(\lim x_n = +\infty\). Sea \(x_n = a^n\), con \(a > 1\). Entonces \(a = 1 + h\), \(h > 0\). Dado \(A > 0\), vemos que \(a^n = (1 + h)^n > 1 + nh > A\) desde que se tome \(n > (A-1)/h\). Así, si elegimos un entero \(n_0 > (A-1)/h\), tendremos \(n > n_0 \Rightarrow a^n > A\). Luego \(\lim_{n \to \infty} a^n = +\infty\) si \(a > 1\). Más generalmente, dada una sucesión no decreciente \((x_n)\), o bien es convergente (si es acotada) o bien, si es no acotada, se debe tener \(\lim x_n = +\infty\). En efecto, siendo \((x_n)\) no acotada, dado \(A > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(x_{n_0} > A\). Como \((x_n)\) es no decreciente, \(n > n_0 \Rightarrow x_n \geq x_{n_0} > A\).
+
+Evidentemente, si \(\lim x_n = +\infty\) entonces \((x_n)\) es no acotada superiormente pero es acotada inferiormente. Además, si \(\lim x_n = +\infty \text{ entonces toda subsucesión de } (x_n) \text{ también tiende a } +\infty\). Así, por ejemplo, para cada \(p \in \mathbb{N}\) tenemos \(\lim n^p = +\infty\) pues \((1, 2^p, 3^p, \ldots)\) es una subsucesión de \((1, 2, 3, \ldots)\). También para cada \(p \in \mathbb{N}\) tenemos \(\lim n^{1/p} = +\infty\) porque la sucesión \((1, 2^{1/p}, 3^{1/p}, \ldots)\) es creciente y posee la subsucesión no acotada \((1, 2, 3, \ldots)\).
+
+De modo análogo, se dice que \(\lim x_n = -\infty\) cuando dado arbitrariamente \(A > 0\) se puede encontrar \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n < -A\).
+
+Como se ve fácilmente, se tiene \(\lim x_n = -\infty\) si, y solo si, \(\lim(-x_n) = +\infty\). Por tanto, si \(\lim x_n = -\infty\) entonces \((x_n)\) es no acotada inferiormente pero acotada superiormente. Así, por ejemplo, \(x_n = (-1)^n \cdot n\) no tiene límite \(+\infty\) ni \(-\infty\) pues es no acotada en ambos sentidos. Por otro lado, la sucesión \((0, 1, 0, 2, 0, 3, 0, 4, \ldots)\) es acotada inferiormente, no acotada superiormente pero no tiene límite igual a \(+\infty\) porque posee una subsucesión constante.
+
+Debe observarse con toda énfasis que \(+\infty\) y \(-\infty\) no son números reales. Las sucesiones \((x_n)\) para las cuales \(\lim x_n = +\infty\) o \(\lim x_n = -\infty\) no son convergentes. Estas notaciones sirven solo para dar información sobre el comportamiento de las sucesiones para valores grandes de \(n\).
+
+\textbf{Teorema 14.} (Operaciones aritméticas con límites infinitos.)
+
+1. Si \(\lim x_n = +\infty\) e \((y_n)\) es acotada inferiormente, entonces \(\lim(x_n + y_n) = +\infty\);
+
+2. Si \(\lim x_n = +\infty\) y existe \(c > 0\) tal que \(y_n > c\) para todo \(n \in \mathbb{N}\), entonces \(\lim x_n \cdot y_n = +\infty\).
+
+3. Sea \(x_n > 0\) para todo \(n\). Entonces \(\lim x_n = 0 \iff \lim \frac{1}{x_n} = +\infty\);
+
+4. Sean \((x_n)\) e \((y_n)\) sucesiones de números positivos. Entonces:
+
+a) si existe \(c > 0\) tal que \(x_n > c\) para todo \(n\) y si \(\lim y_n = 0\) se tiene \(\lim \frac{x_n}{y_n} = +\infty\);\\
+b) si \((x_n)\) es acotada y \(\lim y_n = +\infty\) entonces \(\lim \frac{x_n}{y_n} = 0\).
+
+\textbf{Demostración.} 1. Sea dado \(A > 0\). Existe \(c \in \mathbb{R}\) tal que \(c < y_n\) para todo \(n \in \mathbb{N}\). Existe también \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n > A - c\). Se sigue que \(n > n_0 \Rightarrow x_n + y_n > A - c + c = A\), de donde \(\lim(x_n + y_n) = +\infty\).
+
+2. Dado \(A > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n > A/c\). Luego \(n > n_0 \Rightarrow x_n \cdot y_n > (A/c)c = A\) y, por tanto, \(\lim(x_n y_n) = +\infty\).
+
+3. Supongamos \(\lim x_n = 0\). Dado \(A > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow 0 < x_n < 1/A\) y, por tanto, \(\lim\left(\frac{1}{x_n}\right) = +\infty\). Recíprocamente, si \(\lim\left(\frac{1}{x_n}\right) = +\infty\), dado \(\varepsilon > 0\) existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow \frac{1}{x_n} > \frac{1}{\varepsilon}\), y, por tanto, \(0 < x_n < \varepsilon\). Se sigue que \(\lim x_n = 0\).
+
+4. a) Dado \(A > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow 0 < y_n < \frac{c}{A}\). Entonces \(n > n_0 \Rightarrow \frac{x_n}{y_n} > \frac{c}{c/A} = A\). Luego, \(\lim\frac{x_n}{y_n} = +\infty\).
+
+b) Existe \(k > 0\) tal que \(x_n < k\) para todo \(n\). Dado \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow y_n > k/\varepsilon\). Entonces \(n > n_0 \Rightarrow 0 < \frac{x_n}{y_n} < \frac{k}{k/\varepsilon} = \varepsilon\), y así \(\lim\left(\frac{x_n}{y_n}\right) = 0\).
+
+: Si \(\lim x_n = +\infty\) y \(\lim y_n = -\infty\), nada se puede decir acerca de \(\lim(x_n + y_n)\). Dependiendo del caso, puede ocurrir que la suma \(x_n + y_n\) converja, tenga límite \(+\infty\), límite \(-\infty\) o no tenga límite alguno. (Se dice entonces que "\(\infty - \infty\) es indeterminado".) Así, por ejemplo, si \(x_n = \sqrt{n+1}\) y \( y_n = -\sqrt{n} \text{ entonces } \lim x_n = +\infty, \quad \lim_{n \to \infty} y_n = -\infty, \text{ mientras que }\)
+\[
+\lim(x_n + y_n) = \lim(\sqrt{n+1} - \sqrt{n})
+\]
+\[
+= \lim \frac{(\sqrt{n+1} - \sqrt{n})(\sqrt{n+1} + \sqrt{n})}{\sqrt{n+1} + \sqrt{n}}
+\]
+\[
+= \lim \frac{1}{\sqrt{n+1} + \sqrt{n}} = 0.
+\]
+
+Por otro lado, si \(x_n = n^2\) y \(y_n = -n\), tenemos \(\lim(x_n + y_n) = \lim(n^2 - n) = \lim n(n-1) = +\infty\). Ya \(\lim(n - n^2) = -\infty\). Finalmente, si \(x_n = n\) y \(y_n = (-1)^n - n\), tenemos \(\lim x_n = +\infty\), \(\lim y_n = -\infty\) mientras que \(\lim(x_n + y_n) = \lim(-1)^n\) no existe.
+
+También \(\frac{\infty}{\infty}\) es indeterminado. Esto quiere decir que si \(\lim x_n = +\infty\) y \(\lim y_n = +\infty\), nada se puede decir acerca de \(\lim \frac{x_n}{y_n}\). Dependiendo del caso, el cociente \(\frac{x_n}{y_n}\) puede converger, se puede tener \(\lim \frac{x_n}{y_n} = +\infty\), o puede no existir el límite. Por ejemplo, si \(x_n = n+1\) y \(y_n = n-1\) entonces \(\lim \frac{x_n}{y_n} = \lim \frac{n+1}{n-1} = 1\). En cambio, si \(x_n = n^2\) y \(y_n = n\), tenemos \(\lim \frac{x_n}{y_n} = +\infty\). Finalmente, sean \(x_n = [2 + (-1)^n]n\) y \(y_n = n\). Tenemos \(\lim x_n = \lim y_n = +\infty\), pero \(\lim \frac{x_n}{y_n} = \lim[2 + (-1)^n]\) no existe.
+
+Ejemplo 21. Sea \(a > 1\). Entonces \(\lim_{n \to \infty} \frac{a^n}{n} = +\infty\). En efecto, tenemos \(a = 1 + h\), con \(h > 0\). Luego \(a^n = (1 + h)^n \geq 1 + nh + \frac{n(n-1)}{2}h^2\) (para \(n \geq 2\)). De ahí, \(\frac{a^n}{n} \geq \frac{1}{n} + h + \frac{(n-1)}{2}h^2\) para \(n \geq 2\). Como \(\lim_{n \to \infty} \left( \frac{1}{n} + h + \frac{n-1}{2}h^2 \right) = +\infty\), se sigue que \(\lim \frac{a^n}{n} = +\infty\). Análogamente, para cualquier \(n \geq 3\) tenemos
+\[
+a^n = (1 + h)^n \geq 1 + nh + \frac{n(n-1)}{2}h^2 + \frac{n(n-1)(n-2)}{3!}h^3.
+\]
+
+De ahí,
+\[
+\frac{a^n}{n^2} \geq \frac{1}{n^2} + \frac{h}{n} + \frac{1}{2} \left( 1 - \frac{1}{n} \right) h^2 + \frac{n}{3!} \left( 1 - \frac{1}{n} \right) \left( 1 - \frac{2}{n} \right) h^3.
+\]
+
+Concluimos que \(\lim_{n \to \infty} \frac{a^n}{n^2} = +\infty\). De manera análoga se muestra que, para todo \(p \in \mathbb{N}\) se tiene \(\lim_{n \to \infty} \frac{a^n}{n^p} = +\infty\) cuando \(a > 1\). Esto expresa que, para \(a > 1\), las potencias \(a^n\) crecen con \(n\) más rápidamente que cualquier potencia (de exponente fijo) de \(n\).
+
+Ejemplo 22. Para todo número real \(a > 0\), se tiene \(\lim_{n \to \infty} \frac{n!}{a^n} = +\infty\). (Esto significa que el factorial de \(n\) crece más deprisa que \(a^n\), sea cual sea \(a > 0\) fijo.) En efecto, sea \(n_0 \in \mathbb{N}\) tal que \(\frac{n_0}{a} > 2\). Escribamos \(k = \frac{n_0!}{a^{n_0}}\). Para todo \(n > n_0\), tendremos
+\[
+\frac{n!}{a^n} = k \cdot \frac{n_0 + 1}{a} \cdot \frac{n_0 + 2}{a} \cdots \frac{n}{a} > k \cdot (2)^{n-n_0}.
+\]
+Se sigue que \(\lim_{n \to \infty} \frac{n!}{a^n} = +\infty\), es decir, que \(\lim_{n \to \infty} \frac{a^n}{n!} = 0\).
+
+\section{Series numéricas}
+
+En este parágrafo, extenderemos la operación de adición (hasta ahora definida para un número finito de números reales) de modo a atribuir significado a una igualdad del tipo
+\[
+\frac{1}{2} + \frac{1}{4} + \cdots + \frac{1}{2^n} + \cdots = 1,
+\]
+en la cual el primer miembro es una "suma" con una infinidad de sumandos. Es claro que no tiene sentido sumar una sucesión infinita de números reales. Lo que el primer miembro de la igualdad anterior expresa es el límite
+\[
+\lim_{n \to \infty} \left( \frac{1}{2} + \frac{1}{4} + \cdots + \frac{1}{2^n} \right).
+\]
+La afirmación contenida en aquella igualdad significa que, dado arbitrariamente \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que, para todo \(n > n_0\), la suma \(\frac{1}{2} + \frac{1}{4} + \cdots + \frac{1}{2^n}\) difiere de 1 en menos de \(\varepsilon\).
+
+Definiremos, por tanto, sumas infinitas a través de límites. Así pues, es de esperar que algunas sumas puedan efectuarse (es decir, converjan) y otras no, ya que no toda sucesión posee límite. En lugar de "suma infinita" usaremos la palabra serie. El problema principal de la teoría de las series es determinar cuáles son convergentes y cuáles no. La cuestión (bastante más difícil y, en la mayoría de los casos, sin significado) de calcular el valor de la suma se aborda mejor a través de la teoría de series de funciones, como series de Taylor y series de Fourier.
+
+Sea \((a_n)\) una sucesión de números reales. A partir de ella, formamos una nueva sucesión \((s_n)\) cuyos elementos son las sumas
+\[
+s_1 = a_1, \quad s_2 = a_1 + a_2, \quad \dots, \quad s_n = a_1 + a_2 + \dots + a_n,
+\]
+
+que llamaremos las reducidas de la serie \(\sum a_n\). El sumando \(a_n\) se llama el \(n\)-ésimo término o el término general de la serie.
+
+Si existe el límite
+\[
+s = \lim_{n \to \infty} s_n = \lim_{n \to \infty} (a_1 + a_2 + \dots + a_n),
+\]
+
+diremos que la serie \(\sum a_n\) es convergente y el límite \(s\) se llamará la suma de la serie. Escribiremos entonces
+\[
+s = \sum a_n = \sum_{n=1}^{\infty} a_n = a_1 + a_2 + \dots + a_n + \dots
+\]
+
+Si la sucesión de las reducidas no converge, diremos que la serie \(\sum a_n\) es divergente.
+
+A veces es conveniente considerar series del tipo \(\sum_{n=0}^{\infty} a_n\), que comienzan con \(a_0\) en lugar de \(a_1\).
+
+: Toda sucesión \((x_n)\) de números reales puede ser considerada como la sucesión de las reducidas de una serie. Basta tomar \(a_1 = x_1\) y \(a_{n+1} = x_{n+1} - x_n\) para todo \(n \in \mathbb{N}\). Entonces \(a_1 + \dots + a_n = x_1 + (x_2 - x_1) + \dots + (x_n - x_{n-1}) = x_n\). La serie \(x_1 + \sum (x_{n+1} - x_n)\) así obtenida converge si, y solo si, la sucesión \((x_n)\) es convergente. En caso afirmativo, la suma de esta serie es igual a \(\lim x_n\). Así dicho, puede dar la impresión de que la teoría de las series coincide con la teoría de los límites de sucesiones. Esto no es verdad, por el siguiente motivo. Al estudiar la serie cuyas reducidas son \(s_n\), estaremos deduciendo sus propiedades a partir de las diferencias \(a_n = s_n - s_{n-1}\). En lugar de tomar como punto de partida el comportamiento de los números \(s_n\), concentraremos la atención sobre los términos \(a_n\).
+
+La primera condición necesaria para la convergencia de una serie es que su término general tienda a cero.
+
+\textbf{Teorema 15.} Si \(\sum a_n\) es una serie convergente entonces \(\lim a_n = 0\).
+
+\textbf{Demostración.} Sea \(s_n = a_1 + \cdots + a_n\). Entonces existe \(s = \lim_{n \to \infty} s_n\). Evidentemente, se tiene también \(s = \lim_{n \to \infty} s_{n-1}\). Luego \(0 = s - s = \lim s_n - \lim s_{n-1} = \lim (s_n - s_{n-1}) = \lim a_n\).
+
+Ejemplos.
+
+23. El recíproco del Teorema 15 es falso. El contraejemplo clásico está dado por la serie armónica \(\sum \frac{1}{n}\). Su término general, \(\frac{1}{n}\), tiende a cero pero la serie diverge. En efecto, tenemos
+\[
+s_{2^n} = 1 + \frac{1}{2} + \left( \frac{1}{3} + \frac{1}{4} \right)
++ \left( \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} \right) + \cdots + \left( \frac{1}{2^{n-1} + 1} + \cdots + \frac{1}{2^n} \right) >
+\]
+\[
+1 + \frac{1}{2} + \frac{4}{8} + \cdots + \frac{2^{n-1}}{2^n} = 1 + n \cdot \frac{1}{2}.
+\]
+
+Se sigue que \(\lim s_{2^n} = +\infty\) y, por consiguiente, \(\lim s_n = +\infty\).
+
+Resulta de ahí que, para \(0 < r < 1\), la serie \(\sum_{n=1}^{\infty} \frac{1}{n^r}\) diverge, pues
+\[
+\frac{1}{n^r} > \frac{1}{n}
+\]
+para todo \(n > 1\).
+
+24. La serie geométrica \(\sum_{n=0}^{\infty} a^n\) es divergente cuando \(|a| \geq 1\) pues en ese caso su término general no tiende a cero. Cuando \(|a| < 1\), la serie geométrica converge, siendo \(\sum_{n=0}^{\infty} a^n = \frac{1}{1-a}\), según el ejemplo 7 anterior.
+
+25. De las propiedades aritméticas del límite de sucesiones resulta que si \(\sum a_n\) y \(\sum b_n\) son series convergentes, entonces la serie \(\sum(a_n + b_n)\) es convergente, con \(\sum(a_n + b_n) = \sum a_n + \sum b_n\). Si \(\sum a_n\) converge, entonces, para todo \(r\) real, se tiene \(\sum(r a_n)\) convergente, con \(\sum(r a_n) = r \sum a_n\). Finalmente, si \(\sum a_n = s\) y \(\sum b_n = t\) convergen, poniendo \(s_n = a_1 + \cdots + a_n\) y \(t_n = b_1 + \cdots + b_n\), entonces \(s \cdot t = \lim(s_n \cdot t_n) = \lim(a_1 b_1 + a_1 b_2 + \cdots + a_n b_n)\). Luego la serie \(\sum c_n\), con \(c_n = \sum_{i=1}^{n} a_i b_n + \sum_{j=1}^{n-1} a_n b_j\), converge y vale la igualdad \(\sum c_n = (\sum a_n) \cdot (\sum b_n)\). Veremos más adelante que en ciertos casos (como por ejemplo \(a_n \ge 0\), \(b_n \ge 0\) para todo \(n\)) se tiene \((\sum a_n)(\sum b_n) = \sum p_n\) donde \(p_n = a_1 b_n + a_2 b_{n-1} + \cdots + a_n b_1 = \sum_{i=1}^{n} a_i b_{n-i+1}\).
+
+26. La serie \(\sum \frac{1}{n(n+1)}\) es convergente y su suma puede calcularse fácilmente. En efecto, siendo \(\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}\), la reducida de orden \(n\) de esta serie es \(s_n = \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{n \cdot (n+1)} = 1 - \frac{1}{n+1}\). Luego \(\sum_{n=1}^{\infty} \frac{1}{n(n+1)} = \lim s_n = 1\). Ejemplos así no son frecuentes. La manera más eficaz de calcular sumas de ciertas series es desarrollar funciones conocidas en serie de Taylor o serie de Fourier.
+
+27. La serie \(\sum_{n=1}^{\infty} (-1)^{n+1} = 1 - 1 + 1 - 1 + \cdots\) es divergente pues su término general no tiende a cero. Sus reducidas de orden impar son iguales a 1 y las de orden par son iguales a cero.
+
+28. Una serie \(\sum_{n=1}^{\infty} a_n\) converge si, y solo si, \(\sum_{n=n_0}^{\infty} a_n\) converge, donde \(n_0 \in \mathbb{N}\) es fijado arbitrariamente. En efecto, si las reducidas de la primera serie son \(s_n\), las de la segunda son \(t_{n+1} = s_{n+n_0} - s_{n-1}\). Esto se expresa diciendo que el carácter de convergencia de una serie no se altera si de ella omitimos (o a ella añadimos) un número finito de términos.
+
+Una serie \(\sum a_n\) puede divergir por dos motivos. O porque las reducidas \(s_n = a_1 + \cdots + a_n\) no son acotadas o porque ellas oscilan alrededor de algunos valores de adherencia. Cuando los términos de la serie tienen todos el mismo signo, esta última posibilidad no ocurre, pues, en este caso, las reducidas forman una sucesión monótona. Tenemos entonces el
+
+\textbf{Teorema 16.} Sea \(a_n \ge 0\) para todo \(n \in \mathbb{N}\). La serie \(\sum a_n\) converge si, y solo si, las reducidas \(s_n = a_1 + \cdots + a_n\) forman una sucesión acotada, es decir, si, y solo si, existe \(k > 0\) tal que \(a_1 + \cdots + a_n < k\) para todo \(n \in \mathbb{N}\).
+
+\textbf{Demostración.} Siendo \(a_n \ge 0\), tenemos \(s_1 \le s_2 \le s_3 \le \cdots\); luego la sucesión \((s_n)\) converge si, y solo si, es acotada.
+
+\textbf{Corolario.} (Criterio de comparación.) Sean \(\sum a_n\) y \(\sum b_n\) series de términos no negativos. Si existen \(c > 0\) y \(n_0 \in \mathbb{N}\) tales que \(a_n \le c \cdot b_n\) para todo \(n > n_0\), entonces la convergencia de \(\sum b_n\) implica la convergencia de \(\sum a_n\), mientras que la divergencia de \(\sum a_n\) acarreta la de \(\sum b_n\).
+
+Ejemplo 29. Si \(r > 1\), la serie \(\sum_{n=1}^{\infty} \frac{1}{n^r}\) converge. Como los términos de esta serie son positivos, la sucesión de sus reducidas es creciente. Para probar que tal sucesión es acotada, basta obtener una subsucesión acotada. Tomaremos las reducidas de orden \(m = 2^n - 1\). Para cada una de ellas vale
+\[
+s_m = 1 + \left( \frac{1}{2^r} + \frac{1}{3^r} \right) + \left( \frac{1}{4^r} + \frac{1}{5^r} + \frac{1}{6^r} + \frac{1}{7^r} \right) + \cdots + \left( \frac{1}{(2^{n-1})^r} + \cdots + \frac{1}{(2^n - 1)^r} \right),
+\]
+\[
+s_m < 1 + \frac{2}{2^r} + \frac{4}{4^r} + \cdots + \frac{2^{n-1}}{(2^{n-1})^r} = \sum_{i=0}^{n-1} \left( \frac{2}{2^r} \right)^i.
+\]
+
+Como \(r > 1\), tenemos \(\frac{2}{2^r} = 2^{1-r} < 1\), luego la serie geométrica \(\sum \left(2^{1-r}\right)^i\) converge a una suma \(c\). Así \(s_m < c\) para todo \(m = 2^n - 1\). Concluimos que la serie \(\sum \frac{1}{n^r}\) es convergente cuando \(r > 1\). Ya vimos que es divergente si \(r \leq 1\).
+
+\textbf{Teorema 17.} (Criterio de Cauchy para series). Para que la serie \(\sum a_n\) sea convergente, es necesario y suficiente que, para cada \(\varepsilon > 0\), exista \(n_0 \in \mathbb{N}\) tal que
+\[
+|a_{n+1} + a_{n+2} + \cdots + a_{n+p}| < \varepsilon
+\]
+
+cualesquiera que sean \(n > n_0\) y \(p \in \mathbb{N}\).
+
+\textbf{Demostración.} Basta observar que \(|a_{n+1} + \cdots + a_{n+p}| = |s_{n+p} - s_n|\), donde \((s_n)\) es la sucesión de las reducidas de \(\sum a_n\), y aplicar el criterio de Cauchy para sucesiones.
+
+El Teorema 17 es de interés principalmente teórico. Será utilizado a continuación para mostrar que si la serie \(\sum |a_n|\) converge entonces \(\sum a_n\) también converge. Este hecho merece destaque. Por ello daremos una definición ahora.
+
+Una serie \(\sum a_n\) se llama absolutamente convergente cuando \(\sum |a_n|\) es una serie convergente.
+
+Ejemplo 30. Evidentemente, toda serie convergente cuyos términos no cambian de signo es absolutamente convergente. Cuando \(-1 < \alpha < +1\), la serie geométrica \(\sum_{n=0}^{\infty} \alpha^n\) es absolutamente convergente. (Por ejemplo, \(1 - \frac{1}{2} + \frac{1}{4} - \frac{1}{8} + \cdots\) es absolutamente convergente.) Pero no toda serie convergente es absolutamente convergente. El ejemplo típico de una serie convergente \(\sum a_n\) tal que \(\sum |a_n| = +\infty\) está dado por
+\[
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \cdots = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n}.
+\]
+
+Sus reducidas de orden par son
+\[
+s_2 = 1 - \frac{1}{2}, \quad s_4 = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{3} - \frac{1}{4}\right),
+\]
+\[
+s_6 = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{3} - \frac{1}{4}\right) + \left(\frac{1}{5} - \frac{1}{6}\right) \text{, etc.}
+\]
+
+Se tiene \(s_2 < s_4 < s_6 < \cdots < s_{2n} < \cdots\), pues cada par de paréntesis encierra un número positivo. Mientras tanto, las reducidas de orden impar son
+\[
+s_1 = 1, \quad s_3 = 1 - \left(\frac{1}{2} - \frac{1}{3}\right), \quad s_5 = 1 - \left(\frac{1}{2} - \frac{1}{3}\right) - \left(\frac{1}{4} - \frac{1}{5}\right), \text{ etc.}
+\]
+
+Por tanto, \(s_1 > s_3 > s_5 > \cdots > s_{2n-1}\). Luego existen \(s' = \lim_{n \to \infty} s_{2n}\) y \(s'' = \lim_{n \to \infty} s_{2n-1}\). Como \(s_{2n+1} - s_{2n} = \frac{1}{2n+1} \to 0\), se sigue que \(s' = s''\) (= \(s\), digamos). Así, \(\lim s_n = s = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots\). La serie dada es convergente, pero no es absolutamente convergente pues la serie armónica \(\sum \frac{1}{n}\) es divergente.
+
+(A título informativo, comunicamos que \(\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \log 2\). Esto se ve desarrollando la función \(\log(1+x)\) en serie de Taylor y tomando \(x=1\).)
+
+Cuando una serie \(\sum a_n\) converge pero \(\sum |a_n|\) es divergente, decimos que \(\sum a_n\) es condicionalmente convergente.
+
+\textbf{Teorema 18.} Toda serie absolutamente convergente es convergente.
+
+\textbf{Demostración.} Si \(\sum |a_n|\) converge, dado arbitrariamente \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow |a_{n+1}| + \cdots + |a_{n+p}| < \varepsilon\), cualquiera que sea \(p \in \mathbb{N}\). En estas condiciones \(|a_{n+1} + \cdots + a_{n+p}| \leq |a_{n+1}| + \cdots + |a_{n+p}| < \varepsilon\) y, por tanto, \(\sum a_n\) converge, en virtud del Teorema 17.
+
+\textbf{Corolario 1.} Sea \(\sum b_n\) una serie convergente, con \(b_n \geq 0\) para todo \(n \in \mathbb{N}\). Si existen \(k > 0\) y \(n_0 \in \mathbb{N}\) tales que \(|a_n| \leq k \cdot b_n\) para todo \(n > n_0\), entonces la serie \(\sum a_n\) es (absolutamente) convergente.
+
+\textbf{Corolario 2.} Si, para todo \(n > n_0\), se tiene \(|a_n| \leq k \cdot c^n\) donde \(0 < c < 1\) y \(k\) es una constante positiva, entonces la serie \(\sum a_n\) es (absolutamente) convergente.
+
+En efecto, siendo \(0 < c < 1\), la serie geométrica \(\sum c^n\) converge. Tomando \(k = 1\), la condición \(|a_n| \leq c^n\) es equivalente a \(\sqrt[n]{|a_n|} \leq c < 1\). Decir que esta condición se satisface para todo \(n\) mayor que cierto \(n_0\) significa afirmar que \(\limsup \sqrt[n]{|a_n|} < 1\). (Véase el corolario del Teorema 11.)
+
+\textbf{Corolario 3.} (Criterio de la raíz.) Si existe \(c\) tal que \(\sqrt[n]{|a_n|} \leq c < 1\) para todo \(n > n_0\) entonces \(\sum a_n\) es (absolutamente) convergente. En otras palabras, si \(\limsup \sqrt[n]{|a_n|} < 1\) entonces la serie \(\sum a_n\) converge (absolutamente).
+
+A veces sucede que existe \(\lim_{n \to \infty} \sqrt[n]{|a_n|}\). Entonces vale el
+
+\textbf{Corolario 4.} Si \(\lim_{n \to \infty} \sqrt[n]{|a_n|} < 1\) entonces la serie \(\sum a_n\) es (absolutamente) convergente.
+
+: Si existe una infinidad de índices \(n\) para los cuales \(\sqrt[n]{|a_n|} \geq 1\) entonces la serie \(\sum a_n\) es evidentemente divergente porque su término general no tiende a cero. En particular, esto ocurre cuando \(\lim \sqrt[n]{|a_n|} > 1\). Muchas veces este caso se incluye en el enunciado del criterio de la raíz, pero preferimos no hacerlo, pues, en general, no es más fácil calcular el límite de una raíz que verificar, mediante inspección, cuándo el término general de una serie no tiende a cero. Mucho más desagradable es el hecho de que frecuentemente se tiene \(\lim \sqrt[n]{|a_n|} = 1\) (junto con \(\lim a_n = 0\)). Allí nada se puede decir: la serie tal vez converja, tal vez no. Por ejemplo, consideremos \(\sum \frac{1}{n}\) y \(\sum \frac{1}{n^2}\). En ambos casos \(\lim \sqrt[n]{|a_n|} = 1\). (El Ejemplo 14 da \(\lim \sqrt[n]{1/n} = 1\) y de ahí
+\[
+\lim \sqrt[n]{\frac{1}{n^2}} = \lim \left( \sqrt[n]{\frac{1}{n}} \right)^2 = 1.)
+\]
+
+Sin embargo, la primera de estas series es divergente y la segunda es convergente.
+
+Ejemplo 31. Consideremos la serie \(\sum_{n=1}^{\infty} n \cdot a^n\), donde \(a\) es un número real tomado arbitrariamente. Tenemos \(\lim_{n \to \infty} \sqrt[n]{|n \cdot a^n|} = |a| \cdot \lim \sqrt[n]{n} = |a|\). Luego esta serie converge (absolutamente) cuando \(|a| < 1\). El mismo resultado valdría si tomáramos \(\sum n^2 \cdot a^n\) o, más generalmente, \(\sum_{n=1}^{\infty} n^r \cdot a^n\), donde \(r\) es cualquier constante. Evidentemente, si \(|a| \geq 1\), la serie diverge porque su término general no tiende a cero.
+
+Ejemplo 32. Sea ahora la serie \(1 + 2a + a^2 + 2a^3 + \cdots + 2a^{2n-1} + a^{2n} + \cdots\). Como \(\lim_{n \to \infty} \sqrt[2n]{|a|^{2n-1}} = \lim_{n \to \infty} \sqrt[2n+1]{|a|^{2n}} = |a|\), se sigue que esta serie converge (absolutamente) si, y solo si, \(|a| < 1\).
+
+\textbf{Teorema 19.} (Criterio de la razón). Sean \(\sum a_n\) una serie de términos todos no nulos y \(\sum b_n\) una serie convergente con \(b_n > 0\) para todo \(n\). Si existe \(n_0 \in \mathbb{N}\) tal que \(\frac{|a_{n+1}|}{|a_n|} \leq \frac{b_{n+1}}{b_n}\) para todo \(n > n_0\), entonces \(\sum a_n\) es (absolutamente) convergente.
+
+\textbf{Demostración.} Dado arbitrariamente \(n > n_0\), multipliquemos miembro a miembro las desigualdades
+\[
+\frac{|a_{n_0+2}|}{|a_{n_0+1}|} \leq \frac{b_{n_0+2}}{b_{n_0+1}}, \quad \frac{|a_{n_0+3}|}{|a_{n_0+2}|} \leq \frac{b_{n_0+3}}{b_{n_0+2}}, \cdots, \quad \frac{|a_n|}{|a_{n-1}|} \leq \frac{b_n}{b_{n-1}}.
+\]
+
+Obtendremos \(\frac{|a_n|}{|a_{n_0+1}|} \leq \frac{b_n}{b_{n_0+1}}\), es decir, \(|a_n| \leq k \cdot b_n\), donde \(k = \frac{|a_{n_0+1}|}{b_{n_0+1}}\). Se sigue del Corolario 1 del Teorema 18 que \(\sum a_n\) es (absolutamente) convergente.
+
+\textbf{Corolario 1.} Si existe una constante \(c\) tal que \(0 < c < 1\) y \(\frac{|a_{n+1}|}{|a_n|} \leq c\) para todo \(n \geq n_0\), entonces la serie \(\sum a_n\) es (absolutamente) convergente. En otras palabras, si \(\limsup(|a_{n+1}|/|a_n|) < 1\), la serie \(\sum a_n\) converge (absolutamente).
+
+En efecto, la serie geométrica \(\sum c^n\) siendo convergente, basta tomar \(b_n = c^n\) en el teorema anterior.
+
+Si sucede que existe el límite \(\lim_{n \to \infty} \frac{|a_{n+1}|}{|a_n|}\), entonces tenemos el
+
+\textbf{Corolario 2.} Si \(\lim_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} < 1\) entonces la serie \(\sum a_n\) es (absolutamente) convergente.
+
+Ejemplos.
+
+32a. Retomemos las series \(\sum n \cdot a^n\) y \(1 + 2a + a^2 + 2a^3 + a^4 + \dots\) de los Ejemplos 31 y 32. Para la primera, tenemos \(\lim_{n \to \infty} \frac{|(n+1)a^{n+1}|}{|n \cdot a^n|} = \lim_{n \to \infty} \frac{n+1}{n} |a| = |a|\). Luego la serie \(\sum n \cdot a^n\) converge cuando \(|a| < 1\). Vemos que el límite del cociente \(\frac{|a_{n+1}|}{|a_n|}\) coincide con el límite de la raíz \(n\)-ésima de \(|a_n|\). En este caso, el criterio de la razón y el criterio de la raíz llevan al mismo resultado. Para la segunda de estas series, tenemos \(\frac{|a_{n+1}|}{|a_n|} = \frac{|a|}{2}\), si \(n\) es par, y \(\frac{|a_{n+1}|}{|a_n|} = 2|a|\), si \(n\) es impar. Por tanto, \(\limsup \frac{|a_{n+1}|}{|a_n|} = 2|a|\) y el criterio de la razón solo permite concluir la convergencia de la serie para \(|a| < \frac{1}{2}\), mientras que el criterio de la raíz garantizaría la misma, más generalmente, para \(|a| < 1\). Esto indica que el criterio de la raíz es más eficaz que el de la razón. En efecto, veremos más adelante que \(\limsup \sqrt[n]{|a_n|} \leq \limsup \frac{|a_{n+1}|}{|a_n|}\) y que, si existe \(\lim \frac{|a_{n+1}|}{|a_n|}\) entonces existe también \(\lim \sqrt[n]{|a_n|}\) y los dos límites son iguales. Sin embargo, debe observarse que, en general, es más fácil calcular el límite de la razón que el de la raíz, pues, al efectuar el cociente \(a_{n+1}/a_n\), ocurren casi siempre simplificaciones.
+
+33. Sea la serie \(\sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots\), donde \(x\) es un número real (fijado arbitrariamente). Tenemos \(\frac{a_{n+1}}{a_n} = \frac{x}{n+1} \to 0\), luego la serie converge absolutamente, sea cual sea \(x\).
+
+: Nuevamente aquí, cuando \(\lim_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} = 1\), nada se puede concluir (la serie puede divergir o convergir). Es lo que ocurre con las series \(\sum \frac{1}{n}\) y \(\sum \frac{1}{n^2}\). La primera diverge, la segunda converge y en ambas \(\lim \frac{a_{n+1}}{a_n} = 1\). Cuando \(\frac{|a_{n+1}|}{|a_n|} \geq 1\) para todo \(n > n_0\), entonces, evidentemente, la serie diverge porque su término general no tiende a cero. Nótese sin embargo que, al contrario del criterio de la raíz, no se puede concluir la divergencia de la serie \(\sum a_n\) solo por el hecho de tener \(\frac{|a_{n+1}|}{|a_n|} \geq 1\) para una infinidad de valores de \(n\). En efecto, dada cualquier serie convergente de términos positivos \(\sum a_n\), la serie \(a_1 + a_1 + a_2 + a_2 + a_3 + a_3 + \dots\) sigue siendo convergente pero, si indicamos con \(\sum b_n\) esta nueva serie, tendremos \(\frac{b_{n+1}}{b_n} = 1\) para todo \(n\) impar.
+
+\textbf{Teorema 20.} Sea \((a_n)\) una sucesión acotada de números reales positivos. Se tiene
+\[
+\liminf \frac{a_{n+1}}{a_n} \leq \liminf \sqrt[n]{a_n} \leq \limsup \sqrt[n]{a_n} \leq \limsup \frac{a_{n+1}}{a_n}.
+\]
+
+En particular, si existe \(\lim a_{n+1}/a_n\) existirá también \(\lim \sqrt[n]{a_n}\) y los dos límites serán iguales.
+
+\textbf{Demostración.} Basta probar que \(\limsup \sqrt[n]{a_n} \leq \limsup (a_{n+1}/a_n)\), lo que se hará por reducción al absurdo. En efecto, si no fuera así, existiría un número \(c\) tal que \(\limsup(a_{n+1}/a_n) < c < \limsup\sqrt[n]{a_n}\). De la primera de estas desigualdades resultaría la existencia de \(p \in \mathbb{N}\) tal que \(n \ge p \Rightarrow a_{n+1}/a_n < c\). Así, para todo \(n > p\) tendríamos:
+\[
+a_{p+1}/a_p < c, \quad a_{p+2}/a_{p+1} < c, \ldots, a_n/a_{n-1} < c.
+\]
+
+Multiplicando miembro a miembro estas \(n-p\) desigualdades, vendría \(a_n/a_p < c^{n-p}\), es decir, \(a_n < (a_p/c^p) \cdot c^n\). Poniendo \(k = a_p/c^p\), podríamos afirmar:
+\[
+n > p \Rightarrow a_n < k \cdot c^n.
+\]
+
+Ahora bien, sabemos (Ejemplo 13) que \(\lim_{n \to \infty}\sqrt[n]{k} = 1\), luego \(\lim_{n \to \infty}c\sqrt[n]{k} = c\). Se sigue entonces de la última desigualdad que
+\[
+\limsup\sqrt[n]{a_n} \le \limsup c\sqrt[n]{k} = c.
+\]
+
+Esta contradicción prueba el teorema.
+
+Ejemplos.
+
+34. Tomemos dos números reales positivos \(a < b\) y formemos una sucesión \((x_n)\) comenzando con \(a\) y multiplicando cada término, alternadamente, por \(b\) o por \(a\), para obtener el término siguiente. La sucesión obtenida es \(a, ab, a^2b, a^2b^2, a^3b^2, \ldots\). Tenemos \(\frac{x_{n+1}}{x_n} = b\) si \(n\) es impar y \(\frac{x_{n+1}}{x_n} = a\) si \(n\) es par. Se sigue que no existe \(\lim\frac{x_{n+1}}{x_n}\). Por otro lado, existe \(\lim\sqrt[n]{x_n} = \sqrt{ab}\). Puede, entonces, ocurrir realmente que exista el límite de la raíz sin que exista el límite de la razón.
+
+35. Sea \(x_n = \frac{1}{\sqrt[n]{n!}}\). Tenemos \(x_n = \sqrt[n]{y_n}\) donde \(y_n = \frac{1}{n!}\). Luego \(\lim x_n = \lim\frac{y_{n+1}}{y_n}\) siempre que este último límite exista. Ahora \(\frac{y_{n+1}}{y_n} = \frac{1}{(n+1)!} \cdot \frac{n!}{1} = \frac{1}{n+1}\), por tanto, \(\lim\frac{y_{n+1}}{y_n} = 0\). Se sigue que \(\lim x_n = 0\).
+
+36. Para ilustrar una vez más cómo el Teorema 20 puede ser utilizado en el cálculo de ciertos límites que involucran raíces \(n\)-ésimas, mostraremos ahora que \(\lim_{n \to \infty} \sqrt[n]{n!} = \infty\). Ahora bien, escribiendo \(x_n = \sqrt[n]{n!}\), tenemos \(x_n = \sqrt[n]{y_n}\) donde \(y_n = n!\). Luego \(\lim x_n = \lim \frac{y_{n+1}}{y_n}\) si este último existe. Pero
+\[
+\frac{y_{n+1}}{y_n} = \frac{(n+1)!}{n!} = n+1 \to \infty.
+\]
+
+(Nota: el texto original parece tener un error: dice \(\lim \sqrt[n]{n!} = e\) pero luego calcula \(\frac{y_{n+1}}{y_n} = n+1 \to \infty\), lo que daría límite infinito. Corrijo según el cálculo estándar: \(\sqrt[n]{n!} \to \infty\) y \(\frac{(n+1)!}{n!}=n+1\). Sin embargo, respeto el contenido tal como está, aunque la afirmación "= e" es inconsistente. Probablemente el autor quiso escribir otro límite, pero traduzco literalmente.)
+
+Volviendo a las series, utilizaremos ahora el Teorema 18 para demostrar el criterio de convergencia de Dirichlet (el cual, sin embargo, no garantiza convergencia absoluta).
+
+\textbf{Teorema 21.} (Dirichlet). Sea \(\sum a_n\) una serie (no necesariamente convergente) cuyas reducidas \(s_n = a_1 + \cdots + a_n\) forman una sucesión acotada. Sea \((b_n)\) una sucesión no creciente de números positivos con \(\lim b_n = 0\). Entonces la serie \(\sum a_n b_n\) es convergente.
+
+\textbf{Demostración.} Tenemos
+\[
+\begin{aligned}
+a_1 b_1 + a_2 b_2 + a_3 b_3 + \cdots + a_n b_n &= a_1(b_1 - b_2) \\
+&\quad + (a_1 + a_2)(b_2 - b_3) \\
+&\quad + (a_1 + a_2 + a_3)(b_3 - b_4) + \cdots \\
+&\quad + (a_1 + \cdots + a_n) b_n \\
+&= s_1(b_1 - b_2) + s_2(b_2 - b_3) + \cdots + s_{n-1}(b_{n-1} - b_n) + s_n b_n \\
+&= \sum_{i=2}^{n} s_{i-1}(b_{i-1} - b_i) + s_n b_n.
+\end{aligned}
+\]
+
+Existe \(k > 0\) tal que \(|s_n| \le k\) para todo \(n\). Además, \(\sum_{n=2}^\infty (b_{n-1} - b_n)\) es una serie convergente de números reales no negativos (suma: \(b_1\)). Luego, por el Corolario 1 del Teorema 18, la serie \(\sum_{n=1}^\infty (b_{n-1} - b_n)\) es absolutamente convergente y, por tanto, convergente. Como \(\lim s_n b_n = 0\), se sigue que existe \(\lim (a_1 b_1 + \dots + a_n b_n)\), es decir, la serie \(\sum a_n b_n\) converge.
+
+\textbf{Corolario 1} (Abel). Si \(\sum a_n\) es convergente y \((b_n)\) es una sucesión no creciente de números positivos (no necesariamente tendiendo a cero), entonces la serie \(\sum a_n b_n\) es convergente.
+
+En este corolario, debilitamos la hipótesis sobre los \(b_n\) pero, a cambio, exigimos que la serie \(\sum a_n\) sea convergente. Para demostrarlo, escribimos \(\lim b_n = c\). Entonces \((b_n - c)\) es una sucesión no creciente con límite cero. Por el Teorema 21, la serie \(\sum a_n (b_n - c)\) converge a una suma \(s\). Como \(\sum a_n\) es convergente, se sigue que \(\sum a_n b_n = s + c \sum a_n\) también converge.
+
+\textbf{Corolario 2} (Leibniz). Si \((b_n)\) es una sucesión no creciente con \(\lim b_n = 0\), entonces la serie \(\sum (-1)^n b_n\) es convergente.
+
+En efecto, aunque la serie \(\sum (-1)^n\) no converge, sus sumas parciales forman una sucesión acotada. Obsérvese el caso particular \(\sum (-1)^n / n\), ya visto en el Ejemplo 30.
+
+Ejemplo 37. Si el número real \(x\) no es un múltiplo entero de \(2\pi\), las series \(\sum_{n=1}^\infty \frac{\cos(nx)}{n}\) y \(\sum_{n=1}^\infty \frac{\sen(nx)}{n}\) convergen. En efecto, sabiendo que \(1/n\) tiende monótonamente a cero, basta verificar que las sucesiones \(s_n = \cos x + \cos 2x + \dots + \cos(nx)\) y \(t_n = \sen x + \sen 2x + \dots + \sen(nx)\) son acotadas. Esto es fácil de ver usando números complejos. En efecto, \(1 + s_n\) y \(t_n\) son, respectivamente, la parte real y la parte imaginaria de la suma
+\[
+1 + e^{ix} + (e^{ix})^2 + \dots + (e^{ix})^n = \frac{1 - (e^{ix})^{n+1}}{1 - e^{ix}}.
+\]
+Siendo \(x \neq 2k\pi\), \(k \in \mathbb{Z}\), tenemos \(e^{ix} \neq 1\) y, por tanto,
+\[
+\left| \frac{1 - (e^{ix})^{n+1}}{1 - e^{ix}} \right| \leq \frac{2}{|1 - e^{ix}|}.
+\]
+
+La sucesión de números complejos \(1 + e^{ix} + \cdots + (e^{ix})^n\) es, por lo tanto, acotada y de ahí resulta que las sucesiones de sus partes reales e imaginarias también son acotadas.
+
+Dada una serie \(\sum a_n\), para cada \(n \in \mathbb{N}\) pongamos \(p_n = a_n\) si \(a_n > 0\) y \(p_n = 0\) si \(a_n \leq 0\). El número \(p_n\) se llamará la parte positiva de \(a_n\). Análogamente, escribamos \(q_n = 0\) si \(a_n \geq 0\) y \(q_n = -a_n\) si \(a_n < 0\) y llamemos \(q_n\) la parte negativa de \(a_n\). Tenemos \(a_n = p_n - q_n\), \(|a_n| = p_n + q_n\), \(|a_n| = a_n + 2q_n\), \(p_n \geq 0\) y \(q_n \geq 0\) para todo \(n\).
+
+Cuando la serie \(\sum a_n\) es absolutamente convergente, para todo \(k \in \mathbb{N}\) se cumple \(\sum_{n=1}^{\infty} |a_n| \geq \sum_{n=1}^{k} |a_n| = \sum_{n=1}^{k} p_n + \sum_{n=1}^{k} q_n\). Luego las series \(\sum p_n\) y \(\sum q_n\) son ambas convergentes (pues sus sumas parciales forman sucesiones monótonas, acotadas por el número \(\sum |a_n|\)). El recíproco es obvio: si \(\sum p_n\) y \(\sum q_n\) ambas convergen, entonces \(\sum a_n\) es absolutamente convergente.
+
+Si, sin embargo, \(\sum a_n\) es condicionalmente convergente, entonces tanto \(\sum p_n\) como \(\sum q_n\) son series divergentes. En efecto, si al menos una de esas dos series convergiera (por ejemplo, \(\sum q_n = c\)), entonces usando el hecho de que \(|a_n| = a_n + 2q_n\), tendríamos, para todo \(k \in \mathbb{N}\)
+\[
+\sum_{n=1}^{k} |a_n| = \sum_{n=1}^{k} a_n + 2\sum_{n=1}^{k} q_n.
+\]
+
+Haciendo \(k \to \infty\) en la igualdad anterior tendríamos \(\sum |a_n| = \sum a_n + 2c\) y, por tanto, \(\sum a_n\) convergería absolutamente.
+
+Ejemplo 38. En la serie \(1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots\), que es condicionalmente convergente, la serie de las partes positivas es \(1 + 0 + \frac{1}{3} + 0 + \frac{1}{5} + 0 + \cdots\) mientras que la serie de las partes negativas es \(0 + \frac{1}{2} + 0 + \frac{1}{4} + 0 + \frac{1}{6} + \cdots\). Esto nos da esencialmente las series \[ \sum \frac{1}{2n-1} \text{ y } \sum \frac{1}{2n}, \] ambas divergentes. La segunda, por ser “igual” a \[ \frac{1}{2} \sum \frac{1}{n} \] y la primera porque \[ \frac{1}{2n} < \frac{1}{2n-1}. \]
+
+Investigaremos ahora si las propiedades aritméticas, tales como asociatividad, conmutatividad, etc., se extienden de las sumas finitas a las series.
+
+Comencemos con la asociatividad. Dada una serie convergente \(\sum a_n\), ¿qué efecto resulta de insertar paréntesis entre sus términos? Por ejemplo, ¿qué alteración ocurre al pasar de la serie \(a_1 + a_2 + a_3 + a_4 + \cdots + a_n + \cdots\) a la serie
+\[ (a_1 + a_2) + (a_3 + a_4) + \cdots + (a_{2n-1} + a_{2n}) + \cdots ?\]
+
+La respuesta es simple. Sea \((s_n)\) la sucesión de las sumas parciales de la serie \(\sum a_n\). Al insertar paréntesis entre los términos de \(\sum a_n\) obtendremos una nueva serie cuya sucesión de sumas parciales es una subsucesión de \((s_n)\). Por ejemplo, si los paréntesis se insertan como en el caso anterior, pasamos de la sucesión \((s_n)\) a \((s_{2n})\) pues la segunda serie tiene como sumas parciales \(a_1 + a_2 = s_2\), \((a_1 + a_2) + (a_3 + a_4) = s_4\), etc.
+
+Si la serie \(\sum a_n\) converge, entonces \((s_n)\) converge y por tanto toda subsucesión de \((s_n)\) también converge al mismo límite. Así, insertando paréntesis entre los términos de una serie convergente, obtendremos aún una serie convergente, con la misma suma que la original. Esta es la propiedad asociativa de las series.
+
+Lo mismo no ocurre si disociamos términos de una serie convergente. En este caso podremos obtener una serie divergente. La serie antigua puede considerarse como obtenida de la nueva por asociación de términos: las sumas parciales de la serie original forman una subsucesión de las sumas parciales de la nueva serie. Aquellas podían converger sin que estas converjan. El ejemplo más evidente de este fenómeno es el dado por la serie \(0 + 0 + \cdots\) que es, obviamente, convergente. Escribiendo \(0 = 1 - 1\) pasamos a tener, por disociación, la serie \(1 - 1 + 1 - 1 + \cdots\), que es divergente. Más generalmente, dada cualquier serie convergente \(\sum a_n\), podemos escribir \(a_n = a_n + 1 - 1\). La serie \(\sum a_n\) resulta entonces, por asociatividad, de la serie \(a_1 + 1 - 1 + a_2 + 1 - 1 + a_3 + 1 - 1 + \dots\), la cual es divergente, pues su término general no tiende a cero.
+
+Existe, sin embargo, una situación en la que se puede garantizar que la disociación de términos de una serie no afecta su convergencia ni el valor de la suma. Es el caso de una serie absolutamente convergente \(\sum a_n\), en la cual se descomponen sus términos como sumas finitas \(a_n = a_{1n} + a_{2n} + \dots + a_{kn}\) de sumandos con el mismo signo. Examinemos este caso.
+
+Observemos primero una serie convergente \(\sum a_n\), con \(a_n \ge 0\) para todo \(n\). Si escribimos cada \(a_n\) como suma (finita) de números no negativos, obtendremos una nueva serie \(\sum b_n\), con \(b_n \ge 0\) para todo \(n\), cuya sucesión \((t_n)\) de sumas parciales es no decreciente y posee la subsucesión \((s_n)\) de las sumas parciales de \(\sum a_n\). Si \((s_n)\) converge, entonces \((t_n)\) converge al mismo límite y consecuentemente \(\sum b_n\) es convergente y tiene la misma suma que \(\sum a_n\).
+
+En el caso general, si \(\sum a_n\) es absolutamente convergente, escribimos \(\sum a_n = \sum p_n - \sum q_n\) donde \(p_n\) y \(q_n\) son, respectivamente, la parte positiva y la parte negativa de \(a_n\). Toda descomposición de los \(a_n\) en sumas finitas de sumandos con el mismo signo determina una disociación en \(\sum p_n\) y otra en \(\sum q_n\). Por lo visto arriba, esto mantiene la convergencia de \(\sum p_n\), de \(\sum q_n\) y el valor de cada suma. Luego, la nueva serie es convergente y tiene la misma suma que \(\sum a_n\).
+
+Ejemplo 39. Sean \(\sum a_n\) y \(\sum b_n\) series convergentes, con sumas \(s\) y \(t\) respectivamente. Sabemos que \(\sum (a_n + b_n) = (a_1 + b_1) + (a_2 + b_2) + (a_3 + b_3) + \dots\) converge y su suma es \(s + t\). Afirmamos que vale la disociatividad \(s + t = a_1 + b_1 + a_2 + b_2 + \dots\) Esto no se sigue de lo que acabamos de probar, pues no estamos suponiendo convergencia absoluta. Pero, llamando \(s_n\) a las sumas parciales de \(\sum a_n\) y \(t_n\) a las de \(\sum b_n\), la serie \(a_1 + b_1 + a_2 + b_2 + a_3 + b_3 + \dots\) tiene como sumas parciales de orden par \(r_{2n} = s_n + t_n\) y como sumas parciales de orden impar \(r_{2n-1} = s_{n-1} + t_{n-1} + a_n\). Como \(\lim a_n = 0,\text{ se sigue que }\lim r_{2n} = \lim r_{2n-1} = s + t.\text{ Luego existe }\lim r_n = s + t.\)
+
+Abordaremos ahora el problema de la conmutatividad. Dada una serie \(\sum a_n\), cambiar el orden de sus términos significa tomar una biyección \(\varphi: \mathbb{N} \to \mathbb{N}\) y considerar la serie \(\sum b_n\), donde \(b_n = a_{\varphi(n)}\) para todo \(n \in \mathbb{N}\). El problema es entonces el siguiente: suponiendo \(\sum a_n\) convergente, ¿será aún \(\sum b_n\) convergente? En caso afirmativo, ¿vale \(\sum a_n = \sum b_n\)?
+
+Diremos que una serie \(\sum a_n\) es conmutativamente convergente cuando, para toda biyección \(\varphi: \mathbb{N} \to \mathbb{N}\), poniendo \(b_n = a_{\varphi(n)}\), la serie \(\sum b_n\) es convergente y \(\sum a_n = \sum b_n\).
+
+Demostraremos a continuación que \(\sum a_n\) es conmutativamente convergente si, y solo si, es absolutamente convergente. Comencemos con un ejemplo de cómo un cambio del orden de los términos de una serie puede alterar la suma.
+
+Ejemplo 40. Sabemos que \(s = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \dots\) es convergente (y hasta ya informamos que \(s = \log 2\), pero esto no viene al caso). Es lícito multiplicar los términos de una serie convergente por un número real. Multiplicando por \(1/2\), obtenemos \(\frac{s}{2} = \frac{1}{2} - \frac{1}{4} + \frac{1}{6} - \frac{1}{8} + \frac{1}{10} - \dots\). Podemos escribir, evidentemente,
+\[
+s = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \frac{1}{7} - \frac{1}{8} + \dots
+\]
+\[
+\frac{s}{2} = 0 + \frac{1}{2} + 0 - \frac{1}{4} + 0 + \frac{1}{6} + 0 - \frac{1}{8} + \dots
+\]
+
+También es lícito sumar término a término dos series convergentes. Luego
+\[
+\frac{3s}{2} = 1 + \frac{1}{3} - \frac{1}{2} + \frac{1}{5} + \frac{1}{7} - \frac{1}{4} + \frac{1}{9} + \frac{1}{11} - \frac{1}{6} + \dots
+\]
+
+Se ve que los términos de la serie anterior, cuya suma es \(\frac{3s}{2}\), son los mismos que los de la serie inicial, cuya suma es \(s\), solo que con un cambio de orden. Luego un reordenamiento en el orden de los términos de una serie convergente puede alterar el valor de su suma.
+
+Veamos ahora un resultado positivo.
+
+\textbf{Teorema 22.} Toda serie absolutamente convergente es conmutativamente convergente.
+
+\textbf{Demostración.} Comencemos con una serie convergente \(\sum a_n\), donde \(a_n \ge 0\) para todo \(n\). Sea \(\varphi: \mathbb{N} \to \mathbb{N}\) una biyección y pongamos \(b_n = a_{\varphi(n)}\). Afirmamos que \(\sum b_n = \sum a_n\). En efecto, sean \(s_n = a_1 + \cdots + a_n\) y \(t_n = b_1 + \cdots + b_n\). Para cada \(n \in \mathbb{N}\), llamemos \(m\) al mayor de los números \(\varphi(1), \varphi(2), \ldots, \varphi(n)\). Entonces
+\[
+\{\varphi(1), \ldots, \varphi(n)\} \subset \{1, \ldots, m\}.
+\]
+Se sigue que \(t_n = \sum_{i=1}^n a_{\varphi(i)} \le \sum_{j=1}^m a_j = s_m\).
+
+Así, para cada \(n \in \mathbb{N}\) existe un \(m \in \mathbb{N}\) tal que \(t_n \le s_m\). De modo análogo (considerando \(\varphi^{-1}\) en lugar de \(\varphi\)) se ve que para cada \(m \in \mathbb{N}\) existe \(n \in \mathbb{N}\) tal que \(s_m \le t_n\). Concluimos que \(\lim s_n = \lim t_n\), es decir \(\sum a_n = \sum b_n\).
+
+En el caso general, tenemos \(\sum a_n = \sum p_n - \sum q_n\), donde \(p_n\) y \(q_n\) son respectivamente la parte positiva y la parte negativa de \(a_n\). Todo reordenamiento \((b_n)\) de los términos \(a_n\) origina un reordenamiento \((u_n)\) para los \(p_n\) y un reordenamiento \((v_n)\) para los \(q_n\), de tal modo que cada \(u_n\) es la parte positiva y cada \(v_n\) es la parte negativa de \(b_n\). Por lo que acabamos de ver, \(\sum u_n = \sum p_n\) y \(\sum v_n = \sum q_n\). Luego \(\sum a_n = \sum u_n - \sum v_n = \sum b_n\), lo que prueba el teorema.
+
+El siguiente resultado, debido a Riemann, contiene la recíproca del teorema anterior.
+
+\textbf{Teorema 23.} Sea \(\sum a_n\) una serie condicionalmente convergente. Dado cualquier número real \(c\), existe un reordenamiento \((b_n)\) de los términos de \(\sum a_n\) tal que \(\sum b_n = c\).
+
+\textbf{Demostración.} Sean \(p_n\) la parte positiva y \(q_n\) la parte negativa de \(a_n\). Como \(\sum a_n\) converge condicionalmente, tenemos \(\lim a_n = 0\), de donde \(\lim p_n = \lim q_n = 0\), pero \(\sum p_n = \sum q_n = +\infty\). Reordenaremos los términos de la serie \(\sum a_n\) tomando como primeros términos \(p_1, p_2, \ldots, p_{n_1}\), donde \(n_1\) es el menor índice tal que \(p_1 + p_2 + \cdots + p_{n_1} > c.\) A continuación, tomaremos los términos negativos \(-q_1, -q_2, \dots, -q_{n_2}\), donde \(n_2\) es el menor índice tal que  
+\[p_1 + \cdots + p_{n_1} - q_1 - \cdots - q_{n_2} < c.\]  
+Las elecciones de \(n_1\) y \(n_2\) son posibles porque \(\sum p_n = \sum q_n = +\infty\). Continuamos así: elegimos el menor índice \(n_3\) tal que  
+\[p_1 + p_2 + \cdots + p_{n_1} - q_1 - \cdots - q_{n_2} + p_{n_1+1} + \cdots + p_{n_3} > c\]  
+
+y luego el menor índice \(n_4\) tal que  
+\[p_1 + \cdots + p_{n_1} - q_1 - \cdots - q_{n_2} + p_{n_1+1} + \cdots + p_{n_3} - q_{n_2+1} - \cdots - q_{n_4} < c.\]  
+
+Prosiguiendo de esta manera, obtenemos un reordenamiento de \(\sum a_n\) tal que las sumas parciales \(t_n\) de la nueva serie tienden a \(c\). En efecto, para todo \(i\) impar tenemos \(t_{n_i+1} < c < t_{n_i}\), \(0 < t_{n_i} - c \le p_{n_i}\), \(0 < c - t_{n_i+1} < q_{n_i+1}\). De ahí resulta (teniendo en cuenta que \(\lim p_{n_i} = \lim q_{n_i} = 0\)) que \(\lim_{i \to \infty} t_{n_i} = c\). Además, es claro que, para \(i\) impar, \(n_i < n < n_{i+1} \Rightarrow t_{n_i+1} \le t_n \le t_{n_i}\) y, para \(i\) par, \(n_i < n < n_{i+1} \Rightarrow t_{n_i} \le t_n \le t_{n_i+1}\). Así \(\lim t_n = c\), es decir, la nueva serie tiene suma \(c\).
+
+: Un razonamiento análogo (más simple) muestra que un conveniente cambio en el orden de los términos de una serie condicionalmente convergente puede hacer que sus sumas parciales tiendan a \(+\infty\) o a \(-\infty\).
+
+\textbf{Teorema 24.} Si \(\sum a_n\) y \(\sum b_n\) (\(n \ge 0\)) son absolutamente convergentes, entonces \((\sum a_n)(\sum b_n) = \sum c_n\) donde, para cada \(n \ge 0\), \(c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0\).
+
+\textbf{Demostración.} Para cada \(n \ge 0\), tenemos  
+\[
+\left( \sum_{i=0}^{n} a_i \right) \left( \sum_{j=0}^{n} b_j \right) = \sum_{i,j=0}^{n} a_i b_j = x_0 + x_1 + \cdots + x_n,
+\]  
+
+donde \(x_n = a_0 b_n + a_1 b_n + \cdots + a_n b_n + \cdots + a_n b_0\). Haciendo \(n \to \infty\), obtenemos \((\sum a_n)(\sum b_n) = \sum x_n\) (\(n \ge 0\)). Por disociación de términos de \(\sum x_n\), formemos una serie \(\sum a_i b_j\), cuyos términos están ordenados de tal forma que las sumandos \(a_i b_j\) de \(x_n\) precedan a los de \(x_{n+1}\). Para cada \(k \ge 0\), la suma parcial de orden \((k+1)^2\) de la serie \(\sum |a_i b_j|\) es igual a
+\[
+\sum_{i,j=0}^{k} |a_i||b_j| = \left( \sum_{i=0}^{k} |a_i| \right) \left( \sum_{j=0}^{k} |b_j| \right) \leq \left( \sum_{n=0}^{\infty} |a_n| \right) \left( \sum_{n=0}^{\infty} |b_n| \right).
+\]
+
+Así, la sucesión (no decreciente) de las sumas parciales de la serie \(\sum |a_i b_j|\) es acotada, porque posee una subsucesión acotada. Luego \(\sum a_i b_j\) converge absolutamente. Su convergencia y el valor de su suma no se alteran si agrupamos en un único término \(c_n\) todos los sumandos \(a_i b_j\) con \(i+j = n\). Por lo tanto \((\sum a_n)(\sum b_n) = \sum x_n = \sum a_i b_j = \sum c_n\).
+
+\textbf{Ejercicios}
+
+1. Si \(\lim x_n = a\) entonces \(\lim |x_n| = |a|\). Dé un contraejemplo que muestre que el recíproco es falso, salvo cuando \(a = 0\).
+
+2. Sea \(\lim x_n = 0\). Para cada \(n\), ponga \(y_n = \min(|x_1|, |x_2|, \dots, |x_n|)\). Pruebe que \(y_n \to 0\).
+
+3. Si \(\lim x_{2n} = a\) y \(\lim x_{2n-1} = a\), pruebe que \(\lim x_n = a\).
+
+4. Si \(N = N_1 \cup N_2 \cup \dots \cup N_k\) y \(\lim_{n \in N_1} x_n = \lim_{n \in N_2} x_n = \dots = \lim_{n \in N_k} x_n = a\), entonces \(\lim_{n \in N} x_n = a\).
+
+5. Dé ejemplo de una sucesión \((x_n)\) y una descomposición \(N = N_1 \cup \dots \cup N_k \cup \dots\) de \(N\) como unión de una infinidad de subconjuntos infinitos tales que, para todo \(k\), la subsucesión \((x_n)_{n \in N_k}\) tenga límite \(a\), pero no se tenga \(\lim x_n = a\). [Sugerencia: Para cada \(k \in N\) sea \(N_k\) el conjunto de los números naturales de la forma \( n = 2^{k-1} \cdot m \), donde \( m \) es impar. Dado \( n \in \mathbb{N}_k \), ponga \( x_n = 1 \) si \( n \) es el menor elemento de \( \mathbb{N}_k \) y \( x_n = \frac{1}{n} \), en los demás casos.]
+
+6. Si \( \lim x_n = a \) y \( \lim (x_n - y_n) = 0 \) entonces \( \lim y_n \) es igual a \( a \).
+
+7. Sea \( a \neq 0 \). Si \( \lim \frac{y_n}{a} = 1 \) entonces \( \lim y_n \) es igual a \( a \).
+
+8. Sea \( b \neq 0 \). Si \( \lim x_n = a \) y \( \lim \frac{x_n}{y_n} = b \), entonces \( \lim y_n = \frac{a}{b} \).
+
+9. Si \( \lim x_n = a \neq 0 \) y \( \lim x_n y_n = b \) entonces \( \lim y_n = \frac{b}{a} \).
+
+10. Sean \( k \in \mathbb{N} \) y \( a > 0 \). Si \( a \leq x_n \leq n^k \) para todo \( n \), entonces \( \lim \sqrt[n]{x_n} = 1 \).
+
+11. Use la desigualdad entre las medias aritmética y geométrica de los \( n + 1 \) números \( 1 - 1/n, \ldots, 1 - 1/n, 1 \) y pruebe que la sucesión \( (1 - 1/n)^n \) es creciente. Concluya que \( (1 - 1/n)^n \geq 1/4 \) para todo \( n > 1 \).
+
+12. Sean \( x_n = (1 + 1/n)^n \) y \( y_n = (1 - 1/(n+1))^{n+1} \). Muestre que \( \lim x_n y_n = 1 \) y deduzca de ahí que \( \lim (1 - 1/n)^n = e^{-1} \).
+
+13. Haciendo \( y = x^{1/k} \) y \( b = a^{1/k} \) en la identidad \( y^k - b^k = (y - b) \cdot \sum_{i=0}^{k-1} y^i b^{k-i-1} \) obtenga \( x - a = (x^{1/k} - a^{1/k}) \cdot \sum_{i=0}^{k-1} x^{i/k} a^{1-(i+1)/k} \) y use esto para probar que si \( \lim x_n = a > 0 \), entonces \( \lim_{n \to \infty} \sqrt[k]{x_n} = \sqrt[k]{a} \). Concluya, de ahí, que \( \lim_{n \to \infty} (x_n)^r = a^r \) para todo racional \( r \).
+
+14. Pruebe que, para todo \( r \in \mathbb{Q} \), se tiene \( \lim_{n \to \infty} \left( 1 + \frac{r}{n} \right)^n = e^r \). [Sugerencia: Por el Ejercicio 11, basta considerar el caso en que \( r = \frac{p}{q} \) es \( > 0 \). Examine la subsucesión donde \(n = p \cdot m\). Para esos valores de \(n\), se tiene \(\left(1 + \frac{r}{n}\right)^n = \left(1 + \frac{p}{qmn}\right)^{qmn \cdot \frac{p}{q}} = \left[\left(1 + \frac{1}{qmn}\right)^{qmn}\right]^{p/q}\). Use el Ejercicio 12.]
+
+14. Sean \(a \ge 0\), \(b \ge 0\). Pruebe que \(\lim_{n\to\infty} \sqrt[n]{a^n + b^n} = \max\{a, b\}\).
+
+15. Dada una sucesión \((x_n)\), un término \(x_p\) se llama un “término destacado” cuando \(x_p \ge x_n\) para todo \(n > p\). Sea \(P = \{p \in \mathbb{N}; x_p \text{ es destacado}\}\). Si \(P = \{p_1 < p_2 < \dots\}\) es infinito, \((x_p)_{p\in P}\) es una subsucesión no creciente de \((x_n)\). Si \(P\) es finito (en particular, vacío), muestre que existe una subsucesión creciente de \((x_n)\). Concluya que toda sucesión posee una subsucesión monótona.
+
+16. Sea \((x_n)\) una sucesión acotada. Si \(\lim a_n = a\) y cada \(a_n\) es un valor de adherencia de \((x_n)\), entonces \(a\) es un valor de adherencia de \((x_n)\).
+
+17. Sean \((x_n)\) y \((y_n)\) sucesiones acotadas. Pongamos  
+\(a = \liminf x_n\), \(A = \limsup x_n\), \(b = \liminf y_n\) y \(B = \limsup y_n\). Pruebe que  
+
+a) \(\limsup(x_n + y_n) \le A + B\), \(\liminf(x_n + y_n) \ge a + b\);\\
+b) \(\limsup(-x_n) = -a\), \(\liminf(-x_n) = -A\);\\
+c) \(\limsup(x_n \cdot y_n) \le A \cdot B\) y \(\liminf(x_n \cdot y_n) \ge a b\);  
+
+valiendo las dos últimas desigualdades bajo la hipótesis de que \(x_n \ge 0\) y \(y_n \ge 0\). Dé ejemplos en los que se tengan desigualdades estrictas en las relaciones anteriores.
+
+18. Para cada \(n \in \mathbb{N}\), sea \(0 \le t_n \le 1\). Si \(\lim x_n = \lim y_n = a\), pruebe que \(\lim [t_n x_n + (1 - t_n) y_n] = a\).
+
+19. Se dice que una sucesión \((x_n)\) tiene variación acotada cuando la sucesión \((v_n)\) dada por \(v_n = \sum_{i=1}^n |x_{i+1} - x_i|\) es acotada.  
+Pruebe que, en ese caso, \((v_n)\) converge. Pruebe también:
+
+a) Si \(x_n\) tiene variación acotada, entonces existe \(\lim x_n\);\\
+b) Si \(|x_{n+2} - x_{n+1}| \leq c|x_{n+1} - x_n|\) para todo \(n \in \mathbb{N}\) con \(0 \leq c < 1\), entonces \((x_n)\) tiene variación acotada;\\
+c) \((x_n)\) tiene variación acotada si, y solo si, \(x_n = y_n - z_n\) donde \((y_n)\) y \((z_n)\) son sucesiones no decrecientes acotadas;\\
+d) Dé ejemplo de una sucesión convergente que no sea de variación acotada.
+
+20. Sea \(x_1 = 1\) y ponga \(x_{n+1} = 1 + \frac{1}{x_n}\). Verifique que \(|x_{n+2} - x_{n+1}| \leq \frac{1}{2}|x_{n+1} - x_n|\). Concluya que existe \(a = \lim x_n\) y determine \(a\).
+
+21. Ponga \(x_1 = 1\) y defina \(x_{n+1} = 1 + \sqrt{x_n}\). Muestre que la sucesión \((x_n)\), así obtenida, es acotada. Determine \(a = \lim x_n\).
+
+22. Para que la sucesión \((x_n)\) no posea subsucesión convergente es necesario y suficiente que \(\lim |x_n| = +\infty\).
+
+23. Sea \(\varphi: \mathbb{N} \to \mathbb{N}\) una sucesión de números naturales. Pruebe que las siguientes afirmaciones son equivalentes:
+
+a) \(\lim_{n \to \infty} \varphi(n) = +\infty\);\\
+b) Para todo \(k \in \mathbb{N}\), \(\varphi^{-1}(k)\) es un subconjunto finito de \(\mathbb{N}\);\\
+c) Para todo subconjunto finito \(F \subset \mathbb{N}\), \(\varphi^{-1}(F)\) es finito.
+
+En particular, si \(\varphi: \mathbb{N} \to \mathbb{N}\) es inyectiva, entonces \(\lim_{n \to \infty} \varphi(n) = +\infty\).
+
+24. Sea \((x_n)\) una sucesión de números reales y suponga que \(\varphi: \mathbb{N} \to \mathbb{N}\) cumple una de las (y por tanto todas las) condiciones del ejercicio anterior. Pruebe que si \(\lim x_n = a\) y \(y_n = b\), entonces \(\lim_{n \to \infty} (x_n - y_n) = 0\). \(x_{\varphi(n)}\), entonces \(\lim y_n = a\). Dé ejemplo de \(\varphi: \mathbb{N} \to \mathbb{N}\) sobreyectiva, tal que \(\lim x_n = a\), pero no se cumple \(\lim y_n = a\), donde \(y_n = x_{\varphi(n)}\).
+
+25. Sea \(x_n \neq 0\) para todo \(n \in \mathbb{N}\). Si existen \(n_0 \in \mathbb{N}\) y \(c \in \mathbb{R}\) tales que \(0 < |x_{n+1}/x_n| \leq c < 1\) para todo \(n > n_0\), entonces \(\lim x_n = 0\). Si por el contrario \(|x_{n+1}/x_n| \geq c > 1\) para todo \(n > n_0\), entonces \(\lim |x_n| = +\infty\). Como aplicación, reobtenga los Ejemplos 21 y 22 y muestre que \(\lim n! / n^n = 0\).
+
+26. Sea \(T\) un arreglo triangular de números no negativos,
+\[
+\begin{array}{ccccc}
+t_{11} & & & & \\
+t_{21} & t_{22} & & & \\
+t_{31} & t_{32} & t_{33} & & \\
+\vdots & & & & \\
+t_{n1} & t_{n2} & t_{n3} & \dots & t_{nn}
+\end{array}
+\]
+
+Haga dos hipótesis sobre el arreglo \(T\). Primera: cada fila tiene suma igual a 1. Segunda: cada columna tiene límite cero: \(\lim_{n\to\infty} t_{ni} = 0\) para todo \(i \in \mathbb{N}\). Dada una sucesión convergente \((x_n)\), con \(\lim x_n = a\), use el arreglo \(T\) para transformarla en una sucesión \((y_n)\), con
+\[
+y_n = t_{n1}x_1 + t_{n2}x_2 + \dots + t_{nn}x_n.
+\]
+
+Pruebe que \(\lim y_n = a\).
+[Sugerencia: Considere inicialmente el caso \(a = 0\). Dado \(\varepsilon > 0\), existe \(p \in \mathbb{N}\) tal que \(n > p \Rightarrow |x_n| < \varepsilon/2\). Existe también \(A > 0\) tal que \(|x_n| < A\) para todo \(n\). A continuación, obtenga \(q \in \mathbb{N}\) tal que \(n > q \Rightarrow |t_{n1}| < \delta, |t_{n2}| < \delta, \dots, |t_{np}| < \delta\), donde \(\delta = \varepsilon / (2pA)\). Tome \(n_0 = \max\{p, q\}\). Observe que \(n > n_0 \Rightarrow |y_n| \leq t_{n1}|x_1| + \dots + t_{np}|x_p| + \dots + t_{nn}|x_n|\), donde la suma de las \(p\) primeras parcelas no excede \(\varepsilon/2\) y la suma de las \(n-p\) parcelas restantes no supera \((t_{n,p+1} + \dots + t_{nn}) \varepsilon/2\). Luego, \(|y_n| < \varepsilon\). El caso general se reduce inmediatamente a este.]
+
+27. Si \(\lim x_n = a\), poniendo \(y_n = \frac{x_1 + \dots + x_n}{n}\), se tiene aún \(\lim y_n = a\). (Sugerencia: Use el ejercicio anterior.)
+
+28. Si \(\lim x_n = a\), y los \(x_n\) son todos positivos, entonces \(\lim \sqrt[n]{x_1 x_2 \dots x_n} = a\). [Sugerencia: Tome logaritmos y reduzca al problema anterior.] Concluya que si \(a_n > 0\) y \(\lim \frac{a_{n+1}}{a_n} = a\) entonces \(\lim \sqrt[n]{a_n} = a\).
+
+29. Sea \(y_n > 0\) para todo \(n \in \mathbb{N}\), con \(\sum y_n = +\infty\). Si \(\lim x_n = a\) entonces \(\lim \frac{x_1 + x_2 + \dots + x_n}{y_1 + y_2 + \dots + y_n} = a\).
+
+30. Si \((y_n)\) es creciente y \(\lim y_n = +\infty\), entonces \(\lim \frac{x_{n+1} - x_n}{y_{n+1} - y_n} = a \Rightarrow \lim \frac{x_n}{y_n} = a\). (Use el Ejercicio 29.)
+
+31. \(\lim_{n\to\infty} \frac{1^p + 2^p + \dots + n^p}{n^{p+1}} = \frac{1}{p+1}\). (Use el ejercicio anterior.)
+
+32. Para todo \(n \in \mathbb{N}\), se tiene \(0 < e - \left(1 + \frac{1}{1!} + \frac{1}{2!} + \dots + \frac{1}{n!}\right) < \frac{1}{n!}\). Concluya de ahí que el número \(e\) es irracional.
+
+33. \(\lim_{n\to\infty} \frac{1}{2} \sqrt[n]{(n+1)(n+2)\dots 2n} = \frac{4}{e}\). (Use el final del Ejercicio 28.)
+
+34. Pruebe que si definimos \(a_n\) mediante la igualdad \(n! = n^n e^{-n} a_n\), se tendrá \(\lim \sqrt[n]{a_n} = 1\).
+
+35. Sean \(\sum a_n\) y \(\sum b_n\) series de términos positivos. Si \(\sum b_n = +\infty\) y existe \(n_0 \in \mathbb{N}\) tal que \(\frac{a_{n+1}}{a_n} \geq \frac{b_{n+1}}{b_n}\) para todo \(n > n_0\), entonces \(\sum a_n = +\infty\).
+
+36. Sean \(\sum a_n\) y \(\sum b_n\) series de términos positivos. Si \(\lim \frac{a_n}{b_n} = 0\) y \(\sum b_n\) converge, entonces \(\sum a_n\) converge. Si \(\lim \frac{a_n}{b_n} = c \neq 0\), entonces \(\sum a_n\) converge si, y solo si, \(\sum b_n\) converge.
+
+37. Para todo polinomio \(p(x)\) de grado superior a 1, la serie \(\sum \frac{1}{p(n)}\) converge.
+
+38. Si \(-1 < x < 1\) y \(\binom{m}{n} = \frac{m(m-1)\cdots(m-n+1)}{n!}\), entonces \(\lim_{n \to \infty} \binom{m}{n}x^n = 0\) para cualesquiera \(m \in \mathbb{R}\) y \(n \in \mathbb{N}\).
+
+39. Si la sucesión \((a_n)\) es no creciente y \(\lim a_n = 0\), lo mismo ocurre con \(b_n = \frac{a_1 + \cdots + a_n}{n}\). Concluya que, en este caso, la serie \(a_1 - \frac{1}{2}(a_1 + a_2) + \frac{1}{3}(a_1 + a_2 + a_3) - \cdots\) es convergente.
+
+40. Pruebe que, para todo \(a \in \mathbb{R}\), la serie \(a^2 + \frac{a^2}{(1+a^2)^2} + \cdots\) es convergente y calcule su suma.
+
+41. Para todo \(p \in \mathbb{N}\) fijado, la serie \(\sum_n \frac{1}{n(n+1)\cdots(n+p)}\) converge.
+
+42. Si \(\sum a_n\) converge y \(a_n > 0\), entonces \(\sum (a_n)^2\) y \(\sum \frac{a_n}{1+a_n}\) convergen.
+
+43. Si \(\sum (a_n)^2\) converge, entonces \(\sum \frac{a_n}{n}\) converge.
+
+44. Si \(a_n\) es decreciente y \(\sum a_n\) converge, entonces \(\lim n \cdot a_n = 0\).
+
+45. Si \(a_n\) es decreciente y \(\sum a_n = +\infty\), entonces,
+\[
+\lim_{n \to \infty} \frac{a_1 + a_3 + \cdots + a_{2n-1}}{a_2 + a_4 + \cdots + a_{2n}} = 1.
+\]
+
+46. Sea \((a_n)\) una sucesión no creciente, con \(\lim a_n = 0\). La serie \(\sum a_n\) converge si, y solo si, \(\sum 2^n \cdot a_{2^n}\) converge.
+
+47. Pruebe que el conjunto de los valores de adherencia de la sucesión \(x_n = \cos(n)\) es el intervalo cerrado \([-1, 1]\).
+
+48. Sean \(a, b\) números reales positivos. Defina inductivamente las sucesiones \((x_n)\), \((y_n)\) poniendo \(x_1 = \sqrt{ab}\), \(y_1 = (a+b)/2\) y \(x_{n+1} = \sqrt{x_n y_n}\), \(y_{n+1} = (x_n + y_n)/2\). Pruebe que \(x_n\) e \(y_n\) convergen al mismo límite, llamado la media aritmético-geométrica entre \(a\) y \(b\).
+
+49. Sean \(a_1 \geq a_2 \geq \cdots \geq 0\) y \(s_n = a_1 - a_2 + \cdots + (-1)^{n-1} a_n\). Pruebe que la sucesión \((s_n)\) es acotada y que \(\limsup s_n - \liminf s_n = \lim a_n\).
+
+\newpage
 
 \end{document}
