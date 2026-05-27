@@ -3261,4 +3261,565 @@ Pruebe que \(\lim y_n = a\).
 
 \newpage
 
+\chapter{Topología de la Recta}
+
+Estudiaremos en este capítulo las principales propiedades topológicas de los subconjuntos de la recta. Se llaman así las propiedades que se basan en las nociones de proximidad y límite. Ellas están fuertemente relacionadas con el comportamiento de las funciones continuas.
+
+Las ideas aquí presentadas pertenecen a una parte de la Matemática llamada Topología, cuyo alcance es establecer, con gran generalidad, la noción de límite, las propiedades de las funciones continuas y de los conjuntos donde tales funciones se definen y toman valores. Para que tenga sentido determinar el límite o indagar sobre la continuidad de una función, el dominio y el codominio de la misma deben poseer un cierto tipo de estructura, convirtiéndose en lo que se llama un "espacio topológico". En otras palabras, los espacios topológicos son conjuntos equipados con estructuras tales que entre ellos tiene sentido hablar de límites y continuidad de funciones. El conjunto de los números reales es el espacio topológico más frecuentemente utilizado y por eso el más importante.
+
+Las demostraciones que daremos se basarán únicamente en los axiomas de los números reales y en las consecuencias que de ellos dedujimos en los capítulos anteriores. Utilizaremos, sin embargo, con frecuencia cada vez mayor, el lenguaje geométrico según el cual nos referiremos al cuerpo \(\mathbb{R}\) como "la recta", diremos "punto" en lugar de "número real", traduciremos "\(a < b\)" por "\(a\) está a la izquierda de \(b\)", dados \(x, y \in \mathbb{R}\), interpretaremos el valor absoluto \(|x - y|\) como "distancia del punto \(x\) al punto \(y\)" y, finalmente, veremos el intervalo \([a, b]\) como el segmento de recta cuyos extremos son los puntos \(a\) y \(b\).
+
+Procediendo así, estaremos atribuyendo un contenido intuitivo a los conceptos formales introducidos por la axiomática de los números reales. Esta actitud, cuando se mira desde el punto de vista estrictamente matemático, es inofensiva: se trata solo de utilizar sinónimos geométricos para nombres aritméticos. Desde el punto de vista del estilo, es conveniente pues permite evitar repeticiones poco elegantes, haciendo la lectura más agradable. Finalmente, desde el punto de vista educativo, es valiosa porque posibilita "visualizar" los conceptos y, a menudo, prever los resultados (o al menos hacerlos aceptables) gracias a la imagen experimental que poseemos de una recta como un continuo de puntos alineados, sin lagunas, sin principio y sin fin.
+
+\section{Conjuntos abiertos}
+
+Las ideas que presentaremos en este párrafo están motivadas por el siguiente tipo de observación: sea \(a\) un número real mayor que 2. Entonces, para todo \(x \in \mathbb{R}\) suficientemente próximo de \(a\) todavía se tiene \(x > 2\). Esto es, si desplazamos \(a\) un poquito hacia la izquierda (o, evidentemente, hacia la derecha) obtendremos aún un número mayor que 2. Ya no ocurre lo mismo cuando tomamos un número racional \(r\) y lo miramos como número racional. Desplazándolo un poco hacia cualquier lado, podemos encontrar un número irracional. Así, mientras que la propiedad de ser > 2 es estable (pequeños desplazamientos no la destruyen), la propiedad de ser racional es inestable. Los conjuntos definidos mediante propiedades estables son los que llamaremos abiertos. Pasemos ahora a las definiciones formales.
+
+Dado un conjunto \(X \subset \mathbb{R}\), un punto \(x \in X\) se llama punto interior de \(X\) cuando existe un intervalo abierto \((a, b)\) tal que \(x \in (a, b) \subset X\). (Esto quiere decir que todos los puntos suficientemente próximos a \(x\) todavía pertenecen al conjunto \(X\).)
+
+Para que \(x \in X\) sea un punto interior del conjunto \(X\) es necesario (y suficiente) que exista \(\varepsilon > 0\) tal que \((x - \varepsilon, x + \varepsilon) \subset X\). En efecto, si \(x \in (a, b) \subset X\), sea \(\varepsilon\) el menor de los números positivos \(x - a\) y \(b - x\). Entonces \((x - \varepsilon, x + \varepsilon) \subset (a, b)\), luego \((x - \varepsilon, x + \varepsilon) \subset X\).
+
+\begin{center}
+\begin{tikzpicture}
+    
+    % Línea base
+    \draw[thick] (0, 0) -- (10, 0);
+
+    % Intervalo resaltado (línea gruesa)
+    \draw[line width=3pt] (4.2, 0) -- (8.1, 0);
+
+    % Punto 'a'
+    \node at (1.4, 0) {\Large $($};
+    \node at (1.4, -0.6) {\large a};
+
+    % Punto 'x - \varepsilon'
+    \node at (4.2, 0) {\Large $($};
+    \node at (4.2, -0.6) {\large x - $\varepsilon$};
+
+    % Punto central 'x'
+    \draw[thick] (6.15, -0.2) -- (6.15, 0.2);
+    \node at (6.15, -0.6) {\large x};
+
+    % Punto 'b = x + \varepsilon'
+    \node at (8.1, 0) {\Large $)$};
+    \node at (8.1, -0.6) {\large b = x + $\varepsilon$};
+
+\end{tikzpicture}
+\end{center}
+
+En la figura, \( b - x \) es menor que \( x - a \), por lo tanto \( b - x = \varepsilon \).
+
+Equivalentemente, \(x\) es un punto interior del conjunto \(X\) si, y solo si, existe \(\varepsilon > 0\) tal que \(|y - x| < \varepsilon \Rightarrow y \in X\). En efecto, \(|y - x| < \varepsilon\) significa que \(y\) pertenece al intervalo abierto \((x - \varepsilon, x + \varepsilon)\).
+
+Dado \(X \subset \mathbb{R}\), el conjunto de los puntos \(x \in X\) que son interiores a \(X\) será representado por \(\text{int}(X)\) y llamado el interior del conjunto \(X\). Tenemos \(\text{int}(X) \subset X\) y, evidentemente, si \(X \subset Y\) entonces \(\text{int}(X) \subset \text{int}(Y)\).
+
+Ejemplos
+
+1. Si el conjunto \(X\) posee algún punto interior, debe contener al menos un intervalo abierto, luego es infinito. Así, si \(X = \{x_1, \ldots, x_n\}\) es un conjunto finito, ninguno de sus puntos es interior, es decir, tenemos \(\text{int}(X) = \emptyset\). Mejor aún, como todo intervalo abierto es un conjunto no numerable, si \(\text{int}(X) \neq \emptyset\) entonces \(X\) es no numerable. En particular, el conjunto \(\mathbb{Q}\) de los números racionales no posee puntos interiores, es decir, \(\text{int}(\mathbb{Q}) = \emptyset\). Se sigue que \(\text{int}(\mathbb{Z}) = \emptyset\). También el conjunto \(\mathbb{R}-\mathbb{Q}\) de los números irracionales (aunque sea no numerable) no posee puntos interiores. En efecto, todo intervalo abierto debe contener números racionales, luego \(\mathbb{R}-\mathbb{Q}\) no puede contener un intervalo abierto. Así \(\text{int}(\mathbb{R}-\mathbb{Q}) = \emptyset\).
+
+2. Si \(X = (a, b)\), o \(X = (-\infty, b)\) o \(X = (a, +\infty)\), entonces \(\text{int}(X) = X\). En el primer caso, para todo \(x \in X\) tenemos \(x \in (a, b) \subset X\). En el segundo caso, dado arbitrariamente \(x \in X\) escogemos \(a < x\) y tenemos \(x \in (a, b) \subset X\). El tercer caso es análogo al segundo.
+
+3. Sean \(X = [c, d]\), \(Y = [c, +\infty)\) y \(Z = (-\infty, d]\). Entonces \(\text{int}(X) = (c, d)\), \(\text{int}(Y) = (c, +\infty)\) y \(\text{int}(Z) = (-\infty, d)\). Basta examinar \(X\). Para cada \(x \in (c, d)\) tenemos \(x \in (c, d) \subset X\) luego \((c, d) \subset \text{int}(X)\). Por otro lado \(c \notin \text{int}(X)\), porque todo intervalo abierto que contiene a \(c\) poseerá puntos a la izquierda de \(c\), luego no estará contenido en \([c, d]\). Del mismo modo, el punto \(d\) no es interior al intervalo \([c, d]\). Luego el interior de \([c, d]\) se reduce al intervalo abierto \((c, d)\). Análogamente, si \(X_1 = [c, d)\) y \(X_2 = (c, d]\), entonces \(\text{int}(X_1) = \text{int}(X_2) = (c, d)\).
+
+Un subconjunto \(A \subset \mathbb{R}\) se llama un conjunto abierto cuando todos sus puntos son interiores, es decir, cuando \(\text{int}(A) = A\).
+
+Así \(A\) es abierto si, y solo si, para cada \(x \in A\) existe un intervalo abierto \((a, b)\) tal que \(x \in (a, b) \subset A\). Podemos interpretar el intervalo \((a, b)\) como una especie de "margen de seguridad" del punto \(x\), dentro de la cual puede moverse sin correr el peligro de salir del conjunto \(A\). Conviene notar que tal margen de seguridad no es la misma para todos los puntos de \(A\). Por ejemplo, si \(A = (2, +\infty)\), el margen de seguridad de un punto \(x \in A\) es \(x - 2\). Es tanto menor cuanto más próximo a \(2\) esté el punto \(x\).
+
+4. El conjunto vacío es abierto. En efecto, un conjunto \(X\) solo puede dejar de ser abierto si existe en \(X\) algún punto que no sea interior. Como no existe punto alguno en \(\emptyset\), estamos forzados a admitir que \(\emptyset\) es abierto. Evidentemente, la recta \(\mathbb{R}\) entera es un conjunto abierto.
+
+5. Sea \(A = (0,1) \cup (2,5)\). Entonces \(A\) es un subconjunto abierto de la recta. En efecto, para todo \(x \in A\) se tiene \(x \in (0,1)\) o \(x \in (2,5)\). En cualquier caso, existe un intervalo abierto que contiene a \(x\) y está contenido en \(A\).
+
+6. Un intervalo (acotado o no) es un conjunto abierto si, y solo si, es un intervalo abierto. Esto se deduce del Ejemplo 3 anterior. Todo conjunto abierto no vacío es no numerable. Así \(\mathbb{Q}\), \(\mathbb{Z}\), sus subconjuntos y los conjuntos finitos de la recta no son abiertos. Ningún conjunto formado solo por números irracionales puede ser abierto, pues no contiene intervalos.
+
+\textbf{Teorema 1.} a) Si \(A_1 \subset \mathbb{R}\) y \(A_2 \subset \mathbb{R}\) son abiertos, entonces \(A_1 \cap A_2\) es abierto.
+b) Sea \((A_\lambda)_{\lambda \in L}\) una familia arbitraria de conjuntos abiertos \(A_\lambda \subset \mathbb{R}\). La reunión \(A = \bigcup_{\lambda \in L} A_\lambda\) es un conjunto abierto.
+
+\textbf{Demostración.} a) Sea \(x \in A_1 \cap A_2\). Entonces \(x \in A_1\) y \(x \in A_2\). Luego existen intervalos tales que \(x \in (a_1, b_1) \subset A_1\) y \(x \in (a_2, b_2) \subset A_2\). Sean \(a\) el mayor de los números \(a_1, a_2\), y \(b\) el menor de los números \(b_1, b_2\). Entonces \(x \in (a, b) = (a_1, b_1) \cap (a_2, b_2) \subset A_1 \cap A_2\). Así, todo punto \(x \in A_1 \cap A_2\) es interior y por tanto esta intersección es un conjunto abierto.
+b) Sea \(x \in A = \cup A_\lambda\). Entonces existe \(\lambda \in L\) tal que \(x \in A_\lambda\). Como \(A_\lambda\) es abierto, podemos obtener un intervalo \((a, b)\) tal que \(x \in (a, b) \subset A_\lambda\). Como \(A_\lambda \subset A\), tenemos \(x \in (a, b) \subset A\). Luego todo punto \(x \in A\) es interior y en consecuencia \(A\) es abierto.
+
+Observación: Al demostrar el item a) del teorema anterior utilizamos el hecho de que si los intervalos \((a_1, b_1)\) y \((a_2, b_2)\) tienen en común algún punto \(x\), entonces la intersección \((a_1, b_1) \cap (a_2, b_2)\) es igual al intervalo \((a, b)\), donde \(a\) es el mayor de los números \(a_1, a_2\) y \(b\) es el menor de los números \(b_1, b_2\). El lector debe convencerse de esto primero dibujando una figura. Después debe intentar probarlo formalmente. Si no lo consigue, he aquí la demostración: inicialmente, note que existe el intervalo \((a, b)\), es decir, se cumple \(a < b\), porque las hipótesis \(a_1 < x < b_1\) y \(a_2 < x < b_2\) implican que cualquiera de los números \(a_1, a_2\) es menor que ambos números \(b_1, b_2\). A continuación, observe que siendo \(a = \max\{a_1, a_2\}\), un número \(y\) es mayor que \(a\) si, y solo si, \(y > a_1\) y \(y > a_2\). Del mismo modo, siendo \(b = \min\{b_1, b_2\}\), se tiene \(y < b\) si, y solo si, \(y < b_1\) y \(y < b_2\). Así \(a < y < b \Leftrightarrow a_1 < y < b_1\) y \(a_2 < y < b_2\). O sea \(y \in (a, b) \Leftrightarrow y \in (a_1, b_1)\) y \(y \in (a_2, b_2)\). Esto quiere decir: \((a, b) = (a_1, b_1) \cap (a_2, b_2)\). Argumentos de este tipo son considerados "elementales". Poco a poco serán omitidos, en beneficio de la claridad del texto.
+
+\textbf{Corolario.} Si \(A_1, A_2, \ldots, A_n\) son subconjuntos abiertos de \(\mathbb{R}\) entonces \(A_1 \cap A_2 \cap \cdots \cap A_n\) es abierto. En palabras: la intersección de un número finito de conjuntos abiertos es un conjunto abierto.
+
+En efecto, aplicando \(n-1\) veces el Teorema 1 obtenemos \(A_1 \cap A_2\) abierto, \(A_1 \cap A_2 \cap A_3 = (A_1 \cap A_2) \cap A_3\) abierto, \(\ldots, A_1 \cap \cdots \cap A_n = (A_1 \cap \cdots \cap A_{n-1}) \cap A_n\) abierto.
+
+Ejemplos.
+
+7. La intersección de una infinidad de conjuntos abiertos puede no ser un conjunto abierto. Por ejemplo, si consideramos los conjuntos abiertos \(A_n = \left(-\frac{1}{n}, \frac{1}{n}\right)\), \(n = 1, 2, 3, \ldots\), tenemos \(\bigcap_{n=1}^\infty A_n = \{0\}\), pero el conjunto \(\{0\}\) no es abierto. [Para ver que \(\cap A_n = \{0\}\), basta notar que \(0 \in A_n\) para todo \(n \in \mathbb{N}\), luego \(0 \in \cap A_n\). Por otro lado, si \(x \neq 0\) entonces \(|x| > 0\) y, por tanto, existe \(n\) tal que \(0 < \frac{1}{n} < |x|\). Esto significa que \(x \notin \left(-\frac{1}{n}, \frac{1}{n}\right) = A_n\). Así, \(x \neq 0 \Rightarrow x \notin \cap A_n\).] Más generalmente, tenemos \([a, b] = \bigcap_{n=1}^\infty A_n\), donde cada \(A_n = \left(a - \frac{1}{n}, b + \frac{1}{n}\right)\) es abierto pero la intersección \([a, b]\) no es un conjunto abierto.
+
+8. Sea \(F = \{x_1, x_2, \dots, x_n\}\) un conjunto finito de números reales. Podemos admitir que la numeración se ha hecho de modo que \(x_1 < x_2 < \dots < x_n\). Entonces \(\mathbb{R} - F = (-\infty, x_1) \cup (x_1, x_2) \cup \dots \cup (x_{n-1}, x_n) \cup (x_n, +\infty)\). Concluimos que \(\mathbb{R} - F\) es abierto. O sea, el complementario de todo conjunto finito es abierto. De modo análogo, \(\mathbb{R} - \mathbb{Z}\) es abierto, pues \(\mathbb{R} - \mathbb{Z} = \bigcup_{n \in \mathbb{Z}} (n, n+1)\) es una reunión (ahora infinita) de conjuntos abiertos.
+
+9. Todo conjunto abierto \(A \subset \mathbb{R}\) es una reunión de intervalos abiertos. En efecto, para cada \(x \in A\), escojamos un intervalo abierto \(I_x\) tal que \(x \in I_x \subset A\). Esto puede escribirse así: \(\{x\} \subset I_x \subset A\). Tomando reuniones, tenemos \(\bigcup_{x \in A} \{x\} \subset \bigcup_{x \in A} I_x \subset A\), o sea, \(A \subset \bigcup_{x \in A} I_x \subset A\), lo que nos da \(A = \bigcup_{x \in A} I_x\).
+
+Este resultado puede ser sustancialmente mejorado. En efecto, tenemos el
+
+\textbf{Teorema 2.} (Estructura de los abiertos de la recta.) Todo subconjunto abierto \(A \subset \mathbb{R}\) se expresa, de modo único, como una reunión enumerable de intervalos abiertos disjuntos dos a dos.
+
+En la demostración, haremos uso del lema siguiente.
+
+\textbf{Lema.} Sea \((I_\lambda)_{\lambda \in \mathbb{L}}\) una familia de intervalos abiertos, todos conteniendo el punto \(p \in \mathbb{R}\). Entonces \(I = \bigcup_{\lambda \in \mathbb{L}} I_\lambda\) es un intervalo abierto.
+
+\textbf{Demostración.} Para todo \(\lambda \in \mathbb{L}\), sea \(I_\lambda = (a_\lambda, b_\lambda)\). Para empezar, notemos que \(a_\lambda < b_\mu\) sean cuales sean \(\lambda, \mu \in \mathbb{L}\), porque \(a_\lambda < p\) y \(p < b_\mu\). Luego, si tomamos \(a = \inf\{a_\lambda; \lambda \in \mathbb{L}\}\) y \(b = \sup\{b_\lambda; \lambda \in \mathbb{L}\}\), tendremos \(a < b\). (Puede ocurrir que sea \(a = -\infty\) o \(b = +\infty\).) Afirmamos que \((a, b) = \bigcup_{\lambda \in \mathbb{L}} I_\lambda\). La inclusión \(\bigcup I_\lambda \subset (a, b)\) es clara. Recíprocamente, si \(a < x < b\), entonces por las definiciones de sup e ínfimo, existen \(\lambda, \mu \in \mathbb{L}\) tales que \(a_\lambda < x < b_\mu\). Si se cumple \(x < b_\lambda\), muy bien: tendremos \(x \in I_\lambda\). Si, por el contrario, tenemos \(b_\lambda \leq x\), esto traerá \(a_\mu < b_\lambda \leq x\), de donde \(a_\mu < x < b_\mu\), o sea \(x \in I_\mu\). En cualquier hipótesis, \(x \in \cup I_\lambda\). Luego \((a, b) \subset \cup I_\lambda\), lo que completa la demostración.
+
+\textbf{Demostración del Teorema 2.} Para cada \(x \in A\), sea \(I_x\) la reunión de los intervalos abiertos que contienen a \(x\) y están contenidos en \(A\). Por el lema, cada \(I_x\) es un intervalo abierto, siendo evidentemente \(x \in I_x \subset A\). Si \(I\) es un intervalo abierto cualquiera que contiene a \(x\) y está contenido en \(A\), entonces \(I\) es miembro de la familia cuya reunión dio \(I_x\). Luego \(I \subset I_x\). Esto se expresa diciendo que \(I_x\) es el mayor intervalo abierto que contiene a \(x\) y está contenido en \(A\). Afirmamos que, dados \(x, y \in A\), o se tiene \(I_x = I_y\) o bien \(I_x \cap I_y = \emptyset\). En efecto, si existe algún \(z \in I_x \cap I_y\) entonces \(I = I_x \cup I_y\) es un intervalo que contiene a \(x\) y está contenido en \(A\), de donde \(I \subset I_x\) y, de ahí, \(I_y \subset I_x\). Por motivo análogo, \(I_x \subset I_y\). Luego \(I_x = I_y\). Esto nos permite afirmar que los intervalos \(I_x\) son disjuntos dos a dos. Evidentemente, tenemos \(A = \cup I_x\), ya que \(x \in I_x \subset A\) para todo \(x \in A\). Queda así establecido que todo conjunto abierto \(A\) puede descomponerse como reunión de intervalos abiertos disjuntos dos a dos, que llamaremos los intervalos componentes de \(A\). Para verificar que la colección de los intervalos componentes de \(A\) es enumerable basta elegir, en cada componente \(J\), un número racional \(r(J)\). La función \(J \mapsto r(J)\) es inyectiva porque \(J \neq J' \Rightarrow J \cap J' = \emptyset \Rightarrow r(J) \neq r(J')\). Como \(\mathbb{Q}\) es enumerable, nuestra afirmación se sigue del Corolario 1 del Teorema 8, Capítulo II. Resta ahora probar la unicidad. Para ello, supongamos que se tenga \(A = \cup J_m\) donde los \(J_m\) son intervalos abiertos, disjuntos dos a dos. Afirmamos que, en estas condiciones, para cada \(J_m = (a_m, b_m)\), sus extremos no pertenecen al conjunto \(A\). En efecto, si tuviéramos, por ejemplo, \(a_m \in A\), sería \(a_m \in J_p = (a_p, b_p)\) para algún \(J_p \neq J_m\). Entonces, poniendo \(b = \min\{b_m, b_p\}\) tendríamos \(J_m \cap J_p \supset (a_m, b) \neq \emptyset\), un absurdo. Se sigue de ahí que, para cada \(m\) y cada \(x \in J_m\), \(J_m\) es el mayor intervalo abierto que contiene a \(x\) y está contenido en \(A\). Luego \(J_m = I_x\) (= reunión de los intervalos abiertos que contienen a \(x\) y están contenidos en \(A\)). Esto prueba que existe una única manera de expresar un abierto \(A\) como reunión (necesariamente enumerable) de intervalos abiertos, dos a dos disjuntos.
+
+\textbf{Corolario.} Sea \( I \) un intervalo abierto. Si \( I = A \cup B \), donde \( A \) y \( B \) son conjuntos abiertos disjuntos, entonces uno de esos conjuntos es igual a \( I \) y el otro es vacío.
+
+En efecto, si \( I = A \cup B \) fuera posible con \( A \) y \( B \) disjuntos y ambos no vacíos, las descomposiciones de \( A \) y \( B \) en sus intervalos componentes darían, al menos, dos intervalos componentes para \( I \), lo que es absurdo, en virtud de la unicidad establecida en el Teorema 2.
+
+\section{Conjuntos cerrados}
+
+Diremos que un punto \( a \) es adherente a un conjunto \( X \subset \mathbb{R} \) cuando \( a \) sea límite de una sucesión de puntos \( x_n \in X \).
+
+Todo punto \( a \in X \) es adherente a \( X \): basta tomar la sucesión de puntos \( x_n = a \). Pero puede tenerse \( a \) adherente a \( X \) sin que \( a \) pertenezca a \( X \) (en realidad, este es el caso más interesante). Por ejemplo, si \( X = (0, +\infty) \), entonces \( 0 \notin X \), pero \( 0 \) es adherente a \( X \), pues \( 0 = \lim_{n \to \infty} \frac{1}{n} \), donde \( \frac{1}{n} \in X \) para todo \( n \).
+
+Observación: Todo valor de adherencia de una sucesión \( (x_n) \) es un punto adherente del conjunto \( X = \{x_1, x_2, \dots, x_n, \dots\} \). Pero el recíproco es falso: no todo punto adherente a \( X \) es valor de adherencia de \( (x_n) \). Por ejemplo, si \( \lim_{n \to \infty} x_n = a \), el único valor de adherencia de \( (x_n) \) es \( a \), pero todos los puntos \( x_n \), por pertenecer a \( X \), son puntos adherentes a \( X \).
+
+\textbf{Teorema 3.} Un punto \( a \in \mathbb{R} \) es adherente a un conjunto \( X \subset \mathbb{R} \) si, y solo si, para todo \( \varepsilon > 0 \) se tiene \( X \cap (a - \varepsilon, a + \varepsilon) \neq \emptyset \).
+
+\textbf{Demostración.} Si \( a \) es adherente a \( X \) entonces \( a = \lim_{n \to \infty} x_n \) con \( x_n \in X \) para todo \( n \). Dado arbitrariamente \( \varepsilon > 0 \), tenemos \( x_n \in (a - \varepsilon, a + \varepsilon) \) para todo \( n \) suficientemente grande. Luego \( (a - \varepsilon, a + \varepsilon) \cap X \neq \emptyset \). Recíprocamente, suponiendo satisfecha esta condición, para cada \( n \in \mathbb{N} \) podemos encontrar \( x_n \in X \) tal que \( x_n \in \left( a - \frac{1}{n}, a + \frac{1}{n} \right) \). Esto define una sucesión de puntos \( x_n \in X \) tales que \( |x_n - a| < \frac{1}{n} \). Luego \( \lim x_n = a \) y entonces \( a \) es adherente a \( X \).
+
+\textbf{Corolario 1} (Equivalente al teorema.) Un punto \( a \) es adherente al conjunto \( X \) si, y solo si, para todo intervalo abierto \( I \) que contiene a \( a \) se tiene \( I \cap X \neq \emptyset \).
+
+En efecto, todo intervalo abierto que contiene a \( a \) contiene un intervalo del tipo \( (a - \varepsilon, a + \varepsilon) \).
+
+\textbf{Corolario 2.} Sean \( X \subset \mathbb{R} \) acotado inferiormente e \( Y \subset \mathbb{R} \) acotado superiormente. Entonces \( a = \inf X \) es adherente a \( X \) y \( b = \sup Y \) es adherente a \( Y \).
+
+En efecto, para todo \( \varepsilon > 0 \) existen \( x \in X \) e \( y \in Y \) tales que \( a \leq x < a + \varepsilon \) y \( b - \varepsilon < y \leq b \). Esto da \( (a - \varepsilon, a + \varepsilon) \cap X \neq \emptyset \) y \( (b - \varepsilon, b + \varepsilon) \cap Y \neq \emptyset \).
+
+Llamaremos cerradura (o clausura) del conjunto \( X \) al conjunto \( \overline{X} \) formado por los puntos adherentes a \( X \).
+
+Evidentemente, \( X \subset Y \Rightarrow \overline{X} \subset \overline{Y} \). Se tiene también \( X \subset \overline{X} \) para todo \( X \). En el caso de que sea \( X = \overline{X} \), diremos que el conjunto \( X \) es cerrado.
+
+Así, un conjunto \( X \subset \mathbb{R} \) es cerrado si, y solo si, todo punto adherente a \( X \) pertenece a \( X \).
+
+En otras palabras, para que \( X \) sea cerrado es necesario y suficiente que cumpla la siguiente condición: si \( x_n \in X \) para todo \( n \in \mathbb{N} \) y \( \lim x_n = a \), entonces \( a \in X \).
+
+Cuando \( X \subset \mathbb{R} \) es no vacío, acotado y cerrado, se tiene \( \sup X \in X \) e \( \inf X \in X \).
+
+Ejemplos.
+
+10. La cerradura del intervalo abierto \( (a, b) \) es el intervalo cerrado \( [a, b] \). En efecto, los puntos \( a \) y \( b \) son adherentes al intervalo abierto \( (a, b) \) pues \( a = \lim_{n \to \infty} \left( a + \frac{1}{n} \right) \) y \( b = \lim_{n \to \infty} \left( b - \frac{1}{n} \right) \). Luego, el fecho de \((a, b)\) incluye al menos el intervalo cerrado \([a, b]\). Por otro lado, si \(a < x_n < b\) y \(\lim x_n = c\), entonces \(a \leq c \leq b\). Luego todo punto adherente al intervalo abierto \((a, b)\) pertenece al intervalo cerrado \([a, b]\). Evidentemente, \([a, b]\) es también el fecho de los intervalos semiabiertos \([a, b)\) y \((a, b]\). Además, está claro que el fecho de \([a, b]\) es el propio \([a, b]\), luego todo intervalo limitado cerrado es un conjunto cerrado. También son cerrados los conjuntos \([a, +\infty)\), \((-\infty, b]\) y \((-\infty, +\infty) = \mathbb{R}\). Nótese el caso particular \(a = b\), que da \([a, a] = \{a\}\). Así, todo conjunto reducido a un único punto es cerrado.
+
+11. El fecho del conjunto \(\mathbb{Q}\) de los números racionales es la recta \(\mathbb{R}\). También el fecho del conjunto \(\mathbb{R} - \mathbb{Q}\) de los números irracionales es \(\mathbb{R}\). En particular, \(\mathbb{Q}\) y \(\mathbb{R} - \mathbb{Q}\) no son conjuntos cerrados.
+
+\textbf{Teorema 4.} Un conjunto \(F \subset \mathbb{R}\) es cerrado si, y solo si, su complementario \(\mathbb{R} - F\) es abierto.
+
+\textbf{Demostración.} Basta observar que cada una de las afirmaciones siguientes es equivalente a la siguiente: 
+1. \(F\) es cerrado; 
+2. todo punto adherente a \(F\) pertenece a \(F\); 
+3. si \(a \in \mathbb{R} - F\) entonces \(a\) no es adherente a \(F\); 
+4. si \(a \in \mathbb{R} - F\) entonces existe un intervalo abierto \(I\) tal que \(a \in I\) y \(I \cap F = \emptyset\); 
+5. si \(a \in \mathbb{R} - F\), entonces existe un intervalo abierto \(I\) tal que \(a \in I \subset \mathbb{R} - F\); 
+6. todo punto \(a \in \mathbb{R} - F\) es interior a \(\mathbb{R} - F\); 
+7. \(\mathbb{R} - F\) es abierto.
+
+\textbf{Corolario.} a) \(\mathbb{R}\) y el conjunto vacío son cerrados.
+
+b) Si \(F_1, F_2, \dots, F_n\) son cerrados entonces \(F_1 \cup F_2 \cup \dots \cup F_n\) es cerrado.
+
+c) Si \((F_\lambda)_{\lambda \in L}\) es una familia cualquiera de conjuntos cerrados entonces la intersección \(F = \bigcap_{\lambda \in L} F_\lambda\) es un conjunto cerrado.
+
+En efecto, \(\mathbb{R}\) es el complementario del abierto \(\emptyset\), y \(\emptyset\) es el complementario del abierto \(\mathbb{R}\). Ahora, \(F_1, \dots, F_n\) cerrados \(\Rightarrow \mathbb{R} - F_1, \dots, \mathbb{R} - F_n\) abiertos \(\Rightarrow (\mathbb{R} - F_1) \cap \dots \cap (\mathbb{R} - F_n) = \mathbb{R} - (F_1 \cup \dots \cup F_n)\) abierto \(\Rightarrow F_1 \cup \dots \cup F_n\) cerrado. Finalmente, cada \(F_\lambda\) cerrado \(\Rightarrow\) cada \(\mathbb{R} - F_\lambda\) abierto \(\Rightarrow \bigcup_\lambda (\mathbb{R} - F_\lambda) = \mathbb{R} - \left( \bigcap_\lambda F_\lambda \right)\) abierto \(\Rightarrow \bigcap F_\lambda\) cerrado. (Véase el Teorema 1.)
+
+Cabe aquí una observación análoga a la que se hizo en el ejemplo 7: la reunión de una familia arbitraria de conjuntos cerrados puede no ser un conjunto cerrado. Esto se ve fácilmente: basta tomar un conjunto cualquiera \(X \subset \mathbb{R}\) que no sea cerrado. Se tiene \(X = \bigcup_{x \in X} \{x\}\). (Como todo conjunto, \(X\) es reunión de sus puntos; cada punto \(x \in X\) forma un conjunto cerrado \(\{x\}\) pero la reunión \(X\) no es cerrada.)
+
+\textbf{Teorema 5.} La cerradura de todo conjunto \(X \subset \mathbb{R}\) es un conjunto cerrado, es decir, \(\overline{\overline{X}} = \overline{X}\).
+
+\textbf{Demostración.} Tomemos un punto cualquiera \(x \in \mathbb{R} - \overline{X}\). Por el Corolario 1 del Teorema 3 concluimos que existe un intervalo abierto \(I\) con \(x \in I\) e \(I \cap X = \emptyset\) y que, para todo \(y \in I\) se cumple \(y \in \mathbb{R} - \overline{X}\). Luego \(I \subset \mathbb{R} - \overline{X}\). Esto muestra que todo punto \(x \in \mathbb{R} - \overline{X}\) es un punto interior, o sea, que \(\mathbb{R} - \overline{X}\) es abierto. Por el Teorema 4, \(\overline{X}\) es cerrado.
+
+Ejemplos.
+
+12. Todo conjunto finito \(F = \{x_1, x_2, \dots, x_n\}\) es cerrado pues, como vimos en el Ejemplo 8, su complementario es abierto. Por motivo análogo, \(\mathbb{Z}\) es cerrado.
+
+13. Existen conjuntos que no son cerrados ni abiertos, como \(\mathbb{Q}\), \(\mathbb{R} - \mathbb{Q}\), o un intervalo del tipo \([a, b)\) o \((a, b]\).
+
+14. Los conjuntos \(\mathbb{R}\) y \(\emptyset\) son a la vez cerrados y abiertos. Recíprocamente, si \(X \subset \mathbb{R}\) es a la vez cerrado y abierto, entonces \(X = \emptyset\) o \(X = \mathbb{R}\). En efecto, en estas condiciones, \(X\) y \(\mathbb{R} - X\) son ambos abiertos. Como \(\mathbb{R} = (-\infty, +\infty) = X \cup (\mathbb{R} - X)\), el corolario del Teorema 2 implica que \(X = \emptyset\) o \(X = \mathbb{R}\).
+
+15. El conjunto de Cantor \(K\) es un subconjunto cerrado del intervalo \([0, 1]\), obtenido como complementario de una reunión de intervalos abiertos, del siguiente modo: se retira del intervalo \([0, 1]\) su tercio medio abierto \((1/3, 2/3)\). Después se retira el tercio medio abierto de cada uno de los intervalos restantes \([0, 1/3]\) y \([2/3, 1]\). Sobra entonces \([0, 1/9] \cup [2/9, 1/3] \cup [2/3, 7/9] \cup [8/9, 1]\). A continuación, se retira el tercio medio abierto de cada uno de esos cuatro intervalos. Se repite el proceso indefinidamente. El conjunto \(K\) de los puntos no retirados es el conjunto de Cantor. Si indicamos con \(I_1, I_2, \dots, I_n, \dots\) los intervalos abiertos omitidos, tenemos \(K = [0, 1] - \bigcup_{n=1}^\infty I_n\), es decir, \(K = [0, 1] \cap (\mathbb{R} - \bigcup I_n)\). Luego \(K\) es un conjunto cerrado, intersección de los cerrados \([0, 1]\) y \(\mathbb{R} - \bigcup I_n\). Nótese que los puntos extremos de los intervalos omitidos, como \(1/3, 2/3, 1/9, 2/9, 7/9, 8/9\), etc., pertenecen al conjunto de Cantor.
+
+\begin{center}
+\begin{tikzpicture}[x=1.2cm, y=1.2cm]
+
+    \draw[thick] (-0.5,0) -- (9.5,0);
+    \draw[line width=4pt] (0,0) -- (1,0);
+    \draw[line width=4pt] (2,0) -- (3,0);
+    \draw[line width=4pt] (6,0) -- (7,0);
+    \draw[line width=4pt] (8,0) -- (9,0);
+
+    \foreach \x/\etiqueta in {
+        0/0,
+        1/\frac{1}{9},
+        2/\frac{2}{9},
+        3/\frac{1}{3},
+        6/\frac{2}{3},
+        7/\frac{7}{9},
+        8/\frac{8}{9},
+        9/1%
+    } {
+        \draw (\x, 0.2) -- (\x, -0.2);
+        
+        \node[below=0.2cm] at (\x, -0.2) {\Large $\displaystyle\etiqueta$};
+    }
+
+\end{tikzpicture}
+\end{center}
+
+Segunda etapa de la construcción de \(K\): quedan solo los cuatro intervalos destacados, todos de longitud \(1/9\). Dibuje lo que queda en la 3ª etapa.
+
+En efecto, en cada etapa de la construcción de \(K\) se retiran solo puntos interiores en los intervalos restantes de la etapa anterior. Esos puntos extremos de los intervalos omitidos forman un subconjunto infinito enumerable de \(K\). Veremos más adelante, sin embargo, que \(K\) no es enumerable. Por ahora, notemos solamente que \(K\) no contiene intervalo abierto alguno y por tanto ningún \(x \in K\) es punto interior. En efecto, después de la \(n\)-ésima etapa de la construcción de \(K\) quedan solo intervalos de longitud \(1/3^n\). Así, dado cualquier intervalo abierto \(J \subset [0, 1]\), de longitud \(l > 0\), no permanecerá intacto después de la \(n\)-ésima etapa, si \(1/3^n < l\). En consecuencia no se puede tener \(J \subset K\).
+
+Sean \(X, Y\) conjuntos de números reales, con \(X \subset Y\). Diremos que \(X\) es denso en \(Y\) cuando todo punto de \(Y\) sea adherente a \(X\).
+
+Por ejemplo, \(\mathbb{Q}\) es denso en \(\mathbb{R}\). También \(\mathbb{R} - \mathbb{Q}\) es denso en \(\mathbb{R}\). Más aún, dado cualquier intervalo no degenerado \(J\), el conjunto de los números racionales pertenecientes a \(J\) y el conjunto de los números irracionales que están en \(J\) son ambos conjuntos densos en \(J\).
+
+Las siguientes afirmaciones son equivalentes a decir que \(X\) es denso en \(Y\). (En todas ellas, se supone \(X \subset Y\).)
+
+a) Todo punto de \(Y\) es límite de una sucesión de puntos de \(X\).
+
+b) \(Y \subset \overline{X}\).
+
+c) Para todo \(y \in Y\) y todo \(\varepsilon > 0\) se tiene \((y - \varepsilon, y + \varepsilon) \cap X \neq \emptyset\).
+
+d) Todo intervalo abierto que contenga un punto de \(Y\) debe contener también algún punto de \(X\). (Nótese que un intervalo abierto que contiene a \(y \in Y\) debe contener un intervalo de la forma \((y - \varepsilon, y + \varepsilon)\).)
+
+\textbf{Teorema 6.} Todo conjunto \(X\) de números reales contiene un subconjunto enumerable \(E\), denso en \(X\).
+
+\textbf{Demostración.} Dado arbitrariamente \(n \in \mathbb{N}\), podemos expresar la recta como reunión enumerable de intervalos de longitud \(1/n\). Basta notar que \(\mathbb{R} = \bigcup_{p \in \mathbb{Z}} \left[ \frac{p}{n}, \frac{p+1}{n} \right]\). Para cada \(n \in \mathbb{N}\) y cada \(p \in \mathbb{Z}\), escojamos un punto \(x_{pn} \in X \cap \left[ \frac{p}{n}, \frac{p+1}{n} \right]\) si esta intersección no es vacía (si es vacía, \(x_{pn}\) no existirá). El conjunto \(E\) de los puntos \(x_{pn}\) así obtenidos es enumerable. Afirmamos que \(E\) es denso en \(X\). En efecto, sea \(I\) un intervalo abierto que contiene algún punto \(x \in X\). Para \(n\) suficientemente grande, la longitud \(1/n\) de cada intervalo \(\left[ \frac{p}{n}, \frac{p+1}{n} \right]\) será menor que la distancia de \(x\) al extremo superior de \(I\). Por tanto existe \(p \in \mathbb{Z}\) tal que \(x \in \left[ \frac{p}{n}, \frac{p+1}{n} \right] \subset I\). Luego \(x \in \left[ \frac{p}{n}, \frac{p+1}{n} \right] \cap X \neq \emptyset\). Así, existe el punto \(x_{pn}\), con \(x_{pn} \in \cap E\). Esto muestra que todo intervalo abierto \(I\) que contiene un punto \(x \in X\) contiene también un punto \(x_{pn} \in E\). Luego \(E\) es denso en \(X\).
+
+Ejemplo 16. El conjunto \(E\) de los extremos de los intervalos omitidos para formar el conjunto de Cantor \(K\) es enumerable. Afirmamos que \(E\) es denso en \(K\). En efecto, dados \(x \in K\) y \(\varepsilon > 0\) mostraremos que \((x - \varepsilon, x + \varepsilon) \cap E \neq \emptyset\). No hay problema en suponer \(\varepsilon \leq 1/2\). Así siendo, al menos uno de los intervalos \((x - \varepsilon, x]\) o \([x, x + \varepsilon)\) (digamos \([x, x + \varepsilon)\)) está contenido en \([0, 1]\). Cuando sea \(1/3^n < \varepsilon\), después de la \(n\)-ésima etapa de la construcción de \(K\) no quedarán intervalos de longitud \(\geq \varepsilon\). Luego alguna parte del intervalo \([x, x + \varepsilon)\) será retirada en la \(n\)-ésima etapa, o fue retirada antes. (El intervalo entero \([x, x + \varepsilon)\) no puede haber sido retirado porque \(x \in K\).) El extremo inferior de la parte retirada de \([x, x + \varepsilon)\) es un punto \(y \in (x - \varepsilon, x + \varepsilon) \cap E\).
+
+\section{Puntos de acumulación}
+
+Sea \(X \subset \mathbb{R}\). Un número \(a \in \mathbb{R}\) se llama punto de acumulación del conjunto \(X\) cuando todo intervalo abierto \((a - \varepsilon, a + \varepsilon)\), de centro \(a\), contiene algún punto \(x \in X\) diferente de \(a\).
+
+El conjunto de los puntos de acumulación de \(X\) será representado por la notación \(X'\) (y, a veces, llamado el derivado de \(X\)).
+
+La condición \(a \in X'\) (\(a\) es punto de acumulación de \(X\)) se expresa simbólicamente del siguiente modo:
+
+\[
+\forall \varepsilon > 0 \quad \exists x \in X; \quad 0 < |x - a| < \varepsilon.
+\]
+
+\textbf{Teorema 7.} Dados \(X \subset \mathbb{R}\) y \(a \in \mathbb{R}\), las siguientes afirmaciones son equivalentes:
+
+1. \(a \in X'\) (\(a\) es punto de acumulación de \(X\));
+
+2. \(a = \lim_{n \to \infty} x_n\), donde \((x_n)\) es una sucesión de elementos de \(X\), dos a dos distintos;
+
+3. todo intervalo abierto que contiene a \(a\) posee una infinidad de elementos de \(X\).
+
+\textbf{Demostración.} Mostraremos que (1) \(\Rightarrow\) (2) \(\Rightarrow\) (3) \(\Rightarrow\) (1). Para probar la primera implicación, sea \(a \in X'\). Existe \(x_1 \in X\) tal que \(0 < |x_1 - a| < 1\). Tomando \(\varepsilon_2 = \min\{|x_1 - a|, 1/2\}\), vemos que existe \(x_2 \in X\) tal que \(0 < |x_2 - a| < \varepsilon_2\). Sea \(\varepsilon_3 = \min\{|x_2 - a|, 1/3\}\). Existe \(x_3 \in X\) tal que \(0 < |x_3 - a| < \varepsilon_3\). Prosiguiendo de esta forma, obtendremos una sucesión de elementos \(x_n \in X\) con \(|x_{n+1} - a| < |x_n - a|\) y \(|x_n - a| < \frac{1}{n}\). Así, los \(x_n\) son dos a dos distintos, pertenecen a \(X\) y \(\lim x_n = a\). Las implicaciones (2) \(\Rightarrow\) (3) \(\Rightarrow\) (1) son obvias.
+
+\textbf{Corolario.} Si \(X' \neq \emptyset\) entonces \(X\) es infinito.
+
+Ejemplos.
+
+17. Sea \(X = \{1, 1/2, 1/3, \dots, 1/n, \dots\}\). Entonces \(X' = \{0\}\). Más generalmente, si \(\lim x_n = a\) y \(a \neq x_n\) para todo \(n \in \mathbb{N}\), entonces, poniendo \(X = \{x_1, x_2, \dots, x_n, \dots\}\), tenemos \(X' = \{a\}\). Si, por el contrario, \(a \in X\), puede tenerse \(X' = \{a\}\) o \(X' = \emptyset\). Por ejemplo, para la sucesión \((a, a, a, \dots)\) se cumple \(X' = \emptyset\). En cambio, la sucesión \((a, a+1, a, a+\frac{1}{2}, a, a+\frac{1}{3}, \dots)\) da \(X' = \{a\}\).
+
+18. \((a, b)' = \overline{(a, b)}' = [a, b)' = [a, b]\). \(\mathbb{Q}' = (\mathbb{R} - \mathbb{Q})' = \mathbb{R}' = \mathbb{R}\). \(\mathbb{Z}' = \mathbb{N}' = \emptyset\).
+
+19. Todo punto \(x\) del conjunto de Cantor \(K\) es un punto de acumulación de \(K\). Supongamos inicialmente que \(x\) sea extremo de alguno de los intervalos abiertos retirados de \([0, 1]\) para formar \(K\). Por ejemplo, admitamos que \((a, x)\) fuera uno de los intervalos omitidos. En la etapa en que se retiró \((a, x)\) quedó un intervalo \([x, b_1]\). En la etapa siguiente será omitido el tercio medio abierto de \([x, b_1]\) y entonces sobrará un intervalo \([x, b_2]\) (y otro que no nos interesa). En las etapas posteriores sobrarán \([x, b_3], [x, b_4]\), etc., con \(b_1 > b_2 > \cdots > b_n > \cdots\) pertenecientes a \(K\) y \(\lim b_n = x\). Luego \(x \in K'\). ¿Y si \(x\) no pertenece al conjunto \(E\) de las extremidades de los intervalos retirados? En este caso sabemos, por el Ejemplo 16, que todo intervalo \((x - \varepsilon, x + \varepsilon)\) contiene puntos de \(E\). Como \(x \notin E\), tales puntos son diferentes de \(x\). Luego \(x \in E'\) y, por tanto, \(x \in K'\).
+
+Un punto \(a \in X\) que no es punto de acumulación de \(X\) se llama un punto aislado de \(X\).
+
+Para que \(a \in X\) sea un punto aislado es necesario y suficiente que exista \(\varepsilon > 0\) tal que \((a - \varepsilon, a + \varepsilon) \cap X = \{a\}\).
+
+Todo punto \(a \in \mathbb{Z}\) es un punto aislado de \(\mathbb{Z}\).
+
+\textbf{Teorema 8.} Para todo \(X \subset \mathbb{R}\), se tiene \(\overline{X} = X \cup X'\). Es decir, la cerradura de un conjunto \(X\) se obtiene añadiendo a \(X\) sus puntos de acumulación.
+
+\textbf{Demostración.} Es claro que \(X \subset \overline{X}\) y \(X' \subset \overline{X}\). Luego \(X \cup X' \subset \overline{X}\). Recíprocamente, si \(a \in \overline{X}\), todo intervalo abierto que contiene a \(a\) debe contener algún \(x \in X\). Si \(a\) no pertenece a \(X\) entonces \(x \neq a\), de donde \(a \in X'\). Así \(a \in \overline{X}\) implica que \(a \in X\) o \(a \in X'\), es decir, \(\overline{X} \subset X \cup X'\).
+
+\textbf{Corolario 1.} \(X\) es cerrado si, y solo si, \(X' \subset X\).
+
+En efecto, dados dos conjuntos \(S, T\), se tiene \(S = S \cup T\) si, y solo si, \(T \subset S\).
+
+\textbf{Corolario 2.} Si todos los puntos del conjunto \(X\) son aislados entonces \(X\) es enumerable.
+
+En efecto, sea \(E \subset X\) un conjunto enumerable denso en \(X\). Dado cualquier \(x \in X\), tenemos \(x \in \overline{E}\) pero, como \(x \notin X'\), tampoco \(x\) puede ser punto de acumulación de \(E\). Luego \(x \in E\). Se sigue que \(E = X\). Concluimos que \(X\) es enumerable.
+
+Decimos que \(a\) es punto de acumulación a la derecha del conjunto \(X\) cuando todo intervalo \([a, a + \varepsilon)\), con \(\varepsilon > 0\), contiene algún punto de \(X\) diferente de \(a\).
+
+Esto equivale a decir que todo intervalo \([a, a + \varepsilon)\) contiene una infinidad de puntos de \(X\), o bien que \(a\) es punto de acumulación de \(X \cap [a, +\infty)\).
+
+Otra afirmación equivalente a esta es decir que \(a\) es límite de una sucesión decreciente de puntos de \(X\).
+
+El punto \(a\) es punto de acumulación a la derecha de \(X\) si, y solo si, todo intervalo abierto \((a, b)\) contiene algún punto de \(X\).
+
+Indicaremos mediante el símbolo \(X'_d\) el conjunto de los puntos de acumulación a la derecha de \(X\). De modo análogo se define punto de acumulación a la izquierda del conjunto \(X\): todo intervalo \((a - \varepsilon, a]\), con \(\varepsilon > 0\), debe contener algún punto de \(X\) diferente de \(a\) (y por tanto una infinidad de puntos de \(X\)). Una condición equivalente: \(a = \lim x_n\), donde \((x_n)\) es una sucesión creciente de puntos de \(X\). El conjunto de los puntos de acumulación a la izquierda de \(X\) será representado por \(X'_i\). Se tiene \(a \in X'_i\) si, y solo si, para todo intervalo abierto \((c, a)\) se cumple \((c, a) \cap X \neq \emptyset\).
+
+Ejemplos.
+
+20. Si \(X = \{1, 1/2, 1/3, \dots, 1/n, \dots\}\), \(0\) es punto de acumulación a la derecha, pero no a la izquierda de \(X\). Todo punto de \((a, b)\) es punto de acumulación a la derecha y a la izquierda para \((a, b)\). En cambio, el punto \(a\) es solo punto de acumulación a la derecha y \(b\) es punto de acumulación a la izquierda.
+
+21. Sea \(K\) el conjunto de Cantor. Si \(a \in K\) es extremo inferior de alguno de los intervalos retirados, entonces \(a\) es solo punto de acumulación a la izquierda para \(K\). Del mismo modo, si \(a\) es extremo superior de algún intervalo omitido, entonces \(a\) es punto de acumulación a la derecha solamente. Los puntos \(0\) y \(1\), aunque no son extremos de intervalos omitidos, son puntos de acumulación de un solo lado, por razones obvias. Los demás puntos de \(K\) son puntos de acumulación de ambos lados. (No sabemos aún si tales puntos existen pero, si probamos que \(K\) no es enumerable, resultará que ellos forman la mayoría pues, siendo \(E\) enumerable, \(K - E\) será no enumerable. (Véase el Teorema 9.)
+
+\textbf{Teorema 9.} Sea \(F \subset \mathbb{R}\) no vacío tal que \(F = F'\). (Es decir, \(F\) es un conjunto cerrado no vacío sin puntos aislados.) Entonces \(F\) es no enumerable.
+
+La demostración se basa en el siguiente
+
+\textbf{Lema.} Sea \(F\) cerrado, no vacío, sin puntos aislados. Para todo \(x \in \mathbb{R}\) existe \(F_x\) limitado, cerrado, no vacío, sin puntos aislados, tal que \(x \notin F_x \subset F\).
+
+\textbf{Demostración.} Como \(F\) es infinito, existe \(y \in F\), \(y \neq x\). Sea \([a, b]\) un intervalo cerrado tal que \(x \notin [a, b]\) y \(y \in (a, b)\). El conjunto \(G = (a, b) \cap F\) es limitado, no vacío y ninguno de sus puntos es aislado. Si \(G\) es cerrado, pondremos \(F_x = G\) y el lema quedará demostrado. En caso contrario, al menos uno de los \(a, b\) será punto de acumulación de \(G\). En este caso, añadiremos ese(s) punto(s) a \(G\) para obtener \(F_x\). Es decir, en cualquier hipótesis, ponemos \(F_x = \overline{G}\).
+
+\textbf{Demostración del Teorema 9.} Mostraremos que, dado cualquier subconjunto enumerable \(\{x_1, x_2, \dots, x_n, \dots\} \subset F\), podemos encontrar un punto \(y \in F\) tal que \(y \neq x_n\) para todo \(n\). Aplicando repetidamente el Lema a \(x_1\) y \(F\), a \(x_2\) y \(F_1\), etc., obtenemos una sucesión de conjuntos cerrados limitados y no vacíos \(F_n\) tales que \(F \supset F_1 \supset F_2 \supset \dots \supset F_n \supset \dots\) y \(x_n \notin F_n\) para cada \(n \in \mathbb{N}\). Escojamos, para cada \(n\), un punto \(y_n \in F_n\). La sucesión \((y_n)\) es limitada, luego posee una subsucesión convergente \(y_{n'} \to y\). Dado arbitrariamente \(k \in \mathbb{N}\), tenemos \(y_{n'} \in F_k\) para todo \(n \geq k\). Como \(F_k\) es cerrado, se sigue que \(y = \lim y_{n'} \in F_k\). Así \(y \in F_k\) para todo \(k \in \mathbb{N}\), de donde concluimos: 1°) \(y \in F\); 2°) \(y \neq x_k\) para todo \(k \in \mathbb{N}\). Esto completa la demostración.
+
+\textbf{Corolario 1} (Equivalente al teorema). Todo conjunto cerrado enumerable no vacío posee algún punto aislado.
+
+\textbf{Corolario 2.} El conjunto de Cantor es no enumerable.
+
+\section{Conjuntos compactos}
+
+Una cobertura de un conjunto \(X \subset \mathbb{R}\) es una familia \(\mathcal{C} = (C_\lambda)_{\lambda \in L}\) de conjuntos \(C_\lambda \subset \mathbb{R}\), tales que \(X \subset \bigcup_{\lambda \in L} C_\lambda\), es decir, para todo \(x \in X\) existe algún \(\lambda \in L\) tal que \(x \in C_\lambda\).
+
+Una subcobertura de \(\mathcal{C}\) es una subfamilia \(\mathcal{C}' = (C_\lambda)_{\lambda \in L'}\), \(L' \subset L\), tal que aún se tiene \(X \subset \bigcup_{\lambda \in L'} C_\lambda\).
+
+Ejemplos.
+
+22. Los intervalos \(C_1 = (0, 2/3)\), \(C_2 = (1/3, 1)\) y \(C_3 = (1/2, 9/10)\) constituyen una cobertura \(\mathcal{C} = (C_1, C_2, C_3)\) del intervalo \([1/4, 3/4]\). Aquí \(L = \{1, 2, 3\}\). En efecto, \([1/4, 3/4] \subset C_1 \cup C_2 \cup C_3 = (0, 1)\). Tomando \(L' = \{1, 3\}\) tenemos la subfamilia \(\mathcal{C}' = \{C_1, C_3\}\), la cual es una subcobertura de \(\mathcal{C}\), pues aún se cumple \([1/4, 3/4] \subset C_1 \cup C_3 = (0, 9/10)\).
+
+23. Sea \(X = \{1, 1/2, 1/3, \dots, 1/n, \dots\}\). \(X\) es un conjunto infinito y sus puntos son todos aislados (es decir, \(X \cap X' = \emptyset\)). Así, para cada \(x \in X\), podemos obtener un intervalo abierto \(I_x\), de centro \(x\), tal que \(I_x \cap X = \{x\}\). La familia \(\mathcal{C} = (I_x)_{x \in X}\) así formada es una cobertura de \(X\), pues cada \(x \in X\) pertenece a \(I_x\). Nótese que \(\mathcal{C}\) no posee subcobertura propia: si omitimos cualquier \(I_x\), el punto \(x\) queda "descubierto" pues \(x\) no pertenece a ningún \(I_y\) con \(y \neq x\).
+
+\textbf{Teorema 10.} (Borel-Lebesgue). Sea \([a, b]\) un intervalo limitado y cerrado. Dada una familia \((I_\lambda)_{\lambda \in L}\) de intervalos abiertos tales que \([a, b] \subset \bigcup_{\lambda \in L} I_\lambda\), existe un número finito de ellos, \(I_{\lambda_1}, \dots, I_{\lambda_n}\), tales que \([a, b] \subset I_{\lambda_1} \cup \dots \cup I_{\lambda_n}\). En otras palabras: toda cobertura de \([a, b]\) mediante intervalos abiertos admite una subcobertura finita.
+
+\textbf{Demostración.} Sea \(X\) el conjunto de los puntos \(x \in [a, b]\) tales que el intervalo \([a, x]\) puede ser cubierto por un número finito de los \(I_\lambda\), es decir, \([a, x] \subset I_{\lambda_1} \cup \dots \cup I_{\lambda_n}\). Tenemos \(X \neq \emptyset\): por ejemplo, \(a \in X\). Sea \(c = \sup X\). Evidentemente, \(c \in [a, b]\). Afirmamos que \(c \in X\). En efecto, existe algún \(I_{\lambda_0} = (\alpha, \beta)\) tal que \(c \in I_{\lambda_0}\). Siendo \(\alpha < c\), debe existir \(x \in X\) tal que \(\alpha < x \leq c\). Luego \(x \in I_{\lambda_0}\). Pero como \(x \in X\), tenemos \([a, x] \subset I_{\lambda_1} \cup \dots \cup I_{\lambda_n}\) y de ahí \([a, c] \subset I_{\lambda_1} \cup \dots \cup I_{\lambda_n} \cup I_{\lambda_0}\), lo que prueba que \(c \in X\). Mostraremos ahora que \(c = b\). Si fuera \(c < b\), existiría algún \(c' \in I_{\lambda_0}\) con \(c < c' < b\). Entonces \([a, c'] \subset I_{\lambda_1} \cup \dots \cup I_{\lambda_n} \cup I_{\lambda_0}\) de donde \(c' \in X\), lo cual es absurdo, pues \(c' > c\) y \(c\) es el supremo de \(X\). Vemos, por tanto, que el intervalo \([a, b]\) está contenido en una reunión finita de los \(I_\lambda\), lo que prueba el teorema.
+
+Extensión del teorema anterior. En lugar de intervalos \(I_\lambda\), podemos suponer \([a, b] \subset \bigcup_{\lambda \in L} A_\lambda\), una cobertura de \([a, b]\) por conjuntos abiertos cualesquiera \(A_\lambda\), y aún existirá una cobertura finita:
+
+\[
+[a, b] \subset A_{\lambda_1} \cup A_{\lambda_2} \cup \dots \cup A_{\lambda_n}.
+\]
+
+En efecto, cada punto \(x \in [a, b]\) pertenece a un abierto \(A_\lambda\). Luego, para cada \(x\) en \([a, b]\) podemos elegir un intervalo abierto \(I_x\) tal que \(x \in I_x \subset A_\lambda\). Esto nos proporciona una cobertura de \([a, b]\) por los intervalos \(I_x\), de la cual extraemos una subcobertura finita \([a, b] \subset I_{x_1} \cup \dots \cup I_{x_n}\). Para cada \(j = 1, 2, \dots, n\), existe \(\lambda_j \in L\) tal que \(I_{x_j} \subset A_{\lambda_j}\); así, \([a, b] \subset A_{\lambda_1} \cup \dots \cup A_{\lambda_n}\).
+
+\textbf{Forma definitiva del Teorema de Borel-Lebesgue:} Sea \(F \subset \mathbb{R}\) un conjunto limitado y cerrado. Toda cobertura \(F \subset \bigcup_{\lambda \in L} A_\lambda\) de \(F\) mediante abiertos admite una subcobertura finita:
+
+\[
+F \subset A_{\lambda_1} \cup \dots \cup A_{\lambda_n}.
+\]
+
+\textbf{Demostración.} Siendo \(F\) cerrado, \(A = \mathbb{R} - F\) es abierto. Y siendo \(F\) limitado, existe un intervalo limitado \([a, b]\) que contiene a \(F\). Tenemos \([a, b] \subset \left(\bigcup_{\lambda \in L} A_\lambda\right) \cup A\). De ahí se extrae una subcobertura finita \(F \subset [a, b] \subset A_{\lambda_1} \cup \dots \cup A_{\lambda_n} \cup A\). Como ningún punto de \(F\) está en \(A\), obtenemos \(F \subset A_{\lambda_1} \cup \dots \cup A_{\lambda_n}\), como queríamos demostrar.
+
+Ejemplo 24. La propia recta \(\mathbb{R}\), siendo un conjunto cerrado pero ilimitado, posee la cobertura abierta \(\mathbb{R} = \bigcup_{n \in \mathbb{N}} (-n, +n)\), la cual no admite subcobertura finita. En efecto, la reunión de un número finito de intervalos \((-n, n)\) es igual al mayor de ellos y, por tanto, no puede ser \(\mathbb{R}\). Por otro lado, el intervalo \((0, 1]\), siendo un conjunto limitado pero no cerrado, posee la cobertura abierta \((0, 1] \subset \bigcup_{n \in \mathbb{N}} \left(\frac{1}{n}, 2\right)\), de la cual no se puede extraer una subcobertura finita porque la reunión de un número finito de intervalos de la forma \(\left(\frac{1}{n}, 2\right)\) es el mayor de ellos y, por tanto, no puede contener \((0, 1]\).
+
+\textbf{Teorema 11.} Las siguientes afirmaciones respecto a un conjunto \(K \subset \mathbb{R}\) son equivalentes:
+
+1. \(K\) es limitado y cerrado;
+
+2. toda cobertura abierta de \(K\) posee subcobertura finita;
+
+3. todo subconjunto infinito de \(K\) posee un punto de acumulación perteneciente a \(K\);
+
+4. toda sucesión de puntos de \(K\) posee una subsucesión que converge a un punto de \(K\).
+
+\textbf{Demostración.} La forma definitiva del Teorema de Borel-Lebesgue da (1) \(\Rightarrow\) (2). Para probar que (2) \(\Rightarrow\) (3), sea \(X \subset K\) un conjunto sin punto de acumulación en \(K\). Entonces, para cada \(x \in K\), podemos hallar un intervalo abierto \(I_x\), de centro \(x\), que no contiene ningún punto de \(X - \{x\}\). En otras palabras, tenemos \(I_x \cap X = \{x\}\) si \(x \in X\) y \(I_x \cap X = \emptyset\) si \(x \notin X\). Esto nos proporciona una cobertura abierta \(K \subset \bigcup_{x \in K} I_x\), de la cual podemos extraer una subcobertura finita \(K \subset I_{x_1} \cup \dots \cup I_{x_n}\). En particular, esta reunión finita contiene a \(X\). Ahora bien, para cada \(x \in X\), el único intervalo de la cobertura original que contenía a \(x\) era el propio \(I_x\). Se sigue que, para cada \(x \in X\), el intervalo \(I_x\) comparece en la colección \(I_{x_1}, \dots, I_{x_n}\). Luego \(X\) es finito. Así, cuando se supone que \(K\) cumple la condición (2), los únicos subconjuntos de \(K\) que no poseen punto de acumulación en \(K\) son los finitos. Se sigue que (2) \(\Rightarrow\) (3).
+
+Mostremos ahora que (3) \(\Rightarrow\) (4). Dada una sucesión de puntos \(x_n \in K\), hay dos posibilidades: o el conjunto \(X = \{x_1, x_2, \dots, x_n, \dots\}\) es finito o es infinito. En el primer caso, algún valor \(x_{n_1} = x_{n_2} = \dots\) debe repetirse una infinidad de veces, lo que nos da una subsucesión constante – y por tanto convergente – de \((x_n)\). En el segundo caso, la hipótesis (3) nos da \(a \in K\), un punto de acumulación de \(X\). Todo intervalo abierto \((a - \varepsilon, a + \varepsilon)\) contiene una infinidad de puntos de \(X\) y, por tanto, contiene términos \(x_n\) con índices arbitrariamente grandes. Por el Teorema 9 del Capítulo IV, \(a\) es límite de una subsucesión de \((x_n)\).
+
+Finalmente, mostremos que (4) \(\Rightarrow\) (1). En efecto, si \(K\) fuera ilimitado (digamos superiormente), tomaríamos \(x_1 \in K\) y veríamos que existiría \(x_2 \in K\) tal que \(x_2 > x_1 + 1\). Prosiguiendo análogamente, obtendríamos una sucesión de puntos \(x_n \in K\) con \(x_{n+1} > x_n + 1\). Toda subsucesión de \((x_n)\) sería ilimitada y, por tanto, no convergente. Por otro lado, si \(K\) no fuera cerrado, existiría una sucesión de puntos \(x_n \in K\) con \(\lim x_n = x \notin K\). Cualquier subsucesión de \((x_n)\) convergería a \(x\), por tanto estaría violada la condición (4). Esto concluye la demostración.
+
+\textbf{Corolario} (Bolzano-Weierstrass). Todo conjunto infinito limitado \(X \subset \mathbb{R}\) posee algún punto de acumulación.
+
+Observación: El Teorema 11 proporciona otra demostración del Corolario 1 del Teorema 10 del Capítulo IV, según el cual toda sucesión limitada posee una subsucesión convergente.
+
+Se llama compacto a un conjunto \(K \subset \mathbb{R}\) que cumple una de las (y por tanto todas las) condiciones del Teorema 11.
+
+Por ejemplo, un intervalo \([a, b]\), el conjunto de Cantor y el conjunto \(\{0, 1, 1/2, \dots, 1/n, \dots\}\) son compactos. Todo conjunto finito es compacto. La recta \(\mathbb{R}\), el conjunto \(\mathbb{Q}\) de los racionales, \(\mathbb{Q} \cap [0, 1]\) y \(\mathbb{Z}\) no son compactos.
+
+\textbf{Teorema 12.} Sea \(K_1 \supset K_2 \supset \cdots \supset K_n \supset \cdots\) una sucesión descendente de compactos no vacíos. Entonces \(K = \bigcap_{n=1}^\infty K_n\) es no vacío (y compacto).
+
+\textbf{Demostración.} En primer lugar, \(K\) es cerrado (como intersección de los cerrados \(K_n\)) y limitado porque está contenido en \(K_1\), por ejemplo. Luego es compacto. Para probar que \(K\) no es vacío, escojamos, para cada \(n \in \mathbb{N}\), un punto \(x_n \in K_n\). Todos los puntos de la sucesión \((x_n)\) así obtenida pertenecen al compacto \(K_1\). Luego ella posee una subsucesión convergente, \(x_{n_i} \to x\). Afirmamos que \(x \in K\), es decir, \(x \in K_n\) para todo \(n \in \mathbb{N}\). En efecto, dado arbitrariamente \(n \in \mathbb{N}\), existe \(n_{i_0} > n\). Para todo \(n_i \ge n_{i_0}\) tenemos \(x_{n_i} \in K_{n_i} \subset K_{n_{i_0}} \subset K_n\). O sea, a partir de un cierto índice \(n_{i_0}\), todos los términos de la sucesión \((x_{n_i})\) pertenecen al cerrado \(K_n\). Luego \(x = \lim x_{n_i} \in K_n\). Esto termina la demostración.
+
+Apéndice al §4. Como aplicación del Teorema de Borel-Lebesgue, demostraremos algunos hechos sobre longitudes de intervalos. A continuación, usaremos tales resultados para dar algunos ejemplos interesantes.
+
+La longitud del intervalo \([a, b]\) y del intervalo \((a, b)\) es el número \(b - a\).
+
+\textbf{Proposición 1.} Si \([a, b] \subset \bigcup_{i=1}^n (a_i, b_i)\) entonces \(b - a < \sum_{i=1}^n (b_i - a_i)\).
+
+\textbf{Demostración.} Podemos admitir, sin pérdida de generalidad, que todos los intervalos abiertos \((a_i, b_i)\) intersecan \([a, b]\). Sean \(c_1 < c_2 < \cdots < c_k\) los números \(a_i\) y \(b_i\) ordenados crecientemente. Está claro que ningún intervalo \((c_j, c_{j+1})\) contiene un punto \(a_i\) o un punto \(b_i\). Además, \(c_1 < a\) y \(b < c_k\). Luego \(b - a < c_k - c_1\), esto es:
+
+\[
+b - a < (c_k - c_{k-1}) + \cdots + (c_3 - c_2) + (c_2 - c_1).
+\]
+
+Mostraremos ahora que cada intervalo \((c_j, c_{j+1})\) está contenido en algún \((a_i, b_i)\). Para ello, examinaremos las tres posiciones posibles del punto \(c_j\) con respecto al intervalo \([a, b]\). Primera: \(c_j \in [a, b]\). En este caso, \(c_j \in (a_i, b_i)\) para algún \(i\); como \(b_i\) no puede estar entre \(c_j\) y \(c_{j+1}\), se tiene entonces \((c_j, c_{j+1}) \subset (a_i, b_i)\). Segunda: \(c_j < a\); entonces \(c_j\) no puede ser un \(b_i\) porque eso haría que \((a_i, b_i)\) fuera disjunto de \([a, b]\). Luego se tiene \(c_j = a_i\) para algún \(i\). Como \(b_i\) no puede estar entre \(c_j\) y \(c_{j+1}\), se tiene \((c_j, c_{j+1}) \subset (a_i, b_i)\). Tercera: \(c_j > b\). Esto implica \(c_{j+1} > b\) y, como antes, obliga a que \(c_{j+1} = b_i\) para algún \(i\). Como \(a_i \notin (c_j, c_{j+1})\), concluimos que \(a_i \leq c_j\), de donde \((c_j, c_{j+1}) \subset (a_i, b_i)\). Ahora bien, para cada \(i = 1, 2, \ldots, n\), tenemos \(a_i = c_p\) y \(b_i = c_{p+q}\). De esta manera, podemos escribir:
+
+\[
+b_i - a_i = (c_{p+q} - c_{p+q-1}) + \cdots + (c_{p+1} - c_p).
+\]
+
+La suma \(\sum_{i=1}^n (b_i - a_i)\) puede, por tanto, descomponerse en sumandos del tipo \(c_{j+1} - c_j\) de modo que todos estos sumandos (cuando \(j\) toma los valores \(1, 2, \ldots, k-1\)) aparezcan al menos una vez, pues, como vimos, cada intervalo \((c_j, c_{j+1})\) está contenido en algún \((a_i, b_i)\). Se sigue que \(\Sigma(b_i - a_i) \geq \Sigma(c_{j+1} - c_j) > b - a\).
+
+\textbf{Proposición 2.} Si \([a, b] \subset \bigcup_{n=1}^\infty (a_n, b_n)\) entonces \(b - a < \sum_{n=1}^\infty (b_n - a_n)\).
+
+\textbf{Demostración.} Por el Teorema de Borel-Lebesgue, existen \(n_1, n_2, \ldots, n_k\) tales que
+
+\[
+[a, b] \subset (a_{n_1}, b_{n_1}) \cup \cdots \cup (a_{n_k}, b_{n_k}).
+\]
+
+Por la Proposición 1, \(b - a < (b_{n_1} - a_{n_1}) + \cdots + (b_{n_k} - a_{n_k})\). Con mayor razón, \(b - a < \sum_{n=1}^\infty (b_n - a_n)\).
+
+\textbf{Proposición 3.} Si \(\sum_{n=1}^{\infty} (b_n - a_n) < b - a\), entonces el conjunto \(X = [a, b] - \bigcup_{n=1}^{\infty} (a_n, b_n)\) es no enumerable.
+
+\textbf{Demostración.} Sea \(c = (b - a) - \sum (b_n - a_n) > 0\). Si \(X = \{x_1, x_2, \dots, x_n, \dots\}\) fuera enumerable, entonces tomaríamos para cada \(n\) un intervalo abierto \(J_n\), de centro \(x_n\) y longitud \(c/2^{n+1}\). Los intervalos \((a_n, b_n)\) más los \(J_n\) formarían una colección enumerable cuya reunión ciertamente contendría \([a, b]\). Por otro lado, la suma de las longitudes de los \((a_n, b_n)\) más las longitudes de los \(J_n\) sería igual a \(\frac{c}{2} + \sum (b_n - a_n)\), y, por tanto, aún inferior a \(b - a\). Pero esto contradice la Proposición 2.
+
+Ejemplos. A. Una colección de intervalos abiertos cuyos centros incluyen todos los números racionales de \([a, b]\), pero que no es una cobertura de \([a, b]\). Para obtenerla, sea \(\{r_1, r_2, \dots, r_n, \dots\}\) una enumeración de los racionales del intervalo \([a, b]\). Para cada \(n \in \mathbb{N}\), sea \((a_n, b_n)\) el intervalo abierto de centro \(r_n\) y cuya longitud es \(\frac{b - a}{2^{n+1}}\). Entonces \(\sum (b_n - a_n) = \frac{b - a}{2}\), luego el intervalo \([a, b]\) no está contenido en la reunión de los \((a_n, b_n)\).
+
+B. Un conjunto cerrado no enumerable, formado solo por números irracionales. Tal es el conjunto \(F = [a, b] - \bigcup (a_n, b_n)\) donde los intervalos \((a_n, b_n)\) son los del ejemplo anterior.
+
+Ejercicios
+
+1. Un conjunto \(A \subset \mathbb{R}\) es abierto si, y solo si, cumple la siguiente condición: "si una sucesión \((x_n)\) converge a un punto \(a \in A\) entonces \(x_n \in A\) para todo \(n\) suficientemente grande".
+
+2. Se tiene \(\lim x_n = a\) si, y solo si, para todo abierto \(A\) que contenga al punto \(a\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0\) implica \(x_n \in A\).
+
+3. Sea \(B \subset \mathbb{R}\) abierto. Entonces, para todo \(x \in \mathbb{R}\), el conjunto \(x + B = \{x + y; y \in B\}\) es abierto. Análogamente, si \(x \neq 0\), entonces el conjunto \(x \cdot B = \{x \cdot y; y \in B\}\) es abierto.
+
+4. Sean \(A, B\) abiertos. Entonces los conjuntos \(A + B = \{x + y; x \in A, y \in B\}\) y \(A \cdot B = \{x \cdot y; x \in A, y \in B\}\) son abiertos.
+
+5. Para cualesquiera \(X, Y \subset \mathbb{R}\), se tiene \(\text{int}(X \cap Y) = \text{int}(X) \cap \text{int}(Y)\) y \(\text{int}(X \cup Y) \supset \text{int}(X) \cup \text{int}(Y)\). Dé un ejemplo en el que la inclusión no se reduzca a una igualdad.
+
+6. Si \(A \subset \mathbb{R}\) es abierto y \(a \in A\) entonces \(A - \{a\}\) es abierto.
+
+7. Considere las funciones \(f, g, h: \mathbb{R} \to \mathbb{R}\), dadas por \(f(x) = ax + b\) (\(a \neq 0\)), \(g(x) = x^2\) y \(h(x) = x^3\). Muestre que, para cada \(A \subset \mathbb{R}\) abierto, \(f^{-1}(A)\), \(g^{-1}(A)\) y \(h^{-1}(A)\) son abiertos.
+
+8. En el ejercicio anterior, muestre que, para cada \(A \subset \mathbb{R}\) abierto, \(f(A)\) y \(h(A)\) son abiertos. Dé un ejemplo de \(A\) abierto tal que \(g(A)\) no sea abierto.
+
+9. Toda colección de abiertos no vacíos, disjuntos dos a dos es enumerable.
+
+10. El conjunto de los valores de adherencia de una sucesión es un conjunto cerrado.
+
+11. Si \(X \subset F\) y \(F\) es cerrado entonces \(\overline{X} \subset F\).
+
+12. Si \(\lim x_n = a\) y \(X = \{x_1, x_2, \dots, x_n, \dots\}\) entonces \(\overline{X} = X \cup \{a\}\).
+
+13. El número \(1/4\) pertenece al conjunto de Cantor.
+
+14. Sean \(F, G\) conjuntos cerrados disjuntos tales que \(F \cup G\) sea un intervalo cerrado (acotado o no). Entonces \(F = \emptyset\) o \(G = \emptyset\).
+
+15. Sea \(E \subset \mathbb{R}\) enumerable. Encuentre una sucesión cuyo conjunto de valores de adherencia sea \(E\). Use este hecho para mostrar que todo conjunto cerrado \(F \subset \mathbb{R}\) es el conjunto de valores de adherencia de alguna sucesión. [Sugerencia:] Escriba \(\mathbb{N}\) como reunión enumerable de conjuntos infinitos disjuntos \(\mathbb{N}_i\). Para cada \(n \in \mathbb{N}_i\) haga \(x_n = i\)-ésimo elemento del conjunto \(E\). Para la segunda parte, use el Teorema 6.
+
+16. Con la notación del Ejercicio 4, si \(\alpha\) es irracional, los conjuntos \(F = \mathbb{Z}\) y \(G = \alpha\mathbb{Z}\) son cerrados pero \(F + G\) no es cerrado. También \(H = \{0, 1, 1/2, \dots, 1/n, \dots\}\) es cerrado pero \(F \cdot H\) no es cerrado. [Sugerencia:] Ejercicio 58 del Capítulo III.
+
+17. Sea \(K\) el conjunto de Cantor. Muestre que \(\{|x - y|; x \in K, y \in K\} = [0, 1]\). [Sugerencia:] Observe que el conjunto de los \(|x - y|\), con \(x, y \in K\), es compacto y convénzase de que contiene todas las fracciones propias cuyos denominadores son potencias de 3.
+
+18. Dado cualquier número real \(a > 0\), existen \(x_1, x_2, \dots, x_n\) en el conjunto de Cantor tales que \(x_1 + \dots + x_n = a\). [Sugerencia:] El ejercicio anterior.
+
+19. Sea \(K\) el conjunto de Cantor. Dado \(\varepsilon > 0\) arbitrario, existen intervalos abiertos \( J_1 = (a_1, b_1), \ldots, J_n = (a_n, b_n) \) tales que \( K \subset J_1 \cup \cdots \cup J_n \) y \( \sum_{i=1}^n (b_i - a_i) < \varepsilon \).
+
+20. Para \( X, Y \subset \mathbb{R} \) cualesquiera, se tiene \( \overline{X \cup Y} = \overline{X} \cup \overline{Y} \) y \( \overline{X \cap Y} \subset \overline{X} \cap \overline{Y} \). Dé un ejemplo en el que la inclusión no se reduzca a una igualdad.
+
+21. Un conjunto \( A \subset \mathbb{R} \) es abierto si, y solo si, \( A \cap \overline{X} \subset \overline{A \cap X} \) para todo \( X \subset \mathbb{R} \).
+
+22. Sean \( F_1 \supset F_2 \supset \cdots \supset F_n \supset \cdots \) no vacíos. Dé ejemplos mostrando que \( \bigcap F_n \) puede ser vacío si los \( F_n \) son solo cerrados o solo acotados.
+
+23. Un conjunto no vacío \( X \subset \mathbb{R} \) es un intervalo si, y solo si, satisface la siguiente condición: “\( a, b \in X, \ a < x < b \Rightarrow x \in X \)”.
+
+24. Muestre que la intersección de una sucesión descendente \( I_1 \supset I_2 \supset \cdots \supset I_n \supset \cdots \) de intervalos es un intervalo o el conjunto vacío.
+
+25. Un conjunto es denso en \( \mathbb{R} \) si, y solo si, su complementario tiene interior vacío.
+
+26. Si \( F \) es cerrado y \( A \) es abierto entonces \( F - A \) es cerrado.
+
+27. Dé un ejemplo de un abierto \( A \) tal que \( A \supset \mathbb{Q} \) pero \( \mathbb{R} - A \) sea no enumerable.
+
+28. Dé un ejemplo de un conjunto cerrado, no enumerable, formado solo por números trascendentes.
+
+29. Defina la distancia de un punto \( a \in \mathbb{R} \) a un conjunto no vacío \( X \subset \mathbb{R} \) como \( d(a, X) = \inf\{|x - a|; x \in X\} \). Pruebe:
+
+1. \( d(a, X) = 0 \Leftrightarrow a \in \bar{X} \);\\
+2. Si \( F \subset \mathbb{R} \) es cerrado, entonces para todo \( a \in \mathbb{R} \) existe \( b \in F \) tal que \( d(a, F) = |b - a| \).
+
+30. Si \( X \) es acotado superiormente, su cerradura \( \bar{X} \) también lo es. Además, \( \sup X = \sup \bar{X} \). Enuncie y pruebe un resultado análogo para el ínfimo.
+
+31. Para todo \( X \subset \mathbb{R} \) acotado superiormente, \( \sup X \) es adherente a \( X \). Resultado análogo para el ínfimo.
+
+32. Para todo \( X \subset \mathbb{R} \), \( X' \) es cerrado.
+
+33. Un número \( a \) es punto de acumulación de \( X \) si, y solo si, es punto de acumulación de \( \bar{X} \).
+
+34. \( (X \cup Y)' = X' \cup Y' \).
+
+35. Todo punto de un conjunto abierto \( A \) es punto de acumulación de \( A \).
+
+36. Sean \( F \) cerrado y \( x \in F \). Entonces \( x \) es un punto aislado de \( F \) si, y solo si, \( F - \{x\} \) es aún cerrado.
+
+37. Sea \( X \subset \mathbb{R} \) tal que \( X' \cap X = \emptyset \). Muestre que existe, para cada \( x \in X \), un intervalo abierto \( I_x \), de centro \( x \), tal que \( x \neq y \Rightarrow I_x \cap I_y = \emptyset \).
+
+38. Sea \( F \subset \mathbb{R} \) cerrado, infinito enumerable. Muestre que \( F \) posee una infinidad de puntos aislados.
+
+39. Muestre que todo número real \( x \) es límite de una sucesión de números trascendentes dos a dos distintos.
+
+40. Muestre que si \( X \subset \mathbb{R} \) no es enumerable, entonces \( X \cap X' \neq \emptyset \).
+
+41. Si \(A\) y \(A \cup \{a\}\) son abiertos, entonces \(a\) es punto de acumulación de \(A\) a la derecha y a la izquierda.
+
+42. Dé explícitamente el significado de cada una de las siguientes afirmaciones. En sus explicaciones, tiene prohibido usar cualquiera de las palabras subrayadas a continuación:
+
+1) \(a \in X\) no es punto interior de \(X\);\\
+2) \(a \in \mathbb{R}\) no es adherente a \(X\);\\
+3) \(X \subset \mathbb{R}\) no es un conjunto abierto;\\
+4) El conjunto \(Y \subset \mathbb{R}\) no es cerrado;\\
+5) \(a \in \mathbb{R}\) no es punto de acumulación del conjunto \(X \subset \mathbb{R}\);\\
+6) \(X' = \emptyset\);\\
+7) \(X \subset Y\) pero \(X\) no es denso en \(Y\);\\
+8) \(\text{int}(\overline{X}) = \emptyset\);\\
+9) \(X \cap X' = \emptyset\);\\
+10) \(X\) no es compacto.
+
+43. Si todo punto de acumulación de \(X\) es unilateral, entonces \(X\) es enumerable.
+
+44. Sea \(X \subset \mathbb{R}\) un conjunto arbitrario. Toda cobertura de \(X\) mediante abiertos posee una subcobertura enumerable (Teorema de Lindelöf).
+
+45. Con la notación del Ejercicio 4, pruebe:
+
+a) Si \(A\) es compacto y \(B\) es cerrado entonces \(A + B\) es cerrado;\\
+b) si \(A\) y \(B\) son compactos, entonces \(A + B\) y \(A \cdot B\) son compactos;\\
+c) si \(A\) es cerrado y \(B\) es compacto, \(A \cdot B\) puede no ser cerrado.
+
+46. Obtenga coberturas abiertas de \(\mathbb{Q}\) y de \([0, +\infty)\) que no admitan subcoberturas finitas.
+
+47. Considere las funciones \(f\), \(g\), \(h\) del Ejercicio 7. Muestre que para \(K\) y \(L\) compactos arbitrarios, \(f(K)\), \(g(K)\), \(h(K)\), \(f^{-1}(L)\), \(g^{-1}(L)\) y \(h^{-1}(L)\) son compactos.
+
+48. Las siguientes afirmaciones respecto a un conjunto \(X \subset \mathbb{R}\) son equivalentes:
+   (1) \(X\) es acotado;
+   (2) Todo subconjunto infinito de \(X\) posee un punto de acumulación (que puede no pertenecer a \(X\));
+   (3) Toda sucesión de puntos de \(X\) posee una subsucesión convergente.
+
+49. Sea \(X \subset \mathbb{R}\) un conjunto compacto cuyos puntos, con excepción de \(a = \inf X\) y \(b = \sup X\), son puntos de acumulación a la derecha y a la izquierda. Entonces \(X = [a, b]\) o \(X = \{a, b\}\).
+
+50. Si \((K_\lambda)_{\lambda \in L}\) es una familia cualquiera de compactos, entonces \(\bigcap K_\lambda\) es compacto. Si \(K_1, \ldots, K_n\) son compactos entonces \(K_1 \cup \cdots \cup K_n\) es compacto. Si \(K\) es compacto y \(F\) es cerrado, entonces \(K \cap F\) es compacto.
+
+51. Sea \(X \subset \mathbb{R}\). Una función \(f: X \to \mathbb{R}\) se dice no decreciente en el punto \(a \in X\) cuando existe \(\delta > 0\) tal que \(a - \delta < x \leq a \leq y < a + \delta \Rightarrow f(x) \leq f(a) \leq f(y)\). (Se entiende: \(x, y \in X\).) Muestre que si \(f\) es no decreciente en todos los puntos de un intervalo \([a, b]\) entonces \(f\) es no decreciente en \([a, b]\) (es decir, \(x, y \in [a, b]\), \(x \leq y \Rightarrow f(x) \leq f(y)\)).
+
+52. Sea \([a, b] \subset \bigcup A_\lambda\) donde cada \(A_\lambda\) es abierto. Muestre que es posible descomponer \([a, b]\) en un número finito de intervalos yuxtapuestos de modo que cada uno de ellos esté contenido en algún \(A_\lambda\).
+
+53. En el ejercicio anterior, muestre que los intervalos en los que se descompone pueden tomarse con la misma longitud.
+
+54. (Teorema de Baire). Si \(F_1, F_2, F_3, \dots, F_n, \dots\) son cerrados con interior vacío entonces \(S = F_1 \cup \dots \cup F_n \cup \dots\) tiene interior vacío. (Es necesario mostrar que, dado arbitrariamente un intervalo abierto \(I\), existe algún \(x \in I \cap (\mathbb{R} - S)\). Imite la demostración del Teorema 6, Capítulo III, donde se tienen puntos en lugar de los cerrados \(F_n\).)
+
+55. El conjunto \(\mathbb{R} - \mathbb{Q}\) de los números irracionales no puede expresarse como reunión enumerable de cerrados. Análogamente, \(\mathbb{Q}\) no es intersección de una familia enumerable de abiertos.
+
+56. Si \([a, b] \subset \bigcup_{i=1}^n [a_i, b_i]\), entonces \(b - a \leq \sum_{i=1}^n (b_i - a_i)\). También \([a, b] \subset \bigcup_{n=1}^\infty [a_n, b_n]\) implica \(b - a \leq \sum_{n=1}^\infty (b_n - a_n)\). Finalmente, resultados análogos valen para \((a, b)\) en lugar de \([a, b]\).
+
+57. Sea \(X \subset \mathbb{R}\). Una función \(f: X \to \mathbb{R}\) se llama localmente acotada cuando para cada \(x \in X\) existe un intervalo abierto \(I_x\), que contiene a \(x\), tal que \(f|_{I_x \cap X}\) es acotada. Muestre que si \(X\) es compacto, toda función \(f: X \to \mathbb{R}\) localmente acotada es acotada.
+
+58. Dado \(X \subset \mathbb{R}\) no compacto, defina una función \(f: X \to \mathbb{R}\) que sea localmente acotada pero no sea acotada.
+
+59. Sean \(C\) compacto, \(A\) abierto y \(C \subset A\). Muestre que existe \(\varepsilon > 0\) tal que \(x \in C\), \(|y - x| < \varepsilon \Rightarrow y \in A\).
+
+60. Dada una sucesión \((x_n)\) sea \(X_n = \{x_n, x_{n+1}, \dots\}\) para todo \(n \in \mathbb{N}\). Muestre que \(\bigcap_{n=1}^\infty \overline{X}_n\) es el conjunto de los valores de adherencia de \((x_n)\).
+
+61. Una familia de conjuntos \((K_\lambda)_{\lambda \in L}\) se llama una cadena cuando, para cualesquiera \(\lambda, \mu \in L\) se tiene \(K_\lambda \subset K_\mu\) o \(K_\mu \subset K_\lambda\). Demuestre que si \((K_\lambda)_{\lambda \in L}\) es una cadena de compactos no vacíos entonces la intersección \(K = \bigcap_{\lambda \in L} K_\lambda\) es no vacía (y compacta).
+
+62. Si \(X \subset \mathbb{R}\) es no enumerable, entonces \(X'\) también lo es.
+
+63. Para todo \(X \subset \mathbb{R}\), \(\overline{X} - X'\) es enumerable.
+
+64. Un número real \(\alpha\) se llama punto de condensación de un conjunto \(X \subset \mathbb{R}\) cuando todo intervalo abierto de centro \(\alpha\) contiene una infinidad no enumerable de puntos de \(X\). Sea \(F_0\) el conjunto de los puntos de condensación de un cerrado \(F \subset \mathbb{R}\). Demuestre que \(F_0\) es un conjunto perfecto (esto es, cerrado, sin puntos aislados) y que \(F - F_0\) es enumerable. Concluya de ahí el Teorema de Bendixson: todo cerrado de la recta es reunión de un conjunto perfecto con un conjunto enumerable.
+
+\newpage
+
 \end{document}
