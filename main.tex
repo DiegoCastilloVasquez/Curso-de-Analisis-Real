@@ -1798,7 +1798,7 @@ S1. \( x \in X \Rightarrow x \leq \sup X \);\\
 S2. \( c \geq x \) para todo \( x \in X \Rightarrow c \geq \sup X \);\\
 S2'. Si \( c < \sup X \) entonces existe \( x \in X \) tal que \( c < x \).
 
-: Si \( X = \emptyset \) entonces todo \( b \in K \) es cota superior de \( X \). Como no existe el menor elemento en un cuerpo ordenado \( K \), se sigue que el conjunto vacío \( \emptyset \) no posee supremo en \( K \). Lo mismo se aplica para el ínfimo, que estudiaremos ahora.
+Observacaión: Si \( X = \emptyset \) entonces todo \( b \in K \) es cota superior de \( X \). Como no existe el menor elemento en un cuerpo ordenado \( K \), se sigue que el conjunto vacío \( \emptyset \) no posee supremo en \( K \). Lo mismo se aplica para el ínfimo, que estudiaremos ahora.
 
 Análogamente, un elemento \( a \in K \) se llama ínfimo de un conjunto \( Y \subset K \), acotado inferiormente, cuando \( a \) es la mayor de las cotas inferiores de \( K \).
 
@@ -2241,7 +2241,7 @@ Evidentemente, una sucesión es acotada si, y solo si, es acotada superior e inf
 
 Dada una sucesión \(x = (x_n)_{n \in \mathbb{N}}\) de números reales, una subsucesión de \(x\) es la restricción de la función \(x\) a un subconjunto infinito \(\mathbb{N}' = \{n_1 < n_2 < \cdots < n_i < \cdots\}\) de \(\mathbb{N}\). Se escribe \(x' = (x_{n_i})_{n \in \mathbb{N}'}\), o \((x_{n_1}, x_{n_2}, \ldots, x_{n_i}, \ldots)\) o \((x_{n_i})_{i \in \mathbb{N}}\) para indicar la subsucesión \(x' = x|\mathbb{N}'\).
 
-: Estrictamente hablando, una subsucesión \(x'\) no es una sucesión pues su dominio \(\mathbb{N}'\) no es necesariamente igual a \(\mathbb{N}\). Pero es trivial considerar \(x'\) como función definida en \(\mathbb{N}\), a saber, la función \(1 \mapsto x_{n_1}, 2 \mapsto x_{n_2}, \ldots, i \mapsto x_{n_i}, \ldots\). Esto es lo que se hace al usar la notación \(x' = (x_{n_i})_{i \in \mathbb{N}}\).
+Observación: Estrictamente hablando, una subsucesión \(x'\) no es una sucesión pues su dominio \(\mathbb{N}'\) no es necesariamente igual a \(\mathbb{N}\). Pero es trivial considerar \(x'\) como función definida en \(\mathbb{N}\), a saber, la función \(1 \mapsto x_{n_1}, 2 \mapsto x_{n_2}, \ldots, i \mapsto x_{n_i}, \ldots\). Esto es lo que se hace al usar la notación \(x' = (x_{n_i})_{i \in \mathbb{N}}\).
 
 Recordemos que un subconjunto \(\mathbb{N}' \subset \mathbb{N}\) es infinito si, y solo si, es ilimitado, es decir, para todo \(n_0 \in \mathbb{N}\) existe \(n_i \in \mathbb{N}'\) con \(n_i > n_0\).
 
@@ -2376,7 +2376,7 @@ En primer lugar, mostraremos que una sucesión no puede poseer dos límites dist
 
 Se expresa el corolario anterior diciendo que el límite de una sucesión no se altera cuando de ella se omite un número finito de términos. En realidad, el Teorema 2 dice que el límite se mantiene, incluso si se desprecian términos en número infinito (siempre que se conserve una infinidad de índices, de modo que quede aún una subsucesión). Es útil (y obvio) el hecho de que si \((x_{n+k})_{n \in \mathbb{N}}\) converge, entonces \((x_n)_{n \in \mathbb{N}}\) también converge.
 
-: Hay dos aplicaciones especialmente útiles de los Teoremas 1 y 2 (conjuntamente). Una de ellas es para mostrar que una cierta sucesión \((x_n)\) no converge: basta obtener dos subsucesiones de \((x_n)\) con límites distintos. La otra es para determinar el límite de una sucesión \((x_n)\) que, a priori, se sabe que converge: basta determinar el límite de alguna subsucesión. Ese será el límite buscado. Veremos situaciones como estas en los Ejemplos 13 y 14.
+Observación: Hay dos aplicaciones especialmente útiles de los Teoremas 1 y 2 (conjuntamente). Una de ellas es para mostrar que una cierta sucesión \((x_n)\) no converge: basta obtener dos subsucesiones de \((x_n)\) con límites distintos. La otra es para determinar el límite de una sucesión \((x_n)\) que, a priori, se sabe que converge: basta determinar el límite de alguna subsucesión. Ese será el límite buscado. Veremos situaciones como estas en los Ejemplos 13 y 14.
 
 \textbf{Teorema 3.} Toda sucesión convergente es acotada.
 
@@ -2394,7 +2394,7 @@ Además de su importancia, tanto teórica como práctica, el teorema abajo tuvo 
 
 \textbf{Demostración.} Para fijar las ideas, sea \((x_1 \le x_2 \le \dots \le x_n \le \dots)\) una sucesión no decreciente acotada. Tomemos \(a = \sup \{x_n; n = 1, 2, \dots\}\). Afirmamos que \(a = \lim x_n\). En efecto, dado cualquier \(\varepsilon > 0\), como \(a - \varepsilon < a\), el número \(a - \varepsilon\) no es cota superior del conjunto de los \(x_n\). Luego existe algún \(n_0 \in \mathbb{N}\) tal que \(a - \varepsilon < x_{n_0}\). Como la sucesión es monótona, \(n > n_0 \Rightarrow x_{n_0} \leq x_n\), por tanto, \(a - \varepsilon < x_n\). Como \(x_n \leq a\) para todo \(n\), vemos que \(n > n_0 \Rightarrow a - \varepsilon < x_n < a + \varepsilon\). Así, tenemos de hecho \(\lim x_n = a\), como queríamos demostrar.
 
-: Si \((x_n)\) fuera no creciente, tendríamos \(\lim x_n = \inf \{x_n; n = 1, 2, \dots\}\).
+Observación: Si \((x_n)\) fuera no creciente, tendríamos \(\lim x_n = \inf \{x_n; n = 1, 2, \dots\}\).
 
 \textbf{Corolario.} Si una sucesión monótona \((x_n)\) posee una subsucesión convergente, entonces \((x_n)\) es convergente.
 
@@ -2412,11 +2412,11 @@ Ejemplos. Antes de presentar ejemplos nuevos, reexaminaremos los diez anteriores
 
 5. La sucesión \((1, 0, 2, 0, 3, 0, \dots)\) no es convergente porque es no acotada. Nótese que posee una subsucesión convergente.
 
-6. Cuando \(a = 0\) o \(a = 1\), la sucesión \((a^n)\) es constante, luego converge trivialmente. Cuando \(a = -1\), la sucesión \((a^n)\) diverge pues es igual a \((-1, +1, -1, +1, \dots)\). Cuando \(a > 1\), la misma sucesión es monótona creciente y no acotada, luego es divergente. Cuando \(a < -1\), la sucesión es divergente por ser no acotada. Sea ahora \(0 < a < 1\). Entonces la sucesión \((a, a^2, a^3, \dots)\) es monótona (decreciente) acotada; luego converge. Afirmamos que \(\lim_{n \to \infty} a^n = 0\) (cuando \(0 < a < 1\)). En efecto, dado \(\varepsilon > 0\), como \(\frac{1}{a} > 1\), las potencias de \(\frac{1}{a}\) forman una sucesión creciente no acotada. Luego existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow \left(\frac{1}{a}\right)^n > \frac{1}{\varepsilon}\), o sea, \(\frac{1}{a^n} > \frac{1}{\varepsilon}\), esto es, \(a^n < \varepsilon\). Así, \(n > n_0 \Rightarrow |a^n - 0| < \varepsilon\), lo que muestra que \(\lim_{n \to \infty} a^n = 0\). Finalmente, si \(-1 < a < 0\), afirmamos que aún se tiene \(\lim_{n \to \infty} a^n = 0\). En efecto, tenemos \(0 < |a| < 1\). Luego \(0 = \lim_{n \to \infty} |a|^n = \lim_{n \to \infty} |a^n|\). Se sigue que \(\lim_{n \to \infty} a^n = 0\), en virtud de la siguiente :
+6. Cuando \(a = 0\) o \(a = 1\), la sucesión \((a^n)\) es constante, luego converge trivialmente. Cuando \(a = -1\), la sucesión \((a^n)\) diverge pues es igual a \((-1, +1, -1, +1, \dots)\). Cuando \(a > 1\), la misma sucesión es monótona creciente y no acotada, luego es divergente. Cuando \(a < -1\), la sucesión es divergente por ser no acotada. Sea ahora \(0 < a < 1\). Entonces la sucesión \((a, a^2, a^3, \dots)\) es monótona (decreciente) acotada; luego converge. Afirmamos que \(\lim_{n \to \infty} a^n = 0\) (cuando \(0 < a < 1\)). En efecto, dado \(\varepsilon > 0\), como \(\frac{1}{a} > 1\), las potencias de \(\frac{1}{a}\) forman una sucesión creciente no acotada. Luego existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow \left(\frac{1}{a}\right)^n > \frac{1}{\varepsilon}\), o sea, \(\frac{1}{a^n} > \frac{1}{\varepsilon}\), esto es, \(a^n < \varepsilon\). Así, \(n > n_0 \Rightarrow |a^n - 0| < \varepsilon\), lo que muestra que \(\lim_{n \to \infty} a^n = 0\). Finalmente, si \(-1 < a < 0\), afirmamos que aún se tiene \(\lim_{n \to \infty} a^n = 0\). En efecto, tenemos \(0 < |a| < 1\). Luego \(0 = \lim_{n \to \infty} |a|^n = \lim_{n \to \infty} |a^n|\). Se sigue que \(\lim_{n \to \infty} a^n = 0\), en virtud de la siguiente observación:
 \[
 \lim x_n = 0 \;\Leftrightarrow\; \lim |x_n| = 0.
 \]
-(La veracidad de la  es trivial. Basta usar la definición de límite.)
+(La veracidad de la observación es trivial. Basta usar la definición de límite.)
 
 7. Si \(0 < a < 1\), la sucesión cuyo n-ésimo término es \(x_n = 1 + a + a^2 + \dots + a^n\) es creciente y acotada, luego converge. Afirmamos que \(\lim_{n\to\infty} x_n = \frac{1}{1-a}\). En efecto, tenemos \(x_n = \frac{1 - a^{n+1}}{1 - a}\), luego \(\left|x_n - \frac{1}{1 - a}\right| = \frac{a^{n+1}}{1 - a}\). Dado \(\varepsilon > 0\) podemos, en virtud del ejemplo anterior, obtener \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow a^{n+1} < \varepsilon(1 - a)\). Se sigue que \(n > n_0 \Rightarrow \frac{a^{n+1}}{1 - a} < \varepsilon\), es decir \(\left|x_n - \frac{1}{1 - a}\right| < \varepsilon\). Luego \(\lim x_n = \frac{1}{1 - a}\), como queríamos demostrar. Si solo se cumple \(0 < |a| < 1\), la sucesión \(\{x_n\}\) puede no ser monótona pero aún se tiene \(\lim x_n = \frac{1}{1 - a}\) por el argumento anterior.
 
@@ -2462,7 +2462,7 @@ En el ítem 3 del teorema siguiente, para formar la sucesión \(\frac{x_n}{y_n}\
 
 3. \(\lim\left(\frac{x_n}{y_n}\right) = \frac{a}{b}\) si \(b \neq 0\).
 
- \textbf{Demostración.} 1. Dado \(\varepsilon > 0\) existen \(n_1\) y \(n_2\) en \(\mathbb{N}\) tales que \(n > n_1 \Rightarrow |x_n - a| < \varepsilon/2\) y \(n > n_2 \Rightarrow |y_n - b| < \varepsilon/2\). Sea \(n_0 = \max\{n_1, n_2\}\). Entonces \(n > n_0 \Rightarrow n > n_1\) y \(n > n_2\). Luego \(n > n_0\) implica:
+\textbf{Demostración.} 1. Dado \(\varepsilon > 0\) existen \(n_1\) y \(n_2\) en \(\mathbb{N}\) tales que \(n > n_1 \Rightarrow |x_n - a| < \varepsilon/2\) y \(n > n_2 \Rightarrow |y_n - b| < \varepsilon/2\). Sea \(n_0 = \max\{n_1, n_2\}\). Entonces \(n > n_0 \Rightarrow n > n_1\) y \(n > n_2\). Luego \(n > n_0\) implica:
 \[
 |(x_n + y_n) - (a + b)| = |(x_n - a) + (y_n - b)| \leq |x_n - a| + |y_n - b| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 \]
@@ -2481,7 +2481,7 @@ Como \(\lim_{n \to \infty} (b x_n - a y_n) = ab - ab = 0\), se sigue del Teorema
 \lim\left(\frac{x_n}{y_n} - \frac{a}{b}\right) = 0, \text{ y por tanto } \lim\frac{x_n}{y_n} = \frac{a}{b}.
 \]
 
-: Es claro que resultados análogos a los ítems 1 y 2 del Teorema 6 valen aún para tres, cuatro o un número finito cualquiera de sucesiones. Por ejemplo, si \(\lim x_n = a\), \(\lim y_n = b\) y \(\lim z_n = c\) entonces \(\lim(x_n + y_n + z_n) = a + b + c\) y \(\lim(x_n \cdot y_n \cdot z_n) = abc\). Pero debe tenerse cuidado de no intentar aplicar el teorema para ciertas sumas (o productos) en que el número de sumandos (o factores) es variable y crece por encima de cualquier límite. Por ejemplo, sea \(s_n = \frac{1}{n} + \frac{1}{n} + \cdots + \frac{1}{n}\) (\(n\) sumandos). Entonces \(s_n = 1\) de donde \(\lim s_n = 1\). Por otro lado, cada sumando \(\frac{1}{n}\) tiene límite cero. Una aplicación descuidada del Teorema 6 llevaría al absurdo de concluir que
+Observación: Es claro que resultados análogos a los ítems 1 y 2 del Teorema 6 valen aún para tres, cuatro o un número finito cualquiera de sucesiones. Por ejemplo, si \(\lim x_n = a\), \(\lim y_n = b\) y \(\lim z_n = c\) entonces \(\lim(x_n + y_n + z_n) = a + b + c\) y \(\lim(x_n \cdot y_n \cdot z_n) = abc\). Pero debe tenerse cuidado de no intentar aplicar el teorema para ciertas sumas (o productos) en que el número de sumandos (o factores) es variable y crece por encima de cualquier límite. Por ejemplo, sea \(s_n = \frac{1}{n} + \frac{1}{n} + \cdots + \frac{1}{n}\) (\(n\) sumandos). Entonces \(s_n = 1\) de donde \(\lim s_n = 1\). Por otro lado, cada sumando \(\frac{1}{n}\) tiene límite cero. Una aplicación descuidada del Teorema 6 llevaría al absurdo de concluir que
 \[\lim s_n = \lim \frac{1}{n} + \lim \frac{1}{n} + \cdots + \lim \frac{1}{n} = 0 + 0 + \cdots + 0 = 0.\]
 
 Ejemplo 13. Examinemos la sucesión de números reales positivos \(x_n = \sqrt[n]{a} = a^{1/n}\), donde \(a > 0\). Es decreciente si \(a > 1\) y creciente si \(0 < a < 1\), siendo acotada en cualquier hipótesis. Existe por tanto \(l = \lim_{n \to \infty} a^{1/n}\). Podemos garantizar que \(l > 0\).
@@ -2506,13 +2506,13 @@ Pero si \( x_n = \frac{(-1)^n}{n} \) e \( y_n = \frac{1}{n} \), entonces \( \fra
 
 \textbf{Demostración.} Sea \( \varepsilon = a/2 > 0 \). Entonces \( (a - \varepsilon, a + \varepsilon) = (a/2, 3a/2) \). Existe \( n_0 \in \mathbb{N} \) tal que \( n > n_0 \Rightarrow x_n \in (a/2, 3a/2) \), o sea \( x_n > a/2 \). Así \( n > n_0 \Rightarrow x_n > 0 \).
 
-: De la misma manera se prueba que si \( \lim x_n = b < 0 \) entonces, a partir de un cierto orden, todos los términos \( x_n \) son negativos.
+Observación: De la misma manera se prueba que si \( \lim x_n = b < 0 \) entonces, a partir de un cierto orden, todos los términos \( x_n \) son negativos.
 
 \textbf{Corolario 1.} Sean \( (x_n) \) y \( (y_n) \) sucesiones convergentes. Si \( x_n \leq y_n \) para todo \( n \in \mathbb{N} \) entonces \( \lim x_n \leq \lim y_n \).
 
 En efecto, si fuera \(\lim x_n > \lim y_n\), entonces tendríamos \(0 < \lim x_n - \lim y_n = \lim (x_n - y_n)\) y, de ahí, tendríamos \(x_n - y_n > 0\) para todo \(n\) suficientemente grande.
 
-: Incluso suponiendo \(x_n < y_n\), para todo \(n\), no se puede garantizar que \(\lim x_n < \lim y_n\). Por ejemplo, \(0 < 1/n\), pero \(\lim 1/n = 0\).
+Observación: Incluso suponiendo \(x_n < y_n\), para todo \(n\), no se puede garantizar que \(\lim x_n < \lim y_n\). Por ejemplo, \(0 < 1/n\), pero \(\lim 1/n = 0\).
 
 \textbf{Corolario 2.} Sea \((x_n)\) convergente. Si \(x_n \ge a\) para todo \(n\), entonces \(\lim x_n \ge a\).
 
@@ -2735,7 +2735,7 @@ b) si \((x_n)\) es acotada y \(\lim y_n = +\infty\) entonces \(\lim \frac{x_n}{y
 
 b) Existe \(k > 0\) tal que \(x_n < k\) para todo \(n\). Dado \(\varepsilon > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow y_n > k/\varepsilon\). Entonces \(n > n_0 \Rightarrow 0 < \frac{x_n}{y_n} < \frac{k}{k/\varepsilon} = \varepsilon\), y así \(\lim\left(\frac{x_n}{y_n}\right) = 0\).
 
-: Si \(\lim x_n = +\infty\) y \(\lim y_n = -\infty\), nada se puede decir acerca de \(\lim(x_n + y_n)\). Dependiendo del caso, puede ocurrir que la suma \(x_n + y_n\) converja, tenga límite \(+\infty\), límite \(-\infty\) o no tenga límite alguno. (Se dice entonces que "\(\infty - \infty\) es indeterminado".) Así, por ejemplo, si \(x_n = \sqrt{n+1}\) y \( y_n = -\sqrt{n} \text{ entonces } \lim x_n = +\infty, \quad \lim_{n \to \infty} y_n = -\infty, \text{ mientras que }\)
+Observación: Si \(\lim x_n = +\infty\) y \(\lim y_n = -\infty\), nada se puede decir acerca de \(\lim(x_n + y_n)\). Dependiendo del caso, puede ocurrir que la suma \(x_n + y_n\) converja, tenga límite \(+\infty\), límite \(-\infty\) o no tenga límite alguno. (Se dice entonces que "\(\infty - \infty\) es indeterminado".) Así, por ejemplo, si \(x_n = \sqrt{n+1}\) y \( y_n = -\sqrt{n} \text{ entonces } \lim x_n = +\infty, \quad \lim_{n \to \infty} y_n = -\infty, \text{ mientras que }\)
 \[
 \lim(x_n + y_n) = \lim(\sqrt{n+1} - \sqrt{n})
 \]
@@ -2803,7 +2803,7 @@ Si la sucesión de las reducidas no converge, diremos que la serie \(\sum a_n\) 
 
 A veces es conveniente considerar series del tipo \(\sum_{n=0}^{\infty} a_n\), que comienzan con \(a_0\) en lugar de \(a_1\).
 
-: Toda sucesión \((x_n)\) de números reales puede ser considerada como la sucesión de las reducidas de una serie. Basta tomar \(a_1 = x_1\) y \(a_{n+1} = x_{n+1} - x_n\) para todo \(n \in \mathbb{N}\). Entonces \(a_1 + \dots + a_n = x_1 + (x_2 - x_1) + \dots + (x_n - x_{n-1}) = x_n\). La serie \(x_1 + \sum (x_{n+1} - x_n)\) así obtenida converge si, y solo si, la sucesión \((x_n)\) es convergente. En caso afirmativo, la suma de esta serie es igual a \(\lim x_n\). Así dicho, puede dar la impresión de que la teoría de las series coincide con la teoría de los límites de sucesiones. Esto no es verdad, por el siguiente motivo. Al estudiar la serie cuyas reducidas son \(s_n\), estaremos deduciendo sus propiedades a partir de las diferencias \(a_n = s_n - s_{n-1}\). En lugar de tomar como punto de partida el comportamiento de los números \(s_n\), concentraremos la atención sobre los términos \(a_n\).
+Observación: Toda sucesión \((x_n)\) de números reales puede ser considerada como la sucesión de las reducidas de una serie. Basta tomar \(a_1 = x_1\) y \(a_{n+1} = x_{n+1} - x_n\) para todo \(n \in \mathbb{N}\). Entonces \(a_1 + \dots + a_n = x_1 + (x_2 - x_1) + \dots + (x_n - x_{n-1}) = x_n\). La serie \(x_1 + \sum (x_{n+1} - x_n)\) así obtenida converge si, y solo si, la sucesión \((x_n)\) es convergente. En caso afirmativo, la suma de esta serie es igual a \(\lim x_n\). Así dicho, puede dar la impresión de que la teoría de las series coincide con la teoría de los límites de sucesiones. Esto no es verdad, por el siguiente motivo. Al estudiar la serie cuyas reducidas son \(s_n\), estaremos deduciendo sus propiedades a partir de las diferencias \(a_n = s_n - s_{n-1}\). En lugar de tomar como punto de partida el comportamiento de los números \(s_n\), concentraremos la atención sobre los términos \(a_n\).
 
 La primera condición necesaria para la convergencia de una serie es que su término general tienda a cero.
 
@@ -2911,7 +2911,7 @@ A veces sucede que existe \(\lim_{n \to \infty} \sqrt[n]{|a_n|}\). Entonces vale
 
 \textbf{Corolario 4.} Si \(\lim_{n \to \infty} \sqrt[n]{|a_n|} < 1\) entonces la serie \(\sum a_n\) es (absolutamente) convergente.
 
-: Si existe una infinidad de índices \(n\) para los cuales \(\sqrt[n]{|a_n|} \geq 1\) entonces la serie \(\sum a_n\) es evidentemente divergente porque su término general no tiende a cero. En particular, esto ocurre cuando \(\lim \sqrt[n]{|a_n|} > 1\). Muchas veces este caso se incluye en el enunciado del criterio de la raíz, pero preferimos no hacerlo, pues, en general, no es más fácil calcular el límite de una raíz que verificar, mediante inspección, cuándo el término general de una serie no tiende a cero. Mucho más desagradable es el hecho de que frecuentemente se tiene \(\lim \sqrt[n]{|a_n|} = 1\) (junto con \(\lim a_n = 0\)). Allí nada se puede decir: la serie tal vez converja, tal vez no. Por ejemplo, consideremos \(\sum \frac{1}{n}\) y \(\sum \frac{1}{n^2}\). En ambos casos \(\lim \sqrt[n]{|a_n|} = 1\). (El Ejemplo 14 da \(\lim \sqrt[n]{1/n} = 1\) y de ahí
+Observación: Si existe una infinidad de índices \(n\) para los cuales \(\sqrt[n]{|a_n|} \geq 1\) entonces la serie \(\sum a_n\) es evidentemente divergente porque su término general no tiende a cero. En particular, esto ocurre cuando \(\lim \sqrt[n]{|a_n|} > 1\). Muchas veces este caso se incluye en el enunciado del criterio de la raíz, pero preferimos no hacerlo, pues, en general, no es más fácil calcular el límite de una raíz que verificar, mediante inspección, cuándo el término general de una serie no tiende a cero. Mucho más desagradable es el hecho de que frecuentemente se tiene \(\lim \sqrt[n]{|a_n|} = 1\) (junto con \(\lim a_n = 0\)). Allí nada se puede decir: la serie tal vez converja, tal vez no. Por ejemplo, consideremos \(\sum \frac{1}{n}\) y \(\sum \frac{1}{n^2}\). En ambos casos \(\lim \sqrt[n]{|a_n|} = 1\). (El Ejemplo 14 da \(\lim \sqrt[n]{1/n} = 1\) y de ahí
 \[
 \lim \sqrt[n]{\frac{1}{n^2}} = \lim \left( \sqrt[n]{\frac{1}{n}} \right)^2 = 1.)
 \]
@@ -2945,7 +2945,7 @@ Ejemplos.
 
 33. Sea la serie \(\sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots\), donde \(x\) es un número real (fijado arbitrariamente). Tenemos \(\frac{a_{n+1}}{a_n} = \frac{x}{n+1} \to 0\), luego la serie converge absolutamente, sea cual sea \(x\).
 
-: Nuevamente aquí, cuando \(\lim_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} = 1\), nada se puede concluir (la serie puede divergir o convergir). Es lo que ocurre con las series \(\sum \frac{1}{n}\) y \(\sum \frac{1}{n^2}\). La primera diverge, la segunda converge y en ambas \(\lim \frac{a_{n+1}}{a_n} = 1\). Cuando \(\frac{|a_{n+1}|}{|a_n|} \geq 1\) para todo \(n > n_0\), entonces, evidentemente, la serie diverge porque su término general no tiende a cero. Nótese sin embargo que, al contrario del criterio de la raíz, no se puede concluir la divergencia de la serie \(\sum a_n\) solo por el hecho de tener \(\frac{|a_{n+1}|}{|a_n|} \geq 1\) para una infinidad de valores de \(n\). En efecto, dada cualquier serie convergente de términos positivos \(\sum a_n\), la serie \(a_1 + a_1 + a_2 + a_2 + a_3 + a_3 + \dots\) sigue siendo convergente pero, si indicamos con \(\sum b_n\) esta nueva serie, tendremos \(\frac{b_{n+1}}{b_n} = 1\) para todo \(n\) impar.
+Observación: Nuevamente aquí, cuando \(\lim_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} = 1\), nada se puede concluir (la serie puede divergir o convergir). Es lo que ocurre con las series \(\sum \frac{1}{n}\) y \(\sum \frac{1}{n^2}\). La primera diverge, la segunda converge y en ambas \(\lim \frac{a_{n+1}}{a_n} = 1\). Cuando \(\frac{|a_{n+1}|}{|a_n|} \geq 1\) para todo \(n > n_0\), entonces, evidentemente, la serie diverge porque su término general no tiende a cero. Nótese sin embargo que, al contrario del criterio de la raíz, no se puede concluir la divergencia de la serie \(\sum a_n\) solo por el hecho de tener \(\frac{|a_{n+1}|}{|a_n|} \geq 1\) para una infinidad de valores de \(n\). En efecto, dada cualquier serie convergente de términos positivos \(\sum a_n\), la serie \(a_1 + a_1 + a_2 + a_2 + a_3 + a_3 + \dots\) sigue siendo convergente pero, si indicamos con \(\sum b_n\) esta nueva serie, tendremos \(\frac{b_{n+1}}{b_n} = 1\) para todo \(n\) impar.
 
 \textbf{Teorema 20.} Sea \((a_n)\) una sucesión acotada de números reales positivos. Se tiene
 \[
@@ -2981,9 +2981,6 @@ Ejemplos.
 \[
 \frac{y_{n+1}}{y_n} = \frac{(n+1)!}{n!} = n+1 \to \infty.
 \]
-
-(Nota: el texto original parece tener un error: dice \(\lim \sqrt[n]{n!} = e\) pero luego calcula \(\frac{y_{n+1}}{y_n} = n+1 \to \infty\), lo que daría límite infinito. Corrijo según el cálculo estándar: \(\sqrt[n]{n!} \to \infty\) y \(\frac{(n+1)!}{n!}=n+1\). Sin embargo, respeto el contenido tal como está, aunque la afirmación "= e" es inconsistente. Probablemente el autor quiso escribir otro límite, pero traduzco literalmente.)
-
 Volviendo a las series, utilizaremos ahora el Teorema 18 para demostrar el criterio de convergencia de Dirichlet (el cual, sin embargo, no garantiza convergencia absoluta).
 
 \textbf{Teorema 21.} (Dirichlet). Sea \(\sum a_n\) una serie (no necesariamente convergente) cuyas reducidas \(s_n = a_1 + \cdots + a_n\) forman una sucesión acotada. Sea \((b_n)\) una sucesión no creciente de números positivos con \(\lim b_n = 0\). Entonces la serie \(\sum a_n b_n\) es convergente.
@@ -3102,7 +3099,7 @@ y luego el menor índice \(n_4\) tal que
 
 Prosiguiendo de esta manera, obtenemos un reordenamiento de \(\sum a_n\) tal que las sumas parciales \(t_n\) de la nueva serie tienden a \(c\). En efecto, para todo \(i\) impar tenemos \(t_{n_i+1} < c < t_{n_i}\), \(0 < t_{n_i} - c \le p_{n_i}\), \(0 < c - t_{n_i+1} < q_{n_i+1}\). De ahí resulta (teniendo en cuenta que \(\lim p_{n_i} = \lim q_{n_i} = 0\)) que \(\lim_{i \to \infty} t_{n_i} = c\). Además, es claro que, para \(i\) impar, \(n_i < n < n_{i+1} \Rightarrow t_{n_i+1} \le t_n \le t_{n_i}\) y, para \(i\) par, \(n_i < n < n_{i+1} \Rightarrow t_{n_i} \le t_n \le t_{n_i+1}\). Así \(\lim t_n = c\), es decir, la nueva serie tiene suma \(c\).
 
-: Un razonamiento análogo (más simple) muestra que un conveniente cambio en el orden de los términos de una serie condicionalmente convergente puede hacer que sus sumas parciales tiendan a \(+\infty\) o a \(-\infty\).
+Observación: Un razonamiento análogo (más simple) muestra que un conveniente cambio en el orden de los términos de una serie condicionalmente convergente puede hacer que sus sumas parciales tiendan a \(+\infty\) o a \(-\infty\).
 
 \textbf{Teorema 24.} Si \(\sum a_n\) y \(\sum b_n\) (\(n \ge 0\)) son absolutamente convergentes, entonces \((\sum a_n)(\sum b_n) = \sum c_n\) donde, para cada \(n \ge 0\), \(c_n = a_0 b_n + a_1 b_{n-1} + \cdots + a_n b_0\).
 
@@ -3669,7 +3666,7 @@ Ejemplos. A. Una colección de intervalos abiertos cuyos centros incluyen todos 
 
 B. Un conjunto cerrado no enumerable, formado solo por números irracionales. Tal es el conjunto \(F = [a, b] - \bigcup (a_n, b_n)\) donde los intervalos \((a_n, b_n)\) son los del ejemplo anterior.
 
-Ejercicios
+\textbf{Ejercicios}
 
 1. Un conjunto \(A \subset \mathbb{R}\) es abierto si, y solo si, cumple la siguiente condición: "si una sucesión \((x_n)\) converge a un punto \(a \in A\) entonces \(x_n \in A\) para todo \(n\) suficientemente grande".
 
@@ -3819,6 +3816,421 @@ c) si \(A\) es cerrado y \(B\) es compacto, \(A \cdot B\) puede no ser cerrado.
 63. Para todo \(X \subset \mathbb{R}\), \(\overline{X} - X'\) es enumerable.
 
 64. Un número real \(\alpha\) se llama punto de condensación de un conjunto \(X \subset \mathbb{R}\) cuando todo intervalo abierto de centro \(\alpha\) contiene una infinidad no enumerable de puntos de \(X\). Sea \(F_0\) el conjunto de los puntos de condensación de un cerrado \(F \subset \mathbb{R}\). Demuestre que \(F_0\) es un conjunto perfecto (esto es, cerrado, sin puntos aislados) y que \(F - F_0\) es enumerable. Concluya de ahí el Teorema de Bendixson: todo cerrado de la recta es reunión de un conjunto perfecto con un conjunto enumerable.
+
+\newpage
+
+\chapter{Límites de Funciones}
+
+Retomaremos ahora la noción de límite bajo una forma más general. En lugar de sucesiones, como en el Capítulo IV, consideraremos funciones reales \( f: X \to \mathbb{R} \), definidas en subconjuntos arbitrarios \( X \subset \mathbb{R} \).
+
+Es cierto que la mayoría de las funciones de una variable que se encuentran en Análisis están definidas en intervalos o en uniones finitas de intervalos. Nuestra justificación por haber considerado una mayor generalidad es doble: en primer lugar, el esfuerzo adicional es ínfimo y se ve compensado por una visión más amplia; en segundo lugar, el lector deberá encontrar en sus estudios posteriores (funciones de varias variables, integral de Lebesgue, cálculo de variaciones, análisis funcional, etc.) funciones definidas en dominios mucho más complicados que intervalos de la recta. Así, es bueno que vaya adquiriendo más experiencia con situaciones generales.
+
+En este capítulo, como en todo el libro, no dudamos en utilizar ejemplos que involucran funciones trigonométricas, exponenciales y logarítmicas. Al proceder así, nos estamos alejando de la línea axiomática que habíamos prometido seguir, pues solo en los capítulos finales indicaremos cómo desarrollar rigurosamente la teoría de estas funciones. Nuestra actitud se basa en el hecho de que nuestros lectores ya han estudiado Cálculo y, por lo tanto, conocen senos, cosenos y logaritmos. Además, tales ejemplos, aunque constituyen un precioso instrumento para fijar el aprendizaje, no interfieren jamás en el encadenamiento lógico de los asuntos aquí expuestos.
+
+\section{Definición y propiedades del límite}
+
+Sea \( f: X \to \mathbb{R} \) una función con valores reales, definida en un subconjunto \( X \subset \mathbb{R} \). (Se dice en este caso que \( f \) es una función real de una variable real). Sea \( a \in \mathbb{R} \) un punto de acumulación de \( X \), es decir, \( a \in X' \).
+
+Diremos que el número real \( L \) es el límite de \( f(x) \) cuando \( x \) tiende hacia \( a \), y escribiremos
+\[\lim_{x \to a} f(x) = L,\]
+
+para significar lo siguiente: para cada número real \( \varepsilon > 0 \), dado arbitrariamente, podemos encontrar \( \delta > 0 \) de modo que se tenga \( |f(x) - L| < \varepsilon \) siempre que \( x \in X \) y \( 0 < |x - a| < \delta \).
+
+Por lo tanto, cuando \( a \) es punto de acumulación del dominio de \( f \), la expresión \( \lim_{x \to a} f(x) = L \) es una abreviatura de la afirmación siguiente:
+\[\forall \varepsilon > 0 \; \exists \delta > 0; \quad x \in X, \quad 0 < |x - a| < \delta \Rightarrow |f(x) - L| < \varepsilon.\]
+
+Nótese que \( 0 < |x - a| < \delta \) significa que \( x \) pertenece al intervalo \( (a - \delta, a + \delta) \) y es diferente de \( a \). Así, \( \lim_{x \to a} f(x) = L \) significa que, para todo intervalo abierto \( (L - \varepsilon, L + \varepsilon) \), existe un intervalo abierto \( (a - \delta, a + \delta) \) tal que, poniendo \( V_{\delta} = (X - \{a\}) \cap (a - \delta, a + \delta) \), se cumple \( f(V_{\delta}) \subset (L - \varepsilon, L + \varepsilon) \).
+
+Obsérvese que \( V_{\delta} = \{x \in X; 0 < |x - a| < \delta\} \). Una notación más completa (y bastante más "cargada") sería \( V_X(a; \delta) \).
+
+En lenguaje más simple: es posible hacer que \( f(x) \) esté arbitrariamente próximo a \( L \), con tal de tomar \( x \in X \) suficientemente próximo a \( a \) (¡y diferente de \( a \)!).
+
+Observaciones: 1. De acuerdo con la definición dada, solo tiene sentido escribir \( \lim_{x \to a} f(x) = L \) cuando \( a \) es punto de acumulación del dominio \( X \) de la función \( f \). Si quisiéramos considerar la misma definición en el caso en que \( a \notin X' \), entonces todo número real \( L \) sería límite de \( f(x) \) cuando \( x \) tiende hacia \( a \). En efecto, siendo \( a \notin X' \), existe \( \delta > 0 \) tal que \( V_{\delta} = (X - \{a\}) \cap (a - \delta, a + \delta) = \emptyset \) (esto es, \( 0 < |x - a| < \delta \), \( x \in X \), no se verifica para ningún \( x \)). Entonces, dado cualquier \( \varepsilon > 0 \), elegiríamos este \( \delta \). Siempre sería verdad que \( \emptyset = f(V_{\delta}) \subset (L - \varepsilon, L + \varepsilon) \), cualquiera que fuese \( L \). Luego tendríamos \( L = \lim_{x \to a} f(x) \).
+
+2. Al considerar el límite \( \lim_{x \to a} f(x) \), no exigimos que \( a \) pertenezca al dominio de la función \( f \). En los casos más interesantes de límite, se tiene \( a \notin X \).
+
+3. Incluso si se tiene \( a \in X \), la afirmación \( \lim_{x \to a} f(x) = L \) nada dice respecto al valor \( f(a) \). Describe solo el comportamiento de los valores \( f(x) \) para \( x \) próximo a \( a \), con \( x \neq a \). Explícitamente, es posible tener \( \lim_{x \to a} f(x) \neq f(a) \). Véase el Ejemplo 4 más adelante, o bien considérese \( f: \mathbb{R} \to \mathbb{R} \) donde \( f(x) = 1 \) para todo \( x \neq 0 \) y \( f(0) = 0 \). Es inmediato que \( \lim_{x \to 0} f(x) = 1 \).
+
+4. Cuando nos referimos a la función \( f \), queda implícito que ella tiene un dominio bien especificado, a saber: el conjunto \( X \). En otras palabras, dar \( f \) implica dar \( X \). Así, al escribir \( \lim_{x \to a} f(x) = L \), se sobreentiende que \( x \) varía en \( X \). A veces, sin embargo, puede haber peligro de ambigüedad. En estos casos, podremos usar la notación pleonástica \( \lim_{x \to a,\, x \in X} f(x) = L \).
+
+5. Si \( \lim_{x \to a} f(x) = L \), entonces el punto \( L \) es adherente al conjunto \( f(X - \{a\}) \), pues cada intervalo abierto de centro \( L \) contiene puntos de este conjunto. Más aún (y por la misma razón): para cada \( \delta > 0 \), poniendo \( V_{\delta} = (X - \{a\}) \cap (a - \delta, a + \delta) \), tenemos \( L \in \overline{f(V_{\delta})} \).
+
+Los teoremas siguientes establecen las principales propiedades del límite de una función.
+
+\textbf{Teorema 1.} (Unicidad del límite). Sean \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \), \( a \in X' \). Si \( \lim_{x \to a} f(x) = L_1 \) y \( \lim_{x \to a} f(x) = L_2 \), entonces \( L_1 = L_2 \).
+
+\textbf{Demostración.} Dado cualquier \( \varepsilon > 0 \), existen \( \delta_1 > 0 \) y \( \delta_2 > 0 \) tales que para \( x \in X \), \( 0 < |x - a| < \delta_1 \Rightarrow |f(x) - L_1| < \varepsilon/2 \) y \( 0 < |x - a| < \delta_2 \Rightarrow |f(x) - L_2| < \varepsilon/2 \). Sea \( \delta = \min\{\delta_1, \delta_2\} \). Como \( a \in X' \), podemos obtener \( \bar{x} \in X \) tal que \( 0 < |\bar{x} - a| < \delta \). Entonces \( |L_1 - L_2| \leq |L_1 - f(\bar{x})| + |f(\bar{x}) - L_2| < \varepsilon/2 + \varepsilon/2 = \varepsilon \). Esto nos da \( |L_1 - L_2| < \varepsilon \) para todo \( \varepsilon > 0 \), luego \( L_1 = L_2 \).
+
+\textbf{Teorema 2.} Sean \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \), \( a \in X' \). Dado \( Y \subset X \) tal que \( a \in Y' \), pongamos \( g = f|_Y \). Si \( \lim_{x \to a} f(x) = L \), entonces \( \lim_{x \to a} g(x) = L \). Si \( Y = I \cap X \) donde \( I \) es un intervalo abierto que contiene a \( a \), entonces \( \lim_{x \to a} g(x) = L \Rightarrow \lim_{x \to a} f(x) = L \).
+
+\textbf{Demostración.} Evidente.
+
+Observación: La primera parte del Teorema 2 es análoga a la afirmación de que toda subsucesión de una sucesión convergente es aún convergente y posee el mismo límite. La segunda parte afirma que la existencia y el valor de \( \lim_{x \to a} f(x) \) dependen solo del comportamiento de \( f \) en una vecindad de \( a \).
+
+\textbf{Teorema 3.} Sean \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \), \( a \in X' \). Si existe \( \lim_{x \to a} f(x) \) entonces \( f \) está acotada en una vecindad de \( a \), es decir, existen \( A > 0 \), \( \delta > 0 \) tales que \( 0 < |x - a| < \delta \), \( x \in X \Rightarrow |f(x)| < A \).
+
+\textbf{Demostración.} Sea \( L = \lim_{x \to a} f(x) \). Tomando \( \varepsilon = 1 \) en la definición de límite, obtenemos \( \delta > 0 \) tal que \( x \in X \), \( 0 < |x - a| < \delta \Rightarrow |f(x) - L| < 1 \Rightarrow |f(x)| < |L| + 1 \). Tomemos este \( \delta \) y pongamos \( A = |L| + 1 \).
+
+\textbf{Teorema 4.} Sean \( X \subset \mathbb{R} \), \( f, g, h: X \to \mathbb{R} \), \( a \in X' \). Si, para todo \( x \in X \), \( x \neq a \), se tiene \( f(x) \leq g(x) \leq h(x) \) y, además, \( \lim_{x \to a} f(x) = \lim_{x \to a} h(x) = L \), entonces \( \lim_{x \to a} g(x) = L \).
+
+\textbf{Demostración.} Dado \( \varepsilon > 0 \) arbitrariamente, existen \( \delta_1 > 0 \) y \( \delta_2 > 0 \) tales que, para \( x \in X \), \( 0 < |x - a| < \delta_1 \Rightarrow L - \varepsilon < f(x) < L + \varepsilon \) y \( 0 < |x - a| < \delta_2 \Rightarrow L - \varepsilon < h(x) < L + \varepsilon \). Sea \(\delta = \min\{\delta_1, \delta_2\}. \text{ Entonces, } x \in X, 0 < |x - a| < \delta \Rightarrow L - \varepsilon < f(x) \leq g(x) \leq h(x) < L + \varepsilon, \text{ de donde } \lim_{x \to a} g(x) = L\).
+
+\textbf{Teorema 5.} Sean \(X \subset \mathbb{R}\), \(a \in X'\), \(f, g: X \to \mathbb{R}\). Si \(\lim_{x \to a} f(x) = L\) y \(\lim_{x \to a} g(x) = M\) con \(L < M\), entonces existe \(\delta > 0\) tal que \(x \in X\), \(0 < |x - a| < \delta \Rightarrow f(x) < g(x)\).
+
+\textbf{Demostración.} Sea \(\varepsilon = \frac{M - L}{2} > 0\). Entonces \(L + \varepsilon = \frac{L + M}{2} = M - \varepsilon\). Existe \(\delta > 0\) tal que \(x \in X\), \(0 < |x - a| < \delta \Rightarrow \frac{L + M}{2} < f(x) < \frac{L + M}{2} < g(x)\).
+
+\textbf{Corolario 1.} Si \(\lim_{x \to a} f(x) = L > 0\) entonces existe \(\delta > 0\) tal que \(x \in X\), \(0 < |x - a| < \delta \Rightarrow f(x) > 0\).
+
+\textbf{Corolario 2.} Si \(f(x) \leq g(x)\) para todo \(x \in X\), \(x \neq a\) y \(\lim_{x \to a} f(x) = L\), \(\lim_{x \to a} g(x) = M\) entonces \(L \leq M\).
+
+\textbf{Teorema 6.} Sean \(X \subset \mathbb{R}\), \(f: X \to \mathbb{R}\), \(a \in X'\). Para que \(\lim_{x \to a} f(x) = L\) es necesario y suficiente que se tenga \(\lim_{n \to \infty} f(x_n) = L\) para toda sucesión de puntos \(x_n \in X - \{a\}\) tal que \(\lim_{n \to \infty} x_n = a\).
+
+\textbf{Demostración.} Supongamos que \(\lim_{x \to a} f(x) = L\) y que \(\lim_{n \to \infty} x_n = a\), con \(x_n \in X - \{a\}\). Dado \(\varepsilon > 0\), existe \(\delta > 0\) tal que \(0 < |x - a| < \delta\), \(x \in X \Rightarrow |f(x) - L| < \varepsilon\). Existe también \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow 0 < |x_n - a| < \delta\). Se sigue que \(n > n_0 \Rightarrow |f(x_n) - L| < \varepsilon\), de donde \(\lim_{n \to \infty} f(x_n) = L\). Para demostrar la recíproca, supongamos que no se tenga \(\lim_{x \to a} f(x) = L\). Entonces existe \(\varepsilon > 0\) tal que para todo \(n \in \mathbb{N}\) podemos obtener \(x_n \in X\) con \(0 < |x_n - a| < \frac{1}{n}\) y \(|f(x_n) - L| \geq \varepsilon\). Entonces \(x_n \to a\), pero no se tiene \(\lim_{n \to \infty} f(x_n) = L\).
+
+\textbf{Corolario 1.} Para que exista \(\lim_{x \to a} f(x)\) es necesario que exista \(\lim_{n \to \infty} f(x_n)\) y que no dependa de la sucesión de números \(x_n \in X - \{a\}\) con \(\lim_{n \to \infty} x_n = a\).
+
+\textbf{Corolario 2.} Para que exista \(\lim_{x \to a} f(x)\) es suficiente que exista \(\lim_{n \to \infty} f(x_n)\) para toda sucesión de números \(x_n \in X - \{a\}\) tal que \(\lim_{n \to \infty} x_n = a\).
+
+En efecto, si tal límite existe para toda sucesión de esa naturaleza, entonces \(\lim_{n \to \infty} f(x_n)\) no dependerá de la sucesión \((x_n)\), pues si fuera \(\lim_{n \to \infty} f(x_n) = L\) y \(\lim_{n \to \infty} f(y_n) = M\), con \(x_n, y_n \in X - \{a\}\), \(\lim_{n \to \infty} x_n = a\), \(\lim_{n \to \infty} y_n = a\) y \(L \neq M\), formaríamos la sucesión \((z_n)\) con \(z_{2k} = x_k, z_{2k-1} = y_k\) y tendríamos \(z_n \in X - \{a\}\), \(z_n \to a\) pero \((f(z_n))\) no convergería.
+
+\textbf{Teorema 7.} Sean \(X \subset \mathbb{R}\), \(a \in X'\) y \(f, g: X \to \mathbb{R}\). Si \(\lim_{x \to a} f(x) = L\) y \(\lim_{x \to a} g(x) = M\), entonces \(\lim_{x \to a} [f(x) \pm g(x)] = L \pm M\) y \(\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M\). Si \(M \neq 0\) entonces \(\lim_{x \to a} [f(x)/g(x)] = L/M\). Si \(\lim_{x \to a} f(x) = 0\) y existe una constante \(A\) tal que \(|g(x)| \leq A\) para todo \(x \in X - \{a\}\), entonces \(\lim_{x \to a} [f(x) \cdot g(x)] = 0\), incluso si no existe \(\lim_{x \to a} g(x)\).
+
+\textbf{Demostración.} Usar las propiedades análogas, demostradas en el Capítulo IV para límites de sucesiones, y aplicar el Teorema 6. Nótese que, para el límite del cociente, debe emplearse el Teorema 5 para saber que \(f(x)/g(x)\) tiene sentido para todo \(x\) suficientemente próximo (y diferente) de \(a\). Como ejemplo, veamos el límite del producto. Para toda sucesión de puntos \(x_n \in X - \{a\}\) con \(\lim_{n \to \infty} x_n = a\), tenemos \(\lim_{n \to \infty} [f(x_n) \cdot g(x_n)] = \lim_{n \to \infty} f(x_n) \cdot \lim_{n \to \infty} g(x_n) = L \cdot M\). Luego \(\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M\).
+
+Observación: Como en el caso de sucesiones, observamos que si \(\lim_{x \to a} g(x) = 0\), entonces el cociente \(\frac{f(x)}{g(x)}\) solo puede tener límite (cuando \(x \to a\)) si también \(\lim_{x \to a} f(x) = 0\), pues \(f(x) = g(x) \cdot \frac{f(x)}{g(x)}\). Si se tiene \(\lim_{x \to a} g(x) = 0\) pero no se cumple \(\lim_{x \to a} f(x) = 0\), el cociente \(f(x)/g(x)\) ni siquiera puede estar acotado en la vecindad de \(a\).
+
+\textbf{Teorema 8.} (Criterio de Cauchy para funciones). Sean \(X \subset \mathbb{R}\), \(a \in X'\) y \(f: X \to \mathbb{R}\). Para que exista \(\lim_{x \to a} f(x)\) es necesario y suficiente que, dado arbitrariamente \(\varepsilon > 0\), se pueda obtener \(\delta > 0\) tal que \(x, y \in X\), \(0 < |x - a| < \delta\), \(0 < |y - a| < \delta\) impliquen \(|f(x) - f(y)| < \varepsilon\).
+
+\textbf{Demostración.} Si existe \(\lim_{x \to a} f(x) = L\), entonces, dado \(\varepsilon > 0\), podemos obtener \(\delta > 0\) tal que \(x, y \in X\), \(0 < |x - a| < \delta\), \(0 < |y - a| < \delta \Rightarrow |f(x) - L| < \varepsilon/2\), \(|f(y) - L| < \varepsilon/2 \Rightarrow |f(x) - f(y)| \leq |f(x) - L| + |f(y) - L| < \varepsilon\). Recíprocamente, si esta condición se satisface, entonces, dada una sucesión arbitraria de números reales \(x_n \in X - \{a\}\) con \(\lim_{n \to \infty} x_n = a\), la sucesión \((f(x_n))\) es de Cauchy. [En efecto, dado \(\varepsilon > 0\), tomamos \(\delta > 0\) proporcionado por la condición admitida. Existe entonces \(n_0 \in \mathbb{N}\) tal que \(m, n > n_0 \Rightarrow 0 < |x_m - a| < \delta\) y \(0 < |x_n - a| < \delta\) y, por tanto, \(|f(x_m) - f(x_n)| < \varepsilon\).] Luego \((f(x_n))\) es convergente. Por el Corolario 2 del Teorema 6, existe \(\lim_{x \to a} f(x)\).
+
+Veamos ahora lo que ocurre con el límite de una función compuesta.
+
+La situación que tenemos en mente es la siguiente: \(X, Y \subset \mathbb{R}\), \(f: X \to \mathbb{R}\), \(g: Y \to \mathbb{R}\), \(a \in X'\), \(b \in Y'\), \(\lim_{x \to a} f(x) = b\) y \(\lim_{y \to b} g(y) = c\).
+
+Para que tenga sentido hablar de \(g(f(x))\), \(x \in X\), suponemos que \(f(X) \subset Y\). Nos gustaría poder concluir, en estas condiciones, que
+\[\lim_{x \to a} g(f(x)) = c.\]
+
+En efecto, \(a\) es punto de acumulación del dominio de la función \(g \circ f: X \to \mathbb{R}\). Luego, tiene sentido considerar \(\lim_{x \to a} g(f(x))\). Además, como \(g(y)\) tiende a \(c\) cuando \(y\) tiende a \(b\), es plausible imaginar que esto ocurre, en particular, para \(y\) de la forma \(y = f(x)\). Hay, sin embargo, una dificultad: para que \(g(y)\) se aproxime a \(c\) es necesario que \(y\) esté próximo a \(b\), ¡pero siempre sea \(y \neq b\)! Y nada garantiza que \(f(x) \neq b\).
+
+Veamos un ejemplo simple: \(f: \mathbb{R} \to \mathbb{R}\) es la función idénticamente nula, \(g: \mathbb{R} \to \mathbb{R}\) está definida por \(g(x) = 1\) si \(x \neq 0\), \(g(0) = 0\). Entonces \(\lim_{x \to 0} f(x) = 0\), \(\lim_{y \to 0} g(y) = 1\), pero \(\lim_{x \to 0} g(f(x)) = 0\) (y no 1).
+
+Puede ocurrir además que, cuando \(x \to a\), \(f(x)\) asuma infinitas veces el valor \(b\) para valores de \(x\) diferentes. En este caso, si \(\lim_{y \to b} g(y)\) es diferente de \(g(b)\), entonces no existirá \(\lim_{x \to a} g(f(x))\) aunque existan \(\lim_{x \to a} f(x) = b\) y \(\lim_{y \to b} g(y) = c\).
+
+Por ejemplo, sean \(f: \mathbb{R} \to \mathbb{R}\) y \(g: \mathbb{R} \to \mathbb{R}\) definidas así: \(f(x) = 0\) si \(x\) es irracional, y \(f(x) = x\) si \(x\) es racional; \(g(y) = 0\) si \(y \neq 0\) y \(g(0) = 1\). Entonces \(\lim_{x \to 0} f(x) = 0\) y \(\lim_{y \to 0} g(y) = 0\), pero no existe \(\lim_{x \to 0} g(f(x))\), pues si \(x\) es racional y diferente de cero, tenemos \(g(f(x)) = 0\) mientras que \(x \neq 0\) irracional da \(g(f(x)) = 1\).
+
+Expuesta la dificultad, la solución es simple. Basta imponer que \(\lim_{y \to b} g(y) = g(b)\). Tenemos el
+
+\textbf{Teorema 9.} Sean \(X, Y \subset \mathbb{R}\), \(f: X \to \mathbb{R}\), \(g: Y \to \mathbb{R}\) con \(f(X) \subset Y\). Sean \(a \in X'\) y \(b \in Y' \cap Y\). Si \(\lim_{x \to a} f(x) = b\) y \(\lim_{y \to b} g(y) = c\) se tiene \(\lim_{x \to a} g(f(x)) = c\), siempre que sea \(c = g(b)\).
+
+\textbf{Demostración.} Dado \(\varepsilon > 0\), existe \(\eta > 0\) tal que \(y \in Y\), \(|y - b| < \eta \Rightarrow |g(y) - c| < \varepsilon\). (No requerimos que sea \(y \neq b\), porque \(g(b) = c\) proporciona automáticamente \(|g(b) - c| < \varepsilon\).) A partir de \(\eta\), obtenemos \(\delta > 0\) tal que \(x \in X\), \(0 < |x - a| < \delta \Rightarrow |f(x) - b| < \eta\). Entonces, \(x \in X\), \(0 < |x - a| < \delta \Rightarrow |g(f(x)) - c| < \varepsilon\), lo que da el resultado buscado.
+
+\section{Ejemplos de límites}
+
+1. Sea \(f: \mathbb{R} \to \mathbb{R}\) la aplicación identidad, esto es, \(f(x) = x\) para todo \(x \in \mathbb{R}\). Entonces es evidente que \(\lim_{x \to a} f(x) = a\) para cualquier \(a \in \mathbb{R}\). El Teorema 7 nos da \(\lim_{x \to a} [f(x) \cdot f(x)] = a^2\), o sea, \(\lim_{x \to a} x^2 = a^2\). El mismo teorema, aplicado \(n-1\) veces, nos proporciona \(\lim_{x \to a} x^n = a^n\), para todo \(n \in \mathbb{N}\). Se sigue de ahí (con ayuda de las otras partes del teorema) que, para todo polinomio
+\( p(x) = a_0x^n + a_1x^{n-1} + \cdots + a_{n-1}x + a_n \), se tiene \(\lim_{x \to a} p(x) = p(a)\), sea cual sea \( a \in \mathbb{R} \). También para toda función racional \( f(x) = \frac{p(x)}{q(x)} \), cociente de dos polinomios, se tiene \(\lim_{x \to a} f(x) = f(a)\), siempre que el denominador no se anule en el punto \( a \), es decir, \( q(a) \neq 0 \). Cuando \( q(a) = 0 \), entonces el polinomio \( q(x) \) es divisible por \( (x - a) \). Escribamos entonces \( q(x) = (x - a)^m q_1(x) \), donde \( q_1(a) \neq 0 \) y \( m \in \mathbb{N} \). Pongamos también \( p(x) = (x - a)^n p_1(x) \), con \( p_1(a) \neq 0 \). Si \( m = n \), entonces \(\lim_{x \to a} f(x) = p_1(a)/q_1(a)\), porque \( f(x) = p_1(x)/q_1(x) \) para todo \( x \neq a \). Si \( n > m \), entonces \(\lim_{x \to a} f(x) = 0\), pues \( f(x) = (x - a)^{n-m} \cdot [p_1(x)/q_1(x)] \) para todo \( x \neq a \). Finalmente, si \( n < m \), entonces \(\lim_{x \to a} f(x)\) no existe, pues \( f(x) = p_1(x)/[(x - a)^{m-n} \cdot q_1(x)] \), donde el denominador tiene límite cero y el numerador no. (Véase la observación siguiente al Teorema 7.)
+
+2. Sean \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), \( g: \mathbb{R} - \{1\} \to \mathbb{R} \) y \( h: \mathbb{R} - \{0\} \to \mathbb{R} \) dadas por \( f(x) = c \cdot x \cdot x^2 - 1 \cdot \frac{1}{x} \), \( g(x) = \) y \( h(x) = \). Se tiene \( f(x) = c \) para todo \( x \neq 0 \) y \( g(x) = x+1 \) para todo \( x \neq 1 \). Luego \(\lim_{x \to 0} f(x) = c \) y \(\lim_{x \to 1} g(x) = 2\). (Nótese que \( f(0) \) y \( g(1) \) no están definidos.) Por otro lado, no existe \(\lim_{x \to 0} h(x)\), pues \( h \) es el cociente de dos funciones, de las cuales el denominador tiene límite cero y el numerador tiene límite 1. (Véase la observación posterior al Teorema 7.)
+
+3. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = 0 \) si \( x \) es racional y \( f(x) = 1 \) si \( x \) es irracional. Cualquiera que sea \( a \in \mathbb{R} \), no existe \(\lim_{x \to a} f(x)\), en virtud del Teorema 6: haciendo \( x_n \) tender hacia \( a \) mediante valores racionales tendremos \( f(x_n) = 0 \), luego \( f(x_n) \to 0 \). Pero haciendo \( x_n \to a \) mediante valores irracionales tendremos \( f(x_n) = 1 \). Si ponemos \( g(x) = (x - a)f(x) \), tendremos \(\lim_{x \to a} g(x) = 0\).
+
+4. Sea \( f: \mathbb{Q} \to \mathbb{R} \) definida por \( f\left(\frac{p}{q}\right) = \frac{1}{q} \) si \( p/q \) es una fracción irreducible con \( q > 0 \), y \( f(0) = 1 \). Para todo número real \( a \), tenemos \( a \in \mathbb{Q}' \), luego tiene sentido hablar de \( \lim_{x \to a} f(x) \). Afirmamos que este límite es cero, sea cual sea \( a \in \mathbb{R} \). Debemos entonces probar lo siguiente: fijado \( a \in \mathbb{R} \) y dado \( \varepsilon > 0 \), podemos hallar \( \delta > 0 \) tal que \( 0 < \left|\frac{p}{q} - a\right| < \delta \Rightarrow q > \frac{1}{\varepsilon} \).
+
+Ahora bien, el conjunto \( F = \{q \in \mathbb{N}; q \leq 1/\varepsilon\} \) es finito. Para cada \( q \in F \) fijado, las fracciones \( m/q \), \( m \in \mathbb{Z} \), descomponen la recta en intervalos yuxtapuestos de longitud \( 1/q \). Sea \( m_q \in \mathbb{Z} \) el mayor entero tal que \( m_q/q < a \). Como \( F \) es finito, existe \( \frac{m}{q'} \), la mayor de las fracciones \( m_q/q \), para todo \( q \in F \). Así, \( \frac{m}{q'} \) es la mayor fracción que tiene denominador en \( F \) y es menor que \( a \). Análogamente, existe \( \frac{n}{q''} \), la menor fracción con denominador en \( F \), tal que \( a < \frac{n}{q''} \). Salvo posiblemente \( a \), ningún número racional del intervalo \( \left(\frac{m}{q'}, \frac{n}{q''}\right) \) puede tener denominador en \( F \). Así, si escribimos \( \delta = \min \left\{a - \frac{m}{q'}, \frac{n}{q''} - a\right\} \), veremos que \( 0 < \left|\frac{p}{q} - a\right| < \delta \Rightarrow q \notin F \Rightarrow q > \frac{1}{\varepsilon} \), como queríamos probar.
+
+5. Sea \( f: \mathbb{R} - \{0\} \to \mathbb{R} \) definida por \( f(x) = x + \frac{x}{|x|} \). (Esto significa: \( f(x) = x + 1 \) si \( x > 0 \) y \( f(x) = x - 1 \) si \( x < 0 \)). Entonces \( \lim_{x \to 0} f(x) \) no existe pues \( \lim_{n \to \infty} f\left(\frac{1}{n}\right) = 1 \) y \( \lim_{n \to \infty} f\left(-\frac{1}{n}\right) = -1 \).
+
+6. Uno de los ejemplos más populares de una función sin límite es dado por \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), donde \( f(x) = \sen(1/x) \). Tomando \( x_n = \frac{1}{n\pi} \), tenemos \( x_n \to 0 \) y \( \lim f(x_n) = 0 \). Por otro lado, para \( x_n = \left(2n\pi + \frac{\pi}{2}\right)^{-1} \), se cumple \( x_n \to 0 \) y \( \lim f(x_n) = 1 \). En realidad, para todo número \( c \in [-1, +1] \), podemos obtener una sucesión de puntos \( x_n \neq 0 \), con \( x_n \to 0 \) y \( f(x_n) = c \) para todo \( n \). Basta tomar un número \( b \) tal que \( \sen b = c \) y poner \( x_n = (b + 2\pi n)^{-1} \). Así no existe \( \lim \sen(1/x) \). Pero esta función es acotada. Luego vale \( \lim g(x) \cdot \sen(1/x) = 0 \) para toda función \( g: \mathbb{R} - \{0\} \to \mathbb{R} \) tal que \( \lim g(x) = 0 \). En particular, para todo \( n \in \mathbb{N} \), tenemos \( \lim x^n \cdot \sen(1/x) = 0 \).
+
+\section{Límites laterales}
+
+Sean \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \) y \( a \in X'_+ \). Recordamos que la notación \( X'_+ \) representa el conjunto de puntos de acumulación por la derecha de \( X \). Se tiene \( a \in X'_+ \) si, y solo si, para todo \( \delta > 0 \) se cumple \( X \cap (a, a + \delta) \neq \emptyset \). Por ejemplo, \( 0 \) es punto de acumulación por la derecha de \( [0, 1] \).
+
+Consideremos por tanto \( a \), punto de acumulación por la derecha del dominio de la función \( f: X \to \mathbb{R} \).
+
+Diremos que el número real \( L \) es el límite por la derecha de \( f(x) \) cuando \( x \) tiende hacia \( a \), y escribiremos
+\[
+\lim_{x \to a^+} f(x) = L,
+\]
+
+cuando, para todo \( \varepsilon > 0 \) dado, sea posible obtener \( \delta > 0 \) tal que \( |f(x) - L| < \varepsilon \) siempre que \( x \in X \) y \( 0 < x - a < \delta \).
+
+Así, \( \lim_{x \to a^+} f(x) = L \) es una abreviatura de la siguiente afirmación:
+\[
+\forall \varepsilon > 0 \; \exists \delta > 0; \quad x \in X, \; 0 < x - a < \delta \Rightarrow |f(x) - L| < \varepsilon.
+\]
+
+Es decir, se tiene \( \lim_{x \to a^+} f(x) = L \) si, y solo si, para todo \( \varepsilon > 0 \) dado, existe \( \delta > 0 \) tal que \( x \in (a, a + \delta) \cap X \Rightarrow f(x) \in (L - \varepsilon, L + \varepsilon) \).
+
+De manera análoga se define el límite por la izquierda. Si \( a \) es un punto de acumulación por la izquierda (\( a \in X'_- \)) del dominio de la función \( f: X \to \mathbb{R} \), diremos que el límite por la izquierda de \( f(x) \), cuando \( x \) tiende hacia \( a \), es el número \( L \), y escribiremos
+\[
+\lim_{x \to a^-} f(x) = L,
+\]
+
+para expresar que a todo \( \varepsilon > 0 \) dado se puede hacer corresponder un \( \delta > 0 \) tal que \( x \in X \), \( 0 < a - x < \delta \Rightarrow |f(x) - L| < \varepsilon \), es decir, \( x \in X \cap (a - \delta, a) \Rightarrow f(x) \in (L - \varepsilon, L + \varepsilon) \).
+
+La demostración del teorema siguiente es inmediata.
+
+\textbf{Teorema 10.} Sean \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \), \( a \in X'_+ \). Pongamos \( Y = X \cap (a, +\infty) \) y \( g = f|_Y \). Entonces \( \lim_{x \to a^+} f(x) = L \) si, y solo si, \( \lim_{x \to a} g(x) = L \). Un resultado análogo vale para el límite por la izquierda.
+
+Por tanto, el límite por la derecha (así como el límite por la izquierda) se reduce al límite ordinario de una restricción de \( f \).
+
+Una consecuencia directa del Teorema 10 es que valen para los límites laterales (por la derecha y por la izquierda) los resultados expresados por los Teoremas 1 a 9, con las debidas adaptaciones. Estas adaptaciones consisten simplemente en sustituir en los enunciados \( (a - \delta, a + \delta) \) por \( (a, a + \delta) \) y \( |x - a| \) por \( x - a \) en el caso de límite por la derecha. En los límites por la izquierda, tomar \( (a - \delta, a) \) en lugar de \( (a - \delta, a + \delta) \) y \( a - x \) en lugar de \( |x - a| \).
+
+\textbf{Teorema 11.} Sea \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \) y \( a \in X'_+ \cap X'_- \). Entonces existe \( \lim_{x \to a} f(x) = L \) si, y solo si, existen y son iguales los límites laterales \( \lim_{x \to a^+} f(x) = \lim_{x \to a^-} f(x) = L \).
+
+\textbf{Demostración.} Si existe el límite ordinario, existen los laterales y coinciden con el primero, en virtud de los Teoremas 2 y 10. Recíprocamente, si \( \lim_{x \to a^+} f(x) = \lim_{x \to a^-} f(x) = L \) entonces, dado \( \varepsilon > 0 \), existen \( \delta_1 > 0 \) y \( \delta_2 > 0 \) tales que \( x \in X \cap (a, a + \delta_1) \Rightarrow |f(x) - L| < \varepsilon \) y \( x \in X \cap (a - \delta_2, a) \Rightarrow |f(x) - L| < \varepsilon \). Sea \( \delta = \min\{\delta_1, \delta_2\} \). Entonces \( x \in (X - \{a\}) \cap (a - \delta, a + \delta) \Rightarrow |f(x) - L| < \varepsilon \). Luego \( \lim_{x \to a} f(x) = L \).
+
+Ejemplos.
+
+7. Para la función \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), definida por \( f(x) = x + \frac{x}{|x|} \), tenemos los límites laterales \( \lim_{x \to 0^+} f(x) = 1 \) y \( \lim_{x \to 0^-} f(x) = -1 \), pues \( f \) coincide con \( x + 1 \) en \( (0, +\infty) \) y con \( x - 1 \) en \( (-\infty, 0) \). En cambio, la función \( g: \mathbb{R} - \{0\} \to \mathbb{R} \), \( g(x) = \frac{1}{x} \) no posee límite lateral por la izquierda ni por la derecha en el punto \( 0 \).
+
+8. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = e^{-1/x} \). Entonces \( \lim_{x \to 0^+} f(x) = 0 \) pero \( \lim_{x \to 0^-} f(x) \) no existe porque \( f(x) \) no está acotada para \( x \) negativo cerca de cero.
+
+Una función \( f: X \to \mathbb{R} \) (donde \( X \subset \mathbb{R} \)) se llama creciente cuando \( x, y \in X \), \( x < y \Rightarrow f(x) < f(y) \). Si \( x < y \) (con \( x, y \in X \)) implica solo \( f(x) \leq f(y) \), \( f \) se llama no decreciente. De manera análoga se define función decreciente y función no creciente. Una función de cualquiera de estos tipos se llama monótona.
+
+El resultado siguiente es el hecho más importante respecto a límites laterales.
+
+\textbf{Teorema 12.} Sean \( X \subset \mathbb{R} \), \( f: X \to \mathbb{R} \) una función monótona acotada, \( a \in X'_+ \) y \( b \in X'_- \). Existen los límites laterales
+\[
+L = \lim_{x \to a^+} f(x) \quad \text{y} \quad M = \lim_{x \to b^-} f(x).
+\]
+
+\textbf{Demostración.} Para fijar las ideas, supongamos \( f \) no decreciente. Sea \( L = \inf\{f(x); x \in X, x > a\} \). Afirmamos que \( L = \lim_{x \to a^+} f(x) \). En efecto, dado \( \varepsilon > 0 \) arbitrariamente, \( L + \varepsilon \) no es cota inferior del conjunto \( \{f(x); x \in X, x > a\} \). Luego existe \( \delta > 0 \) tal que \( a + \delta \in X \) y \( L \leq f(a + \delta) < L + \varepsilon \). Como \( f \) es no decreciente, si \( x \in X \) y \( a < x < a + \delta \) entonces \( L \leq f(x) < L + \varepsilon \), lo que prueba la afirmación hecha. Poniendo \( M = \sup\{f(x); x \in X, x < b\} \), verificaríamos de modo análogo que \( M = \lim_{x \to b^-} f(x) \).
+
+Observaciones: 1. Una sucesión monótona acotada es siempre convergente, mientras que puede no existir el límite ordinario de una función monótona acotada. (Véase \(f(x) = x + \frac{x}{|x|}\) en el punto 0.) La explicación es que el límite de una sucesión es siempre un límite lateral (por la izquierda, pues se tiene \(n \to \infty\) con \(n < \infty\)).
+
+2. Si \(a \in X\) entonces es innecesario suponer \(f\) acotada; si \(f\) es no decreciente, por ejemplo, entonces \(f(a)\) es una cota inferior para \(\{f(x); x > a\}\) y una cota superior para \(\{f(x); x < a\}\).
+
+\section{Límites en el infinito, límites infinitos, expresiones indeterminadas}
+
+Sea \(X \subset \mathbb{R}\) no acotado superiormente. Dada \(f: X \to \mathbb{R}\), se escribe
+\[
+\lim_{x \to +\infty} f(x) = L,
+\]
+cuando el número real \(L\) satisface la siguiente condición:
+\[
+\forall \varepsilon > 0 \; \exists A > 0; \quad x \in X, \; x > A \Rightarrow |f(x) - L| < \varepsilon.
+\]
+Es decir, dado arbitrariamente \(\varepsilon > 0\), se puede encontrar \(A > 0\) tal que \(|f(x) - L| < \varepsilon\) siempre que \(x > A\).
+
+De manera análoga se define \(\lim_{x \to -\infty} f(x) = L\), cuando el dominio de \(f\) es no acotado inferiormente: para todo \(\varepsilon > 0\) debe existir \(A > 0\) tal que \(x < -A \Rightarrow |f(x) - L| < \varepsilon\).
+
+Valen los resultados ya demostrados para el límite cuando \(x \to a, a \in \mathbb{R}\), con las adaptaciones evidentes.
+
+Los límites para \(x \to +\infty\) y \(x \to -\infty\) son, en cierto modo, límites laterales (el primero es un límite por la izquierda y el segundo por la derecha). Luego vale el resultado del Teorema 12: si \(f: X \to \mathbb{R}\) es monótona acotada entonces existe \(\lim_{x \to +\infty} f(x)\) (si el dominio \(X\) es no acotado superiormente) y existe \(\lim_{x \to -\infty} f(x)\) si el dominio de \(f\) es no acotado inferiormente.
+
+El límite de una sucesión es un caso particular de límite en el infinito: se trata de \( \lim_{x \to +\infty} f(x) \), donde \( f: \mathbb{N} \to \mathbb{R} \) es una función definida en el conjunto \( \mathbb{N} \) de los números naturales.
+
+Ejemplo 9. \( \lim_{x \to +\infty} \frac{1}{x} = \lim_{x \to -\infty} \frac{1}{x} = 0 \). Por otro lado, no existe \( \lim_{x \to +\infty} \sin x \) ni \( \lim_{x \to -\infty} \sin x \). Vale \( \lim_{x \to -\infty} e^x = 0 \) pero no existe \( \lim_{x \to +\infty} e^x \), en el sentido de la definición anterior. Como hicimos en el caso de sucesiones, introduciremos "límites infinitos" para englobar situaciones como estas.
+
+En primer lugar, sean \( X \subset \mathbb{R} \), \( a \in X' \), \( f: X \to \mathbb{R} \). Diremos que \( \lim_{x \to a} f(x) = +\infty \) cuando, para todo \( A > 0 \) dado, existe \( \delta > 0 \) tal que \( 0 < |x - a| < \delta \), \( x \in X \Rightarrow f(x) > A \).
+
+Por ejemplo, \( \lim_{x \to a} \frac{1}{(x - a)^2} = +\infty \), pues, dado \( A > 0 \), tomamos \( \delta = 1/\sqrt{A} \). Entonces \( 0 < |x - a| < \delta \Rightarrow 0 < (x - a)^2 < 1/A \Rightarrow \frac{1}{(x - a)^2} > A \).
+
+De modo semejante, definiremos \( \lim_{x \to a} f(x) = -\infty \). Esto significa que, para todo \( A > 0 \), existe \( \delta > 0 \) tal que \( x \in X \), \( 0 < |x - a| < \delta \Rightarrow f(x) < -A \). Por ejemplo, \( \lim_{x \to a} \frac{-1}{(x - a)^2} = -\infty \).
+
+Evidentemente, las definiciones de \( \lim_{x \to a^+} f(x) = +\infty \), \( \lim_{x \to a^-} f(x) = +\infty \), etc., no presentan mayores dificultades y se dejan a cargo del lector. También omitiremos las definiciones de \( \lim_{x \to +\infty} f(x) = +\infty \), \( \lim_{x \to -\infty} f(x) = +\infty \), etc. Por ejemplo,
+\[
+\lim_{x \to a^+} \left( \frac{1}{x - a} \right) = +\infty, \quad \lim_{x \to a^-} \left( \frac{1}{x - a} \right) = -\infty,
+\]
+\[
+\lim_{x \to +\infty} e^x = +\infty, \quad \lim_{x \to +\infty} x^k = +\infty \quad (k \in \mathbb{N}).
+\]
+
+Debe observarse enfáticamente que \( +\infty \) y \( -\infty \) no son números reales, de modo que las afirmaciones \( \lim_{x \to a} f(x) = +\infty \) y \( \lim_{x \to a} f(x) = -\infty \) expresan límites en el sentido estricto de término. Examinaremos ahora, de modo sucinto, las modificaciones que deben sufrir los teoremas anteriormente demostrados para que sigan siendo válidos en el caso de límite infinito:
+
+1. Unicidad del límite. Es claro que si \(\lim_{x \to a} f(x) = +\infty\) entonces no se puede tener \(\lim_{x \to a} f(x) = L\), \(L \in \mathbb{R}\), pues \(f\) será no acotada en una vecindad de \(a\). Tampoco se puede tener \(\lim_{x \to a} f(x) = -\infty\) pues \(f\) será positiva en una vecindad de \(a\).
+
+2. Si \(\lim_{x \to a} f(x) = +\infty\), entonces, para todo \(Y \subset X\) con \(a \in Y'\), poniendo \(g = f|_Y\), aún \(\lim_{x \to a} g(x) = +\infty\). Si \(Y = X \cap (a-\delta, a+\delta)\) entonces \(\lim_{x \to a} g(x) = +\infty \Rightarrow \lim_{x \to a} f(x) = +\infty\).
+
+3. Evidentemente, si \(\lim_{x \to a} f(x) = +\infty\), entonces \(f\) no está acotada en ninguna vecindad de \(a\).
+
+4. Si \(f(x) \leq g(x)\) para todo \(x \in X\) y \(\lim_{x \to a} f(x) = +\infty\) entonces \(\lim_{x \to a} g(x) = +\infty\).
+
+5. Si \(\lim_{x \to a} f(x) = L\), \(L \in \mathbb{R}\) y \(\lim_{x \to a} g(x) = +\infty\), entonces existe \(\delta > 0\) tal que \(x \in X\), \(0 < |x - a| < \delta \Rightarrow f(x) < g(x)\).
+
+6. Para que se tenga \(\lim_{x \to a} f(x) = +\infty\) es necesario y suficiente que sea \(\lim_{n \to \infty} f(x_n) = +\infty\) siempre que \(x_n \in X - \{a\}\) y \(\lim_{n \to \infty} x_n = a\).
+
+7. Los enunciados sobre \(\lim(f + g)\), \(\lim(f \cdot g)\) y \(\lim\left(\frac{f}{g}\right)\) son análogos a los del Teorema 14, Capítulo IV, sobre límites infinitos de sucesiones.
+
+8. No hay nada semejante al criterio de Cauchy para límites infinitos.
+
+9. Si \(\lim_{x \to a} f(x) = +\infty\) y \(\lim_{y \to +\infty} g(y) = L\) (o \(\lim_{y \to +\infty} g(y) = +\infty\)) entonces \(\lim_{x \to a} g(f(x)) = L\) (o \(\lim_{x \to a} g(f(x)) = +\infty\)).
+
+10. Cuando admitimos límites infinitos entonces existen siempre los límites laterales de una función monótona \( f: X \to \mathbb{R} \) en todos los puntos \( a \in X' \). (O incluso cuando \( x \to \pm\infty \).) Se tiene \( \lim_{x \to a^+} f(x) = L \), \( L \in \mathbb{R} \) si, y solo si, para algún \( \delta > 0 \), \( f \) está acotada en el conjunto \( X \cap (a, a + \delta) \). En caso contrario (esto es, si \( f \) es no acotada –digamos superiormente– en \( X \cap (a, a + \delta) \) para todo \( \delta > 0 \)) entonces \( \lim_{x \to a^+} f(x) = +\infty \).
+
+Diremos ahora algunas palabras sobre "expresiones indeterminadas". Se suele decir que las expresiones \( 0/0 \), \( \infty - \infty \), \( 0 \times \infty \), \( \infty/\infty \), \( 0^0 \), \( \infty^0 \), \( 1^\infty \) son indeterminadas. ¿Qué significa esto?
+
+Veamos, por ejemplo, \( 0/0 \). Evidentemente esta expresión no tiene sentido aritmético pues la división por cero no está definida. Decir que \( 0/0 \) es indeterminada tiene el siguiente significado preciso:
+
+Sean \( X \subset \mathbb{R} \), \( f, g: X \to \mathbb{R} \), \( a \in X' \). Supongamos que \( \lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0 \) y que, poniendo \( Y = \{x \in X; g(x) \neq 0\} \), se tenga aún \( a \in Y' \). Entonces \( f(x)/g(x) \) está definida en el conjunto \( Y \), y tiene sentido preguntar si existe \( \lim_{x \to a} f(x)/g(x) \). Pues bien; nada se puede decir, en general, sobre este límite. Dependiendo de las funciones \( f, g \), puede tomar cualquier valor real o no existir. Por ejemplo, dado cualquier \( c \in \mathbb{R} \), tomando \( f(x) = cx \) y \( g(x) = x \), tenemos \( \lim_{x \to 0} f(x) = \lim_{x \to 0} g(x) = 0 \), mientras que \( \lim_{x \to 0} f(x)/g(x) = c \).
+
+Por otro lado, si tomamos \( f(x) = x \cdot \sen(1/x) \), \( (x \neq 0) \) y \( g(x) = x \), tendremos \( \lim_{x \to 0} f(x) = \lim_{x \to 0} g(x) = 0 \), pero no existe \( \lim_{x \to 0} f(x)/g(x) \).
+
+Por el mismo motivo, \( \infty - \infty \) es indeterminado. Esto quiere decir: podemos hallar funciones \( f, g: X \to \mathbb{R} \), tales que \( \lim_{x \to a} f(x) = +\infty \), \( \lim_{x \to a} g(x) = +\infty \), mientras que \( \lim_{x \to a} [f(x) - g(x)] \), dependiendo de las nuestras elecciones para \( f \) y \( g \), puede tener un valor arbitrario \( c \in \mathbb{R} \) o puede no existir. Por ejemplo, si \( f, g: \mathbb{R} \to \{a\} \to \mathbb{R} \) están dadas por \( f(x) = c + \frac{1}{(x - a)^2} \) y \( g(x) = \frac{1}{(x - a)^2} \), entonces \( \lim_{x \to a} f(x) = \lim_{x \to a} g(x) = +\infty \) y \( \lim_{x \to a} [f(x) - g(x)] = c \). Análogamente, si \( f(x) = \sen \frac{1}{x - a} + \frac{1}{(x - a)^2} \) y \( g(x) = \frac{1}{(x - a)^2} \), no existe \( \lim_{x \to a} [f(x) - g(x)] \).
+
+Un ejemplo más: dado cualquier número real \( c > 0 \) podemos hallar funciones \( f, g: X \to \mathbb{R} \), con \( a \in X' \) y \( \lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0 \), \( f(x) > 0 \) para todo \( x \in X \), mientras que \( \lim_{x \to a} f(x)^{g(x)} = c \). Basta, por ejemplo, definir \( f, g: (0, +\infty) \to \mathbb{R} \) poniendo \( f(x) = x \), \( g(x) = \frac{\log c}{\log x} \). En este caso, se cumple \( f(x)^{g(x)} = c \) para todo \( x \neq 0 \). (Tómense logaritmos de ambos miembros.) Por tanto \( \lim_{x \to 0} f(x)^{g(x)} = c \). También en este caso, podemos elegir \( f \) y \( g \) de modo que el límite de \( f(x)^{g(x)} \) no exista. Basta tomar, digamos, \( f(x) = x \) y \( g(x) = \log(1 + |\sen 1/x|) \cdot (\log x)^{-1} \). Entonces \( f(x)^{g(x)} = 1 + |\sen 1/x| \) y, por tanto, no existe \( \lim_{x \to 0} f(x)^{g(x)} \).
+
+Estos ejemplos deben bastar para que se entienda el significado de la expresión "expresión indeterminada". El instrumento más eficaz para el cálculo del límite de expresiones indeterminadas es la llamada "Regla de L'Hôpital", que es objeto de interminables ejercicios en los cursos de Cálculo.
+
+Terminaremos estas consideraciones recordando que los límites más interesantes del Análisis no pueden calcularse directamente a partir de teoremas generales del tipo del Teorema 7, es decir, provienen de expresiones indeterminadas. Por ejemplo, \( e = \lim_{n \to \infty} (1 + 1/n)^n \) se origina de una indeterminación del tipo \( 1^\infty \). Otro ejemplo: la derivada \( f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \) proviene de una indeterminación del tipo \( 0/0 \).
+
+\section{Valores de adherencia de una función; lim sup y lim inf}
+
+En todo este párrafo, salvo mención en contrario, consideraremos un subconjunto \(X \subset \mathbb{R}\), una función \(f: X \to \mathbb{R}\) y un punto de acumulación \(\alpha \in X'\).
+
+Para todo \(\delta > 0\), indicaremos con la notación \(V_\delta\) el conjunto
+\[
+\{x \in X; 0 < |x - \alpha| < \delta\} = (X - \{\alpha\}) \cap (\alpha - \delta, \alpha + \delta).
+\]
+
+Diremos que \(f\) está acotada en una vecindad de \(\alpha\) cuando exista algún \(\delta > 0\) tal que \(f|V_\delta\) sea acotada. (Es decir, se tiene \(|f(x)| \leq k\) para todo \(x \in V_\delta\), donde \(k \in \mathbb{R}\) es una constante conveniente.)
+
+Un número real \(a\) se llama un valor de adherencia de \(f\) en el punto \(\alpha\) cuando existe una sucesión de puntos \(x_n \in X - \{\alpha\}\) tal que \(\lim_{n \to \infty} x_n = \alpha\) y \(\lim_{n \to \infty} f(x_n) = a\).
+
+El Teorema 6 asegura que si \(\lim_{x \to \alpha} f(x) = L\) entonces \(L\) es el único valor de adherencia de \(f\) en el punto \(\alpha\). Mostraremos que la recíproca es verdadera cuando \(f\) es acotada en una vecindad de \(\alpha\). Sin esta hipótesis de acotación, puede ocurrir que \(L \in \mathbb{R}\) sea el único valor de adherencia de \(f\) en el punto \(\alpha\) sin que valga \(L = \lim_{x \to \alpha} f(x)\). Por ejemplo, sea \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = 1\) si \(x\) es racional y \(f(x) = \frac{1}{x}\) si \(x\) es irracional. Entonces 1 es el único valor de adherencia de \(f\) en el punto 0 pero no existe \(\lim_{x \to 0} f(x)\).
+
+\textbf{Teorema 13.} Un número real \(a\) es valor de adherencia de \(f\) en el punto \(\alpha\) si, y solo si, para todo \(\delta > 0\) se tiene \(a \in \overline{f(V_\delta)}\).
+
+\textbf{Demostración.} Si \(a\) es valor de adherencia de \(f\) en el punto \(\alpha\), entonces \(a = \lim_{n \to \infty} f(x_n)\), \(x_n \in X - \{\alpha\}\), \(x_n \to \alpha\). Dado cualquier \(\delta > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n \in V_\delta\). Ahora bien, se tiene \(a = \lim_{n \to \infty} f(x_n)\). Luego \(a\) es límite de una sucesión de puntos pertenecientes a \(f(V_\delta)\), esto es, \(a \in \overline{f(V_\delta)}\). Recíprocamente, si \( c \in \overline{f(V_\delta)} \) para todo \( \delta > 0 \), entonces \( c \in \overline{f(V_{1/n})} \) para todo \( n \in \mathbb{N} \). Así, para todo \( n \in \mathbb{N} \) existe \( x_n \in V_{1/n} \) tal que \( |f(x_n) - c| < 1/n \). Se sigue que \( x_n \in X - \{a\} \), \( \lim x_n = a \) y \( \lim f(x_n) = c \). Luego \( c \) es un valor de adherencia de \( f \) en el punto \( a \).
+
+Indiquemos con \( VA(f; a) \) el conjunto de los valores de adherencia de \( f \) en el punto \( a \). El corolario siguiente es, en realidad, una forma equivalente de enunciar el Teorema 13.
+
+\textbf{Corolario 1.} \( VA(f; a) = \bigcap_{\delta > 0} \overline{f(V_\delta)} \).
+
+\textbf{Corolario 2.} \( VA(f; a) = \bigcap_{n=1}^{\infty} \overline{f(V_{1/n})} \).
+
+En efecto, si \( c \in \overline{f(V_\delta)} \), para cada \( \delta > 0 \), entonces, en particular, \( c \in \overline{f(V_{1/n})} \), para cada \( n \in \mathbb{N} \). Luego vale la inclusión \( VA(f; a) \subset \overline{f(V_{1/n})} \). Recíprocamente, si \( c \in \overline{f(V_{1/n})} \), para cada \( n \in \mathbb{N} \), entonces, dado arbitrariamente \( \delta > 0 \), hallamos \( n \) tal que \( 1/n < \delta \). Entonces \( c \in \overline{f(V_{1/n})} \subset \overline{f(V_\delta)} \). Luego \( c \in \overline{f(V_\delta)} \) para cada \( \delta > 0 \), o sea \( c \in VA(f; a) \). Esto demuestra el Corolario 2.
+
+\textbf{Corolario 3.} El conjunto de los valores de adherencia de \( f \) es cerrado. Si \( f \) es acotada en una vecindad de \( a \), entonces ese conjunto es compacto y no vacío.
+
+En efecto, \( VA(f; a) \) es siempre cerrado, como intersección de cerrados. Escribamos \( K_n = \overline{f(V_{1/n})} \). Si \( f \) es acotada en una vecindad de \( a \), existe \( n_0 \in \mathbb{N} \) tal que \( f(V_{1/n_0}) \) es acotado y, por tanto, su clausura \( K_{n_0} \) es compacta. Ahora bien, es claro que \( VA(f; a) = \bigcap_{n \geq n_0} K_n \), luego \( VA(f; a) \) es compacto y no vacío, en virtud del Teorema 12, Capítulo V.
+
+Ejemplo 10. Si \( f \) es no acotada en cualquier vecindad de \( a \) (es decir, si \( f(V_\delta) \) es un conjunto no acotado de números reales para todo \( \delta > 0 \)) entonces \( VA(f; a) \) puede no ser compacto. Por ejemplo, sea \( f: \mathbb{R} - \{0\} \to \mathbb{R} \) definida por \( f(x) = \frac{\sen(1/x)}{x} \). Entonces todo número real es valor de adherencia de \( f \) en el punto \( 0 \), es decir, \( VA(f; 0) = \mathbb{R} \). (Convenza de ello trazando la gráfica de \( f \).) También puede ocurrir que \( VA(f; a) \) sea vacío cuando \( f \) no es acotada en ninguna vecindad de \( a \). Tal es el caso con \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), definida por \( f(x) = \frac{1}{x} \). Se tiene \( VA(f; 0) = \emptyset \).
+
+Sea \( f \) acotada en una vecindad de \( a \). Por el Corolario 3 anterior, el conjunto de los valores de adherencia de \( f \) en el punto \( a \) es compacto y no vacío. Luego posee un mayor elemento y un menor elemento.
+
+Llamaremos límite superior de \( f \) en el punto \( a \) al mayor valor de adherencia de \( f \) en el punto \( a \). Escribiremos
+\[
+\lim_{x \to a} \sup f(x) = L
+\]
+
+para expresar que \( L \) es el límite superior de \( f \) en el punto \( a \).
+
+Análogamente, si \( l \) es el menor valor de adherencia de \( f \) en el punto \( a \), diremos que \( l \) es el límite inferior de \( f \) en el punto \( a \) y escribiremos
+\[
+\lim_{x \to a} \inf f(x) = l.
+\]
+
+El límite superior y el límite inferior de \( f \) en el punto \( a \) existen solo cuando \( f \) es acotada en una vecindad de \( a \). A veces se escribe \( \limsup f(x) = +\infty \) para indicar que \( f \) no es acotada superiormente en una vecindad de \( a \). (Cuando sea \( \lim_{x \to a} f(x) = +\infty \), se tendrá también \( \liminf f(x) = +\infty \).) Pero convenciones de esta naturaleza deben emplearse con extrema cautela porque, en esos casos, el \( \limsup \) no es un valor de adherencia. Continuaremos hablando de \( \limsup \) y \( \liminf \) solo cuando \( f \) sea acotada en una vecindad de \( a \).
+
+Por otro lado, consideraremos también valores de adherencia de \( f \) cuando \( x \to +\infty \) o \( x \to -\infty \). Las definiciones son análogas. Por ejemplo, \( c \in VA(f; +\infty) \) significa que \( c = \lim f(x_n) \), donde \( x_n \in X \), \( x_n \to +\infty \). Los hechos ya probados y por probar sobre \( VA(f; a) \) se extienden a los valores de adherencia en el infinito con adaptaciones evidentes. En este caso, se dice que \( f \) es acotada en una vecindad de \( +\infty \) (por ejemplo) cuando existen \( A > 0 \) y \( k > 0 \) tales que \( x \in X \), \( x > A \Rightarrow |f(x)| \leq k \).
+
+Ejemplo 11. Sea \( f : \mathbb{R} - \{0\} \to \mathbb{R} \) definida por \( f(x) = \sen \left( \frac{1}{x} \right) \). Entonces el conjunto de los valores de adherencia de \( f \) en el punto \( 0 \) es el intervalo \([-1, +1]\). (Véase el Ejemplo 6 anterior.) Luego
+\[
+\lim_{x \to 0} \sup \sen \left( \frac{1}{x} \right) = 1 \quad \text{y} \quad \liminf_{x \to 0} \sen \left( \frac{1}{x} \right) = -1.
+\]
+
+Sea \( f \) acotada en una vecindad de \( a \). Entonces existe \( \delta_0 > 0 \) tal que \( f(V_{\delta_0}) \) es un conjunto acotado. Con mayor razón, para todo \( \delta \in (0, \delta_0] \), \( f(V_{\delta}) \) es acotado. Definamos en el intervalo \( (0, \delta_0] \) las funciones \( \delta \mapsto L_{\delta} \) y \( \delta \mapsto l_{\delta} \) poniendo, para \( 0 < \delta \leq \delta_0 \),
+\[
+l_{\delta} = \inf f(V_{\delta}) = \inf_{x \in V_{\delta}} f(x);
+\]
+\[
+L_{\delta} = \sup f(V_{\delta}) = \sup_{x \in V_{\delta}} f(x).
+\]
+
+Se tiene \( l_{\delta_0} \leq l_{\delta} \leq L_{\delta} \leq L_{\delta_0} \) para todo \( \delta \in (0, \delta_0] \). Si \( 0 < \delta' \leq \delta'' \leq \delta_0 \), entonces \( V_{\delta'} \subset V_{\delta''} \) y, por tanto, \( l_{\delta'} \leq l_{\delta''} \) y \( L_{\delta'} \geq L_{\delta''} \). Así, \( l_{\delta} \) es una función monótona no creciente de \( \delta \), mientras que \( L_{\delta} \) es una función no decreciente de \( \delta \). Se sigue del Teorema 12 que existen los límites \( \lim_{\delta \to 0} l_{\delta} \) y \( \lim_{\delta \to 0} L_{\delta} \). De hecho, como tales funciones se hallan definidas solo para \( \delta > 0 \), esos son límites laterales (por la derecha). Vale entonces el
+
+\textbf{Teorema 14.} Sea \( f \) acotada en una vecindad de \( a \). Entonces
+\[
+\lim_{x \to a} \sup f(x) = \lim_{\delta \to 0} L_{\delta} \quad \text{y} \quad \liminf_{x \to a} f(x) = \lim_{\delta \to 0} l_{\delta}.
+\]
+
+\textbf{Demostración.} Sean \( L = \lim_{x \to a} \sup f(x) \) y \( L_0 = \lim_{\delta \to 0} L_{\delta} \). Como \( L \) es valor de adherencia, tenemos \( L \in \overline{f(V_{\delta})} \) para todo \( \delta > 0 \) y por tanto \( L \leq L_{\delta} \) para todo \( \delta \). Se sigue que \( L \leq L_0 \). Para mostrar que \( L_0 \leq L \), basta probar que \( L_0 \) es valor de adherencia de \( f \) en el punto \( a \). Por simplicidad, escribamos \( L_n \) en lugar de \( L_{1/n} \). Es claro que \( L_0 = \lim_{n \to \infty} L_n \). Se sigue de la definición de sup que, para cada \( n \in \mathbb{N} \), podemos obtener \( x_n \in V_{1/n} \), es decir, \( x_n \in X \),
+\[
+0 < |x_n - a| < 1/n, \quad \text{tal que} \quad L_n - \frac{1}{n} < f(x_n) \leq L_n.
+\]
+
+Se sigue que \(\lim x_n = a\) y \(\lim f(x_n) = \lim L_n = L_0\). Luego \(L_0\) es valor de adherencia, de donde \(L_0 \leq L\). Concluimos que \(L = L_0\). La segunda afirmación del teorema se demuestra de manera semejante.
+
+\textbf{Teorema 15.} Sea \(f\) acotada en una vecindad de \(a\). Para todo \(\varepsilon > 0\) existe \(\delta > 0\) tal que \(x \in X\), \(0 < |x - a| < \delta \Rightarrow l - \varepsilon < f(x) < L + \varepsilon\), donde \(l = \liminf_{x \to a} f(x)\) y \(L = \limsup_{x \to a} f(x)\).
+
+\textbf{Demostración.} Por el Teorema 14, \(l = \lim_{\delta \to 0} l_\delta\) y \(L = \lim_{\delta \to 0} L_\delta\). Luego, dado \(\varepsilon > 0\), podemos obtener \(\delta_1 > 0\) y \(\delta_2 > 0\) tales que \(0 < \delta < \delta_1 \Rightarrow l - \varepsilon < l_\delta\) y \(0 < \delta < \delta_2 \Rightarrow L_\delta < L + \varepsilon\). Sea \(\delta\) un número positivo menor que \(\delta_1\) y \(\delta_2\). Entonces \(l - \varepsilon < l_\delta \leq L_\delta < L + \varepsilon\). Siendo así, \(x \in V_\delta \Rightarrow l - \varepsilon < l_\delta \leq f(x) \leq L_\delta < L + \varepsilon\). Queda verificada la tesis del teorema.
+
+\textbf{Corolario.} Sea \(f\) acotada en una vecindad de \(a\). Entonces existe \(\lim_{x \to a} f(x)\) si, y solo si, \(f\) posee un único valor de adherencia en el punto \(a\).
+
+En efecto, si \(f\) posee un único valor de adherencia en el punto \(a\) entonces \(L = l\). El Teorema 15 nos dice que \(L = l\) es el límite de \(f\) en el punto \(a\). La recíproca está contenida en el Teorema 6.
+
+Observación: Como en el caso de sucesiones, \(L\) puede caracterizarse como el menor número que goza de la propiedad enunciada en el teorema anterior. Del mismo modo, \(l\) es el mayor número con aquella propiedad.
+
+\textbf{Ejercicios}
+
+1. En la definición del límite \(\lim_{x \to a} f(x)\), suprima la exigencia de que sea \(x \neq a\). Muestre que esta nueva definición coincide con la anterior en el caso \(a \notin X\) pero, para \(a \in X\), el nuevo límite existe si, y solo si, el antiguo existe y es igual a \(f(a)\).
+
+2. Considere el siguiente error tipográfico en la definición de límite:
+\[
+\forall \varepsilon > 0 \; \exists \delta > 0; \quad x \in X, \; 0 < |x - a| < \varepsilon \Rightarrow |f(x) - L| < \delta.
+\]
+Muestre que \( f \) cumple esta condición si, y solo si, es acotada en cualquier intervalo acotado de centro \( a \). En caso afirmativo, \( L \) puede ser cualquier número real.
+
+3. Sea \( X = Y \cup Z \), con \( a \in Y' \cap Z' \). Dada \( f: X \to \mathbb{R} \), tomemos \( g = f|_Y \) y \( h = f|_Z \). Si \( \lim_{x \to a} g(x) = L \) y \( \lim_{x \to a} h(x) = L \), entonces \( \lim_{x \to a} f(x) = L \).
+
+4. Sea \( f: \mathbb{R} - \{0\} \to \mathbb{R} \) definida por \( f(x) = \frac{1}{1 + e^{1/x}} \). Entonces \( \lim_{x \to 0^+} f(x) = 0 \) y \( \lim_{x \to 0^-} f(x) = 1 \).
+
+5. Sea \( f(x) = x + 10 \cdot \sin x \) para todo \( x \in \mathbb{R} \). Entonces \( \lim_{x \to +\infty} f(x) = +\infty \) y \( \lim_{x \to -\infty} f(x) = -\infty \). Pruebe lo mismo para la función \( g(x) = x + \frac{x}{2} \sin x \).
+
+6. Sea \( f: X \to \mathbb{R} \) monótona, con \( f(X) \subset [a, b] \). Si \( f(X) \) es denso en el intervalo \( [a, b] \), entonces, para cada \( c \in X'_+ \cap X'_- \), se tiene \( \lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) \). Si \( c \in X \), entonces este límite es igual a \( f(c) \).
+
+7. Demuestre el Teorema 2.
+
+8. Sean \( f: X \to \mathbb{R} \) monótona y \( a \in X'_+ \). Si existe una sucesión de puntos \( x_n \in X \) con \( x_n > a \), \( \lim x_n = a \) y \( \lim f(x_n) = L \), entonces \( \lim_{x \to a^+} f(x) = L \).
+
+9. Si \( f: X \to \mathbb{R} \) es monótona, entonces el conjunto de los puntos \( a \in X' \) para los cuales no se tiene \( \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) \) es numerable.
+
+10. Enuncie y demuestre para funciones el análogo del Teorema 14 del Capítulo IV.
+
+11. Dado \(a > 1\), defina \(f: \mathbb{Q} \to \mathbb{R}\) poniendo, para cada \(\frac{p}{q} \in \mathbb{Q}\), \(f(p/q) = a^{p/q}\). Pruebe que \(\lim_{x \to 0} f(x) = 1\). Concluya que para cada \(b \in \mathbb{R}\) existe \(\lim_{x \to b} f(x)\), siendo este límite igual a \(f(b)\) si \(b \in \mathbb{Q}\). Llame a este límite \(a^b\). Pruebe que \(a^b \cdot a^{b'} = a^{b+b'}\) y que \(b < b' \Rightarrow a^b < a^{b'}\).
+
+12. Dado \(a > 1\), defina \(g: \mathbb{R} \to \mathbb{R}\), poniendo \(g(x) = a^x\) (véase el ejercicio anterior). Pruebe que \(\lim_{x \to +\infty} g(x) = +\infty\) y \(\lim_{x \to -\infty} g(x) = 0\).
+
+13. Sea \(p: \mathbb{R} \to \mathbb{R}\) un polinomio real. Si el coeficiente del término de grado más elevado de \(p\) es positivo, entonces \(\lim_{x \to +\infty} p(x) = +\infty\) y \(\lim_{x \to -\infty} p(x)\) es igual a \(+\infty\) o a \(-\infty\), según que el grado de \(p\) sea par o impar.
+
+14. Determine el conjunto de los valores de adherencia de la función \(f: \mathbb{R} - \{0\} \to \mathbb{R}\), \(f(x) = \frac{\sen(1/x)}{1 + e^{1/x}}\), en el punto \(x = 0\).
+
+15. Si \(\lim_{x \to a} f(x) = L\) entonces \(\lim_{x \to a} |f(x)| = |L|\). Si \(\lim_{x \to a} |f(x)| = |L|\) entonces el conjunto de los valores de adherencia de \(f\) en el punto \(a\) es \(\{L\}\), \(\{-L\}\) o \(\{L, -L\}\).
+
+16. Dados un número real \(a\) y un conjunto compacto no vacío \(K\), obtenga una función \(f: \mathbb{R} \to \mathbb{R}\) tal que el conjunto de los valores de adherencia de \(f\) en el punto \(a\) sea \(K\).
+
+17. Sea \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = x\) si \(x\) es irracional, \(f\left(\frac{p}{q}\right) = q\) si \(\frac{p}{q}\) es una fracción irreducible con \(p > 0\), \(f(0) = 0\). Muestre que \(f\) es no acotada en cualquier intervalo no degenerado.
+
+18. Sean \(X, Y \subset \mathbb{R}\), \(f: X \to \mathbb{R}\), \(g: Y \to \mathbb{R}\) con \(f(X) \subset Y\). Si, para \(a \in X'\) y \(b \in Y'\) se tiene \(\lim_{x \to a} f(x) = b\), \(\lim_{y \to b} g(y) = c\) y, además, \(f(x) \neq b\) para todo \(x \in X - \{a\}\), entonces \(\lim_{x \to a} g(f(x)) = c\). Muestre que la condición \( b \in Y' \) se deduce de que \( f(x) \neq b \) para \( x \neq a \).
+
+19. Para todo número real \( x \), indiquemos con \([x]\) el mayor entero \(\leq x\). Muestre que si \( a \) y \( b \) son positivos, entonces
+\[
+\lim_{x \to 0^+} \frac{x}{a} \left[ \frac{b}{x} \right] = \frac{b}{a} \quad \text{y} \quad \lim_{x \to 0^+} \frac{b}{x} \left[ \frac{x}{a} \right] = 0.
+\]
+Pruebe también que, en el primer caso, el límite por la izquierda sería el mismo, pero en el segundo caso el límite es \( +\infty \) cuando \( x \to 0 \) por valores negativos.
+
+20. Dadas \( f, g: X \to \mathbb{R} \), defina \( h = \max\{f, g\}: X \to \mathbb{R} \) poniendo \( h(x) = f(x) \) si \( f(x) \geq g(x) \) y \( h(x) = g(x) \) si \( g(x) \geq f(x) \). Sea \( a \in X' \). Pruebe que si \( \lim_{x \to a} f(x) = L \) y \( \lim_{x \to a} g(x) = M \), entonces \( \lim_{x \to a} h(x) = N \), donde \( N \) es el mayor de los dos números \( L \) y \( M \).
+
+21. Sean \( f, g: X \to \mathbb{R} \) acotadas en una vecindad del punto \( a \in X' \). Muestre que
+\[
+\lim_{x \to a} \sup (f + g) \leq \lim_{x \to a} \sup f(x) + \lim_{x \to a} \sup g(x)
+\]
+y que
+\[
+\lim_{x \to a} \sup [-f(x)] = -\lim_{x \to a} \inf [f(x)].
+\]
+Enuncie y pruebe resultados análogos para \( \lim_{x \to a} \inf (f + g) \) y para el producto de dos funciones. (Véase el Ejercicio 17, Capítulo IV.)
+
+22. Sea \( f: [0, +\infty) \to \mathbb{R} \) una función acotada en cada intervalo acotado. Si \( \lim_{x \to +\infty} [f(x + 1) - f(x)] = L \), entonces
+\[
+\lim_{x \to +\infty} \frac{f(x)}{x} = L.
+\]
+
+23. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = x + a x \cdot \sen x \). Muestre que \( |a| < 1 \Rightarrow \lim_{x \to \pm\infty} f(x) = \pm\infty \).
+
+24. Sea \( p: \mathbb{R} \to \mathbb{R} \) un polinomio no constante. Dado \( b \in \mathbb{R} \), suponga que existe una sucesión \( (x_n) \) tal que \( \lim p(x_n) = b \in \mathbb{R} \). Pruebe que \( (x_n) \) es acotada y que el conjunto de sus valores de adherencia es no vacío y está contenido en \( p^{-1}(b) \). En particular, si existe una sucesión \( (x_n) \) tal que \( \lim p(x_n) = 0 \), entonces \( p \) tiene alguna raíz real.
 
 \newpage
 

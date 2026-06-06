@@ -20,8 +20,23 @@ El documento cubre los siguientes temas fundamentales:
    - Conjuntos finitos e infinitos
    - Conjuntos enumerables
    - Conjuntos no enumerables y argumento diagonal de Cantor
+   - Cuerpos y cuerpos ordenados
+   - Números reales
+   - Secuencias y límite de una sucesión
+   - Propiedades aritméticas de los límites
+   - Subsucesiones
+   - Sucesiones de Cauchy
+   - Límites infinitos
+   - Series numéricas
+   - Conjuntos abiertos y cerrados
+   - Puntos de acumulación
+   - Conjuntos compactos
+   - Definición y propiedades del límite de funciones
+   - Límites laterales
+   - Límites en el infinito y límites infinitos
+   - Valores de adherencia; lim sup y lim inf
 
-## 🛠️ Compilación
+## �️ Compilación
 
 Para compilar el documento LaTeX, asegúrate de tener una distribución de LaTeX instalada (TeX Live, MiKTeX, etc.) y ejecuta:
 
@@ -36,7 +51,7 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-## 📁 Estructura del proyecto
+## �📁 Estructura del proyecto
 
 ```
 ├── main.tex                       # Archivo principal del documento en LaTeX
