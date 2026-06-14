@@ -3270,7 +3270,7 @@ Procediendo así, estaremos atribuyendo un contenido intuitivo a los conceptos f
 
 \section{Conjuntos abiertos}
 
-Las ideas que presentaremos en este párrafo están motivadas por el siguiente tipo de observación: sea \(a\) un número real mayor que 2. Entonces, para todo \(x \in \mathbb{R}\) suficientemente próximo de \(a\) todavía se tiene \(x > 2\). Esto es, si desplazamos \(a\) un poquito hacia la izquierda (o, evidentemente, hacia la derecha) obtendremos aún un número mayor que 2. Ya no ocurre lo mismo cuando tomamos un número racional \(r\) y lo miramos como número racional. Desplazándolo un poco hacia cualquier lado, podemos encontrar un número irracional. Así, mientras que la propiedad de ser > 2 es estable (pequeños desplazamientos no la destruyen), la propiedad de ser racional es inestable. Los conjuntos definidos mediante propiedades estables son los que llamaremos abiertos. Pasemos ahora a las definiciones formales.
+Las ideas que presentaremos en este párrafo están motivadas por el siguiente tipo de observación: sea \(a\) un número real mayor que 2. Entonces, para todo \(x \in \mathbb{R}\) suficientemente próximo a \(a\) todavía se tiene \(x > 2\). Es decir, si desplazamos \(a\) un poco hacia la izquierda (o, evidentemente, hacia la derecha), seguimos obteniendo un número mayor que 2. Ya no ocurre lo mismo si tomamos un número racional \(r\) (considerado como elemento de \(\mathbb{Q}\)). Al desplazarlo un poco hacia cualquier lado, podemos encontrar un número irracional. Así, mientras que la propiedad de ser mayor que 2 es estable (pequeños desplazamientos no la destruyen), la propiedad de ser racional es inestable. Los conjuntos cuyos puntos satisfacen una propiedad estable (es decir, que se conserva bajo pequeñas perturbaciones) son los que llamaremos abiertos. Pasemos ahora a las definiciones formales.
 
 Dado un conjunto \(X \subset \mathbb{R}\), un punto \(x \in X\) se llama punto interior de \(X\) cuando existe un intervalo abierto \((a, b)\) tal que \(x \in (a, b) \subset X\). (Esto quiere decir que todos los puntos suficientemente próximos a \(x\) todavía pertenecen al conjunto \(X\).)
 
@@ -3396,9 +3396,9 @@ Cuando \( X \subset \mathbb{R} \) es no vacío, acotado y cerrado, se tiene \( \
 
 Ejemplos.
 
-10. La cerradura del intervalo abierto \( (a, b) \) es el intervalo cerrado \( [a, b] \). En efecto, los puntos \( a \) y \( b \) son adherentes al intervalo abierto \( (a, b) \) pues \( a = \lim_{n \to \infty} \left( a + \frac{1}{n} \right) \) y \( b = \lim_{n \to \infty} \left( b - \frac{1}{n} \right) \). Luego, el fecho de \((a, b)\) incluye al menos el intervalo cerrado \([a, b]\). Por otro lado, si \(a < x_n < b\) y \(\lim x_n = c\), entonces \(a \leq c \leq b\). Luego todo punto adherente al intervalo abierto \((a, b)\) pertenece al intervalo cerrado \([a, b]\). Evidentemente, \([a, b]\) es también el fecho de los intervalos semiabiertos \([a, b)\) y \((a, b]\). Además, está claro que el fecho de \([a, b]\) es el propio \([a, b]\), luego todo intervalo limitado cerrado es un conjunto cerrado. También son cerrados los conjuntos \([a, +\infty)\), \((-\infty, b]\) y \((-\infty, +\infty) = \mathbb{R}\). Nótese el caso particular \(a = b\), que da \([a, a] = \{a\}\). Así, todo conjunto reducido a un único punto es cerrado.
+10. La cerradura del intervalo abierto \( (a, b) \) es el intervalo cerrado \( [a, b] \). En efecto, los puntos \( a \) y \( b \) son adherentes al intervalo abierto \( (a, b) \) pues \( a = \lim_{n \to \infty} \left( a + \frac{1}{n} \right) \) y \( b = \lim_{n \to \infty} \left( b - \frac{1}{n} \right) \). Luego, la clausura de \((a, b)\) incluye al menos el intervalo cerrado \([a, b]\). Por otro lado, si \(a < x_n < b\) y \(\lim x_n = c\), entonces \(a \leq c \leq b\). Luego todo punto adherente al intervalo abierto \((a, b)\) pertenece al intervalo cerrado \([a, b]\). Evidentemente, \([a, b]\) es también la clausura de los intervalos semiabiertos \([a, b)\) y \((a, b]\). Además, está claro que la clausura de \([a, b]\) es el propio \([a, b]\), luego todo intervalo limitado cerrado es un conjunto cerrado. También son cerrados los conjuntos \([a, +\infty)\), \((-\infty, b]\) y \((-\infty, +\infty) = \mathbb{R}\). Nótese el caso particular \(a = b\), que da \([a, a] = \{a\}\). Así, todo conjunto reducido a un único punto es cerrado.
 
-11. El fecho del conjunto \(\mathbb{Q}\) de los números racionales es la recta \(\mathbb{R}\). También el fecho del conjunto \(\mathbb{R} - \mathbb{Q}\) de los números irracionales es \(\mathbb{R}\). En particular, \(\mathbb{Q}\) y \(\mathbb{R} - \mathbb{Q}\) no son conjuntos cerrados.
+11. La clausura del conjunto \(\mathbb{Q}\) de los números racionales es la recta \(\mathbb{R}\). También la clausura del conjunto \(\mathbb{R} - \mathbb{Q}\) de los números irracionales es \(\mathbb{R}\). En particular, \(\mathbb{Q}\) y \(\mathbb{R} - \mathbb{Q}\) no son conjuntos cerrados.
 
 \textbf{Teorema 4.} Un conjunto \(F \subset \mathbb{R}\) es cerrado si, y solo si, su complementario \(\mathbb{R} - F\) es abierto.
 
@@ -3635,13 +3635,11 @@ La longitud del intervalo \([a, b]\) y del intervalo \((a, b)\) es el número \(
 \textbf{Proposición 1.} Si \([a, b] \subset \bigcup_{i=1}^n (a_i, b_i)\) entonces \(b - a < \sum_{i=1}^n (b_i - a_i)\).
 
 \textbf{Demostración.} Podemos admitir, sin pérdida de generalidad, que todos los intervalos abiertos \((a_i, b_i)\) intersecan \([a, b]\). Sean \(c_1 < c_2 < \cdots < c_k\) los números \(a_i\) y \(b_i\) ordenados crecientemente. Está claro que ningún intervalo \((c_j, c_{j+1})\) contiene un punto \(a_i\) o un punto \(b_i\). Además, \(c_1 < a\) y \(b < c_k\). Luego \(b - a < c_k - c_1\), esto es:
-
 \[
 b - a < (c_k - c_{k-1}) + \cdots + (c_3 - c_2) + (c_2 - c_1).
 \]
 
 Mostraremos ahora que cada intervalo \((c_j, c_{j+1})\) está contenido en algún \((a_i, b_i)\). Para ello, examinaremos las tres posiciones posibles del punto \(c_j\) con respecto al intervalo \([a, b]\). Primera: \(c_j \in [a, b]\). En este caso, \(c_j \in (a_i, b_i)\) para algún \(i\); como \(b_i\) no puede estar entre \(c_j\) y \(c_{j+1}\), se tiene entonces \((c_j, c_{j+1}) \subset (a_i, b_i)\). Segunda: \(c_j < a\); entonces \(c_j\) no puede ser un \(b_i\) porque eso haría que \((a_i, b_i)\) fuera disjunto de \([a, b]\). Luego se tiene \(c_j = a_i\) para algún \(i\). Como \(b_i\) no puede estar entre \(c_j\) y \(c_{j+1}\), se tiene \((c_j, c_{j+1}) \subset (a_i, b_i)\). Tercera: \(c_j > b\). Esto implica \(c_{j+1} > b\) y, como antes, obliga a que \(c_{j+1} = b_i\) para algún \(i\). Como \(a_i \notin (c_j, c_{j+1})\), concluimos que \(a_i \leq c_j\), de donde \((c_j, c_{j+1}) \subset (a_i, b_i)\). Ahora bien, para cada \(i = 1, 2, \ldots, n\), tenemos \(a_i = c_p\) y \(b_i = c_{p+q}\). De esta manera, podemos escribir:
-
 \[
 b_i - a_i = (c_{p+q} - c_{p+q-1}) + \cdots + (c_{p+1} - c_p).
 \]
@@ -3651,7 +3649,6 @@ La suma \(\sum_{i=1}^n (b_i - a_i)\) puede, por tanto, descomponerse en sumandos
 \textbf{Proposición 2.} Si \([a, b] \subset \bigcup_{n=1}^\infty (a_n, b_n)\) entonces \(b - a < \sum_{n=1}^\infty (b_n - a_n)\).
 
 \textbf{Demostración.} Por el Teorema de Borel-Lebesgue, existen \(n_1, n_2, \ldots, n_k\) tales que
-
 \[
 [a, b] \subset (a_{n_1}, b_{n_1}) \cup \cdots \cup (a_{n_k}, b_{n_k}).
 \]
@@ -3929,7 +3926,7 @@ Expuesta la dificultad, la solución es simple. Basta imponer que \(\lim_{y \to 
 1. Sea \(f: \mathbb{R} \to \mathbb{R}\) la aplicación identidad, esto es, \(f(x) = x\) para todo \(x \in \mathbb{R}\). Entonces es evidente que \(\lim_{x \to a} f(x) = a\) para cualquier \(a \in \mathbb{R}\). El Teorema 7 nos da \(\lim_{x \to a} [f(x) \cdot f(x)] = a^2\), o sea, \(\lim_{x \to a} x^2 = a^2\). El mismo teorema, aplicado \(n-1\) veces, nos proporciona \(\lim_{x \to a} x^n = a^n\), para todo \(n \in \mathbb{N}\). Se sigue de ahí (con ayuda de las otras partes del teorema) que, para todo polinomio
 \( p(x) = a_0x^n + a_1x^{n-1} + \cdots + a_{n-1}x + a_n \), se tiene \(\lim_{x \to a} p(x) = p(a)\), sea cual sea \( a \in \mathbb{R} \). También para toda función racional \( f(x) = \frac{p(x)}{q(x)} \), cociente de dos polinomios, se tiene \(\lim_{x \to a} f(x) = f(a)\), siempre que el denominador no se anule en el punto \( a \), es decir, \( q(a) \neq 0 \). Cuando \( q(a) = 0 \), entonces el polinomio \( q(x) \) es divisible por \( (x - a) \). Escribamos entonces \( q(x) = (x - a)^m q_1(x) \), donde \( q_1(a) \neq 0 \) y \( m \in \mathbb{N} \). Pongamos también \( p(x) = (x - a)^n p_1(x) \), con \( p_1(a) \neq 0 \). Si \( m = n \), entonces \(\lim_{x \to a} f(x) = p_1(a)/q_1(a)\), porque \( f(x) = p_1(x)/q_1(x) \) para todo \( x \neq a \). Si \( n > m \), entonces \(\lim_{x \to a} f(x) = 0\), pues \( f(x) = (x - a)^{n-m} \cdot [p_1(x)/q_1(x)] \) para todo \( x \neq a \). Finalmente, si \( n < m \), entonces \(\lim_{x \to a} f(x)\) no existe, pues \( f(x) = p_1(x)/[(x - a)^{m-n} \cdot q_1(x)] \), donde el denominador tiene límite cero y el numerador no. (Véase la observación siguiente al Teorema 7.)
 
-2. Sean \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), \( g: \mathbb{R} - \{1\} \to \mathbb{R} \) y \( h: \mathbb{R} - \{0\} \to \mathbb{R} \) dadas por \( f(x) = c \cdot x \cdot x^2 - 1 \cdot \frac{1}{x} \), \( g(x) = \) y \( h(x) = \). Se tiene \( f(x) = c \) para todo \( x \neq 0 \) y \( g(x) = x+1 \) para todo \( x \neq 1 \). Luego \(\lim_{x \to 0} f(x) = c \) y \(\lim_{x \to 1} g(x) = 2\). (Nótese que \( f(0) \) y \( g(1) \) no están definidos.) Por otro lado, no existe \(\lim_{x \to 0} h(x)\), pues \( h \) es el cociente de dos funciones, de las cuales el denominador tiene límite cero y el numerador tiene límite 1. (Véase la observación posterior al Teorema 7.)
+2. Sean \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), \( g: \mathbb{R} - \{1\} \to \mathbb{R} \) y \( h: \mathbb{R} - \{0\} \to \mathbb{R} \) dadas por \( f(x) = \frac{c \cdot x}{x} \), \( g(x) = \frac{x^2 - 1}{x - 1} \) y \( h(x) = \frac{1}{x} \). Se tiene \( f(x) = c \) para todo \( x \neq 0 \) y \( g(x) = x + 1 \) para todo \( x \neq 1 \). Luego \( \lim_{x \to 0} f(x) = c \) y \( \lim_{x \to 1} g(x) = 2 \). (Nótese que \( f(0) \) y \( g(1) \) no están definidos.) Por otro lado, no existe \( \lim_{x \to 0} h(x) \), pues \( h \) es el cociente de dos funciones, de las cuales el denominador tiene límite cero y el numerador tiene límite \( 1 \). (Véase la observación después del Teorema 7.)
 
 3. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = 0 \) si \( x \) es racional y \( f(x) = 1 \) si \( x \) es irracional. Cualquiera que sea \( a \in \mathbb{R} \), no existe \(\lim_{x \to a} f(x)\), en virtud del Teorema 6: haciendo \( x_n \) tender hacia \( a \) mediante valores racionales tendremos \( f(x_n) = 0 \), luego \( f(x_n) \to 0 \). Pero haciendo \( x_n \to a \) mediante valores irracionales tendremos \( f(x_n) = 1 \). Si ponemos \( g(x) = (x - a)f(x) \), tendremos \(\lim_{x \to a} g(x) = 0\).
 
@@ -4231,6 +4228,492 @@ Enuncie y pruebe resultados análogos para \( \lim_{x \to a} \inf (f + g) \) y p
 23. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = x + a x \cdot \sen x \). Muestre que \( |a| < 1 \Rightarrow \lim_{x \to \pm\infty} f(x) = \pm\infty \).
 
 24. Sea \( p: \mathbb{R} \to \mathbb{R} \) un polinomio no constante. Dado \( b \in \mathbb{R} \), suponga que existe una sucesión \( (x_n) \) tal que \( \lim p(x_n) = b \in \mathbb{R} \). Pruebe que \( (x_n) \) es acotada y que el conjunto de sus valores de adherencia es no vacío y está contenido en \( p^{-1}(b) \). En particular, si existe una sucesión \( (x_n) \) tal que \( \lim p(x_n) = 0 \), entonces \( p \) tiene alguna raíz real.
+
+\newpage
+
+\chapter{Funciones Continuas}
+
+La idea de función continua es el tema central de la Topología. El estudio de las funciones continuas reales de una variable real, que haremos en este capítulo, tiene el doble propósito de establecer los hechos y conceptos topológicos esenciales para el Análisis y, al mismo tiempo, proporcionar al lector un primer contacto con las nociones básicas de la Topología, a modo de introducción a esta disciplina.
+
+Después de definir la noción de función continua, demostraremos sus propiedades más elementales y examinaremos (en el §2) las diferentes maneras en que una función puede dejar de ser continua. A continuación, estableceremos las relaciones entre la continuidad y las propiedades topológicas de los subconjuntos de la recta que fueron introducidas en el Capítulo V. Finalmente, estudiaremos con cierto detalle el importante concepto de continuidad uniforme.
+
+\section{La noción de función continua}
+
+Una función \(f: X \to \mathbb{R}\) se dice continua en el punto \(a \in X\) cuando es posible hacer \(f(x)\) arbitrariamente próximo de \(f(a)\) con tal de que se tome \(x\) suficientemente próximo de \(a\). En términos precisos, diremos que \(f: X \to \mathbb{R}\) es continua en punto \(a \in X\) cuando, para todo \(\varepsilon > 0\) dado arbitrariamente, podamos hallar \(\delta > 0\) tal que \(x \in X\) y \(|x - a| < \delta\) impliquen \(|f(x) - f(a)| < \varepsilon\). Simbólicamente:
+\[
+\forall \varepsilon > 0 \; \exists \delta > 0 \; ; \; x \in X, \; |x - a| < \delta \Rightarrow |f(x) - f(a)| < \varepsilon.
+\]
+
+En términos de intervalos: dado cualquier intervalo abierto \(J\) conteniendo \(f(a)\), existe un intervalo abierto \(I\), conteniendo \(a\), tal que \(f(I \cap X) \subset J\). Siempre que lo deseemos, podemos tomar \(J = (f(a) - \varepsilon, f(a) + \varepsilon)\), con \(\varepsilon > 0\), e \(I = (a - \delta, a + \delta)\), con \(\delta > 0\).
+
+Diremos, simplemente, que \(f: X \to \mathbb{R}\) es continua cuando \(f\) sea continua en todos los puntos de \(X\).
+
+Observaciones:
+
+1. Al contrario de la definición de límite, sólo tiene sentido preguntar si \(f\) es continua en el punto \(a\) cuando \(a \in X\).
+
+2. Si \(a\) es un punto aislado de \(X\), entonces toda función \(f: X \to \mathbb{R}\) es continua en el punto \(a\). (Dado cualquier \(\varepsilon > 0\), basta tomar \(\delta > 0\) tal que \((a - \delta, a + \delta) \cap X = \{a\}\). Entonces \(|x - a| < \delta\) con \(x \in X\) implica \(x = a\) y por lo tanto \(|f(x) - f(a)| = 0 < \varepsilon\).) En particular, si todos los puntos de \(X\) son aislados, entonces cualquier función \(f: X \to \mathbb{R}\) es continua.
+
+3. Sea ahora \(a \in X\) un punto de acumulación de \(X\). Entonces \(f: X \to \mathbb{R}\) es continua en el punto \(a\) si, y solo si, \(\lim_{x \to a} f(x) = f(a)\). Esto reduce esencialmente la noción de función continua a la de límite. Recíprocamente, podríamos definir \(\lim_{x \to a} f(x) = L\) mediante la condición de que sea continua en el punto \(a\) la función \(g: X \cup \{a\} \to \mathbb{R}\), donde \(g(a) = L\) y \(g(x) = f(x)\) para \(x \in X - \{a\}\).
+
+4. Al investigar la continuidad de una función \(f\) en un punto o en un conjunto, es fundamental tener siempre en cuenta el dominio de \(f\). Por ejemplo, dada \(f: X \to \mathbb{R}\), sea \(Y \subset X\). Consideremos las dos afirmaciones:
+
+(A) La función \(f\) es continua en cada punto \(a \in Y\);
+
+(B) La restricción \(f|Y\) es una función continua.
+
+Evidentemente, (A) \(\Rightarrow\) (B) pero el recíproco es falso: basta considerar \(Y\) finito o, más generalmente, un conjunto \(Y\) cuyos puntos son todos aislados. Entonces \(f|Y\) es siempre continua pero \(f: X \to \mathbb{R}\) puede ser discontinua en algún punto de \(Y\). El hecho es que (A) se refiere al comportamiento de \(f(x)\) con \(x\) próximo de \(a\), para cualquier \(x\) en \(X\). Por otro lado, (B) es una afirmación que concierne sólo a los puntos de \(Y\).
+
+Ejemplo 1. Toda función \(f: \mathbb{Z} \to \mathbb{R}\) es continua porque todo punto de \(\mathbb{Z}\) es aislado. Por la misma razón, toda función definida en el conjunto \(X = \{1, 1/2, \dots, 1/n, \dots\}\) es continua. Por otro lado, si \(Y = \{0, 1, 1/2, \dots, 1/n, \dots\}\) entonces una función \(f: Y \to \mathbb{R}\) es continua si, y solo si, es continua en el punto \(0\) (ya que los demás puntos de \(Y\) son todos aislados). En otras palabras, \(f: Y \to \mathbb{R}\) es continua si, y solo si, \(f(0) = \lim_{n \to \infty} f(1/n)\).
+
+Las proposiciones que enunciamos a continuación se deducen inmediatamente de los hechos análogos demostrados para límites en el capítulo anterior, junto con la Observación 3 hecha anteriormente. A modo de ejercicio, el lector puede adaptar aquellas demostraciones al contexto de funciones continuas.
+
+\textbf{Teorema 1.} Toda restricción de una función continua es continua. Más precisamente: sea \(f: X \to \mathbb{R}\) continua en el punto \(a \in X\). Si \(a \in Y \subset X\) y \(g = f|Y\), entonces \(g: Y \to \mathbb{R}\) es continua en el punto \(a\). Cuando \(Y = I \cap X\), donde \(I\) es un intervalo abierto conteniendo \(a\), entonces vale el recíproco: si \(g = f|Y\) es continua en el punto \(a\) entonces \(f: X \to \mathbb{R}\) también es continua en el punto \(a\).
+
+Destaquemos la parte final del Teorema 1. Ella dice que la continuidad de una función \(f\) es un fenómeno local, o sea, si \(f\) coincide, en las proximidades del punto \(a\), con una función que es continua en \(a\), entonces \(f\) también es continua en ese punto. (Coincidir con una función continua en las proximidades de \(a\) significa que, para un cierto intervalo abierto \(I\), conteniendo \(a\), la restricción \(f|(I \cap X)\) es continua en el punto \(a\).)
+
+\textbf{Teorema 2.} Si \(f: X \to \mathbb{R}\) es continua en el punto \(a \in X\), entonces \(f\) es acotada en una vecindad de \(a\), es decir, existe \(\delta > 0\) tal que, poniendo \(U_\delta = X \cap (a - \delta, a + \delta)\), el conjunto \(f(U_\delta)\) es acotado.
+
+\textbf{Teorema 3.} Si \(f, g: X \to \mathbb{R}\) son continuas en el punto \(a \in X\) y \(f(a) < g(a)\), entonces existe \(\delta > 0\) tal que \(f(x) < g(x)\) para todo \(x \in X\) con \(|x - a| < \delta\).
+
+\textbf{Corolario.} Sean \(f: X \to \mathbb{R}\) continua en el punto \(a \in X\) y \(k \in \mathbb{R}\) una constante. Si \(f(a) < k\), entonces existe \(\delta > 0\) tal que \(f(x) < k\) para todo \(x \in X\) con \(|x - a| < \delta\).
+
+El corolario del Teorema 3 es un hecho simple, pero extremadamente importante en las aplicaciones. Vale la pena, por tanto, dar su demostración explícita. Hela aquí:
+
+Siendo \(f(a) < k\), tomamos \(\varepsilon = k - f(a) > 0\). Por la definición de función continua, a este \(\varepsilon\) le corresponde un \(\delta > 0\) tal que \(x \in X, |x - a| < \delta \Rightarrow f(a) - \varepsilon < f(x) < f(a) + \varepsilon\). Pero \(f(a) + \varepsilon = k\). Luego todo punto \(x \in X\) cuya distancia al punto \(a\) sea menor que \(\delta\) cumple \(f(x) < k\).
+
+Evidentemente, un resultado análogo es válido si \(f(a) > k\): existe \(\delta > 0\) tal que \(x \in X\) y \(|x - a| < \delta \Rightarrow f(x) > k\). Lo mismo ocurre si \(f(a) \neq k\): debe existir \(\delta > 0\) tal que \(x \in X\) y \(|x - a| < \delta \Rightarrow f(x) \neq k\). (En efecto, si \(f(a) \neq k\), se tiene \(f(a) > k\) o bien \(f(a) < k\). Se aplica entonces uno de los dos resultados anteriores.)
+
+Supongamos ahora que \(f\) sea continua en todos los puntos de \(X\) y consideremos el conjunto \(A\) de los puntos \(a \in X\) tales que \(f(a) > k\), es decir,
+\[
+A = \{a \in X \; ; \; f(a) > k\}.
+\]
+
+¿Qué se puede decir sobre \(A\)? Por lo que hemos visto, para cada punto \(a \in A\), existe un intervalo abierto \(I_a = (a - \delta, a + \delta)\) tal que \(x \in I_a \cap X \Rightarrow f(x) > k\). Esto significa que \(a \in I_a \cap X \subset A\) para todo \(a \in A\). Sea \(U = \bigcup_{a \in A} I_a\). Entonces \(U\) es un conjunto abierto y \(a \in U \cap X \subset A\) para todo \(a \in A\), o sea, \(A \subset U \cap X \subset A\); en suma, \(A = U \cap X\). En particular, cuando \(X\) es abierto, el conjunto \(A\) es abierto, como intersección \(A = U \cap X\) de dos abiertos.
+
+\textbf{Teorema 4.} Para que \(f: X \to \mathbb{R}\) sea continua en el punto \(a \in X\) es necesario y suficiente que se tenga \(\lim f(x_n) = f(a)\) para toda sucesión de puntos \(x_n \in X\) con \(\lim x_n = a\).
+
+\textbf{Corolario 1.} Para que \(f\) sea continua en el punto \(a\) es necesario que exista \(\lim f(x_n)\) y sea independiente de la sucesión de números \(x_n \in X\) con \(\lim x_n = a\).
+
+\textbf{Corolario 2.} A fin de que \(f\) sea continua en el punto \(a\), es suficiente que, para toda sucesión de puntos \(x_n \in X\) con \(\lim x_n = a\), exista \(\lim f(x_n)\).
+
+Dadas las funciones \(f, g: X \to \mathbb{R}\), sabemos definir nuevas funciones \(f + g: X \to \mathbb{R}\), \(f - g: X \to \mathbb{R}\), \(f \cdot g: X \to \mathbb{R}\) y \(f/g: X_0 \to \mathbb{R}\), donde \(X_0 = X - g^{-1}(0) = \{x \in X \; ; \; g(x) \neq 0\}\). Tenemos \((f + g)(x) = f(x) + g(x)\), \((f - g)(x) = f(x) - g(x)\), \((f \cdot g)(x) = f(x) \cdot g(x)\) y \((f/g)(x) = f(x)/g(x)\). El Teorema 7 del Capítulo VI nos da también:
+
+\textbf{Teorema 5.} Si \(f, g: X \to \mathbb{R}\) son continuas en el punto \(a \in X\), entonces \(f + g\), \(f - g\) y \(f \cdot g\) son continuas en ese mismo punto. Si \(g(a) \neq 0\), entonces \(f/g\) también es continua en el punto \(a\).
+
+En particular, si \(f\) es continua en el punto \(a\) entonces \(c \cdot f\) es continua en el mismo punto, para cualquier \(c \in \mathbb{R}\). También lo mismo ocurre con \(1/f\) si \(f(a) \neq 0\).
+
+\textbf{Teorema 6.} La compuesta de dos funciones continuas es continua. O sea, si \(f: X \to \mathbb{R}\) y \(g: Y \to \mathbb{R}\) son continuas en los puntos \(a \in X\), \(b = f(a) \in Y\), respectivamente, y, además, \(f(X) \subset Y\), entonces \(g \circ f: X \to \mathbb{R}\) es continua en el punto \(a\).
+
+La restricción de una función continua \(g: Y \to \mathbb{R}\) a un subconjunto \(X \subset Y\) es un caso particular de función compuesta: tenemos \(g|X = g \circ f\), donde \(f: X \to Y\) es la inclusión, esto es, \(f(x) = x\) para todo \(x \in X\).
+
+Ejemplos.
+
+2. Como la función identidad \(x \mapsto x\) es evidentemente continua en toda la recta, lo mismo ocurre con la función \(x \mapsto x^n\) (\(n \in \mathbb{N}\)) en virtud del Teorema 5. Del mismo teorema resulta que todo polinomio \(p: \mathbb{R} \to \mathbb{R}\), \(p(x) = a_n x^n + \cdots + a_1 x + a_0\) es una función continua. También es continua toda función racional \(f(x) = p(x)/q(x)\) (cociente de dos polinomios) en los puntos donde está definida, es decir, en los puntos donde su denominador no se anula.
+
+3. Sea \(f: \mathbb{R} \to \mathbb{R}\) definida así: para \(x \geq 5\), \(f(x) = x + 1\). Si \(x \leq 5\), entonces \(f(x) = 16 - 2x\). Entonces \(f\) es continua en todo punto \(a > 5\) pues coincide con la función continua \(g(x) = x + 1\) en el intervalo abierto \((5, +\infty)\), el cual contiene a \(a\). Por motivo análogo, \(f\) es continua en todo punto \(a < 5\). También en el punto \(5\), \(f\) es continua, pues \(\lim_{x \to 5^+} f(x) = \lim_{x \to 5^-} f(x) = 6 = f(5)\).
+
+4. Sea \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = \frac{x}{|x|}\) si \(x \neq 0\) y \(f(0) = 1\). O sea, \(f(x) = 1\) para \(x \geq 0\) y \(f(x) = -1\) cuando \(x < 0\). Entonces \(f\) es continua en todos los puntos \(x \neq 0\), pero no es continua en el punto \(x = 0\), porque no existe \(\lim_{x \to 0} f(x)\).
+
+El motivo que asegura la continuidad de la función del Ejemplo 3, pero permite la discontinuidad en el Ejemplo 4, es proporcionado por el Teorema 7. Sea \(X \subset F_1 \cup F_2\), donde \(F_1\) y \(F_2\) son cerrados. Si la función \(f: X \to \mathbb{R}\) es tal que sus restricciones \(f|(X \cap F_1)\) y \(f|(X \cap F_2)\) son continuas, entonces \(f\) es continua.
+
+\textbf{Demostración.} Sea \(a \in X\). Para mostrar que \(f\) es continua en el punto \(a\), supongamos dado \(\varepsilon > 0\). Hay tres posibilidades. Primera: \(a \in F_1 \cap F_2\); entonces, como \(f|(X \cap F_1)\) es continua en el punto \(a\), existe \(\delta_1 > 0\) tal que \(x \in X \cap F_1,\ |x - a| < \delta_1 \Rightarrow |f(x) - f(a)| < \varepsilon\). Análogamente, existe \(\delta_2 > 0\) tal que \(x \in X \cap F_2,\ |x - a| < \delta_2 \Rightarrow |f(x) - f(a)| < \varepsilon\). Tomemos \(\delta = \min\{\delta_1, \delta_2\}\). Si \(x \in X\) y \(|x - a| < \delta\), entonces \(|x - a| < \delta_1\) y \(|x - a| < \delta_2\). Luego, ya sea \(x \in F_1\) o \(x \in F_2\), se cumple \(|f(x) - f(a)| < \varepsilon\). La segunda posibilidad es \(a \in F_1\) y \(a \notin F_2\). Elegimos \(\delta_1 > 0\) tal que \(x \in X \cap F_1,\ |x - a| < \delta_1 \Rightarrow |f(x) - f(a)| < \varepsilon\). Como \(F_2\) es cerrado, podemos obtener \(\delta_2 > 0\) tal que no exista \(x \in F_2\) con \(|x - a| < \delta_2\). (Recuerde que \(a \notin F_2\).) Sea \(\delta = \min\{\delta_1, \delta_2\}\); si \(x \in X\) y \(|x - a| < \delta\), entonces \(x \in F_1\) y \(|x - a| < \delta_1\), luego \(|f(x) - f(a)| < \varepsilon\). La tercera posibilidad es \(a \in F_2\) y \(a \notin F_1\); sería tratada de manera análoga a la segunda. En cualquier caso, \(f: X \to \mathbb{R}\) es continua en el punto \(a\).
+
+\textbf{Corolario.} Sea \(X = F_1 \cup F_2\), donde \(F_1\) y \(F_2\) son cerrados. Si la función \(f: X \to \mathbb{R}\) es tal que sus restricciones \(f|F_1\) y \(f|F_2\) son continuas, entonces \(f\) es continua.
+
+En el caso del corolario, el dominio de la función \(f\) es un conjunto cerrado, lo que no ocurre en general. Es evidente, sin embargo, que el Teorema 7 (y su corolario) es válido cuando se tiene un número finito de conjuntos cerrados \(F_1, \dots, F_n\). El caso de una infinidad de cerrados es obviamente falso: todo conjunto \(X\) es unión de cerrados (a saber, sus puntos) y \(f(\{x\})\) es siempre continua, sea cual sea \(x \in X\), pero \(f\) puede no ser continua.
+
+Ahora podemos entender mejor los dos ejemplos anteriores. En el Ejemplo 3, tenemos \(\mathbb{R} = F \cup G\), donde los conjuntos \(F = (-\infty, 5]\) y \(G = [5, +\infty)\) son cerrados. Como \(f|F\) y \(f|G\) son continuas, se sigue que \(f: \mathbb{R} \to \mathbb{R}\) es continua. En el Ejemplo 4, tenemos \(f: \mathbb{R} \to \mathbb{R}\), tal que, poniendo \(A = (-\infty, 0)\) y \(B = [0, +\infty)\), se cumple \(\mathbb{R} = A \cup B\) y las restricciones \(f|A\) y \(f|B\) son continuas. Pero \(A\) no es cerrado. Este hecho posibilita que \(f\) sea discontinua.
+
+En el caso de abiertos, en lugar de cerrados, el resultado aún vale. Más aún: es admisible cubrir \(X\) con una infinidad de esos conjuntos. El teorema siguiente está esencialmente contenido en la segunda parte del Teorema 1, pero lo demostraremos de todos modos.
+
+\textbf{Teorema 8.} Sea \(X \subset \bigcup_{\lambda \in L} A_\lambda\) un recubrimiento de \(X\) mediante los abiertos \(A_\lambda\). Si una función \(f: X \to \mathbb{R}\) es tal que, para todos \(\lambda \in L\), las restricciones \(f|(A_\lambda \cap X)\) son continuas, entonces \(f\) es continua.
+
+\textbf{Demostración.} Tomemos \(a \in X\). Para mostrar que \(f: X \to \mathbb{R}\) es continua en el punto \(a\), supongamos dado \(\varepsilon > 0\). Existe algún \(\lambda \in L\) tal que \(a \in A_\lambda\). Como \(A_\lambda\) es abierto, existe \(\delta_1 > 0\) tal que \(|x - a| < \delta_1 \Rightarrow x \in A_\lambda\). Como \(f|(A_\lambda \cap X)\) es continua, existe \(\delta_2 > 0\) tal que \(x \in A_\lambda \cap X,\ |x - a| < \delta_2 \Rightarrow |f(x) - f(a)| < \varepsilon\). Sea \(\delta\) el menor de los números \(\delta_1, \delta_2\). Si \(x \in X\) y \(|x - a| < \delta\), entonces \(x \in A_\lambda \cap X\) y \(|x - a| < \delta_2\). Luego \(|f(x) - f(a)| < \varepsilon\). Esto prueba que \(f: X \to \mathbb{R}\) es continua en el punto \(a\).
+
+\textbf{Corolario.} Sea \(X = \bigcup_{\lambda \in L} A_\lambda\), donde cada \(A_\lambda\) es abierto. Si cada restricción \(f|A_\lambda\) es continua, entonces \(f: X \to \mathbb{R}\) es continua.
+
+Ejemplo 5. Sea \(X = \mathbb{R} - \{0\}\). Definamos \(f: X \to \mathbb{R}\) poniendo \(f(x) = -1\) si \(x < 0\) y \(f(x) = 1\) si \(x > 0\). Entonces \(f: X \to \mathbb{R}\) es continua, pues \(X = A \cup B\), donde \(A = (-\infty, 0)\) y \(B = (0, +\infty)\) son abiertos, con \(f|A\) y \(f|B\) continuas. Este ejemplo suele chocar a los principiantes.
+
+El Teorema 8 y su corolario subrayan el hecho de que la continuidad es un fenómeno local.
+
+\section{Descontinuidades}
+
+Dada \(f: X \to \mathbb{R}\), un punto de discontinuidad (o, simplemente, una discontinuidad) de la función \(f\) es un punto \(a \in X\) tal que \(f\) no es continua en el punto \(a\).
+
+Decir, por tanto, que \(a \in X\) es un punto de discontinuidad de \(f: X \to \mathbb{R}\) equivale a afirmar la existencia de un número \(\varepsilon > 0\) tal que, para todo \(\delta > 0\), se puede encontrar un \(x_\delta \in X\) con \(|x_\delta - a| < \delta\), pero \(|f(x_\delta) - f(a)| \geq \varepsilon\).
+
+Ejemplos.
+
+6. Sea \(f: \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = 0\) para \(x\) racional y \(f(x) = 1\) cuando \(x\) es irracional. Entonces todo número real es punto de descontinuidad de \(f\), pues no existe \(\lim_{x \to a} f(x)\), sea cual sea \(a \in X\).
+
+7. Definamos \(g: \mathbb{R} \to \mathbb{R}\) poniendo \(g(x) = 0\) si \(x\) es irracional, \(g(0) = 1\) y \(g\left(\frac{p}{q}\right) = \frac{1}{q}\) cuando \(p/q\) es una fracción irreducible no nula, con \(q > 0\). Si escribimos \(g_1 = g \cap \mathbb{Q}\) y \(g_2 = g \setminus (\mathbb{R} - \mathbb{Q})\), tendremos, para todo \(a \in \mathbb{R}\), \(\lim_{x \to a} g_1(x) = 0\) (véase el §2 del Capítulo VI) y \(\lim_{x \to a} g_2(x) = 0\), porque \(g_2 \equiv 0\). Se sigue inmediatamente que, para todo número real \(a\), se tiene \(\lim_{x \to a} g(x) = 0\). Concluimos, así, que \(g\) es continua en los números irracionales y discontinua en los racionales. (Sería imposible obtener una función \(f: \mathbb{R} \to \mathbb{R}\) cuyos puntos de discontinuidad fueran exactamente los números irracionales. Véase el Ejercicio 18 de este capítulo.)
+
+8. Sea \(h: \mathbb{R} \to \mathbb{R}\) definida por \(h(x) = x + \frac{x}{|x|}\) si \(x \neq 0\), \(h(0) = 0\). Entonces el único punto de discontinuidad de \(h\) es el punto \(0\).
+
+9. Sea \(K \subset [0, 1]\) el conjunto de Cantor. Definamos una función \(\varphi: [0, 1] \to \mathbb{R}\) del siguiente modo: ponemos \(\varphi(x) = 0\) para todo \(x \in K\). Si \(x \notin K\), ponemos \(\varphi(x) = 1\). El conjunto de los puntos de discontinuidad de \(\varphi\) es \(K\). En efecto, siendo \(A = [0, 1] - K\) un abierto en el cual \(\varphi\) es constante (y, por tanto, continua), se sigue que \(\varphi: [0, 1] \to \mathbb{R}\) es continua en cada punto \(a \in A\). Por otro lado, como \(K\) no posee puntos interiores, para cada \(k \in K\) podemos obtener una sucesión de puntos \(x_n \in A\) con \(\lim x_n = k\). Entonces \(\lim \varphi(x_n) = 1 \neq 0 = \varphi(k)\). Luego \(\varphi\) es discontinua en todos los puntos \(k \in K\).
+
+Decimos que \(f: X \to \mathbb{R}\) posee una discontinuidad de primera especie en el punto \(a \in X\) cuando \(f\) es discontinua en el punto \(a\) y, además, existen los límites laterales \(\lim_{x \to a^+} f(x)\) y \(\lim_{x \to a^-} f(x)\). (Caso \(a\) sea punto de acumulación de \(X\) solamente de un lado, exigimos solo que el límite lateral correspondiente exista.)
+
+Una discontinuidad \(a \in X\) de la función \(f: X \to \mathbb{R}\) es llamada de segunda especie cuando \(a \in X'_+\) y \(\lim_{x \to a^+} f(x)\) no existe o entonces cuando \(a \in X'\) pero no existe el límite por la izquierda de \(f\) en el punto \(a\).
+
+Ejemplos.
+
+10. En los Ejemplos 7 y 8 anteriores, tenemos discontinuidades de primera especie. En el Ejemplo 7, en cada punto de discontinuidad \(a\), existen los límites laterales, que son iguales pero diferentes del valor \(f(a)\). En el Ejemplo 8, el límite por la izquierda es \(-1\) y el límite por la derecha es \(+1\) en el único punto de discontinuidad.
+
+En los Ejemplos 6 y 9, los puntos de discontinuidad son todos de segunda especie.
+
+11. Un ejemplo conocido de discontinuidad de segunda especie es el de la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = \sen \left( \frac{1}{x} \right)\) para \(x \neq 0\). Sea cual sea el valor atribuido a \(f(0)\), el punto \(0\) será una discontinuidad de segunda especie para \(f\), pues no existe \(\lim_{x \to 0^+} f(x)\) ni \(\lim_{x \to 0^-} f(x)\).
+
+12. En cambio \(f(x) = \frac{1}{1 + e^{1/x}}\) (\(x \neq 0\)), \(f(0) = 0\), define una función \(f: \mathbb{R} \to \mathbb{R}\) cuya única discontinuidad es el punto \(0\). Allí el límite por la derecha es cero, mientras que el límite por la izquierda es \(1\). Se trata, por tanto, de una discontinuidad de primera especie.
+
+13. Si tomamos \(g(x) = \frac{\sen \left( \frac{1}{x} \right)}{1 + e^{1/x}}\) para \(x \neq 0\) y \(g(0) = 0\), tendremos una función \(g: \mathbb{R} \to \mathbb{R}\) con una única discontinuidad en el punto \(0\). Allí tenemos \(\lim_{x \to 0^+} g(x) = 0\), mientras que \(\lim_{x \to 0^-} g(x)\) no existe. El punto \(0\) es, por tanto, una discontinuidad de segunda especie en la cual existe el límite por la derecha, pero el límite por la izquierda, aunque tiene sentido (\(0\) es punto de acumulación por la izquierda para el dominio de \(g\)), no existe.
+
+14. Sin apelar al Cálculo, es fácil dar ejemplos de discontinuidad de segunda especie en la cual uno de los límites laterales existe. Basta considerar \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = 0\) si \(x \leq 0\), o si \(x > 0\) es racional, mientras que \(f(x) = 1\) para \(x > 0\) irracional. Existe \(\lim_{x \to 0^-} f(x) = 0\) pero no existe \(\lim_{x \to 0^+} f(x)\). Luego, \(0\) es una discontinuidad del tipo buscado.
+
+\textbf{Teorema 9.} Una función monótona \(f: X \to \mathbb{R}\) no admite discontinuidades de segunda especie.
+
+\textbf{Demostración.} Dado \(a \in X\), como \(f\) es monótona, si \(a + \delta \in X\) (respectivamente \(a - \delta \in X\)) entonces \(f\) es acotada en el conjunto \([a, a + \delta] \cap X\) (respectivamente \([a - \delta, a] \cap X\)). Luego existen los límites laterales que tengan sentido en el punto \(a\), por el Teorema 12 del Capítulo VI.
+
+\textbf{Teorema 10.} Sea \(f: X \to \mathbb{R}\) monótona. Si \(f(X)\) es un conjunto denso en algún intervalo \(I\), entonces \(f\) es continua.
+
+\textbf{Demostración.} Para cada \(a \in X'_+\) sea \(f(a^+) = \lim_{x \to a^+} f(x)\). Análogamente, si \(a \in X'_-\), escribamos \(f(a^-) = \lim_{x \to a^-} f(x)\). Para fijar las ideas, supongamos \(f\) no decreciente. Tomemos \(a \in X\). Si tiene sentido hablar de \(f(a^+)\), es decir, si \(a \in X'_+\), mostraremos que \(f(a) = f(a^+)\). En efecto, \(f(a^+) = \inf\{f(x) \; ; \; x > a\}\). Sabemos que \(a < x \Rightarrow f(a) \leq f(x)\). Luego \(f(a) \leq f(a^+)\). Admitamos que sea \(f(a) < f(a^+)\). Como existen puntos \(x \in X\) con \(x > a\), vemos que en \(f(X)\) hay puntos \(f(x) \geq f(a^+)\). Siendo así, todo intervalo \(I\) que contenga \(f(X)\) debe contener al menos el intervalo \((f(a), f(a^+))\), en el cual no hay puntos de \(f(X)\) pues \(x \leq a \Rightarrow f(x) \leq f(a)\) y \(a < x \Rightarrow f(a^+) \leq f(x)\). Esto contradice que \(f(X)\) sea denso en un intervalo \(I\). Por consiguiente, \(f(a) = f(a^+)\). De modo análogo veríamos que \(f(a^-) = f(a)\) para todo \(a \in X'_-\). Luego \(f\) es continua.
+
+\textbf{Corolario.} Si \(f: X \to \mathbb{R}\) es monótona y \(f(X)\) es un intervalo, entonces \(f\) es continua.
+
+Ejemplo 15. Sea \(f: \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = x\), si \(x\) es racional, y \(f(x) = -x\), si \(x\) es irracional. Entonces \(f\) es una biyección de \(\mathbb{R}\) sobre existe. Basta considerar \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = 0\) si \(x \leq 0\), o si \(x > 0\) es racional, mientras que \(f(x) = 1\) para \(x > 0\) irracional. Existe \(\lim_{x \to 0^-} f(x) = 0\) pero no existe \(\lim_{x \to 0^+} f(x)\). Luego, \(0\) es una discontinuidad del tipo buscado.
+
+\textbf{Teorema 9.} Una función monótona \(f: X \to \mathbb{R}\) no admite discontinuidades de segunda especie.
+
+\textbf{Demostración.} Dado \(a \in X\), como \(f\) es monótona, si \(a + \delta \in X\) (respectivamente \(a - \delta \in X\)) entonces \(f\) es acotada en el conjunto \([a, a + \delta] \cap X\) (respectivamente \([a - \delta, a] \cap X\)). Luego existen los límites laterales que tengan sentido en el punto \(a\), por el Teorema 12 del Capítulo VI.
+
+\textbf{Teorema 10.} Sea \(f: X \to \mathbb{R}\) monótona. Si \(f(X)\) es un conjunto denso en algún intervalo \(I\), entonces \(f\) es continua.
+
+\textbf{Demostración.} Para cada \(a \in X'_+\) sea \(f(a^+) = \lim_{x \to a^+} f(x)\). Análogamente, si \(a \in X'_-\), escribamos \(f(a^-) = \lim_{x \to a^-} f(x)\). Para fijar las ideas, supongamos \(f\) no decreciente. Tomemos \(a \in X\). Si tiene sentido hablar de \(f(a^+)\), es decir, si \(a \in X'_+\), mostraremos que \(f(a) = f(a^+)\). En efecto, \(f(a^+) = \inf\{f(x) \; ; \; x > a\}\). Sabemos que \(a < x \Rightarrow f(a) \leq f(x)\). Luego \(f(a) \leq f(a^+)\). Admitamos que sea \(f(a) < f(a^+)\). Como existen puntos \(x \in X\) con \(x > a\), vemos que en \(f(X)\) hay puntos \(f(x) \geq f(a^+)\). Siendo así, todo intervalo \(I\) que contenga \(f(X)\) debe contener al menos el intervalo \((f(a), f(a^+))\), en el cual no hay puntos de \(f(X)\) pues \(x \leq a \Rightarrow f(x) \leq f(a)\) y \(a < x \Rightarrow f(a^+) \leq f(x)\). Esto contradice que \(f(X)\) sea denso en un intervalo \(I\). Por consiguiente, \(f(a) = f(a^+)\). De modo análogo veríamos que \(f(a^-) = f(a)\) para todo \(a \in X'_-\). Luego \(f\) es continua.
+
+\textbf{Corolario.} Si \(f: X \to \mathbb{R}\) es monótona y \(f(X)\) es un intervalo, entonces \(f\) es continua.
+
+Ejemplo 15. Sea \(f: \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = x\), si \(x\) es racional, y \(f(x) = -x\), si \(x\) es irracional. Entonces \(f\) es una biyección de \(\mathbb{R}\) sobre \(\mathbb{R}\) que es continua solo en el punto \(0\). Esto se debe a que \(f\) no es monótona.
+
+Continuaremos escribiendo
+\[
+f(a^+) = \lim_{x \to a^+} f(x) \quad \text{y} \quad f(a^-) = \lim_{x \to a^-} f(x).
+\]
+
+\textbf{Teorema 11.} Sea \(f: X \to \mathbb{R}\) una función cuyas discontinuidades son todas de primera especie. Entonces el conjunto de los puntos de discontinuidad de \(f\) es numerable.
+
+Antes de demostrar el Teorema 11, definamos una función \(\sigma: X \to \mathbb{R}\), poniendo, para cada \(x \in X\),
+\[
+\sigma(x) = \max\{|f(x) - f(x^+)|, \; |f(x) - f(x^-)|\}
+\]
+
+si \(x \in X'_+ \cap X'_-\). Si \(x \in X'_+\) o \(x \in X'_-\) solamente, pondremos, respectivamente,
+\[
+\sigma(x) = |f(x) - f(x^+)| \quad \text{o} \quad \sigma(x) = |f(x) - f(x^-)|.
+\]
+
+Finalmente, si \(x\) es un punto aislado de \(X\), pondremos \(\sigma(x) = 0\).
+
+La función \(\sigma\) está definida cuando \(f\) no posee discontinuidades de segunda especie. Su valor \(\sigma(x)\) se llama salto de \(f\) en el punto \(x\).
+
+Nótese que si \(a \leq f(x) \leq b\) para todo \(x \in X\), entonces \(0 \leq \sigma(x) \leq b - a\). El hecho más importante sobre \(\sigma\) es que \(\sigma(x) > 0\) si, y solo si, \(x \in X\) es una discontinuidad de \(f\).
+
+\textbf{Demostración del Teorema 11.} Para cada \(n \in \mathbb{N}\), sea
+\[
+D_n = \left\{ x \in X \; ; \; \sigma(x) \geq \frac{1}{n} \right\}.
+\]
+
+El conjunto de los puntos de discontinuidad de \(f\) es \(D = \bigcup_{n=1}^\infty D_n\). Basta pues mostrar que cada \(D_n\) es numerable. Afirmamos que, para todo \(n \in \mathbb{N}\), \(D_n\) solo posee puntos aislados. En efecto, sea \(a \in D_n\). Siendo \(f\) discontinua en el punto \(a\), tenemos \(a \in X'\). Supongamos \(a \in X'_+\). Por definición de \(f(a^+)\), dado \(n\), existe \(\delta > 0\) tal que \(a < x < a + \delta\),
+\[
+x \in X \Rightarrow f(a^+) - \frac{1}{4n} < f(x) < f(a^+) + \frac{1}{4n}.
+\]
+
+Así, para cada \(x \in (a, a + \delta) \cap X\), se cumple \(\sigma(x) \leq \frac{1}{2n}\). [·] Si, sin embargo, tenemos \(a \notin X'_+\), elegimos \(\delta > 0\) tal que \((a, a + \delta) \cap X = \emptyset\). En cualquier hipótesis, para todo \(a \in D_n\) existe un intervalo \((a, a + \delta)\) tal que \((a, a + \delta) \cap D_n = \emptyset\). De modo semejante encontramos, para cada \(a \in D_n\), un intervalo abierto \((a - \delta', a)\) tal que \((a - \delta', a) \cap D_n = \emptyset\). Esto muestra que ningún punto de \(D_n\) es punto de acumulación. En otras palabras, todo punto de \(D_n\) es aislado. Se sigue que \(D_n\) es numerable. (Véase el Corolario 2 del Teorema 8, Capítulo V.)
+
+\textbf{Corolario.} Sea \(f: X \to \mathbb{R}\) monótona. El conjunto de los puntos de discontinuidad de \(f\) es numerable.
+
+En efecto, por el Teorema 9, las discontinuidades de \(f\) son todas de primera especie.
+
+\section{Funciones continuas en intervalos}
+
+El teorema siguiente establece matemáticamente el principio bastante plausible de que una función continua definida en un intervalo no puede pasar de un valor a otro sin pasar por todos los valores intermedios.
+
+\textbf{Teorema 12.} (Teorema del Valor Intermediario). Sea \(f: [a, b] \to \mathbb{R}\) continua. Si \(f(a) < d < f(b)\) entonces existe \(c \in (a, b)\) tal que \(f(c) = d\).
+
+\textbf{Primera demostración.} Como \(f\) es continua en el punto \(a\), dado \(\varepsilon = d - f(a) > 0\), existe \(\delta > 0\) tal que \(a \leq x \leq a + \delta \Rightarrow f(x) < f(a) + \varepsilon = d\). Así, todos los puntos \(x\) suficientemente próximos de \(a\) en el intervalo \([a, b]\) son tales que \(f(x) < d\). De modo análogo se verifica que todos los puntos \(y\) suficientemente próximos de \(b\) en el intervalo \([a, b]\) son tales que \(d < f(y)\). En particular los conjuntos \(A = \{x \in (a, b) \; ; \; f(x) < d\}\) y \(B = \{y \in (a, b) \; ; \; d < f(y)\}\) son ambos no vacíos. El corolario del Teorema 3 nos dice que \(A\) y \(B\) son abiertos. Si no existe un punto \(c\) con \(a < c < b\) y \(f(c) = d\), entonces \((a, b) = A \cup B\), en contradicción con la unicidad de la descomposición de un abierto como unión de intervalos. (Véase el Corolario del Teorema 2, Capítulo V.)
+
+\textbf{Segunda demostración.} Sea \(A = \{x \in [a, b] \; ; \; f(x) < d\}\). \(A\) no es vacío pues \(f(a) < d\). Afirmamos que ningún elemento de \(A\) es mayor que todos los otros. En efecto, sea \(\alpha \in A\). Como \(f(\alpha) < d\), vemos que \(\alpha \neq b\) y, por tanto, \(\alpha < b\). Tomando \(\varepsilon = d - f(\alpha)\), la continuidad de \(f\) en el punto \(\alpha\) nos da un \(\delta > 0\) (que tomaremos pequeño, de modo que \([\alpha, \alpha + \delta] \subset [a, b]\)) tal que, para todo \(x \in [\alpha, \alpha + \delta)\) se tiene \(f(x) < f(\alpha) + \varepsilon\), o sea, \(f(x) < d\). Así, todos los puntos del intervalo \([\alpha, \alpha + \delta)\) pertenecen a \(A\). Ahora pongamos \(c = \sup A\). Como \(c\) es límite de una sucesión de puntos \(x_n \in A\), tenemos \(f(c) = \lim f(x_n) \leq d\). Como \(A\) no posee mayor elemento, no se tiene \(c \in A\). Luego no vale \(f(c) < d\), lo que nos obliga a concluir que \(f(c) = d\).
+
+\textbf{Corolario 1.} Sea \(f: I \to \mathbb{R}\) continua en un intervalo \(I\) (que puede ser cerrado o no, acotado o ilimitado). Si \(a < b\) pertenecen a \(I\) y \(f(a) < d < f(b)\), entonces existe \(c \in I\) tal que \(f(c) = d\).
+
+Basta restringir \(f\) al intervalo \([a, b]\) y aplicar el Teorema 12.
+
+\textbf{Corolario 2.} Sea \(f: I \to \mathbb{R}\) continua en un intervalo \(I\). Entonces \(f(I)\) es un intervalo.
+
+En efecto, sean \(\alpha = \inf_{x \in I} f(x)\) y \(\beta = \sup_{x \in I} f(x)\). (Esta notación es simbólica. Podemos tener \(\alpha = -\infty\), si \(f\) es ilimitada inferiormente en \(I\), o \(\beta = +\infty\), en el caso de que \(f\) sea ilimitada superiormente en \(I\).) Afirmamos que \(f(I)\) es un intervalo, cuyos extremos son \(\alpha\) y \(\beta\). Es decir, dado \(y\) con \(\alpha < y < \beta\), debe existir \(x \in I\) tal que \(y = f(x)\). En efecto, por las definiciones de ínfimo y de supremo (o por la definición de conjunto ilimitado, en el caso de que alguno de los extremos \(\alpha\) o \(\beta\) sea infinito) existen \(a, b \in I\) tales que \(f(a) < y < f(b)\). Por el Teorema 12, existe un punto \(x\), entre \(a\) y \(b\), tal que \(f(x) = y\).
+
+Observaciones:
+
+1. El Teorema 12, evidentemente, vale también en el caso de \(f(b) < d < f(a)\).
+
+2. En el Corolario 2, nada afirmamos sobre los extremos del intervalo \(f(I)\) perteneciendo o no al intervalo. Podremos tener \(f(I) = [\alpha, \beta]\), o \(f(I) = (\alpha, \beta)\), o \(f(I) = [\alpha, \beta)\) o \(f(I) = (\alpha, \beta]\). También el intervalo \(I\) es completamente arbitrario. Por ejemplo, sea \(f: \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = x^2\). Entonces, tomando \(I = (-1, 3)\), tenemos \(f(I) = [0, 9)\).
+
+Ejemplos.
+
+16. Si \(I\) es un intervalo y \(f: I \to \mathbb{R}\) es una función continua que solo asume valores enteros, entonces \(f\) es constante. En efecto, \(f(I)\) debe ser un intervalo contenido en \(\mathbb{Z}\). Luego es degenerado (se reduce a un punto). Más generalmente, si \(Y \subset \mathbb{R}\) tiene interior vacío y \(f: X \to \mathbb{R}\) es una función continua tal que \(f(X) \subset Y\), entonces \(f\) es constante en cada intervalo que eventualmente \(X\) contenga.
+
+17. El Teorema 12 puede ser usado para probar que todo polinomio real \(p: \mathbb{R} \to \mathbb{R}\), \(p(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0\) de grado impar (es decir, \(a_n \neq 0\) y \(n\) impar) posee una raíz real, o sea, existe \(c \in \mathbb{R}\) tal que \(p(c) = 0\). Para fijar las ideas, supongamos \(a_n > 0\). Entonces podemos escribir \(p(x) = a_n \cdot x^n \cdot r(x)\), donde
+\[
+r(x) = 1 + \frac{a_{n-1}}{a_n} \cdot \frac{1}{x} + \cdots + \frac{a_1}{a_n} \cdot \frac{1}{x^{n-1}} + \frac{a_0}{a_n} \cdot \frac{1}{x^n}.
+\]
+
+Evidentemente, \(\lim_{x \to \pm \infty} r(x) = 1\). Como \(\lim_{x \to +\infty} (a_n x^n) = +\infty\) y (por ser \(n\) impar) \(\lim_{x \to -\infty} (a_n x^n) = -\infty\), concluimos que \(\lim_{x \to +\infty} p(x) = +\infty\) y \(\lim_{x \to -\infty} p(x) = -\infty\). Tomando \(I = \mathbb{R}\) en el Corolario 2, vemos que \(p(\mathbb{R})\) es un intervalo. Los límites arriba calculados muestran que el intervalo \(p(\mathbb{R})\) es ilimitado en ambos sentidos. Por lo tanto \(p(\mathbb{R}) = \mathbb{R}\). Así, \(p: \mathbb{R} \to \mathbb{R}\) es sobreyectiva. En particular, existe \(c \in \mathbb{R}\) tal que \(p(c) = 0\).
+
+18. Usaremos ahora el Teorema 12 para dar una demostración elegante de la existencia de \(\sqrt[n]{y}\) para todo \(y \geq 0\). (Véase el §3 del Capítulo III.) Dado \(n \in \mathbb{N}\), consideremos la función \(f: [0, +\infty) \to [0, +\infty)\), definida por \(f(x) = x^n\). Evidentemente, \(f\) es continua. Luego su imagen es un intervalo. Como \(f(0) = 0\) y \(\lim_{x \to +\infty} f(x) = +\infty\), tal intervalo es \([0, +\infty)\), es decir, \(f\) es sobreyectiva. Así pues, para todo \(y \geq 0\), existe \(x \geq 0\) tal que \(x^n = y\). Además, \(f\) es creciente y, por tanto, inyectiva. Concluimos que \(f\) es una biyección. Dado \(y \geq 0\), el número \(x \geq 0\) tal que \(x^n = y\) es único y se escribe \(x = \sqrt[n]{y}\). Finalmente, la función \(g: [0, +\infty) \to [0, +\infty)\), inversa de \(f\), tal que \(g(y) = \sqrt[n]{y}\), es continua en virtud del Teorema 13 a continuación.
+
+\textbf{Teorema 13.} Sea \(f: I \to \mathbb{R}\) una función continua inyectiva, definida en un intervalo \(I\). Entonces \(f\) es monótona, su imagen \(J = f(I)\) es un intervalo y su inversa \(f^{-1}: J \to \mathbb{R}\) es continua.
+
+\textbf{Demostración.} Como el lector puede verificar sin dificultad, para concluir que \(f\) es monótona, basta verificar su monotonicidad en cada subintervalo acotado y cerrado \([a, b] \subset I\). Así, podemos admitir que \(I = [a, b]\). Sabemos que \(f(a) \neq f(b)\). Para fijar las ideas, vamos a suponer que \(f(a) < f(b)\). Mostraremos entonces que \(f\) es creciente. De lo contrario, existirían puntos \(x < y\) en \([a, b]\) tales que \(f(x) > f(y)\). Hay dos posibilidades: \(f(a) < f(y)\) o \(f(a) > f(y)\). En el primer caso, tenemos \(f(a) < f(y) < f(x)\). Luego, por el Teorema 12, existirá \(c \in (a, x)\) con \(f(c) = f(y)\), en contradicción con la inyectividad de \(f\). En el segundo caso, tenemos \(f(y) < f(a) < f(b)\) y, nuevamente por el Teorema 12, obtendremos \(c \in (y, b)\) con \(f(c) = f(a)\), contradiciendo también la inyectividad de \(f\). Esto prueba que toda función real continua e inyectiva, definida en un intervalo, es monótona. El Corolario 2 del Teorema 12 nos da que \(J = f(I)\) es un intervalo y el Teorema 10 (o su corolario) nos garantiza que \(f^{-1}: J \to \mathbb{R}\) es continua porque evidentemente \(f^{-1}(J) = I\) y la inversa de una función monótona es monótona. (Como \([a, b]\) es compacto, la continuidad de \(f^{-1}\) también resulta del Teorema 15 más adelante.)
+
+
+Observación: En el caso del Teorema 13 (función continua, inyectiva, monótona), el intervalo \( J = f(I) \) es del mismo tipo (abierto, cerrado, semiabierto) que \( I \). En efecto, siendo \( f \) monótona inyectiva, \( a \in I \) es un extremo de \( I \) si, y solo si, \( f(a) \) es un extremo de \( J \). Nótese, sin embargo, que uno de los intervalos \( I, J \) puede ser ilimitado sin que el otro lo sea. Considere, por ejemplo, la función \( f: (0, 1] \to \mathbb{R} \), dada por \( f(x) = 1/x \). Tenemos \( f((0, 1]) = [1, +\infty) \).
+
+Dados \( X, Y \subset \mathbb{R} \), una biyección continua \( f: X \to Y \), cuya inversa \( f^{-1}: Y \to X \) también es continua, se llama un homeomorfismo entre \( X \) y \( Y \). El Teorema 13 dice que si \( X \) es un intervalo, la continuidad de la inversa \( f^{-1} \) será consecuencia de la continuidad de \( f \). Debe notarse, sin embargo, que tal no ocurre en general. Por ejemplo, sean \( X = [0, 1) \cup [2, 3] \), \( Y = [1, 3] \) y \( f: X \to Y \) la biyección continua definida por \( f(x) = x + 1 \), si \( 0 \leq x < 1 \), \( f(x) = x \) si \( 2 \leq x \leq 3 \). La inversa \( f^{-1}: Y \to X \) es discontinua en el punto 2. En efecto, \( f^{-1}(y) = y \) si \( 2 \leq y \leq 3 \) y \( f^{-1}(y) = y - 1 \) si \( 1 \leq y < 2 \). Así, \( f^{-1}(2) = 2 \) mientras que \( \lim_{y \to 2^-} f^{-1}(y) = 1 \).
+
+En el parágrafo siguiente, veremos otra situación en la cual la inversa de una función continua es continua.
+
+\section{Funciones continuas en conjuntos compactos}
+
+\textbf{Teorema 14.} Sea \( f: X \to \mathbb{R} \) continua. Si \( X \) es compacto entonces \( f(X) \) es compacto.
+
+\textbf{Demostración.} Dada una cobertura abierta \( f(X) \subset \bigcup_{\lambda \in L} A_{\lambda} \), podemos, para cada \( x \in X \), elegir \( A_{\lambda(x)} \) tal que \( f(x) \in A_{\lambda(x)} \). En virtud de la continuidad de \( f \), cada punto \( x \in X \) puede ser puesto en un intervalo abierto \( I_x \) tal que \( y \in X \cap I_x \Rightarrow f(y) \in A_{\lambda(x)} \). Obtenemos así una cobertura abierta \( X \subset \bigcup_{x \in X} I_x \). Como \( X \) es compacto, podemos extraer una subcubierta finita \( X \subset I_{x_1} \cup \cdots \cup I_{x_n} \). Consecuentemente, \( f(X) \subset A_{\lambda(x_1)} \cup \cdots \cup A_{\lambda(x_n)} \), lo que prueba la compacidad de \( f(X) \).
+
+\textbf{Segunda demostración.} Sea \((y_n)\) una sucesión en \(f(X)\). Para cada \(n \in \mathbb{N}\), existe \(x_n \in X\) tal que \(f(x_n) = y_n\). Como \(X\) es compacto, podemos obtener una subsucesión convergente \(x_{n_k} \to x \in X\). Siendo \(f\) continua, tenemos \(\lim f(x_{n_k}) = f(\lim x_{n_k}) = f(x) = y \in f(X)\). Luego \(f(X)\) es compacto, conforme a la condición (4) del Teorema 11, Capítulo V.
+
+\textbf{Corolario} (Weierstrass). Toda función continua \(f: X \to \mathbb{R}\) definida en un compacto \(X\) es acotada y alcanza sus extremos (es decir, existen \(x_1, x_2 \in X\) tales que \(f(x_1) \leq f(x) \leq f(x_2)\) para todo \(x \in X\)).
+
+En efecto, \(f(X)\), siendo compacto, es acotado y cerrado. Luego \(\sup f(X) \in f(X)\) e \(\inf f(X) \in f(X)\). Por lo tanto existen \(x_1, x_2 \in X\) tales que \(\inf f(X) = f(x_1)\) y \(\sup f(X) = f(x_2)\).
+
+Ejemplos.
+
+19. La función continua \(f: (-1, +1) \to \mathbb{R}\), definida por \(f(x) = \frac{1}{1 - x^2}\), no es acotada. Esto puede ocurrir porque su dominio es un conjunto acotado, pero no cerrado (y, por tanto, no es compacto). Por otro lado, la función \(g: (-1, +1) \to \mathbb{R}\), definida por \(g(x) = x\), es continua y acotada, pero no asume un valor máximo ni un valor mínimo en su dominio \((-1, +1)\). La función \(h: [0, +\infty) \to \mathbb{R}\), definida por \(h(x) = \frac{1}{1 + x^2}\), es continua y acotada. Asume su valor máximo en el punto \(x = 0\), pero no existe \(x \in [0, +\infty)\) tal que \(h(x) = 0 = \inf\{h(x) \; ; \; x \in [0, +\infty)\}\). Esto es posible porque el dominio de \(h\) es un subconjunto cerrado pero no acotado de \(\mathbb{R}\).
+
+20. Dados un punto \(a \in \mathbb{R}\) y un subconjunto cerrado no vacío \(F \subset \mathbb{R}\), existe un punto \(x_0 \in F\) tal que \(|a - x_0| \leq |a - x|\) para todo \(x \in F\). (El punto \(x_0\) es el punto de \(F\) más próximo a \(a\).) Para ver esto, basta considerar un intervalo cerrado \([a - n, a + n]\) suficientemente grande de forma que la intersección \(K = [a - n, a + n] \cap F\) sea no vacía. \(K\) es acotado y cerrado, luego compacto. Consideremos la función continua \(f: K \to \mathbb{R}\), definida por \(f(x) = |x - a|\). Por el Teorema de Weierstrass, \(f\) alcanza su valor mínimo en un punto \(x_0 \in K\). Para todos los puntos \(x \in F\) se tiene \(|x_0 - a| \leq |x - a|\) porque los puntos de \(F\) que no pertenecen a \(K\) se sitúan fuera del intervalo \([a - n, a + n]\) y, por tanto, están más lejos de \(a\) que el punto \(x_0\). Nótese que si \(F\) no fuera cerrado, podríamos tomar \(a \in \overline{F} - F\), luego el ínfimo de la función \(f\) sería cero, no alcanzado en ningún punto \(x \in F\). Por lo tanto, cuando \(F\) no es cerrado, siempre se puede hallar un punto \(a\) del cual ningún punto de \(F\) es el más próximo.
+
+\textbf{Teorema 15.} Sea \(X \subset \mathbb{R}\) compacto. Si \(f: X \to \mathbb{R}\) es continua e inyectiva entonces \(Y = f(X)\) es compacto y la función inversa \(f^{-1}: Y \to \mathbb{R}\) es continua.
+
+\textbf{Demostración.} Sea \(b = f(a) \in Y\). Para probar que \(f^{-1}\) es continua en el punto \(b\), consideremos una sucesión de puntos \(y_n = f(x_n) \in Y\), con \(y_n \to b\). Debemos mostrar que \(f^{-1}(y_n) = x_n \to a = f^{-1}(b)\). Como \(x_n \in X\), la sucesión \((x_n)\) es acotada. Así, es suficiente probar que \(a\) es el único valor de adherencia de \((x_n)\). Sea entonces \((x'_n)\) una subsucesión convergiendo a un punto \(a'\). Como \(X\) es compacto, tenemos \(a' \in X\). Además, \(y'_n = f(x'_n)\) sigue convergiendo a \(b\). Como \(f\) es continua en el punto \(a'\), tenemos \(f(a') = \lim f(x'_n) = b\). Siendo \(f\) inyectiva, esto fuerza \(a' = a\). El teorema está demostrado.
+
+\section{Continuidad uniforme}
+
+Sea \(f: X \to \mathbb{R}\) continua. Dado \(\varepsilon > 0\) podemos, para cada \(a \in X\), obtener \(\delta > 0\) (que depende de \(\varepsilon\) y de \(a\)) tal que \(|x - a| < \delta \Rightarrow |f(x) - f(a)| < \varepsilon\).
+
+En general, no es posible obtener, a partir del \(\varepsilon > 0\) dado, un único \(\delta > 0\) que sirva para todos los puntos \(a \in X\).
+
+
+Ejemplos.
+
+21. Sea \( f: (0, +\infty) \to \mathbb{R}, \ f(x) = \frac{1}{x} \). Dado \( \varepsilon > 0 \), mostraremos que no se puede elegir \( \delta > 0 \) tal que \( |x - a| < \delta \Rightarrow \left| \frac{1}{x} - \frac{1}{a} \right| < \varepsilon \) sea cual sea \( a > 0 \). En efecto, dado \( \varepsilon > 0 \), supongamos elegido \( \delta > 0 \). Tomemos un número positivo \( a \) tal que \( 0 < a < \delta \ y \ 0 < a < \frac{1}{3\varepsilon} \). Entonces, para \( x = a + \frac{\delta}{2} \), tenemos \( |x - a| < \delta \) pero
+\[
+\left| \frac{1}{x} - \frac{1}{a} \right| = \left| \frac{1}{a + \frac{\delta}{2}} - \frac{1}{a} \right| = \left| \frac{2}{2a + \delta} - \frac{1}{a} \right|
+\]
+\[
+= \frac{\delta}{(2a + \delta)a} > \frac{\delta}{3\delta \cdot a} = \frac{1}{3a} > \varepsilon.
+\]
+
+22. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = cx + d \), con \( c \neq 0 \). Dado \( \varepsilon > 0 \), escojamos \( \delta = \frac{\varepsilon}{|c|} \). Entonces, cualquiera que sea \( a \in \mathbb{R} \), tenemos
+\[
+|x - a| < \delta \Rightarrow |f(x) - f(a)| = |(cx + d) - (ca + d)| = |cx - ca| = |c||x - a| < |c|\delta = \varepsilon.
+\]
+
+En este caso, fue posible, a partir del \( \varepsilon \) dado, obtener un \( \delta > 0 \) que sirviera para todos los puntos \( a \) del dominio de \( f \).
+
+Las funciones con esta propiedad se llaman uniformemente continuas. Más formalmente:
+
+Una función \( f: X \to \mathbb{R} \) se dice uniformemente continua cuando, para cada \( \varepsilon > 0 \), existe \( \delta > 0 \) tal que \( x, y \in X \), \( |x - y| < \delta \Rightarrow |f(x) - f(y)| < \varepsilon \).
+
+Es obvio que toda función uniformemente continua es continua. Pero el recíproco no vale.
+
+Así, la función continua \( f: (0, +\infty) \to \mathbb{R} \), definida por \( f(x) = \frac{1}{x} \), no es uniformemente continua pues, como vimos en el
+
+Ejemplo 21, dado \(\varepsilon > 0\), sea cual sea \(\delta > 0\), podemos encontrar puntos \(x, y\) en el dominio de \(f\), con \(|x - y| < \delta\) y \(|f(x) - f(y)| \geq \varepsilon\).
+
+Por otro lado, la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = cx + d\), es uniformemente continua, como vimos en el Ejemplo 22. (Allí supusimos \(c \neq 0\), pero es claro que \(c = 0\) da una función constante, que es uniformemente continua.)
+
+A fin de que \(f: X \to \mathbb{R}\) no sea uniformemente continua, es necesario y suficiente que exista \(\varepsilon > 0\) con la siguiente propiedad: para cada \(\delta > 0\), se pueden obtener \(x_\delta, y_\delta \in X\) tales que \(|x_\delta - y_\delta| < \delta\) pero \(|f(x_\delta) - f(y_\delta)| \geq \varepsilon\).
+
+Ejemplo 23. Sea \(f: X \to \mathbb{R}\) lipschitziana. Esto significa que existe una constante \(c > 0\) tal que \(x, y \in X \Rightarrow |f(x) - f(y)| \leq c|x - y|\). Entonces \(f\) es uniformemente continua: dado \(\varepsilon > 0\), basta tomar \(\delta = \varepsilon / c\). Una función lineal, \(f(x) = cx + d\), es lipschitziana en toda la recta, con constante \(|c|\). La función \(f: X \to \mathbb{R}\), \(f(x) = x^2\), es lipschitziana si \(X\) es acotado. Por ejemplo, si tenemos \(|x| \leq A\) para todo \(x \in X\), entonces, dados \(x, y \in X\) cualesquiera, vale
+\[
+|f(x) - f(y)| = |x^2 - y^2| = |x + y||x - y| \leq 2A \cdot |x - y|.
+\]
+
+Basta tomar \(c = 2A\). Por otro lado, si \(X = \mathbb{R}\), \(f(x) = x^2\) no es siquiera uniformemente continua. En efecto, sea \(\varepsilon = 1\). Cualquiera que sea \(\delta > 0\) elegido, podemos tomar \(x > 1/\delta\) e \(y = x + \delta/2\). Entonces \(|x - y| < \delta\) pero
+\[
+|f(x) - f(y)| = (x + \delta/2)^2 - x^2 = x\delta + \delta^2/4 > x\delta > 1.
+\]
+
+Con un poco más de trabajo se muestra que para todo \(n > 1\) la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = x^n\), no es uniformemente continua.
+
+\textbf{Teorema 16.} Sea \(f: X \to \mathbb{R}\) uniformemente continua. Si \((x_n)\) es una sucesión de Cauchy en \(X\) entonces \((f(x_n))\) es una sucesión de Cauchy.
+
+\textbf{Demostración.} Dado \(\varepsilon > 0\), existe \(\delta > 0\) tal que \(x, y \in X\), \(|x - y| < \delta \Rightarrow |f(x) - f(y)| < \varepsilon\). A su vez, dado \(\delta > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(m, n > n_0 \Rightarrow |x_m - x_n| < \delta\). Luego, \(m, n > n_0 \Rightarrow |f(x_m) - f(x_n)| < \varepsilon\), o sea, \((f(x_n))\) es una sucesión de Cauchy.
+
+\textbf{Corolario.} Sea \(f: X \to \mathbb{R}\) uniformemente continua. Para todo \(a \in X'\), existe \(\lim_{x \to a} f(x)\).
+
+En efecto, para toda sucesión de puntos \(x_n \in X - \{a\}\) con \(x_n \to a\), la sucesión \((f(x_n))\) es convergente, por ser de Cauchy. Entonces existe \(\lim_{x \to a} f(x)\), por el Corolario 2, Teorema 6, Capítulo VI. (Este corolario también se deduce del Teorema 8, Capítulo VI.)
+
+Ejemplo 24. Las funciones \(f, g: (0, 1] \to \mathbb{R}\), \(f(x) = \sen(1/x)\), \(g(x) = 1/x\), no son uniformemente continuas pues no poseen límite cuando \(x \to 0\).
+
+Para mostrar que \(f: X \to \mathbb{R}\) no es uniformemente continua basta obtener \(\varepsilon > 0\) y dos sucesiones de puntos \(x_n, y_n \in X\) tales que \(\lim(x_n - y_n) = 0\) y \(|f(x_n) - f(y_n)| \geq \varepsilon\) para todo \(n\). Por ejemplo, \(f(x) = x^3\) no es uniformemente continua en \(\mathbb{R}\), como se ve tomando \(x_n = n + 1/n\) e \(y_n = n\). Tenemos \(\lim(x_n - y_n) = 0\) pero \(x_n^3 - y_n^3 \geq 3\) para todo \(n\).
+
+\textbf{Teorema 17.} Sea \(X\) compacto. Toda función continua \(f: X \to \mathbb{R}\) es uniformemente continua.
+
+\textbf{Demostración.} Sea \(\varepsilon > 0\) dado. Para cada \(x \in X\), \(f\) es continua en el punto \(x\). Luego existe \(\delta_x > 0\) tal que \(y \in X\), \(|y - x| < 2\delta_x \Rightarrow |f(y) - f(x)| < \frac{\varepsilon}{2}\). Poniendo \(I_x = (x - \delta_x, x + \delta_x)\), la cobertura \(X \subset \bigcup_{x \in X} I_x\) admite una subcubierta finita \(X \subset I_{x_1} \cup \cdots \cup I_{x_n}\). Sea \(\delta\) el menor de los números \(\delta_{x_1}, \ldots, \delta_{x_n}\). Si \(x, y \in X\) y \(|x - y| < \delta\), debemos tener \(x \in I_{x_i}\) para algún \(j\), de donde \(|x - x_j| < \delta_{x_j}\) y entonces \(|y - x_j| \leq |y - x| + |x - x_j| < 2\delta_{x_j}\). Estas desigualdades implican \(|f(x) - f(x_j)| < \frac{\varepsilon}{2}\) y \(|f(y) - f(x_j)| < \frac{\varepsilon}{2}\), de donde \(|f(x) - f(y)| < \varepsilon\).
+
+\textbf{Segunda demostración.} Supongamos que \(f\) no sea uniformemente continua. Entonces existe un \(\varepsilon > 0\) tal que, para cada \(n \in \mathbb{N}\), podemos hallar \(x_n \in X\) e \(y_n \in X\) con \(|x_n - y_n| < \frac{1}{n}\) y \(|f(x_n) - f(y_n)| \geq \varepsilon\). Como \(X\) es compacto, una subsucesión \((x_{n_k})\) converge a un punto \(x \in X\). Forzosamente, tenemos \(\lim y_{n_k} = x\) también. Como \(f\) es continua, \(\lim f(x_{n_k}) = \lim f(y_{n_k}) = f(x)\), pero esto contradice la desigualdad \(|f(x_{n_k}) - f(y_{n_k})| \geq \varepsilon\) para todo \(k\). Luego \(f\) es uniformemente continua.
+
+Ejemplo 25. La función \(f: [0, 1] \to \mathbb{R}\), definida por \(f(x) = \sqrt{x}\), es continua (como inversa de \(x \mapsto x^2\), definida en el mismo intervalo) y por tanto es uniformemente continua, pues \([0, 1]\) es compacto. Conviene notar que \(f\) no es lipschitziana en intervalo alguno al cual \(0\) sea adherente porque el cociente \(\frac{|x - y|}{\sqrt{x} - \sqrt{y}} = \frac{1}{\sqrt{x} + \sqrt{y}}\) no es acotado para valores muy pequeños de \(x\) e \(y\). Por otro lado, la función \(g: [0, +\infty) \to \mathbb{R}\), \(g(x) = \sqrt{x}\) (de la cual \(f\) es una restricción) es uniformemente continua, aunque su dominio no sea compacto. Es suficiente observar que \(g|[1, +\infty)\) es lipschitziana: \(|g(x) - g(y)| = \frac{|x - y|}{\sqrt{x} + \sqrt{y}} \leq \frac{1}{2}|x - y|\), siempre que \(x \geq 1\) e \(y \geq 1\). Como se ve fácilmente, de la continuidad uniforme de \(g|[0, 1]\) y \(g|[1, +\infty)\) se concluye la continuidad uniforme de \(g\) en todo su dominio \([0, +\infty)\). (No sea, sin embargo, muy optimista. Véanse los Ejercicios 38 y 39 al final de este capítulo.)
+
+Se dice que una función \(\varphi: Y \to \mathbb{R}\) es una extensión de \(f: X \to \mathbb{R}\) cuando \(f\) es una restricción de \(\varphi\), es decir, cuando se tiene \(X \subset Y\) y \(\varphi(x) = f(x)\) para todo \(x \in X\). Cuando \(\varphi\) sea continua, se dirá que \(f\) se extiende continuamente a la función \(\varphi\).
+
+El teorema siguiente completa el corolario del Teorema 16.
+
+\textbf{Teorema 18.} Toda función uniformemente continua \(f: X \to \mathbb{R}\) admite una extensión continua \(\varphi: \overline{X} \to \mathbb{R}\); \(\varphi\) es la única extensión continua de \(f\) a \(\overline{X}\) y es uniformemente continua.
+
+\textbf{Demostración.} Tenemos \(\overline{X} = X \cup X'\). Para todo \(x' \in X'\), pongamos \(\varphi(x') = \lim_{x \to x'} f(x)\). Este límite existe, por el corolario del Teorema 16. Como \(f\) es continua, vemos que \(\varphi(x') = f(x')\) en caso de que \(x' \in X' \cap X\). Completamos la definición de \(\varphi\) poniendo \(\varphi(x) = f(x)\) para \(x \in X\). Notemos que, para todo \(\bar{x} \in \overline{X}\), si \(\bar{x} = \lim x_n\) con \(x_n \in X\), entonces \(\varphi(\bar{x}) = \lim f(x_n)\). Mostremos ahora que \(\varphi\) es uniformemente continua. Dado \(\varepsilon > 0\), la continuidad uniforme de \(f\) nos da un \(\delta > 0\) tal que \(x, y \in X,\ |x - y| < \delta \Rightarrow |f(x) - f(y)| < \frac{\varepsilon}{2}\). Afirmamos que el mismo \(\delta\) sirve para la continuidad uniforme de \(\varphi\). En efecto, si \(\bar{x}, \bar{y} \in \overline{X}\) son tales que \(|\bar{x} - \bar{y}| < \delta\), tenemos \(\bar{x} = \lim x_n\) y \(\bar{y} = \lim y_n\), con \(x_n, y_n \in X\). De ahí se tiene \(|\bar{x} - \bar{y}| = \lim |x_n - y_n|\). Luego existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow |x_n - y_n| < \delta\). Se sigue que \(|f(x_n) - f(y_n)| < \frac{\varepsilon}{2}\) para todo \(n > n_0\) y, por tanto,
+\[
+|\varphi(\bar{x}) - \varphi(\bar{y})| = \lim |f(x_n) - f(y_n)| \leq \frac{\varepsilon}{2} < \varepsilon.
+\]
+
+Falta solo verificar la unicidad de \(\varphi\), pero esto es inmediato: si \(\psi: \overline{X} \to \mathbb{R}\) fuera otra extensión continua de \(f\), entonces, para todo \(\bar{x} \in \overline{X}\), escribiendo \(\bar{x} = \lim x_n\), con \(x_n \in X\), tendríamos
+\[
+\psi(\bar{x}) = \psi(\lim x_n) = \lim \psi(x_n) = \lim f(x_n) = \lim \varphi(x_n) = \varphi(\lim x_n) = \varphi(\bar{x}).
+\]
+
+\textbf{Corolario.} Sea \(f: X \to \mathbb{R}\) uniformemente continua. Si \(X\) es acotado, entonces \(f(X)\) es acotado; esto es, \(f\) es acotada en \(X\).
+
+En efecto, sea \(\varphi: \overline{X} \to \mathbb{R}\) la extensión continua de \(f\) al cierre de \(X\). Como \(X\) es acotado, \(\overline{X}\) es acotado y cerrado, y por tanto compacto. Por el Teorema 14, \(\varphi(\overline{X})\) es compacto y por tanto acotado. Como \(f(X) \subset \varphi(\overline{X})\), la conclusión se sigue.
+
+\textbf{Ejercicios}
+
+1. Sea \(f: \mathbb{R} \to \mathbb{R}\) continua. Muestre que el conjunto \(Z_f = \{x \in \mathbb{R} \; ; \; f(x) = 0\}\) es cerrado. Concluya que, si \(f, g: \mathbb{R} \to \mathbb{R}\) son continuas, entonces \(C = \{x \in \mathbb{R} \; ; \; f(x) = g(x)\}\) es un conjunto cerrado.
+
+2. Sea \(f: X \to \mathbb{R}\) continua, definida en un subconjunto \(X \subset \mathbb{R}\). Para todo \(k \in \mathbb{R}\), el conjunto de los puntos \(x \in X\) tales que \(f(x) \leq k\) tiene la forma \(F \cap X\), donde \(F\) es cerrado. Un resultado análogo vale para el conjunto de los puntos \(x \in X\) tales que \(f(x) = k\) y para el conjunto de los puntos \(x \in X\) en los cuales dos funciones continuas \(f, g: X \to \mathbb{R}\) asumen valores iguales. En particular, si \(X\) es cerrado, entonces esos tres conjuntos son cerrados.
+
+3. Dadas \(f, g: X \to \mathbb{R}\), definamos las funciones \(f \vee g: X \to \mathbb{R}\) y \(f \wedge g: X \to \mathbb{R}\) poniendo, para cada \(x \in X\), \((f \vee g)(x) = \max\{f(x), g(x)\}\) y \((f \wedge g)(x) = \min\{f(x), g(x)\}\). Muestre que si \(f\) y \(g\) son continuas en un punto \(a \in X\), lo mismo ocurre con \(f \vee g\) y \(f \wedge g\).
+
+4. Una función \(f: A \to \mathbb{R}\), definida en un abierto \(A \subset \mathbb{R}\), es continua si, y solo si, para todo \(c \in \mathbb{R}\) los conjuntos \(E[f < c] = \{x \in A \; ; \; f(x) < c\}\) y \(E[f > c] = \{x \in A \; ; \; f(x) > c\}\) son abiertos.
+
+5. Sea \(f: F \to \mathbb{R}\) definida en un conjunto cerrado \(F \subset \mathbb{R}\). A fin de que \(f\) sea continua es necesario y suficiente que, para todo \(c \in \mathbb{R}\), sean cerrados los conjuntos \(E[f \leq c] = \{x \in F \; ; \; f(x) \leq c\}\) y \(E[f \geq c] = \{x \in F \; ; \; f(x) \geq c\}\).
+
+6. Dado un subconjunto no vacío \(S \subset \mathbb{R}\), defina \(f: \mathbb{R} \to \mathbb{R}\) poniendo \(f(x) = \inf\{|x - s| \; ; \; s \in S\}\). Pruebe que \(|f(x) - f(y)| \leq |x - y|\) para cualesquiera \(x, y \in \mathbb{R}\). Concluya que \(f\) es (uniformemente) continua.
+
+7. Sean \(f, g: X \to \mathbb{R}\) continuas. Si \(Y \subset X\) y \(f(y) = g(y)\) para todo \(y \in Y\), entonces \(f|_Y = g|_Y\). Concluya que si dos funciones continuas \(f, g: \mathbb{R} \to \mathbb{R}\) son tales que \(f(r) = g(r)\) para todo \(r \in \mathbb{Q}\), entonces \(f = g\).
+
+8. Sean \(f, g: [0, 1] \to \mathbb{R}\) continuas. Si \(f(1) = g(0)\), entonces es continua la función \(h: [0, 1] \to \mathbb{R}\), definida por \(h(x) = f(2x)\) si \(0 \leq x \leq 1/2\), y \(h(x) = g(2x - 1)\) si \(1/2 \leq x \leq 1\). También es continua la función \(f^*: [0,1] \to \mathbb{R}\), definida por \(f^*(x) = f(1 - x)\).
+
+9. Sea \(A \subset \mathbb{R}\) abierto. A fin de que \(f: A \to \mathbb{R}\) sea continua es necesario y suficiente que \(f^{-1}(B)\) sea abierto, cualquiera que sea \(B \subset \mathbb{R}\) abierto.
+
+10. Sea \(F \subset \mathbb{R}\) cerrado. Una función \(f: F \to \mathbb{R}\) es continua si, y solo si, para todo conjunto cerrado \(G \subset \mathbb{R}\), su imagen inversa \(f^{-1}(G)\) es cerrada.
+
+11. Sea \(X = Y \cup Z\). Si \(f: X \to \mathbb{R}\) es tal que \(f|Y\) y \(f|Z\) son continuas, entonces \(f\) es continua en todo punto \(a \in Y \cap Z\).
+
+12. Una función \(f: X \to \mathbb{R}\) es discontinua en el punto \(a \in X\) si, y solo si, existen \(\varepsilon > 0\) y una sucesión de puntos \(x_n \in X\) tales que \(|x_n - a| \leq 1/n\) y \(|f(x_n) - f(a)| \geq \varepsilon\) para todo \(n \in \mathbb{N}\).
+
+13. Sea \(F \subset \mathbb{R}\) un conjunto cerrado. Dada una función continua \(f: F \to \mathbb{R}\), existe \(\varphi: \mathbb{R} \to \mathbb{R}\) continua tal que \(\varphi|_F = f\). (Sugerencia: Defina \(\varphi\) linealmente en los intervalos componentes de \(\mathbb{R} - F\) de modo que coincida con \(f\) en los extremos de cada intervalo.)
+
+14. Sea \(f: \mathbb{R} \to \mathbb{R}\) continua. Pruebe que las siguientes condiciones sobre \(f\) son equivalentes:
+\begin{itemize}
+    \item[a)] \(\lim_{x \to +\infty} |f(x)| = \lim_{x \to -\infty} |f(x)| = +\infty\);
+    \item[b)] Si \(|x_n| \to +\infty\), entonces \(|f(x_n)| \to +\infty\);
+    \item[c)] Si \(K\) es compacto, entonces \(f^{-1}(K)\) es compacto.
+\end{itemize}
+
+15. Defina una biyección \(f: \mathbb{R} \to \mathbb{R}\) que sea discontinua en todos los puntos.
+
+16. Sea \(f: X \to \mathbb{R}\) monótona, tal que \(f(X)\) sea denso en un intervalo acotado. Muestre que existe una única función continua (monótona) \(\varphi: \overline{X} \to \mathbb{R}\), tal que \(\varphi|_X = f\).
+
+17. Sea \(K\) el conjunto de Cantor. Escriba \(A = [0, 1] - K\) y defina una función monótona no decreciente \(f: A \to \mathbb{R}\), constante en cada intervalo componente de \(A\), tal que \(f(A)\) sea el conjunto de las fracciones de la forma \(\frac{2m}{n}\) pertenecientes a \([0, 1]\). Muestre que existe una función monótona continua \(\varphi: [0, 1] \to \mathbb{R}\) que coincide con \(f\) en los puntos de \(A\). (Función de Cantor.)
+
+18. Sea \(f: \mathbb{R} \to \mathbb{R}\) una función arbitraria. Para cada \(n \in \mathbb{N}\), consideremos el conjunto \(C_n\), formado por los puntos \(a \in \mathbb{R}\) con la siguiente propiedad: existe un intervalo abierto \(I\), conteniendo \(a\), tal que \(x, y \in I \Rightarrow |f(x) - f(y)| < \frac{1}{n}\). Pruebe:
+
+\begin{itemize}
+    \item[1.] Cada \(C_n\) es un conjunto abierto;
+    \item[2.] \(f\) es continua en el punto \(a\) si, y solo si, \(a \in C_n\) para todo \(n \in \mathbb{N}\).
+\end{itemize}
+
+Concluya que el conjunto de los puntos de continuidad de cualquier función \(f: \mathbb{R} \to \mathbb{R}\) es una intersección numerable de abiertos. En particular (véase el Ejercicio 55, Capítulo V) no existe una función \(f: \mathbb{R} \to \mathbb{R}\) que sea continua en los puntos racionales y discontinua en los irracionales.
+
+19. No existe \(f: \mathbb{R} \to \mathbb{R}\) continua que transforme todo número racional en un irracional y viceversa.
+
+20. Sea \(f: I \to \mathbb{R}\), continua, acotada en un intervalo. Para todo \(a \in \overline{I}\), el conjunto de los valores de adherencia de \(f\) en el punto \(a\) es un intervalo (compacto). Esto incluye \(a = -\infty\) y \(a = +\infty\), en el caso de que el intervalo \(I\) sea ilimitado. En particular, si \(f: [0, +\infty) \to \mathbb{R}\) es continua y acotada, el conjunto de los puntos de la forma \(c = \lim f(x_n)\) donde \(x_n \to +\infty\) es un intervalo cerrado y acotado.
+
+21. Sean \(T\) el conjunto de los números trascendentes negativos y \(A\) el conjunto de los números algebraicos \(\geq 0\). Defina \(f: T \cup A \to [0, +\infty)\) poniendo \(f(x) = x^2\). Muestre que \(f\) es una biyección continua, cuya inversa es discontinua en todos los puntos, excepto en \(0\).
+
+22. Sea \(f: [a, b] \to [a, b]\) continua. Pruebe que \(f\) posee un punto fijo, es decir, existe \(x \in [a, b]\) tal que \(f(x) = x\). (Teorema de Brouwer en dimensión 1.) Dé un ejemplo de una función continua \(f: [0, 1] \to [0, 1]\) sin punto fijo.
+
+23. Sea \(n\) impar. Pruebe que, para todo \(y \in \mathbb{R}\), existe un único \(x \in \mathbb{R}\) tal que \(x^n = y\) y que, escribiendo \(x = \sqrt[n]{y}\), la función \(y \mapsto \sqrt[n]{y}\), así definida, es un homeomorfismo de \(\mathbb{R}\) sobre \(\mathbb{R}\).
+
+24. Sean \(K\) compacto y \(F\) cerrado, no vacíos. Muestre que existen \(x_0 \in K\), \(y_0 \in F\) tales que \(|x_0 - y_0| \leq |x - y|\), para cualesquiera \(x \in K\), \(y \in F\). Dé un ejemplo de dos conjuntos cerrados y disjuntos \(F, G\) tales que \(\inf\{|x - y| \; ; \; x \in F, y \in G\} = 0\).
+
+25. Sea \(f: \mathbb{R} \to \mathbb{R}\) continua. Si, para todo abierto \(A \subset \mathbb{R}\), su imagen \(f(A)\) es abierta, entonces \(f\) es inyectiva y por tanto monótona.
+
+26. Sea \(p: \mathbb{R} \to \mathbb{R}\) un polinomio de grado par, cuyo coeficiente líder es positivo. Pruebe que \(p\) asume un valor mínimo en \(\mathbb{R}\), es decir, existe \(x_0 \in \mathbb{R}\) tal que \(p(x_0) \leq p(x)\) para todo \(x \in \mathbb{R}\). Si \(p(x_0) < 0\), muestre que \(p\) posee al menos dos raíces reales. Enuncie y demuestre resultados análogos cuando el coeficiente líder de \(p\) es negativo.
+
+27. Si toda función continua definida en un cierto conjunto \(X\) es acotada, entonces \(X\) es compacto.
+
+28. Sea \(f: \mathbb{R} \to \mathbb{R}\) continua. Si \(\lim_{x \to +\infty} f(x) = \lim_{x \to -\infty} f(x) = +\infty\), entonces existe un punto \(x_0 \in \mathbb{R}\) en el cual \(f\) asume su valor mínimo.
+
+29. Muestre que \(f: (-1, +1) \to \mathbb{R}\), definida por \(f(x) = \frac{x}{1 - |x|}\), es un homeomorfismo entre el intervalo \((-1, +1)\) y la recta.
+
+30. Clasifique los intervalos de la recta en cuanto a homeomorfismos, es decir, haga una lista de tipos de modo que dos intervalos son homeomorfos si, y solo si, tienen el mismo tipo. (Por ejemplo, dos intervalos abiertos cualesquiera, acotados o no, son siempre homeomorfos. En cambio, un intervalo cerrado acotado solo puede ser homeomorfo a otro que sea también acotado y cerrado.)
+
+31. Si \(f, g: X \to \mathbb{R}\) son uniformemente continuas entonces \(f + g\), \(f \wedge g\) y \(f \vee g\) también lo son. (Véase el Ejercicio 3 anterior.) Por otro lado, el producto de dos funciones uniformemente continuas puede no tener esa propiedad, a menos que las funciones sean acotadas. La compuesta de dos funciones uniformemente continuas es uniformemente continua.
+
+32. Sea \(g: \mathbb{R} \to (-1, +1)\) el inverso del homeomorfismo \(f\) definido en el Ejercicio 29. Muestre que \(g\) es uniformemente continua pero \(g^{-1} = f\) no lo es.
+
+33. La función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = \sen x\), es uniformemente continua, pero \(g(x) = \sen(x^2)\) define una \(g: \mathbb{R} \to \mathbb{R}\) continua que no es uniformemente continua.
+
+34. Sea \(X \subset \mathbb{R}\) un conjunto no cerrado. Muestre que existe una función continua \(f: X \to \mathbb{R}\) que no se extiende continuamente a \(\overline{X}\).
+
+35. Un polinomio \(p: \mathbb{R} \to \mathbb{R}\) es una función uniformemente continua si, y solo si, tiene grado \(\leq 1\).
+
+36. \(f: X \to \mathbb{R}\) es continua si, y solo si, para cada \(\varepsilon > 0\), existe una cobertura \(X \subset \bigcup_{x \in X} I_x\) con \(I_x = (x - \delta_x, x + \delta_x)\), tales que \(y, z \in X \cap I_x \Rightarrow |f(y) - f(z)| < \varepsilon\). La función \(f\) es uniformemente continua si, y solo si, para cada \(\varepsilon > 0\), los intervalos \(I_x\) pudieran ser elegidos con la misma longitud.
+
+37. La función \(f(x) = x^n\) es lipschitziana en cada conjunto acotado pero, si \(n > 1\), no es uniformemente continua en un intervalo ilimitado.
+
+38. La función \(f: [0, +\infty) \to [0, +\infty)\), definida por \(f(x) = \sqrt{x}\), no es lipschitziana en un intervalo de la forma \([0, a]\), \(a > 0\), aunque sea uniformemente continua allí. Por otro lado, \(f\) es lipschitziana, con constante \(c = \frac{1}{n} \cdot \sqrt[n]{a^{n-1}}\), en el intervalo \([a, +\infty)\). Concluir que \(f\) es uniformemente continua en \([0, +\infty)\).
+
+39. Sea \(\mathbb{N}^* = \{n + 1/n \; ; \; n \in \mathbb{N}\}\). Escriba \(F = \mathbb{N} \cup \mathbb{N}^*\) y defina \(f: F \to \mathbb{R}\) poniendo \(f(n) = 2\) y \(f(n + 1/n) = n + 1/n\). Muestre que los conjuntos \(\mathbb{N}\) y \(\mathbb{N}^*\) son cerrados, que \(f|\mathbb{N}\) y \(f|\mathbb{N}^*\) son uniformemente continuas, pero \(f: F \to \mathbb{R}\) no es uniformemente continua.
+
+40. Dé un ejemplo de dos abiertos \(A, B\) y una función continua \(f: A \cup B \to \mathbb{R}\) tal que \(f|A\) y \(f|B\) sean uniformemente continuas, pero \(f\) no lo sea.
+
+41. Toda función continua monótona acotada \(f: I \to \mathbb{R}\), definida en un intervalo \(I\), es uniformemente continua.
+
+42. Sea \(f: X \to \mathbb{R}\) continua. Para que \(f\) se extienda continuamente a una función \(\varphi: \overline{X} \to \mathbb{R}\) es necesario y suficiente que exista \(\lim_{x \to a} f(x)\) para todo \(a \in X'\).
+
+43. Sea \(f: [a, b] \to \mathbb{R}\) continua. Dado \(\varepsilon > 0\), existen \(a = a_0 < a_1 < \dots < a_{n-1} < a_n = b\) tales que, para cada \(i = 1, 2, \dots, n\), \(x, y \in [a_{i-1}, a_i] \Rightarrow |f(x) - f(y)| < \varepsilon\).
+
+44. Una función continua \(\varphi: [a, b] \to \mathbb{R}\) se llama poligonal cuando existen \(a = a_0 < a_1 < \dots < a_n = b\) tales que \(\varphi|[a_{i-1}, a_i]\) es un polinomio de grado \(\leq 1\), para cada \(i = 1, \dots, n\). Pruebe que, si \(f: [a, b] \to \mathbb{R}\) es continua, entonces, dado \(\varepsilon > 0\), existe una función poligonal \(\varphi: [a, b] \to \mathbb{R}\) tal que \(|f(x) - \varphi(x)| < \varepsilon\) para todo \(x \in [a, b]\).
+
+45. Dado \(\xi: [a, b] \to \mathbb{R}\), si existen \(a = a_0 < a_1 < \dots < a_n = b\) tales que \(\xi|(a_{i-1}, a_i)\) es constante (\(= c_i\)) para cada \(i = 1, 2, \dots, n\), \(\xi\) se llama una función escalera. Muestre que si \(f: [a, b] \to \mathbb{R}\) es continua, entonces, para cada \(\varepsilon > 0\), existe una función escalera \(\xi: [a, b] \to \mathbb{R}\) tal que \(|f(x) - \xi(x)| < \varepsilon\) cualquiera que sea \(x \in [a, b]\).
+
+46. Dada una función \(f: X \to \mathbb{R}\), suponga que para cada \(\varepsilon > 0\) se pueda obtener una función continua \(g: X \to \mathbb{R}\) tal que \(|f(x) - g(x)| < \varepsilon\) cualquiera que sea \(x \in X\). Entonces \(f\) es continua.
+
+47. Sea \(X \subset \mathbb{R}\). Una función \(f: X \to \mathbb{R}\) se dice semicontinua superiormente en el punto \(a \in X\) cuando, para cada \(\varepsilon > 0\) dado, se puede obtener \(\delta > 0\) tal que \(x \in X,\ |x - a| < \delta \Rightarrow f(x) < f(a) + \varepsilon\). Se dice que \(f\) es semicontinua superiormente cuando lo es en todos los puntos de \(X\).
+
+\begin{itemize}
+    \item[a)] Defina función semicontinua inferiormente y muestre que \(f\) es continua en un punto si, y solo si, es semicontinua superior e inferiormente en ese punto.
+    \item[b)] Pruebe que un subconjunto \(A \subset \mathbb{R}\) es abierto si, y solo si, su función característica \(\xi_A: \mathbb{R} \to \mathbb{R}\) (definida por \(\xi_A(x) = 1\) si \(x \in A\) y \(\xi_A(x) = 0\) si \(x \notin A\)) es semicontinua inferiormente.
+    \item[c)] Enuncie y pruebe un resultado análogo al anterior para conjuntos cerrados.
+    \item[d)] Muestre, más generalmente, que para todo subconjunto \(X \subset \mathbb{R}\), su función característica \(\xi_X: \mathbb{R} \to \mathbb{R}\) es discontinua precisamente en los puntos de la frontera de \(X\). Dado \(a \in \text{fr } X\), muestre que \(\xi_X\) es semicontinua superiormente en el punto \(a\) si \(a \in X\) e inferiormente si \(a \notin X\). Concluya que la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = 1\) para \(x \in \mathbb{Q}\) y \(f(x) = 0\) para \(x\) irracional, es semicontinua superiormente en los números racionales e inferiormente en los números irracionales.
+    \item[e)] Sea \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = \frac{1}{x}\) si \(x \neq 0\) y \(f(0) = c\). Muestre que \(f\) es semicontinua superiormente en el punto \(0\) si, y solo si, \(c \geq 1\). (E inferiormente si, y solo si, \(c \leq -1\).) Tomando \(-1 < c < 1\), muestre que \(f\) no es semicontinua en el punto \(0\).
+    \item[f)] Las funciones \(f, g: \mathbb{R} \to \mathbb{R}\), donde \(f(0) = g(0) = 0\) y, para \(x \neq 0\), \(f(x) = x \sin \frac{1}{x}\), \(g(x) = \frac{1}{|x|}\), son semicontinuas inferiormente, pero su producto \(f \cdot g\) no es una función semicontinua en el punto \(0\).
+    \item[g)] Para que \(f: X \to \mathbb{R}\) sea semicontinua superiormente en el punto \(a \in X \cap X'\) es necesario y suficiente que \(\limsup_{x \to a} f(x) \leq f(a)\). Equivalentemente: para toda sucesión de puntos \(x_n \in X\) con \(\lim x_n = a\), se tenga \(\limsup_{n \to \infty} f(x_n) \leq f(a)\). Vale un resultado análogo para semicontinuidad inferior.
+    \item[h)] La suma de dos funciones semicontinuas superiormente en un punto aún goza de la misma propiedad. Use el ítem e) con \(c = 1\) y \(c = -1\) para dar un ejemplo de dos funciones semicontinuas (una superiormente y otra inferiormente) cuya suma no es semicontinua. Muestre que si \(f\) es semicontinua superiormente, \(-f\) es inferiormente.
+    \item[i)] Sean \(f, g: X \to \mathbb{R}\) semicontinuas superiormente en un punto. Si \(f(x) \geq 0\) y \(g(x) \geq 0\) para todo \(x \in X\), entonces el producto \(f \cdot g\) es una función semicontinua superiormente en el mismo punto.
+    \item[j)] Cuando \(X \subset \mathbb{R}\) es compacto, toda función semicontinua superiormente \(f: X \to \mathbb{R}\) es acotada superiormente y alcanza su valor máximo en un punto de \(X\). Enuncie y pruebe un hecho análogo para semicontinuidad inferior.
+\end{itemize}
 
 \newpage
 
