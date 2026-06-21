@@ -4087,9 +4087,9 @@ Un número real \(a\) se llama un valor de adherencia de \(f\) en el punto \(\al
 
 El Teorema 6 asegura que si \(\lim_{x \to \alpha} f(x) = L\) entonces \(L\) es el único valor de adherencia de \(f\) en el punto \(\alpha\). Mostraremos que la recíproca es verdadera cuando \(f\) es acotada en una vecindad de \(\alpha\). Sin esta hipótesis de acotación, puede ocurrir que \(L \in \mathbb{R}\) sea el único valor de adherencia de \(f\) en el punto \(\alpha\) sin que valga \(L = \lim_{x \to \alpha} f(x)\). Por ejemplo, sea \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = 1\) si \(x\) es racional y \(f(x) = \frac{1}{x}\) si \(x\) es irracional. Entonces 1 es el único valor de adherencia de \(f\) en el punto 0 pero no existe \(\lim_{x \to 0} f(x)\).
 
-\textbf{Teorema 13.} Un número real \(a\) es valor de adherencia de \(f\) en el punto \(\alpha\) si, y solo si, para todo \(\delta > 0\) se tiene \(a \in \overline{f(V_\delta)}\).
+\textbf{Teorema 13.} Un número real \( c \) es valor de adherencia de \( f \) en el punto \( a \) si, y solo si, para todo \( \delta > 0 \) se tiene \( c \in \overline{f(V_\delta)} \).
 
-\textbf{Demostración.} Si \(a\) es valor de adherencia de \(f\) en el punto \(\alpha\), entonces \(a = \lim_{n \to \infty} f(x_n)\), \(x_n \in X - \{\alpha\}\), \(x_n \to \alpha\). Dado cualquier \(\delta > 0\), existe \(n_0 \in \mathbb{N}\) tal que \(n > n_0 \Rightarrow x_n \in V_\delta\). Ahora bien, se tiene \(a = \lim_{n \to \infty} f(x_n)\). Luego \(a\) es límite de una sucesión de puntos pertenecientes a \(f(V_\delta)\), esto es, \(a \in \overline{f(V_\delta)}\). Recíprocamente, si \( c \in \overline{f(V_\delta)} \) para todo \( \delta > 0 \), entonces \( c \in \overline{f(V_{1/n})} \) para todo \( n \in \mathbb{N} \). Así, para todo \( n \in \mathbb{N} \) existe \( x_n \in V_{1/n} \) tal que \( |f(x_n) - c| < 1/n \). Se sigue que \( x_n \in X - \{a\} \), \( \lim x_n = a \) y \( \lim f(x_n) = c \). Luego \( c \) es un valor de adherencia de \( f \) en el punto \( a \).
+\textbf{Demostración.} Si \( c \) es valor de adherencia de \( f \) en el punto \( a \), entonces \( c = \lim_{n \to \infty} f(x_n) \), con \( x_n \in X - \{a\} \), \( x_n \to a \). Dado cualquier \( \delta > 0 \), existe \( n_0 \in \mathbb{N} \) tal que \( n > n_0 \Rightarrow x_n \in V_\delta \). Ahora bien, se tiene \( c = \lim_{n \to \infty} f(x_n) \). Luego \( c \) es límite de una sucesión de puntos pertenecientes a \( f(V_\delta) \), es decir, \( c \in \overline{f(V_\delta)} \). Recíprocamente, si \( c \in \overline{f(V_\delta)} \) para todo \( \delta > 0 \), entonces \( c \in \overline{f(V_{1/n})} \) para todo \( n \in \mathbb{N} \). Así, para todo \( n \in \mathbb{N} \) existe \( x_n \in V_{1/n} \) tal que \( |f(x_n) - c| < 1/n \). Se sigue que \( x_n \in X - \{a\} \), \( \lim_{n \to \infty} x_n = a \) y \( \lim_{n \to \infty} f(x_n) = c \). Luego \( c \) es un valor de adherencia de \( f \) en el punto \( a \).
 
 Indiquemos con \( VA(f; a) \) el conjunto de los valores de adherencia de \( f \) en el punto \( a \). El corolario siguiente es, en realidad, una forma equivalente de enunciar el Teorema 13.
 
@@ -4714,6 +4714,1564 @@ Concluya que el conjunto de los puntos de continuidad de cualquier función \(f:
     \item[i)] Sean \(f, g: X \to \mathbb{R}\) semicontinuas superiormente en un punto. Si \(f(x) \geq 0\) y \(g(x) \geq 0\) para todo \(x \in X\), entonces el producto \(f \cdot g\) es una función semicontinua superiormente en el mismo punto.
     \item[j)] Cuando \(X \subset \mathbb{R}\) es compacto, toda función semicontinua superiormente \(f: X \to \mathbb{R}\) es acotada superiormente y alcanza su valor máximo en un punto de \(X\). Enuncie y pruebe un hecho análogo para semicontinuidad inferior.
 \end{itemize}
+
+\newpage
+
+\chapter{Derivadas}
+
+Este capítulo está dedicado al estudio de las derivadas de funciones reales de una variable real. Suponemos que el lector ya ha estudiado, en un curso de Cálculo, los aspectos computacionales y las aplicaciones más elementales de las derivadas. Esperamos, principalmente, que esté familiarizado con el significado geométrico de la derivada como coeficiente angular de la tangente al gráfico de una función.
+
+Aunque esas imágenes intuitivas no desempeñan papel alguno en el desarrollo lógico del texto, consideramos indispensable la actitud mental de pensar en el gráfico de cada función mencionada en el presente capítulo. De lo contrario, sería difícil imaginar soluciones para los ejercicios propuestos y entender el significado de las proposiciones y de los ejemplos. Incluso el propio concepto de derivada se volvería artificial e injustificado.
+
+\section{Definición y propiedades de la derivada en un punto}
+
+Sean \( X \subset \mathbb{R} \), \( f : X \to \mathbb{R} \) y \( a \in X \cap X' \) (es decir, \( a \) es un punto de acumulación de \( X \) perteneciente a \( X \)).
+
+Diremos que \( f \) es derivable en el punto \( a \) cuando exista el límite
+\[
+f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}.
+\]
+
+En caso afirmativo, el límite \( f'(a) \) se llama la derivada de \( f \) en el punto \( a \).
+
+Bien entendido, la función \( q: x \mapsto [f(x) - f(a)]/(x - a) \) está definida en el conjunto \( X - \{a\} \). Geométricamente, \( q(x) \) representa la inclinación (o coeficiente angular) de la secante al gráfico de \( f \) que pasa por los puntos \( (a, f(a)) \) y \( (x, f(x)) \). La recta que pasa por el punto \( (a, f(a)) \in \mathbb{R}^2 \) y tiene inclinación igual a \( f'(a) \) se llama la tangente al gráfico de \( f \) en el punto \( (a, f(a)) \). La inclinación de la tangente es, por tanto, el límite de las inclinaciones de las rectas secantes que pasan por los puntos \( (a, f(a)) \) y \( (x, f(x)) \) cuando \( x \to a \).
+
+Escribiendo \( h = x - a \), o \( x = a + h \), la derivada de \( f \) en el punto \( a \in X \cap X' \) se convierte en el límite:
+\[
+f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}.
+\]
+
+Ahora, la función \( h \mapsto [f(a + h) - f(a)]/h \) está definida en el conjunto \( Y = \{h \in \mathbb{R} - \{0\}; a + h \in X\} \), el cual tiene a \( 0 \) como punto de acumulación.
+
+Cuando \( a \in X \cap X'_+ \) (es decir, cuando \( a \) es un punto de acumulación a la derecha de \( X \) y pertenece a él), podemos definir la derivada a la derecha de la función \( f \) en el punto \( a \), como el límite (si existe):
+\[
+f'_+(a) = \lim_{x \to a^+} \frac{f(x) - f(a)}{x - a} = \lim_{h \to 0^+} \frac{f(a + h) - f(a)}{h}.
+\]
+
+Análogamente se define la derivada a la izquierda, \( f'_-(a) \), cuando \( a \) es un punto de acumulación a la izquierda que pertenece al dominio de \( f \).
+
+Evidentemente, cuando \( a \in X \) es punto de acumulación a la derecha y a la izquierda (ejemplo más importante: \( a \in \operatorname{int}(X) \)), entonces \( f'(a) \) existe si, y solo si, existen y son iguales las derivadas laterales \( f'_+(a) \) y \( f'_-(a) \).
+
+Por ejemplo, cuando se dice que una función \( f: [c, d] \to \mathbb{R} \), definida en un intervalo compacto, es derivable en un punto \( a \in [c, d] \), esto significa, en el caso de \( a \in (c, d) \), que \( f \) posee las dos derivadas laterales en el punto \( a \) y ellas son iguales. En el caso de que \( a \) sea uno de los extremos, esto quiere decir únicamente que existe, en el punto \( a \), aquella derivada lateral que tiene sentido.
+
+Observación: Se sigue de las propiedades generales del límite que \( f: X \to \mathbb{R} \) es derivable en el punto \( a \) si, y solo si, dada cualquier sucesión de puntos \( x_n \in X - \{a\} \) con \( \lim x_n = a \), se tiene
+\[
+\lim_{n \to \infty} \frac{f(x_n) - f(a)}{x_n - a} = f'(a).
+\]
+
+Más generalmente, sea dada cualquier función \( g: Y \to X \subset \mathbb{R} \) tal que \( \lim_{y \to b} g(y) = a \), con \( b \in Y' \). Si \( y \neq b \Rightarrow g(y) \neq a \), entonces tenemos
+\[
+\lim_{y \to b} \frac{f(g(y)) - f(a)}{g(y) - a} = f'(a).
+\]
+
+Ejemplos.
+
+1. Sea \( f: \mathbb{R} \to \mathbb{R} \) constante, es decir, existe \( c \in \mathbb{R} \) tal que \( f(x) = c \) para todo \( x \in \mathbb{R} \). Entonces \( f'(a) = 0 \) para todo \( a \in \mathbb{R} \). (La derivada de una constante es nula.)
+
+2. Sea \( f: \mathbb{R} \to \mathbb{R} \) dada por \( f(x) = cx + d \). Entonces, para todo \( a \in \mathbb{R} \), \( f(x) - f(a) = c(x - a) \), de modo que el cociente \( [f(x) - f(a)]/(x - a) = c \) es constante y, así siendo, \( f'(a) = c \) para todo \( a \in \mathbb{R} \).
+
+3. Sea \( f(x) = x^2 \). Entonces \( f(a + h) = (a + h)^2 = a^2 + 2ah + h^2 \), de modo que \( [f(a + h) - f(a)]/h = 2a + h \) y así \( f'(a) = \lim_{h \to 0} (2a + h) = 2a \).
+
+4. Usando la fórmula del binomio de Newton se muestra, como arriba, que si \( p(x) = \sum_{i=0}^{n} a_i x^i \) es un polinomio, entonces, \( p'(x) = \sum_{i=1}^{n} i \cdot a_i x^{i-1} \) para cualquier \( x \in \mathbb{R} \).
+
+5. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = |x| \). Entonces, para \( x \neq 0 \),
+\[
+\frac{f(x) - f(0)}{x - 0} = \frac{|x|}{x} = \pm 1
+\]
+(\( +1 \) si \( x > 0 \) y \( -1 \) si \( x < 0 \)). Se sigue que existen \( f'_+(0) = 1 \) y \( f'_-(0) = -1 \), pero no existe \( f'(0) \). Para \( a \neq 0 \), sin embargo, existe \( f'(a) \), que vale \( 1 \) si \( a > 0 \) y \( -1 \) si \( a < 0 \).
+
+6. Sea \( f: [0, +\infty) \to \mathbb{R} \) definida por \( f(x) = \sqrt{x} \). Para todo \( a \in (0, +\infty) \) y \( h \neq 0 \), tenemos
+\[
+\frac{\sqrt{a+h} - \sqrt{a}}{h} = \frac{h}{h(\sqrt{a+h} + \sqrt{a})} = \frac{1}{\sqrt{a+h} + \sqrt{a}}.
+\]
+Por tanto, si \( a > 0 \) existe \( f'(a) = \frac{1}{2\sqrt{a}} \). Sin embargo, en el punto \( a = 0 \), tenemos
+\[
+\frac{f(0+h) - f(0)}{h} = \frac{\sqrt{h}}{h} = \frac{1}{\sqrt{h}},
+\]
+luego no existe el límite cuando \( h \to 0 \), es decir, la función \( f(x) = \sqrt{x} \) no posee derivada en el punto \( 0 \).
+
+7. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por \( f(x) = \inf\{|x - n|; n \in \mathbb{Z}\} \), es decir, \( f(x) \) es la distancia de \( x \) al entero más próximo. Entonces, si \( x \in [n, n + \frac{1}{2}] \), \( f(x) = x - n \). Por otro lado, si \( x \in [n + \frac{1}{2}, n + 1] \), \( f(x) = n + 1 - x \). El gráfico de \( f \) es una sierra cuyos dientes tienen puntas en los puntos \( (n + \frac{1}{2}, \frac{1}{2}) \). Existe la derivada de \( f \) en cada punto del intervalo \( (n, n + \frac{1}{2}) \) y es igual a \( 1 \). Para cada \( a \in (n + \frac{1}{2}, n + 1) \) también existe la derivada \( f'(a) = -1 \). En los puntos \( n \) y \( n + 1/2 \), con \( n \in \mathbb{Z} \), existen únicamente las derivadas laterales, pero son diferentes.
+
+Observación: Al estar definida como un límite, la derivada tiene carácter local. Así, si la función \( f: X \to \mathbb{R} \) posee derivada en un punto \( a \in X \cap X' \), entonces, dado \( Y \subset X \) tal que \( a \in Y \cap Y' \), la función \( g = f|_Y \) también tiene derivada en el punto \( a \), siendo \( g'(a) = f'(a) \). Si \( Y = I \cap X \), donde \( I \) es un intervalo abierto que contiene al punto \( a \), entonces vale también el recíproco: la existencia de \( g'(a) \) implica la existencia de \( f'(a) \).
+
+Diremos que \( f: X \to \mathbb{R} \) es derivable en el conjunto \( X \) cuando exista la derivada de \( f \) en todos los puntos \( a \in X \cap X' \).
+
+Interpretaremos ahora la existencia de la derivada \( f'(a) \) como significando que, en las proximidades de \( a \), la función \( f \) se expresa como un polinomio de grado \( \leq 1 \) más un resto que es “muy pequeño” en un sentido bien preciso.
+
+Si \( f: X \to \mathbb{R} \) posee derivada en un punto \( a \in X \cap X' \), escribiremos
+\[
+r(h) = f(a + h) - f(a) - f'(a) \cdot h.
+\]
+Entonces, para todo \( h \neq 0 \), tal que \( a + h \in X \), tendremos
+\[
+(1) \quad f(a + h) = f(a) + f'(a) \cdot h + r(h), \qquad \text{con } \lim_{h \to 0} \frac{r(h)}{h} = 0.
+\]
+
+Debido a la relación \( \lim_{h \to 0} \frac{r(h)}{h} = 0 \), se dice que el “resto” \( r(h) \) tiende a cero más rápidamente que \( h \). También se dice que \( r(h) \) es un infinitésimo (\( = \) función cuyo límite es cero) de orden superior a 1, relativamente a \( h \).
+
+Recíprocamente, dada \( f \), supongamos que exista una constante \( L \) tal que se pueda escribir
+\[
+(2) \quad f(a + h) = f(a) + L \cdot h + r(h), \qquad \text{con } \lim_{h \to 0} \frac{r(h)}{h} = 0.
+\]
+
+(Bien entendido, la primera igualdad siempre puede escribirse: ella es solo la definición de \( r(h) \). Lo crucial es saber si \( \lim_{h \to 0} \frac{r(h)}{h} = 0 \). En este caso, se tiene
+\[
+\frac{f(a+h) - f(a)}{h} = L + \frac{r(h)}{h}
+\]
+
+y, por tanto, \( \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} = L \), esto es, existe la derivada \( f'(a) \) y es igual a \( L \).
+
+La condición (2) es, por tanto, necesaria y suficiente para la existencia de la derivada \( f'(a) \). La constante \( L \), si existe con aquella propiedad, es única e igual a \( f'(a) \).
+
+Las condiciones (1) y (2) son, pues, equivalentes. Ellas pueden aún escribirse bajo la forma
+\[
+(3) \quad f(a+h) = f(a) + [f'(a) + \rho(h)]h, \quad \text{con} \quad \lim_{h \to 0} \rho(h) = 0.
+\]
+
+La función \( \rho \) estará definida para todo \( h \) tal que \( a+h \in X \) (inclusive \( h=0 \)). Para \( h \neq 0 \), tendremos
+\[
+\rho(h) = \frac{r(h)}{h} = \frac{f(a+h) - f(a)}{h} - f'(a).
+\]
+
+Para \( h=0 \), pondremos \( \rho(0)=0 \). Así, la continuidad de la función \( \rho \) en el punto \( 0 \) equivale a la existencia de la derivada \( f'(a) \).
+
+Consideraciones análogas pueden hacerse en cuanto a las derivadas laterales. Basta suponer \( h>0 \) para la derivada a la derecha y \( h<0 \) en el caso de la derivada a la izquierda.
+
+Ejemplos.
+
+8. Tenemos \( (a+h)^2 = a^2 + 2ah + h^2 \). Aquí \( f(x) = x^2 \), \( f'(a) = 2a \) y \( r(h) = h^2 \). Al dar un pequeño incremento \( h \) al punto \( a \), el incremento sufrido por su cuadrado, esto es \( (a+h)^2 - a^2 \), es esencialmente igual a \( 2a \cdot h \) (\( = f'(a) \cdot h \)), ya que el resto \( h^2 \) es despreciable en relación a \( h \) (si \( h \) es muy pequeño).
+
+9. Se sabe del Cálculo que la función \( f: \mathbb{R} \to \mathbb{R} \), dada por \( f(x) = \operatorname{sen} x \), posee, en todo punto \( a \in \mathbb{R} \), la derivada \( f'(a) = \cos a \). Entonces podemos escribir
+\[
+\operatorname{sen}(a + h) = \operatorname{sen} a + h \cdot \cos a + r(h),
+\]
+donde \( \lim_{h \to 0} \frac{r(h)}{h} = 0 \). Por tanto, para valores muy pequeños de \( h \), tenemos aproximadamente
+\[
+\operatorname{sen}(a + h) \sim \operatorname{sen} a + h \cdot \cos a,
+\]
+con error igual a una fracción pequeña de \( h \). (El número \( \rho(h) \) proporciona la razón entre el error \( r(h) \) y el incremento \( h \).) Compárese con la fórmula de la Trigonometría:
+\[
+\operatorname{sen}(a + h) = \operatorname{sen} a \cdot \cos h + \cos a \cdot \operatorname{sen} h.
+\]
+Obtenemos
+\[
+r(h) = \operatorname{sen} a \cdot (\cos h - 1) + \cos a \cdot (\operatorname{sen} h - h).
+\]
+Esto confirma que \( \lim_{h \to 0} \frac{r(h)}{h} = 0 \). En efecto, \( \lim_{h \to 0} \frac{\cos h - 1}{h} = 0 \) y \( \lim_{h \to 0} \left( \frac{\operatorname{sen} h}{h} - 1 \right) = 0 \), como resulta del cálculo de las derivadas de \( \cos x \) y \( \operatorname{sen} x \) en el punto \( 0 \).
+
+La expresión \( f'(a) \cdot h \), que proporciona una buena aproximación para el incremento \( f(a + h) - f(a) \) cuando \( h \) es pequeño, se llama la diferencial de \( f \) en el punto \( a \). Obsérvese que la diferencial es una función de \( h \) (y del punto \( a \)). Se escribe, a veces, \( df(a) = f'(a) \cdot h \).
+
+Estableceremos ahora las propiedades más básicas para la derivada en un punto. En primer lugar, mostraremos que no puede existir la derivada en un punto donde la función es discontinua.
+
+\textbf{Teorema 1.} Si existe la derivada \( f'(a) \), entonces \( f \) es continua en el punto \( a \).
+
+\textbf{Demostración.} Si existe el límite \( \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \), entonces existe también el límite
+\[
+\lim_{x \to a} [f(x) - f(a)] =
+\lim_{x \to a} \left[ \frac{f(x) - f(a)}{x - a} \cdot (x - a) \right] =
+\lim_{x \to a} \frac{f(x) - f(a)}{x - a} \cdot \lim_{x \to a} (x - a) = 0.
+\]
+Luego \( f \) es continua en el punto \( a \).
+
+Observación: 1. Si existe únicamente una derivada lateral, \( f \) puede ser discontinua en el punto \( a \). Por ejemplo: \( f: \mathbb{R} \to \mathbb{R} \), con \( f(x) = 1 \) si \( x \geq 0 \) y \( f(x) = -1 \) si \( x < 0 \). En este caso, \( f'_+(0) = 0 \) pero \( f'_-(0) \) no existe. Sin embargo, el mismo argumento anterior muestra que si \( f'_+(0) \) existe, entonces \( f \) es continua a la derecha en el punto \( a \), esto es, \( \lim_{x \to a^+} f(x) = f(a) \). Del mismo modo, la existencia de la derivada a la izquierda, \( f'_-(0) \), implica que \( f \) es continua a la izquierda en este punto, o sea, \( f(a) = \lim_{x \to a^-} f(x) \). En particular, para que \( f \) sea continua en el punto \( a \), basta que existan las dos derivadas laterales, incluso siendo diferentes. En el ejemplo que acabamos de dar, la función \( f \) es continua a la derecha y discontinua a la izquierda en el punto \( 0 \). Así siendo, la derivada \( f'_-(0) \) no existe.
+
+2. Los Ejemplos 5, 6 y 7 anteriores muestran que una función puede ser continua en toda la recta y no ser derivable en algunos puntos. Es posible construir una función \( f: \mathbb{R} \to \mathbb{R} \) continua que no posee derivada en punto alguno de la recta. Véase el libro Espaços Métricos, del autor, Ejemplo 33 del Capítulo 7, donde se muestra que la mayoría de las funciones continuas no posee derivada en ningún punto.
+
+\textbf{Teorema 2.} Sean \( f, g: X \to \mathbb{R} \) derivables en el punto \( a \in X \cap X' \). Entonces \( f \pm g \), \( f \cdot g \) y \( f/g \) (en caso de que \( g(a) \neq 0 \)) son derivables en ese mismo punto. Se tiene
+\[
+(f \pm g)'(a) = f'(a) \pm g'(a),
+\]
+\[
+(f \cdot g)'(a) = f'(a) \cdot g(a) + f(a) \cdot g'(a),
+\]
+\[
+\left(\frac{f}{g}\right)'(a) = \frac{f'(a) \cdot g(a) - f(a) \cdot g'(a)}{g(a)^2}.
+\]
+
+\textbf{Demostración.} Consulte cualquier libro de Cálculo.
+
+\textbf{Corolario.} Si \( c \in \mathbb{R} \), entonces \( (c \cdot f)' = c \cdot f' \). Si \( f(a) \neq 0 \), entonces
+\[
+\left(\frac{1}{f}\right)'(a) = \frac{-f'(a)}{f(a)^2}.
+\]
+
+\textbf{Teorema 3.} (Regla de la cadena). Sean \( f: X \to \mathbb{R} \), \( g: Y \to \mathbb{R} \), \( f(X) \subset Y \), \( a \in X \cap X' \), \( b = f(a) \in Y \cap Y' \). Si existen \( f'(a) \) y \( g'(b) \), entonces \( g \circ f: X \to \mathbb{R} \) es derivable en el punto \( a \), valiendo
+\[
+(g \circ f)'(a) = g'(b) \cdot f'(a).
+\]
+
+\textbf{Demostración.} Tenemos
+\[
+\begin{cases}
+f(a + h) = f(a) + [f'(a) + \rho] \cdot h, & \text{donde } \lim_{h \to 0} \rho(h) = 0, \\
+g(b + k) = g(b) + [g'(b) + \sigma] \cdot k, & \text{donde } \lim_{k \to 0} \sigma(k) = 0.
+\end{cases}
+\]
+
+Estamos escribiendo, por simplicidad, \( \rho \) y \( \sigma \) en vez de \( \rho(h) \) y \( \sigma(k) \) respectivamente. Poniendo
+\[
+k = f(a + h) - f(a) = [f'(a) + \rho] \cdot h,
+\]
+tenemos \( f(a + h) = b + k \) y
+\[
+(g \circ f)(a + h) = g[f(a + h)] = g(b + k) = g(b) + [g'(b) + \sigma] \cdot k
+\]
+\[
+= g(b) + [g'(b) + \sigma] \cdot [f'(a) + \rho] \cdot h
+= g(b) + [g'(b) \cdot f'(a) + \theta] \cdot h,
+\]
+con
+\[
+\theta(h) = \sigma(f(a + h) - f(a)) \cdot [f'(a) + \rho(h)] + g'(b) \cdot \rho(h).
+\]
+Como \( f \) es continua en el punto \( a \) y \( \sigma \) es continua en el punto \( 0 \), tenemos \( \lim_{h \to 0} \sigma(f(a + h) - f(a)) = 0 \), luego \( \lim_{h \to 0} \theta(h) = 0 \), lo que prueba el teorema.
+
+\textbf{Corolario.} (Derivada de una función inversa). Sea \( f: X \to Y \subset \mathbb{R} \) una función que posee inversa \( g = f^{-1}: Y \to X \subset \mathbb{R} \). Si \( f \) es derivable en el punto \( a \in X \cap X' \) y \( g \) es continua en el punto \( b = f(a) \), entonces \( g \) es derivable en el punto \( b \) si, y solo si, \( f'(a) \neq 0 \). En caso afirmativo,
+\[
+g'(b) = \frac{1}{f'(a)}.
+\]
+
+Observación: La continuidad de \( g \) en el punto \( b \) será consecuencia de la continuidad de \( f \) en el punto \( a \) cuando \( f \) sea continua en todos los puntos de \( X \) y, además, \( X \) sea un intervalo o \( X \) sea compacto.
+
+Veamos la demostración del corolario. Como \( g \) es continua en el punto \( b \), tenemos \( \lim_{y \to b} g(y) = g(b) = a \). Además, \( y \in Y - \{b\} \Rightarrow g(y) \neq a \). Luego
+\[
+\lim_{y \to b} \frac{g(y) - g(b)}{y - b}
+= \lim_{y \to b} \frac{g(y) - a}{f(g(y)) - f(a)}
+= \lim_{y \to b} \left[ \frac{f(g(y)) - f(a)}{g(y) - a} \right]^{-1}
+= \frac{1}{f'(a)}.
+\]
+
+Luego \( g'(b) \) existe y es igual a \( 1/f'(a) \) cuando \( f'(a) \neq 0 \). Recíprocamente, si existe \( g'(b) \), entonces, como \( g \circ f = \text{id}_X \), la regla de la cadena nos da \( g'(b) \cdot f'(a) = 1 \), y, por tanto, \( f'(a) \neq 0 \), con \( g'(b) = \frac{1}{f'(a)} \).
+
+Ejemplo 10. La función \( f: \mathbb{R} \to \mathbb{R} \), definida por \( f(x) = x^3 \), es una biyección continua, con inversa continua \( g: \mathbb{R} \to \mathbb{R} \), \( g(y) = \sqrt[3]{y} \). Se tiene \( f'(a) = 3a^2 \). Luego \( f'(a) \neq 0 \) para \( a \neq 0 \), pero \( f'(0) = 0 \). Luego \( g \) no posee derivada en el punto \( 0 = f(0) \). Para \( a \neq 0 \) y \( b = a^3 \), el corolario anterior nos da
+\[
+g'(b) = \frac{1}{3a^2} = \frac{1}{3\sqrt[3]{b^2}},
+\]
+fórmula que, evidentemente, no tiene sentido para \( b = 0 \).
+
+La derivada es el instrumento por excelencia para estudiar el crecimiento de una función en la vecindad de un punto. El teorema siguiente y su corolario nos dan una indicación de cómo se hace esto. Resultados "globales", que tienen en cuenta la existencia de la derivada en todos los puntos de un intervalo, serán establecidos en el parágrafo siguiente.
+
+Se dice que una función \( f: X \to \mathbb{R} \) posee un máximo local en el punto \( a \in X \) cuando existe \( \delta > 0 \) tal que
+\[
+x \in X \cap (a - \delta, a + \delta) \Rightarrow f(x) \leq f(a).
+\]
+Cuando vale la implicación
+\[
+x \in (X - \{a\}) \cap (a - \delta, a + \delta) \Rightarrow f(x) < f(a),
+\]
+decimos que \( f \) posee un máximo local estricto en el punto \( a \). Definiciones análogas pueden darse para un mínimo local y para un mínimo local estricto.
+
+Ejemplo 11. La función \( f: \mathbb{R} \to \mathbb{R} \), \( f(x) = x^2 \), posee un mínimo local estricto en el punto \( 0 \). La función \( g: \mathbb{R} \to \mathbb{R} \), \( g(x) = \operatorname{sen} x \), posee máximos locales estrictos en los puntos \( (4k+1)\pi/2 \) y mínimos locales estrictos en los puntos \( (4k-1)\pi/2 \), \( k \in \mathbb{Z} \). Una función constante posee máximo local y mínimo local (no estrictos) en cada punto de su dominio. En cambio, \( h: \mathbb{R} \to \mathbb{R} \), definida por \( h(x) = 1 \) si \( x \geq 0 \) y \( h(x) = -1 \) si \( x < 0 \), tiene un máximo local (no estricto) en el punto \( 0 \), el cual no es un mínimo local. La función \( \varphi: \mathbb{R} \to \mathbb{R} \), \( \varphi(x) = x^2(1 + \operatorname{sen} x) \) si \( x \neq 0 \), \( \varphi(0) = 0 \), es continua y posee un mínimo no estricto en el punto \( 0 \). Se tiene \( \varphi(x) \geq 0 \) para todo \( x \), \( \varphi(0) = 0 \) y en cualquier vecindad de \( 0 \) hay puntos \( x \) tales que \( \varphi(x) = 0 \).
+
+Si una función no decreciente \( f: X \to \mathbb{R} \) posee derivada en un punto \( a \), debe ser \( f'(a) \geq 0 \), porque para todo \( x \neq a \) se tiene \( f(x) - f(a) \geq 0 \). Análogamente, si existe \( f'(a) \) y \( f \) es no creciente, entonces \( f'(a) \leq 0 \). Obsérvese que \( f \) creciente no asegura \( f'(a) > 0 \), como muestra la función creciente \( f(x) = x^3 \), para la cual se tiene \( f'(0) = 0 \). Nótese además que (siendo \( a \in X \) punto de acumulación de ambos lados), para garantizar \( f'(a) \geq 0 \) basta suponer que \( x < a < y \Rightarrow f(x) \leq f(a) \leq f(y) \), esto es, que \( f \) asume valores \( f(x) \leq f(a) \) en los puntos \( x \) a la izquierda de \( a \) y valores \( f(y) \geq f(a) \) en los puntos \( y \) a la derecha de \( a \). Esto no significa necesariamente que \( f \) sea creciente, pues es una condición en la que solo el punto \( a \) se toma como centro de referencia. (Véase el Ejemplo 12 abajo.) Mostraremos ahora que, recíprocamente, el signo de la derivada proporciona información sobre la variación de la función.
+
+\textbf{Teorema 4.} Sea \( f: X \to \mathbb{R} \) derivable a la derecha en el punto \( a \in X \cap X'_+ \). Si \( f'_+(a) > 0 \), entonces existe \( \delta > 0 \) tal que
+\[
+x \in X, \quad a < x < a + \delta \Rightarrow f(a) < f(x).
+\]
+
+\textbf{Demostración.} Tenemos
+\[
+\lim_{x \to a^+} \frac{f(x) - f(a)}{x - a} = f'_+(a) > 0.
+\]
+Por el Corolario 1 del Teorema 5, Capítulo VI (véase también la observación siguiente al Teorema 10 del mismo capítulo), existe \( \delta > 0 \) tal que
+\[
+x \in X, \quad a < x < a + \delta \Rightarrow \frac{f(x) - f(a)}{x - a} > 0,
+\]
+y, por tanto, \( f(x) - f(a) > 0 \), como queríamos demostrar.
+
+Observación: Intercambiando los signos \( > \text{ y } < \), \( + \text{ y } - \), se obtienen otros tres teoremas análogos a este, con demostraciones semejantes. El primero dice que si \( f'_-(a) > 0 \), entonces \( f(x) < f(a) \) para todo \( x < a \) suficientemente próximo de \( a \). El segundo afirma que si \( f'_+(a) < 0 \), entonces para cualquier \( x > a \) suficientemente próximo de \( a \) se tiene \( f(x) < f(a) \). Finalmente, si \( f'_-(a) < 0 \), entonces \( f(x) > f(a) \) para todo \( x < a \) suficientemente próximo de \( a \). (En todos estos casos, bien entendido, estamos suponiendo \( x \in X \).) Evidentemente, si existe la derivada \( f'(a) \), entonces \( f'(a) > 0 \) implica una afirmación bilateral como la del corolario siguiente:
+
+\textbf{Corolario 1.} Sea \( a \in X \) un punto de acumulación a la derecha y a la izquierda. Si \( f: X \to \mathbb{R} \) posee, en el punto \( a \), una derivada \( f'(a) > 0 \), entonces existe \( \delta > 0 \) tal que \( x, y \in X \), y \( a - \delta < x < a < y < a + \delta \) implican
+\[
+f(x) < f(a) < f(y).
+\]
+
+\textbf{Corolario 2.} Sea \( a \in X \cap X'_+ \cap X'_- \). Si \( f: X \to \mathbb{R} \) es derivable en el punto \( a \) y posee un máximo o un mínimo local en ese punto, entonces
+\[
+f'(a) = 0.
+\]
+
+En efecto, si fuera \( f'(a) > 0 \), el corolario 1 excluiría la existencia de máximo o mínimo local en el punto \( a \). Un análogo del mismo corolario también diría que no puede ser \( f'(a) < 0 \). Luego, debe ser \( f'(a) = 0 \).
+
+Ejemplos.
+
+12. La conclusión del Teorema 4 no implica que exista un intervalo a la derecha de \( a \) en el cual \( f \) sea creciente, como tampoco el Corolario 1 no dice que \( f'(a) > 0 \) implique que \( f \) sea creciente en una vecindad de \( a \). Veamos un ejemplo sobre esto. La función
+\[
+f(x) = x \sen \frac{1}{x} \quad (x \neq 0), \qquad f(0) = 0,
+\]
+es continua en toda la recta y posee derivada
+\[
+f'(x) = \sen \frac{1}{x} - \frac{1}{x^2} \cdot \cos \frac{1}{x}
+\]
+en todos los puntos \( x \neq 0 \). Pero \( f'(0) \) no existe porque
+\[
+\frac{f(x) - f(0)}{x - 0} = \frac{f(x)}{x} = \sen \frac{1}{x}
+\]
+no posee límite cuando \( x \to 0 \). Consideremos entonces la función \( g: \mathbb{R} \to \mathbb{R} \), dada por
+\[
+g(x) = x^2 \sen \frac{1}{x} \quad \text{cuando } x \neq 0, \qquad g(0) = 0.
+\]
+Nuevamente, \( g \) es continua en toda la recta y, para \( x \neq 0 \), se tiene
+\[
+g'(x) = 2x \sen \frac{1}{x} - \cos \frac{1}{x}.
+\]
+No existe \( \lim_{x \to 0} g'(x) \), pero no importa. No es así como se define \( g'(0) \). Tenemos
+\[
+\frac{g(x) - g(0)}{x - 0} = \frac{g(x)}{x} = x \sen \frac{1}{x}.
+\]
+Luego \( g'(0) = \lim_{x \to 0} x \sen \frac{1}{x} = 0 \). Así, \( g \) posee derivada en todos los puntos de la recta. Aún no es \( g \), sin embargo, la función que deseamos. Tomaremos \( \varphi: \mathbb{R} \to \mathbb{R} \), dada por
+\[
+\varphi(x) = x^2 \sen \frac{1}{x} + \frac{x}{2} \quad \text{si } x \neq 0, \qquad \varphi(0) = 0.
+\]
+Vemos, como arriba, que \( \varphi \) es continua y posee derivada en todos los puntos de la recta. En el punto que nos interesa, \( \varphi'(0) = \frac{1}{2} \). El Teorema 4 nos asegura la existencia de un \( \delta > 0 \) tal que
+\[
+0 < x < \delta \Rightarrow \varphi(x) > 0 \quad \text{y} \quad -\delta < x < 0 \Rightarrow \varphi(x) < 0.
+\]
+Nótese, sin embargo, que \( \varphi \) no es creciente en vecindad alguna de \( 0 \), pues siendo
+\[
+\varphi'(x) = 2x \sen \frac{1}{x} - \cos \frac{1}{x} + \frac{1}{2},
+\]
+si tomamos \( x \) muy pequeño con \( \sen \frac{1}{x} = 0 \) y \( \cos \frac{1}{x} = 1 \), tendremos \( \varphi'(x) < 0 \); si \( x \) se elige, aún pequeño, con \( \sen \frac{1}{x} = 1 \) y \( \cos \frac{1}{x} = 0 \), tendremos \( \varphi'(x) > 0 \). Así existen puntos \( x \) arbitrariamente próximos a \( 0 \) en los cuales \( \varphi'(x) \) es positivo o negativo. Como observamos antes de la demostración del Teorema 4, esto excluye la posibilidad de que \( \varphi \) sea monótona en una vecindad de cero. Ni siquiera puede ser \( \varphi \) monótona en un intervalo del tipo \( (0, \delta) \) o \( (-\delta, 0) \), pues en el argumento que acabamos de usar, \( x \) puede tener su signo prefijado. Notemos aún, a propósito de este ejemplo, que \( \varphi \) no puede ser inyectiva en ningún intervalo del tipo \( (0, \delta) \) o \( (-\delta, 0) \). En efecto, siendo continua, \( \varphi \) inyectiva en un intervalo implicaría \( \varphi \) monótona (Teorema 13, Capítulo VII), lo que no ocurre en este caso.
+
+13. La recíproca del Corolario 2 es falsa. La función \( f(x) = x^3 \) tiene derivada nula en el punto \( 0 \), pero es creciente en toda la recta, luego no asume máximo ni mínimo en punto alguno. La función \( g(x) = |x| \) posee un mínimo en el punto \( x = 0 \), en el cual las derivadas laterales son \( g'_+(0) = +1 \) y \( g'_-(0) = -1 \). Así, en el Corolario 2 es necesario que exista la derivada. Finalmente, es esencial para la validez de aquel corolario que el punto \( a \) sea punto de acumulación de ambos lados. Por ejemplo, \( h: [0, +\infty) \to \mathbb{R} \), definida por \( h(x) = x + x^2 \), posee un mínimo (\( = 0 \)) en el punto \( a = 0 \), pero ahí tenemos \( h'(0) = 1 \). La razón es que, siendo \( 0 \) punto de acumulación del dominio de \( h \) únicamente a la derecha, la derivada \( h'(0) \) es esencialmente una derivada lateral.
+
+\section{Funciones derivables en un intervalo}
+
+Si quisiéramos proseguir considerando funciones definidas en subconjuntos arbitrarios de \( \mathbb{R} \), tendríamos que tomar, en los próximos teoremas, un conjunto compacto \( X \subset \mathbb{R} \) tal que todo punto \( x \in X \), con excepción de \( a = \inf X \) y \( b = \sup X \), fuera punto de acumulación de \( X \) a la izquierda y a la derecha y, además, \( X \neq \{a, b\} \). Ahora bien, tal conjunto coincide con el intervalo \( [a, b] \). (En efecto, el abierto \( \mathbb{R} - X \) es unión de intervalos abiertos dos a dos disjuntos. Dos de ellos son \( (-\infty, a) \) y \( (b, +\infty) \). Si \( (c, d) \) fuera otro intervalo componente de \( \mathbb{R} - X \), tendríamos \( c \in X \), pero \( c \) no sería punto de acumulación de \( X \) a la derecha. También \( d \in X \), pero \( d \) no sería punto de acumulación a la izquierda de \( X \). Entonces \( (c, d) = (a, b) \), lo que es absurdo, pues \( X \cap (c, d) = \emptyset \), mientras que \( X \cap (a, b) \neq \emptyset \).)
+
+Cuando la función \( f: I \to \mathbb{R} \) posee derivada en todos los puntos del intervalo \( I \), se considera la función derivada \( f': I \to \mathbb{R} \), que asocia a cada \( x \in I \) la derivada \( f'(x) \). Cuando \( f' \) es continua, se dice que \( f \) es una función continuamente derivable en el intervalo \( I \), o una función de clase \( C^1 \). Esto no siempre ocurre: la función derivada no necesita ser continua.
+
+Ejemplo 14. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por
+\[
+f(x) = x^2 \sen \frac{1}{x} \quad \text{cuando } x \neq 0, \qquad f(0) = 0.
+\]
+Su derivada \( f': \mathbb{R} \to \mathbb{R} \) está dada por
+\[
+f'(x) = 2x \sen \frac{1}{x} - \cos \frac{1}{x} \quad \text{si } x \neq 0, \qquad f'(0) = 0.
+\]
+Se ve que \( f' \) es discontinua en el punto \( 0 \). Luego \( f \) no es de clase \( C^1 \) en toda la recta.
+
+Cuando una función \( f: I \to \mathbb{R} \) es de clase \( C^1 \) en el intervalo \( I \), dados \( a < b \) en \( I \), si \( f'(a) < d < f'(b) \), entonces existe \( c \in I \), con \( a < c < b \), tal que \( f'(c) = d \). Esto se deduce del Teorema del Valor Intermediario para funciones continuas aplicado a la derivada \( f' \).
+
+Ocurre, sin embargo, algo sorprendente. La derivada \( f' \) no necesita ser continua. El teorema siguiente, debido a Darboux, nos dice que si \( f \) es derivable en \( [a, b] \), su derivada \( f' \), aun siendo discontinua, cumple la condición del valor intermedio.
+
+\textbf{Teorema 5.} (Valor intermedio para la derivada.) Sea \( f: [a, b] \to \mathbb{R} \) derivable en todos los puntos \( x \in [a, b] \). Si \( f'(a) < d < f'(b) \), entonces existe \( c \in (a, b) \) tal que \( f'(c) = d \).
+
+\textbf{Demostración.} Consideremos primero el caso \( d = 0 \), esto es, \( f'(a) < 0 < f'(b) \). Entonces, por el Teorema 4, tendremos \( f(a) > f(x) \), para \( x \) próximo de \( a \), y \( f(x) < f(b) \), para \( x \) próximo de \( b \). Por consiguiente, el mínimo de \( f \) en \( [a, b] \) (que existe en virtud del Teorema de Weierstrass, pues \( f \) es continua en el compacto \( [a, b] \)) es alcanzado en un punto \( c \in (a, b) \). Por el Corolario 2 del Teorema 4, tenemos \( f'(c) = 0 \). El caso general se reduce a este considerando la función auxiliar \( g(x) = f(x) - d \cdot x \). Evidentemente,
+\[
+g'(c) = 0 \iff f'(c) = d
+\]
+y
+\[
+g'(a) < 0 < g'(b) \iff f'(a) < d < f'(b).
+\]
+
+\textbf{Corolario.} Si \( f: I \to \mathbb{R} \) es derivable en un intervalo \( I \), entonces \( f' \) no puede tener discontinuidad de primera especie en \( I \).
+
+Para demostrar el corolario, sea \( c \in I \) un punto en el cual tenga sentido el límite a la derecha (esto es, \( c \) no es el extremo superior de \( I \)). Si existe \( L = \lim_{x \to c^+} f'(x) \), mostraremos que se tendrá necesariamente \( L = f'(c) \). En efecto, si fuera, por ejemplo, \( L > f'(c) \), tomaríamos \( d \) satisfaciendo \( f'(c) < d < L \). Existiría \( \delta > 0 \) tal que
+\[
+(*) \quad c < x < c + \delta \Rightarrow d < f'(x).
+\]
+
+En particular, \( f'(c) < d < f'\left( c + \frac{\delta}{2} \right) \) pero, en contradicción con el Teorema 5, se sigue de (*) que no existiría \( x \in \left( c, c + \frac{\delta}{2} \right) \) con \( f'(x) = d \). De manera análoga se muestra que la existencia de \( \lim_{x \to c^-} f'(x) = M \) obliga a \( M = f'(c) \). Luego, solo existen ambos límites laterales de la derivada cuando esta es continua.
+
+Ejemplo 15. Por lo que acabamos de ver, las discontinuidades de una función derivada en un intervalo son bastante complicadas. (Véase el Ejemplo 14.) No debe confundirse el ejemplo de la función \( f(x) = |x| \) con un contraejemplo al corolario anterior. En este caso, tenemos \( f: \mathbb{R} \to \mathbb{R} \) y su derivada \( f': \mathbb{R} - \{0\} \to \mathbb{R} \) está dada por \( f'(x) = -1 \) si \( x < 0 \), \( f'(x) = 1 \) si \( x > 0 \). El punto \( 0 \) no es una discontinuidad de primera especie para \( f' \). Lo que ocurre es que \( f'(0) \) simplemente no existe. El corolario del Teorema 5 nos dice que, sea cual sea la función \( g: \mathbb{R} \to \mathbb{R} \) tal que \( g|_{\mathbb{R} - \{0\}} = f' \), \( g \) no es derivada de función alguna derivable en toda la recta. Análogamente, la función \( \varphi: \mathbb{R} \to \mathbb{R} \), definida por \( \varphi(x) = 0 \) si \( x \in \mathbb{Q} \) y \( \varphi(x) = 1 \) si \( x \notin \mathbb{Q} \), no es derivada de una función \( \xi: \mathbb{R} \to \mathbb{R} \). En efecto, aunque las discontinuidades de \( \varphi \) son todas de segunda especie, ella transgrede violentamente la Ley del Valor Intermediario.
+
+\textbf{Teorema 6.} (Rolle.) Sea \( f: [a, b] \to \mathbb{R} \) continua, tal que \( f(a) = f(b) \). Si \( f \) es derivable en \( (a, b) \), entonces existe un punto \( c \in (a, b) \) donde \( f'(c) = 0 \).
+
+\textbf{Demostración.} Si \( f \) es constante en \( [a, b] \), entonces \( f'(c) = 0 \) para todo \( c \in (a, b) \). En caso contrario, \( f \) alcanzará su mínimo \( m \) o su máximo \( M \) en un punto interior \( c \in (a, b) \), pues si ambos fueran alcanzados en los extremos, tendríamos \( m = M \) y \( f \) sería constante. Por el Corolario 2 del Teorema 4, tenemos \( f'(c) = 0 \). (El máximo y el mínimo de \( f \) en \( [a, b] \) son alcanzados, en virtud del Teorema de Weierstrass, pues \( f \) es continua en el compacto \( [a, b] \).)
+
+Ejemplos.
+
+16. Sea \( f: [0, 1] \to \mathbb{R} \) definida por \( f(x) = x \) si \( x \in [0, 1) \) y \( f(1) = 0 \). Entonces \( f(0) = f(1) \) y \( f \) es derivable en \( (0, 1) \), pero \( f'(x) = 1 \) para todo \( 0 < x < 1 \). Esto ocurre porque \( f \) no es continua en \( [0, 1] \).
+
+17. Sea ahora \( g: [-1, +1] \to \mathbb{R} \), \( g(x) = |x| \). Tenemos \( g \) continua en \( [-1, +1] \), \( g(-1) = g(1) \), pero no existe \( c \in (-1, +1) \) tal que \( g'(c) = 0 \). La razón es que \( g \) no tiene derivada en el punto \( 0 \).
+
+18. Sea \( f: [-1, +1] \to \mathbb{R} \) dada por \( f(x) = \sqrt{1 - x^2} \). Entonces \( f \) es continua en \( [-1, +1] \), pero es derivable únicamente en el intervalo abierto \( (-1, +1) \). Aun así podemos aplicar el Teorema de Rolle. En el punto \( x = 0 \), tenemos \( f'(0) = 0 \). Observación análoga vale para la función \( g: [-1, +1] \to \mathbb{R} \), \( g(x) = (1 - x^2) \sen \frac{1}{x^2} \) si \( |x| \neq 1 \), \( g(\pm 1) = 0 \). Ahora, si consideramos \( h: [-1, +1] \to \mathbb{R} \), \( h(x) = \sen \frac{1}{x^2} \) si \( |x| \neq 1 \) y \( h(-1) = h(+1) = 0 \), vemos que el Teorema de Rolle, según lo enunciado arriba, no se aplica, pues \( h \) es discontinua en los puntos \( -1 \) y \( +1 \). Sin embargo, existen infinitos puntos en \( (-1, +1) \) en los cuales la derivada de \( h \) se anula.
+
+Observación: La hipótesis de que \( f \) sea continua en \( [a, b] \) pero derivable únicamente en \( (a, b) \) se hace porque las derivadas \( f'(a) \) y \( f'(b) \) no intervienen en la demostración. Esto se revelará útil en el Corolario 4 del Teorema 7. Véase, sin embargo, la observación siguiente al Ejemplo 20.
+
+\textbf{Teorema 7.} (Teorema del Valor Medio, de Lagrange.) Sea \( f: [a, b] \to \mathbb{R} \) continua. Si \( f \) es derivable en \( (a, b) \), existe \( c \in (a, b) \) tal que
+\[
+f'(c) = \frac{f(b) - f(a)}{b - a}.
+\]
+
+Un enunciado equivalente sería: Sea \( f: [a, a+h] \to \mathbb{R} \) continua, derivable en \( (a, a+h) \). Existe \( t \), \( 0 < t < 1 \), tal que
+\[
+f(a + h) = f(a) + f'(a + th) \cdot h.
+\]
+
+\textbf{Demostración.} Sea \( g(x) \) el polinomio de grado \( \leq 1 \) tal que \( g(a) = f(a) \) y \( g(b) = f(b) \). Entonces \( g'(x) \) es constante y, de hecho,
+\[
+g'(x) = \frac{f(b) - f(a)}{b - a}
+\]
+para todo \( x \in [a, b] \). La función \( \varphi: [a, b] \to \mathbb{R} \), definida por \( \varphi(x) = f(x) - g(x) \), satisface las hipótesis del Teorema de Rolle, luego existe \( c \in (a, b) \) tal que \( \varphi'(c) = 0 \), lo que da la conclusión deseada.
+
+Observación: Geométricamente, \( f'(c) = \dfrac{f(b) - f(a)}{b - a} \) significa que la tangente al gráfico de \( f \) en el punto \( c \) es paralela a la secante que constituye el gráfico de \( g \).
+
+\textbf{Corolario 1.} Si una función continua \( f: [a, b] \to \mathbb{R} \) posee derivada nula en todos los puntos \( x \in (a, b) \), entonces \( f \) es constante.
+
+En efecto, para todo \( x \in (a, b] \), tenemos
+\[
+f(x) - f(a) = f'(c)(x - a)
+\]
+donde \( c \in (a, x) \). Como \( f'(c) = 0 \), tenemos \( f(x) - f(a) = 0 \), esto es, \( f(x) = f(a) \) para todo \( x \in (a, b] \) y, por tanto, \( f \) es constante.
+
+\textbf{Corolario 2.} Si \( f, g: [a, b] \to \mathbb{R} \) son continuas, derivables en \( (a, b) \), y \( f'(x) = g'(x) \) para todo \( x \in (a, b) \), entonces existe \( c \in \mathbb{R} \) tal que \( g(x) = f(x) + c \) para todo \( x \in [a, b] \).
+
+En efecto, podemos aplicar el corolario anterior a la diferencia \( g - f \).
+
+Observación: La función \( f: \mathbb{R} - \{0\} \to \mathbb{R} \), definida por \( f(x) = \dfrac{x}{|x|} \), no es constante, aunque cumpla \( f'(x) = 0 \) para todo \( x \in \mathbb{R} - \{0\} \). La razón es que el dominio de \( f \) no es un intervalo.
+
+\textbf{Corolario 3.} Sea \( f: I \to \mathbb{R} \) derivable en el intervalo abierto \( I \). Si existe \( k \in \mathbb{R} \) tal que \( |f'(x)| \leq k \) para todo \( x \in I \), entonces, cualesquiera que sean \( x, y \in I \), se tiene
+\[
+|f(x) - f(y)| \leq k|x - y|.
+\]
+
+En efecto, dados \( x, y \in I \), \( f \) es continua en el intervalo cerrado cuyos extremos son \( x \) e \( y \) y es derivable en el intervalo abierto correspondiente. Luego, \( f(x) - f(y) = f'(z)(x - y) \), donde \( z \) es un punto entre \( x \) e \( y \). Como \( |f'(z)| \leq k \), se tiene
+\[
+|f(x) - f(y)| = |f'(z)|\,|x - y| \leq k \cdot |x - y|.
+\]
+
+Así, una función que posee derivada acotada en un intervalo abierto es lipschitziana y, por tanto, uniformemente continua en ese intervalo. En particular, si \( I = (a, b) \), existen \( \lim_{x \to a^+} f(x) \) y \( \lim_{x \to b^-} f(x) \). (Corolario del Teorema 16, Capítulo VII.)
+
+Por ejemplo, la función \( f: (0, +\infty) \to \mathbb{R} \), definida por \( f(x) = \frac{1}{x} \), no poseyendo límite a la derecha en el punto \( 0 \), tiene derivada no acotada en cualquier intervalo del tipo \( (0, \delta) \). Sabemos que, para \( x \neq 0 \), \( f'(x) = \frac{-1}{x^2} \).
+
+Observación: Si \( f \) es continua en \( [a, b] \) y derivable en \( (a, b) \), se sigue por paso al límite que la desigualdad
+\[
+|f(x) - f(y)| \leq k|x - y|
+\]
+aún es válida para \( x, y \in [a, b] \), siempre que \( |f'(x)| \leq k \) para todo \( x \in (a, b) \).
+
+\textbf{Corolario 4.} Sea \( f \) continua en \( [a, b] \) y derivable en \( (a, b) \). Si existe \( \lim_{x \to a^+} f'(x) = L \), entonces existe \( f'_+(a) \) y vale \( f'_+(a) = L \).
+
+Basta mostrar que, dada arbitrariamente una sucesión de puntos \( x_n > a \) con \( \lim x_n = a \), se tiene
+\[
+\lim_{n \to \infty} \frac{f(x_n) - f(a)}{x_n - a} = L.
+\]
+Ahora bien, por el Teorema del Valor Medio, para cada \( n \in \mathbb{N} \) existe \( y_n \), con \( a < y_n < x_n \), tal que
+\[
+\frac{f(x_n) - f(a)}{x_n - a} = f'(y_n).
+\]
+Es evidente que \( y_n \to a \). Luego \( \lim_{n \to \infty} f'(y_n) = L \), lo que proporciona el resultado deseado.
+
+Evidentemente, un enunciado análogo es válido para el límite a la izquierda en el punto \( b \). Se sigue entonces el
+
+\textbf{Corolario 5.} Sea \( f: (a, b) \to \mathbb{R} \) derivable, excepto, posiblemente, en un punto \( c \in (a, b) \), donde \( f \) es continua. Si existe \( \lim_{x \to c} f'(x) = L \), entonces existirá \( f'(c) \) y, además, \( f'(c) = L \).
+
+\textbf{Corolario 6.} Sea \( f: I \to \mathbb{R} \) derivable en el intervalo \( I \). Se tiene \( f'(x) \geq 0 \) para todo \( x \in I \) si, y solo si, \( f \) es no decreciente en \( I \). Si \( f'(x) > 0 \) para todo \( x \in I \), entonces \( f \) es creciente en \( I \). En este caso, \( f \) posee una inversa \( f^{-1} \), definida en el intervalo \( f(I) = J \), la cual es derivable en \( J \), con
+\[
+(f^{-1})'(y) = \frac{1}{f'(x)}
+\]
+para todo \( y = f(x) \in J \).
+
+En efecto, si es \( f'(x) \geq 0 \) para todo \( x \in I \), entonces, dados \( a < b \) en \( I \), tendremos
+\[
+f(b) - f(a) = f'(c) \cdot (b - a),
+\]
+con \( a < c < b \). Luego \( f(b) - f(a) \geq 0 \), y, por tanto, \( f \) es no decreciente. Recíprocamente, si \( f \) es no decreciente, entonces, para todo \( x \in I \) y todo \( h \neq 0 \) tal que \( x + h \in I \), tendremos
+\[
+\frac{f(x + h) - f(x)}{h} \geq 0,
+\]
+luego \( f'(x) \geq 0 \). Si es \( f'(x) > 0 \) para todo \( x \in I \), entonces \( a < b \) en \( I \) implica
+\[
+f(b) - f(a) = f'(c)(b - a)
+\]
+con \( a < c < b \), luego \( f(b) - f(a) > 0 \), esto es, \( f \) es creciente. Se sigue del Teorema 13, Capítulo VII, que \( f^{-1}: J \to I \) es continua en el intervalo \( J = f(I) \). Por el corolario del Teorema 3, la función \( f^{-1} \) es derivable y su derivada tiene el valor arriba enunciado.
+
+Evidentemente, vale un resultado análogo para funciones no crecientes y decrecientes, con \( \leq \) y \( < \). Nótese enfáticamente, sin embargo, que \( f \) estrictamente creciente puede tener derivada igual a cero en algunos puntos, como es el caso de \( f(x) = x^3 \).
+
+Ejemplos.
+
+19. Se sabe del Cálculo que la función exponencial \( f: \mathbb{R} \to \mathbb{R} \), \( f(x) = e^x \), posee derivada \( f'(x) = e^x \). Dado \( x > 0 \), el Teorema del Valor Medio aplicado al intervalo \( [0, x] \), bajo la forma \( f(x) = f(0) + f'(c)(x - 0) \), \( 0 < c < x \), nos da
+\[
+e^x = 1 + e^c \cdot x.
+\]
+Pero \( c > 0 \Rightarrow e^c > 1 \). Luego, podemos escribir \( e^x > 1 + x \) para todo \( x > 0 \). Esta sencilla consecuencia del Teorema del Valor Medio tiene una aplicación interesante. A partir de ahí, mostraremos que, para todo \( n \in \mathbb{N} \), vale
+\[
+\lim_{x \to +\infty} \frac{x^n}{e^x} = 0.
+\]
+En efecto, tenemos
+\[
+e^{x/(n+1)} > 1 + \frac{x}{n+1} > \frac{x}{n+1}
+\]
+si \( x > 0 \). Elevando a la potencia \( n+1 \) y escribiendo \( A = (n+1)^{n+1} \), obtenemos
+\[
+e^x > \frac{x^{n+1}}{A}, \quad \text{donde } \frac{e^x}{x^n} > \frac{x}{A}, \quad \text{o } \frac{x^n}{e^x} < \frac{A}{x}.
+\]
+El resultado se sigue. De ahí es fácil concluir, más generalmente, que se tiene
+\[
+\lim_{x \to +\infty} \frac{p(x)}{e^x} = 0
+\]
+cualquiera que sea el polinomio \( p \). En efecto, si \( a_n x^n \) es el término de más alto grado del polinomio \( p \), se sabe que
+\[
+\lim_{x \to +\infty} \frac{p(x)}{x^n} = a_n.
+\]
+Luego
+\[
+\lim_{x \to +\infty} \frac{p(x)}{e^x}
+= \lim_{x \to +\infty} \frac{p(x)}{x^n} \cdot \frac{x^n}{e^x}
+= a_n \cdot 0 = 0.
+\]
+
+20. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por
+\[
+f(x) = e^{-1/x^2} \quad \text{si } x \neq 0, \qquad f(0) = 0.
+\]
+Como \( \lim_{x \to 0} e^{-1/x^2} = 0 \), vemos que \( f \) es continua. Además, \( f \) es derivable en \( \mathbb{R} - \{0\} \), con
+\[
+f'(x) = \frac{2}{x^3} \cdot e^{-1/x^2}
+\]
+para todo \( x \neq 0 \). Poniendo \( y = \frac{1}{x} \), vemos que
+\[
+\lim_{x \to 0^+} f'(x) = \lim_{y \to +\infty} \frac{2y^3}{e^{y^2}} = 0
+\]
+en virtud del ejemplo anterior. Si hacemos tender \( x \) a cero por valores negativos, esto solo cambia el signo de \( f'(x) \), luego vale aún
+\[
+\lim_{x \to 0^-} f'(x) = 0.
+\]
+Se sigue del Corolario 5 anterior que existe \( f'(0) \) y se tiene \( f'(0) = 0 \).
+
+Usando el mismo argumento, podemos examinar la función \( g: \mathbb{R} \to \mathbb{R} \), definida por
+\[
+g(x) = e^{-1/x} \quad \text{para } x \neq 0, \qquad g(0) = 0.
+\]
+En el punto \( 0 \), \( g \) es discontinua, pero es continua a la derecha. Para todo \( x \neq 0 \) tenemos
+\[
+g'(x) = \frac{1}{x^2} \cdot e^{-1/x}.
+\]
+Se sigue que \( \lim_{x \to 0^+} g'(x) = 0 \) y, por tanto, existe \( g'_+(0) = 0 \). Sin embargo,
+\[
+\lim_{x \to 0^-} g'(x) = +\infty.
+\]
+
+Observación: Hay dos situaciones en las cuales vale el Teorema del Valor Medio sin suponer que la función \( f: [a, b] \to \mathbb{R} \) sea continua en los puntos \( a \) y \( b \). La primera de ellas es completamente trivial: basta admitir que existan
+\[
+L = \lim_{x \to a^+} f(x) \quad \text{y} \quad M = \lim_{x \to b^-} f(x).
+\]
+Entonces la fórmula se convierte en
+\[
+M - L = f'(c) \cdot (b - a)
+\]
+y se tendrá
+\[
+f(b) - f(a) = f'(c) \cdot (b - a)
+\]
+siempre que \( M - L = f(b) - f(a) \). Esto se deduce inmediatamente del Teorema 7, en el cual usamos, en vez de \( f \), una función que coincide con \( f \) en \( (a, b) \) pero asume los valores \( L \) y \( M \) respectivamente en los puntos \( a \) y \( b \).
+
+La segunda situación es la siguiente. Admitimos que \( f: [a, b] \to \mathbb{R} \) sea acotada, derivable en \( (a, b) \), pero suponemos que al menos uno de los límites en los extremos, digamos \( \lim_{x \to a^+} f(x) \), no existe. Entonces aún existe un \( c \in (a, b) \) tal que
+\[
+f'(c) \cdot (b - a) = f(b) - f(a).
+\]
+
+En efecto, la no existencia del límite a la derecha en el punto \( a \) muestra (véanse los comentarios después del Corolario 3) que \( f'(x) \) no puede ser acotada en \( (a, b) \). Afirmamos que \( f' \) es no acotada superior e inferiormente. Pues suponiendo que \( f'(x) \geq A \) (digamos) para todo \( x \in (a, b) \), la función \( g(x) = f(x) - Ax \) tendría derivada no negativa en \( (a, b) \), sería monótona acotada y existiría su límite a la derecha en el punto \( a \), lo que es absurdo, pues esto implicaría la existencia de \( \lim_{x \to a^+} f(x) \). En particular, poniendo
+\[
+d = \frac{f(b) - f(a)}{b - a},
+\]
+vemos que existen puntos \( x_1, x_2 \) en \( (a, b) \) en los cuales \( f'(x_1) < d \) y \( f'(x_2) > d \). Por el Teorema del Valor Intermediario para la derivada, existe \( c \in (a, b) \) tal que \( f'(c) = d \), esto es,
+\[
+f(b) - f(a) = f'(c) \cdot (b - a).
+\]
+
+Como aplicación del Teorema del Valor Medio, caracterizaremos las funciones uniformemente derivables.
+
+Diremos que \( f: I \to \mathbb{R} \) es uniformemente derivable en el intervalo \( I \) cuando \( f \) sea derivable en \( I \) y, además, para cada \( \varepsilon > 0 \) dado sea posible obtener \( \delta > 0 \) tal que
+\[
+0 < |h| < \delta \implies \left| \frac{f(x+h) - f(x)}{h} - f'(x) \right| < \varepsilon, \quad \text{si } x \in I, \; x+h \in I.
+\]
+
+Una condición equivalente sería: para cada \( \varepsilon > 0 \) existe \( \delta > 0 \) tal que
+\[
+0 < |h| < \delta \Rightarrow |f(x + h) - f(x) - f'(x) \cdot h| < \varepsilon |h|,
+\]
+para \( x \in I \), \( x + h \in I \) cualesquiera.
+
+\textbf{Teorema 8.} Una función \( f: [a, b] \to \mathbb{R} \) es uniformemente derivable si, y solo si, es de clase \( C^1 \).
+
+\textbf{Demostración.} Supongamos inicialmente que \( f \in C^1 \), esto es, que \( f': [a, b] \to \mathbb{R} \) sea continua (y, por tanto, uniformemente continua, pues \( [a, b] \) es compacto). Entonces, dado \( \varepsilon > 0 \), obtenemos \( \delta > 0 \) tal que
+\[
+|y - x| < \delta \Rightarrow |f'(y) - f'(x)| < \varepsilon.
+\]
+Ahora bien,
+\[
+f(x + h) - f(x) = f'(y) \cdot h,
+\]
+donde \( |x - y| < |h| \). Por tanto,
+\[
+0 < |h| < \delta \Rightarrow |f(x + h) - f(x) - f'(x) \cdot h|
+= |f'(y) \cdot h - f'(x) \cdot h|
+= |f'(y) - f'(x)| \, |h|
+< \varepsilon |h|.
+\]
+Luego \( f \) es uniformemente derivable. Tomemos ahora este hecho como hipótesis y probemos que \( f' \) es (uniformemente) continua en \( [a, b] \). Dado \( \varepsilon > 0 \), existe \( \delta > 0 \) tal que \( 0 < |h| < \delta \) y \( x \in I \), \( x + h \in I \) implican
+\[
+\left| \frac{1}{h} [f(x + h) - f(x)] - f'(x) \right| < \frac{\varepsilon}{2}.
+\]
+La segunda desigualdad se escribe como
+\[
+\left| \frac{1}{h} [f(x + h) - f(x)] - f'(x + h) \right| < \frac{\varepsilon}{2}.
+\]
+Comparándola con la primera, se obtiene
+\[
+|f'(x + h) - f'(x)| < \varepsilon
+\]
+para cualesquiera \( x \in I \), \( x + h \in I \), con \( 0 < |h| < \delta \). Luego \( f' \) es uniformemente continua.
+
+\section{Fórmula de Taylor}
+
+Sea \( n \in \mathbb{N} \). La \( n \)-ésima derivada (o derivada de orden \( n \)) de una función \( f \) en el punto \( a \) se indica con la notación \( f^{(n)}(a) \) y se define inductivamente:
+\[
+f''(a) = [f']'(a), \qquad f'''(a) = f^{(3)}(a) = [f'']'(a), \qquad \dots, \qquad f^{(n)}(a) = [f^{(n-1)}]'(a).
+\]
+
+A veces es conveniente introducir \( f \) como su propia "derivada de orden cero" y se escribe \( f^{(0)}(a) = f(a) \), para simplificar las fórmulas.
+
+Para que \( f^{(n)}(a) \) tenga sentido, es necesario que \( f^{(n-1)}(x) \) esté definida para todo \( x \) en un conjunto al cual \( a \) pertenezca, y del cual sea punto de acumulación. En todos los casos siguientes, tal conjunto será un intervalo que contiene a \( a \).
+
+Diremos que \( f: I \to \mathbb{R} \) es \( n \) veces derivable en el intervalo \( I \) cuando exista \( f^{(n)}(x) \) para todo \( x \in I \). Bien entendido, cuando \( x \) sea una de las extremidades de \( I \), \( f^{(n)}(x) \) es una derivada lateral. Diremos que \( f: I \to \mathbb{R} \) es \( n \) veces derivable en el punto \( a \in I \) cuando haya un intervalo abierto \( J \) conteniendo a \( a \), tal que \( f \) es \( n-1 \) veces derivable en \( I \cap J \) y, además, exista \( f^{(n)}(a) \).
+
+Diremos que \( f: I \to \mathbb{R} \) es de clase \( C^n \), y escribiremos \( f \in C^n \), para significar que \( f \) es \( n \) veces derivable en \( I \) y \( x \mapsto f^{(n)}(x) \) es una función continua en \( I \).
+
+En particular, \( f \in C^0 \) significa que \( f \) es continua en \( I \).
+
+Ejemplos.
+
+21. Para cada \( n = 0, 1, 2, \dots \), consideremos la función \( \varphi_n: \mathbb{R} \to \mathbb{R} \), definida por \( \varphi_n(x) = x^n |x| \). Para \( x \geq 0 \), tenemos \( \varphi_n(x) = x^{n+1} \) y si \( x < 0 \) vale \( \varphi_n(x) = -x^{n+1} \). Evidentemente, \( \varphi_n' = (n+1) \cdot \varphi_{n-1} \). Luego la \( n \)-ésima derivada de \( \varphi_n \) es igual a \( (n+1)! \, \varphi_0 \). Como \( \varphi_0(x) = |x| \) es continua pero no posee derivada en el punto \( 0 \), concluimos que cada una de las funciones \( \varphi_n \) es de clase \( C^n \), pero no es \( n+1 \) veces derivable. En particular, \( \varphi_n \notin C^{n+1} \).
+
+22. Sea \( f_n: \mathbb{R} \to \mathbb{R} \) definida por
+\[
+f_n(x) = x^{2n} \sen \frac{1}{x} \quad \text{si } x \neq 0, \qquad f_n(0) = 0.
+\]
+Entonces \( f_n \) es \( n \) veces derivable, pero su \( n \)-ésima derivada (que existe en todo punto \( x \in \mathbb{R} \)) no es continua en el punto \( 0 \); luego \( f_n \) no es de clase \( C^n \). En particular, \( f_n \) no es \( n+1 \) veces derivable. Por otro lado, si tomamos \( g_n: \mathbb{R} \to \mathbb{R} \), donde
+\[
+g_n(x) = x^{2n+1} \cdot \sen \frac{1}{x} \quad \text{para } x \neq 0 \quad \text{y} \quad g_n(0) = 0,
+\]
+entonces \( g_n \) es de clase \( C^n \) pero no es \( n+1 \) veces derivable en el punto \( 0 \).
+
+Diremos que \( f: I \to \mathbb{R} \) es de clase \( C^\infty \) en \( I \) cuando \( f \in C^n \) para todo \( n = 0, 1, 2, 3, \dots \) En otras palabras, cuando se puede derivar \( f \) tantas veces como se desee, en todos los puntos del intervalo \( I \).
+
+Ejemplos.
+
+23. Todo polinomio es una función de clase \( C^\infty \) en la recta. Una función racional (cociente de dos polinomios) es de clase \( C^\infty \) en todo intervalo donde está definida. Las funciones trigonométricas también son de clase \( C^\infty \) en cada intervalo donde están definidas. Lo mismo se puede decir para \( \log \) y para la función exponencial.
+
+24. La función \( f: \mathbb{R} \to \mathbb{R} \), definida por \( f(x) = e^{-1/x^2} \) si \( x \neq 0 \) y \( f(0) = 0 \), es de clase \( C^\infty \). En un punto \( x \neq 0 \), es claro que existen las derivadas de \( f \) de todos los órdenes. Resta mostrar que existe \( f^{(n)}(0) \) para todo \( n \). Es fácil ver que, para \( x \neq 0 \), \( f^{(n)}(x) = p(1/x) \cdot e^{-1/x^2} \), donde \( p \) es un polinomio. Poniendo \( y = 1/x \), tenemos
+\[
+\lim_{x \to 0} f^{(n)}(x) = \lim_{y \to \pm \infty} \frac{p(y)}{e^{y^2}} = 0.
+\]
+Luego existe \( f^{(n)}(0) \) y es igual a cero (Corolario 5 del Teorema 7).
+
+Cuando \( f \) es derivable en un punto \( a \), se tiene
+\[
+f(a + h) = f(a) + f'(a) \cdot h + r(h),
+\]
+donde el "resto" \( r(h) \) es un infinitésimo de orden mayor que 1 con respecto a \( h \). Esto quiere decir:
+\[
+\lim_{h \to 0} \frac{r(h)}{h} = 0.
+\]
+En el caso de que \( f \) sea \( n \) veces derivable en el punto \( a \), mostraremos que existe un polinomio \( p \) de grado \( \leq n \) (polinomio de Taylor de \( f \) en el punto \( a \)) tal que
+\[
+f(a + h) = p(h) + r(h), \quad \text{donde } \lim_{h \to 0} \frac{r(h)}{h^n} = 0,
+\]
+esto es, el resto \( r(h) \) será un infinitésimo de orden superior a \( n \) con respecto a \( h \). Esta fórmula nos dice que una función \( n \) veces derivable en un punto puede ser bien aproximada por un polinomio de grado \( \leq n \) en la vecindad de aquel punto.
+
+En el caso \( n = 1 \), la existencia del polinomio \( p(h) = f(a) + f'(a) \cdot h \), de grado \( \leq 1 \) (con respecto a la variable \( h \)), tal que \( r(h) = f(a+h) - p(h) \) cumpla
+\[
+\lim_{h \to 0} \frac{r(h)}{h} = 0,
+\]
+es necesaria y suficiente para que \( f \) sea derivable en el punto \( a \).
+
+Cuando \( n > 1 \), la existencia del polinomio \( p \) con la propiedad anterior se deduce de que \( f \) sea \( n \) veces derivable en el punto \( a \), pero no es suficiente para asegurar esa derivabilidad.
+
+Ejemplo 25. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por
+\[
+f(x) = 1 + x + (x-a)^2 + (x-a)^3 \sen \frac{1}{x-a} \quad \text{si } x \neq a,
+\]
+y \( f(a) = 1 + a \). Entonces \( f \in C^\infty \) en \( \mathbb{R} - \{a\} \) y
+\[
+f(a + h) = 1 + a + h + h^2 + h^3 \cdot \sen \frac{1}{h}
+= p(h) + r(h),
+\]
+donde \( p(h) = 1 + a + h + h^2 \) es un polinomio de grado \( 2 \) y el resto \( r(h) = h^3 \cdot \sen \frac{1}{h} \) cumple la condición
+\[
+\lim_{h \to 0} \frac{r(h)}{h^2} = 0.
+\]
+Sin embargo, como
+\[
+f'(x) = 1 + 2(x-a) + 3(x-a)^2 \cdot \sen \frac{1}{x-a} - (x-a) \cos \frac{1}{x-a},
+\]
+vemos que \( f''(a) \) no existe.
+
+Antes de proseguir, conviene registrar aquí el hecho de que un polinomio
+\[
+p(x) = b_0 + b_1 x + \dots + b_n x^n = \sum_{i=0}^{n} b_i x^i,
+\]
+de grado \( \leq n \), queda enteramente determinado cuando se conocen su valor y el de sus derivadas, hasta el orden \( n \), en el punto \( 0 \). En otras palabras, el conocimiento de los valores
+\[
+p(0), \, p'(0), \, \dots, \, p^{(n)}(0)
+\]
+determinan los valores de los coeficientes \( b_0, b_1, \dots, b_n \). En efecto, basta observar que
+\[
+b_0 = p(0), \quad b_1 = p'(0), \quad b_2 = \frac{p''(0)}{2}, \quad \dots, \quad b_n = \frac{p^{(n)}(0)}{n!}.
+\]
+En general, para \( 0 \leq i \leq n \),
+\[
+b_i = \frac{p^{(i)}(0)}{i!}.
+\]
+
+Dada una función \( f: I \to \mathbb{R} \), \( n \) veces derivable en el punto \( a \in I \), el polinomio de Taylor de orden \( n \) de \( f \) en el punto \( a \) es el polinomio
+\[
+p(h) = f(a) + f'(a) \cdot h + \frac{f''(a)}{2!} \cdot h^2 + \dots + \frac{f^{(n)}(a)}{n!} \cdot h^n.
+\]
+
+Este es el único polinomio de grado \( \leq n \) cuyas derivadas (desde el orden \( 0 \) hasta el orden \( n \)) en el punto \( 0 \) coinciden con las derivadas correspondientes de \( f \) en el punto \( a \).
+
+Mostraremos ahora que la coincidencia de las derivadas es una propiedad equivalente al hecho de que \( p \) aproxima a \( f \), en la vecindad del punto \( a \), salvo por un infinitésimo de orden superior a \( n \).
+
+\textbf{Lema.} Sea \( r : I \to \mathbb{R} \) \( n \) veces derivable (\( n \geq 1 \)), en el punto \( 0 \in I \).  
+Para que \( r(0) = r'(0) = \cdots = r^{(n)}(0) = 0 \), es necesario y suficiente que  
+\[
+\lim_{x \to 0} \frac{r(x)}{x^n} = 0.
+\]
+
+\textbf{Demostración.} Mostremos inicialmente que la condición es necesaria. En primer lugar, si \( r(0) = r'(0) = 0 \), entonces  
+\[
+\lim_{x \to 0} \frac{r(x)}{x} = \lim_{x \to 0} \frac{r(x) - r(0)}{x - 0} = r'(0) = 0.
+\]  
+Esto prueba la necesidad cuando \( n = 1 \). Supongámosla demostrada para \( n - 1 \) (\( n > 1 \)) y consideremos una función \( r \) tal que \( r(0) = r'(0) = \cdots = r^{(n)}(0) = 0 \). La hipótesis de inducción, aplicada a su derivada \( r' \), nos da  
+\[
+\lim_{x \to 0} \frac{r'(x)}{x^{n-1}} = 0.
+\]  
+Así, dado \( \varepsilon > 0 \), existe \( \delta > 0 \) tal que \( 0 < |x| < \delta \) implica  
+\[
+\left| \frac{r'(x)}{x^{n-1}} \right| < \varepsilon.
+\]  
+Por el Teorema del Valor Medio, si \( 0 < |x| < \delta \), entonces existe \( c \) entre \( 0 \) y \( x \) tal que \( r(x) = r'(c) \cdot x \). Por lo tanto,  
+\[
+\left| \frac{r(x)}{x^n} \right|
+= \left| \frac{r'(c) \cdot x}{x^n} \right|
+= \left| \frac{r'(c)}{x^{n-1}} \right| \cdot \left| \frac{c}{x} \right|^{n-1}
+< \varepsilon,
+\]  
+pues \( 0 < |c| < |x| \). Luego  
+\[
+\lim_{x \to 0} \frac{r(x)}{x^n} = 0.
+\]
+
+Ahora mostraremos que la condición es suficiente. Nuevamente usaremos inducción. Si  
+\[
+\lim_{x \to 0} \frac{r(x)}{x} = 0,
+\]  
+entonces  
+\[
+r(0) = \lim_{x \to 0} r(x) = \lim_{x \to 0} \left( \frac{r(x)}{x} \cdot x \right) = \lim_{x \to 0} r(x) = 0.
+\]
+
+Esto prueba el caso \( n = 1 \). Supongamos demostrada la suficiencia para \( n - 1 \) (\( n > 1 \)) y consideremos una función \( r \), \( n \) veces derivable en el punto \( 0 \), tal que
+\[
+\lim_{x \to 0} \frac{r(x)}{x^n} = 0.
+\]
+Introduzcamos \( \varphi: I \to \mathbb{R} \), definida por
+\[
+\varphi(x) = r(x) - \frac{r^{(n)}(0)}{n!} x^n.
+\]
+Entonces \( \varphi \) es \( n \) veces derivable en el punto \( 0 \) y, además,
+\[
+\lim_{x \to 0} \frac{\varphi(x)}{x^{n-1}} = 0.
+\]
+Por la hipótesis de inducción, concluimos que
+\[
+\varphi(0) = \varphi'(0) = \cdots = \varphi^{(n-1)}(0) = 0.
+\]
+Pero esto equivale a decir que
+\[
+r^{(i)}(0) = 0 \quad \text{para } 0 \le i \le n - 1.
+\]
+Un cálculo directo nos proporciona \( \varphi^{(n)}(0) = 0 \). La parte del lema ya demostrada permite entonces concluir que
+\[
+\lim_{x \to 0} \frac{\varphi(x)}{x^n} = 0.
+\]
+Mirando la definición de \( \varphi \) y teniendo en cuenta que
+\[
+\lim_{x \to 0} \frac{r(x)}{x^n} = 0,
+\]
+concluimos que \( r^{(n)}(0) = 0 \), lo que completa la demostración.
+
+Dada \( f: I \to \mathbb{R} \), definida en un intervalo, sea \( a \in I \). Tomemos un polinomio \( p \) y escribamos
+\[
+f(a + h) = p(h) + r(h).
+\]
+Esto define una función \( r: J \to \mathbb{R} \), cuyo dominio es el intervalo
+\[
+J = \{h \in \mathbb{R}; \; a + h \in I\}.
+\]
+Evidentemente, \( 0 \in J \) y, como \( p \in C^\infty \), vemos que \( f \) es \( n \) veces derivable en el punto \( a \) si, y solo si, \( r \) es \( n \) veces derivable en el punto \( 0 \). Hagamos esta hipótesis. Se sigue del Lema que
+\[
+\lim_{h \to 0} \frac{r(h)}{h^n} = 0
+\]
+si, y solo si,
+\[
+p^{(i)}(0) = f^{(i)}(a), \quad 0 \le i \le n.
+\]
+Si imponemos la condición de que el grado de \( p \) sea \( \le n \), concluimos que
+\[
+\lim_{h \to 0} \frac{r(h)}{h^n} = 0
+\]
+si, y solo si, \( p \) es el polinomio de Taylor de orden \( n \) para \( f \) en el punto \( a \).
+
+Esto demuestra el
+
+\textbf{Teorema 9.} (Fórmula de Taylor infinitesimal). Sea \( f: I \to \mathbb{R} \) \( n \) veces derivable en el punto \( a \in I \). Entonces, para todo \( h \) tal que \( a + h \in I \), se tiene
+\[
+f(a + h) = f(a) + f'(a) \cdot h + \frac{f''(a)}{2!} \cdot h^2 + \cdots + \frac{f^{(n)}(a)}{n!} \cdot h^n + r(h),
+\]
+
+donde
+\[
+\lim_{h \to 0} \frac{r(h)}{h^n} = 0.
+\]
+
+Además, \( p(h) = \sum_{i=0}^n \frac{f^{(i)}(a)}{i!} \cdot h^i \) es el único polinomio de grado \( \leq n \) tal que
+\[
+f(a + h) = p(h) + r(h) \quad \text{con} \quad \lim_{h \to 0} \frac{r(h)}{h^n} = 0.
+\]
+
+Ejemplo 26. Consideremos un polinomio \( p \), de grado \( n \). Dados \( a, h \in \mathbb{R} \), la fórmula de Taylor infinitesimal nos proporciona
+\[
+p(a + h) = p(a) + p'(a) \cdot h + \frac{p''(a)}{2!} \cdot h^2 + \cdots + \frac{p^{(n)}(a)}{n!} \cdot h^n + r(h).
+\]
+
+Ahora bien, \( r(h) \) es un polinomio de grado \( \leq n \), cuyas derivadas, desde el orden \( 0 \) hasta \( n \), se anulan en el punto \( 0 \). Luego \( r = 0 \) y, así, vale la fórmula de Taylor para polinomios, sin resto. Podríamos llegar al mismo resultado simplemente notando que \( p(a + h) = q(h) \) es un polinomio en \( h \), de grado \( \leq n \), tal que \( r(h) = p(a + h) - q(h) \) satisface trivialmente la condición
+\[
+\lim_{h \to 0} \frac{r(h)}{h^n} = 0.
+\]
+
+Por la unicidad del polinomio de Taylor, se tiene
+\[
+p(a + h) = p(a) + p'(a) \cdot h + \frac{p''(a)}{2!} \cdot h^2 + \cdots + \frac{p^{(n)}(a)}{n!} \cdot h^n,
+\]
+
+pues \( r(h) = 0 \).
+
+Aplicaciones de la fórmula de Taylor
+
+A) Máximos y mínimos locales. Sea \( f \) \( n \) veces derivable en un punto \( a \), interior al dominio de \( f \). Si \( f'(a) = 0 \), \( a \) se llama un punto crítico de \( f \). Supongamos que
+\[
+f'(a) = f''(a) = \cdots = f^{(n-1)}(a) = 0,
+\]
+pero \( f^{(n)}(a) \neq 0 \). Afirmamos que:
+
+1.°) Si \( n \) es par, entonces \( a \) será un punto de máximo local si \( f^{(n)}(a) < 0 \), o un punto de mínimo local si \( f^{(n)}(a) > 0 \).
+
+2.°) Si \( n \) es impar, el punto \( a \) no será de máximo ni de mínimo.
+
+En efecto, la anulación de las derivadas de orden \( 1 \) hasta \( n-1 \) hace que la fórmula de Taylor adopte el aspecto
+\[
+f(a+h) = f(a) + \left[ \frac{f^{(n)}(a)}{n!} + \rho(h) \right] h^n,
+\]
+donde \( \rho(h) = \frac{r(h)}{h^n} \). Así \( \lim_{h \to 0} \rho(h) = 0 \). Se deduce de ahí que, para todo \( h \) suficientemente pequeño, el signo de la expresión dentro del corchete será el mismo signo de \( f^{(n)}(a) \). Cuando \( n \) es par, el factor \( h^n \) es siempre positivo para \( h \neq 0 \). Luego, cuando \( n \) es par, para todo \( h \) suficientemente pequeño y diferente de cero se tiene
+\[
+f(a+h) < f(a) \quad \text{si } f^{(n)}(a) < 0
+\]
+(máximo local estricto) y
+\[
+f(a+h) > f(a) \quad \text{en el caso de } f^{(n)}(a) > 0
+\]
+(mínimo local estricto).
+
+Ahora supongamos \( n \) impar. El factor \( h^n \) tiene el signo de \( h \). De ello resulta que (sea cual sea el signo de \( f^{(n)}(a) \)), en un intervalo suficientemente pequeño alrededor de \( a \), la diferencia \( f(a+h) - f(a) \) no tiene signo constante. Luego no hay máximo ni mínimo local en este caso.
+
+Observación: Resulta de la fórmula de Taylor (como vimos arriba) que si una sucesión de puntos \( x_n \in I - \{a\} \) es tal que \( \lim x_n = a \) y \( f: I \to \mathbb{R} \) cumple
+\[
+f(x_1) = f(x_2) = \cdots = f(x_n) = \cdots = f(a),
+\]
+entonces todas las derivadas de \( f \) que existan en el punto \( a \in I \) son nulas.
+
+Ejemplo 27. \( f: \mathbb{R} \to \mathbb{R} \), \( f(x) = x^n \) tiene un mínimo en el punto \( 0 \) si \( n \) es par y es creciente si \( n \) es impar.
+
+B) Indeterminaciones del tipo \( \frac{0}{0} \). Sean \( f, g: I \to \mathbb{R} \) veces derivables en el punto \( a \in I \). Supongamos que \( f \) y \( g \), junto con sus derivadas hasta el orden \( n-1 \) (inclusive), se anulan en el punto \( a \), pero que \( f^{(n)}(a) \) y \( g^{(n)}(a) \) no son ambas nulas. Además, supongamos que \( g(x) \neq 0 \) para todo \( x \neq a \) suficientemente próximo de \( a \). En este caso, tenemos:
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}, \quad \text{si } g^{(n)}(a) \neq 0;
+\]
+\[
+\lim_{x \to a} \left| \frac{f(x)}{g(x)} \right| = +\infty \quad \text{si } g^{(n)}(a) = 0.
+\]
+
+Estas conclusiones se siguen inmediatamente de las igualdades siguientes:
+\[
+\frac{f(x)}{g(x)} = \frac{f(a+h)}{g(a+h)} = \frac{\left[ \frac{f^{(n)}(a)}{n!} + \rho(h) \right] h^n}{\left[ \frac{g^{(n)}(a)}{n!} + \sigma(h) \right] h^n} = \frac{f^{(n)}(a) + n!\,\rho(h)}{g^{(n)}(a) + n!\,\sigma(h)}
+\]
+donde \( \lim_{h \to 0} \rho(h) = \lim_{h \to 0} \sigma(h) = 0 \).
+
+Veremos ahora otra fórmula de Taylor, en la cual se estima el valor de la diferencia \( f(a+h) - f(a) \) para un valor fijo de \( h \) (esto es, sin suponer \( h \to 0 \)) de modo análogo al Teorema del Valor Medio, del cual ella es una generalización. Para ello es preciso suponer que \( f^{(n)}(x) \) exista en todo el intervalo \( (a, a+h) \).
+
+\textbf{Teorema 10.} (Fórmula de Taylor con resto de Lagrange.) Sea \( f: [a, b] \to \mathbb{R} \) de clase \( C^{n-1} \), \( n \) veces derivable en el intervalo abierto \( (a, b) \). Entonces existe \( c \in (a, b) \) tal que
+\[
+f(b) = f(a) + f'(a)(b-a) + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(b-a)^{n-1} + \frac{f^{(n)}(c)}{n!}(b-a)^n.
+\]
+Poniendo \( b = a + h \), esto equivale a decir que existe \( \theta \), con \( 0 < \theta < 1 \), tal que
+\[
+f(a+h) = f(a) + f'(a)h + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}h^{n-1} + \frac{f^{(n)}(a+\theta h)}{n!}h^n.
+\]
+
+\textbf{Demostración.} Definamos \(\varphi: [a, b] \to \mathbb{R}\), poniendo
+\[
+\varphi(x) = f(b) - f(x) - f'(x) \cdot (b - x) - \cdots - \frac{f^{(n-1)}(x)}{(n-1)!}(b - x)^{n-1} - \frac{K}{n!}(b - x)^n,
+\]
+donde la constante \(K\) se elige de tal modo que \(\varphi(a) = 0\). Entonces, \(\varphi\) es continua en \([a, b]\) y derivable en \((a, b)\), con \(\varphi(a) = \varphi(b) = 0\). Un cálculo simple muestra que
+\[
+\varphi'(x) = \frac{K - f^{(n)}(x)}{(n-1)!}(b - x)^{n-1}.
+\]
+Por el Teorema de Rolle, existe \(c \in (a, b)\) tal que \(\varphi'(c) = 0\). Esto significa que \(K = f^{(n)}(c)\). El teorema está probado.
+
+Todavía hay otra fórmula de Taylor, bastante útil, en la cual el resto se expresa en forma de integral. Será deducida en el capítulo siguiente, cuando estudiemos integración.
+
+Aplicación
+
+C) Funciones convexas. Una función \(f: I \to \mathbb{R}\), definida en un intervalo, se llama convexa cuando, para \(a < x < b\) arbitrarios en \(I\), el punto \((x, f(x))\) del gráfico de \(f\) está situado debajo de la secante (segmento de recta) que une los puntos \((a, f(a))\) y \((b, f(b))\).
+
+La ecuación de esta secante puede escribirse de dos modos:
+\[
+y = \frac{f(b) - f(a)}{b - a}(x - a) + f(a)
+\]
+o
+\[
+y = \frac{f(b) - f(a)}{b - a}(x - b) + f(b).
+\]
+Decir que, para \(a < x < b\), el punto \((x, f(x))\) del gráfico de \(f\) está debajo de la secante significa, por tanto,
+\[
+f(x) \leq \frac{f(b) - f(a)}{b - a}(x - a) + f(a)
+\]
+o
+\[
+f(x) \leq \frac{f(b) - f(a)}{b - a}(x - b) + f(b).
+\]
+Así, afirmar que \(f\) es convexa significa decir que
+\[
+a < x < b \Rightarrow \frac{f(x) - f(a)}{x - a} \leq \frac{f(b) - f(a)}{b - a} \leq \frac{f(b) - f(x)}{b - x}.
+\]
+En realidad, basta una de esas dos desigualdades para caracterizar la convexidad de \( f \).
+
+Nuestro principal resultado es el siguiente:
+
+\textbf{Teorema 11.} Sea \( f: I \to \mathbb{R} \) dos veces derivable en el intervalo abierto \( I \). Para que \( f \) sea convexa es necesario y suficiente que
+\[
+f''(x) \geq 0, \quad \text{para todo } x \in I.
+\]
+
+\textbf{Demostración.} Supongamos que \( f''(x) \geq 0 \) para todo \( x \in I \). Entonces, por el Teorema 10, cualesquiera que sean \( a, a + h \in I \), existe \( c \) entre \( a \) y \( a + h \) tal que
+\[
+f(a + h) = f(a) + f'(a) \cdot h + \frac{f''(c)}{2} \cdot h^2.
+\]
+Como \( f''(c) \geq 0 \), tenemos
+\[
+f(a + h) \geq f(a) + f'(a) \cdot h.
+\]
+Luego
+\[
+\frac{f(a + h) - f(a)}{h} \leq f'(a) \quad \text{si } h < 0,
+\]
+y
+\[
+\frac{f(a + h) - f(a)}{h} \geq f'(a) \quad \text{cuando } h > 0.
+\]
+Equivalentemente:
+\[
+a < x < b \text{ en } I \Rightarrow \frac{f(x) - f(a)}{x - a} \leq \frac{f(b) - f(x)}{b - x}.
+\]
+
+Escribiendo \( f(x) = X \), \( f(a) = A \) y \( f(b) = B \), tenemos
+\[
+\frac{X - A}{x - a} \leq \frac{B - X}{b - x},
+\]
+o sea,
+\[
+(X - A)(b - x) \leq (B - X)(x - a).
+\]
+Sumando \( (X - A)(x - a) \) a ambos miembros de esta última desigualdad, se obtiene
+\[
+(X - A)(b - a) \leq (B - A)(x - a),
+\]
+esto es,
+\[
+\frac{f(x) - f(a)}{x - a} \leq \frac{f(b) - f(a)}{b - a} \quad \text{cuando } a < x < b,
+\]
+lo que nos da la convexidad de \( f \).
+
+Recíprocamente, sea \( f \) convexa. Dados \( a < b \) en \( I \), tomamos \( x \) con \( a < x < b \) y tenemos
+\[
+\frac{f(x) - f(a)}{x - a} \leq \frac{f(b) - f(a)}{b - a} \leq \frac{f(x) - f(b)}{x - b}.
+\]
+Haciendo \( x \to a \) en la primera desigualdad y \( x \to b \) en la segunda, obtenemos
+\[
+f'(a) \leq \frac{f(b) - f(a)}{b - a} \leq f'(b).
+\]
+
+Luego \( f' \) es no decreciente en \( I \). Se sigue que \( f''(x) \geq 0 \) para todo \( x \in I \).
+
+Observación: Tomando desigualdad estricta (\( < \)) en vez de \( \leq \) en la definición de función convexa, obtenemos el concepto de función estrictamente convexa. El argumento usado para demostrar la primera parte del Teorema 11 muestra que \( f''(x) > 0 \) para todo \( x \in I \) implica que \( f \) es estrictamente convexa en \( I \). Sin embargo, el recíproco es falso. La función \( f(x) = x^4 \) es estrictamente convexa en toda la recta pero \( f''(0) = 0 \).
+
+Los Ejercicios 49 a 52 de este capítulo indican otra formulación del concepto de función convexa y muestran cómo la convexidad (de la función exponencial) puede usarse para deducir desigualdades no triviales.
+
+\section{Serie de Taylor, funciones analíticas}
+
+Sea \( f: I \to \mathbb{R} \) de clase \( C^\infty \). Si \( a \) es interior al intervalo \( I \) y \( a + h \in I \), entonces podemos escribir, para todo \( n \in \mathbb{N} \):
+\[
+f(a+h) = f(a) + f'(a) \cdot h + \frac{f''(a)}{2!} \cdot h^2 + \dots + \frac{f^{(n-1)}(a)}{(n-1)!} \cdot h^{n-1} + r_n(h),
+\]
+
+donde
+\[
+r_n(h) = \frac{f^{(n)}(a + \theta_n h)}{n!} \cdot h^n, \quad \text{con } 0 < \theta_n < 1.
+\]
+
+La serie
+\[
+\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} \cdot h^n
+\]
+se llama la serie de Taylor de la función \( f \) en torno al punto \( a \). Toda función \( C^\infty \) en un intervalo \( I \) posee una serie de Taylor en cada punto interior \( a \in I \). Pero tal serie puede converger o divergir; e, incluso cuando converge, su suma puede ser diferente de \( f(a + h) \).
+
+Una función \( f: I \to \mathbb{R} \), definida en un intervalo abierto \( I \), se llama analítica cuando, para cada \( a \in I \), existe un \( \varepsilon > 0 \) tal que la serie de Taylor
+\[
+\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} \cdot h^n
+\]
+converge hacia \( f(a + h) \) siempre que \( |h| < \varepsilon \).
+
+Una observación elemental, pero crucial, es la siguiente: para que la serie de Taylor
+\[
+\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} \cdot h^n
+\]
+converja a \( f(a+h) \), es necesario y suficiente que
+\[
+\lim_{n \to \infty} r_n(h) = 0.
+\]
+
+Todas las funciones "elementales" del Cálculo son analíticas. (Esto es claro para polinomios, pero ya no es tan fácil de probar para funciones racionales.) Volveremos a tratar las funciones analíticas, con más detalles, en el §4 del Capítulo X.
+
+Daremos ahora algunos ejemplos con la serie de Taylor. Casi siempre es una tarea tediosa el cálculo de las derivadas sucesivas \( f^{(n)}(a) \). Por eso, se suele recurrir a otros métodos, como la división de polinomios, por ejemplo. Se obtienen los coeficientes \( f^{(n)}(a) \) a través de la unicidad de la fórmula de Taylor vista arriba: si
+\[
+f(a+h) = p(h) + r(h),
+\]
+donde \( p(h) \) es un polinomio de grado \( \leq n \) y \( \lim_{h \to 0} \frac{r(h)}{h^n} = 0 \), entonces se tiene
+\[
+p(h) = \sum_{i=0}^n \frac{f^{(i)}(a)}{i!}h^i.
+\]
+[En realidad, en vez de calcular las derivadas sucesivas para tener la fórmula de Taylor, se suele, por este método, usar la unicidad del polinomio de Taylor para obtener las derivadas de orden superior de \( f \), para otros propósitos.]
+
+Ejemplos.
+
+28. La función \( f: \mathbb{R} \to \mathbb{R} \), definida por \( f(x) = \frac{1}{1+x^2} \), es de clase \( C^\infty \) en toda la recta. La fórmula bien conocida
+\[
+\frac{1-x^n}{1-x} = 1 + x + x^2 + \cdots + x^{n-1},
+\]
+nos da
+\[
+\frac{1}{1-x} = 1 + x + x^2 + \cdots + x^{1-n} + \frac{x^n}{1-x}.
+\]
+Como \( 1+x^2 = 1 - (-x^2) \), de ahí obtenemos
+\[
+\frac{1}{1+x^2} = 1 - x^2 + x^4 + \cdots + (-1)^{n-1}x^{2n-2} + \frac{(-1)^n x^{2n}}{1+x^2}.
+\]
+Por tanto,
+\[
+f(x) = f(0+x) = 1 - x^2 + x^4 - x^6 + \cdots + (-1)^{n-1}x^{2n-2} + (-1)^n \frac{x^{2n}}{1+x^2}.
+\]
+
+Sean
+\[
+p(x) = 1 - x^2 + \cdots + (-1)^{n-1} x^{2n-2}
+\]
+y
+\[
+r(x) = (-1)^n \frac{x^{2n}}{1 + x^2}.
+\]
+
+Como \( p(x) \) es de grado \( \leq 2n - 1 \) y \( \lim_{x \to 0} \frac{r(x)}{x^{2n-1}} = 0 \), se tiene
+\[
+p(x) = \sum_{i=0}^{2n-1} \frac{f^{(i)}(0)}{i!} x^i,
+\]
+esto es, la expresión anterior es la fórmula de Taylor de \( f \) en torno al punto \( 0 \). En particular, vemos que
+\[
+f^{(2n-1)}(0) = 0 \quad \text{y} \quad f^{(2n)}(0) = (-1)^n (2n)!.
+\]
+
+Tenemos
+\[
+r_{2n-1}(x) = r_{2n}(x) = (-1)^n \frac{x^{2n}}{1 + x^2}.
+\]
+
+Luego, \( \lim_{n \to \infty} r_n(x) = 0 \Leftrightarrow |x| < 1 \). Es decir, la serie de Taylor de la función \( f(x) = \frac{1}{1 + x^2} \) en torno al punto \( 0 \) converge, si \( |x| < 1 \), hacia \( f(x) \), y diverge para \( |x| \geq 1 \). (A pesar de esto, \( f \) es analítica en toda la recta. Ocurre simplemente que la serie de Taylor de \( f \) en torno a un punto \( a \neq 0 \) es otra.)
+
+29. Sea \( f: \mathbb{R} \to \mathbb{R} \) definida por
+\[
+f(x) = e^{-1/x^2} \quad \text{si } x \neq 0, \qquad f(0) = 0.
+\]
+Entonces \( f^{(n)}(0) = 0 \) para todo \( n \in \mathbb{N} \) y \( f \) es de clase \( C^\infty \) en \( \mathbb{R} \). La serie de Taylor
+\[
+\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n
+\]
+de \( f \) en torno a \( 0 \) es idénticamente nula y, por tanto, converge a \( 0 \), sea cual sea \( x \). Sin embargo, como \( f(x) \neq 0 \) para todo \( x \neq 0 \), se sigue que la serie de Taylor no converge al valor de la función. En particular, \( f \) no es analítica en intervalo alguno que contenga a \( 0 \). [Sin embargo, \( f \) es analítica en \( (0, +\infty) \) y en \( (-\infty, 0) \).]
+
+30. Sea \( f(x) = \sen x \). Las derivadas sucesivas de \( \sen x \) son \( \cos x \), \( -\sen x \), \( -\cos x \), \( \sen x \), etc.
+
+La fórmula de Taylor en torno a \( 0 \) proporciona
+\[
+\sen x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + (-1)^n \frac{x^{2n+1}}{(2n+1)!} + r_{2n+2}(x),
+\]
+donde
+\[
+r_n(x) = \frac{[\sen]^{(n)}(c)}{n!} \cdot x^n, \quad |c| < |x|.
+\]
+
+Como la \( n \)-ésima derivada de \( \sen x \) es \( \pm \sen x \) o \( \pm \cos x \), tenemos
+\[
+|r_n(x)| \leq \frac{|x|^n}{n!}, \quad \text{para todo } x \in \mathbb{R}.
+\]
+
+Así (véase el Ejemplo 22, Capítulo IV) se tiene
+\[
+\lim_{n \to \infty} r_n(x) = 0.
+\]
+
+Concluimos, entonces, que vale el desarrollo en serie de Taylor:
+\[
+\operatorname{sen} x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + (-1)^n \frac{x^{2n+1}}{(2n+1)!} + \cdots
+\]
+
+para todo \( x \in \mathbb{R} \). Es decir, la serie de Taylor de \( \operatorname{sen} x \) en torno a \( 0 \) converge en toda la recta.
+
+Si tomáramos un punto arbitrario \( a \in \mathbb{R} \), el desarrollo de Taylor de \( \operatorname{sen} x \) en torno a \( a \) sería
+\[
+\operatorname{sen}(a+h) = \operatorname{sen} a + h \cos a - \frac{h^2}{2} \operatorname{sen} a - \frac{h^3}{3!} \cos a + \frac{h^4}{4!} \operatorname{sen} a + \cdots
+\]
+
+La serie de Taylor anterior converge para todo \( h \in \mathbb{R} \), pues su resto aún tiene la misma forma que la del caso anterior (\( a = 0 \)), solo con la diferencia de que ahora debe ser \( |c - a| < h \).
+
+Concluimos que la función \( \operatorname{sen} x \) es analítica en toda la recta, y más aún, que su serie de Taylor en torno a cada punto \( a \) converge para todo valor de \( h \). Evidentemente, consideraciones análogas pueden hacerse para la función \( \cos x \).
+
+Compárese con \( \frac{1}{1+x^2} \). Esta función es analítica en toda la recta, pero su serie de Taylor en torno a \( 0 \) converge únicamente en el intervalo \( (-1, +1) \).
+
+31. Sea \( f: \mathbb{R} \to \mathbb{R} \) la función exponencial: \( f(x) = e^x \). Entonces sus derivadas sucesivas son todas iguales a \( e^x \). La fórmula de Taylor en torno a \( 0 \) tiene el aspecto:
+\[
+e^x = 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!} + \frac{e^{c_n}}{(n+1)!} \cdot x^{n+1} \quad \text{con} \quad |c_n| < |x|.
+\]
+
+Evidentemente, para todo \( x \in \mathbb{R} \) fijo, el resto
+\[
+r_{n+1}(x) = \frac{e^{c_n}}{(n+1)!} \cdot x^{n+1}
+\]
+tiende a \( 0 \) cuando \( n \to \infty \). Luego, para todo \( x \in \mathbb{R} \) vale
+\[
+e^x = 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!} + \cdots.
+\]
+
+La función exponencial es analítica en toda la recta pues, para \( a \) y \( h \) reales cualesquiera, tenemos
+\[
+e^{a+h} = e^a \cdot e^h = e^a + e^a \cdot h + e^a \cdot \frac{h^2}{2!} + \cdots
+\]
+
+\textbf{Ejercicios}
+
+1. Sean \( f, g, h: X \to \mathbb{R} \) tales que, para todo \( x \in X \), se tenga
+\[
+f(x) \leq g(x) \leq h(x).
+\]
+Si en un punto \( a \in X \cap X' \) se tiene \( f(a) = h(a) \) y existen \( f'(a) \) y \( h'(a) \), entonces existe \( g'(a) \) y tiene el mismo valor.
+
+2. Sea \( a \in X \) un punto de máximo local para la función \( f: X \to \mathbb{R} \). Si \( f \) posee derivada a la derecha en el punto \( a \), entonces ella es \( \leq 0 \). Si existe, \( f'_-(a) \) debe ser \( \geq 0 \). Dé un ejemplo de un punto de máximo local donde existan las dos derivadas laterales y sean diferentes.
+
+3. Sea \( p: \mathbb{R} \to \mathbb{R} \) un polinomio de grado impar. Existe \( c \in \mathbb{R} \) tal que \( p''(c) = 0 \).
+
+4. Sea \( f: I \to \mathbb{R} \) definida en un intervalo del cual \( a \) es punto interior. Si \( f \) es derivable en el punto \( a \), entonces
+\[
+\lim_{h \to 0} \frac{f(a + h) - f(a - h)}{2h} = f'(a).
+\]
+La existencia del límite anterior, sin embargo, no implica la continuidad de \( f \) en el punto \( a \), ni que exista la derivada \( f'(a) \), incluso cuando \( f \) es continua en este punto.
+
+5. Sea \( f: X \to \mathbb{R} \) continua. Dado \( a \in X \cap X' \), defina \( \xi: X \to \mathbb{R} \) poniendo
+\[
+\xi(x) = \frac{f(x) - f(a)}{x - a} \quad \text{si } x \neq a, \qquad \xi(a) = L.
+\]
+Pruebe que \( \xi \) es continua si, y solo si, existe \( f'(a) \) y \( f'(a) = L \).
+
+6. Sea \( p(x) = x^3 + ax^2 + bx + c \) un polinomio de 3.er grado con coeficiente líder igual a 1. Muestre que \( p: \mathbb{R} \to \mathbb{R} \) es un homeomorfismo si, y solo si, \( a^2 \leq 3b \). Para que el homeomorfismo inverso \( f = p^{-1} \) sea derivable es necesario y suficiente que \( a^2 < 3b \).
+
+7. Sea \( f: I \to \mathbb{R} \) continua en el intervalo \( I \). Si, para cada \( x \in I \) (excepto evidentemente el extremo superior, si está en \( I \)), existe \( f'_+(x) \) y es \( > 0 \), entonces \( f \) es creciente.
+
+8. Sea \( f: X \to \mathbb{R} \) derivable en el punto \( a \in X \cap X' \). Si \( (x_n) \) y \( (y_n) \) son sucesiones de puntos en \( X \) tales que \( \lim x_n = \lim y_n = a \) y \( x_n < a < y_n \) para todo \( n \in \mathbb{N} \), pruebe que
+\[
+\lim_{n \to \infty} \frac{f(y_n) - f(x_n)}{y_n - x_n} = f'(a).
+\]
+[Sugerencia: Note que
+\[
+\frac{f(y_n) - f(x_n)}{y_n - x_n} = (1 - t_n) \frac{f(x_n) - f(a)}{x_n - a} + t_n \frac{f(y_n) - f(a)}{y_n - a},
+\]
+donde \( t_n = \frac{y_n - a}{y_n - x_n} \). Observe que \( 0 \leq t_n \leq 1 \) y use el Ejercicio 18 del Capítulo IV.]
+
+9. Sea \( f: I \to \mathbb{R} \) continua en el punto \( a \) interior al intervalo \( I \). Suponga que existe \( L \in \mathbb{R} \) tal que
+\[
+\lim \frac{f(y_n) - f(x_n)}{y_n - x_n} = L
+\]
+para todo par de sucesiones \( (x_n), (y_n) \) en \( I \) con \( x_n < a < y_n \) y \( \lim x_n = \lim y_n = a \). Pruebe que existe \( f'(a) \) y es igual a \( L \). Muestre que la hipótesis de que \( f \) sea continua en el punto \( a \) es indispensable.
+
+10. La función \( f: \mathbb{R} \to \mathbb{R} \), definida por \( f(x) = x^2 \sen \frac{1}{x} \), si \( x \neq 0 \), y \( f(0) = 0 \), es derivable. Obtenga sucesiones \( (x_n), (y_n) \) tales que \( \lim x_n = \lim y_n = 0 \), \( x_n \neq y_n \), pero no existe
+\[
+\lim \frac{f(y_n) - f(x_n)}{y_n - x_n}.
+\]
+
+11. Sea \( f: I \to \mathbb{R} \) derivable en el intervalo abierto \( I \). Un punto crítico de \( f \) es un punto \( c \in I \) tal que \( f'(c) = 0 \). El punto crítico \( c \) se llama no degenerado cuando \( f''(c) \) existe y es diferente de cero. Entonces
+\begin{itemize}
+    \item[i)] Si \( f \) es de clase \( C^1 \), para cada intervalo compacto \( [a, b] \subset I \), el conjunto de los puntos críticos de \( f \) pertenecientes a \( [a, b] \) es cerrado.
+
+    \item[ii)] La función \( f: \mathbb{R} \to \mathbb{R} \), definida por
+\[
+f(x) = x^2 \sen x + x \quad \text{si } x \neq 0, \qquad f(0) = 0,
+\]
+es derivable. El conjunto de los puntos críticos de \( f \) en el intervalo \( [0, 1] \) no es cerrado.
+
+    \item[iii)] Los puntos de máximos y mínimos locales de \( f \) son críticos. Un punto crítico no degenerado debe ser de máximo local o de mínimo local.
+
+    \item[iv)] Existen funciones \( C^\infty \) con máximos y mínimos locales aislados degenerados. Existen puntos críticos (necesariamente degenerados) de funciones \( C^\infty \) que no son máximos ni mínimos locales.
+
+    \item[v)] Si \( c \in I \) es un punto crítico no degenerado para \( f \), entonces existe \( \delta > 0 \) tal que no hay otros puntos críticos de \( f \) en el intervalo \( (c - \delta, c + \delta) \). Es decir: todo punto crítico no degenerado es un punto crítico aislado.
+
+    \item[vi)] Si los puntos críticos de \( f \in C^1 \) contenidos en el intervalo compacto \( [a, b] \subset I \) son todos no degenerados, entonces hay solo un número finito de ellos. Concluya que \( f \) posee a lo sumo una infinidad enumerable de puntos críticos no degenerados en \( I \).
+
+    \item[vii)] La función \( f: \mathbb{R} \to \mathbb{R} \),
+\[
+f(x) = x^4 \sen \frac{1}{x} \quad (x \neq 0), \qquad f(0) = 0,
+\]
+posee una infinidad de puntos críticos no degenerados en el intervalo \( [0, 1] \). ¿Por qué esto no contradice el ítem (vi)?
+\end{itemize}
+
+12. Sea \( p: \mathbb{R} \to \mathbb{R} \) un polinomio. Se tiene
+\[
+p(a) = p'(a) = \cdots = p^{(k)}(a) = 0
+\]
+si, y solo si,
+\[
+p(x) = (x - a)^{k+1} \cdot q(x),
+\]
+donde \( q \) es un polinomio.
+
+13. Sea \( f: I \to \mathbb{R} \) definida en un intervalo \( I \). Si existe \( \alpha > 1 \) tal que
+\[
+|f(x) - f(y)| \leq |x - y|^\alpha
+\]
+para cualesquiera \( x, y \in I \), entonces \( f \) es continua y posee derivada nula en todos los puntos de \( I \). Consecuentemente, \( f \) es constante.
+
+14. Sea \( f: I \to \mathbb{R} \) derivable en un intervalo arbitrario \( I \). Si \( f'(x) = 0 \) para todo \( x \in I \), entonces \( f \) es constante.
+
+15. Sea \( f: I \to \mathbb{R} \) de clase \( C^1 \) en un intervalo \( I \). Dado \( a \in I \), considere sucesiones \( (x_n) \) y \( (y_n) \) en \( I \), con \( x_n \neq y_n \) y \( \lim x_n = \lim y_n = a \). Pruebe que
+\[
+\lim_{n \to \infty} \frac{f(x_n) - f(y_n)}{x_n - y_n} = f'(a).
+\]
+Nótese que la hipótesis \( f \in C^1 \) dispensa la exigencia de tener \( x_n < a < y_n \) como en el Ejercicio 8 anterior.
+
+16. Sea \( f: I \to \mathbb{R} \) derivable en el intervalo \( I \). Para un cierto \( a \in I \), suponga que
+\[
+\lim x_n = \lim y_n = a \quad \text{con } x_n \neq y_n \text{ en } I
+\]
+implica
+\[
+\lim \frac{f(y_n) - f(x_n)}{y_n - x_n} = f'(a).
+\]
+Pruebe que \( f' \) es continua en el punto \( a \).
+
+17. Sea \( f: (c, +\infty) \to \mathbb{R} \) derivable. Si existen
+\[
+\lim_{x \to +\infty} f(x) = a \quad \text{y} \quad \lim_{x \to +\infty} f'(x) = b
+\]
+con \( a \in \mathbb{R} \), entonces \( b = 0 \).
+[Sugerencia: \( f(n+1) - f(n) = f'(x_n) \) donde \( x_n \to \infty \).]
+
+18. Sea \( f: [a, b] \to \mathbb{R} \) continua, derivable en \( (a, b) \). Suponga \( f(a) = f(b) = 0 \). Entonces, dado arbitrariamente \( k \in \mathbb{R} \), existe \( c \in (a, b) \) tal que
+\[
+f'(c) = k \cdot f(c).
+\]
+[Sugerencia: Tome \( p(x) = f(x) \cdot e^{-kx} \) y aplique el Teorema de Rolle.]
+
+19. Sea \( f: I \to \mathbb{R} \) derivable en un intervalo. Una raíz de \( f \) es un punto \( c \in I \) tal que \( f(c) = 0 \). Entre dos raíces consecutivas de \( f' \) existe a lo sumo una raíz de \( f \). Use este hecho para mostrar que el polinomio
+\[
+p(x) = x^3 - 6x^2 + 9x - 1
+\]
+posee exactamente una raíz en el intervalo \( (1, 3) \).
+
+20. Si \( f: [0, +\infty) \to \mathbb{R} \) es derivable y
+\[
+\lim_{x \to +\infty} f'(x) = L,
+\]
+entonces, para cada \( c > 0 \),
+\[
+\lim_{x \to +\infty} [f(x + c) - f(x)] = c \cdot L
+\]
+y
+\[
+\lim_{x \to +\infty} \frac{f(x)}{x} = L.
+\]
+
+21. Sea \( f: [a, b] \to \mathbb{R} \) derivable. Si \( f'(a) = f'(b) \), muestre que existe \( c \in (a, b) \) tal que
+\[
+\frac{f(c) - f(a)}{c - a} = f'(c).
+\]
+Interprete este hecho geométricamente. [Sugerencia: Considere primero el caso en que \( f'(a) = f'(b) = 0 \). Muestre que la función \( \xi: [a, b] \to \mathbb{R} \), dada por
+\[
+\xi(x) = \frac{f(x) - f(a)}{x - a} \quad \text{si } x \neq a, \qquad \xi(a) = 0,
+\]
+alcanza su máximo o su mínimo en un punto interior \( c \in (a, b) \). Para pasar al caso general, considere la función auxiliar \( g(x) = f(x) - x \cdot f'(a) \).]
+
+22. Sea \( f: [0, +\infty) \to \mathbb{R} \) dos veces derivable. Si \( f'' \) es acotada y existe \( \lim_{x \to +\infty} f(x) \), entonces
+\[
+\lim_{x \to +\infty} f'(x) = 0.
+\]
+
+23. Sean \( f, g: [a, b] \to \mathbb{R} \) continuas y derivables en el intervalo \( (a, b) \). Entonces existe \( c \in (a, b) \) tal que
+\[
+[f(b) - f(a)]g'(c) = [g(b) - g(a)]f'(c).
+\]
+
+24. Una función \( f: I \to \mathbb{R} \), derivable en un intervalo \( I \), satisface la condición de Lipschitz
+\[
+|f(x) - f(y)| \leq c|x - y|, \quad \text{para cualesquiera } x, y \in I,
+\]
+si, y solo si,
+\[
+|f'(x)| \leq c \quad \text{para todo } x \in I.
+\]
+
+25. Sea \( f: I \to \mathbb{R} \) derivable en el intervalo cerrado \( I \) (acotado o no). Suponga que
+\[
+|f'(x)| \leq c \quad \text{para todo } x \in I,
+\]
+donde \( c \) es una constante tal que \( 0 \leq c < 1 \). Además, admita que \( f(I) \subset I \). Entonces, dado cualquier \( x_0 \in I \), tiene sentido formar la sucesión
+\[
+x_1 = f(x_0), \quad x_2 = f(x_1), \quad \dots, \quad x_n = f(x_{n-1}), \quad \dots
+\]
+Muestre que, sea cual sea el punto inicial \( x_0 \) elegido, existe
+\[
+\lim_{n \to \infty} x_n = a
+\]
+y que \( a \in I \) es el único punto de \( I \) tal que \( f(a) = a \). (Véase el Ejemplo 19, Capítulo IV.)
+
+26. Obtenga una función \( f: \mathbb{R} \to \mathbb{R} \), de clase \( C^\infty \), tal que
+\[
+|f'(x)| < 1 \quad \text{y} \quad f(x) \neq x \quad \text{para todo } x \in \mathbb{R}.
+\]
+
+27. Sea \( p \in \mathbb{N} \). Dada \( f: I \to \mathbb{R} \) derivable en el intervalo cerrado \( I \), con \( f(I) \subset I \), suponga que
+\[
+g = \underbrace{f \circ f \circ \cdots \circ f}_{p \text{ veces}} = f^p
+\]
+cumple
+\[
+|g'(x)| \leq c < 1 \quad \text{para todo } x \in I,
+\]
+donde \( c \) es constante. Pruebe que existe un único \( a \in I \) tal que \( f(a) = a \) y que, para todo \( x \in I \) se tiene
+\[
+\lim_{n \to \infty} f^n(x) = a
+\]
+(donde \( f^n = \underbrace{f \circ f \circ \cdots \circ f}_{n \text{ veces}} \)).
+
+28. Dada \( f: \mathbb{R} \to \mathbb{R} \) derivable, con derivada acotada, pruebe que existe una constante \( c \in \mathbb{R} \) tal que la función \( \varphi: \mathbb{R} \to \mathbb{R} \), definida por \( \varphi(x) = x + c \cdot f(x) \), es una biyección cuya inversa es derivable.
+
+29. La función \( f: [0, \pi] \to \mathbb{R} \), definida por \( f(x) = \cos x \), no cumple la condición
+\[
+|f'(x)| \leq c < 1 \quad \text{para todo } x \in [0, \pi],
+\]
+con \( c \in \mathbb{R} \) constante, pero \( f^2 = f \circ f \) sí la cumple.
+
+30. Sea \( f: [a - \delta, a + \delta] \to \mathbb{R} \) derivable, con
+\[
+|f'(x)| \leq c < 1 \quad \text{para todo } x \in [a - \delta, a + \delta].
+\]
+Si \( |f(a) - a| \leq (1 - c)\delta \), entonces existe un único \( x_0 \in [a - \delta, a + \delta] \) tal que \( f(x_0) = x_0 \).
+
+31. Sea \( f: [a, b] \to \mathbb{R} \) continua, derivable en \( (a, b) \). Si
+\[
+\lim_{x \to a^+} f'(x) = +\infty,
+\]
+entonces
+\[
+\lim_{x \to a^+} \frac{f(x) - f(a)}{x - a} = +\infty.
+\]
+
+32. Dada \( f: [a, b] \to \mathbb{R} \) derivable y dado \( c \in [a, b] \), definida una función \( \xi: [a, b] \to \mathbb{R} \) poniendo
+\[
+\xi(x) = \frac{f(x) - f(c)}{x - c} \quad \text{si } x \neq c, \qquad \xi(c) = f'(c).
+\]
+Pruebe que si \( f \) es dos veces derivable en el punto \( c \), entonces existe \( \xi'(c) \) y vale
+\[
+\xi'(c) = \frac{f''(c)}{2}.
+\]
+Dé un ejemplo en el que existe \( \xi'(c) \) pero no existe \( f''(c) \).
+
+33. Si \( f: I \to \mathbb{R} \) y \( g: J \to \mathbb{R} \) son funciones de clase \( C^n \) tales que \( f(I) \subset J \), entonces \( g \circ f: I \to \mathbb{R} \) es de clase \( C^n \).
+
+34. Sea \( f: I \to \mathbb{R} \) derivable, con \( f'(x) \neq 0 \) para todo \( x \in I \). Si \( f''(a) \) existe, calcule \( (f^{-1})'' \) en el punto \( b = f(a) \).
+
+35. Dados \( a < b \), defina \( \varphi: \mathbb{R} \to \mathbb{R} \) poniendo
+\[
+\varphi(x) = e^{1/(x-a)(x-b)} \quad \text{si } a < x < b, \qquad \varphi(x) = 0 \quad \text{si } x \notin (a, b).
+\]
+Muestre que \( \varphi \) es una función \( C^\infty \) con un único punto de máximo.
+
+36. Obtenga funciones \( f, g: \mathbb{R} \to \mathbb{R} \) de clase \( C^\infty \) con las siguientes propiedades:
+\begin{itemize}
+    \item[i)] \( f(x) = 0 \Leftrightarrow 0 \leq x \leq 1 \);
+
+    \item[ii)] \( g(x) = x \) si \( |x| \leq 1 \), y \( |g(x)| < |x| \) si \( |x| > 1 \).]
+\end{itemize}
+
+37. Sea \( f: I \to \mathbb{R} \) dos veces derivable en el punto \( a \in \text{int}(I) \). Entonces
+\[
+f''(a) = \lim_{h \to 0} \frac{f(a+h) + f(a-h) - 2f(a)}{h^2}.
+\]
+Dé un ejemplo en el que existe el límite anterior pero \( f'(a) \) no existe.
+
+38. Sea \( f: I \to \mathbb{R} \) dos veces derivable en el punto \( a \in \text{int}(I) \). Pruebe que
+\[
+f''(a) = \lim_{h \to 0} \frac{f(a+2h) - 2f(a+h) + f(a)}{h^2}.
+\]
+
+39. Sean \( f, g: \mathbb{R} \to \mathbb{R} \) \( n \) veces derivables. Pruebe que si, para algún \( a \in \mathbb{R} \), vale \( f'(a) = \cdots = f^{(n)}(a) = 0 \), entonces
+\[
+(g \circ f)^{(i)}(a) = 0 \quad \text{para } i = 1, \ldots, n.
+\]
+
+40. Sean \( f, g: \mathbb{R} \to \mathbb{R} \) 4 veces derivables. Escriba la regla de la cadena bajo la forma
+\[
+(g \circ f)' = (g' \circ f) \cdot f',
+\]
+donde el punto significa multiplicación de funciones. Concluya que
+\[
+(g \circ f)'' = (g'' \circ f) \cdot (f')^2 + (g' \circ f) \cdot f''.
+\]
+Muestre también que
+\[
+(g \circ f)''' = (g''' \circ f) \cdot (f')^3 + 3(g'' \circ f) \cdot f'' \cdot f' + (g' \circ f) \cdot f'''.
+\]
+Calcule además \( (g \circ f)^{(4)} \).
+
+41. Sean \( f, g: \mathbb{R} \to \mathbb{R} \) \( n \) veces derivables. Para cada partición
+\[
+n = n_1 + \cdots + n_k
+\]
+de \( n \) como suma de \( k \) números naturales, existe un entero \( \alpha = \alpha(n_1, \ldots, n_k) \) tal que
+\[
+(g \circ f)^{(n)} = \sum_{k=1}^{n} \alpha(n_1, \ldots, n_k) \cdot (g^{(k)} \circ f) \cdot f^{(n_1)} \cdot f^{(n_2)} \cdots f^{(n_k)},
+\]
+donde, para cada \( k = 1, 2, \ldots, n \), se tiene
+\[
+n_1 + n_2 + \cdots + n_k = n.
+\]
+
+42. La función \( f(x) = |x|^{2n+1} \) es de clase \( C^{2n} \) en toda la recta, pero no es \( 2n+1 \) veces derivable.
+
+43. Sea \( f: \mathbb{R} \to \mathbb{R} \) de clase \( C^\infty \). Si \( f \) se anula, junto con todas sus derivadas, en un punto \( a \in \mathbb{R} \), entonces, para cada \( k \in \mathbb{N} \), podemos escribir
+\[
+f(x) = (x-a)^k \cdot \varphi(x),
+\]
+donde \( \varphi: \mathbb{R} \to \mathbb{R} \) es de clase \( C^\infty \). Si \( f \) es de clase \( C^n \) y
+\[
+f(a) = f'(a) = \cdots = f^{(n)}(a) = 0,
+\]
+entonces, para \( k \leq n \), se tiene
+\[
+f(x) = (x-a)^k \varphi(x),
+\]
+con \( \varphi: \mathbb{R} \to \mathbb{R} \) de clase \( C^{n-k} \).
+
+44. Sea \( f: I \to \mathbb{R} \) de clase \( C^{n+1} \), con \( a \in I \). Tenemos
+\[
+f(a+h) = f(a) + f'(a) \cdot h + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}h^{n-1} + \frac{f^{(n)}(a+\theta_n \cdot h)}{n!} \cdot h^n.
+\]
+Más precisamente, para todo \( h \) tal que \( a+h \in I \), podemos encontrar \( \theta_n = \theta_n(h) \), con \( 0 < \theta_n < 1 \), tal que la fórmula anterior vale. Muestre que, si \( f^{(n+1)}(a) \neq 0 \), sea cual sea la función \( \theta_n \), definida de la manera anterior, se tiene
+\[
+\lim_{h \to 0} \theta_n(h) = \frac{1}{n+1}.
+\]
+[Sugerencia: Desarrolle \( f(a+h) \) según Taylor-Lagrange hasta el orden \( n+1 \), compare el resultado obtenido con la expresión anterior y use el Teorema del Valor Medio].
+
+45. Sean \( f, g \) analíticas en el intervalo abierto \( I \). Si existe \( a \in I \) tal que \( f \) y \( g \) coinciden, junto con todas sus derivadas, en el punto \( a \), entonces
+\[
+f(x) = g(x) \quad \text{para todo } x \in I.
+\]
+Muestre que esto sería falso si supusiéramos únicamente \( f \) y \( g \) de clase \( C^\infty \).
+
+46. Dadas \( f \) y \( g \) analíticas en el intervalo abierto \( I \), sea \( X \subset I \) un conjunto que posee un punto de acumulación \( a \in I \). Si
+\[
+f(x) = g(x) \quad \text{para todo } x \in X,
+\]
+entonces
+\[
+f(x) = g(x) \quad \text{para todo } x \in I.
+\]
+En particular, si \( f(x) = 0 \) para todo \( x \in X \), entonces
+\[
+f(x) = 0 \quad \text{para todo } x \in I.
+\]
+
+47. Sea \( I = (a - \delta, a + \delta) \). Dada \( f: I \to \mathbb{R} \), de clase \( C^\infty \), suponga que existan constantes \( a_0, a_1, \ldots, a_n, \ldots \) tales que, para todo \( x \in I \), se tenga
+\[
+f(x) = \sum_{n=0}^\infty a_n (x - a)^n.
+\]
+Pruebe que \( \sum a_n (x - a)^n \) es la serie de Taylor de \( f \) en torno a \( a \), esto es, que
+\[
+a_n = \frac{f^{(n)}(a)}{n!} \quad \text{para todo } n = 0, 1, 2, \ldots
+\]
+
+48. Sea \( f(x) = \frac{x^5}{1 + x^6} \). Calcule las derivadas de orden 2001 y 2003 de la función \( f: \mathbb{R} \to \mathbb{R} \) en el punto \( 0 \).
+
+49. Sea \( f: I \to \mathbb{R} \) definida en un intervalo. Pruebe que \( f \) es convexa si, y solo si, para cualesquiera \( a, b \) en \( I \) y \( 0 \leq t \leq 1 \) se cumple
+\[
+f((1-t)a + tb) \leq (1-t)f(a) + t f(b).
+\]
+
+50. Verifique que \( f: \mathbb{R} \to \mathbb{R} \), dada por \( f(x) = e^x \), es convexa y concluya que, para \( 0 \leq t \leq 1 \) y \( x, y \in \mathbb{R} \) cualesquiera, se cumple
+\[
+e^{(1-t)x + ty} \leq (1-t)e^x + t \cdot e^y.
+\]
+Deduzca de ahí la desigualdad
+\[
+a^\alpha \cdot b^\beta \leq \alpha \cdot a + \beta \cdot b,
+\]
+para \( \alpha, \beta, a, b \) no negativos, con \( \alpha + \beta = 1 \).
+
+51. Sea \( f: I \to \mathbb{R} \) convexa en el intervalo \( I \). Si \( a_1, \ldots, a_n \) pertenecen a \( I \), \( t_1, \ldots, t_n \) pertenecen a \( [0, 1] \) y
+\[
+\sum_{i=1}^n t_i = 1,
+\]
+pruebe que
+\[
+f\left( \sum_{i=1}^n t_i a_i \right) \leq \sum_{i=1}^n t_i f(a_i).
+\]
+
+52. Sean \( x_1, x_2, \ldots, x_n \) y \( t_1, \ldots, t_n \) números no negativos, con
+\[
+t_1 + \cdots + t_n = 1.
+\]
+Pruebe que
+\[
+x_1^{t_1} \cdot x_2^{t_2} \cdots x_n^{t_n} \leq t_1 x_1 + t_2 x_2 + \cdots + t_n x_n.
+\]
+Concluya, en particular, la desigualdad entre las medias aritmética y geométrica. (Cfr. Ejercicio 54, Capítulo III.)
+
+53. Sea \( \varphi: [a, b] \to \mathbb{R} \) dos veces derivable, con
+\[
+\varphi(a) = \varphi(b) = 0
+\]
+y
+\[
+\varphi''(x) < 0 \quad \text{para todo } x \in [a, b].
+\]
+Pruebe que
+\[
+\varphi(x) > 0 \quad \text{para todo } x \in (a, b).
+\]
+[Sugerencia: todo punto donde \( \varphi' \) se anule debe ser de máximo. Luego, el mínimo de \(\varphi\) se alcanza en los extremos del intervalo.] Concluya que, si \( f: I \to \mathbb{R} \) es dos veces derivable y \( f''(x) > 0 \) para todo \( x \in I \), entonces \( f \) es estrictamente convexa en el intervalo \( I \). [Dados \( a < b \) en \( I \), sea \( g \) la función lineal que coincide con \( f \) en los puntos \( a \) y \( b \). Aplique el resultado anterior a la función \( \varphi = g - f \).]
+
+54. Sea \( f \) continua en un punto. Pruebe que si \( f \) es derivable en ese punto, entonces existe a lo sumo una recta que coincide con el gráfico de \( f \) una infinidad de veces en cualquier vecindad del punto.
+
+55. Sea \( f: [a, +\infty) \to \mathbb{R} \) dos veces derivable. Si \( \lim_{x \to \infty} f(x) = f(a) \), entonces existe \( x \in (a, +\infty) \) tal que \( f''(x) = 0 \).
 
 \newpage
 

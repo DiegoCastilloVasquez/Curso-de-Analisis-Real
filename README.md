@@ -10,31 +10,44 @@ Este proyecto surge ante la necesidad concreta de material académico disponible
 
 El documento cubre los siguientes temas fundamentales:
 
-   - Conjuntos y operaciones entre conjuntos
-   - Funciones (inyectivas, sobreyectivas, biyectivas)
+   - Conjuntos
+   - Operaciones entre conjuntos
+   - Funciones
    - Composición de funciones
-   - Familias de conjuntos
-   - Producto cartesiano
-   - Números naturales y axiomas de Peano
-   - Buena ordenación y principio de inducción
+   - Familias
+   - Números naturales
+   - Buena ordenación y el Segundo Principio de Inducción
    - Conjuntos finitos e infinitos
    - Conjuntos enumerables
-   - Conjuntos no enumerables y argumento diagonal de Cantor
-   - Cuerpos y cuerpos ordenados
+   - Conjuntos no enumerables
+   - Cuerpos
+   - Cuerpos ordenados
    - Números reales
-   - Secuencias y límite de una sucesión
+   - Secuencias
+   - Límite de una sucesión
    - Propiedades aritméticas de los límites
    - Subsucesiones
    - Sucesiones de Cauchy
    - Límites infinitos
    - Series numéricas
-   - Conjuntos abiertos y cerrados
+   - Conjuntos abiertos
+   - Conjuntos cerrados
    - Puntos de acumulación
    - Conjuntos compactos
-   - Definición y propiedades del límite de funciones
+   - Definición y propiedades del límite
+   - Ejemplos de límites
    - Límites laterales
-   - Límites en el infinito y límites infinitos
-   - Valores de adherencia; lim sup y lim inf
+   - Límites en el infinito, límites infinitos, expresiones indeterminadas
+   - Valores de adherencia de una función; lim sup y lim inf
+   - La noción de función continua
+   - Descontinuidades
+   - Funciones continuas en intervalos
+   - Funciones continuas en conjuntos compactos
+   - Continuidad uniforme
+   - Definición y propiedades de la derivada en un punto
+   - Funciones derivables en un intervalo
+   - Fórmula de Taylor
+   - Serie de Taylor, funciones analíticas
 
 ## �️ Compilación
 
@@ -51,7 +64,7 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-## �📁 Estructura del proyecto
+## 📁 Estructura del proyecto
 
 ```
 ├── main.tex                       # Archivo principal del documento en LaTeX
