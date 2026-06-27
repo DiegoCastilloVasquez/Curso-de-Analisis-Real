@@ -48,6 +48,13 @@ El documento cubre los siguientes temas fundamentales:
    - Funciones derivables en un intervalo
    - Fórmula de Taylor
    - Serie de Taylor, funciones analíticas
+   - Integral superior e integral inferior
+   - Funciones integrables
+   - El Teorema Fundamental del Cálculo
+   - Fórmulas clásicas del Cálculo Integral
+   - La integral como límite de sumas
+   - Caracterización de las funciones integrables
+   - Logaritmos y exponenciales
 
 ## �️ Compilación
 
