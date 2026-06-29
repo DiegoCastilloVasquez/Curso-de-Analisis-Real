@@ -3139,11 +3139,11 @@ Así, la sucesión (no decreciente) de las sumas parciales de la serie \(\sum |a
 
 11. Use la desigualdad entre las medias aritmética y geométrica de los \( n + 1 \) números \( 1 - 1/n, \ldots, 1 - 1/n, 1 \) y pruebe que la sucesión \( (1 - 1/n)^n \) es creciente. Concluya que \( (1 - 1/n)^n \geq 1/4 \) para todo \( n > 1 \).
 
-12. Sean \( x_n = (1 + 1/n)^n \) y \( y_n = (1 - 1/(n+1))^{n+1} \). Muestre que \( \lim x_n y_n = 1 \) y deduzca de ahí que \( \lim (1 - 1/n)^n = e^{-1} \).
+11.a Sean \( x_n = (1 + 1/n)^n \) y \( y_n = (1 - 1/(n+1))^{n+1} \). Muestre que \( \lim x_n y_n = 1 \) y deduzca de ahí que \( \lim (1 - 1/n)^n = e^{-1} \).
 
-13. Haciendo \( y = x^{1/k} \) y \( b = a^{1/k} \) en la identidad \( y^k - b^k = (y - b) \cdot \sum_{i=0}^{k-1} y^i b^{k-i-1} \) obtenga \( x - a = (x^{1/k} - a^{1/k}) \cdot \sum_{i=0}^{k-1} x^{i/k} a^{1-(i+1)/k} \) y use esto para probar que si \( \lim x_n = a > 0 \), entonces \( \lim_{n \to \infty} \sqrt[k]{x_n} = \sqrt[k]{a} \). Concluya, de ahí, que \( \lim_{n \to \infty} (x_n)^r = a^r \) para todo racional \( r \).
+12. Haciendo \( y = x^{1/k} \) y \( b = a^{1/k} \) en la identidad \( y^k - b^k = (y - b) \cdot \sum_{i=0}^{k-1} y^i b^{k-i-1} \) obtenga \( x - a = (x^{1/k} - a^{1/k}) \cdot \sum_{i=0}^{k-1} x^{i/k} a^{1-(i+1)/k} \) y use esto para probar que si \( \lim x_n = a > 0 \), entonces \( \lim_{n \to \infty} \sqrt[k]{x_n} = \sqrt[k]{a} \). Concluya, de ahí, que \( \lim_{n \to \infty} (x_n)^r = a^r \) para todo racional \( r \).
 
-14. Pruebe que, para todo \( r \in \mathbb{Q} \), se tiene \( \lim_{n \to \infty} \left( 1 + \frac{r}{n} \right)^n = e^r \). [Sugerencia: Por el Ejercicio 11, basta considerar el caso en que \( r = \frac{p}{q} \) es \( > 0 \). Examine la subsucesión donde \(n = p \cdot m\). Para esos valores de \(n\), se tiene \(\left(1 + \frac{r}{n}\right)^n = \left(1 + \frac{p}{qmn}\right)^{qmn \cdot \frac{p}{q}} = \left[\left(1 + \frac{1}{qmn}\right)^{qmn}\right]^{p/q}\). Use el Ejercicio 12.]
+13. Pruebe que, para todo \( r \in \mathbb{Q} \), se tiene \( \lim_{n \to \infty} \left( 1 + \frac{r}{n} \right)^n = e^r \). [Sugerencia: Por el Ejercicio 11, basta considerar el caso en que \( r = \frac{p}{q} \) es \( > 0 \). Examine la subsucesión donde \(n = p \cdot m\). Para esos valores de \(n\), se tiene \(\left(1 + \frac{r}{n}\right)^n = \left(1 + \frac{p}{qmn}\right)^{qmn \cdot \frac{p}{q}} = \left[\left(1 + \frac{1}{qmn}\right)^{qmn}\right]^{p/q}\). Use el Ejercicio 12.]
 
 14. Sean \(a \ge 0\), \(b \ge 0\). Pruebe que \(\lim_{n\to\infty} \sqrt[n]{a^n + b^n} = \max\{a, b\}\).
 
@@ -3153,10 +3153,11 @@ Así, la sucesión (no decreciente) de las sumas parciales de la serie \(\sum |a
 
 17. Sean \((x_n)\) y \((y_n)\) sucesiones acotadas. Pongamos  
 \(a = \liminf x_n\), \(A = \limsup x_n\), \(b = \liminf y_n\) y \(B = \limsup y_n\). Pruebe que  
-
-a) \(\limsup(x_n + y_n) \le A + B\), \(\liminf(x_n + y_n) \ge a + b\);\\
-b) \(\limsup(-x_n) = -a\), \(\liminf(-x_n) = -A\);\\
-c) \(\limsup(x_n \cdot y_n) \le A \cdot B\) y \(\liminf(x_n \cdot y_n) \ge a b\);  
+\begin{itemize}
+    \item[a)] \(\limsup(x_n + y_n) \le A + B\), \(\liminf(x_n + y_n) \ge a + b\);\\
+    \item[b)] \(\limsup(-x_n) = -a\), \(\liminf(-x_n) = -A\);\\
+    \item[c)] \(\limsup(x_n \cdot y_n) \le A \cdot B\) y \(\liminf(x_n \cdot y_n) \ge a b\);  
+\end{itemize}
 
 valiendo las dos últimas desigualdades bajo la hipótesis de que \(x_n \ge 0\) y \(y_n \ge 0\). Dé ejemplos en los que se tengan desigualdades estrictas en las relaciones anteriores.
 
@@ -3164,11 +3165,12 @@ valiendo las dos últimas desigualdades bajo la hipótesis de que \(x_n \ge 0\) 
 
 19. Se dice que una sucesión \((x_n)\) tiene variación acotada cuando la sucesión \((v_n)\) dada por \(v_n = \sum_{i=1}^n |x_{i+1} - x_i|\) es acotada.  
 Pruebe que, en ese caso, \((v_n)\) converge. Pruebe también:
-
-a) Si \(x_n\) tiene variación acotada, entonces existe \(\lim x_n\);\\
-b) Si \(|x_{n+2} - x_{n+1}| \leq c|x_{n+1} - x_n|\) para todo \(n \in \mathbb{N}\) con \(0 \leq c < 1\), entonces \((x_n)\) tiene variación acotada;\\
-c) \((x_n)\) tiene variación acotada si, y solo si, \(x_n = y_n - z_n\) donde \((y_n)\) y \((z_n)\) son sucesiones no decrecientes acotadas;\\
-d) Dé ejemplo de una sucesión convergente que no sea de variación acotada.
+\begin{itemize}
+    \item[a)] Si \(x_n\) tiene variación acotada, entonces existe \(\lim x_n\);\\
+    \item[b)] Si \(|x_{n+2} - x_{n+1}| \leq c|x_{n+1} - x_n|\) para todo \(n \in \mathbb{N}\) con \(0 \leq c < 1\), entonces \((x_n)\) tiene variación acotada;\\
+    \item[c)] \((x_n)\) tiene variación acotada si, y solo si, \(x_n = y_n - z_n\) donde \((y_n)\) y \((z_n)\) son sucesiones no decrecientes acotadas;\\
+    \item[d)] Dé ejemplo de una sucesión convergente que no sea de variación acotada.
+\end{itemize}
 
 20. Sea \(x_1 = 1\) y ponga \(x_{n+1} = 1 + \frac{1}{x_n}\). Verifique que \(|x_{n+2} - x_{n+1}| \leq \frac{1}{2}|x_{n+1} - x_n|\). Concluya que existe \(a = \lim x_n\) y determine \(a\).
 
@@ -3177,11 +3179,11 @@ d) Dé ejemplo de una sucesión convergente que no sea de variación acotada.
 22. Para que la sucesión \((x_n)\) no posea subsucesión convergente es necesario y suficiente que \(\lim |x_n| = +\infty\).
 
 23. Sea \(\varphi: \mathbb{N} \to \mathbb{N}\) una sucesión de números naturales. Pruebe que las siguientes afirmaciones son equivalentes:
-
-a) \(\lim_{n \to \infty} \varphi(n) = +\infty\);\\
-b) Para todo \(k \in \mathbb{N}\), \(\varphi^{-1}(k)\) es un subconjunto finito de \(\mathbb{N}\);\\
-c) Para todo subconjunto finito \(F \subset \mathbb{N}\), \(\varphi^{-1}(F)\) es finito.
-
+\begin{itemize}
+    \item[a)] \(\lim_{n \to \infty} \varphi(n) = +\infty\);\\
+    \item[b)] Para todo \(k \in \mathbb{N}\), \(\varphi^{-1}(k)\) es un subconjunto finito de \(\mathbb{N}\);\\
+    \item[c)] Para todo subconjunto finito \(F \subset \mathbb{N}\), \(\varphi^{-1}(F)\) es finito.
+\end{itemize}
 En particular, si \(\varphi: \mathbb{N} \to \mathbb{N}\) es inyectiva, entonces \(\lim_{n \to \infty} \varphi(n) = +\infty\).
 
 24. Sea \((x_n)\) una sucesión de números reales y suponga que \(\varphi: \mathbb{N} \to \mathbb{N}\) cumple una de las (y por tanto todas las) condiciones del ejercicio anterior. Pruebe que si \(\lim x_n = a\) y \(y_n = b\), entonces \(\lim_{n \to \infty} (x_n - y_n) = 0\). \(x_{\varphi(n)}\), entonces \(\lim y_n = a\). Dé ejemplo de \(\varphi: \mathbb{N} \to \mathbb{N}\) sobreyectiva, tal que \(\lim x_n = a\), pero no se cumple \(\lim y_n = a\), donde \(y_n = x_{\varphi(n)}\).
@@ -3198,12 +3200,10 @@ t_{31} & t_{32} & t_{33} & & \\
 t_{n1} & t_{n2} & t_{n3} & \dots & t_{nn}
 \end{array}
 \]
-
 Haga dos hipótesis sobre el arreglo \(T\). Primera: cada fila tiene suma igual a 1. Segunda: cada columna tiene límite cero: \(\lim_{n\to\infty} t_{ni} = 0\) para todo \(i \in \mathbb{N}\). Dada una sucesión convergente \((x_n)\), con \(\lim x_n = a\), use el arreglo \(T\) para transformarla en una sucesión \((y_n)\), con
 \[
 y_n = t_{n1}x_1 + t_{n2}x_2 + \dots + t_{nn}x_n.
 \]
-
 Pruebe que \(\lim y_n = a\).
 [Sugerencia: Considere inicialmente el caso \(a = 0\). Dado \(\varepsilon > 0\), existe \(p \in \mathbb{N}\) tal que \(n > p \Rightarrow |x_n| < \varepsilon/2\). Existe también \(A > 0\) tal que \(|x_n| < A\) para todo \(n\). A continuación, obtenga \(q \in \mathbb{N}\) tal que \(n > q \Rightarrow |t_{n1}| < \delta, |t_{n2}| < \delta, \dots, |t_{np}| < \delta\), donde \(\delta = \varepsilon / (2pA)\). Tome \(n_0 = \max\{p, q\}\). Observe que \(n > n_0 \Rightarrow |y_n| \leq t_{n1}|x_1| + \dots + t_{np}|x_p| + \dots + t_{nn}|x_n|\), donde la suma de las \(p\) primeras parcelas no excede \(\varepsilon/2\) y la suma de las \(n-p\) parcelas restantes no supera \((t_{n,p+1} + \dots + t_{nn}) \varepsilon/2\). Luego, \(|y_n| < \varepsilon\). El caso general se reduce inmediatamente a este.]
 
@@ -3278,29 +3278,21 @@ Para que \(x \in X\) sea un punto interior del conjunto \(X\) es necesario (y su
 
 \begin{center}
 \begin{tikzpicture}
-    
-    % Línea base
     \draw[thick] (0, 0) -- (10, 0);
 
-    % Intervalo resaltado (línea gruesa)
     \draw[line width=3pt] (4.2, 0) -- (8.1, 0);
 
-    % Punto 'a'
     \node at (1.4, 0) {\Large $($};
     \node at (1.4, -0.6) {\large a};
 
-    % Punto 'x - \varepsilon'
     \node at (4.2, 0) {\Large $($};
     \node at (4.2, -0.6) {\large x - $\varepsilon$};
 
-    % Punto central 'x'
     \draw[thick] (6.15, -0.2) -- (6.15, 0.2);
     \node at (6.15, -0.6) {\large x};
 
-    % Punto 'b = x + \varepsilon'
     \node at (8.1, 0) {\Large $)$};
     \node at (8.1, -0.6) {\large b = x + $\varepsilon$};
-
 \end{tikzpicture}
 \end{center}
 
@@ -3452,7 +3444,7 @@ Ejemplos.
         6/\frac{2}{3},
         7/\frac{7}{9},
         8/\frac{8}{9},
-        9/1%
+        9/1
     } {
         \draw (\x, 0.2) -- (\x, -0.2);
         
@@ -3722,9 +3714,10 @@ B. Un conjunto cerrado no enumerable, formado solo por números irracionales. Ta
 28. Dé un ejemplo de un conjunto cerrado, no enumerable, formado solo por números trascendentes.
 
 29. Defina la distancia de un punto \( a \in \mathbb{R} \) a un conjunto no vacío \( X \subset \mathbb{R} \) como \( d(a, X) = \inf\{|x - a|; x \in X\} \). Pruebe:
-
-1. \( d(a, X) = 0 \Leftrightarrow a \in \bar{X} \);\\
-2. Si \( F \subset \mathbb{R} \) es cerrado, entonces para todo \( a \in \mathbb{R} \) existe \( b \in F \) tal que \( d(a, F) = |b - a| \).
+\begin{itemize}
+    \item[1.] \( d(a, X) = 0 \Leftrightarrow a \in \bar{X} \);\\
+    \item[2.] Si \( F \subset \mathbb{R} \) es cerrado, entonces para todo \( a \in \mathbb{R} \) existe \( b \in F \) tal que \( d(a, F) = |b - a| \).
+\end{itemize}
 
 30. Si \( X \) es acotado superiormente, su cerradura \( \bar{X} \) también lo es. Además, \( \sup X = \sup \bar{X} \). Enuncie y pruebe un resultado análogo para el ínfimo.
 
@@ -3751,36 +3744,40 @@ B. Un conjunto cerrado no enumerable, formado solo por números irracionales. Ta
 41. Si \(A\) y \(A \cup \{a\}\) son abiertos, entonces \(a\) es punto de acumulación de \(A\) a la derecha y a la izquierda.
 
 42. Dé explícitamente el significado de cada una de las siguientes afirmaciones. En sus explicaciones, tiene prohibido usar cualquiera de las palabras subrayadas a continuación:
-
-1) \(a \in X\) no es punto interior de \(X\);\\
-2) \(a \in \mathbb{R}\) no es adherente a \(X\);\\
-3) \(X \subset \mathbb{R}\) no es un conjunto abierto;\\
-4) El conjunto \(Y \subset \mathbb{R}\) no es cerrado;\\
-5) \(a \in \mathbb{R}\) no es punto de acumulación del conjunto \(X \subset \mathbb{R}\);\\
-6) \(X' = \emptyset\);\\
-7) \(X \subset Y\) pero \(X\) no es denso en \(Y\);\\
-8) \(\text{int}(\overline{X}) = \emptyset\);\\
-9) \(X \cap X' = \emptyset\);\\
-10) \(X\) no es compacto.
+\begin{itemize}
+    \item[1)] \(a \in X\) no es punto interior de \(X\);\\
+    \item[2)] \(a \in \mathbb{R}\) no es adherente a \(X\);\\
+    \item[3)] \(X \subset \mathbb{R}\) no es un conjunto abierto;\\
+    \item[4)] El conjunto \(Y \subset \mathbb{R}\) no es cerrado;\\
+    \item[5)] \(a \in \mathbb{R}\) no es punto de acumulación del conjunto \(X \subset \mathbb{R}\);\\
+    \item[6)] \(X' = \emptyset\);\\
+    \item[7)] \(X \subset Y\) pero \(X\) no es denso en \(Y\);\\
+    \item[8)] \(\text{int}(\overline{X}) = \emptyset\);\\
+    \item[9)] \(X \cap X' = \emptyset\);\\
+    \item[10)] \(X\) no es compacto.
+\end{itemize}
 
 43. Si todo punto de acumulación de \(X\) es unilateral, entonces \(X\) es enumerable.
 
 44. Sea \(X \subset \mathbb{R}\) un conjunto arbitrario. Toda cobertura de \(X\) mediante abiertos posee una subcobertura enumerable (Teorema de Lindelöf).
 
 45. Con la notación del Ejercicio 4, pruebe:
-
-a) Si \(A\) es compacto y \(B\) es cerrado entonces \(A + B\) es cerrado;\\
-b) si \(A\) y \(B\) son compactos, entonces \(A + B\) y \(A \cdot B\) son compactos;\\
-c) si \(A\) es cerrado y \(B\) es compacto, \(A \cdot B\) puede no ser cerrado.
+\begin{itemize}
+    \item[a)] Si \(A\) es compacto y \(B\) es cerrado entonces \(A + B\) es cerrado;\\
+    \item[b)] si \(A\) y \(B\) son compactos, entonces \(A + B\) y \(A \cdot B\) son compactos;\\
+    \item[c)] si \(A\) es cerrado y \(B\) es compacto, \(A \cdot B\) puede no ser cerrado.
+\end{itemize}
 
 46. Obtenga coberturas abiertas de \(\mathbb{Q}\) y de \([0, +\infty)\) que no admitan subcoberturas finitas.
 
 47. Considere las funciones \(f\), \(g\), \(h\) del Ejercicio 7. Muestre que para \(K\) y \(L\) compactos arbitrarios, \(f(K)\), \(g(K)\), \(h(K)\), \(f^{-1}(L)\), \(g^{-1}(L)\) y \(h^{-1}(L)\) son compactos.
 
 48. Las siguientes afirmaciones respecto a un conjunto \(X \subset \mathbb{R}\) son equivalentes:
-   (1) \(X\) es acotado;
-   (2) Todo subconjunto infinito de \(X\) posee un punto de acumulación (que puede no pertenecer a \(X\));
-   (3) Toda sucesión de puntos de \(X\) posee una subsucesión convergente.
+\begin{itemize}
+    \item[(1)] \(X\) es acotado;
+   \item[(2)] Todo subconjunto infinito de \(X\) posee un punto de acumulación (que puede no pertenecer a \(X\));
+   \item[(3)] Toda sucesión de puntos de \(X\) posee una subsucesión convergente.
+\end{itemize}
 
 49. Sea \(X \subset \mathbb{R}\) un conjunto compacto cuyos puntos, con excepción de \(a = \inf X\) y \(b = \sup X\), son puntos de acumulación a la derecha y a la izquierda. Entonces \(X = [a, b]\) o \(X = \{a, b\}\).
 
@@ -4315,7 +4312,9 @@ Ejemplos.
 
 4. Sea \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = \frac{x}{|x|}\) si \(x \neq 0\) y \(f(0) = 1\). O sea, \(f(x) = 1\) para \(x \geq 0\) y \(f(x) = -1\) cuando \(x < 0\). Entonces \(f\) es continua en todos los puntos \(x \neq 0\), pero no es continua en el punto \(x = 0\), porque no existe \(\lim_{x \to 0} f(x)\).
 
-El motivo que asegura la continuidad de la función del Ejemplo 3, pero permite la discontinuidad en el Ejemplo 4, es proporcionado por el Teorema 7. Sea \(X \subset F_1 \cup F_2\), donde \(F_1\) y \(F_2\) son cerrados. Si la función \(f: X \to \mathbb{R}\) es tal que sus restricciones \(f|(X \cap F_1)\) y \(f|(X \cap F_2)\) son continuas, entonces \(f\) es continua.
+El motivo que asegura la continuidad de la función del Ejemplo 3, pero permite la discontinuidad en el Ejemplo 4, es proporcionado por el
+
+\textbf{Teorema 7.} Sea \(X \subset F_1 \cup F_2\), donde \(F_1\) y \(F_2\) son cerrados. Si la función \(f: X \to \mathbb{R}\) es tal que sus restricciones \(f|(X \cap F_1)\) y \(f|(X \cap F_2)\) son continuas, entonces \(f\) es continua.
 
 \textbf{Demostración.} Sea \(a \in X\). Para mostrar que \(f\) es continua en el punto \(a\), supongamos dado \(\varepsilon > 0\). Hay tres posibilidades. Primera: \(a \in F_1 \cap F_2\); entonces, como \(f|(X \cap F_1)\) es continua en el punto \(a\), existe \(\delta_1 > 0\) tal que \(x \in X \cap F_1,\ |x - a| < \delta_1 \Rightarrow |f(x) - f(a)| < \varepsilon\). Análogamente, existe \(\delta_2 > 0\) tal que \(x \in X \cap F_2,\ |x - a| < \delta_2 \Rightarrow |f(x) - f(a)| < \varepsilon\). Tomemos \(\delta = \min\{\delta_1, \delta_2\}\). Si \(x \in X\) y \(|x - a| < \delta\), entonces \(|x - a| < \delta_1\) y \(|x - a| < \delta_2\). Luego, ya sea \(x \in F_1\) o \(x \in F_2\), se cumple \(|f(x) - f(a)| < \varepsilon\). La segunda posibilidad es \(a \in F_1\) y \(a \notin F_2\). Elegimos \(\delta_1 > 0\) tal que \(x \in X \cap F_1,\ |x - a| < \delta_1 \Rightarrow |f(x) - f(a)| < \varepsilon\). Como \(F_2\) es cerrado, podemos obtener \(\delta_2 > 0\) tal que no exista \(x \in F_2\) con \(|x - a| < \delta_2\). (Recuerde que \(a \notin F_2\).) Sea \(\delta = \min\{\delta_1, \delta_2\}\); si \(x \in X\) y \(|x - a| < \delta\), entonces \(x \in F_1\) y \(|x - a| < \delta_1\), luego \(|f(x) - f(a)| < \varepsilon\). La tercera posibilidad es \(a \in F_2\) y \(a \notin F_1\); sería tratada de manera análoga a la segunda. En cualquier caso, \(f: X \to \mathbb{R}\) es continua en el punto \(a\).
 
@@ -4355,7 +4354,7 @@ Ejemplos.
 
 Decimos que \(f: X \to \mathbb{R}\) posee una discontinuidad de primera especie en el punto \(a \in X\) cuando \(f\) es discontinua en el punto \(a\) y, además, existen los límites laterales \(\lim_{x \to a^+} f(x)\) y \(\lim_{x \to a^-} f(x)\). (Caso \(a\) sea punto de acumulación de \(X\) solamente de un lado, exigimos solo que el límite lateral correspondiente exista.)
 
-Una discontinuidad \(a \in X\) de la función \(f: X \to \mathbb{R}\) es llamada de segunda especie cuando \(a \in X'_+\) y \(\lim_{x \to a^+} f(x)\) no existe o entonces cuando \(a \in X'\) pero no existe el límite por la izquierda de \(f\) en el punto \(a\).
+Una discontinuidad \(a \in X\) de la función \(f: X \to \mathbb{R}\) es llamada de segunda especie cuando \(a \in X'_+\) y \(\lim_{x \to a^+} f(x)\) no existe o entonces cuando \(a \in X'_-\) pero no existe el límite por la izquierda de \(f\) en el punto \(a\).
 
 Ejemplos.
 
@@ -4381,19 +4380,7 @@ En los Ejemplos 6 y 9, los puntos de discontinuidad son todos de segunda especie
 
 \textbf{Corolario.} Si \(f: X \to \mathbb{R}\) es monótona y \(f(X)\) es un intervalo, entonces \(f\) es continua.
 
-Ejemplo 15. Sea \(f: \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = x\), si \(x\) es racional, y \(f(x) = -x\), si \(x\) es irracional. Entonces \(f\) es una biyección de \(\mathbb{R}\) sobre existe. Basta considerar \(f: \mathbb{R} \to \mathbb{R}\) definida por \(f(x) = 0\) si \(x \leq 0\), o si \(x > 0\) es racional, mientras que \(f(x) = 1\) para \(x > 0\) irracional. Existe \(\lim_{x \to 0^-} f(x) = 0\) pero no existe \(\lim_{x \to 0^+} f(x)\). Luego, \(0\) es una discontinuidad del tipo buscado.
-
-\textbf{Teorema 9.} Una función monótona \(f: X \to \mathbb{R}\) no admite discontinuidades de segunda especie.
-
-\textbf{Demostración.} Dado \(a \in X\), como \(f\) es monótona, si \(a + \delta \in X\) (respectivamente \(a - \delta \in X\)) entonces \(f\) es acotada en el conjunto \([a, a + \delta] \cap X\) (respectivamente \([a - \delta, a] \cap X\)). Luego existen los límites laterales que tengan sentido en el punto \(a\), por el Teorema 12 del Capítulo VI.
-
-\textbf{Teorema 10.} Sea \(f: X \to \mathbb{R}\) monótona. Si \(f(X)\) es un conjunto denso en algún intervalo \(I\), entonces \(f\) es continua.
-
-\textbf{Demostración.} Para cada \(a \in X'_+\) sea \(f(a^+) = \lim_{x \to a^+} f(x)\). Análogamente, si \(a \in X'_-\), escribamos \(f(a^-) = \lim_{x \to a^-} f(x)\). Para fijar las ideas, supongamos \(f\) no decreciente. Tomemos \(a \in X\). Si tiene sentido hablar de \(f(a^+)\), es decir, si \(a \in X'_+\), mostraremos que \(f(a) = f(a^+)\). En efecto, \(f(a^+) = \inf\{f(x) \; ; \; x > a\}\). Sabemos que \(a < x \Rightarrow f(a) \leq f(x)\). Luego \(f(a) \leq f(a^+)\). Admitamos que sea \(f(a) < f(a^+)\). Como existen puntos \(x \in X\) con \(x > a\), vemos que en \(f(X)\) hay puntos \(f(x) \geq f(a^+)\). Siendo así, todo intervalo \(I\) que contenga \(f(X)\) debe contener al menos el intervalo \((f(a), f(a^+))\), en el cual no hay puntos de \(f(X)\) pues \(x \leq a \Rightarrow f(x) \leq f(a)\) y \(a < x \Rightarrow f(a^+) \leq f(x)\). Esto contradice que \(f(X)\) sea denso en un intervalo \(I\). Por consiguiente, \(f(a) = f(a^+)\). De modo análogo veríamos que \(f(a^-) = f(a)\) para todo \(a \in X'_-\). Luego \(f\) es continua.
-
-\textbf{Corolario.} Si \(f: X \to \mathbb{R}\) es monótona y \(f(X)\) es un intervalo, entonces \(f\) es continua.
-
-Ejemplo 15. Sea \(f: \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = x\), si \(x\) es racional, y \(f(x) = -x\), si \(x\) es irracional. Entonces \(f\) es una biyección de \(\mathbb{R}\) sobre \(\mathbb{R}\) que es continua solo en el punto \(0\). Esto se debe a que \(f\) no es monótona.
+Ejemplo 15. Sea \(f : \mathbb{R} \to \mathbb{R}\) dada por \(f(x) = x\), si \(x\) es racional, y \(f(x) = -x\), si \(x\) es irracional. Entonces \( f \) es una biyección de \( \mathbb{R} \) sobre \( \mathbb{R} \) que es continua solo en el punto \( 0 \). Esto se debe a que \( f \) no es monótona.
 
 Continuaremos escribiendo
 \[
@@ -4534,11 +4521,9 @@ Una función \( f: X \to \mathbb{R} \) se dice uniformemente continua cuando, pa
 
 Es obvio que toda función uniformemente continua es continua. Pero el recíproco no vale.
 
-Así, la función continua \( f: (0, +\infty) \to \mathbb{R} \), definida por \( f(x) = \frac{1}{x} \), no es uniformemente continua pues, como vimos en el
+Así, la función continua \( f: (0, +\infty) \to \mathbb{R} \), definida por \( f(x) = \frac{1}{x} \), no es uniformemente continua pues, como vimos en el ejemplo 21, dado \(\varepsilon > 0\), sea cual sea \(\delta > 0\), podemos encontrar puntos \(x, y\) en el dominio de \(f\), con \(|x - y| < \delta\) y \(|f(x) - f(y)| \geq \varepsilon\).
 
-Ejemplo 21, dado \(\varepsilon > 0\), sea cual sea \(\delta > 0\), podemos encontrar puntos \(x, y\) en el dominio de \(f\), con \(|x - y| < \delta\) y \(|f(x) - f(y)| \geq \varepsilon\).
-
-Por otro lado, la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = cx + d\), es uniformemente continua, como vimos en el Ejemplo 22. (Allí supusimos \(c \neq 0\), pero es claro que \(c = 0\) da una función constante, que es uniformemente continua.)
+Por otro lado, la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = cx + d\), es uniformemente continua, como vimos en el ejemplo 22. (Allí supusimos \(c \neq 0\), pero es claro que \(c = 0\) da una función constante, que es uniformemente continua.)
 
 A fin de que \(f: X \to \mathbb{R}\) no sea uniformemente continua, es necesario y suficiente que exista \(\varepsilon > 0\) con la siguiente propiedad: para cada \(\delta > 0\), se pueden obtener \(x_\delta, y_\delta \in X\) tales que \(|x_\delta - y_\delta| < \delta\) pero \(|f(x_\delta) - f(y_\delta)| \geq \varepsilon\).
 
@@ -6272,6 +6257,1822 @@ Pruebe que
 54. Sea \( f \) continua en un punto. Pruebe que si \( f \) es derivable en ese punto, entonces existe a lo sumo una recta que coincide con el gráfico de \( f \) una infinidad de veces en cualquier vecindad del punto.
 
 55. Sea \( f: [a, +\infty) \to \mathbb{R} \) dos veces derivable. Si \( \lim_{x \to \infty} f(x) = f(a) \), entonces existe \( x \in (a, +\infty) \) tal que \( f''(x) = 0 \).
+
+\newpage
+
+\chapter{Integral de Riemann}
+
+Estudiaremos ahora la integral de Riemann. La motivación principal para los conceptos introducidos en este capítulo se encuentra en el siguiente problema. Supongamos dada una función \(f: [a, b] \to \mathbb{R}\), acotada en el intervalo \([a, b]\). Admitamos, por simplicidad, que \(f\) sea no negativa, es decir, \(f(x) \ge 0\) para todo \(x \in [a, b]\). Consideremos el conjunto \(A = \{(x, y) \in \mathbb{R}^2; a \le x \le b, 0 \le y \le f(x)\}\), formado por los puntos del plano comprendidos entre el eje de abscisas, la gráfica de \(f\), y las rectas verticales \(x = a\) y \(x = b\). ¿Cuál es el área de este conjunto? En primer lugar, es necesario decir qué significa el “área” de \(A\) y, a continuación, intentar calcularla.
+
+El área de un subconjunto acotado \(A\) del plano \(\mathbb{R}^2\) debe ser un número real. ¿Cómo definirla? Podemos admitir que sabemos calcular áreas de polígonos y tomar como aproximaciones por defecto de este número las áreas de los polígonos contenidos en \(A\). Esto equivale a poner: área de \(A\) = supremo de las áreas de los polígonos contenidos en \(A\). Podríamos también considerar las áreas de los polígonos que contienen a \(A\) como aproximaciones por exceso para el área de \(A\). En este caso, definiríamos el área de \(A\) como el ínfimo de las áreas de los polígonos que contienen a \(A\). Ahora bien, como veremos en el texto que sigue, estos dos métodos de definir el área de \(A\) no siempre conducen al mismo resultado. Para evitar hacer una elección arbitraria, es mejor llamar área interna del conjunto \(A\), e indicar con el símbolo \(m_i(A)\), al supremo de las áreas de los polígonos contenidos en \(A\). Al ínfimo de las áreas de los polígonos que contienen a \(A\) lo llamaremos área externa de \(A\) y lo indicaremos con la notación \(m_e(A)\). Es evidente que \(m_i(A) \leq m_e(A)\). Cuando ocurra que \(m_i(A) = m_e(A)\), diremos que \(A\) es un conjunto mensurable (en el sentido de Jordan) y llamaremos al número \(m(A) = m_i(A) = m_e(A)\) el área de \(A\). Veremos más adelante ejemplos de conjuntos \(A\) para los cuales el área interna es estrictamente inferior al área externa. Tales conjuntos no son mensurables.
+
+Al considerar el área de un conjunto \(A\) podemos, por simplicidad, restringir nuestra atención a polígonos de un tipo especial, a los que llamaremos polígonos rectangulares, los cuales son uniones de rectángulos yuxtapuestos cuyos lados son paralelos a los ejes \(x = 0\) e \(y = 0\).
+
+Más particularmente aún, si el conjunto \(A\) está determinado por una función no negativa \(f: [a, b] \to \mathbb{R}\), de modo que \(A = \{(x, y) \in \mathbb{R}^2; a \leq x \leq b, 0 \leq y \leq f(x)\}\), basta considerar polígonos rectangulares formados por rectángulos cuyas bases inferiores están sobre el eje de abscisas y cuyas bases superiores tocan la gráfica de la función.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, line width=1pt]
+    \def\xa{1.0}
+    \def\xI{1.9}
+    \def\xII{3.1}
+    \def\xIII{3.7}
+    \def\xIV{4.8}
+    \def\xb{5.6}
+
+    \def\ha{1.5}
+    \def\hI{3.0}
+    \def\hII{3.7}
+    \def\hIII{2.9}
+    \def\hIV{2.3}
+
+    \draw[fill=lightgray] (\xa, 0) rectangle (\xI, \ha);
+    \draw[fill=lightgray] (\xI, 0) rectangle (\xII, \hI);
+    \draw[fill=lightgray] (\xII, 0) rectangle (\xIII, \hII);
+    \draw[fill=lightgray] (\xIII, 0) rectangle (\xIV, \hIII);
+    \draw[fill=lightgray] (\xIV, 0) rectangle (\xb, \hIV);
+
+    \draw[->, >=latex] (-1,0) -- (8.5,0);
+    \draw[->, >=latex] (0,-0.5) -- (0,5);
+
+    \draw plot [smooth, tension=0.7] coordinates {
+        (0.5, 0.7)
+        (\xa, \ha)
+        (\xI, \hI)
+        (3.4, \hII)
+        (\xIV, \hIII)
+        (\xb, \hIV)
+        (6.5, 2.1)
+    };
+
+    \foreach \x in {\xa, \xI, \xII, \xIII, \xIV, \xb} {
+        \fill (\x,0) circle (2.5pt);
+    }
+
+    \node[below=8pt] at (\xa, 0) {\Large $a$};
+    \node[below=8pt] at (\xb, 0) {\Large $b$};
+\end{tikzpicture}
+\end{center}
+
+Cada uno de esos polígonos rectangulares \(P\) determina una descomposición ("partición") del intervalo \([a, b]\) en subintervalos yuxtapuestos y, según \(P \subset A\) o \(P \supset A\), el área de \(P\) (suma de las áreas de los rectángulos que lo constituyen) motiva la noción de suma inferior o de suma superior asociada a una partición de \([a, b]\). (Véase el §1 más abajo.)
+
+El área interna de \(A\) será la integral inferior de \(f\), mientras que el área externa será la integral superior. La existencia o no del área de \(A\) está ligada a la regularidad de la función \(f\). Veremos que \(A\) posee área si, y solo si, \(f\) tiene pocas discontinuidades, en un sentido que se precisará en el texto.
+
+Es una circunstancia notable que la noción de área esté relacionada con las derivadas. Esta interdependencia entre derivación e integración se expresa por el hecho de que el conjunto \(A\), asociado anteriormente a la función \(f\), tiene como área el número \(F(b) - F(a)\), siempre que \(F\) sea una función cuya derivada es \(f\).
+
+En este capítulo, presentaremos la definición y las principales propiedades de la integral, daremos condiciones para que una función acotada sea integrable y estableceremos las relaciones más importantes entre la integral y la derivada. Como aplicación, mostraremos cómo los logaritmos y las exponenciales pueden ser introducidos de modo rápido y elegante, con el uso de la integral.
+
+\section{Integral superior e integral inferior}
+
+Consideraremos funciones reales \(f: [a, b] \to \mathbb{R}\), definidas en un intervalo compacto \([a, b]\) y acotadas en dicho intervalo.
+
+Esto significa que existen números reales \(m, M\) tales que \(m \le f(x) \le M\) para todo \(x \in [a, b]\), es decir, que los valores \(f(x)\) pertenecen todos al intervalo compacto \([m, M]\).
+
+El menor de esos intervalos que contiene los valores \(f(x)\), \(x \in [a, b]\), viene dado por \(m = \inf\{f(x); x \in [a, b]\}\) y \(M = \sup\{f(x); x \in [a, b]\}\). Por simplicidad, se escribe también \(m = \inf f\) y \(M = \sup f\).
+
+Para que \(f\) sea acotada en \([a, b]\) es necesario y suficiente que exista \(K > 0\) tal que \(|f(x)| \le K\) para todo \(x \in [a, b]\).
+
+Una partición del intervalo \([a, b]\) es un subconjunto finito \(P \subset [a, b]\) tal que \(a \in P\) y \(b \in P\). Cuando escribamos \(P = \{t_0, t_1, \dots, t_n\}\) convendremos siempre que \(a = t_0 < t_1 < \dots < t_n = b\).
+
+Los intervalos \([t_{i-1}, t_i]\), \(i = 1, \ldots, n\), serán llamados los intervalos de la partición \(P\).
+
+Sean \(f: [a, b] \to \mathbb{R}\) una función acotada y \(P = \{t_0, t_1, \ldots, t_n\}\), una partición de \([a, b]\). Para cada \(i = 1, \ldots, n\), indicaremos con \(m_i\) el ínfimo y con \(M_i\) el supremo de los valores de \(f\) en el intervalo \([t_{i-1}, t_i]\).
+
+Definiremos la suma inferior \(s(f; P)\) y la suma superior \(S(f; P)\) de la función \(f\) relativamente a la partición \(P\) poniendo:
+\[s(f; P) = m_1 \cdot (t_1 - t_0) + \cdots + m_n \cdot (t_n - t_{n-1}) = \sum_{i=1}^n m_i \cdot (t_i - t_{i-1})\]
+y
+\[S(f; P) = M_1 \cdot (t_1 - t_0) + \cdots + M_n \cdot (t_n - t_{n-1}) = \sum_{i=1}^n M_i \cdot (t_i - t_{i-1})\]
+Si \(m\) es el ínfimo y \(M\) el supremo de \(f\) en \([a, b]\), tenemos
+\[m \cdot (b - a) \leq s(f; P) \leq S(f; P) \leq M \cdot (b - a),\]
+para toda partición \(P\) del intervalo \([a, b]\).
+
+Cuando \(f\) es una función positiva, las sumas \(s(f; P)\) y \(S(f; P)\) pueden ser interpretadas como áreas de polígonos, uno inscrito y otro circunscrito a la gráfica de \(f\), respectivamente, y por tanto como valores aproximados (por defecto y por exceso) del área comprendida entre esa gráfica y el eje de abscisas.
+
+Sean \(P, Q\) particiones de \([a, b]\). Cuando \(P \subset Q\), se dice que la partición \(Q\) es más fina que \(P\). La manera más simple de refinar una partición \(P\) es añadirle un único punto.
+
+Tomemos \(P = \{t_0, t_1, \ldots, t_n\}\) y consideremos
+\[Q = \{t_0, t_1, \ldots, t_{i-1}, r, t_i, \ldots, t_n\},\]
+
+donde \(t_{i-1} < r < t_i\). Sean \(m_i, m'\) y \(m''\) los ínfimos de \(f\) en los intervalos \([t_{i-1}, t_i]\), \([t_{i-1}, r]\) y \([r, t_i]\) respectivamente. Evidentemente, \(m_i \leq m'\) y \(m_i \leq m''\). Como \(t_i - t_{i-1} = (t_i - r) + (r - t_{i-1})\), se tiene
+\[s(f; Q) - s(f; P) = m''(t_i - r) + m'(r - t_{i-1}) - m_i(t_i - t_{i-1})\]\[= (m'' - m_i)(t_i - r) + (m' - m_i)(r - t_{i-1}) \geq 0.\]
+
+Así, si una partición \(Q\) resulta del añadido de un punto a la partición \(P\), se tiene \(s(f; P) \leq s(f; Q)\). Aplicando repetidamente este resultado, concluimos que \(P \subset Q\) implica \(s(f; P) \leq s(f; Q)\). Análogamente se demuestra que \(P \subset Q\) conlleva \(S(f; Q) \leq S(f; P)\).
+
+Podemos entonces enunciar el
+
+\textbf{Teorema 1.} Sea \(f : [a, b] \to \mathbb{R}\) acotada. Cuando se refina una partición \(P\), la suma inferior no disminuye y la suma superior no aumenta.
+
+\textbf{Corolario.} Sea \(f : [a, b] \to \mathbb{R}\) acotada. Para cualesquiera particiones \(P, Q\) de \([a, b]\), se tiene \(s(f; P) \leq S(f; Q)\).
+
+En efecto, la partición \(P \cup Q\) refina a \(P\) y a \(Q\). Luego:
+\[
+s(f; P) \leq s(f; P \cup Q) \leq S(f; P \cup Q) \leq S(f; Q).
+\]
+En palabras, toda suma inferior de \(f\) es menor o igual que cualquier suma superior.
+
+Definiremos ahora la integral inferior \(\underline{\int_a^b} f(x)\,dx\) y la integral superior \(\overline{\int_a^b} f(x)\,dx\) de una función acotada \(f : [a, b] \to \mathbb{R}\) poniendo:
+\[
+\underline{\int_a^b} f(x)\,dx = \sup_P s(f; P), \qquad \overline{\int_a^b} f(x)\,dx = \inf_P S(f; P).
+\]
+
+El sup y el inf se toman relativamente a todas las particiones \(P\) del intervalo \([a, b]\). Las siguientes propiedades caracterizan a la integral inferior:
+
+1. Para cualquier partición \(P\) de \([a, b]\), se tiene \(s(f; P) \leq \underline{\int_a^b} f(x)\,dx\);
+
+2. Dado \(\varepsilon > 0\), existe una partición \(P\) de \([a, b]\) tal que \(\underline{\int_a^b} f(x)\,dx - \varepsilon < s(f; P)\).
+
+1. Para toda partición \(P\) de \([a, b]\), vale \(\underline{\int_a^b} f(x) \, dx \leq S(f; P)\);
+
+2. Dado \(\varepsilon > 0\), existe \(P\) tal que \(S(f; P) < \overline{\int_a^b} f(x) \, dx + \varepsilon\).
+
+Se sigue de las definiciones y del corolario anterior que si \(m \leq f(x) \leq M\) para todo \(x \in [a, b]\), entonces
+\[
+m \cdot (b - a) \leq \underline{\int_a^b} f(x) \, dx \leq \overline{\int_a^b} f(x) \, dx \leq M \cdot (b - a).
+\]
+
+En particular, si \(|f(x)| \leq K\) para todo \(x \in [a, b]\), entonces
+\[
+\left| \underline{\int_a^b} f(x) \, dx \right| \leq K \cdot (b - a), \qquad \left| \overline{\int_a^b} f(x) \, dx \right| \leq K \cdot (b - a),
+\]
+pues \(|f(x)| \leq K\) significa \(-K \leq f(x) \leq K\).
+
+A veces, por simplicidad, escribimos solo \(\underline{\int_a^b} f\) y \(\overline{\int_a^b} f\).
+
+Ejemplos
+
+1. Sea \(f: [a, b] \to \mathbb{R}\) definida poniendo \(f(x) = 0\) si \(x\) es irracional y \(f(x) = 1\) si \(x\) es racional. Dada cualquier partición \(P\) de \([a, b]\), tenemos \(m_i = 0\) y \(M_i = 1\) para todo \(i = 1, \ldots, n\), pues todos los intervalos \([t_{i-1}, t_i]\) de \(P\) contienen números racionales e irracionales. Luego \(s(f; P) = 0\) y \(S(f; P) = b - a\) para cualquier partición \(P\). Consecuentemente:
+\[
+\underline{\int_a^b} f(x) \, dx = 0, \qquad \overline{\int_a^b} f(x) \, dx = b - a.
+\]
+
+2. Sea \(f: [a, b] \to \mathbb{R}\) constante: \(f(x) = c\) para todo \(x \in [a, b]\). Entonces tenemos \(M_i = m_i = c\) en todos los intervalos de cualquier partición \(P\). Por consiguiente, \(s(f; P) = S(f; P) = c \cdot (b - a)\) y de ahí
+\[
+\underline{\int_a^b} f(x) \, dx = \overline{\int_a^b} f(x) \, dx = c \cdot (b - a).
+\]
+
+\textbf{Teorema 2.} Sean \(a < c < b\) y \(f: [a, b] \to \mathbb{R}\) acotada. Entonces,
+\[
+\underline{\int_a^b} f(x) \, dx = \underline{\int_a^c} f(x) \, dx + \underline{\int_c^b} f(x) \, dx,
+\]
+\[
+\overline{\int_a^b} f(x) \, dx = \overline{\int_a^c} f(x) \, dx + \overline{\int_c^b} f(x) \, dx.
+\]
+La demostración se basa en dos lemas:
+
+\textbf{Lema 1.} Sea \(a < c < b\). Si consideramos únicamente particiones que contienen el punto \(c\), obtendremos los mismos valores para \(\underline{\int_a^b} f(x) \, dx\) y \(\overline{\int_a^b} f(x) \, dx\).
+
+\textbf{Demostración.} Dada \(P\), añadiéndole el punto \(c\), obtenemos una partición \(P'\) tal que \(s(f; P) \leq s(f; P')\) y \(S(f; P') \leq S(f; P)\). El lema se deduce entonces de la siguiente observación: sean \(A' \subset A\) y \(B' \subset B\) conjuntos acotados. Si, para cada \(a \in A\) y cada \(b \in B\) existen \(a' \in A'\) y \(b' \in B'\) tales que \(a \leq a'\) y \(b' \leq b\), entonces \(\sup A' = \sup A\) y \(\inf B' = \inf B\).
+
+Observación: El mismo razonamiento muestra que, dada una partición \(P_0\) de \([a, b]\), para calcular las integrales (superior e inferior) de \(f: [a, b] \to \mathbb{R}\) basta considerar las particiones que refinan \(P_0\).
+
+\textbf{Lema 2.} Sean \(A, B\) conjuntos no vacíos acotados de números reales. Poniendo \(A + B = \{x + y; x \in A, y \in B\}\), se tiene \(\inf(A + B) = \inf A + \inf B\) y \(\sup(A + B) = \sup A + \sup B\).
+
+\textbf{Demostración.} Dados cualesquiera \(x \in A\) e \(y \in B\), se tiene \(x \leq \sup A\) e \(y \leq \sup B\), de donde \(x + y \leq \sup A + \sup B\). Luego \(\sup A + \sup B\) es una cota superior de \(A + B\). Además, dado \(\varepsilon > 0\) arbitrario, existen \(x \in A\) e \(y \in B\) tales que \(x > \sup A - \frac{\varepsilon}{2}\) e \(y > \sup B - \frac{\varepsilon}{2}\), de donde \(x + y > (\sup A + \sup B) - \varepsilon\). Por tanto, \(\sup A + \sup B\) es el supremo del conjunto \(A + B\). La otra relación se prueba de manera análoga.
+
+\textbf{Corolario.} Sean \(f, g: [a, b] \to \mathbb{R}\) acotadas. Entonces \(\sup(f+g) \leq \sup f + \sup g\) y \(\inf(f+g) \geq \inf f + \inf g\).
+
+En efecto, si \(A = f([a, b])\) y \(B = g([a, b])\), entonces \(C = \{f(x) + g(x); x \in [a, b]\} \subset A + B\). Luego
+\[\sup(f+g) = \sup C \leq \sup(A + B) = \sup A + \sup B = \sup f + \sup g,\]
+\[\inf(f+g) = \inf C \geq \inf(A + B) = \inf A + \inf B = \inf f + \inf g.\]
+
+Ejemplo 3. Sean \(f, g: [-1, 1] \to \mathbb{R}\), \(f(x) = x\), \(g(x) = -x\). Entonces \(\sup f = \sup g = 1\) y \(\sup(f+g) = 0\). En este caso, tenemos \(\sup(f+g) < \sup f + \sup g\).
+
+\textbf{Demostración del Teorema 2.} Sean \(A\) y \(B\), respectivamente, los conjuntos de las sumas inferiores de \(f|[a, c]\) y \(f|[c, b]\). Se ve fácilmente que \(A + B\) es el conjunto de las sumas inferiores de \(f\) relativamente a las particiones de \([a, b]\) que contienen el punto \(c\). Por los Lemas 1 y 2 tenemos
+\[\underline{\int_a^b} f(x) \, dx = \sup(A + B) = \sup A + \sup B = \underline{\int_a^c} f(x) \, dx + \underline{\int_c^b} f(x) \, dx.\]
+De manera análoga se trata el caso de una integral superior.
+
+Ejemplo 4. Sea \(a < c < b\). Definamos \(f: [a, b] \to \mathbb{R}\) poniendo \(f(x) = \alpha\) si \(a \leq x < c\) y \(f(x) = \beta\) si \(c \leq x \leq b\). Mostraremos que
+\[\underline{\int_a^b} f(x) \, dx = \overline{\int_a^b} f(x) \, dx = \alpha \cdot (c - a) + \beta \cdot (b - c).\]
+
+Sabemos que
+\[\underline{\int_a^b} f = \underline{\int_a^c} f + \underline{\int_c^b} f = \underline{\int_a^c} f + \beta \cdot (b - c) \text{ pues } f|[c, b] \text{ es constante, igual a } \beta.\]
+Análogamente,
+\[\overline{\int_a^b} f = \overline{\int_a^c} f + \beta \cdot (b - c).\]
+Resta pues mostrar que
+\[\underline{\int_a^c} f = \overline{\int_a^c} f = \alpha \cdot (c - a).\]
+Para fijar las ideas, supongamos \(\alpha \leq \beta\). Entonces, para todo \(\varepsilon > 0\) tal que \(a < c - \varepsilon < c\), se tiene
+\[
+\overline{\int_{c-\varepsilon}^{c}} f \leq \beta \cdot \varepsilon.
+\]
+Por consiguiente, para cualquier de esos \(\varepsilon > 0\),
+
+tenemos:
+\[
+\alpha \cdot (c-a) \leq \underline{\int_{a}^{c}} f = \underline{\int_{a}^{c-\varepsilon}} f + \underline{\int_{c-\varepsilon}^{c}} f \leq \alpha \cdot (c-\varepsilon-a) + \beta \cdot \varepsilon = \alpha \cdot (c-a) + (\beta-\alpha) \cdot \varepsilon.
+\]
+Así, debe ser:
+\[
+\underline{\int_{a}^{c}} f(x) \, dx = \alpha \cdot (c-a).
+\]
+
+En cuanto a \(\overline{\int_{a}^{c}} f\), es inmediato que debe ser igual a \(\alpha \cdot (c-a)\), pues toda suma superior de \(f|[a,c]\) tiene este valor.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, line width=1pt]
+    \def\xa{2.0}
+    \def\xc{4.0}
+    \def\xb{6.0}
+    \def\ya{1.8}
+    \def\yb{3.8}
+
+    \fill[lightgray!80] (\xa, 0) rectangle (\xc, \ya);
+    \fill[lightgray!80] (\xc, 0) rectangle (\xb, \yb);
+
+    \draw[->, >=latex, thick] (-1,0) -- (8,0);
+    \draw[->, >=latex, thick] (0,-0.6) -- (0,5);
+
+    \draw[dashed, thick] (0,\ya) -- (\xa,\ya);
+    \draw[dashed, thick] (0,\yb) -- (\xc,\yb);
+    
+    \draw[dashed, thick] (\xa,0) -- (\xa,\ya);
+    \draw[dashed, thick] (\xc,0) -- (\xc,\yb);
+    \draw[dashed, thick] (\xb,0) -- (\xb,\yb);
+    \draw[dashed, thick] (\xa,0) -- (\xb,0);
+
+    \draw[line width=2pt] (\xa,\ya) -- (\xc,\ya);
+    \draw[line width=2pt] (\xc,\yb) -- (\xb,\yb);
+
+    \node[left=5pt] at (0,\ya) {\Large $\alpha$};
+    \node[left=5pt] at (0,\yb) {\Large $\beta$};
+    \node[below=8pt] at (\xa,0) {\Large $a$};
+    \node[below=8pt] at (\xc,0) {\Large $c$};
+    \node[below=8pt] at (\xb,0) {\Large $b$};
+\end{tikzpicture}
+\end{center}
+
+Nótese que podríamos haber tomado un valor arbitrario para \(f\) en el punto \(a\), sin alterar el valor de las integrales.
+
+Más generalmente, dada una partición \(P = \{t_0, \ldots, t_n\}\) de \([a,b]\), una función \(f: [a,b] \to \mathbb{R}\), constante (digamos igual a \(c_i\)) en cada intervalo abierto \((t_{i-1}, t_i)\), se llama una función escalonada.
+
+Una repetición del argumento anterior muestra que las integrales de la función escalonada \(f\) vienen dadas por
+\[
+\underline{\int_{a}^{b}} f(x) \, dx = \overline{\int_{a}^{b}} f(x) \, dx = \sum_{i=1}^{n} c_i \cdot (t_i - t_{i-1}).
+\]
+
+Nuevamente observamos que los valores que \(f\) asume en los puntos de división de \(P\) no afectan las integrales.
+
+\textbf{Lema 3.} Sea \(A\) un conjunto acotado no vacío de números reales. Dado \(c \in \mathbb{R}\), pongamos \(c \cdot A = \{c \cdot x; x \in A\}\). Entonces \(\sup(c \cdot A) = c \cdot \sup A\) y \(\inf(c \cdot A) = c \cdot \inf A\) en caso de que \(c > 0\). Cuando \(c < 0\), se tiene \(\sup(c \cdot A) = c \cdot \inf A\) y \(\inf(c \cdot A) = c \cdot \sup A\).
+
+\textbf{Demostración.} Sea \(c > 0\). Para todo \(x \in A\) tenemos \(x \leq \sup A\), de donde \(c \cdot x \leq c \cdot \sup A\). Esto muestra que \(c \cdot \sup A\) es una cota superior del conjunto \(c \cdot A\). Además, dado \(\varepsilon > 0\) cualquiera, existe \(x \in A\) tal que \(\sup A - \frac{\varepsilon}{c} < x\), de donde \(c \cdot \sup A - \varepsilon < c \cdot x\). Por tanto \(c \cdot \sup A\) es el supremo del conjunto \(c \cdot A\). Sea ahora \(c < 0\). Tenemos \(x \geq \inf A\) para todo \(x \in A\), de donde \(c \cdot x \leq c \cdot \inf A\). Por tanto \(c \cdot \inf A\) es cota superior del conjunto \(c \cdot A\). Además, dado arbitrariamente \(\varepsilon > 0\), existe \(x \in A\) tal que \(x < \inf A - \frac{\varepsilon}{c}\) (pues \(-\frac{\varepsilon}{c} > 0\)). Luego \(c \cdot x > c \cdot \inf A - \varepsilon\), lo que prueba que \(c \cdot \inf A\) es el supremo de \(c \cdot A\).
+
+\textbf{Teorema 3.} Sean \(f, g: [a, b] \to \mathbb{R}\) acotadas. Entonces
+
+1. \[
+\underline{\int_a^b} f(x) \, dx + \underline{\int_a^b} g(x) \, dx \leq \underline{\int_a^b} [f(x) + g(x)] \, dx\]\[\leq \overline{\int_a^b} [f(x) + g(x)] \, dx < \overline{\int_a^b} f(x) \, dx + \overline{\int_a^b} g(x) \, dx.
+\]
+
+2. Cuando \(c > 0\),
+\[
+\underline{\int_a^b} c \cdot f(x) \, dx = c \cdot \underline{\int_a^b} f(x) \, dx \quad \text{y} \quad \overline{\int_a^b} c \cdot f(x) \, dx = c \cdot \overline{\int_a^b} f(x) \, dx.
+\]
+
+En el caso de \(c < 0\), se tiene
+\[
+\underline{\int_a^b} c \cdot f = c \cdot \overline{\int_a^b} f \quad \text{y} \quad \overline{\int_a^b} c \cdot f = c \cdot \underline{\int_a^b} f.
+\]
+
+En particular para \(c = -1\),
+\[
+\underline{\int_a^b} (-f) = -\overline{\int_a^b} f \quad \text{y} \quad \overline{\int_a^b} (-f) = -\underline{\int_a^b} f.
+\]
+
+3. Si \( f(x) \leq g(x) \) para todo \( x \in [a, b] \), entonces
+\[
+\underline{\int_a^b} f(x) \, dx \leq \underline{\int_a^b} g(x) \, dx
+\]
+y
+\[
+\overline{\int_a^b} f \leq \overline{\int_a^b} g.
+\]
+
+\textbf{Demostración.} 1. Basta probar la primera desigualdad, pues la tercera es análoga y la segunda es conocida. Indiquemos con \( m_i(f), m_i(g) \) y \( m_i(f+g) \) los ínfimos de las funciones \( f, g \) y \( f+g \) en el intervalo \([t_{i-1}, t_i]\) de una partición \( P \). Se sigue del corolario del Lema 2 que \( m_i(f+g) \geq m_i(f) + m_i(g) \), de donde \( s(f+g; P) \geq s(f; P) + s(g; P) \). Luego
+\[
+(*) \quad \underline{\int_a^b} [f(x) + g(x)] \, dx \geq s(f; P) + s(g; P)
+\]
+para cualquier partición \( P \). Dadas arbitrariamente las particiones \( P \) y \( Q \) tenemos, por tanto,
+\[
+s(f; P) + s(g; P) \leq s(f; P \cup Q) + s(g; P \cup Q) \leq \underline{\int_a^b} [f(x) + g(x)] \, dx.
+\]
+El Lema 2 nos da, entonces,
+\[
+\underline{\int_a^b} f(x) \, dx + \underline{\int_a^b} g(x) \, dx = \sup_{P, Q} [s(f; P) + s(g; Q)] \leq \underline{\int_a^b} [f(x) + g(x)] \, dx.
+\]
+
+2. Por el Lema 3, tenemos \( m_i(c \cdot f) = c \cdot m_i(f) \) y \( M_i(c \cdot f) = c \cdot M_i(f) \) cuando \( c > 0 \), mientras que \( m_i(c \cdot f) = c \cdot M_i(f) \) y \( M_i(c \cdot f) = c \cdot m_i(f) \) para \( c < 0 \). El resultado se sigue aplicando nuevamente el mismo lema al conjunto de las sumas inferiores y al conjunto de las sumas superiores de \( c \cdot f \).
+
+3. De \( f(x) \leq g(x) \) para todo \( x \), se obtiene \( m_i(f) \leq m_i(g) \) y \( M_i(f) \leq M_i(g) \) para toda partición de \([a, b]\). De ahí resultan \( s(f; P) \leq s(g; P) \) y \( S(f; P) \leq S(g; P) \). Las desigualdades con las integrales se siguen.
+
+Corolario. Si \( f(x) \geq 0 \) para todo \( x \in [a, b] \), entonces
+\[
+\underline{\int_a^b} f \geq 0
+\]
+y
+\[
+\overline{\int_a^b} f \geq 0.
+\]
+
+\section{Funciones integrables}
+
+Una función acotada \(f: [a, b] \to \mathbb{R}\) se llama integrable cuando
+\[
+\underline{\int_a^b} f(x) \, dx = \overline{\int_a^b} f(x) \, dx.
+\]
+
+Este valor común es llamado la integral de \(f\) y se indica con
+\[
+\int_a^b f(x) \, dx \quad \text{o, simplemente,} \quad \int_a^b f.
+\]
+
+Por ejemplo, toda función constante, \(f(x) = c\), es integrable,
+
+con \(\int_a^b f(x) \, dx = c \cdot (b - a)\). Más generalmente, (véase el Ejemplo 4) si \(f: [a, b] \to \mathbb{R}\) es una función escalonada, entonces \(f\) es integrable y
+\[
+\int_a^b f(x) \, dx = \sum c_i \cdot (t_i - t_{i-1}),
+\]
+donde los \(c_i\) son los valores que \(f\) asume en los intervalos \((t_{i-1}, t_i)\). Por otro lado, la función \(f: [a, b] \to \mathbb{R}\), igual a 0 en los números irracionales y a 1 en los racionales, no es integrable. (Véase el Ejemplo 1.)
+
+Cuando \(f(x) \geq 0\) para todo \(x \in [a, b]\), las integrales
+\[
+\underline{\int_a^b} f(x) \, dx
+\quad \text{y} \quad
+\overline{\int_a^b} f(x) \, dx
+\]
+resultan de intentar medir el área del conjunto plano
+\[
+A = \{(x, y) \in \mathbb{R}^2; a \leq x \leq b, 0 \leq y \leq f(x)\},
+\]
+limitado por la gráfica de \(f\), por el segmento \([a, b]\) del eje de abscisas y por las rectas verticales \(x = a\) y \(x = b\). En
+\[
+\underline{\int_a^b} f(x) \, dx
+\]
+usamos áreas de polígonos contenidos en \(A\) como aproximaciones (por defecto) del área de \(A\), mientras que en
+\[
+\overline{\int_a^b} f(x) \, dx
+\]
+tomamos polígonos que contienen \(A\), es decir, aproximaciones por exceso. Podemos decir que
+\[
+\underline{\int_a^b} f(x) \, dx
+\]
+es el "área interna" del conjunto \(A\), y que
+\[
+\overline{\int_a^b} f(x) \, dx
+\]
+es su "área externa". La afirmación de que \(f\) es integrable significa que las aproximaciones por defecto y por exceso para el área de \(A\) conducen al mismo resultado, es decir, que el conjunto \(A\) posee, de hecho, un área, igual a \(\int_a^b f(x) \, dx\). En el caso de la función del Ejemplo 1, el conjunto \(A\) tiene un área interna igual a 0 y un área externa igual a 1, luego no posee un área bien definida.
+
+Dada \(f: [a, b] \to \mathbb{R}\) acotada, consideremos el conjunto \(\sigma\) de las sumas inferiores y el conjunto \(\Sigma\) de las sumas superiores de \(f\). Para toda \(s = s(f; P) \in \sigma\) y toda \(S = S(f; Q) \in \Sigma\), tenemos \(s \leq S\). Esto nos da siempre \(\sup \sigma \leq \inf \Sigma\). Sabemos que \(\sup \sigma = \underline{\int_a^b} f\) e \(\inf \Sigma = \overline{\int_a^b} f\).
+
+Decir que \(f\) es integrable significa afirmar que \(\sup \sigma = \inf \Sigma\). Ahora bien, se tiene el siguiente
+
+\textbf{Lema 4.} Sean \(\sigma, \Sigma\) conjuntos acotados no vacíos de números reales. Supongamos que, para cualesquiera \(s \in \sigma\) y \(S \in \Sigma\) sea \(s \leq S\). Entonces \(\sup \sigma = \inf \Sigma\) si, y solo si, para cada \(\varepsilon > 0\) existen \(s \in \sigma\) y \(S \in \Sigma\) tales que \(S - s < \varepsilon\).
+
+\textbf{Demostración.} Siempre se tiene \(\sup \sigma \leq \inf \Sigma\). Supongamos inicialmente que, para cada \(\varepsilon > 0\), existen \(s \in \sigma\) y \(S \in \Sigma\) tales que \(S - s < \varepsilon\). Si fuera \(\sup \sigma < \inf \Sigma\), tomaríamos \(\varepsilon = \inf \Sigma - \sup \sigma > 0\) y entonces, para cualesquiera \(s \in \sigma\) y \(S \in \Sigma\) tendríamos \(s \leq \sup \sigma \leq \inf \Sigma \leq S\), de donde \(S - s \geq \inf \Sigma - \sup \sigma = \varepsilon\), una contradicción. Recíprocamente, si \(\sup \sigma = \inf \Sigma = c\), digamos, entonces, dado \(\varepsilon > 0\), existen \(s \in \sigma\) y \(S \in \Sigma\) tales que \(c - \frac{\varepsilon}{2} < s \leq S < c + \frac{\varepsilon}{2}\) y, por tanto, \(S - s < \varepsilon\).
+
+Dada \(f: [a, b] \to \mathbb{R}\) acotada, su oscilación en el conjunto \(X \subset [a, b]\) se define por
+\[
+\omega(f; X) = \sup f(X) - \inf f(X).
+\]
+
+El lema siguiente implica una definición equivalente para la oscilación.
+
+\textbf{Lema 5.} Sea \(Y\) un conjunto no vacío acotado de números reales. Si \(m = \inf Y\) y \(M = \sup Y\), entonces \(M - m = \sup\{|x - y|; x, y \in Y\}\).
+
+\textbf{Demostración.} Sea \(A = \{|x - y|; x, y \in Y\}\). Dados \(x, y \in Y\) arbitrarios, podemos elegir la notación de modo que \(x \geq y\). Tenemos \(m \leq y \leq x \leq M\), lo que nos da \(|x - y| = x - y = x + (-y) \leq M - m\). Luego \(M - m\) es una cota superior de \(A\). Por otro lado, para todo \(\varepsilon > 0\) podemos encontrar \(x, y \in Y\) tales que \(x > M - \frac{\varepsilon}{2}\) e \(y < m + \frac{\varepsilon}{2}\), es decir, \(-y > -m - \frac{\varepsilon}{2}\). Se sigue que \(|x - y| \geq x - y = x + (-y) > (M - m) - \varepsilon\). Esto muestra que \(M - m\) es la menor cota superior de \(A\), es decir, \(M - m = \sup A\), como queríamos demostrar.
+
+\textbf{Corolario.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Para todo \(X \subset [a, b]\) no vacío, se tiene
+\[
+\omega(f; X) = \sup\{|f(x) - f(y)|; x, y \in X\}.
+\]
+Basta tomar \(Y = f(X)\) en el Lema 5.
+
+Dadas \(f: [a, b] \to \mathbb{R}\) acotada y una partición \(P\) del intervalo \([a, b]\), indicaremos con \(\omega_i = M_i - m_i\) la oscilación de \(f\) en el intervalo \([t_{i-1}, t_i]\).
+
+\textbf{Teorema 4.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Las siguientes afirmaciones son equivalentes:
+
+1. \(f\) es integrable;
+
+2. Para todo \(\varepsilon > 0\) existen particiones \(P, Q\) del intervalo \([a, b]\) tales que \(S(f; Q) - s(f; P) < \varepsilon\);
+
+3. Para todo \(\varepsilon > 0\), existe una partición \(P\) del intervalo \([a, b]\) tal que \(S(f; P) - s(f; P) < \varepsilon\);
+
+4. Para todo \(\varepsilon > 0\), existe una partición \(P = \{t_0, t_1, \ldots, t_n\}\) del intervalo \([a, b]\) tal que \(\sum_{i=1}^n \omega_i \cdot (t_i - t_{i-1}) < \varepsilon\).
+
+\textbf{Demostración.} El Lema 4 dice que (1) \(\Leftrightarrow\) (2). Como \(\sum \omega_i \cdot (t_i - t_{i-1}) = S(f; P) - s(f; P)\), tenemos también (3) \(\Leftrightarrow\) (4). Además, es obvio que (3) \(\Rightarrow\) (2). Finalmente, si \(S(f; Q) - s(f; P) < \varepsilon\), tomando \(P_0 = P \cup Q\), tenemos \(s(f; P) \leq s(f; P_0) \leq S(f; P_0) \leq S(f; Q)\), de donde \(S(f; P_0) - s(f; P_0) < \varepsilon\). Esto muestra que (2) \(\Rightarrow\) (3), lo que concluye la demostración.
+
+Ejemplo 5. Sean \(f, g: [a, b] \to \mathbb{R}\) funciones acotadas que difieren solo en un subconjunto finito de \([a, b]\). Entonces \(f\) será integrable si, y solo si, \(g\) lo es. En caso afirmativo se tiene
+\[
+\int_a^b f(x) \, dx = \int_a^b g(x) \, dx.
+\]
+En efecto, la diferencia \(f - g\) es una función escalonada. (Los puntos donde \(f(x) \neq g(x)\) forman, junto con \(a\) y \(b\), una partición de \([a, b]\) y \(f - g\) es constante, igual a cero, en el interior de cada intervalo de esa partición.) Luego, \(f - g\) es integrable y \(\int_a^b (f - g) = 0\). Como \(f = g + (f - g)\), se sigue del Teorema 5 más abajo que \(f\) es integrable si, y solo si, \(g\) lo es, con
+\[
+\int_a^b f = \int_a^b g + \int_a^b (f - g),
+\]
+es decir,
+\[
+\int_a^b f = \int_a^b g.
+\]
+
+\textbf{Teorema 5.} Sean \(f, g: [a, b] \to \mathbb{R}\) integrables. Entonces:
+
+1. Para \(a < c < b\), \(f|[a, c]\) y \(f|[c, b]\) son integrables y se tiene
+\[
+\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx.
+\]
+Recíprocamente, si \(f|[a, c]\) y \(f|[c, b]\) son integrables, entonces \(f\) es integrable, y vale la igualdad anterior.
+
+2. Para todo \(c \in \mathbb{R}\), \(c \cdot f\) es integrable y
+\[
+\int_a^b c \cdot f(x) \, dx = c \cdot \int_a^b f(x) \, dx.
+\]
+
+3. \(f + g\) es integrable y
+\[
+\int_a^b [f(x) + g(x)] \, dx = \int_a^b f(x) \, dx + \int_a^b g(x) \, dx.
+\]
+
+4. Si \(f(x) \leq g(x)\) para todo \(x \in [a, b]\), entonces
+\[
+\int_a^b f(x) \, dx \leq \int_a^b g(x) \, dx.
+\]
+
+En particular, si \(f(x) \geq 0\) para todo \(x \in [a, b]\), entonces
+\[
+\int_a^b f(x) \, dx \geq 0.
+\]
+
+5. \(|f(x)|\) es integrable y se tiene
+\[
+\left| \int_a^b f(x) \, dx \right| \leq \int_a^b |f(x)| \, dx.
+\]
+
+Se sigue de (4) y (5) que si \(|f(x)| \leq K\) para todo \(x \in [a, b]\), entonces
+\[
+\left| \int_a^b f(x) \, dx \right| \leq K \cdot (b - a).
+\]
+
+6. El producto \(f \cdot g\) es integrable.
+
+\textbf{Demostración.}
+
+(1) Sean
+\[
+\alpha = \underline{\int_a^c} f(x) \, dx, \quad A = \overline{\int_a^c} f(x) \, dx, \quad
+\beta = \underline{\int_c^b} f(x) \, dx \quad \text{y} \quad
+B = \overline{\int_c^b} f(x) \, dx.
+\]
+Entonces
+\[
+\underline{\int_a^b} f(x) \, dx = \alpha + \beta
+\quad \text{y} \quad
+\overline{\int_a^b} f(x) \, dx = A + B.
+\]
+Siempre se tiene \(\alpha \leq A\) y \(\beta \leq B\). Luego \(\alpha + \beta = A + B \iff \alpha = A\) y \(\beta = B\), es decir, \(f\) es integrable si, y solo si, \(f|[a, c]\) y \(f|[c, b]\) son integrables.
+
+Las afirmaciones (2), (3) y (4) se siguen del Teorema 3. Consideremos (5) En primer lugar, mostremos que la función \(x \mapsto |f(x)|\) es integrable. Ahora bien, para \(x, y \in [a, b]\) cualesquiera, tenemos \(\bigl||f(x)| - |f(y)|\bigr| \leq |f(x) - f(y)|\). Luego, por el corolario del Lema 5, para cualquier subconjunto \(X \subset [a, b]\), se tiene \(\omega(|f|; X) \leq \omega(f; X)\). En particular, dada una partición arbitraria \(P\) de \([a, b]\), tenemos \(\omega_i(|f|) \leq \omega_i(f)\). Se sigue del Teorema 4 que \(|f|\) es integrable. Además, para todo \(x \in [a, b]\), se cumple \(-|f(x)| \leq f(x) \leq |f(x)|\). Como \(|f|\) es integrable, podemos usar las afirmaciones (2), con \(c = -1\), y (4), para obtener
+\[
+-\int_a^b |f(x)| \, dx \leq \int_a^b f(x) \, dx \leq \int_a^b |f(x)| \, dx
+\]
+es decir:
+\[
+\left| \int_a^b f(x) \, dx \right| \leq \int_a^b |f(x)| \, dx.
+\]
+
+Para demostrar (6), sea \(K\) tal que \(|f(x)| \leq K\) y \(|g(x)| \leq K\) para todo \(x \in [a, b]\). Dada una partición \(P = \{t_0, \ldots, t_n\}\) de \([a, b]\), indiquemos con \(\omega_i(f \cdot g)\), \(\omega_i(f)\) y \(\omega_i(g)\) las oscilaciones de esas funciones en el intervalo \([t_{i-1}, t_i]\). Para \(x, y \in [t_{i-1}, t_i]\) cualesquiera, tenemos
+\[
+|f(x) \cdot g(x) - f(y) \cdot g(y)| \leq |f(x)| \cdot |g(x) - g(y)| + |g(y)| \cdot |f(x) - f(y)| \leq K \cdot [\omega_i(f) + \omega_i(g)]
+\]
+y, por tanto, \(\omega_i(f \cdot g) \leq K \cdot [\omega_i(f) + \omega_i(g)]\). De ahí,
+\[
+\sum \omega_i(f \cdot g)(t_i - t_{i-1}) \leq K \cdot \left[ \sum \omega_i(f)(t_i - t_{i-1}) + \sum \omega_i(g)(t_i - t_{i-1}) \right].
+\]
+La integrabilidad de \(f \cdot g\) se deduce entonces de la integrabilidad de \(f\) y de \(g\), conforme al Teorema 4.
+
+Observación: La igualdad
+\[
+\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx
+\]
+tiene sentido solo cuando \(a < c < b\). A fin de hacerla verdadera sean cuales sean \(a, b\) y \(c\) reales, convenimos lo siguiente:
+
+primero: \(\int_a^a f(x) \, dx = 0\);
+
+segundo: \[
+\int_a^b f(x) \, dx = - \int_b^a f(x) \, dx.
+\]
+
+Aceptadas estas convenciones, vale, para toda función integrable \(f\), la igualdad:
+\[
+\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx,
+\]
+sean cuales fueren los números reales \(a, b, c\). Hay seis posibilidades a considerar: \(a \leq b \leq c\), \(a \leq c \leq b\), \(b \leq a \leq c\), \(b \leq c \leq a\), \(c \leq a \leq b\) y \(c \leq b \leq a\). En cada caso, basta admitir la integrabilidad de \(f\) en el intervalo mayor.
+
+\textbf{Teorema 6.} Toda función continua \(f: [a, b] \to \mathbb{R}\) es integrable.
+
+\textbf{Demostración.} Como \([a, b]\) es compacto, \(f\) es acotada. Además, es uniformemente continua: dado \(\varepsilon > 0\), existe \(\delta > 0\) tal que \(x, y \in [a, b]\), \(|x - y| < \delta \Rightarrow |f(x) - f(y)| < \frac{\varepsilon}{b - a}\). Sea \(n \in \mathbb{N}\) tal que \(\frac{b - a}{n} < \delta\). Mediante los puntos \(t_i = a + i \cdot \frac{b - a}{n}\), \(i = 0, 1, 2, \ldots, n\), obtenemos una partición de \([a, b]\) tal que \(x, y \in [t_{i-1}, t_i] \Rightarrow |f(x) - f(y)| < \frac{\varepsilon}{b - a}\). Esto muestra que la oscilación \(\omega_i\) de \(f\) en cada intervalo \([t_{i-1}, t_i]\) es \(\leq \varepsilon / (b - a)\). Se sigue que \(\sum \omega_i \cdot (t_i - t_{i-1}) \leq \varepsilon\) y por tanto \(f\) es integrable, por el Teorema 4.
+
+\textbf{Teorema 7.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Si, para cada \(c \in [a, b]\), \(f|[a, c]\) es integrable, entonces \(f\) es integrable.
+
+\textbf{Demostración.} Sea \(|f(x)| \leq K\) para todo \(x \in [a, b]\). Dado \(\varepsilon > 0\), tomemos \(c \in [a, b]\) tal que \(K \cdot (b - c) < \frac{\varepsilon}{4}\). Como \(f|[a, c]\) es integrable, existe una partición \(\{t_0, \ldots, t_n\}\) de \([a, c]\) tal que \(\sum_{i=1}^n \omega_i(t_i - t_{i-1}) < \frac{\varepsilon}{2}\). Poniendo \(t_{n+1} = b\), obtenemos una partición \(\{t_0, \ldots, t_n, t_{n+1}\}\) de \([a, b]\). Ciertamente \(\omega_{n+1} \leq 2K\). Luego \( \omega_{n+1} \cdot (t_{n+1} - t_n) = \omega_{n+1} \cdot (b - c) < \frac{\varepsilon}{2} \cdot \text{Por tanto}, \sum_{i=1}^{n+1} \omega_i(t_i - t_{i-1}) < \varepsilon \) y así \( f \) es integrable.
+
+\textbf{Corolario 1.} Sea \( f: [a, b] \to \mathbb{R} \) acotada. Si, para \( a < c < d < b \) cualesquiera, \( f|[c, d] \) es integrable, entonces \( f \) es integrable.
+
+En efecto, fijemos un punto \( p \), con \( a < p < b \). Por el Teorema 7, \( f|[a, p] \) y \( f|[p, b] \) son integrables. Luego \( f \) es integrable. (Véase el ítem (1) del Teorema 5.)
+
+\textbf{Corolario 2.} Sea \( f: [a, b] \to \mathbb{R} \) acotada, con un número finito de discontinuidades. Entonces \( f \) es integrable.
+
+En efecto, sean \( t_0, \ldots, t_n \) los puntos de discontinuidad de \( f \) en \([a, b]\). Por el Corolario 1, para cada \( i = 1, \ldots, n \), \( f|[t_{i-1}, t_i] \) es integrable pues \( f \) es continua en todo intervalo \([c, d]\) con \( t_{i-1} < c < d < t_i \). Luego \( f \) es integrable. (Véase el ítem (1) del Teorema 5.)
+
+Ejemplo 6. La función \( f: [-1, +1] \to \mathbb{R} \), definida por \( f(x) = \frac{1}{x} \) si \( x \neq 0 \) y \( f(0) = 0 \), es integrable pues es acotada, siendo discontinua únicamente en el punto 0. Obsérvese que el Ejemplo 5 no contiene el Corolario 2 anterior.
+
+Ejemplo 7. Sea \( f: [a, b] \to \mathbb{R} \) definida por \( f(x) = 0 \) si \( x \) es irracional o cero, y \( f\left(\frac{p}{q}\right) = \frac{1}{q} \) si \( \frac{p}{q} \) es una fracción irreducible con \( p \neq 0 \). Entonces \( f \) es discontinua en un conjunto infinito, a saber: el conjunto de los números racionales del intervalo \([a, b]\). Nótese que \( 0 \leq f(x) \leq 1 \), de modo que \( f \) es acotada. Mostraremos ahora que \( f \) es integrable en el intervalo \([a, b]\). Más precisamente, tenemos \( \int_a^b f(x) \, dx = 0 \). En efecto, dado \( \varepsilon > 0 \), el conjunto \( F = \{ x \in [a, b]; f(x) \geq \frac{\varepsilon}{b-a} \} \) es finito pues es el conjunto de las fracciones irreducibles pertenecientes a \([a, b]\) cuyos denominadores son \( \leq \frac{b-a}{\varepsilon} \). Tomemos una partición \( P \) de \([a, b]\) tal que la suma de las longitudes de los intervalos de \(P\) que contienen algún punto de \(F\) sea menor que \(\varepsilon\). Obsérvese que si \(F \cap [t_{i-1}, t_i] = \varnothing\), entonces \(0 \leq f(x) < \varepsilon\) para todo \(x \in [t_{i-1}, t_i]\) y, por tanto, \(M_i \leq \varepsilon/(b-a)\). La suma \(S(f; P) = \sum M_i (t_i - t_{i-1})\) relativa a esta partición se descompone en dos sumandos:
+\[
+\sum M_i (t_i - t_{i-1}) = \sum M'_i (t'_i - t'_{i-1}) + \sum M''_i (t''_i - t''_{i-1}),
+\]
+donde señalamos con un apóstrofo los intervalos \([t'_{i-1}, t'_i]\) que contienen algún punto de \(F\) y con dos, \([t''_{i-1}, t''_i]\), los que son disjuntos de \(F\). El primer sumatorio es \(< \varepsilon\) porque \(\sum (t'_i - t'_{i-1}) < \varepsilon\) y \(M'_i \leq 1\). El segundo es \(< \varepsilon\) porque \(M''_i \leq \varepsilon/(b-a)\) y \(\sum (t''_i - t''_{i-1}) < b-a\). Luego \(S(f; P) = \sum M_i (t_i - t_{i-1}) < 2\varepsilon\). Se sigue que \(\overline{\int_a^b} f(x) \, dx = 0\). Como \(f(x) \geq 0\) para todo \(x\), tenemos
+\[
+0 \leq \underline{\int_a^b} f(x) \, dx \leq \overline{\int_a^b} f(x) \, dx = 0.
+\]
+Concluimos que \(f\) es integrable y que
+\[
+\int_a^b f(x) \, dx = 0.
+\]
+
+\section{El Teorema Fundamental del Cálculo}
+
+Sea \(f: [a, b] \to \mathbb{R}\) integrable. Por el ítem (1) del Teorema 5, para todo \(x \in [a, b]\), \(f|[a, x]\) es integrable. Definiremos entonces una función \(F: [a, b] \to \mathbb{R}\) poniendo
+\[
+F(x) = \int_a^x f(t) \, dt.
+\]
+
+Si tenemos \(|f(t)| \leq K\) para todo \(t \in [a, b]\), entonces, dados cualesquiera \(x, y \in [a, b]\), se tiene
+\[
+|F(y) - F(x)| = \left| \int_x^y f(t) \, dt \right| \leq K \cdot |y - x|.
+\]
+Por consiguiente, \(F\) es (uniformemente) continua en el intervalo \([a, b]\).
+
+Ejemplo 8. Sea \(f: [0, 2] \to \mathbb{R}\) definida por \(f(t) = 0\) si \(0 \leq t < 1\) y \(f(t) = 1\) si \(1 \leq t \leq 2\). Tomando \(F: [0, 2] \to \mathbb{R}\), \(F(x) = \int_0^x f(t) \, dt\), tenemos \(F(x) = 0\) si \(0 \leq x \leq 1\) y \(F(x) = x - 1\) si \(1 \leq x \leq 2\).
+
+\begin{center}
+\begin{tikzpicture}[x=2cm, y=2cm, >=Latex]
+    \draw[->, line width=1pt] (-0.5, 0) -- (2.5, 0);
+    \draw[->, line width=1pt] (0, -0.4) -- (0, 1.5);
+    
+    \node[below left] at (0,0) {\textit{0}};
+    \node[below, yshift=-2pt] at (1,0) {\textit{1}};
+    \node[below, yshift=-2pt] at (2,0) {\textit{2}};
+    \node[left, xshift=-2pt] at (0,1) {\textit{1}};
+    
+    \draw[dashed, line width=0.8pt, dash pattern=on 6pt off 5pt] (0,1) -- (1,1);
+    \draw[dashed, line width=0.8pt, dash pattern=on 6pt off 5pt] (1,0) -- (1,1);
+    \draw[dashed, line width=0.8pt, dash pattern=on 6pt off 5pt] (2,0) -- (2,1);
+    
+    \draw[line width=2.5pt] (0,0) -- (1,0);
+    \draw[line width=2.5pt] (1,1) -- (2,1) node[midway, above=4pt] {\textit{f}};
+
+    \begin{scope}[xshift=7cm]
+        \draw[->, line width=1pt] (-0.5, 0) -- (2.5, 0);
+        \draw[->, line width=1pt] (0, -0.4) -- (0, 1.5);
+        
+        \node[below left] at (0,0) {\textit{0}};
+        \node[below, yshift=-2pt] at (1,0) {\textit{1}};
+        \node[below, yshift=-2pt] at (2,0) {\textit{2}};
+        \node[left, xshift=-2pt] at (0,1) {\textit{1}};
+        
+        \draw[dashed, line width=0.8pt, dash pattern=on 6pt off 5pt] (0,1) -- (2,1);
+        \draw[dashed, line width=0.8pt, dash pattern=on 6pt off 5pt] (1,0) -- (1,1);
+        \draw[dashed, line width=0.8pt, dash pattern=on 6pt off 5pt] (2,0) -- (2,1);
+        
+        \draw[line width=2.5pt] (0,0) -- (1,0);
+        \draw[line width=2.5pt] (1,0) -- (2,1) node[midway, above left=3pt] {\textit{F}};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Vemos que \(F\) es continua, pero no es derivable en el punto \(x = 1\), que corresponde a una discontinuidad de \(f\).
+
+La función \(F(x) = \int_a^x f(t) \, dt\) se llama una integral indefinida de \(f\). El proceso de pasar de \(f\) a \(F\) mejora, o "suaviza" las cualidades de la función. Mostramos arriba que \(f\) acotada implica \(F\) lipschitziana. Veremos ahora que \(f\) continua implica \(F\) derivable.
+
+\textbf{Teorema 8.} Sea \(f: [a, b] \to \mathbb{R}\) integrable. Si \(f\) es continua en el punto \(c \in [a, b]\), entonces la función \(F: [a, b] \to \mathbb{R}\), definida por \(F(x) = \int_a^x f(t) \, dt\), es derivable en el punto \(c\) y se tiene \(F'(c) = f(c)\).
+
+\textbf{Demostración.} Dado \(\varepsilon > 0\), podemos hallar \(\delta > 0\) tal que \(t \in [a, b]\), \(|t - c| < \delta \Rightarrow |f(t) - f(c)| < \varepsilon\). Entonces, si \(0 < h < \delta\) y \(c + h \in [a, b]\), tenemos
+\[
+\left| \frac{F(c + h) - F(c)}{h} - f(c) \right|= \left| \frac{1}{h} \int_c^{c+h} f(t) \, dt - f(c) \right|
+\]
+\[
+= \left| \frac{1}{h} \int_c^{c+h} [f(t) - f(c)] \, dt \right|
+\leq \frac{1}{h} \int_c^{c+h} |f(t) - f(c)| \, dt
+\leq \frac{1}{h} \cdot \varepsilon \cdot h = \varepsilon.
+\]
+
+Esto muestra que \(F'_+(c) = f(c)\). De modo análogo se razona con \(h\) negativo, obteniéndose \(F'_-(c) = f(c)\), de donde \(F'(c) = f(c)\).
+
+\textbf{Corolario.} Dada \(f: [a, b] \to \mathbb{R}\) continua, existe \(F: [a, b] \to \mathbb{R}\) derivable, tal que \(F' = f\).
+
+Basta tomar \(F(x) = \int_a^x f(t) \, dt\).
+
+Se llama primitiva de una función \(f: [a, b] \to \mathbb{R}\) a una función derivable \(F: [a, b] \to \mathbb{R}\) tal que \(F' = f\). El corolario anterior dice que toda función continua en un intervalo compacto posee primitiva.
+
+No toda función integrable \(f\) posee una primitiva \(F\). En efecto, ya sabemos que si \(f = F'\) entonces \(f\) no puede tener discontinuidades de primera especie.
+
+Ejemplo 9. La función \(f\) del Ejemplo 8 no posee primitiva en intervalo alguno que contenga el punto \(1\) en su interior. Por otro lado, la función discontinua
+\[
+f(x) = 2x \cdot \operatorname{sen} \frac{1}{x} - \cos \frac{1}{x} \quad (f(0) = 0)
+\]
+posee la primitiva
+\[
+F(x) = x^2 \cdot \operatorname{sen} \frac{1}{x}, \quad F(0) = 0.
+\]
+
+Notemos que si \(f: [a, b] \to \mathbb{R}\) posee una primitiva, entonces posee una infinidad de ellas. Dos primitivas de \(f\) en \([a, b]\) difieren por una constante, pues tienen la misma derivada \(f\).
+
+De ahí resulta que si \(F: [a, b] \to \mathbb{R}\) es de clase \(C^1\), entonces
+\[
+\int_a^b F'(t) \, dt = F(b) - F(a).
+\]
+
+En efecto, siendo \(F'\) continua, por el Teorema 8 la función \(\phi(x) = \int_a^x F'(t) \, dt\) y la función \(F\) son ambas primitivas de \(f'\) en \([a, b]\). Luego \(\phi(x) - F(x) = \text{constante}\). Como \(\phi(a) = 0\), se sigue que \(\phi(x) - F(x) = -F(a)\), luego \(\phi(x) = F(x) - F(a)\), es decir,
+\[
+\int_a^x F'(t) \, dt = F(x) - F(a),
+\]
+para todo \(x \in [a, b]\). Tomando \(x = b\), obtenemos el resultado deseado.
+
+Mostraremos ahora que no es necesario suponer que \(F'\) es continua.
+
+\textbf{Teorema 9.} (Teorema Fundamental del Cálculo). Si una función integrable \(f: [a, b] \to \mathbb{R}\) posee una primitiva \(F: [a, b] \to \mathbb{R}\), entonces \(\int_a^b f(x) \, dx = F(b) - F(a)\).
+
+En otros términos, si una función \(F: [a, b] \to \mathbb{R}\) posee derivada integrable, entonces
+\[F(b) - F(a) = \int_a^b F'(t) \, dt.\]
+
+\textbf{Demostración.} Para cualquier partición \(P = \{t_0, \dots, t_n\}\) de \([a, b]\), el Teorema del Valor Medio nos da
+\[F(b) - F(a) = \sum_{i=1}^n [F(t_i) - F(t_{i-1})] = \sum_{i=1}^n F'(\xi_i) \cdot (t_i - t_{i-1}),\]
+donde \(t_{i-1} < \xi_i < t_i\) para todo \(i = 1, \dots, n\). Indicando con \(m'_i\) y \(M'_i\) respectivamente el ínfimo y el supremo de \(F'\) en el intervalo \([t_{i-1}, t_i]\), tenemos \(m'_i \leq F'(\xi_i) \leq M'_i\), de donde \(s(F'; P) \leq F(b) - F(a) \leq S(F'; P)\). Por tanto, \(F(b) - F(a) = \int_a^b F'(t) \, dt\).
+
+El Teorema 9 dice que las únicas primitivas de una función integrable \(f: [a, b] \to \mathbb{R}\) (si existen) son de la forma \(\int_a^x f(t) \, dt + \text{constante}\). Él reduce la evaluación de \(\int_a^b f(x) \, dx\), (cuando la función \(f\) posee primitiva) a la obtención de una primitiva de \(f\), trabajo que ocupa una buena parte de los cursos tradicionales de Cálculo.
+
+Como aplicación del Teorema Fundamental del Cálculo, obtendremos ahora el desarrollo de Taylor de log en torno al punto 1 (o de \(\log(1+x)\) en torno a \(x=0\)).
+
+Ejemplo 10. Como \(1+t = 1 - (-t)\), se sigue de la fórmula \(\frac{1-t^n}{1-t} = 1 + t + \cdots + t^{n-1}\) que
+\[(*) \quad \frac{1}{1+t} = 1 - t + t^2 - \cdots + (-1)^{n-1} \cdot t^{n-1} + (-1)^n \frac{t^n}{1+t},\]
+para \( t \neq -1 \). Como \( \log(1+t) \) es una primitiva de \( \frac{1}{1+t} \) y \( \frac{t^{i+1}}{i+1} \) es una primitiva de \( t^i \), tenemos:
+\[
+\int_0^x \frac{dt}{1+t} = \log(1+x) \quad \text{y} \quad \int_0^x t^i \, dt = \frac{x^{i+1}}{i+1}
+\]
+para todo \( x > -1 \). Tomando la integral de \( 0 \) a \( x \) de ambos miembros de la igualdad (*), obtenemos
+\[
+\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^{n-1} \frac{x^n}{n} + (-1)^n \int_0^x \frac{t^n}{1+t} \, dt
+\]
+para todo \( x > -1 \). Escribamos
+\[
+r_n(x) = (-1)^n \int_0^x \frac{t^n}{1+t} \, dt.
+\]
+
+Observamos los siguientes hechos:
+\[
+0 \leq x \Rightarrow |r_n(x)| \leq \int_0^x t^n \cdot dt = \frac{x^{n+1}}{n+1};
+\]
+\[
+-1 < x \leq 0 \Rightarrow |r_n(x)| \leq \int_x^0 \frac{|t|^n}{1+x} \, dt = \frac{|x|^{n+1}}{(1+x)(n+1)},
+\]
+pues \( 1+t \geq 1+x \).
+
+Concluimos de ahí que \( \lim_{x \to 0} \frac{r_n(x)}{x^n} = 0 \). Luego \( p_n(x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^{n-1} \frac{x^n}{n} \) es el polinomio de Taylor de orden \( n \) para la función log en el punto 1. (O para \( f(x) = \log(1+x) \) en el punto 0.) A continuación, notamos que, para todo \( x \in (-1,1] \), tenemos \( \lim_{n \to \infty} r_n(x) = 0 \).
+
+Vale, por tanto, el desarrollo de Taylor para \(-1 < x \leq 1\):
+\[
+\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^{n-1} \frac{x^n}{n} + \cdots
+\]
+
+En particular, poniendo \( x = 1 \), obtenemos la fórmula
+\[
+\log 2 = 1 - \frac{1}{2} + \frac{1}{3} - \cdots + \frac{(-1)^{n-1}}{n} + \cdots.
+\]
+
+\section{Fórmulas clásicas del Cálculo Integral}
+
+\textbf{Teorema 10.} (Cambio de variable). Sean \(f: [a, b] \to \mathbb{R}\) continua, \(g: [c, d] \to \mathbb{R}\) derivable, con \(g'\) integrable y \(g([c, d]) \subset [a, b]\). Entonces
+\[
+\int_{g(c)}^{g(d)} f(x) \, dx = \int_{c}^{d} f(g(t)) \cdot g'(t) \, dt.
+\]
+
+\textbf{Demostración.} Siendo continua, \(f\) posee una primitiva \(F: [a, b] \to \mathbb{R}\). El Teorema Fundamental del Cálculo da:
+\[
+\int_{g(c)}^{g(d)} f(x) \, dx = F(g(d)) - F(g(c)).
+\]
+
+Por otro lado, por la Regla de la Cadena, \((F \circ g)'(t) = F'(g(t)) \cdot g'(t) = f(g(t)) \cdot g'(t)\) para todo \(t \in [a, b]\). Así, \(F \circ g: [c, d] \to \mathbb{R}\) es una primitiva de la función integrable \(t \mapsto f(g(t)) \cdot g'(t)\). Tenemos, por tanto,
+\[
+\int_{c}^{d} f(g(t)) \cdot g'(t) \, dt = F(g(d)) - F(g(c)),
+\]
+lo que prueba el Teorema 10.
+
+Observaciones: 1. En el Teorema 10, no exigimos que, para todo \(t \in [c, d]\), el punto \(g(t)\) pertenezca al intervalo cuyos extremos son \(g(c)\) y \(g(d)\). Mucho menos requerimos que \(g\) sea monótona. En compensación, suponemos \(f\) continua. En realidad, la demostración anterior usa solo que \(f\) es integrable y posee una primitiva. En el Ejercicio 11 más abajo, damos otro enunciado del Teorema 10, en el cual admitimos solo \(f\) integrable pero estipulamos que \(g\) sea monótona.
+
+2. La notación tradicional \(\int_{a}^{b} f(x) \, dx\), en vez de \(\int_{a}^{b} f\), encuentra una buena justificación en el Teorema 10. Para cambiar de variable en \(\int_{g(c)}^{g(d)} f(x) \, dx\), tomamos \(x = g(t)\) y la diferencial de \(x\) será \(dx = g'(t) \, dt\). Cuando \(t\) asume los valores \(c\) y \(d\), \(x\) valdrá \(g(c)\) y \(g(d)\) respectivamente. Estas sustituciones dan, por tanto,
+\[
+\int_{g(c)}^{g(d)} f(x) \, dx = \int_{c}^{d} f(g(t)) \cdot g'(t) \, dt.
+\]
+
+\textbf{Teorema 11.} (Integración por partes.) Si \(f, g: [a, b] \to \mathbb{R}\) poseen derivadas integrables, entonces
+\[
+\int_{a}^{b} f(t) \cdot g'(t) \, dt = f \cdot g\Big|_{a}^{b} - \int_{a}^{b} f'(t) \cdot g(t) \, dt,
+\]
+donde \(f \cdot g\Big|_{a}^{b} = f(b) \cdot g(b) - f(a) \cdot g(a)\).
+
+\textbf{Demostración.} Basta observar que \(f \cdot g\) es una primitiva de \(f \cdot g' + f' \cdot g\) e integrar esta suma de acuerdo con el Teorema Fundamental del Cálculo.
+
+\textbf{Teorema 12.} (Fórmulas de Valor Medio para Integrales.) Están dadas las funciones \(f, p: [a, b] \to \mathbb{R}\), con \(f\) continua. Entonces:
+
+A. Existe \(c \in (a, b)\) tal que
+\[
+\int_{a}^{b} f(x) \, dx = f(c) \cdot (b - a).
+\]
+
+B. Si \(p\) es integrable y no cambia de signo, existe \(c \in [a, b]\) tal que
+\[
+\int_{a}^{b} f(x) p(x) \, dx = f(c) \int_{a}^{b} p(x) \, dx.
+\]
+
+C. Si \(p\) es positiva, decreciente, con derivada integrable, existe \(c \in [a, b]\) tal que
+\[
+\int_{a}^{b} f(x) p(x) \, dx = p(a) \cdot \int_{a}^{c} f(x) \, dx.
+\]
+
+\textbf{Demostración.} A. Sea \(F\) una primitiva de \(f\). Por el Teorema del Valor Medio, existe \(c \in (a, b)\) tal que
+\[
+\int_{a}^{b} f(x) \, dx = F(b) - F(a) = F'(c)(b - a) = f(c)(b - a).
+\]
+
+B. Para todo \(x \in [a, b]\), tenemos \(m \leq f(x) \leq M\), donde \(m\) es el ínfimo y \(M\) el supremo de \(f\); para fijar ideas, supongamos \(p(x) \geq 0\).
+
+Entonces \( m \cdot p(x) \leq f(x)p(x) \leq M \cdot p(x) \), para todo \( x \in [a, b] \). Se sigue que
+\[
+m \cdot \int_a^b p(x) \, dx \leq \int_a^b f(x)p(x) \, dx \leq M \cdot \int_a^b p(x) \, dx.
+\]
+
+Luego, existe \( d \in [m, M] \) tal que
+\[
+d \cdot \int_a^b p(x) \, dx = \int_a^b f(x)p(x) \, dx.
+\]
+
+Como \( f \) es continua, tenemos \( d = f(c) \) para algún \( c \in [a, b] \), lo que prueba \( B \).
+
+C. Definamos \( F: [a, b] \to \mathbb{R} \) poniendo \( F(x) = \int_a^x f(t) \, dt \). Entonces \( F' = f \) y \( F(a) = 0 \). Integrando por partes, obtenemos
+\[
+\int_a^b f(x)p(x) \, dx = \int_a^b F'(x)p(x) \, dx = F(b)p(b) - \int_a^b F(x)p'(x) \, dx.
+\]
+
+Por el ítem \( B \), aplicado a la última integral, existe \( \xi \in [a, b] \) tal que
+\[
+\int_a^b f(x)p(x) \, dx = F(b) \cdot p(b) - F(\xi) \cdot \int_a^b p'(x) \, dx
+\]
+\[
+= F(b) \cdot p(b) - F(\xi) \cdot p(b) + F(\xi) \cdot p(a) = \left[ F(\xi) \frac{p(a) - p(b)}{p(a)} + F(b) \frac{p(b)}{p(a)} \right] p(a)
+\]
+\[
+= d \cdot p(a).
+\]
+
+Poniendo \( \alpha = [p(a) - p(b)]/p(a) \) y \( \beta = p(b)/p(a) \), vemos que \( \alpha \geq 0 \), \( \beta \geq 0 \) y \( \alpha + \beta = 1 \). Luego \( d = \alpha \cdot F(\xi) + \beta \cdot F(b) \) pertenece al intervalo cuyos extremos son \( F(\xi) \) y \( F(b) \). Por la continuidad de \( F \), existe \( c \) entre \( \xi \) y \( b \) (de donde \( c \in [a, b] \)) tal que \( F(c) = d \). Concluimos entonces que
+\[
+\int_a^b f(x)p(x) \, dx = p(a) \cdot F(c) = p(a) \cdot \int_a^c f(x) \, dx
+\]
+para algún \( c \in [a, b] \).
+
+Observaciones: 1. En el ítem B, se puede mostrar que siempre se puede obtener el punto \(c\) en el intervalo abierto \((a, b)\).
+
+2. El ítem C del teorema anterior, donde se usó la derivada \(p'\) en la demostración pero no aparece en la fórmula, puede demostrarse con hipótesis menos restrictivas. Esto se hace de modo natural dentro del contexto de la integral de Lebesgue. La versión anterior es satisfactoria en los casos más frecuentemente encontrados.
+
+3. La fórmula del valor medio dada en el ítem C se usa muchas veces para demostrar un criterio de convergencia para "integrales impropias" análogo al criterio de Dirichlet para series. (Teorema 21 del Capítulo IV.) Véase el Ejercicio 14, a continuación.
+
+Deduciremos ahora la Fórmula de Taylor con resto integral, usando integración por partes. Empecemos con un caso particular.
+
+Sea \(\varphi: [0, 1] \to \mathbb{R}\) poseyendo derivada segunda integrable. Tenemos \(\varphi(1) = \varphi(0) + \int_0^1 \varphi'(t) \, dt\). Vamos a "calcular" esta integral por partes, pero no de manera obvia, que nos llevaría de vuelta al valor \(\varphi(1) - \varphi(0)\).
+
+Tomemos \(f(t) = 1 - t\) y \(g(t) = \varphi'(t)\), de modo que \(f'(t) = -1\) y \(\int_0^1 \varphi'(t) \, dt = -\int_0^1 f' \cdot g\). Con este signo menos, la fórmula de integración por partes queda: (Nótese las posiciones de 0 y 1 en el símbolo \(f \cdot g\)).
+\[
+\int_0^1 \varphi'(t) \, dt = f \cdot g \bigg|_0^1 + \int_0^1 f \cdot g' = \varphi'(0) + \int_0^1 (1 - t) \varphi''(t) \, dt.
+\]
+
+Llegamos así a un resultado interesante. Si \(\varphi\) posee derivada segunda integrable en el intervalo \([0, 1]\), entonces
+\[
+\varphi(1) = \varphi(0) + \varphi'(0) + \int_0^1 (1 - t) \cdot \varphi''(t) \, dt.
+\]
+
+Supongamos ahora que \(\varphi\) posea derivada tercera integrable en \([0,1]\) y probemos suerte otra vez con la integración por partes. Escribamos ahora \(f(t) = \frac{(1 - t)^2}{2}\) y \(g(t) = \varphi''(t)\). Entonces \(f'(t) = -(1 - t)\) y \(\int_0^1 (1 - t) \cdot \varphi''(t) \, dt = -\int_0^1 f' \cdot g\). Con este signo menos, la fórmula de integración por partes nos da:
+\[
+\int_0^1 (1 - t) \cdot \varphi''(t) \, dt = f \cdot g \Big|_0^1 + \int_0^1 f \cdot g' = \frac{\varphi''(0)}{2} + \int_0^1 \frac{(1 - t)^2}{2} \cdot \varphi'''(t) \, dt.
+\]
+
+Entonces podemos escribir
+\[
+\varphi(1) = \varphi(0) + \varphi'(0) + \frac{\varphi''(0)}{2} + \int_0^1 \frac{(1 - t)^2}{2} \cdot \varphi'''(t) \, dt.
+\]
+
+Esto nos conduce inmediatamente al
+
+\textbf{Lema 6.} Sea \(\varphi: [0,1] \to \mathbb{R}\) una función que posee derivada de orden \(n+1\) integrable en \([0,1]\). Entonces
+\[
+\varphi(1) = \varphi(0) + \varphi'(0) + \frac{\varphi''(0)}{2!} + \cdots + \frac{\varphi^{(n)}(0)}{n!}
++ \int_0^1 \frac{(1 - t)^n}{n!} \cdot \varphi^{(n+1)}(t) \, dt.
+\]
+
+Como consecuencia directa:
+
+\textbf{Teorema 13.} (Fórmula de Taylor con resto integral). Si \(f: [a, a + h] \to \mathbb{R}\) posee derivada de orden \(n+1\) integrable, entonces
+\[
+f(a + h) = f(a) + f'(a) \cdot h + \cdots + \frac{f^{(n)}(a)}{n!} \cdot h^n
++ \left[ \int_0^1 \frac{(1 - t)^n}{n!} \cdot f^{(n+1)}(a + th) \, dt \right] \cdot h^{n+1}.
+\]
+
+\textbf{Demostración.} Dada \(f\), defina \(\varphi: [0,1] \to \mathbb{R}\) poniendo \(\varphi(t) = f(a + th)\). Entonces \(\varphi^{(i)}(0) = f^{(i)}(a) \cdot h^i\). A continuación, aplique el lema anterior.
+
+Observación: Al usar la notación \([a, a + h]\), estamos tácitamente admitiendo \(h \ge 0\). Es evidente, sin embargo, que la misma fórmula vale para \(h < 0\), pues la definición de \(\varphi\) no tiene esto en cuenta.
+
+Escribiendo \(b = a + h\), obtendremos una expresión equivalente para la fórmula de Taylor sustituyendo \(h\) por \(b - a\). En el resto, el cambio de variable \(x = a + th\), con \(dx = h \cdot dt\), nos dará
+\[
+f(b) = f(a) + f'(a) \cdot (b - a) + \cdots + \frac{f^{(n)}(a)}{n!} \cdot (b - a)^n
++ \int_a^b \frac{(b - x)^n}{n!} \cdot f^{(n+1)}(x) \, dx.
+\]
+
+En efecto, tenemos \(h = b - a\) y \(t = \frac{x - a}{h}\). Luego \(h - th = b - x\). En el integrando de la fórmula anterior escribimos \((1 - t)^n \cdot h^{n+1} \, dt = (h - th)^n \cdot h \, dt = (b - x)^n \, dx\). El otro factor, \(f^{(n+1)}(a + th)\), se convierte simplemente en \(f^{(n+1)}(x)\). El denominador \(n!\), por supuesto, queda como está. Y los límites de integración son \(a\) y \(b\), pues cuando \(t\) varía entre \(0\) y \(1\), estos son los extremos que asume \(a + th\).
+
+\section{La integral como límite de sumas}
+
+Sea \(P = \{t_0, \ldots, t_n\}\) una partición del intervalo \([a, b]\). Llamaremos norma de \(P\) al número \(|P| =\) mayor longitud \(t_i - t_{i-1}\) de los intervalos de \(P\).
+
+Mostraremos inicialmente que la integral superior de una función acotada \(f\) es el límite de las sumas superiores \(S(f; P)\) cuando la norma de la partición \(P\) tiende a cero. Esto se escribe
+\[
+\overline{\int_a^b} f(x) \, dx = \lim_{|P| \to 0} S(f; P).
+\]
+
+El significado preciso de la fórmula anterior viene dado por el
+
+\textbf{Teorema 14.} Sea \(f: [a, b] \to \mathbb{R}\) una función acotada. Para todo \(\varepsilon > 0\) existe \(\delta > 0\) tal que \(S(f; P) < \overline{\int_a^b} f(x) \, dx + \varepsilon\) cualquiera que sea la partición \(P\) con norma menor que \(\delta\).
+
+\textbf{Demostración.} Supongamos primero que \(f(x) \geq 0\) para todo \(x \in [a, b]\). Dado \(\varepsilon > 0\), existe una partición \(P_0 = \{t_0, \dots, t_n\}\) de \([a, b]\) tal que \(S(f; P_0) < \overline{\int_a^b} f(x) \, dx + \varepsilon/2\). Sea \(M\) el supremo de \(f\) en \([a, b]\). Tomemos \(\delta\) tal que \(0 < \delta < \frac{\varepsilon}{2M \cdot n}\). Sea ahora \(P\) una partición arbitraria con norma menor que \(\delta\). Indiquemos con \([r_{\alpha-1}, r_\alpha]\) los intervalos de \(P\) que están contenidos en algún intervalo \([t_{i-1}, t_i]\) de \(P_0\). Escribiremos \(\alpha \subset i\) para significar que \([r_{\alpha-1}, r_\alpha] \subset [t_{i-1}, t_i]\). Llamemos \([r_{\beta-1}, r_\beta]\) a los intervalos restantes de \(P\). Cada uno de estos contiene al menos un punto \(t_i\) en su interior. Luego hay, a lo sumo, \(n\) intervalos del tipo \([r_{\beta-1}, r_\beta]\). Si \(\alpha \subset i\), entonces \(M_\alpha \leq M_i\) y \(\sum_{\alpha \subset i} (r_\alpha - r_{\alpha-1}) \leq t_i - t_{i-1}\). Estos números son todos \(\geq 0\), luego
+\[
+\sum_{\alpha \subset i} M_\alpha \cdot (r_\alpha - r_{\alpha-1}) \leq M_i (t_i - t_{i-1})
+\]
+y
+\[
+M_\beta \cdot (r_\beta - r_{\beta-1}) \leq M \cdot \delta.
+\]
+Así:
+\[
+S(f; P) = \sum_{\alpha} M_\alpha \cdot (r_\alpha - r_{\alpha-1}) + \sum_{\beta} M_\beta \cdot (r_\beta - r_{\beta-1})
+\]
+\[
+\leq \sum_{i=1}^n M_i \cdot (t_i - t_{i-1}) + M \cdot n \cdot \delta
+< S(f; P_0) + \varepsilon/2 < \overline{\int_a^b} f(x) \, dx + \varepsilon.
+\]
+
+En el caso general, como \(f\) es acotada, existe una constante \(c\) tal que \(f(x) + c \geq 0\) para todo \(x \in [a, b]\). Tomando \(g(x) = f(x) + c\) recaemos en el caso anterior, pues
+\[
+S(g; P) = S(f; P) + c(b - a)
+\]
+y
+\[
+\overline{\int_a^b} g(x) \, dx = \overline{\int_a^b} f(x) \, dx + c \cdot (b - a).
+\]
+
+\textbf{Corolario.} La integral inferior de una función acotada \(f: [a, b] \to \mathbb{R}\) es el límite de las sumas inferiores \(s(f; P)\) cuando la norma de la partición \(P\) tiende a cero, es decir,
+\[
+\int_a^b f(x) \, dx = \lim_{|P| \to 0} s(f; P).
+\]
+
+En efecto, \(-s(f; P) = S(-f; P)\) y \(- \int_a^b f(x) \, dx = \int_a^b -f(x) \, dx.\)
+
+A continuación, caracterizaremos las funciones integrables y expresaremos sus integrales en términos de límites de sumas.
+
+Puntuar una partición \(P = \{t_0, \dots, t_n\}\) es elegir, en cada intervalo \([t_{i-1}, t_i]\), un punto \(\xi_i\). Por tanto, \(t_{i-1} \leq \xi_i \leq t_i\).
+
+Sean \(f: [a, b] \to \mathbb{R}\) una función acotada y \(P^*\) una partición puntuada (\(P\) era la partición antes de puntuarla).
+
+Formemos la suma de Riemann:
+\[
+\sum (f; P^*) = \sum_{i=1}^n f(\xi_i)(t_i - t_{i-1}).
+\]
+
+Evidentemente, sea cual sea la manera de puntuar la partición \(P\), tenemos
+\[
+s(f; P) \leq \sum (f; P^*) \leq S(f; P).
+\]
+
+Dada \(f: [a, b] \to \mathbb{R}\) acotada, diremos que el número real \(I\) es el límite de \(\sum (f; P^*)\) cuando la norma \(|P|\) tiende a cero, y escribiremos
+\[
+I = \lim_{|P| \to 0} \sum (f; P^*),
+\]
+
+cuando, para todo \(\varepsilon > 0\), sea posible obtener \(\delta > 0\) tal que \(|\sum (f; P^*) - I| < \varepsilon\), sea cual sea la partición puntuada \(P^*\) con \(|P| < \delta\).
+
+\textbf{Teorema 15.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Existe el límite \(I = \lim_{|P| \to 0} \sum (f; P^*)\) si, y solo si, \(f\) es integrable. En caso afirmativo, se tiene \(I = \int_a^b f(x) \, dx\).
+
+\textbf{Demostración.} Sea \(f\) integrable. Por el Teorema 14, tenemos
+entonces
+\[
+\lim_{|P| \to 0} s(f; P) = \lim_{|P| \to 0} S(f; P) = \int_a^b f(x) \, dx.
+\]
+Como \(s(f; P) \leq \sum (f; P^*) \leq S(f; P)\), resulta inmediatamente que
+\[
+\lim_{|P| \to 0} \sum (f; P^*) = \int_a^b f(x) \, dx.
+\]
+Recíprocamente, supongamos que exista el límite \(I\) y mostremos que \(f\) es integrable. Dado arbitrariamente \(\varepsilon > 0\), existe una partición \(P = \{t_0, \dots, t_n\}\) tal que
+\[
+\left| \sum (f; P^*) - I \right| < \frac{\varepsilon}{6}
+\]
+sea cual fuere la manera de puntuar \(P\). Fijemos \(P\) y puntuémosla de dos maneras. En primer lugar, en cada intervalo \([t_{i-1}, t_i]\) podemos elegir un punto \(\xi_i\) tal que
+\[
+f(\xi_i) < m_i + \frac{\varepsilon}{4n(t_i - t_{i-1})}.
+\]
+Esto nos dará una partición puntuada \(P^*\) tal que
+\[
+\sum (f; P^*) = \sum_{i=1}^n f(\xi_i)(t_i - t_{i-1})
+< \sum_{i=1}^n m_i \cdot (t_i - t_{i-1}) + \frac{\varepsilon}{4}
+= s(f; P) + \frac{\varepsilon}{4}.
+\]
+De manera semejante, obtenemos una partición puntuada \(P^{\#}\) tal que
+\[
+S(f; P) - \frac{\varepsilon}{4} < \sum (f; P^{\#}).
+\]
+De esta manera:
+\[
+\sum (f; P^*) - \frac{\varepsilon}{4} < s(f; P) \leq S(f; P) < \sum (f; P^{\#}) + \frac{\varepsilon}{4}.
+\]
+Como los números \(\sum (f; P^*)\) y \(\sum (f; P^{\#})\) pertenecen al intervalo
+\[
+\left( I - \frac{\varepsilon}{4}, I + \frac{\varepsilon}{4} \right),
+\]
+se sigue que \(s(f; P)\) y \(S(f; P)\) pertenecen al intervalo
+\[
+\left( I - \frac{\varepsilon}{2}, I + \frac{\varepsilon}{2} \right)
+\]
+y, por tanto, \(S(f; P) - s(f; P) < \varepsilon\). Luego \(f\) es integrable. Evidentemente,
+\[
+\int_a^b f(x) \, dx = I.
+\]
+
+Ejemplos.
+10a. Sea \(f: [a, b] \to \mathbb{R}\) una función integrable. Dada una sucesión \((P_n^*)\) de particiones puntuadas con \(\lim |P_n^*| = 0\), resulta inmediatamente de la definición que
+\[
+\int_a^b f(x) \, dx = \lim_{n \to \infty} \sum (f; P_n^*).
+\]
+
+Consideremos, por ejemplo, la función \(f: [1, 2] \to \mathbb{R}, \ f(x) = \frac{1}{x}\).
+
+Sabemos que
+\[
+\int_1^2 \frac{dx}{x} = \log 2.
+\]
+Para cada \(n \in \mathbb{N}\), sea \(P_n = \left\{ 1, \frac{n+1}{n}, \frac{n+2}{n}, \ldots, \frac{2n}{n} \right\}\) la partición que consiste en subdividir \([1, 2]\) en \(n\) partes iguales, cada una de longitud \(\frac{1}{n}\).
+
+Puntuemos \(P_n\) tomando en cada intervalo
+\[
+\left[ \frac{n+i-1}{n}, \frac{n+i}{n} \right]
+\]
+el punto \(\xi_i = \frac{n+i}{n}\). Para cada \(i = 1, \ldots, n\) tenemos entonces
+\[
+f(\xi_i) = f\left( \frac{n+i}{n} \right) = \frac{n}{n+i}
+\quad \text{y} \quad
+t_i - t_{i-1} = \frac{1}{n}.
+\]
+Luego \(f(\xi_i)(t_i - t_{i-1}) = \frac{1}{n+i}\). La suma de Riemann de esta partición puntuada es, por tanto,
+\[
+\sum (f; P_n^*) = \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n}.
+\]
+
+Concluimos entonces que
+\[
+\lim_{n \to \infty} \left( \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{2n} \right) = \log 2.
+\]
+
+11. Valor medio de una función en un intervalo. Sea \(f: [a, b] \to \mathbb{R}\) integrable. Dividiendo el intervalo \([a, b]\) en \(n\) partes iguales obtenemos la partición
+\[
+P_n = \{ a, a+h, a+2h, \ldots, a+nh \},
+\]
+donde \(h = \frac{b-a}{n}\). La media aritmética de los \(n\) números
+\[
+f(a+h), f(a+2h), \ldots, f(a+nh) = f(b)
+\]
+será indicada por la notación
+\[
+M(f; n) = \frac{1}{n} \sum_{i=1}^n f(a+ih).
+\]
+Es natural definir el valor medio de \(f\) en el intervalo \([a, b]\) como el límite
+\[
+M(f; [a, b]) = \lim_{n \to \infty} M(f; n).
+\]
+Eligiendo en cada intervalo \([a+(i-1)h, a+ih]\) el punto \(a+ih\), obtenemos una partición puntuada \(P_n^*\) tal que
+\[
+\sum (f; P_n^*) = \sum_{i=1}^n f(a + ih) \cdot h = \frac{b - a}{n} \sum_{i=1}^n f(a + ih).
+\]
+Luego \(M(f; n) = \frac{1}{b - a} \sum (f; P_n^*)\). Se sigue que el valor medio de \(f\) en el intervalo \([a, b]\) tiene la expresión
+\[
+M(f; [a, b]) = \lim_{n \to \infty} \frac{1}{b - a} \sum (f; P_n^*) = \frac{1}{b - a} \int_a^b f(x) \, dx.
+\]
+
+En particular, si \(f\) está definida en el intervalo \([a, a + 1]\), su valor medio en ese intervalo es igual a \(\int_a^{a+1} f(x) \, dx\).
+
+\section{Caracterización de las funciones integrables}
+
+Nuestro próximo objetivo es caracterizar las funciones integrables como aquellas cuyos puntos de discontinuidad forman conjuntos que son "pequeños". Esto se hará mediante la noción de conjunto de medida nula (según Lebesgue). Iniciaremos, sin embargo, con el concepto de conjunto de contenido nulo (según Jordan).
+
+Sea \(X \subset \mathbb{R}\). Diremos que \(X\) tiene contenido nulo, y escribiremos \(c(X) = 0\), cuando, para todo \(\varepsilon > 0\), sea posible obtener una colección finita de intervalos abiertos \(I_1, \dots, I_k\) tal que \(X \subset I_1 \cup \dots \cup I_k\) y la suma de las longitudes de los intervalos \(I_j\) sea \(< \varepsilon\).
+
+Indiquemos con \(|I| = b - a\) la longitud de un intervalo \(I\) cuyos extremos son \(a\) y \(b\).
+
+Entonces \(c(X) = 0 \iff \forall \varepsilon > 0\) se puede hacer \(X \subset I_1 \cup \dots \cup I_k\), donde \(I_1, \dots, I_k\) son intervalos abiertos, con
+\[
+|I_1| + \cdots + |I_k| < \varepsilon.
+\]
+
+No exigimos que los intervalos abiertos \(I_1, \dots, I_k\) sean disjuntos. Pero el conjunto abierto \(I_1 \cup \dots \cup I_k\) puede expresarse, de modo único, como unión de intervalos abiertos disjuntos \(J_1, \dots, J_r\) (\(r \le k\)).
+
+El lema siguiente es una reformulación de la Proposición 1, Capítulo V.
+
+\textbf{Lema 7.} Sean \(I_1, \ldots, I_k\) y \(J_1, \ldots, J_r\) intervalos abiertos, siendo los \(J_i\) dos a dos disjuntos. Si \(I_1 \cup \cdots \cup I_k = J_1 \cup \cdots \cup J_r\), entonces
+\[
+|J_1| + \cdots + |J_r| \leq |I_1| + \cdots + |I_k|,
+\]
+ocurriendo la igualdad solo cuando los \(I_i\) sean también dos a dos disjuntos (y por tanto coincidan con los \(J_i\) salvo numeración).
+
+\textbf{Demostración.} Recordemos que la función característica de un conjunto \(X \subset \mathbb{R}\) es la función \(\xi_X: \mathbb{R} \to \mathbb{R}\) tal que \(\xi_X(x) = 1\) si \(x \in X\) y \(\xi_X(x) = 0\) si \(x \notin X\). Es fácil probar que, dados \(X_1, \ldots, X_k \subset \mathbb{R}\), con \(Y = X_1 \cup \cdots \cup X_k\), se tiene
+\[
+\xi_Y \leq \sum_{j=1}^k \xi_{X_j},
+\]
+ocurriendo la igualdad solo si los \(X_j\) son dos a dos disjuntos. Si \(X\) es un intervalo, entonces \(X \subset [a, b]\) implica \(\int_a^b \xi_X = |X|\). Por tanto, siendo los \(J_i\) dos a dos disjuntos y \([a, b]\) un intervalo que contiene la unión \(Y = I_1 \cup \cdots \cup I_k = J_1 \cup \cdots \cup J_r\), tenemos
+\[
+\sum_{i=1}^r \xi_{J_i} = \xi_Y \leq \sum_{j=1}^k \xi_{I_j}
+\]
+y, de ahí,
+\[
+\sum_{i=1}^r |J_i| = \int_a^b \sum_{i=1}^r \xi_{J_i}
+\leq \int_a^b \sum_{j=1}^k \xi_{I_j}
+= \sum_{j=1}^k |I_j|.
+\]
+
+Cuando dos intervalos abiertos \(I_i\) e \(I_j\) tienen un punto en común, tendrán también un intervalo común y entonces \(\xi_Y(x) < \sum \xi_{I_i}(x)\) en un intervalo, de donde resulta < al final.
+
+\textbf{Corolario.} Sea \(X \subset [a, b]\) un conjunto de contenido nulo. Dado \(\varepsilon > 0\), existe una partición \(P\) de \([a, b]\) tal que la suma de las longitudes de los intervalos de \(P\) que contienen algún punto de \(X\) es \(< \varepsilon\).
+
+En efecto, dado \(\varepsilon > 0\) existen intervalos abiertos \(I_1, \ldots, I_k\) tales que \(I_1 \cup \cdots \cup I_k \supset X\) y \(\sum |I_j| < \varepsilon\). Podemos escribir \(\bigcup I_j = \bigcup J_i\), donde los intervalos abiertos \(J_i\) son dos a dos disjuntos y \(\sum |J_i| < \varepsilon\).
+
+Los extremos de los \(J_i\) contenidos en \([a, b]\), junto con los puntos \(a\) y \(b\), forman una partición \(P\) de \([a, b]\) como se requiere en el enunciado del corolario.
+
+Los conjuntos de contenido nulo gozan de las siguientes propiedades, de demostración inmediata:
+
+1. Si \(c(X) = 0\), entonces \(X\) es acotado;
+
+2. Si \(c(X) = 0\) e \(Y \subset X\), entonces \(c(Y) = 0\);
+
+3. Si \(c(X_1) = \cdots = c(X_n) = 0\), entonces \(c(X_1 \cup \cdots \cup X_n) = 0\);
+
+4. Si, para cada \(\varepsilon > 0\), existen intervalos abiertos \(I_1, \ldots, I_k\) y un subconjunto finito \(F \subset X\), tales que \(X - F \subset I_1 \cup \cdots \cup I_k\) y \(|I_1| + \cdots + |I_k| < \varepsilon\), entonces \(c(X) = 0\).
+
+Probemos la propiedad 4. Dado \(\varepsilon > 0\), podemos obtener un subconjunto finito \(F \subset X\) e intervalos abiertos \(I_1, \ldots, I_k\) tales que
+\[
+\sum_{j=1}^k |I_j| < \frac{\varepsilon}{2}
+\quad \text{y} \quad
+X - F \subset I_1 \cup \cdots \cup I_k.
+\]
+Por otro lado, podemos obtener intervalos abiertos \(I_{k+1}, \ldots, I_n\) tales que
+\[
+F \subset I_{k+1} \cup \cdots \cup I_n
+\quad \text{y} \quad
+\sum_{j=k+1}^n |I_j| < \frac{\varepsilon}{2}.
+\]
+Se sigue que
+\[
+X \subset I_1 \cup \cdots \cup I_n
+\quad \text{y} \quad
+\sum_{j=1}^n |I_j| < \varepsilon.
+\]
+Luego \(c(X) = 0\).
+
+La propiedad 4 anterior implica que, en la definición de \(c(X) = 0\), podríamos haber utilizado intervalos cerrados, sin alterar el significado del concepto. En efecto, si \(X\) está cubierto por un número finito de intervalos cerrados, cuya suma de longitudes es \(< \varepsilon\), entonces los intervalos abiertos correspondientes tienen igual suma de longitudes y dejan de cubrir a lo sumo un subconjunto finito de \(X\) formado por extremos de los intervalos.
+
+En particular, obtenemos el recíproco del corolario anterior: si \(X \subset [a, b]\) y, para cada \(\varepsilon > 0\), existe una partición \(P\) de \([a, b]\) tal que la suma de las longitudes de los intervalos de \(P\) que contienen puntos de \(X\) es \(< \varepsilon\), entonces \(c(X) = 0\).
+
+Ejemplos.
+
+12. Sea \( X = \mathbb{Q} \cap [a, b] \), con \( a < b \). Se trata de un conjunto enumerable que no tiene contenido nulo. En efecto, si fuera \( c(X) = 0 \), entonces, dado \( \varepsilon < b - a \), existiría una partición \( P \) de \( [a, b] \) tal que la suma de las longitudes de los intervalos de \( P \) que contienen puntos de \( X \) sería \( < \varepsilon \). Ahora bien, la suma de las longitudes de todos los intervalos de \( P \) es \( b - a \). Luego algunos intervalos de \( P \) no contendrían puntos de \( X \), es decir, números racionales, lo cual es absurdo. Se sigue que un intervalo \( [a, b] \), no degenerado, no tiene contenido nulo.
+
+13. Sea \( K \subset [0, 1] \) el conjunto de Cantor. Tenemos aquí un conjunto no enumerable cuyo contenido es nulo. En efecto, después de la \( n \)-ésima etapa de la construcción del conjunto de Cantor, se han omitido intervalos abiertos cuya suma de longitudes es
+\[
+\frac{1}{3} + \frac{2}{9} + \frac{4}{27} + \cdots + \frac{2^{n-1}}{3^n} = \frac{1}{3} \sum_{i=0}^{n-1} \left( \frac{2}{3} \right)^i = 1 - \left( \frac{2}{3} \right)^n.
+\]
+
+La \( n \)-ésima etapa de la construcción de \( K \) proporciona una partición \( P \) de \( [0, 1] \) tal que los puntos de \( K \) están contenidos en los intervalos de \( P \) que no fueron omitidos. Como la suma de las longitudes de los intervalos de \( P \) es 1, la suma de las longitudes de los intervalos de \( P \) que contienen puntos de \( K \) es \( \left( \frac{2}{3} \right)^n \). Tomando \( n \) grande, podemos hacer esta suma tan pequeña como se desee. Luego \( c(K) = 0 \). [Estamos usando la propiedad 4 anterior, pues los intervalos de la partición con los que cubrimos \( K \) son cerrados.]
+
+La oscilación de una función acotada \( f: [a, b] \to \mathbb{R} \) en un conjunto \( X \subset [a, b] \) ya fue definida como
+\[
+\omega(f; X) = \sup f(X) - \inf f(X) = \sup\{|f(x) - f(y)|; x, y \in X\}.
+\]
+
+Evidentemente, \( X \subset Y \Rightarrow \omega(f; X) \leq \omega(f; Y) \).
+
+Definiremos ahora la oscilación de \( f \) en un punto \( x \in [a, b] \).
+
+Fijemos \( x \), \( f \) y escribamos, para cada \( \delta > 0 \), \( \omega(\delta) = \) oscilación de \( f \) en el conjunto \( (x - \delta, x + \delta) \cap [a, b] \).
+
+Si \(a < x < b\) y \(\delta\) es suficientemente pequeño, entonces \(\omega(\delta) = \omega(f; (x - \delta, x + \delta))\). Si \(x = a\) y \(\delta \leq b - a\), entonces \(\omega(\delta) = \omega(f; [a, a + \delta])\). Si \(x = b\) y \(\delta \leq b - a\), entonces \(\omega(\delta) = \omega(f; (b - \delta, b])\).
+
+Manteniendo siempre \(f\) y \(x\) fijos, \(\omega(\delta)\) es una función monótona no decreciente de \(\delta\), definida en un intervalo \((0, \delta_0)\). Como \(f\) es acotada, la función \(\delta \mapsto \omega(\delta)\) también es acotada. Existe, por tanto, el límite
+\[
+\omega(f; x) = \lim_{\delta \to 0} \omega(\delta) = \inf\{\omega(\delta); \delta > 0\},
+\]
+que llamaremos la oscilación de \(f\) en el punto \(x\).
+
+Sean \(L(x)\) y \(l(x)\) respectivamente el límite superior y el límite inferior de la función \(f\) en el punto \(x\). Al calcular estos límites no tomamos en cuenta el valor de \(f\) en el punto \(x\). Por eso no se tiene \(\omega(f; x)\) igual a la diferencia \(L(x) - l(x)\). Sin embargo, el lector puede verificar que \(\omega(f; x)\) es la diferencia entre el mayor y el menor de los 3 números: \(l(x)\), \(L(x)\) y \(f(x)\). Ahora bien, \(f\) es continua en el punto \(x\) si, y solo si, estos 3 números son iguales. Luego \(f\) es continua en el punto \(x\) si, y solo si, \(\omega(f; x) = 0\). Este hecho es importante para lo que sigue. Por ello le daremos una demostración independiente.
+
+\textbf{Teorema 16.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Para que \(f\) sea continua en el punto \(x_0 \in [a, b]\) es necesario y suficiente que \(\omega(f; x_0) = 0\).
+
+\textbf{Demostración.} Supongamos \(f\) continua en el punto \(x_0 \in [a, b]\). Dado arbitrariamente \(\varepsilon > 0\), existe \(\delta > 0\) tal que
+\[
+x \in (x_0 - \delta, x_0 + \delta) \cap [a, b] \Rightarrow f(x_0) - \varepsilon/2 < f(x) < f(x_0) + \varepsilon/2 \Rightarrow \omega(\delta) < \varepsilon.
+\]
+Luego \(\omega(f; x_0) = \lim_{\delta \to 0} \omega(\delta) = 0\). Recíprocamente, suponiendo \(\omega(f; x_0) = 0\), para todo \(\varepsilon > 0\) dado, existe \(\delta > 0\) tal que \(\omega(\delta) < \varepsilon\), es decir,
+\[
+x, y \in (x_0 - \delta, x_0 + \delta) \cap [a, b] \Rightarrow |f(x) - f(y)| < \varepsilon.
+\]
+En particular,
+\[
+x \in [a, b],\ |x - x_0| < \delta \Rightarrow |f(x) - f(x_0)| < \varepsilon.
+\]
+Luego \(f\) es continua en el punto \(x_0\).
+
+El siguiente teorema dice que la oscilación \(x \mapsto \omega(f; x)\) es una función semicontinua superiormente en el intervalo \([a, b]\). Los corolarios enuncian propiedades generales de las funciones semicontinuas superiormente.
+
+\textbf{Teorema 17.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Dado \(x_0 \in [a, b]\), para todo \(\varepsilon > 0\) existe \(\delta > 0\) tal que
+\[
+x \in [a, b],\ |x - x_0| < \delta \Rightarrow \omega(f; x) < \omega(f; x_0) + \varepsilon.
+\]
+
+\textbf{Demostración.} Resulta inmediatamente de la definición de \(\omega(f; x_0)\) que, dado \(\varepsilon > 0\), existe \(\delta > 0\) tal que la oscilación de \(f\) en el conjunto \(X = (x_0 - \delta, x_0 + \delta) \cap [a, b]\) es menor que \(\omega(f; x_0) + \varepsilon\). Ahora bien, para cada \(x \in X\), se tiene \(\omega(f; x) \leq \omega(f; X)\). Esto prueba el teorema.
+
+\textbf{Corolario 1.} Si \(\omega(f; x_0) < \alpha\), entonces existe \(\delta > 0\) tal que
+\[
+x \in [a, b],\ |x - x_0| < \delta \Rightarrow \omega(f; x) < \alpha.
+\]
+En efecto, basta escribir \(\alpha = \omega(f; x_0) + \varepsilon\) y tomar \(\delta\) que corresponde a este \(\varepsilon\) por el Teorema 17.
+
+\textbf{Corolario 2.} Para todo \(\alpha > 0\), el conjunto
+\[
+E_\alpha = \{x \in [a, b]; \omega(f; x) \geq \alpha\}
+\]
+es compacto.
+
+En efecto, por el Corolario 1, el complementario \(\mathbb{R} - E_\alpha\) es abierto. Luego \(E_\alpha\) es cerrado. Estando contenido en \([a, b]\), \(E_\alpha\) es acotado. Por tanto, es compacto.
+
+\textbf{Corolario 3.} Para todo \(n \in \mathbb{N}\), sea \(x_n \in [a, b]\) y \(\lim x_n = x\). Si existe \(\lim_{n \to \infty} \omega(f; x_n) = L\), entonces \(L \leq \omega(f; x)\). En otros términos:
+\[
+\lim \omega(f; x_n) \leq \omega(f; \lim x_n).
+\]
+
+En efecto, si fuera \(L > \omega(f; x)\), tomaríamos \(\varepsilon = \frac{1}{2}[L - \omega(f; x)]\) y tendríamos \(L - \varepsilon = \omega(f; x) + \varepsilon\). Por el Teorema 17, para todo \(n\) suficientemente grande valdría \(\omega(f; x_n) < \omega(f; x) + \varepsilon\), es decir, \(\omega(f; x_n) < L - \varepsilon\), lo que contradice que \(\lim \omega(f; x_n) = L\).
+
+Ejemplo 14. Para la función
+\[
+f(x) = \frac{x}{|x|} \quad (x \neq 0), \qquad f(0) = 0,
+\]
+la oscilación viene dada por \(\omega(f; x) = 0\) si \(x \neq 0\) y \(\omega(f; 0) = 2\). Si \(g(x) = 0\) para \(x\) irracional, \(g(p/q) = 1/q\) si \(p/q\) es irreducible con \(q > 0\) y \(g(0) = 0\), entonces la oscilación es \(\omega(g;x) = g(x)\) para todo \(x \in \mathbb{R}\). Si \(h(x) = 0\) para \(x\) racional y \(h(x) = 1\) para \(x\) irracional, entonces \(\omega(h;x) = 1\) para todo \(x \in \mathbb{R}\).
+
+\textbf{Teorema 18.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Si \(\omega(f;x) < \varepsilon\) para todo \(x \in [a, b]\), entonces existe una partición \(P\) de \([a, b]\) tal que \(\omega_i = M_i - m_i < \varepsilon\) en todos los intervalos \([t_{i-1}, t_i]\) de la partición.
+
+\textbf{Demostración.} Por la definición de oscilación, cada \(x \in [a, b]\) está contenido en un intervalo abierto \(I_x\) tal que la oscilación de \(f\) en \(I_x \cap [a, b]\) es inferior a \(\varepsilon\). Del cubrimiento \([a, b] \subset \bigcup I_x\) extraemos, por el Teorema de Borel-Lebesgue, un subcubrimiento finito \([a, b] \subset I_{x_1} \cup \cdots \cup I_{x_n}\). Los puntos \(a, b\), junto con los extremos de los intervalos \(I_{x_i}\) que pertenezcan a \([a, b]\), determinan una partición \(P\) con las propiedades requeridas.
+
+\textbf{Teorema 19.} Una función acotada \(f: [a, b] \to \mathbb{R}\) es integrable si, y solo si, para todo \(\delta > 0\), el conjunto
+\[
+E_\delta = \{x \in [a, b]; \omega(f;x) \geq \delta\}
+\]
+tiene contenido nulo.
+
+\textbf{Demostración.} Sea \(f\) integrable. Dados \(\delta > 0\) y \(\varepsilon > 0\), existe una partición \(P\) de \([a, b]\) relativamente a la cual se tiene
+\[
+\sum \omega_i \cdot (t_i - t_{i-1}) < \varepsilon \cdot \delta.
+\]
+Si un intervalo \([t'_{i-1}, t'_i]\) de \(P\) contiene algún punto de \(E_\delta\) en su interior, entonces la oscilación de \(f\) en ese intervalo es \(\geq \delta\). Si, en la suma \(\sum \omega_i(t_i - t_{i-1})\), nos restringimos a los términos correspondientes a los intervalos que contienen puntos de \(E_\delta\) en su interior, obtendremos la relación
+\[
+\delta \cdot \sum (t'_i - t'_{i-1}) < \varepsilon \cdot \delta
+\]
+y, por tanto, la suma de las longitudes de los intervalos de \(P\) que contienen algún punto de \(E_\delta\) en su interior es
+\[
+\sum (t'_i - t'_{i-1}) < \varepsilon.
+\]
+Estos intervalos pueden no cubrir \(E_\delta\), pero dejan fuera a lo sumo los puntos de \(P\), que son en número finito. Luego \(c(E_\delta) = 0\). Recíprocamente, sea \(c(E_\delta) = 0\) para todo \(\delta > 0\). Dado \(\varepsilon > 0\), tomemos \(\delta = \varepsilon/2(b - a)\). Por el corolario del Lema 7, existe una partición \(P_0\) de \([a, b]\) tal que la suma de las longitudes de los intervalos de \(P_0\) que contienen algún punto de \(E_\delta\) es menor que \(\varepsilon/2(M - m)\), donde \(M = \sup f\) y \(m = \inf f\). Los intervalos restantes pueden subdividirse (véase el Teorema 18) de modo de obtener una partición \(P\) (refinando \(P_0\)) con \(\omega_i < \delta\) en los intervalos que no contienen puntos de \(E_\delta\). Relativamente a \(P\), podemos escribir
+\[
+\sum \omega_i \cdot (t_i - t_{i-1}) = \sum \omega'_i \cdot (t'_i - t'_{i-1}) + \sum \omega''_i \cdot (t''_i - t''_{i-1}),
+\]
+donde el primer sumatorio se refiere a los intervalos de \(P\) que contienen puntos de \(E_\delta\). Entonces \(\omega'_i < M - m\) y \(\sum (t'_i - t'_{i-1}) < \varepsilon/2(M - m)\). Luego el primer sumatorio es \(< \varepsilon/2\). El segundo sumatorio corresponde a los intervalos de \(P\) que no contienen puntos de \(E_\delta\). En ellos, \(\omega''_i < \delta\) y, por tanto, el sumatorio es \(< \delta \cdot (b - a) = \varepsilon/2\). Así,
+\[
+\sum \omega_i \cdot (t_i - t_{i-1}) < \varepsilon
+\]
+y \(f\) es integrable.
+
+Para obtener la forma definitiva de caracterizar las funciones integrables, introduciremos la noción de conjunto de medida nula.
+
+Diremos que un conjunto \(X \subset \mathbb{R}\) tiene medida nula (a la Lebesgue) y escribiremos \(m(X) = 0\), cuando, para todo \(\varepsilon > 0\), sea posible obtener una colección enumerable de intervalos abiertos \(I_1, I_2, \dots, I_n, \dots\) tales que
+\[
+X \subset I_1 \cup \cdots \cup I_n \cup \cdots
+\quad \text{y} \quad
+\sum_{n=1}^{\infty} |I_n| < \varepsilon.
+\]
+
+En particular, si \(X\) tiene contenido nulo, entonces \(m(X) = 0\). Valen las siguientes propiedades:
+
+(1) Si \(m(X) = 0\) e \(Y \subset X\), entonces \(m(Y) = 0\); \(m(\varnothing) = 0\);
+
+(2) Si \(X\) es compacto y \(m(X) = 0\), entonces \(c(X) = 0\);
+
+(3) Si \(Y = X_1 \cup \cdots \cup X_n \cup \cdots\), donde \(m(X_1) = \cdots = m(X_n) = \cdots = 0\), entonces \(m(Y) = 0\). En palabras: una reunión enumerable de conjuntos de medida nula tiene medida nula.
+
+Probemos (3). Dado \(\varepsilon > 0\), podemos, para cada \(n\), escribir
+\[
+X_n \subset I_{n1} \cup \cdots \cup I_{ni} \cup \cdots,
+\]
+donde los \(I_{ni}\) son intervalos abiertos tales que
+\[
+\sum_{i=1}^{\infty} |I_{ni}| < \frac{\varepsilon}{2^n}.
+\]
+Se sigue que
+\[
+Y \subset \bigcup_{n,i=1}^{\infty} I_{ni},
+\]
+donde
+\[
+\sum_{n,i} |I_{ni}| < \sum_{n=1}^{\infty} \frac{\varepsilon}{2^n} = \varepsilon.
+\]
+Luego \(m(Y) = 0\).
+
+En particular, como un punto tiene medida nula, todo conjunto enumerable tiene medida nula. Así, por ejemplo, \(m(\mathbb{Q}) = 0\) y, con mayor razón, los números racionales contenidos en un intervalo \([a, b]\) forman un conjunto de medida nula, el cual, como sabemos, no tiene contenido nulo.
+
+(4) Si, para cada \(\varepsilon > 0\), existen intervalos abiertos \(I_1, \dots, I_n, \dots\) y un subconjunto enumerable \(E \subset X\) tales que
+\[
+X - E \subset I_1 \cup \cdots \cup I_n \cup \cdots
+\quad \text{y} \quad
+\sum |I_n| < \varepsilon,
+\]
+entonces \(m(X) = 0\).
+
+La demostración de (4) es análoga a la de la proposición semejante para conjuntos de contenido nulo.
+
+Se sigue de (4) que, al definir conjuntos de medida nula, podríamos haber usado intervalos cerrados, sin que esto alterase el concepto definido. En efecto, si
+\[
+X \subset J_1 \cup \cdots \cup J_n \cup \cdots,
+\]
+donde los \(J_n\) son intervalos cerrados con \(\sum |J_n| < \varepsilon\), entonces, poniendo \(I_n = \text{interior de } J_n\) y \(E = \text{conjunto de los extremos de los } J_n\), tenemos
+\[
+X - E \subset \bigcup I_n,
+\]
+\(E\) enumerable y \(|I_n| = |J_n|\), de donde \(\sum |I_n| < \varepsilon\).
+
+\textbf{Teorema 20.} Para que una función acotada \(f: [a, b] \to \mathbb{R}\) sea integrable, es necesario y suficiente que el conjunto \(D\) de sus puntos de discontinuidad tenga medida nula.
+
+\textbf{Demostración.} Con la notación del Teorema 19, tenemos
+\[
+D = \bigcup E_\delta = \bigcup E_{1/n}.
+\]
+
+Si \(m(D) = 0\), entonces, para cada \(\delta > 0\), el conjunto compacto \(E_\delta\) tiene medida nula y, por tanto, contenido nulo. Por el Teorema 19, \(f\) es integrable. Recíprocamente, si \(f\) es integrable, entonces, aún por el Teorema 19, para cada \(n \in \mathbb{N}\), el conjunto \(E_{1/n}\) tiene contenido nulo, y, por tanto, medida nula. Se sigue que \(D\) es reunión enumerable de conjuntos de medida nula y, por tanto, \(m(D) = 0\).
+
+\textbf{Corolario 1.} Si \(f, g: [a, b] \to \mathbb{R}\) son integrables, entonces el producto \(f \cdot g\) es integrable. Si, además, \(f(x) \neq 0\) para todo \(x \in [a, b]\) y \(1/f\) es acotada, entonces \(1/f\) es integrable.
+
+\textbf{Corolario 2.} Sea \(f: [a, b] \to \mathbb{R}\) acotada. Si el conjunto de sus puntos de discontinuidad es enumerable, entonces \(f\) es integrable. En particular, si existen los límites laterales de \(f\) en cada punto de \([a, b]\), entonces \(f\) es integrable. Más particularmente aún, si la función acotada \(f\) es monótona, entonces es integrable.
+
+\section{Logaritmos y exponenciales}
+
+Sea \(a\) un número real mayor que 1. Tradicionalmente, se define el logaritmo de un número real \(x > 0\), en base \(a\), como el exponente \(y\) al que se debe elevar la base \(a\) para obtener \(x\). Es decir,
+\[
+\log_a x = y \iff a^y = x.
+\]
+En otras palabras, la función \(\log_a: \mathbb{R}^+ \to \mathbb{R}\) se define como la inversa de la función exponencial \(y \mapsto a^y\). Esta definición requiere, por tanto, el trabajo preliminar de establecer el significado y las propiedades de las potencias \(a^y\), donde el exponente \(y\) es un número real cualquiera. Esto puede hacerse rigurosamente (véase el Ejercicio 12, Cap. VI), pero es más simple definir primero los logaritmos y, a partir de estos, la exponencial, como haremos aquí. Las propiedades de ambas funciones se prueban mucho más fácilmente. Además, la definición de logaritmo mediante integral, es decir, como un área, deja inmediatamente disponible la intuición geométrica, a partir de la cual podemos percibir y probar desigualdades. Incluso a nivel elemental, sin presuponer conocimiento alguno de Cálculo, se pueden estudiar logaritmos de esta manera. Véase, por ejemplo, la monografía del autor citada en la bibliografía.
+
+Sea \(\mathbb{R}^+\) el conjunto de los números reales positivos. Definiremos la función real \(\log: \mathbb{R}^+ \to \mathbb{R}\) poniendo, para cada \(x > 0\),
+\[
+\log x = \int_1^x \frac{1}{t} \, dt.
+\]
+
+El número \(\log x\) se llamará el logaritmo natural de \(x\) o, simplemente, el logaritmo de \(x\). Nótese enfáticamente que \(\log x\) no está definido para \(x \leq 0\).
+
+Recordemos la convención sobre los extremos del intervalo de integración:
+\[
+\int_a^a f = 0 \quad \text{y} \quad \int_b^a f = - \int_a^b f.
+\]
+Tenemos, pues:
+\[
+\log 1 = 0 \quad \text{y} \quad \log x < 0 \quad \text{cuando } 0 < x < 1.
+\]
+
+Evidentemente, cuando \(x > 1\), \(\log x > 0\) por ser la integral de la función positiva \(1/t\) en el intervalo \([1, x]\).
+
+Se sigue aún directamente de la definición que \(\log: \mathbb{R}^+ \to \mathbb{R}\) es una función monótona creciente y, en efecto, derivable, con
+\[
+\log'(x) = \frac{1}{x}.
+\]
+
+Por tanto,
+\[
+(\log)''(x) = -\frac{1}{x^2}, \quad \text{etc.}
+\]
+Vemos que \(\log\) es infinitamente derivable, es decir, \(\log \in C^\infty\).
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=1.5]
+    \fill[gray!30] (2,0) -- (2,2.5) -- plot[domain=2:5, samples=100] (\x, {5/\x}) -- (5,1) -- (5,0) -- cycle;
+
+    \draw[very thick, ->] (-0.5, 0) -- (6.5, 0);
+    \draw[very thick, ->] (0, -0.3) -- (0, 4);
+
+    \draw[thick, domain=1.1:6.2, samples=100] plot (\x, {5/\x});
+
+    \draw (2,0) -- (2,2.5);
+    \draw (5,0) -- (5,1);
+
+    \draw[dashed] (0,2.5) -- (2,2.5);
+    \draw[dashed] (0,1) -- (5,1);
+
+    \node[below=2mm] at (2,0) {$1$};
+    \node[below=2mm] at (5,0) {$x$};
+    
+    \node[left=2mm] at (0,2.5) {$1$};
+    \node[left=2mm] at (0,1) {\Large $\frac{1}{x}$};
+
+    \node[above right] at (4.7, 1.1) {$y = 1/x$};
+
+    \node at (2.5, -1) {$\log x$ es el área de la región sombreada};
+\end{tikzpicture}
+\end{center}
+
+\(\log x\) es el área de la región sombreada.
+
+Cuando \(x > 1\), \(\log x\) es el área de la “franja de hipérbola”
+\[
+H_1^x = \{(t, y) \in \mathbb{R}^2; 1 \leq t \leq x, 0 \leq y \leq 1/t\}.
+\]
+Cuando \(0 < x < 1\), \(\log x\) es el área de la franja \(H_x^1\) con el signo cambiado.
+
+La propiedad fundamental de los logaritmos viene dada por el
+
+\textbf{Teorema 21.} Sean \(x, y\) números positivos. Se tiene
+\[
+\log(xy) = \log x + \log y.
+\]
+
+\textbf{Demostración.} Tenemos
+\[
+\log(xy) = \int_1^{xy} \frac{dt}{t} = \int_1^x \frac{dt}{t} + \int_x^{xy} \frac{dt}{t} = \log x + \int_x^{xy} \frac{dt}{t}.
+\]
+
+Resta solo mostrar que
+\[
+\int_x^{xy} \frac{dt}{t} = \log y.
+\]
+Ahora bien, cuando \(s\) varía de \(1\) a \(y\), el producto \(xs\) varía de \(x\) a \(xy\). Así, el cambio de variable \( t = xs \), \( dt = x\,ds \), nos da
+\[
+\int_x^{xy} \frac{dt}{t} = \int_1^y \frac{x\,ds}{sx} = \int_1^y \frac{ds}{s} = \log y,
+\]
+lo que demuestra el teorema.
+
+\textbf{Corolario 1.} Sea \( x > 0 \). Para todo número racional \( r \), se tiene
+\[
+\log(x^r) = r \cdot \log x.
+\]
+
+Consideremos primero un número natural \( n \). Se sigue directamente del Teorema 21 que
+\[
+\log(x^n) = n \cdot \log x.
+\]
+Como \( x^n \cdot x^{-n} = 1 \), tenemos
+\[
+0 = \log 1 = \log(x^n \cdot x^{-n}) = \log(x^n) + \log(x^{-n}) = n \cdot \log x + \log(x^{-n}),
+\]
+y, por tanto,
+\[
+\log(x^{-n}) = -n \cdot \log x.
+\]
+Queda establecido el corolario cuando \( r \in \mathbb{Z} \). En el caso general, tenemos \( r = p/q \), con \( p \) y \( q \) enteros. Por definición, tenemos
+\[
+(x^{p/q})^q = x^p.
+\]
+Usando lo que ya se ha demostrado hasta aquí, se tiene
+\[
+p \cdot \log x = \log(x^p) = \log[(x^{p/q})^q] = q \cdot \log(x^{p/q}).
+\]
+Se sigue que
+\[
+\log(x^{p/q}) = \frac{p}{q} \log x.
+\]
+Esto termina la demostración del corolario.
+
+Antes del próximo corolario, recordemos que, si \( X, Y \) son subconjuntos de \( \mathbb{R} \), un homeomorfismo \( f: X \to Y \) es una función continua, biyectiva, cuya inversa \( f^{-1}: Y \to X \) también es continua. (Véase Capítulo VII, §§ 3 y 4.)
+
+\textbf{Corolario 2.} La función \( \log: \mathbb{R}^+ \to \mathbb{R} \) es un homeomorfismo de \( \mathbb{R}^+ \) sobre \( \mathbb{R} \).
+
+En efecto, \( \log \) es continua y creciente (de donde inyectiva). Por el Teorema 13 del Capítulo VII, la inversa de \( \log \) es continua en el intervalo donde esté definida. Por tanto, resta solamente mostrar que \( \log \) es sobreyectiva. Como la imagen de \( \log \) es un intervalo (Corolario 2 del Teorema 12, Capítulo VII), basta probar que
+\[
+\lim_{x \to +\infty} \log x = +\infty
+\quad \text{y} \quad
+\lim_{x \to 0} \log x = -\infty.
+\]
+Ahora bien, tenemos
+\[
+\log(2^n) = n \cdot \log 2.
+\]
+Se sigue que \( \lim_{n \to \infty} \log(2^n) = +\infty \). Como \( \log \) es creciente, esto ya nos da \( \lim_{x \to +\infty} \log x = +\infty \). Considerando \( 2^{-n}, n \in \mathbb{N} \), obtenemos el otro límite.
+
+El corolario anterior dice que todo número real \( y \) es logaritmo de un único número real \( x > 0 \) y que la correspondencia \( y \mapsto x \) es continua. Junto con el Teorema 21, esto significa que \( \log \) es un isomorfismo continuo del grupo multiplicativo \(\mathbb{R}^+\) sobre el grupo aditivo \(\mathbb{R}\), y su isomorfismo inverso también es continuo.
+
+El Ejercicio 33 más abajo establece que los únicos homomorfismos continuos \(f: \mathbb{R}^+ \to \mathbb{R}\) son de la forma \(f(x) = c \cdot \log x\), con \(c \in \mathbb{R}\) constante.
+
+La biyectividad de log implica, en particular, que existe un número real positivo cuyo logaritmo es 1. Tal número se indica con el símbolo \(e\). Él es la llamada "base" de los logaritmos naturales. Su definición es la igualdad:
+\[
+\log e = 1.
+\]
+
+Mostraremos, enseguida, que \(e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n\), es decir, que \(e\) coincide con el número introducido en los Ejemplos 8, 9 y 16 del Capítulo IV.
+
+Definimos la función exponencial \(\exp: \mathbb{R} \to \mathbb{R}^+\) como la inversa de la función logaritmo. Así, por definición,
+\[
+\exp(x) = y \iff \log y = x.
+\]
+
+En particular, \(\exp(\log y) = y\) y \(\log[\exp(x)] = x\). Las propiedades del logaritmo nos dan inmediatamente el
+
+\textbf{Teorema 22.} La función exponencial es una biyección creciente de \(\mathbb{R}\) sobre \(\mathbb{R}^+\). Ella es infinitamente diferenciable, con \((\exp)'(x) = \exp(x)\). Además, para \(x, y \in \mathbb{R}\) cualesquiera, se cumple \(\exp(x + y) = \exp(x) \cdot \exp(y)\). Para todo \(r\) racional se tiene \(\exp(r) = e^r\).
+
+\textbf{Demostración.} Como \(\exp: \mathbb{R} \to \mathbb{R}^+\) fue definida como la inversa de una biyección creciente, goza también de estas propiedades. Además, por la regla de derivación de la función inversa, para cada \(x \in \mathbb{R}\), con \(\exp(x) = y\), tenemos \((\exp)'(x) = \frac{1}{(\log)'(y)} = \frac{1}{1/y} = y = \exp(x)\). Así, la función derivada de \(\exp\) es la propia función \(\exp\). Por consiguiente, ella es una función de clase \(C^\infty\). Para probar que \(\exp(x + y) = \exp(x) \cdot \exp(y)\), sean \(x' = \exp(x)\) e \(y' = \exp(y)\). Entonces \(x = \log x'\), \(y = \log y'\).
+
+De ahí,
+\[
+\exp(x + y) = \exp(\log x' + \log y') = \exp[\log(x'y')] = x' \cdot y' = \exp(x) \cdot \exp(y).
+\]
+Análogamente, si \(r\) es racional, el Corolario 1 del Teorema 21 proporciona:
+\[
+\exp(r \cdot x) = \exp(r \cdot \log x') = \exp[\log(x')^r] = (x')^r = [\exp(x)]^r.
+\]
+La igualdad \(\log e = 1\) da \(\exp(1) = e\). Haciendo \(x = 1\) en la relación anterior demostrada, obtenemos \(\exp(r) = e^r\) para todo \(r \in \mathbb{Q}\).
+
+Tenemos aún:
+\[
+\lim_{x \to +\infty} \exp(x) = +\infty \quad \text{y} \quad \lim_{x \to -\infty} \exp(x) = 0.
+\]
+Estos hechos se deducen inmediatamente de los límites análogos para \(\log\).
+
+La igualdad \(\exp(r) = e^r\) cuando \(r\) es racional, junto con la relación \(\exp(x + y) = \exp(x) \cdot \exp(y)\), nos indican que \(\exp(x)\) se comporta como una potencia de base \(e\) y exponente \(x\). Escribiremos, por tanto,
+\[
+\exp(x) = e^x
+\]
+
+y con esto daremos significado a una potencia de \(e\) con exponente real cualquiera.
+
+Con la nueva notación, tenemos
+\[
+e^{x+y} = e^x \cdot e^y, \quad e^0 = 1, \quad e^{-x} = 1/e^x, \quad x < y \iff e^x < e^y, \quad \log(e^x) = x \quad \text{y} \quad e^{\log x} = x.
+\]
+
+En la figura siguiente, presentamos los gráficos de las funciones \(y = \log x\) e \(y = e^x\). Como estas funciones son inversas una de la otra, sus gráficos son simétricos con respecto a la diagonal \(y = x\).
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=1.2]
+    \draw[thick, ->] (-3, 0) -- (6.5, 0);
+    \draw[thick, ->] (0, -2) -- (0, 4);
+
+    \draw[dashed] (-2.5, -2.5) -- (5.5, 5.5);
+
+    \draw[thick, domain=-2.5:1.35, samples=100] plot (\x, {exp(\x)});
+    \node[right] at (1.35, {exp(1.35)}) {$y = e^x$};
+
+    \draw[thick, domain=0.13:6, samples=100] plot (\x, {ln(\x)});
+    \node[above] at (5.5, {ln(5.5)}) {$y = \log x$};
+
+    \filldraw (1,0) circle (1.5pt);
+    \node[below right] at (1,0) {$1$};
+\end{tikzpicture}
+\end{center}
+
+Estos gráficos nos indican que, aunque ambas funciones, \(e^x\) y \(\log x\), tienden a \(+\infty\) cuando \(x \to +\infty\), la exponencial crece muy rápidamente, mientras que el logaritmo tiene un crecimiento bastante lento. En efecto, vimos en el Ejemplo 19, Capítulo VIII, que, para todo polinomio \(p(x)\), tenemos
+\[
+\lim_{x \to +\infty} \frac{p(x)}{e^x} = 0,
+\]
+lo que comprueba la rapidez del crecimiento exponencial. De ahí se puede deducir la lentitud del crecimiento logarítmico, pero preferimos proceder directamente.
+
+\textbf{Teorema 23.}
+\[
+\lim_{x \to +\infty} \frac{\log x}{x} = 0.
+\]
+
+\textbf{Demostración.} Por el Teorema del Valor Medio, para todo \(x > 1\) existe \(c\), con \(1 < c < x\) y \(\log x = \log x - \log 1 = \frac{1}{c}(x - 1)\). Por tanto, \(\log x < x\) para todo \(x > 1\). En particular, para \(x > 1\) se tiene \(0 < \log(x^{1/2}) < x^{1/2}\). Como \(\log(x^{1/2}) = \frac{1}{2}\log x\), elevando al cuadrado la última desigualdad, obtenemos \(0 < \frac{(\log x)^2}{4} < x\) y de ahí \(0 < \frac{\log x}{x} < \frac{4}{\log x}\) para todo \(x > 1\). El Teorema 23 se sigue inmediatamente.
+
+\textbf{Corolario.}
+\[
+\lim_{x \to 0} [x \cdot \log x] = 0.
+\]
+
+En efecto, poniendo \(x = 1/y\), se tiene
+\[
+\lim_{x \to 0} [x \cdot \log x] = \lim_{y \to \infty} \frac{\log(1/y)}{y} = \lim_{y \to \infty} \left[ -\frac{\log y}{y} \right] = 0.
+\]
+
+Si \(c\) y \(k\) son constantes reales, la función \(f(x) = c \cdot e^{kx}\) tiene como derivada \(f'(x) = k \cdot c \cdot e^{kx} = k \cdot f(x)\). Esta propiedad de poseer una derivada proporcional a sí misma es responsable del interés de la función exponencial en las aplicaciones. Mostraremos ahora que tal propiedad es exclusiva de las funciones del tipo anterior.
+
+\textbf{Teorema 24.} Sea \(f: \mathbb{R} \to \mathbb{R}\) una función derivable tal que \(f'(x) = k \cdot f(x)\) para todo \(x \in \mathbb{R}\). Si, para un cierto \(x_0 \in \mathbb{R}\), se tiene \(f(x_0) = c\), entonces \(f(x) = c e^{k(x-x_0)}\).
+
+\textbf{Demostración.} Consideremos \(\varphi: \mathbb{R} \to \mathbb{R}\), definida por \(\varphi(x) = f(x) \cdot e^{-k(x-x_0)}\). Tenemos \(\varphi'(x) = f'(x) \cdot e^{-k(x-x_0)} - k \cdot f(x) \cdot e^{-k(x-x_0)} = 0\). Luego \(\varphi\) es constante. Como \(\varphi(x_0) = c\), se sigue que \(\varphi(x) = c\) para todo \(x\), lo que demuestra el teorema.
+
+Definiremos ahora la potencia \(a^x\), donde \(x\) es un número real cualquiera y \(a > 0\). Haremos esto de modo que sea válida la fórmula \(\log(a^x) = x \cdot \log a\).
+
+La mejor manera de conseguir esto es tomar la propia igualdad anterior como definición. O sea, diremos que \(a^x\) es el (único) número real cuyo logaritmo es igual a \(x \cdot \log a\). En otras palabras, ponemos, por definición, \(a^x = e^{x \cdot \log a}\).
+
+Para cada \(a > 0\), la función \(f: \mathbb{R} \to \mathbb{R}\), definida por \(f(x) = a^x\), goza de las propiedades esperadas.
+
+La primera de ellas es que, para \(x\) racional, digamos \(x = \frac{p}{q}\), con \(q > 0\), \(f(x) = \sqrt[q]{a^p}\). En efecto, \(f(x) = e^{p/q \cdot \log a} = e^{\log \sqrt[q]{a^p}} = \sqrt[q]{a^p}\) por el Corolario 1 del Teorema 21.
+
+Se tiene \(a^{x+y} = a^x \cdot a^y\), de donde \(a^0 = 1\) y \(a^{-x} = 1/a^x\). Vale también \((a^x)^y = a^{xy}\).
+
+La función \(f: x \mapsto a^x\) es derivable, con \(f'(x) = a^x \cdot \log a\). Se sigue que \(f\) es de clase \(C^\infty\). La derivada de \(f\) es positiva si \(a > 1\) y negativa si \(a < 1\). Luego \(f\) es creciente en el primer caso y decreciente en el segundo. Si \(a = 1\), entonces \(f\) es constante.
+
+Cuando \(a > 1\) tenemos \(\lim_{x \to +\infty} a^x = +\infty\) y \(\lim_{x \to -\infty} a^x = 0\). Si \(a < 1\), los valores de estos límites están intercambiados. En cualquiera de estos casos, \(f: x \mapsto a^x\) es una biyección continua de \(\mathbb{R}\) sobre \(\mathbb{R}^+\). La función inversa se indica con \(\log_a: \mathbb{R}^+ \to \mathbb{R}\). Su valor \(\log_a(x)\), en un punto \(x > 0\), se llama el logaritmo de \(x\) en base \(a\).
+
+Así \(\log_a(x) = y \Leftrightarrow a^y = x\). Retomamos la definición clásica.
+
+Cuando \(a = e\), \(\log_a x = \log x\) coincide con el logaritmo natural.
+
+Para todo \(x > 0\), tenemos
+\[e^{\log x} = x = a^{\log_a x} = e^{\log_a x \cdot \log a},\]
+y de ahí, \(\log x = \log_a x \cdot \log a\), de donde concluimos:
+\[
+\log_a x = \frac{\log x}{\log a}.
+\]
+
+Esta es la relación entre el logaritmo de base \(a\) y el logaritmo natural. De ella resultan propiedades para \(\log_a x\) análogas a las de \(\log x\). Por ejemplo: \(\log_a (xy) = \log_a x + \log_a y\). O también, la fórmula de la derivada:
+\[
+(\log_a)'(x) = \frac{1}{x \cdot \log a}.
+\]
+
+Para finalizar, mostraremos que
+\[
+\lim_{x \to 0} (1 + x)^{1/x} = e.
+\]
+
+Empezamos recordando que la derivada de la función \(\log x\) es igual a \(1/x\). En el punto \(x = 1\), esta derivada vale 1. Esto significa que
+\[
+\lim_{x \to 0} \frac{\log(1 + x)}{x} = 1,
+\]
+es decir,
+\[
+\lim_{x \to 0} \log[(1 + x)^{1/x}] = 1.
+\]
+Como \((1 + x)^{1/x} = \exp\{\log[(1 + x)^{1/x}]\}\), se tiene:
+\[
+\lim_{x \to 0} (1 + x)^{1/x} = e.
+\]
+
+Poniendo \(y = \frac{1}{x}\), vemos que
+\[
+\lim_{y \to \infty} \left(1 + \frac{1}{y}\right)^y = e.
+\]
+
+En particular, si \(n \in \mathbb{N}\):
+\[
+\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e.
+\]
+
+\textbf{Ejercicios}
+
+1. Sea \( f: [a, b] \to \mathbb{R} \) acotada. Pruebe que
+\[
+\left| \int_a^b f(x) \, dx \right| \leq \int_a^b |f(x)| \, dx.
+\]
+Dé un ejemplo que muestre que una desigualdad análoga no vale para integrales inferiores.
+
+2. Sea \( f: [a, b] \to \mathbb{R} \) integrable. Las siguientes afirmaciones son equivalentes:
+\begin{itemize}
+    \item[1.]\[ \int_a^b |f(x)| \, dx = 0; \]
+
+    \item[2.] Si \( f \) es continua en el punto \( c \), entonces \( f(c) = 0 \);
+
+    \item[3.] \( X = \{x \in [a, b]; f(x) \neq 0\} \) tiene interior vacío.
+\end{itemize}
+
+3. Sea \( f: [a, b] \to \mathbb{R} \) continua. Si \( f \) no es idénticamente nula, entonces
+\[
+\int_a^b |f(x)| \, dx > 0.
+\]
+
+4. Dé un ejemplo de una función integrable que sea discontinua en un conjunto infinito.
+
+5. Sean \( f, g: [a, b] \to \mathbb{R} \) continuas, con \( f(x) \leq g(x) \) para todo \( x \in [a, b] \). Defina \( \varphi: [a, b] \to \mathbb{R} \), poniendo \( \varphi(x) = f(x) \) si \( x \) es racional y \( \varphi(x) = g(x) \) para \( x \) irracional. Pruebe que
+\[
+\int_a^b \varphi(x) \, dx = \int_a^b f(x) \, dx \quad \text{y} \quad \int_a^b \varphi(x) \, dx = \int_a^b g(x) \, dx.
+\]
+Concluya que \( \varphi \) es integrable si, y solo si, \( f = g \).
+
+6. Sea \( f: [a, b] \to \mathbb{R} \) no negativa, acotada. Pruebe que
+\[
+\int_a^b f(x) \, dx = \sup_{\xi} \int_a^b \xi(x) \, dx,
+\]
+donde \( \xi \) recorre el conjunto de las funciones escalonadas tales que \( \xi(x) \leq f(x) \) para todo \(x \in [a, b]\). Muestre que un resultado análogo vale si tomamos \(\xi\) continua o \(\xi\) integrable (manteniéndose siempre la hipótesis \(\xi(x) \leq f(x)\) para todo \(x\) en \([a, b]\)).
+
+7. Sean \(f: [a, b] \to \mathbb{R}\) continua, \(\varphi: [t_0 - \varepsilon, t_0 + \varepsilon] \to [a, b]\) derivable y \(c \in [a, b]\). Pruebe que las afirmaciones siguientes son equivalentes:
+\begin{itemize}
+    \item[A.] \(\varphi'(t) = f(\varphi(t))\) para todo \(t \in [a, b]\) y \(\varphi(t_0) = c\).
+
+    \item[B.] \(\varphi(t) = c + \int_{t_0}^{t} f(\varphi(s)) \, ds\) para todo \(t \in [a, b]\).
+\end{itemize}
+
+8. Sea \(f: \mathbb{R} \to \mathbb{R}\) derivable, tal que \(f(0) = 0\) y, para todo \(x \in \mathbb{R}\), se cumple \(f'(x) = [f(x)]^2\). Muestre que \(f(x) = 0\) para todo \(x \in \mathbb{R}\).
+
+9. Dé un ejemplo de una función no integrable que posea primitiva. [Sugerencia: Halle una función \(f\), derivable en \([-1, +1]\), con \(f'\) no acotada.]
+
+10. Sean \(f, g: [a, b] \to \mathbb{R}\) funciones integrables. Puntuemos cada partición \(P\) de dos maneras diferentes, eligiendo en todo intervalo \([t_{i-1}, t_i]\) un punto \(\xi_i\) y un punto \(\eta_i\). Muestre que
+\[
+\lim_{|P| \to 0} \sum_{i=1}^n f(\xi_i) g(\eta_i)(t_i - t_{i-1}) = \int_a^b f(x) g(x) \, dx.
+\]
+
+11. Sea \(f: [a, b] \to \mathbb{R}\) integrable y \(g: [c, d] \to \mathbb{R}\) monótona con derivada \(g'\) integrable. Si
+\(g([c, d]) \subset [a, b]\), entonces
+\[
+\int_{g(c)}^{g(d)} f(x) \, dx = \int_c^d f(g(t)) g'(t) \, dt.
+\]
+
+12. Si \(f: [0, 2] \to \mathbb{R}\) y \(g: [-1, 1] \to \mathbb{R}\) son integrables, entonces
+\[
+\int_0^2 (x - 1) \cdot f[(x - 1)^2] \, dx = 0 = \int_0^{\pi} g(\operatorname{sen} x) \cdot \cos x \, dx.
+\]
+
+13. Si \(f: [a, b] \to \mathbb{R}\) posee derivada integrable, ponga \(m = \frac{a + b}{2}\) y pruebe que
+\[
+\frac{2}{b-a} \int_a^b [f(x) + (x - m)f'(x)] \, dx = f(a) + f(b).
+\]
+
+14. Sean \(f, g: [a, +\infty) \to \mathbb{R}\) continuas y \(K > 0\) tal que
+\[
+\left| \int_c^d f(x) \, dx \right| \leq K
+\]
+para cualesquiera \(c, d \in [a, +\infty)\). Si \(g \in C^1\) es decreciente, con \(\lim_{x \to \infty} g(x) = 0\), pruebe que existe el límite
+\[
+\int_a^\infty f(x)g(x) \, dx = \lim_{x \to \infty} \int_a^x f(t)g(t) \, dt \quad \text{(integral impropia)}.
+\]
+[Sugerencia: Criterio de Cauchy. Muestre que \(\forall \varepsilon > 0 \; \exists A > a\) tal que \(A < c < d \Rightarrow \left| \int_c^d f(x)g(x) \, dx \right| < \varepsilon\). Para estimar esta integral, use el ítem C del Teorema 12.]
+
+14a. Considerando funciones escalonadas convenientes, muestre que el Criterio de Dirichlet (Teorema 21, Capítulo IV) es consecuencia del Ejercicio 14.
+
+15. La integral impropia
+\[
+\int_0^\infty \frac{\operatorname{sen} x}{x} \, dx
+\]
+es convergente pero no converge absolutamente, es decir, poniendo
+\[
+F(x) = \int_0^x \frac{\operatorname{sen} t}{t} \, dt,
+\]
+tenemos \(\lim_{x \to \infty} F(x) = \infty\).
+
+16. Para cada entero \(p\), con \(0 \leq p \leq n\), escriba \((1 - t)^n = (1 - t)^{n-p}(1 - t)^p\) en la expresión del resto \(R_{n+1}\) de la fórmula de Taylor como integral (véase el Teorema 13). Obtenga entonces
+\[
+R_{n+1} = \frac{(1 - \theta)^{n-p} f^{(n+1)}(a + \theta h) \cdot h^{n+1}}{n! (p + 1)}, \qquad 0 < \theta < 1.
+\]
+Tomando \(p = n\), reobtenga el resto de Lagrange y, haciendo \(p = 0\), halle el resto de Cauchy:
+\[
+R_{n+1} = \frac{(1 - \theta)^n f^{(n+1)}(a + \theta h)}{n!} \cdot h^{n+1}.
+\]
+Poniendo \(a + h = b\) y \(a + \theta h = \xi\), el resto de Cauchy se convierte en
+\[
+R_{n+1} = \frac{f^{(n+1)}(\xi)}{n!} (b - \xi)^n (b - a), \text{ donde } a < \xi < b.
+\]
+
+17. Use el resto de Cauchy en el desarrollo de Taylor de \(f(x) = (1 + x)^\alpha\), \(\alpha \notin \mathbb{N}\), para mostrar que la serie de Taylor de \(f\) en torno al punto 0 converge a \(f(x)\) siempre que \(-1 < x < 1\). ("Serie del Binomio".)
+
+18. Sea \(f: [a, b] \to \mathbb{R}\) acotada. Pruebe que \(f\) es integrable si, y solo si, existe un número real \(I\) con la siguiente propiedad: para todo \(\varepsilon > 0\), se puede obtener una partición \(P_\varepsilon\) de \([a, b]\) tal que \(|\Sigma(f; Q^*) - I| < \varepsilon\) sea cual sea la partición puntuada \(Q^*\) con \(Q \supset P_\varepsilon\).
+
+19. Se dice que una función \(f: \mathbb{R} \to \mathbb{R}\) es localmente acotada en el punto \(x\) cuando existe \(\varepsilon > 0\) tal que \(f(x - \varepsilon, x + \varepsilon)\) es acotada. Pruebe que el conjunto de los puntos \(x \in \mathbb{R}\) donde \(f\) es localmente acotada es abierto. Muestre que se puede definir la oscilación de \(f\) en los puntos donde esta función es localmente acotada. Pruebe que el conjunto de los puntos donde una función arbitraria \(f: \mathbb{R} \to \mathbb{R}\) es continua es una intersección enumerable de abiertos. Usando el Teorema de Baire (Ejercicio 54, Capítulo V), concluya que ninguna función \(f: \mathbb{R} \to \mathbb{R}\) puede tener a \(\mathbb{Q}\) como el conjunto de sus puntos de continuidad.
+
+20. Sea \(f: [a, b] \to \mathbb{R}\) una función acotada. Indiquemos con \(\omega(x)\) la oscilación de \(f\) en el punto \(x \in [a, b]\). Pruebe que
+\[
+\int_a^b f(x) \, dx - \int_a^b f(x) \, dx = \int_a^b \omega(x) \, dx.
+\]
+
+21. Si un intervalo \(I\) tiene medida nula, entonces \(I\) se reduce a un punto.
+
+22. Todo conjunto de medida nula tiene interior vacío.
+
+23. Dadas \(f, g: [a, b] \to \mathbb{R}\) integrables, sea \(X = \{x \in [a, b]; f(x) \neq g(x)\}\). Si \(X\) tiene medida nula, entonces
+\[
+\int_a^b f(x) \, dx = \int_a^b g(x) \, dx.
+\]
+
+24. Dé ejemplo de dos funciones acotadas \(f, g: [a, b] \to \mathbb{R}\), tales que el conjunto \(X = \{x \in [a, b]; f(x) \neq g(x)\}\) tenga medida nula, \(f\) sea integrable y \(g\) no lo sea.
+
+25. Si \(f: [a, b] \to \mathbb{R}\) es lipschitziana (en particular, si \(f \in C^1\)) y \(X \subset [a, b]\) tiene medida nula, entonces \(f(X)\) tiene medida nula.
+
+26. Sea \(K\) el conjunto de Cantor. Dé ejemplo de una función monótona continua \(f: [0, 1] \to [0, 1]\) tal que \(f(K)\) no tenga medida nula. (Véase el Ejercicio 17, Capítulo VII.)
+
+27. Verifique que, a partir del ítem 4 del Teorema 4, todas las afirmaciones del texto, en el sentido de que una cierta función es integrable, pueden obtenerse como consecuencias del Teorema 20.
+
+28. Dadas \(f, g: [a, b] \to \mathbb{R}\), defina las funciones \(f \wedge g\) y \(f \vee g\) poniendo
+\[
+(f \wedge g)(x) = \min\{f(x), g(x)\}
+\]
+y
+\[
+(f \vee g)(x) = \max\{f(x), g(x)\}
+\]
+para todo \(x \in [a, b]\). Pruebe que si \(f\) y \(g\) son integrables, entonces \(f \wedge g\) y \(f \vee g\) son integrables. Concluya que una función es integrable si, y solo si, su parte positiva y su parte negativa son integrables. (Véase Capítulo IV, §7.)
+
+29. Sea \(g \geq 0\) integrable. Si
+\[
+\overline{\int_a^b} f(x) g(x) \, dx = 0,
+\]
+entonces
+\[
+\underline{\int_a^b} f(x) g(x) \, dx = 0,
+\]
+sea cual sea \(f\) integrable.
+
+30. Dada \(f: [a, b] \to \mathbb{R}\), para cada partición \(P = \{t_0, \dots, t_n\}\) de \([a, b]\), sea
+\[
+V(f; P) = \sum_{i=1}^n |f(t_i) - f(t_{i-1})|.
+\]
+Cuando el conjunto \(\{V(f; P); P = \text{partición de } [a, b]\}\) es acotado, se dice que \(f\) es una función de variación acotada y se escribe
+\[
+V_a^b(f) = \sup_P V(f; P).
+\]
+El número \(V_a^b(f)\) se llama la variación total de \(f\) en el intervalo \([a, b]\). El significado intuitivo de \(V_a^b(f)\) es la longitud total del camino recorrido por \(f(t)\) cuando \(t\) crece de \(a\) hasta \(b\). Pruebe:
+\begin{itemize}
+    \item[1.] Toda función lipschitziana es de variación acotada;
+    \item[2.] Toda función monótona es de variación acotada;
+    \item[3.] Si \(f\) y \(g\) son de variación acotada, lo mismo ocurre con \(f + g\), \(f \cdot g\) y \(|f|\);
+    \item[4.] Sea \(f\) continua de variación acotada. Para todo \(\varepsilon > 0\), existe \(\delta > 0\) tal que
+\[
+|P| < \delta \Rightarrow |V(f; P) - V_a^b(f)| < \varepsilon;
+\]
+    \item[5.] Si \(f\) posee derivada continua, entonces \(f\) es de variación acotada y
+\[
+V_a^b(f) = \int_a^b |f'(t)| \, dt.
+\]
+\end{itemize}
+
+31. Sea \(f: [0, 1] \to \mathbb{R}\) definida por
+\[
+f(x) = x \cdot \operatorname{sen} \frac{1}{x} \quad \text{si } x \neq 0, \qquad f(0) = 0.
+\]
+Muestre que \(f\), aunque es continua, no posee variación acotada. [Sugerencia: use el hecho de que las reducidas de la serie \(\sum 1/n\) no forman un conjunto acotado.]
+
+32. Sea \(f: [a, b] \to \mathbb{R}\). Para cada partición \(P\) de \([a, b]\), indiquemos con \([t'_{i-1}, t'_i]\) los intervalos de \(P\) en los cuales \(f(t'_{i-1}) \leq f(t'_i)\), y con \([t''_{i-1}, t''_i]\) los intervalos donde \(f(t''_{i-1}) > f(t''_i)\). Escribamos
+\[
+V^+(f; P) = \sum [f(t'_i) - f(t'_{i-1})], \qquad
+V^-(f; P) = \sum [f(t''_{i-1}) - f(t''_i)],
+\]
+\[
+V_a^b(f)^+ = \sup_P V^+(f; P), \qquad
+V_a^b(f)^- = \sup_P V^-(f; P).
+\]
+Estos números se llaman la variación positiva y la variación negativa de \(f\) en \([a, b]\). Pruebe
+\begin{itemize}
+    \item[1.] \( V_a^b(f) = V_a^b(f)^+ + V_a^b(f)^- \);
+
+    \item[2.] Las funciones \(\varphi, \xi: [a, b] \to \mathbb{R}\), definidas por \(\varphi(x) = V_a^x(f)^+\) y \(\xi(x) = V_a^x(f)^-\) son no decrecientes;
+
+    \item[3.] \( f(x) - f(a) = V_a^x(f)^+ - V_a^x(f)^- \);
+
+    \item[4.] Una función es de variación acotada si, y solo si, es diferencia entre dos funciones monótonas;
+
+    \item[5.] Toda función de variación acotada es integrable.
+\end{itemize}
+
+33. Sea \( f: \mathbb{R}^+ \to \mathbb{R} \) continua, tal que \( f(x \cdot y) = f(x) + f(y) \) para cualesquiera \( x, y \in \mathbb{R}^+ \). Pruebe que existe \( c \in \mathbb{R} \) tal que \( f(x) = c \cdot \log x \).
+
+34. Muestre que
+\[
+\lim_{x \to \infty} \left( 1 + \frac{a}{x} \right)^x = e^a.
+\]
+
+35. Pruebe que
+\[
+\lim_{x \to 0} x^x = 1, \qquad \lim_{x \to 0} x^{\log(x+1)} = 1 \qquad \text{y} \qquad \lim_{x \to 0} \log x \cdot \log(x+1) = 0.
+\]
+
+36. Sea \( f: \mathbb{R} \to \mathbb{R} \) continua tal que \( f(x+y) = f(x) \cdot f(y) \). Pruebe que \( f(x) = a^x \) (\( a \in \mathbb{R}^+ \)) o \( f(x) = 0 \) para todo \( x \in \mathbb{R} \).
+
+37. Pruebe que
+\[
+\lim_{n \to \infty} n(\sqrt[n]{a} - 1) = \log a
+\]
+para todo \( a > 0 \).
+
+38. Muestre que
+\[
+\lim_{n \to \infty} \left[ \frac{n^{n+1} + (n+1)^n}{n^{n+1}} \right]^n = e^e.
+\]
+
+39. Si \( g: [c, d] \to \mathbb{R} \) es continua y \( f: [a, b] \to [c, d] \) es integrable, entonces \( g \circ f: [a, b] \to \mathbb{R} \) es integrable.
+
+40. Si \( f: [a, b] \to [c, d] \) es de clase \( C^1 \), con \( f'(x) \neq 0 \) para todo \( x \in [a, b] \), y \( g: [c, d] \to \mathbb{R} \) es integrable, entonces \( g \circ f \) es integrable.
+
+41. Si \( X \subset \mathbb{R} \) tiene contenido nulo, lo mismo ocurre con su clausura. En particular, \( \overline{X} \) tiene interior vacío. ¿Y si \( X \) tiene medida nula?
+
+42. Sea \( Q = \{r_1, r_2, \ldots, r_n, \ldots\} \) una enumeración de los racionales. Para \( n, i \in \mathbb{N} \) arbitrarios, sea \( J_{ni} \) el intervalo abierto de centro \( r_i \) y longitud \( 1/2^{n+i} \). Poniendo \( A_n = \bigcup_{i \in \mathbb{N}} J_{ni} \) y \( A = \bigcap_{n \in \mathbb{N}} A_n \), muestre que \( A \) tiene medida nula y \( \mathbb{R} = A \cup (\mathbb{R} - A) \) es una descomposición de la recta como unión disjunta de un conjunto de medida nula con un conjunto "magro" (esto es, unión enumerable de cerrados con interior vacío).
+
+43. El conjunto de los puntos de discontinuidad de una función integrable tiene medida nula porque es unión enumerable de conjuntos de contenido nulo. Cabría indagar si todo conjunto \( X \subset \mathbb{R} \) de medida nula es de esa forma. Muestre que el conjunto \( A \) del Ejercicio 42 no es unión enumerable de conjuntos de contenido nulo.
+
+44. Dada una sucesión de intervalos abiertos \( I_n \), contenidos en \( [0, 1] \), si \( \sum |I_n| < 1 \) entonces el conjunto cerrado \( F = [0, 1] - \bigcup I_n \) no tiene medida nula.
+
+45. Vea, en la página 356 del volumen 2, la construcción de \( X \), el "conjunto de Cantor con medida positiva". Defina un homeomorfismo \( h: [0, 1] \to [0, 1] \) tal que \( h(X) = K \) (verdadero conjunto de Cantor). A continuación considere \( g: [0, 1] \to \mathbb{R} \), la función característica de \( K \). Muestre que \( g \circ h \) no es integrable, aunque \( g \) sea integrable y \( h \) sea continua.
 
 \newpage
 
